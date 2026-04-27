@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* STUDASSIST Brand Palette — refreshed */
+  --color-sa-pink: #EE4B62;          /* coral-red — primary CTA accent */
+  --color-sa-pink-soft: #fde4e7;
+  --color-sa-blue: #164897;          /* primary blue — buttons, headings */
+  --color-sa-blue-soft: #e6edf7;
+  --color-sa-navy: #1C1E46;          /* brand dark — hero, footer, CTA banner */
+  --color-sa-gold: #F5B43E;          /* secondary — badges, highlights */
+  --color-sa-orange: #F19A38;        /* warm accent */
+  --color-sa-coral: #EE4B62;         /* alias of pink */
+  --color-sa-green: #1BB79D;         /* brand teal — primary success, stats, accents */
+  --color-sa-green-soft: #d9f3ee;
+  --color-sa-purple: #8E56FF;        /* violet accent — decorative circles, dots */
+  --color-sa-purple-soft: #efe6ff;
+  --color-sa-light: #f6f7fb;
+  --color-sa-ink: #1a1f37;
+
+  /* Back-compat aliases */
+  --color-brand-teal: #1BB79D;       /* legacy alias → brand green */
+  --color-brand-blue: #164897;
+  --color-brand-darkblue: #1C1E46;
+  --color-brand-red: #EE4B62;
+  --color-brand-light: #f6f7fb;
+
+  --shadow-soft: 0 10px 40px -10px rgba(12, 27, 68, 0.08);
+  --shadow-card: 0 8px 30px -8px rgba(12, 27, 68, 0.10);
+  --shadow-hover: 0 20px 40px -10px rgba(27, 183, 157, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-sa-ink antialiased overflow-x-hidden font-sans;
+  font-feature-settings: "ss01", "cv11";
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Flat brand-accent utilities (no gradients — solid brand green) */
+.sa-gradient-text {
+  color: #1BB79D;
+}
+
+.sa-brand-gradient {
+  background: #1C1E46;
+}
+
+.logo-gradient {
+  background: #1BB79D;
+}
+
+/* ========== Wavy & Decorative Underlines (brand palette) ==========
+   Massively increased thickness & visibility.
+   Colors: yellow #F3B421, teal #1CB69B, pink #ee4b62, navy #1C1E46
+*/
+.sa-wavy,
+.sa-wavy-yellow,
+.sa-wavy-teal,
+.sa-wavy-pink,
+.sa-zigzag-teal,
+.sa-zigzag-pink,
+.sa-dots-yellow,
+.sa-bold-yellow {
+  background-repeat: repeat-x;
+  background-position: left 100%;
+  /* Increased size to make the shape extremely visible! */
+  background-size: 40px 18px; 
+  padding-bottom: 0.28em;     /* Extra padding so text doesn't overlap shapes */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* WAVY */
+.sa-wavy,
+.sa-wavy-yellow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cpath d='M0 9 Q 15 0 30 9 T 60 9 T 90 9 T 120 9' fill='none' stroke='%23F3B421' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.sa-wavy-teal {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cpath d='M0 9 Q 15 0 30 9 T 60 9 T 90 9 T 120 9' fill='none' stroke='%231CB69B' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.sa-wavy-pink {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cpath d='M0 9 Q 15 0 30 9 T 60 9 T 90 9 T 120 9' fill='none' stroke='%23ee4b62' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* ZIGZAG (Angular bounce) */
+.sa-zigzag-teal {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cpath d='M0 9 L 15 2 L 30 9 L 45 2 L 60 9 L 75 2 L 90 9 L 105 2 L 120 9' fill='none' stroke='%231CB69B' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.sa-zigzag-pink {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cpath d='M0 9 L 15 2 L 30 9 L 45 2 L 60 9 L 75 2 L 90 9 L 105 2 L 120 9' fill='none' stroke='%23ee4b62' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* BIG DOTS */
+.sa-dots-yellow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cline x1='0' y1='9' x2='120' y2='9' fill='none' stroke='%23F3B421' stroke-width='10' stroke-linecap='round' stroke-dasharray='0 30'/%3E%3C/svg%3E");
+  background-size: 50px 18px; /* Special spacing for dots */
+}
+
+/* BOLD SWOOSH (single curve over the whole word) */
+.sa-wavy-bold-yellow,
+.sa-bold-yellow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20'%3E%3Cpath d='M2 16 Q 60 -4 118 16' fill='none' stroke='%23F3B421' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 0.75em;
+  padding-bottom: 0.38em;
+}
+
+/* Subtle dot pattern */
+.sa-dots {
+  background-image: radial-gradient(circle, rgba(22,72,151,0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Button primitives — Tailwind v4 requires utilities not custom classes in @apply */
+.sa-btn,
+.sa-btn-primary,
+.sa-btn-dark,
+.sa-btn-outline,
+.sa-btn-gold {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm tracking-tight transition-all duration-300;
+}
+.sa-btn-primary { @apply bg-sa-green text-white hover:bg-sa-navy hover:-translate-y-0.5 shadow-[0_12px_30px_-12px_rgba(27,183,157,0.45)]; }
+.sa-btn-dark    { @apply bg-sa-navy text-white hover:bg-sa-green hover:-translate-y-0.5; }
+.sa-btn-outline { @apply bg-white text-sa-navy border border-sa-navy/15 hover:border-sa-green hover:text-sa-green; }
+.sa-btn-gold    { @apply bg-sa-gold text-sa-navy hover:bg-sa-navy hover:text-white; }
+
+/* Card primitives */
+.sa-card {
+  @apply bg-white rounded-2xl border border-sa-navy/5 shadow-[0_8px_30px_-8px_rgba(12,27,68,0.08)] transition-all duration-300;
+}
+.sa-card-hover:hover {
+  @apply -translate-y-1 shadow-[0_22px_50px_-20px_rgba(12,27,68,0.18)] border-sa-green/30;
+}
+
+/* Small eyebrow tag */
+.sa-eyebrow {
+  @apply inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase text-sa-green;
+}
+.sa-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* Section heading */
+.sa-h-display {
+  @apply font-display text-[34px] sm:text-[44px] lg:text-[56px] leading-[1.05] font-extrabold text-sa-navy;
+  letter-spacing: -0.03em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f3f4f9; }
+::-webkit-scrollbar-thumb { background: #1BB79D; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #1C1E46; }
+
+/* Marquee */
+@keyframes sa-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.sa-marquee { animation: sa-marquee 40s linear infinite; }
+
+/* Shine */
+@keyframes sa-shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
