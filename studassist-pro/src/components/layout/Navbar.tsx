@@ -75,7 +75,7 @@ export default function Navbar() {
               <Link to="/qui-sommes-nous" className="hover:text-brand-teal transition">Qui sommes-nous</Link>
               <Link to="/nous-rejoindre" className="hover:text-brand-teal transition">Nous rejoindre</Link>
             </div>
-            <Link to="/centres" className="flex items-center hover:text-brand-teal transition">
+            <Link to="/contact#centres" className="flex items-center hover:text-brand-teal transition">
               <MapPin size={12} className="mr-1.5 text-brand-teal font-bold" /> <span className="hidden sm:inline">Nos centres</span>
             </Link>
             <div className="hidden xs:flex items-center space-x-3 lg:ml-4 lg:border-l lg:border-white/20 lg:pl-4">
@@ -192,7 +192,7 @@ export default function Navbar() {
                 <Link to="/contact" className="text-center bg-brand-teal text-white py-3 rounded-full font-bold" onClick={() => setIsOpen(false)}>
                   Réserver ma séance découverte
                 </Link>
-                <Link to="/centres" className="text-center bg-black text-white py-3 rounded-md font-bold" onClick={() => setIsOpen(false)}>
+                <Link to="/contact#centres" className="text-center bg-black text-white py-3 rounded-md font-bold" onClick={() => setIsOpen(false)}>
                   Où nous trouver
                 </Link>
               </div>

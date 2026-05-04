@@ -30,7 +30,7 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
       { label: "Qui sommes-nous", to: "/qui-sommes-nous" },
       { label: "Notre méthode", to: "/qui-sommes-nous#methode" },
       { label: "Nous rejoindre", to: "/nous-rejoindre" },
-      { label: "Nos centres", to: "/contact" },
+      { label: "Nos centres", to: "/contact#centres" },
       { label: "Contact", to: "/contact" },
     ],
   },
@@ -66,8 +66,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-sa-green mt-0.5 shrink-0" />
-                <a href="tel:+212500000000" className="hover:text-white transition-colors">
-                  +212 5XX XX XX XX
+                <a href="tel:0669495996" className="hover:text-white transition-colors">
+                  0669 495 996 | 0664 779 093
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -81,7 +81,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-sa-green mt-0.5 shrink-0" />
-                <span>Casablanca · Rabat · Marrakech</span>
+                <span>Casablanca (Oasis) · Bouskoura Ville Verte</span>
               </li>
             </ul>
 

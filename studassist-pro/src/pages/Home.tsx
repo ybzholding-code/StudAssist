@@ -367,7 +367,7 @@ export default function Home() {
       description: "Bilan d'orientation, aide aux choix des écoles, optimisation des dossiers de candidatures, préparation aux oraux, suivi des admissions… Traçons ensemble votre projet d'avenir !",
       buttonText: "Réserver mon 1er RDV",
       link: "/orientation-scolaire",
-      image: "/hero-girl.webp",
+      image: "/hero-orientation.webp",
       layout: 'reverse',
       accent: 'brand-teal',
       bgType: 'grid'
@@ -378,7 +378,7 @@ export default function Home() {
       description: "Bac de Français écrit et oral, Bac de spécialités, Bac de philo, Grand Oral. Rejoignez notre programme complet pour réussir vos épreuves !",
       buttonText: "Choisir mon programme",
       link: "/prepas-bac",
-      image: "/hero-girl.webp",
+      image: "/hero-3.webp",
       layout: 'standard',
       accent: 'brand-teal',
       bgType: 'curves'
@@ -389,7 +389,7 @@ export default function Home() {
       description: "Sesame, Accès, GEIPI Polytech, Avenir, Médecine Maroc, Médecine Belgique, GMAT, TAGE MAGE, SAT… Mettez toutes les chances de votre côté et décrochez vos concours avec STUDASSIST !",
       buttonText: "Choisir ma préparation",
       link: "/prepas-concours",
-      image: "/hero-girl.webp",
+      image: "/hero-4.webp",
       layout: 'reverse',
       accent: 'brand-red',
       bgType: 'abstract'
@@ -400,7 +400,7 @@ export default function Home() {
       description: "IELTS, TOEIC, TOEFL, DELE, TCF, DELF, DALF… Préparez-vous avec STUDASSIST pour viser les meilleures écoles internationales.",
       buttonText: "Choisir ma certification",
       link: "/certifications",
-      image: "/hero-girl.webp",
+      image: "/hero-orientation.webp",
       layout: 'standard',
       accent: 'brand-teal',
       bgType: 'modern'
@@ -411,7 +411,7 @@ export default function Home() {
       description: "Maths, Physique-chimie, SVT, Français, SES, HGGSP, Philosophie… Réservez votre séance découverte pour tester notre méthodologie exclusive d'accompagnement scolaire !",
       buttonText: "Réserver mon cours découverte",
       link: "/soutien-scolaire",
-      image: "/hero-girl.webp",
+      image: "/hero-3.webp",
       layout: 'reverse',
       accent: 'brand-teal',
       bgType: 'minimal'
@@ -422,7 +422,7 @@ export default function Home() {
       description: "Dossiers Visa & titre de séjour étudiant, compte bancaire à l'étranger, assurance & couverture maladie, aide à la recherche de logement étudiant… Libérez-vous de ces tracas et restez concentrés sur la réussite de vos examens.",
       buttonText: "Réserver mon RDV d'information",
       link: "/admin-logement",
-      image: "/hero-girl.webp",
+      image: "/hero-4.webp",
       layout: 'standard',
       accent: 'brand-red',
       bgType: 'service'
@@ -586,73 +586,73 @@ export default function Home() {
       <ExpertisePoles />
 
       {/* WHY CHOOSE SECTION */}
-      <section className="py-20 bg-[#f8fbfc]">
+      <section className="py-24 bg-[#f8fbfc]">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-               <ImageFloaters />
-               <div className="relative z-20 bg-white p-4 rounded-2xl shadow-xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" 
-                    alt="Why choose us" 
-                    className="rounded-xl w-full h-[400px] object-cover"
-                    referrerPolicy="no-referrer"
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Video column */}
+            <div className="relative flex justify-center">
+               <ImageFloaters scale={0.5} />
+               <div className="relative z-20 bg-white p-2 rounded-[1.5rem] shadow-[0_20px_60px_rgba(28,30,70,0.10)] max-w-[360px] w-full">
+                  <video
+                    src="/studassist-video.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="rounded-[1.25rem] w-full aspect-[9/16] object-cover"
                   />
                </div>
-               {/* Pattern overlay — rotating dashed teal ring */}
-               <motion.div
-                 className="absolute -top-10 -right-10 w-32 h-32 opacity-30 z-0"
-                 animate={{ rotate: 360 }}
-                 transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-               >
-                  <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="#1CB69B" strokeWidth="5" strokeDasharray="10 5"></circle></svg>
-               </motion.div>
             </div>
 
+            {/* Text column */}
             <div>
-              <h2 className="text-3xl font-black text-brand-darkblue mb-6">
+              <div className="inline-flex items-center gap-2 text-sa-green font-black text-[10px] tracking-[0.3em] uppercase mb-4">
+                <span className="w-6 h-px bg-sa-green" />
+                <span>Notre engagement</span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight mb-5">
                 Pourquoi choisir <br />
                 <span className="text-sa-green uppercase">STUDASSIST ?</span>
               </h2>
-              <p className="text-gray-500 mb-8 leading-relaxed text-sm">
-                Chez <span className="font-bold">STUDASSIST</span>, nous offrons bien plus qu'un soutien scolaire. Nous accompagnons chaque élève avec une <span className="font-bold underline">approche globale, stratégique et personnalisée</span>, en plaçant <span className="font-bold underline">l'excellence académique</span>, l'orientation et la <span className="font-bold underline">réussite</span> au cœur de notre <span className="font-bold underline">engagement</span>. Un accompagnement 360°, pensé pour <span className="font-bold">sécuriser</span> chaque étape du parcours scolaire et universitaire de nos élèves.
+              <p className="text-gray-500 mb-10 leading-relaxed text-[15px]">
+                Chez <span className="font-semibold text-sa-navy">STUDASSIST</span>, nous offrons bien plus qu'un soutien scolaire. Nous accompagnons chaque élève avec une approche globale, stratégique et personnalisée, en plaçant l'excellence académique, l'orientation et la réussite au cœur de notre engagement.
               </p>
 
-              <div className="grid grid-cols-2 gap-x-12 gap-y-10 mt-10">
-                 <div className="flex items-start space-x-4 group">
-                    <div className="p-3 bg-sa-navy/10 rounded-xl text-sa-navy group-hover:bg-sa-navy group-hover:text-white transition-all">
-                       <Users size={24} />
+              <div className="grid grid-cols-2 gap-x-8 gap-y-8">
+                 <div className="flex items-start space-x-3 group">
+                    <div className="p-2.5 bg-sa-navy/8 rounded-xl text-sa-navy group-hover:bg-sa-navy group-hover:text-white transition-all shrink-0">
+                       <Users size={22} />
                     </div>
                     <div>
-                       <div className="text-3xl font-black text-sa-navy mb-1">3 à 4</div>
-                       <div className="text-[10px] uppercase font-black text-sa-navy tracking-widest opacity-80 leading-tight">Élèves Maximum Par Classe</div>
+                       <div className="text-2xl font-black text-sa-navy mb-0.5">3 à 4</div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Élèves max / classe</div>
                     </div>
                  </div>
-                 <div className="flex items-start space-x-4 group">
-                    <div className="p-3 bg-sa-green/10 rounded-xl text-sa-green group-hover:bg-sa-green group-hover:text-white transition-all">
-                       <Star size={24} />
+                 <div className="flex items-start space-x-3 group">
+                    <div className="p-2.5 bg-sa-green/8 rounded-xl text-sa-green group-hover:bg-sa-green group-hover:text-white transition-all shrink-0">
+                       <Star size={22} />
                     </div>
                     <div>
-                       <div className="text-3xl font-black text-sa-green mb-1">3.7 Pts</div>
-                       <div className="text-[10px] uppercase font-black text-sa-navy tracking-widest opacity-80 leading-tight">Moyenne Gagnée Sur Les Bulletins</div>
+                       <div className="text-2xl font-black text-sa-green mb-0.5">3.7 Pts</div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Moyenne gagnée</div>
                     </div>
                  </div>
-                 <div className="flex items-start space-x-4 group">
-                    <div className="p-3 bg-sa-gold/10 rounded-xl text-sa-gold group-hover:bg-sa-gold group-hover:text-white transition-all">
-                       <MessageCircle size={24} />
+                 <div className="flex items-start space-x-3 group">
+                    <div className="p-2.5 bg-sa-gold/8 rounded-xl text-sa-gold group-hover:bg-sa-gold group-hover:text-white transition-all shrink-0">
+                       <MessageCircle size={22} />
                     </div>
                     <div>
-                       <div className="text-3xl font-black text-sa-gold mb-1">98%</div>
-                       <div className="text-[10px] uppercase font-black text-sa-navy tracking-widest opacity-80 leading-tight">Taux De Réussite Aux Concours</div>
+                       <div className="text-2xl font-black text-sa-gold mb-0.5">98%</div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Réussite concours</div>
                     </div>
                  </div>
-                 <div className="flex items-start space-x-4 group">
-                    <div className="p-3 bg-sa-pink/10 rounded-xl text-sa-pink group-hover:bg-sa-pink group-hover:text-white transition-all">
-                       <GraduationCap size={24} />
+                 <div className="flex items-start space-x-3 group">
+                    <div className="p-2.5 bg-sa-pink/8 rounded-xl text-sa-pink group-hover:bg-sa-pink group-hover:text-white transition-all shrink-0">
+                       <GraduationCap size={22} />
                     </div>
                     <div>
-                       <div className="text-3xl font-black text-sa-pink mb-1">100%</div>
-                       <div className="text-[10px] uppercase font-black text-sa-navy tracking-widest opacity-80 leading-tight">Admis Dans Le Top 3 Des Écoles</div>
+                       <div className="text-2xl font-black text-sa-pink mb-0.5">100%</div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Top 3 des écoles</div>
                     </div>
                  </div>
               </div>

@@ -78,6 +78,7 @@ import {
   IoPeople,
   IoClose,
   IoFlash,
+  IoTime,
 } from "react-icons/io5";
 
 type Props = IconBaseProps & {
@@ -162,3 +163,4 @@ export const UserPlus = wrap(IoPersonAdd);
 export const Users = wrap(IoPeople);
 export const X = wrap(IoClose);
 export const Zap = wrap(IoFlash);
+export const Clock = wrap(IoTime);

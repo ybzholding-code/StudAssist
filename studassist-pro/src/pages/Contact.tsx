@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Phone, MapPin } from "@/src/components/ui/icons";
+import { ArrowRight, Phone, MapPin, Clock } from "@/src/components/ui/icons";
 import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
@@ -215,6 +215,93 @@ export default function Contact() {
         items={buildFaq("signup", "organization")}
       />
 
+      {/* ============ NOS CENTRES ============ */}
+      <section id="centres" className="py-20 bg-gray-50/60">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 text-sa-green font-black text-[10px] tracking-[0.3em] uppercase mb-4">
+              <span className="w-6 h-px bg-sa-green" />
+              <span>Nos centres</span>
+              <span className="w-6 h-px bg-sa-green" />
+            </div>
+            <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-sa-navy tracking-tight">
+              Où nous <span className="sa-wavy sa-wavy-teal">trouver</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Centre de l'Oasis */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_rgba(17,29,74,0.06)] p-8 lg:p-10 flex flex-col"
+            >
+              <h3 className="font-display text-xl font-extrabold text-sa-navy mb-5">
+                Centre de l'Oasis
+              </h3>
+              <ul className="space-y-4 flex-1">
+                <li className="flex items-start gap-3 text-sa-ink/80 text-[15px]">
+                  <MapPin size={18} className="text-sa-green mt-0.5 shrink-0" />
+                  <span>15 Rue des Ramiers, Casablanca 20000</span>
+                </li>
+                <li className="flex items-start gap-3 text-sa-ink/80 text-[15px]">
+                  <Phone size={18} className="text-sa-green mt-0.5 shrink-0" />
+                  <span>0669 495 996 &nbsp;|&nbsp; 0664 779 093</span>
+                </li>
+                <li className="flex items-start gap-3 text-sa-ink/80 text-[15px]">
+                  <Clock size={18} className="text-sa-green mt-0.5 shrink-0" />
+                  <span>Lun–Ven : 9h–19h · Sam : 9h–17h</span>
+                </li>
+              </ul>
+              <a
+                href="https://maps.google.com/?q=15+Rue+des+Ramiers+Casablanca+20000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sa-green hover:text-sa-navy transition-colors"
+              >
+                Voir sur Google Maps <ArrowRight size={14} />
+              </a>
+            </motion.div>
+
+            {/* Centre de Bouskoura Ville Verte */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-3xl border border-gray-100 shadow-[0_20px_60px_rgba(17,29,74,0.06)] p-8 lg:p-10 flex flex-col"
+            >
+              <h3 className="font-display text-xl font-extrabold text-sa-navy mb-5">
+                Centre de Bouskoura Ville Verte
+              </h3>
+              <ul className="space-y-4 flex-1">
+                <li className="flex items-start gap-3 text-sa-ink/80 text-[15px]">
+                  <MapPin size={18} className="text-sa-green mt-0.5 shrink-0" />
+                  <span>Lotissement Bel Air de Bouskoura E2, Bouskoura Ville Verte 27180</span>
+                </li>
+                <li className="flex items-start gap-3 text-sa-ink/80 text-[15px]">
+                  <Phone size={18} className="text-sa-green mt-0.5 shrink-0" />
+                  <span>0669 495 996 &nbsp;|&nbsp; 0664 779 093</span>
+                </li>
+                <li className="flex items-start gap-3 text-sa-ink/80 text-[15px]">
+                  <Clock size={18} className="text-sa-green mt-0.5 shrink-0" />
+                  <span>Lun–Ven : 9h–19h · Sam : 9h–17h</span>
+                </li>
+              </ul>
+              <a
+                href="https://maps.google.com/?q=Lotissement+Bel+Air+Bouskoura+Ville+Verte+27180"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sa-green hover:text-sa-navy transition-colors"
+              >
+                Voir sur Google Maps <ArrowRight size={14} />
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Re-engagement strip — editorial CTA card */}
       <section className="pb-32 pt-4">
         <div className="container mx-auto px-6">
@@ -251,14 +338,14 @@ export default function Contact() {
                   <Phone size={18} />
                   <span>0669-495996</span>
                 </a>
-                <Link
-                  to="/centres"
+                <a
+                  href="#centres"
                   className="group bg-brand-darkblue text-white px-7 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[11px] hover:bg-brand-red transition-all shadow-xl shadow-brand-darkblue/20 inline-flex items-center justify-center gap-3 active:scale-95"
                 >
                   <MapPin size={18} />
                   <span>Nos centres</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </div>
             </div>
           </motion.div>
