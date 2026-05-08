@@ -3,37 +3,20 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Phone,
-  Compass,
-  GraduationCap,
-  Globe,
-  Sparkles,
-  Target,
-  Users,
-  Trophy,
-  Rocket,
-  Star,
-  Quote,
-  FileText,
-  CheckCircle2,
-  ShieldCheck,
 } from "@/src/components/ui/icons";
-import { cn } from "@/src/lib/utils";
 import Logo from "../components/Logo";
 import ExpertisePoles from "../components/ExpertisePoles";
 import TestimonialsSection from "../components/TestimonialsSection";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
-
-const Icon3D = ({ src, alt, className = "w-9 h-9" }: { src: string; alt: string; className?: string }) => (
-  <img src={src} alt={alt} className={`${className} drop-shadow-sm`} />
-);
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const stats = [
-  { value: "+500", label: "Élèves orientés chaque année", icon3d: "https://img.icons8.com/3d-fluency/94/conference-call.png", color: "text-brand-darkblue" },
-  { value: "+25", label: "Destinations à l'international", icon3d: "https://img.icons8.com/3d-fluency/94/globe.png", color: "text-brand-teal" },
-  { value: "97%", label: "De familles satisfaites", icon3d: "https://img.icons8.com/3d-fluency/94/star.png", color: "text-brand-red" },
-  { value: "100%", label: "D'admissions post-bac", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png", color: "text-brand-darkblue" },
+  { value: "+500", label: "Élèves orientés chaque année", icon3d: "https://img.icons8.com/3d-fluency/94/conference-call.png" },
+  { value: "+25", label: "Destinations à l'international", icon3d: "https://img.icons8.com/3d-fluency/94/globe.png" },
+  { value: "97%", label: "De familles satisfaites", icon3d: "https://img.icons8.com/3d-fluency/94/star.png" },
+  { value: "100%", label: "D'admissions post-bac", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png" },
 ];
 
 const pillars = [
@@ -104,57 +87,53 @@ const blog = [
 ];
 
 export default function OrientationScolaire() {
+  usePageMeta({
+    title: "Orientation Scolaire & Candidatures",
+    description: "STUDASSIST accompagne les élèves du lycée au Master dans leur orientation scolaire. Profiling personnalisé, candidatures optimisées, +25 destinations internationales. 97% de familles satisfaites.",
+  });
+
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden py-10 lg:py-16">
         <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-brand-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
+        <div className="container mx-auto px-6 relative z-10 w-full">
+          <div className="text-center mb-10 lg:mb-14">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl lg:text-5xl font-black text-brand-darkblue mb-4 uppercase tracking-tighter"
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue mb-4 uppercase tracking-tighter leading-[1.1]"
             >
               Orientation scolaire &amp; <span className="sa-wavy sa-wavy-pink text-brand-red">candidatures</span>
             </motion.h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
               <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                 <img
                   src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
-                  alt="Orientation STUDASSIST"
-                  className="rounded-[2rem] w-full h-[420px] object-cover"
+                  alt="Conseil en orientation scolaire STUDASSIST - Accompagnement personnalisé au Maroc"
+                  className="rounded-[2rem] w-full h-[380px] lg:h-[420px] object-cover"
                 />
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase">
+            <div className="space-y-5">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase tracking-tight">
                 Un projet d'études <br />
                 <span className="text-brand-teal">clair, cohérent</span> et ambitieux.
               </h2>
-              <div className="space-y-4 text-gray-500 leading-relaxed font-medium text-sm lg:text-base">
+              <div className="space-y-3 text-gray-500 leading-relaxed font-medium text-sm">
                 <p>
                   Chez <span className="text-brand-darkblue font-bold">STUDASSIST</span>, nous
-                  accompagnons élèves et étudiants à chaque étape de leur parcours académique —
-                  du lycée jusqu'au Master — afin de les aider à faire des{" "}
+                  accompagnons élèves et étudiants du lycée au Master pour des{" "}
                   <span className="text-brand-teal font-bold italic">choix éclairés et stratégiques</span>.
                 </p>
                 <p>
-                  Grâce à une analyse approfondie du profil, une{" "}
-                  <span className="text-brand-darkblue font-bold underline">vision long terme</span> et
-                  un accompagnement personnalisé, nous transformons l'orientation en véritable
-                  levier de réussite et d'épanouissement académique.
-                </p>
-                <p>
-                  Notre équipe intervient aussi bien sur{" "}
-                  <span className="text-brand-teal font-bold italic">l'accompagnement Parcoursup</span>,
-                  les candidatures aux grandes écoles internationales, les concours post-bac et
-                  les admissions en Master.
+                  Analyse de profil, <span className="text-brand-darkblue font-bold">vision long terme</span> et
+                  accompagnement personnalisé : nous transformons l'orientation en levier de réussite.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 pt-2">
@@ -172,53 +151,36 @@ export default function OrientationScolaire() {
       </section>
 
       {/* ============ STATS BAR ============ */}
-      <section className="bg-white py-12 border-y border-gray-100 relative z-30">
-        <div className="container mx-auto px-6 overflow-hidden">
-          <div className="flex flex-wrap lg:flex-nowrap items-center justify-between gap-12 lg:gap-6">
-            {stats.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group flex items-center space-x-4 shrink-0 lg:flex-1 lg:justify-center"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-gray-50 group-hover:bg-brand-teal/10 rounded-xl transition-all duration-300 transform group-hover:scale-110">
-                    <img src={item.icon3d} alt={item.label} className="w-8 h-8" />
-                  </div>
-                  <div className="flex flex-col">
-                    <div
-                      className={cn(
-                        "text-3xl lg:text-4xl font-black tracking-tight leading-none mb-1",
-                        item.color
-                      )}
-                    >
-                      {item.value}
-                    </div>
-                    <div className="text-[9px] lg:text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] leading-tight max-w-[140px] group-hover:text-gray-600 transition-colors">
-                      {item.label}
-                    </div>
-                  </div>
+      <section className="bg-brand-teal py-8 relative z-30 overflow-hidden border-y border-white/20 shadow-2xl">
+        <div className="absolute left-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-r from-brand-teal to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-l from-brand-teal to-transparent z-10 pointer-events-none" />
+        <motion.div
+          className="flex items-center w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        >
+          {[...stats, ...stats].map((item, idx) => (
+            <div key={idx} className="flex items-center px-10 lg:px-14 border-r border-white/20 last:border-r-0 shrink-0 py-3">
+              <div className="flex flex-col items-center text-center space-y-1">
+                <img src={item.icon3d} alt={item.label} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 shrink-0 drop-shadow-lg" />
+                <div className="text-[26px] sm:text-[32px] lg:text-[40px] tracking-tight font-black font-display text-white leading-none">
+                  {item.value}
                 </div>
-                {idx < stats.length - 1 && (
-                  <div className="hidden xl:block text-gray-200 text-3xl font-light ml-auto self-center">
-                    +
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
+                <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+                  {item.label}
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </section>
 
       {/* ============ EXPERTISE POLES (niveaux) ============ */}
       <ExpertisePoles />
 
       {/* ============ CTA BANNER — Signature Red Executive ============ */}
-      <section className="py-24 relative z-20">
-        <div className="container mx-auto px-6">
+      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 relative z-20">
+        <div className="container mx-auto px-6 w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -286,12 +248,12 @@ export default function OrientationScolaire() {
       </section>
 
       {/* ============ POURQUOI CHOISIR STUDASSIST ============ */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-24 max-w-3xl mx-auto">
+        <div className="container mx-auto px-6 relative z-10 w-full">
+          <div className="text-center mb-14 max-w-3xl mx-auto">
             <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-6">
               <span className="w-8 h-px bg-brand-teal"></span>
               <span>Pourquoi choisir</span>
@@ -349,8 +311,8 @@ export default function OrientationScolaire() {
       />
 
       {/* ============ BLOG / EXPERT ADVICE ============ */}
-      <section className="py-32 bg-[#f8fbfc]">
-        <div className="container mx-auto px-6">
+      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-[#f8fbfc]">
+        <div className="container mx-auto px-6 w-full">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 bg-brand-teal/5 text-brand-teal rounded-full text-[10px] font-black mb-6 tracking-[0.2em] uppercase border border-brand-teal/10">
               Blog STUDASSIST
@@ -396,7 +358,7 @@ export default function OrientationScolaire() {
       </section>
 
       {/* ============ FINAL REJOIN SECTION ============ */}
-      <section className="py-32 bg-brand-darkblue relative overflow-hidden">
+      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-brand-darkblue relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
           <svg width="100%" height="100%">
             <pattern id="pattern-orient-final" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -405,7 +367,7 @@ export default function OrientationScolaire() {
             <rect width="100%" height="100%" fill="url(#pattern-orient-final)" />
           </svg>
         </div>
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-6 text-center relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
