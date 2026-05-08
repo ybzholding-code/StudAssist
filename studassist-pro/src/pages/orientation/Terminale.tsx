@@ -8,64 +8,68 @@ export default function OrientationTerminale() {
       title={<>Orientation scolaire <span className="text-brand-teal">en Terminale</span></>}
       subtitle="Projet post-bac ambitieux, candidatures optimisées et admissions sécurisées."
       intro={[
-        "La Terminale est l'année des choix concrets : candidatures, dossiers, admissions.",
-        "STUDASSIST transforme cette période charnière en levier de réussite — Maroc et international.",
+        "La Terminale marque l'année décisive : les choix deviennent concrets, les candidatures s'organisent et se dessinent les premières trajectoires académiques et professionnelles de l'élève.",
+        "Chez STUDASSIST, nous accompagnons les élèves de Terminale et leurs familles dans une démarche d'orientation globale et stratégique, pour transformer cette période charnière en véritable levier de réussite — au Maroc comme à l'international.",
       ]}
       heroImage="https://images.unsplash.com/photo-1541339907198-e08759dfc3f0?auto=format&fit=crop&w=1200&q=80"
 
       enjeux={{
-        title: "Les enjeux en Terminale",
-        lead: "S'orienter, c'est bâtir un projet d'avenir cohérent — pas simplement cocher des cases.",
+        title: "Les enjeux de la Terminale",
+        lead: "S'orienter ne consiste pas simplement à choisir une formation. Il s'agit de bâtir un projet d'avenir cohérent, différenciant et parfaitement préparé.",
         bullets: [
-          "Définir un projet post-bac ambitieux et réaliste",
-          "Construire un dossier solide et différenciant",
-          "Maîtriser les procédures de candidatures complexes",
-          "Éviter stress et décisions par défaut",
+          "Définir un projet d'études ambitieux et aligné avec le profil",
+          "Construire un dossier solide et différenciant pour les formations sélectives",
+          "Maîtriser des procédures de candidatures de plus en plus complexes",
+          "Éviter le stress, les incertitudes et les décisions prises par défaut",
         ],
       }}
 
       sections={[
         {
-          title: "Approche globale",
-          bullets: [
-            "Analyse approfondie du profil",
-            "Stratégie académique personnalisée",
-            "Construction des dossiers de candidature",
-            "Préparation aux entretiens d'admission",
-            "Suivi complet des admissions",
-          ],
-        },
-        {
-          title: "Profiling et projet sur mesure",
+          title: "Une approche globale de l'orientation post-bac",
           paragraphs: [
-            "Entretien familial + profiling individuel pour un portrait complet au-delà des notes.",
+            "Chez STUDASSIST, l'orientation est pensée comme un projet à part entière, piloté avec méthode et rigueur. Notre accompagnement combine analyse approfondie du profil, stratégie académique, construction des dossiers, préparation aux entretiens et suivi complet des admissions.",
           ],
           bullets: [
-            "Short-list d'écoles cohérente et ambitieuse",
-            "Stratégie de candidatures personnalisée",
+            "Analyse approfondie du profil académique et personnel",
+            "Stratégie de candidatures personnalisée et cohérente",
+            "Construction et optimisation des dossiers d'admission",
+            "Préparation aux entretiens via des simulations filmées",
+            "Suivi complet des admissions et ajustement stratégique",
           ],
-          callout: "Un véritable plan d'admission — pas une accumulation de choix.",
         },
         {
-          title: "Candidatures et admissions",
+          title: "Profiling et construction du projet sur mesure",
+          paragraphs: [
+            "L'accompagnement débute par un entretien familial pour aligner visions et objectifs, suivi d'entretiens individuels de profiling analysant le parcours, les méthodes de travail, la personnalité et les ambitions.",
+            "À partir de cette analyse, nous construisons une short-list d'écoles cohérente et ambitieuse et une stratégie de candidatures personnalisée adaptée au profil de l'élève.",
+          ],
+          callout: "Un véritable plan d'admission — pas une simple accumulation de choix sur une plateforme.",
+        },
+        {
+          title: "Accompagnement complet aux candidatures",
+          paragraphs: [
+            "Nous accompagnons chaque étape du processus de candidature : constitution et optimisation des dossiers, rédaction des lettres de motivation et essays, préparation des CV, envoi des candidatures et préparation des entretiens d'admission.",
+          ],
           bullets: [
-            "Optimisation des dossiers et lettres de motivation",
-            "Préparation des entretiens (simulations filmées)",
-            "Suivi des réponses et ajustement stratégique",
+            "Lettres de motivation et personal statements percutants",
+            "Entretiens préparés via mises en situation et simulations filmées",
+            "Suivi des réponses et ajustement de la stratégie en temps réel",
           ],
         },
         {
-          title: "Soutien académique intégré",
+          title: "Soutien académique aligné avec le projet",
           paragraphs: [
-            "Soutien scolaire, préparation concours et certifications de langues — alignés avec le projet.",
+            "Lorsque nécessaire, nous intégrons du soutien scolaire ciblé, des préparations aux concours pour les filières sélectives et des certifications de langues anticipées selon les exigences des établissements visés.",
+            "L'objectif : aligner le niveau réel de l'élève avec les ambitions de son projet post-bac.",
           ],
         },
         {
-          title: "Expertise internationale (+25 destinations)",
+          title: "Expertise internationale éprouvée (+25 destinations)",
           paragraphs: [
-            "7 ans d'expérience, candidatures plateformes et hors plateformes, démarches administratives et installation.",
+            "Fort de 7 années d'expérience, STUDASSIST accompagne les projets d'études à l'étranger vers plus de 25 destinations. Nous maîtrisons les procédures sur plateformes officielles comme hors plateformes, et assurons un suivi complet jusqu'aux démarches administratives et à l'installation.",
           ],
-          callout: "Chaque projet international est personnalisé selon le profil et la destination.",
+          callout: "Chaque projet international est personnalisé selon le profil de l'élève et les exigences propres à chaque destination.",
         },
       ]}
 
@@ -75,16 +79,17 @@ export default function OrientationTerminale() {
           {
             title: "Élèves de Terminale",
             bullets: [
-              "Visent des filières sélectives",
-              "Souhaitent étudier au Maroc ou à l'international",
-              "Recherchent un accompagnement stratégique",
+              "Qui visent des filières sélectives au Maroc ou à l'international",
+              "Qui souhaitent un accompagnement stratégique pour leurs candidatures",
+              "Qui veulent sécuriser leur parcours avec une méthodologie éprouvée",
             ],
           },
           {
             title: "Parents",
             bullets: [
-              "Être guidés face à la complexité du post-bac",
-              "Gagner du temps sur les démarches",
+              "Qui souhaitent être guidés face à la complexité des procédures post-bac",
+              "Qui veulent gagner du temps et réduire la charge mentale liée aux démarches",
+              "Qui recherchent une expertise fiable pour prendre les bonnes décisions",
             ],
           },
         ],
@@ -93,17 +98,18 @@ export default function OrientationTerminale() {
       whyChoose={{
         title: "Pourquoi STUDASSIST en Terminale ?",
         bullets: [
-          "Stratégie de candidature personnalisée",
-          "Expertise Maroc & international (+25 destinations)",
-          "Maîtrise des procédures plateformes et hors plateforme",
-          "Soutien scolaire, concours et langues intégrés",
-          "Accompagnement humain et transparent",
+          "Une stratégie de candidature personnalisée et pilotée de A à Z",
+          "Une expertise Maroc & international couvrant +25 destinations",
+          "Une maîtrise complète des procédures plateformes et hors plateforme",
+          "Un soutien scolaire, concours et langues intégrés au parcours",
+          "Un accompagnement humain, transparent et orienté résultats",
+          "Un gain de temps considérable pour l'élève et sa famille",
         ],
       }}
 
       ctaBanner={{
         title: "Construisons ensemble un projet post-bac ambitieux.",
-        body: "Premier rendez-vous sans engagement pour évaluer le profil et tracer la stratégie.",
+        body: "Votre enfant est en Terminale ? Premier rendez-vous sans engagement pour évaluer le profil et tracer la stratégie d'admission.",
       }}
 
       prev={{ label: "Orientation en Première", to: "/orientation/premiere" }}

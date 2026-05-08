@@ -8,11 +8,11 @@ import {
   CheckCircle2,
 } from "@/src/components/ui/icons";
 import FAQ from "./FAQ";
-import ImageFloaters from "./ImageFloaters";
+import MediaFrameFloaters from "./MediaFrameFloaters";
 import { buildFaq } from "../data/faq";
 import { usePageMeta } from "../hooks/usePageMeta";
 
-/* ---------- Types (unchanged public API) ---------- */
+/* ---------- Types ---------- */
 
 export interface SectionBlock {
   title: string;
@@ -102,22 +102,22 @@ interface AccordionProps {
 function AccordionItem({ title, defaultOpen = false, children }: AccordionProps) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-gray-100">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 text-left py-5 group"
+        className="w-full flex items-center justify-between gap-4 text-left py-6 group"
       >
         <span
-          className={`text-sm lg:text-[15px] font-bold leading-snug transition-colors ${
+          className={`text-sm lg:text-base font-black uppercase tracking-tight leading-snug transition-colors ${
             open ? "text-brand-teal" : "text-brand-darkblue group-hover:text-brand-teal"
           }`}
         >
           {title}
         </span>
         <span
-          className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-            open ? "bg-brand-teal text-white rotate-180" : "bg-brand-teal/10 text-brand-teal"
+          className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
+            open ? "bg-brand-teal text-white rotate-180" : "bg-gray-100 text-brand-teal group-hover:bg-brand-teal/10"
           }`}
         >
           <ChevronDown size={16} />
@@ -129,43 +129,16 @@ function AccordionItem({ title, defaultOpen = false, children }: AccordionProps)
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pb-6 pr-12 text-gray-500 text-sm leading-relaxed space-y-3">
+            <div className="pb-8 pr-4 lg:pr-12 text-gray-500 text-sm leading-[1.8] space-y-3">
               {children}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-/* ---------- Inline illustration (thinker with 2 question marks) ---------- */
-
-function ThinkerIllustration({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
-      {/* Left pink question bubble */}
-      <circle cx="90" cy="150" r="54" fill="#EE4B62" />
-      <text x="90" y="170" textAnchor="middle" fontSize="64" fontWeight="800" fill="white" fontFamily="Plus Jakarta Sans, sans-serif">?</text>
-      {/* Right purple question bubble */}
-      <circle cx="310" cy="130" r="48" fill="#8E56FF" />
-      <text x="310" y="148" textAnchor="middle" fontSize="56" fontWeight="800" fill="white" fontFamily="Plus Jakarta Sans, sans-serif">?</text>
-      {/* Yellow behind head */}
-      <circle cx="200" cy="210" r="70" fill="#F5B43E" />
-      {/* Head back */}
-      <path d="M150 210 Q150 140 205 140 Q260 140 260 210 L260 250 L150 250 Z" fill="#2d2d2d" />
-      {/* Body */}
-      <path d="M130 400 Q130 300 200 290 Q270 300 270 400 Z" fill="#1AB69D" />
-      {/* Left arm raised to head */}
-      <path d="M150 310 Q110 260 140 220 Q160 215 170 240 Q175 275 180 300 Z" fill="#F5B43E" />
-      {/* Right arm */}
-      <path d="M260 310 Q290 300 285 360 L260 360 Z" fill="#F5B43E" />
-      {/* Neck */}
-      <rect x="185" y="240" width="30" height="30" fill="#F5B43E" />
-    </svg>
   );
 }
 
@@ -215,12 +188,12 @@ export default function OrientationLevelPage({
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative">
-              <ImageFloaters />
+              <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-1">
                 <img
                   src={heroImage}
                   alt={`Orientation scolaire ${levelLabel} - STUDASSIST accompagnement académique`}
-                  className="rounded-[2rem] w-full h-[350px] lg:h-[400px] object-cover"
+                  className="rounded-[2rem] w-full h-[350px] lg:h-[420px] object-cover"
                 />
               </div>
             </div>
@@ -229,40 +202,82 @@ export default function OrientationLevelPage({
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase tracking-tight">
                 {subtitle}
               </h2>
-              <div className="space-y-3 text-gray-500 leading-relaxed font-medium text-sm">
+              <div className="space-y-3 text-gray-500 leading-relaxed font-medium text-sm lg:text-base">
                 {intro.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
               </div>
-              <Link
-                to={ctaBanner.primaryHref || "/contact"}
-                className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
-              >
-                <span>Réserver ma séance découverte</span>
-                <ArrowRight size={16} />
-              </Link>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  to={ctaBanner.primaryHref || "/contact"}
+                  className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
+                >
+                  <span>Réserver ma séance découverte</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ============ ENJEUX — Full-width cards ============ */}
+      {enjeux && (
+        <section className="py-16 lg:py-24 bg-gray-50 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-teal/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-12 max-w-3xl mx-auto">
+              <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
+                <span className="w-6 h-px bg-brand-teal"></span>
+                <span>Les enjeux</span>
+                <span className="w-6 h-px bg-brand-teal"></span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-black text-brand-darkblue uppercase tracking-tighter mb-4">
+                {enjeux.title}
+              </h2>
+              {enjeux.lead && (
+                <p className="text-gray-500 font-medium leading-relaxed">{enjeux.lead}</p>
+              )}
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              {enjeux.bullets.map((b, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="bg-white rounded-[2rem] p-6 border border-gray-100 shadow-[0_12px_40px_rgba(17,29,74,0.04)] hover:shadow-[0_20px_60px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors">
+                    <CheckCircle2 size={18} className="text-brand-teal" />
+                  </div>
+                  <p className="text-brand-darkblue font-bold text-sm leading-snug">{b}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ============ SIDEBAR + ACCORDION CONTENT ============ */}
-      <section className="py-12 lg:py-16 bg-gray-50">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-[220px_1fr] gap-8 lg:gap-14 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-[240px_1fr] gap-10 lg:gap-16 max-w-6xl mx-auto">
             {/* Vertical level tabs */}
             <aside>
               <div className="lg:sticky lg:top-32 space-y-2">
+                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400 mb-3 px-2">Niveaux</p>
                 {LEVELS.map((l) => {
                   const active = l.key === activeKey;
                   return (
                     <Link
                       key={l.key}
                       to={l.href}
-                      className={`flex items-center justify-between px-5 py-3 rounded-xl font-black text-xs uppercase tracking-wider transition-all ${
+                      className={`flex items-center justify-between px-5 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all ${
                         active
                           ? "bg-brand-teal text-white shadow-lg shadow-brand-teal/20"
-                          : "bg-white text-brand-darkblue hover:bg-brand-teal/5 border border-gray-100"
+                          : "bg-gray-50 text-brand-darkblue hover:bg-brand-teal/5 border border-gray-100"
                       }`}
                     >
                       <span>{l.label}</span>
@@ -275,31 +290,14 @@ export default function OrientationLevelPage({
 
             {/* Accordion content */}
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight leading-tight mb-4">
+              <h2 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight leading-tight mb-2">
                 Orientation en {levelLabel}
               </h2>
+              <div className="w-16 h-1 bg-brand-teal rounded-full mb-8" />
 
-              {/* Teal accent bar */}
-              <div className="w-16 h-1 bg-brand-teal rounded-full mb-6" />
-
-              {/* Accordion: enjeux (if any) + sections + audience groups */}
-              <div className="mt-6">
-                {enjeux && (
-                  <AccordionItem title={enjeux.title} defaultOpen>
-                    {enjeux.lead && <p>{enjeux.lead}</p>}
-                    <ul className="space-y-2 mt-2">
-                      {enjeux.bullets.map((b, i) => (
-                        <li key={i} className="flex gap-2.5 items-start">
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionItem>
-                )}
-
+              <div>
                 {sections.map((s, i) => (
-                  <AccordionItem key={i} title={s.title}>
+                  <AccordionItem key={i} title={s.title} defaultOpen={i === 0}>
                     {s.paragraphs && s.paragraphs.map((p, k) => <p key={k}>{p}</p>)}
                     {s.bullets && s.bullets.length > 0 && (
                       <ul className="space-y-2 mt-2">
@@ -312,7 +310,7 @@ export default function OrientationLevelPage({
                       </ul>
                     )}
                     {s.callout && (
-                      <div className="relative mt-3 pl-4 py-2 border-l-[3px] border-brand-teal">
+                      <div className="relative mt-4 pl-4 py-3 border-l-[3px] border-brand-teal bg-brand-teal/5 rounded-r-xl">
                         <p className="text-brand-darkblue font-bold italic text-sm">{s.callout}</p>
                       </div>
                     )}
@@ -335,64 +333,65 @@ export default function OrientationLevelPage({
                       </ul>
                     </AccordionItem>
                   ))}
-
-                {whyChoose && (
-                  <AccordionItem title={whyChoose.title}>
-                    <ul className="space-y-2">
-                      {whyChoose.bullets.map((b, k) => (
-                        <li key={k} className="flex gap-2.5 items-start">
-                          <CheckCircle2 size={15} className="text-brand-teal shrink-0 mt-0.5" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionItem>
-                )}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ============ POURQUOI CHOISIR — illustration + bullets ============ */}
+      {/* ============ POURQUOI CHOISIR — Premium dark section ============ */}
       {whyChoose && (
-        <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-white">
-          <div className="container mx-auto px-6 w-full">
-            <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
-              <div className="relative">
-                <ThinkerIllustration className="w-full max-w-[360px] mx-auto" />
+        <section className="py-16 lg:py-24 bg-brand-darkblue relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+            <svg width="100%" height="100%">
+              <pattern id="pattern-why-choose" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.5" fill="white" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#pattern-why-choose)" />
+            </svg>
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
+                <span className="w-6 h-px bg-brand-teal"></span>
+                <span>Nos atouts</span>
+                <span className="w-6 h-px bg-brand-teal"></span>
               </div>
-              <div>
-                <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
-                  <span className="w-6 h-px bg-brand-teal"></span>
-                  <span>Nos atouts</span>
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight leading-tight mb-4">
-                  {whyChoose.title}
-                </h3>
-                <div className="w-16 h-1 bg-brand-teal rounded-full mb-6" />
-                <ul className="space-y-3">
-                  {whyChoose.bullets.map((b, i) => (
-                    <li key={i} className="flex gap-3 items-start">
-                      <CheckCircle2 size={16} className="text-brand-teal shrink-0 mt-0.5" />
-                      <span className="text-gray-500 text-sm font-medium leading-relaxed">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h2 className="text-3xl lg:text-4xl font-black text-white uppercase tracking-tighter">
+                {whyChoose.title}
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {whyChoose.bullets.map((b, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-brand-teal/40 hover:bg-white/10 transition-all duration-500 group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-brand-teal/20 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/30 transition-colors">
+                      <CheckCircle2 size={16} className="text-brand-teal" />
+                    </div>
+                    <p className="text-white/90 font-medium text-sm leading-relaxed">{b}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
       )}
 
       {/* ============ CTA BANNER ============ */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 relative z-20">
+      <section className="py-16 lg:py-24 relative z-20">
         <div className="container mx-auto px-6 w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-brand-red rounded-[3.5rem] p-10 lg:p-20 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
+            className="bg-brand-red rounded-[3rem] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
           >
             <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
               <svg width="100%" height="100%">
@@ -407,7 +406,7 @@ export default function OrientationLevelPage({
               <h2 className="text-3xl lg:text-5xl font-black mb-6 uppercase tracking-tighter leading-[0.95]">
                 {ctaBanner.title}
               </h2>
-              <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md mb-8">
+              <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md">
                 {ctaBanner.body}
               </p>
             </div>
