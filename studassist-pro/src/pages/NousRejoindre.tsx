@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
 import Logo from "../components/Logo";
-import ImageFloaters from "../components/ImageFloaters";
+import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import { ArrowRight } from "@/src/components/ui/icons";
 
 type Profile = "professeur" | "consultant" | "support";
@@ -23,12 +23,12 @@ export default function NousRejoindre() {
       <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-sa-pink/10 blur-3xl pointer-events-none" />
       <div className="absolute top-[40%] -left-24 w-[340px] h-[340px] rounded-full bg-sa-gold/15 blur-3xl pointer-events-none" />
 
-      <section className="relative py-16 lg:py-20">
+      <section className="relative py-12 lg:py-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
             {/* ============ LEFT: Framed photo + "S" logo — same as Contact ============ */}
             <div className="relative order-2 lg:order-1">
-              <ImageFloaters />
+              <MediaFrameFloaters />
 
               {/* Main frame */}
               <div
@@ -74,7 +74,7 @@ export default function NousRejoindre() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="font-display text-[36px] lg:text-[48px] font-extrabold leading-[1.05] tracking-tight mb-2">
+                <h1 className="font-display text-[32px] sm:text-[36px] lg:text-[48px] font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-2">
                   <span className="text-sa-navy">Rejoignez nos</span>
                   <br />
                   <span className="sa-wavy text-sa-pink">Équipes !</span>

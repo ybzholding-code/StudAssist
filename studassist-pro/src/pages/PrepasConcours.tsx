@@ -1,6 +1,9 @@
-import { Rocket, Target, Globe, Stethoscope, Building2, Compass } from "@/src/components/ui/icons";
 import ServicePage from "../components/ServicePage";
 import { buildFaq } from "../data/faq";
+
+const Icon3D = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} className="w-9 h-9 drop-shadow-sm" />
+);
 
 export default function PrepasConcours() {
   return (
@@ -22,37 +25,37 @@ export default function PrepasConcours() {
       ]}
       modules={[
         {
-          icon: <Building2 size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/briefcase.png" alt="Commerce" />,
           title: "Écoles de commerce",
           description: "Sésame, Accès, ENCG, ISCAE : raisonnement logique, langues, synthèse et entretiens.",
           points: ["Concours post-bac & post-prépa", "Entretiens de motivation", "Dossiers de candidature"],
         },
         {
-          icon: <Rocket size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/rocket.png" alt="Ingénieurs" />,
           title: "Écoles d'ingénieurs",
           description: "GEIPI, Avenir, Puissance Alpha, UM6P, CPGE : maths, physique, logique à haut niveau.",
           points: ["Programmes intensifs", "Entraînement calibré", "Suivi individuel"],
         },
         {
-          icon: <Stethoscope size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/stethoscope.png" alt="Médecine" />,
           title: "Médecine — Maroc & Belgique",
           description: "Préparation au TSA, tests d'orientation et examens d'entrée des facultés de médecine.",
           points: ["Biologie, chimie, raisonnement", "Tests blancs chronométrés", "Coaching stress"],
         },
         {
-          icon: <Target size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/goal.png" alt="SAT" />,
           title: "SAT & GMAT",
           description: "Préparation structurée aux tests standardisés américains, requis pour les universités du top mondial.",
           points: ["Math & Verbal", "Pratique ciblée", "Simulations officielles"],
         },
         {
-          icon: <Globe size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/globe.png" alt="Sciences Po" />,
           title: "Sciences Po & écoles françaises",
           description: "Écrits, dossier Parcoursup, oral : un accompagnement complet pour les filières sélectives.",
           points: ["Méthodologie écrite", "Dossier et projet", "Entretien jury"],
         },
         {
-          icon: <Compass size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/compass.png" alt="Architecture" />,
           title: "Architecture & ENA",
           description: "Concours d'écoles d'architecture : composition, culture, entretien et portfolio.",
           points: ["Culture archi & arts", "Dessin & composition", "Entretien portfolio"],

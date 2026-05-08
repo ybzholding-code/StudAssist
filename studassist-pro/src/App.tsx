@@ -48,9 +48,10 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <DecorativeBackdrop />
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar />
+      <div className="relative flex flex-col min-h-screen">
+        <DecorativeBackdrop />
+        <div className="relative z-10 flex flex-col flex-grow">
+          <Navbar />
         <main className="flex-grow pt-[120px] lg:pt-[140px]">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -82,6 +83,7 @@ export default function App() {
         </main>
         <Footer />
         <WhatsAppButton />
+      </div>
       </div>
     </Router>
   );

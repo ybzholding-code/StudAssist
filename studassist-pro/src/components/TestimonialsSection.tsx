@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 import { ArrowRight, Star } from "@/src/components/ui/icons";
 import { TestimonialSlider } from "./TestimonialSlider";
+import { useGoogleReviews } from "@/src/hooks/useGoogleReviews";
 
 interface TestimonialsSectionProps {
   /** Eyebrow label above the title */
@@ -26,17 +26,22 @@ interface TestimonialsSectionProps {
 export default function TestimonialsSection({
   eyebrow = "Témoignages",
   title,
-  rating = "4.9",
-  reviewCount = 67,
+  rating: ratingProp = "4.9",
+  reviewCount: reviewCountProp = 97,
   quote = "Une expertise rare au service de l'avenir de nos enfants. L'accompagnement personnalisé a fait toute la différence.",
-  ctaLabel = "Partager mon avis",
-  ctaHref = "/contact",
+  ctaLabel = "Voir nos avis Google",
+  ctaHref = "https://share.google/9Kwb0dxJ2BLliGBq7",
   variant = "light",
 }: TestimonialsSectionProps) {
+  // Live sync with Google Places API (falls back to props if no API key)
+  const googleData = useGoogleReviews();
+  const rating = googleData.rating || ratingProp;
+  const reviewCount = googleData.reviewCount || reviewCountProp;
+
   return (
     <section
       className={
-        "py-24 relative overflow-hidden " +
+        "py-14 lg:py-16 relative overflow-hidden " +
         (variant === "light" ? "bg-[#f8fbfc]" : "bg-white")
       }
     >
@@ -56,13 +61,18 @@ export default function TestimonialsSection({
             <h2 className="font-display text-[30px] lg:text-[42px] font-extrabold text-brand-darkblue mb-6 leading-tight tracking-tight uppercase">
               {title ?? (
                 <>
-                  Ils ont choisi <br />
-                  <span className="text-brand-teal">l'excellence</span>
+                  Ils nous ont <br />
+                  <span className="text-brand-teal">fait confiance</span>
                 </>
               )}
             </h2>
 
-            <div className="bg-white p-6 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-gray-100 mb-8 max-w-sm mx-auto lg:mx-0">
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white p-6 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-gray-100 mb-8 max-w-sm mx-auto lg:mx-0 hover:shadow-lg hover:border-brand-teal/30 transition-all cursor-pointer"
+            >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <img
@@ -88,19 +98,21 @@ export default function TestimonialsSection({
                   Sur {reviewCount} avis
                 </span>
               </div>
-            </div>
+            </a>
 
             <p className="text-gray-400 text-sm italic leading-relaxed mb-10 opacity-70 max-w-sm mx-auto lg:mx-0">
               "{quote}"
             </p>
 
-            <Link
-              to={ctaHref}
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center space-x-3 bg-brand-darkblue text-white px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-brand-teal transition-all shadow-xl active:scale-95"
             >
               <span>{ctaLabel}</span>
               <ArrowRight size={14} />
-            </Link>
+            </a>
           </div>
 
           <div className="lg:w-2/3">

@@ -1,6 +1,9 @@
-import { Globe, Award, Languages, BookOpen } from "@/src/components/ui/icons";
 import ServicePage from "../components/ServicePage";
 import { buildFaq } from "../data/faq";
+
+const Icon3D = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} className="w-9 h-9 drop-shadow-sm" />
+);
 
 export default function Certifications() {
   return (
@@ -22,37 +25,37 @@ export default function Certifications() {
       ]}
       modules={[
         {
-          icon: <Globe size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/globe.png" alt="IELTS" />,
           title: "IELTS & TOEFL",
           description: "Préparation aux tests d'anglais académique — les plus exigés pour étudier au Royaume-Uni, aux USA ou au Canada.",
           points: ["Listening, Reading, Writing, Speaking", "Tests blancs réguliers", "Objectif B2 / C1 / C2"],
         },
         {
-          icon: <Award size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/medal.png" alt="SAT" />,
           title: "SAT",
           description: "Préparation complète au Scholastic Assessment Test pour les universités américaines et internationales.",
           points: ["Math & Evidence-Based Reading/Writing", "Stratégie de temps", "Simulations officielles"],
         },
         {
-          icon: <BookOpen size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/open-book.png" alt="TCF" />,
           title: "TCF & DALF",
           description: "Certifications officielles de français — requises pour les études et démarches administratives francophones.",
           points: ["Expression orale et écrite", "Compréhension", "Entraînement intensif"],
         },
         {
-          icon: <Languages size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/language.png" alt="DELE" />,
           title: "DELE (Espagnol)",
           description: "Diplômes officiels d'espagnol du ministère espagnol de l'Éducation, du niveau A1 au C2.",
           points: ["Grammaire et vocabulaire", "Entraînement à l'oral", "Rédaction et compréhension"],
         },
         {
-          icon: <Languages size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/chat.png" alt="Goethe" />,
           title: "Goethe (Allemand)",
           description: "Certifications de l'institut Goethe pour attester d'un niveau reconnu en allemand.",
           points: ["Tous niveaux A1 à C2", "Préparation ciblée", "Tests blancs"],
         },
         {
-          icon: <Award size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/star.png" alt="TOEIC" />,
           title: "TOEIC",
           description: "Test professionnel d'anglais reconnu par les entreprises et grandes écoles de commerce.",
           points: ["Listening & Reading", "Business English", "Entraînement chronométré"],

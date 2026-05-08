@@ -40,6 +40,7 @@ import Logo from "../components/Logo";
 import ExpertisePoles from "../components/ExpertisePoles";
 import TestimonialsSection from "../components/TestimonialsSection";
 import ImageFloaters from "../components/ImageFloaters";
+import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import { cn } from "@/src/lib/utils";
 
 import NumberCounter from "@/src/components/ui/NumberCounter";
@@ -356,13 +357,16 @@ export default function Home() {
       description: "Nous vous offrons un accompagnement 360° pour vous permettre de libérer votre potentiel et atteindre vos objectifs académiques !",
       buttonText: "Découvrez-nous",
       link: "/qui-sommes-nous",
-      image: "/hero-girl.webp",
+      image: "/hero-1.png",
       layout: 'standard',
       accent: 'brand-red',
-      bgType: 'dots'
+      bgType: 'dots',
+      badge3d: "https://img.icons8.com/3d-fluency/94/guarantee.png",
+      badgeLabel: "Qualité certifiée",
+      badgeTitle: "STUDASSIST ELITE"
     },
     {
-      title: <>ORIENTATION SCOLAIRE & <br className="hidden sm:block" />ACCOMPAGNEMENT AUX CANDIDATURES</>,
+      title: <>ORIENTATION SCOLAIRE & <br />ACCOMPAGNEMENT AUX CANDIDATURES</>,
       subtitle: "Bilan d'orientation & candidatures",
       description: "Bilan d'orientation, aide aux choix des écoles, optimisation des dossiers de candidatures, préparation aux oraux, suivi des admissions… Traçons ensemble votre projet d'avenir !",
       buttonText: "Réserver mon 1er RDV",
@@ -370,7 +374,10 @@ export default function Home() {
       image: "/hero-orientation.webp",
       layout: 'reverse',
       accent: 'brand-teal',
-      bgType: 'grid'
+      bgType: 'grid',
+      badge3d: "https://img.icons8.com/3d-fluency/94/goal.png",
+      badgeLabel: "Orientation sur mesure",
+      badgeTitle: "PROJET D'AVENIR"
     },
     {
       title: "PRÉPAS-BAC",
@@ -381,7 +388,10 @@ export default function Home() {
       image: "/hero-3.webp",
       layout: 'standard',
       accent: 'brand-teal',
-      bgType: 'curves'
+      bgType: 'curves',
+      badge3d: "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
+      badgeLabel: "Objectif mention",
+      badgeTitle: "RÉUSSITE BAC"
     },
     {
       title: "PRÉPAS-CONCOURS",
@@ -392,18 +402,25 @@ export default function Home() {
       image: "/hero-4.webp",
       layout: 'reverse',
       accent: 'brand-red',
-      bgType: 'abstract'
+      bgType: 'abstract',
+      badge3d: "https://img.icons8.com/3d-fluency/94/trophy.png",
+      badgeLabel: "Taux d'admission",
+      badgeTitle: "85% ADMIS"
     },
     {
-      title: <>CERTIFICATIONS & <br className="hidden sm:block" />TESTS DE LANGUES</>,
+      title: <>CERTIFICATIONS & <br />TESTS DE LANGUES</>,
       subtitle: "IELTS, TOEFL, TCF, DELE…",
       description: "IELTS, TOEIC, TOEFL, DELE, TCF, DELF, DALF… Préparez-vous avec STUDASSIST pour viser les meilleures écoles internationales.",
       buttonText: "Choisir ma certification",
       link: "/certifications",
-      image: "/hero-orientation.webp",
+      image: "/hero-5-fixed.png",
+      imageClassName: "translate-y-[18%] scale-[1.25]",
       layout: 'standard',
       accent: 'brand-teal',
-      bgType: 'modern'
+      bgType: 'modern',
+      badge3d: "https://img.icons8.com/3d-fluency/94/globe.png",
+      badgeLabel: "Score certifié",
+      badgeTitle: "IELTS & TOEFL"
     },
     {
       title: "ACCOMPAGNEMENT SCOLAIRE",
@@ -411,21 +428,27 @@ export default function Home() {
       description: "Maths, Physique-chimie, SVT, Français, SES, HGGSP, Philosophie… Réservez votre séance découverte pour tester notre méthodologie exclusive d'accompagnement scolaire !",
       buttonText: "Réserver mon cours découverte",
       link: "/soutien-scolaire",
-      image: "/hero-3.webp",
+      image: "/hero-6.webp",
       layout: 'reverse',
       accent: 'brand-teal',
-      bgType: 'minimal'
+      bgType: 'minimal',
+      badge3d: "https://img.icons8.com/3d-fluency/94/conference-call.png",
+      badgeLabel: "Petits groupes",
+      badgeTitle: "3 À 4 ÉLÈVES"
     },
     {
-      title: <>ADMINISTRATIF & <br className="hidden sm:block" />LOGEMENT ÉTUDIANT</>,
+      title: <>ADMINISTRATIF & <br />LOGEMENT ÉTUDIANT</>,
       subtitle: "Installation à l'international",
       description: "Dossiers Visa & titre de séjour étudiant, compte bancaire à l'étranger, assurance & couverture maladie, aide à la recherche de logement étudiant… Libérez-vous de ces tracas et restez concentrés sur la réussite de vos examens.",
       buttonText: "Réserver mon RDV d'information",
       link: "/admin-logement",
-      image: "/hero-4.webp",
+      image: "/hero-7.webp",
       layout: 'standard',
       accent: 'brand-red',
-      bgType: 'service'
+      bgType: 'service',
+      badge3d: "https://img.icons8.com/3d-fluency/94/passport.png",
+      badgeLabel: "Installation clé en main",
+      badgeTitle: "20+ DESTINATIONS"
     }
   ];
 
@@ -439,9 +462,9 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* HERO SECTION — transparent so the global DecorativeBackdrop shapes (with mouse parallax) show through */}
-      <section className="relative py-10 lg:py-16 overflow-hidden flex items-center min-h-[calc(100svh-120px)] lg:min-h-[calc(100svh-140px)] bg-transparent">
+      <section className="relative pt-6 lg:pt-10 overflow-hidden flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[900px] bg-transparent">
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 flex-grow flex flex-col">
           <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -449,22 +472,22 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8 }}
-                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+                className="flex-grow grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch"
               >
                 {/* Text Content - Bold, Authoritative & Clean */}
-                <div className="order-2 lg:order-1 text-center lg:text-left">
+                <div className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left pb-10 lg:pb-16">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="inline-flex items-center space-x-2 px-4 py-1.5 bg-white/80 backdrop-blur rounded-full border border-sa-navy/10 mb-6 shadow-sm"
+                    className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 rounded-[2rem] border border-sa-navy/10 mb-6 mx-auto lg:mx-0 max-w-full"
                   >
-                    <span className="w-2 h-2 bg-sa-pink rounded-full animate-pulse" />
-                    <span className="text-sa-navy font-bold text-[10px] lg:text-[11px] tracking-[0.3em] uppercase">
+                    <span className="w-2 h-2 bg-sa-pink rounded-full animate-pulse shrink-0" />
+                    <span className="text-sa-navy font-bold text-[9px] sm:text-[10px] lg:text-[11px] tracking-widest sm:tracking-[0.3em] uppercase text-center line-clamp-2">
                       {slides[currentSlide].subtitle || "Expertise académique d'excellence"}
                     </span>
                   </motion.div>
 
-                  <h1 className="text-[36px] sm:text-[52px] lg:text-[68px] xl:text-[76px] font-black text-sa-navy leading-[0.95] mb-6 uppercase tracking-tighter">
+                  <h1 className="text-[32px] sm:text-[42px] lg:text-[68px] xl:text-[76px] font-black text-sa-navy leading-[1.05] lg:leading-[0.95] mb-4 lg:mb-6 uppercase tracking-tighter">
                     {slides[currentSlide].title}
                   </h1>
 
@@ -476,42 +499,39 @@ export default function Home() {
                     <Link 
                       to={slides[currentSlide].link || "/contact"}
                       className={cn(
-                        "group flex items-center justify-center space-x-3 px-10 py-4 rounded-full font-black text-xs uppercase tracking-[0.2em] transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)]",
+                        "group flex items-center justify-center space-x-2 sm:space-x-3 px-6 sm:px-10 py-3.5 sm:py-4 rounded-[2rem] font-black text-[10px] sm:text-xs uppercase tracking-widest sm:tracking-[0.2em] transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-w-full text-center",
                         accentClasses[slides[currentSlide].accent].bg,
                         "text-white hover:scale-105 hover:-translate-y-1 active:scale-95"
                       )}
                     >
-                      <span className="relative z-10">{slides[currentSlide].buttonText}</span>
-                      <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform relative z-10" />
+                      <span className="relative z-10 leading-tight">{slides[currentSlide].buttonText}</span>
+                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform relative z-10 shrink-0" />
                     </Link>
                   </div>
 
 
                 </div>
 
-                {/* Hero Image Section — carbon copy of original studassist.ma design:
-                    cut-out student photo (no frame) surrounded by floating decorative shapes */}
-                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full">
-                  <div className="relative w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[600px] aspect-[4/5] mx-auto">
+                {/* Hero Image Section — Anchored perfectly to the bottom */}
+                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto">
+                  <div className="relative w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[600px] flex justify-center items-end mx-auto h-[40vh] min-h-[250px] sm:h-[50vh] lg:h-[75vh]">
 
-                    {/* Diagonal soft slash background — subtle panel behind the student */}
-                    <div
-                      className="absolute inset-0 bg-[#EEF4F5] rounded-[3rem] z-0 overflow-hidden"
-                      style={{ clipPath: "polygon(0 60%, 100% 0, 100% 100%, 0 100%)" }}
-                    />
+                    {/* Parallax decorative shapes anchored to the image (dynamic per slide) */}
+                    <ImageFloaters slideIndex={currentSlide} />
 
-                    {/* Parallax decorative shapes anchored to the image */}
-                    <ImageFloaters />
-
-                    {/* ===== Cut-out student photo (no frame) ===== */}
+                    {/* ===== Cut-out student photo (no frame) anchored bottom ===== */}
                     <motion.img
                       key={currentSlide}
-                      initial={{ scale: 0.94, opacity: 0, y: 20 }}
+                      initial={{ scale: 0.94, opacity: 0, y: 40 }}
                       animate={{ scale: 1, opacity: 1, y: 0 }}
-                      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                      exit={{ scale: 0.94, opacity: 0, y: 40 }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       src={slides[currentSlide].image}
                       alt="Étudiante STUDASSIST"
-                      className="relative z-20 w-full h-full object-contain object-bottom drop-shadow-[0_30px_40px_rgba(28,30,70,0.15)]"
+                      className={cn(
+                        "relative z-20 w-full h-full object-contain object-bottom drop-shadow-[0_30px_40px_rgba(28,30,70,0.15)] origin-bottom",
+                        slides[currentSlide].imageClassName
+                      )}
                     />
 
                     {/* ===== ELITE floating badge — desktop only, keeps the site's signature accent ===== */}
@@ -519,14 +539,14 @@ export default function Home() {
                       initial={{ x: 60, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.8, type: "spring" }}
-                      className="hidden lg:flex absolute -bottom-6 -right-8 bg-white p-6 rounded-[2.5rem] shadow-[-20px_40px_80px_rgba(0,0,0,0.18)] z-30 border border-gray-100 items-center space-x-4"
+                      className="hidden lg:flex absolute bottom-12 -right-8 bg-white p-6 rounded-[2.5rem] shadow-[-20px_40px_80px_rgba(0,0,0,0.18)] z-30 border border-gray-100 items-center space-x-4"
                     >
-                      <div className={cn("w-14 h-14 rounded-[1.25rem] flex items-center justify-center text-white shadow-xl transform hover:rotate-6 transition-transform shrink-0", accentClasses[slides[currentSlide].accent].bg)}>
-                        <Award size={26} strokeWidth={2.2} />
+                      <div className={cn("w-14 h-14 rounded-[1.25rem] flex items-center justify-center shadow-xl transform hover:rotate-6 transition-transform shrink-0", accentClasses[slides[currentSlide].accent].bg)}>
+                        <img src={slides[currentSlide].badge3d} alt="Qualité" className="w-9 h-9" />
                       </div>
                       <div>
-                        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-1 whitespace-nowrap">Qualité certifiée</div>
-                        <div className="text-base font-black text-brand-darkblue uppercase italic tracking-tight leading-none">STUDASSIST <br /> <span className="text-brand-teal">ELITE</span></div>
+                        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-1 whitespace-nowrap">{slides[currentSlide].badgeLabel}</div>
+                        <div className="text-base font-black text-brand-darkblue uppercase italic tracking-tight leading-none">{slides[currentSlide].badgeTitle}</div>
                       </div>
                     </motion.div>
                   </div>
@@ -547,34 +567,35 @@ export default function Home() {
           transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
         >
           {[
-            { icon: <UserPlus size={26} strokeWidth={2.5}  />, value: <>260<span className="text-2xl lg:text-3xl font-light ml-1.5 opacity-90">+</span></>, label: "TUTEURS EXPERTS",  theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <GraduationCap size={26} strokeWidth={2.5} />, value: <>5340<span className="text-2xl lg:text-3xl font-light ml-1.5 opacity-90">+</span></>, label: "ÉTUDIANTS", theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <BookOpen size={26} strokeWidth={2.5}  />, value: <>280<span className="text-2xl lg:text-3xl font-light ml-1.5 opacity-90">+</span></>, label: "FORMATIONS",       theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Users size={26} strokeWidth={2.5}     />, value: <>3<span className="mx-2 text-2xl lg:text-3xl font-light opacity-90">à</span>4</>, label: "ÉLÈVES MAX / CLASSE", theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Star size={26} strokeWidth={2.5}      />, value: <>+3.7<span className="text-xl lg:text-2xl font-bold ml-2 opacity-90 tracking-widest uppercase">Pts</span></>, label: "DE MOYENNE",   theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Trophy size={26} strokeWidth={2.5}    />, value: <>98<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "RÉUSSITE CONCOURS", theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Award size={26} strokeWidth={2.5}     />, value: <>100<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "ADMIS AU TOP 3",   theme: { text: "text-white", bg: "bg-white/15" } },
-            // Second set for seamless looping
-            { icon: <UserPlus size={26} strokeWidth={2.5}  />, value: <>260<span className="text-2xl lg:text-3xl font-light ml-1.5 opacity-90">+</span></>, label: "TUTEURS EXPERTS",  theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <GraduationCap size={26} strokeWidth={2.5} />, value: <>5340<span className="text-2xl lg:text-3xl font-light ml-1.5 opacity-90">+</span></>, label: "ÉTUDIANTS", theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <BookOpen size={26} strokeWidth={2.5}  />, value: <>280<span className="text-2xl lg:text-3xl font-light ml-1.5 opacity-90">+</span></>, label: "FORMATIONS",       theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Users size={26} strokeWidth={2.5}     />, value: <>3<span className="mx-2 text-2xl lg:text-3xl font-light opacity-90">à</span>4</>, label: "ÉLÈVES MAX / CLASSE", theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Star size={26} strokeWidth={2.5}      />, value: <>+3.7<span className="text-xl lg:text-2xl font-bold ml-2 opacity-90 tracking-widest uppercase">Pts</span></>, label: "DE MOYENNE",   theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Trophy size={26} strokeWidth={2.5}    />, value: <>98<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "RÉUSSITE CONCOURS", theme: { text: "text-white", bg: "bg-white/15" } },
-            { icon: <Award size={26} strokeWidth={2.5}     />, value: <>100<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "ADMIS AU TOP 3",   theme: { text: "text-white", bg: "bg-white/15" } }
+            { icon: "https://img.icons8.com/3d-fluency/94/graduation-cap.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>3000</>, label: "CANDIDATS ACCOMPAGNÉS" },
+            { icon: "https://img.icons8.com/3d-fluency/94/trophy.png", value: <>≈97<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "ADMIS AU TOP 3" },
+            { icon: "https://img.icons8.com/3d-fluency/94/globe.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>16</>, label: "DESTINATIONS D'ÉTUDES" },
+            { icon: "https://img.icons8.com/3d-fluency/94/star.png", value: <>9<span className="text-xl lg:text-2xl font-light mx-1 opacity-90">/</span>10</>, label: "CLIENTS SATISFAITS" },
+            { icon: "https://img.icons8.com/3d-fluency/94/school.png", value: <>500<span className="text-xl lg:text-2xl font-bold ml-2 opacity-90 tracking-widest uppercase">m²</span></>, label: "ESPACE DÉDIÉ" },
+            { icon: "https://img.icons8.com/3d-fluency/94/handshake.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>20</>, label: "PARTENAIRES MONDIAUX" },
+            { icon: "https://img.icons8.com/3d-fluency/94/training.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>50</>, label: "TUTEURS & PROFESSEURS" },
+            { icon: "https://img.icons8.com/3d-fluency/94/medal.png", value: <>7</>, label: "ANS D'EXPERTISE" },
+            { icon: "https://img.icons8.com/3d-fluency/94/conference-call.png", value: <>2</>, label: "COACHS SCOLAIRES" },
+            { icon: "https://img.icons8.com/3d-fluency/94/compass.png", value: <>9</>, label: "EXPERTS EN ORIENTATION" },
+            { icon: "https://img.icons8.com/3d-fluency/94/graduation-cap.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>3000</>, label: "CANDIDATS ACCOMPAGNÉS" },
+            { icon: "https://img.icons8.com/3d-fluency/94/trophy.png", value: <>≈97<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "ADMIS AU TOP 3" },
+            { icon: "https://img.icons8.com/3d-fluency/94/globe.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>16</>, label: "DESTINATIONS D'ÉTUDES" },
+            { icon: "https://img.icons8.com/3d-fluency/94/star.png", value: <>9<span className="text-xl lg:text-2xl font-light mx-1 opacity-90">/</span>10</>, label: "CLIENTS SATISFAITS" },
+            { icon: "https://img.icons8.com/3d-fluency/94/school.png", value: <>500<span className="text-xl lg:text-2xl font-bold ml-2 opacity-90 tracking-widest uppercase">m²</span></>, label: "ESPACE DÉDIÉ" },
+            { icon: "https://img.icons8.com/3d-fluency/94/handshake.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>20</>, label: "PARTENAIRES MONDIAUX" },
+            { icon: "https://img.icons8.com/3d-fluency/94/training.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>50</>, label: "TUTEURS & PROFESSEURS" },
+            { icon: "https://img.icons8.com/3d-fluency/94/medal.png", value: <>7</>, label: "ANS D'EXPERTISE" },
+            { icon: "https://img.icons8.com/3d-fluency/94/conference-call.png", value: <>2</>, label: "COACHS SCOLAIRES" },
+            { icon: "https://img.icons8.com/3d-fluency/94/compass.png", value: <>9</>, label: "EXPERTS EN ORIENTATION" },
           ].map((stat, idx) => (
-            <div key={idx} className="flex items-center px-10 lg:px-16 border-r border-white/20 last:border-r-0 shrink-0 group hover:bg-white/5 transition-colors duration-300 py-4 rounded-xl">
-              <div className="flex flex-col items-center sm:items-start sm:flex-row sm:space-x-5">
-                <div className={cn("hidden sm:flex shrink-0 items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-2xl transition-transform duration-500 group-hover:scale-110", stat.theme.bg, stat.theme.text)}>
-                  {stat.icon}
+            <div key={idx} className="flex items-center px-10 lg:px-14 border-r border-white/20 last:border-r-0 shrink-0 py-3">
+              <div className="flex flex-col items-center text-center space-y-1">
+                <img src={stat.icon} alt={stat.label} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 shrink-0 drop-shadow-lg" />
+                <div className="text-[26px] sm:text-[32px] lg:text-[40px] tracking-tight font-black font-display text-white leading-none">
+                  {stat.value}
                 </div>
-                <div>
-                  <div className={cn("flex items-baseline text-[36px] lg:text-[44px] tracking-tight font-black font-display drop-shadow-sm transition-transform duration-500 group-hover:scale-105 justify-center sm:justify-start", stat.theme.text)}>
-                    {stat.value}
-                  </div>
-                  <div className={cn("text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.25em] leading-[1.6] w-full max-w-[140px] mt-1 opacity-90 group-hover:opacity-100 transition-opacity text-center sm:text-left", stat.theme.text)}>
-                    {stat.label}
-                  </div>
+                <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+                  {stat.label}
                 </div>
               </div>
             </div>
@@ -586,21 +607,25 @@ export default function Home() {
       <ExpertisePoles />
 
       {/* WHY CHOOSE SECTION */}
-      <section className="py-24 bg-[#f8fbfc]">
+      <section className="py-14 lg:py-16 bg-[#f8fbfc]/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Video column */}
-            <div className="relative flex justify-center">
-               <ImageFloaters scale={0.5} />
-               <div className="relative z-20 bg-white p-2 rounded-[1.5rem] shadow-[0_20px_60px_rgba(28,30,70,0.10)] max-w-[360px] w-full">
-                  <video
-                    src="/studassist-video.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="rounded-[1.25rem] w-full aspect-[9/16] object-cover"
-                  />
+            <div className="flex justify-center">
+               <div className="relative w-full max-w-[360px]">
+                 <MediaFrameFloaters />
+                 
+                 {/* The Video Container (z-20) */}
+                 <div className="relative z-20 bg-white p-2 rounded-[1.5rem] shadow-[0_20px_60px_rgba(28,30,70,0.10)] w-full">
+                    <video
+                      src="/studassist-video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-[1.25rem] w-full aspect-[9/16] object-cover"
+                    />
+                 </div>
                </div>
             </div>
 
@@ -618,41 +643,50 @@ export default function Home() {
                 Chez <span className="font-semibold text-sa-navy">STUDASSIST</span>, nous offrons bien plus qu'un soutien scolaire. Nous accompagnons chaque élève avec une approche globale, stratégique et personnalisée, en plaçant l'excellence académique, l'orientation et la réussite au cœur de notre engagement.
               </p>
 
-              <div className="grid grid-cols-2 gap-x-8 gap-y-8">
-                 <div className="flex items-start space-x-3 group">
-                    <div className="p-2.5 bg-sa-navy/8 rounded-xl text-sa-navy group-hover:bg-sa-navy group-hover:text-white transition-all shrink-0">
-                       <Users size={22} />
-                    </div>
+              {/* STATS QUADRANT GRID - Minimal, Rich & Great */}
+              <div className="grid grid-cols-2 relative mt-10">
+                 
+                 {/* Elegant Gradient Dividers */}
+                 <div className="absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-sa-pink/10 via-sa-gold/30 to-sa-green/10" />
+                 <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-sa-pink/10 via-sa-gold/30 to-sa-green/10" />
+
+                 {/* STAT 1: Élèves */}
+                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pb-8 pr-4 lg:pr-8 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-sa-navy/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-2xl -z-10" />
+                    <img src="https://img.icons8.com/3d-fluency/94/conference-call.png" alt="Élèves" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
-                       <div className="text-2xl font-black text-sa-navy mb-0.5">3 à 4</div>
-                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Élèves max / classe</div>
+                       <div className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-br from-sa-navy to-[#2a2d6a] mb-0.5"><NumberCounter value={3} /> à <NumberCounter value={4} /></div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Élèves maximum <br className="hidden lg:block"/>par classe</div>
                     </div>
                  </div>
-                 <div className="flex items-start space-x-3 group">
-                    <div className="p-2.5 bg-sa-green/8 rounded-xl text-sa-green group-hover:bg-sa-green group-hover:text-white transition-all shrink-0">
-                       <Star size={22} />
-                    </div>
+
+                 {/* STAT 2: Moyenne */}
+                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pb-8 pl-4 lg:pl-8 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-bl from-sa-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-2xl -z-10" />
+                    <img src="https://img.icons8.com/3d-fluency/94/star.png" alt="Moyenne" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
-                       <div className="text-2xl font-black text-sa-green mb-0.5">3.7 Pts</div>
-                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Moyenne gagnée</div>
+                       <div className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-br from-sa-green to-[#138d78] mb-0.5">+<NumberCounter value={3.7} decimals={1} suffix=" Pts" /></div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">En moyenne de gagnés <br className="hidden lg:block"/>sur les bulletins</div>
                     </div>
                  </div>
-                 <div className="flex items-start space-x-3 group">
-                    <div className="p-2.5 bg-sa-gold/8 rounded-xl text-sa-gold group-hover:bg-sa-gold group-hover:text-white transition-all shrink-0">
-                       <MessageCircle size={22} />
-                    </div>
+
+                 {/* STAT 3: Réussite */}
+                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pt-8 pr-4 lg:pr-8 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-sa-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl -z-10" />
+                    <img src="https://img.icons8.com/3d-fluency/94/trophy.png" alt="Réussite" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
-                       <div className="text-2xl font-black text-sa-gold mb-0.5">98%</div>
-                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Réussite concours</div>
+                       <div className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-br from-sa-gold to-[#d49918] mb-0.5"><NumberCounter value={98} suffix="%" /></div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Réussite <br className="hidden lg:block"/>concours</div>
                     </div>
                  </div>
-                 <div className="flex items-start space-x-3 group">
-                    <div className="p-2.5 bg-sa-pink/8 rounded-xl text-sa-pink group-hover:bg-sa-pink group-hover:text-white transition-all shrink-0">
-                       <GraduationCap size={22} />
-                    </div>
+
+                 {/* STAT 4: Top 3 Ecoles */}
+                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pt-8 pl-4 lg:pl-8 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-tl from-sa-pink/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-2xl -z-10" />
+                    <img src="https://img.icons8.com/3d-fluency/94/graduation-cap.png" alt="Écoles" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
-                       <div className="text-2xl font-black text-sa-pink mb-0.5">100%</div>
-                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">Top 3 des écoles</div>
+                       <div className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-br from-sa-pink to-[#c43649] mb-0.5"><NumberCounter value={100} suffix="%" /></div>
+                       <div className="text-[10px] uppercase font-bold text-sa-navy/70 tracking-widest leading-tight">De nos élèves admis <br className="hidden lg:block"/>au top 3 des écoles</div>
                     </div>
                  </div>
               </div>
@@ -662,7 +696,7 @@ export default function Home() {
       </section>
 
       {/* TAKE OFF SECTION */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-14 bg-white/80 backdrop-blur-sm relative overflow-hidden">
         {/* Background Patterns for this section */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03]">
            <svg width="100%" height="100%">
@@ -705,34 +739,28 @@ export default function Home() {
       <TestimonialsSection />
 
       {/* FAQ SECTION */}
-      <section className="py-12 lg:py-20 bg-white relative overflow-hidden flex flex-col justify-center min-h-[90vh]">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-sa-green/8 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
+      <section className="py-14 lg:py-20 bg-white/80 backdrop-blur-sm relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-10 lg:mb-12">
+          <div className="text-center mb-8 lg:mb-10">
             <h4 className="text-sa-green font-black text-[10px] uppercase tracking-[0.3em] mb-3">Questions fréquentes</h4>
             <h2 className="text-3xl lg:text-4xl font-black text-brand-darkblue mb-4">
               Nous répondons à toutes <br />
               <span className="text-brand-teal">vos interrogations</span>
             </h2>
-            <div className="w-16 h-1 lg:w-20 lg:h-1.5 bg-brand-darkblue mx-auto rounded-full" />
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-            {/* CATEGORY TABS */}
-            <div className="w-full lg:w-1/3 lg:sticky lg:top-32 space-y-2">
+          <div className="flex justify-center mb-8 lg:mb-10">
+            <div className="flex flex-wrap justify-center gap-2 lg:gap-1.5 p-2 lg:p-1.5 bg-gray-50 rounded-[1.5rem] lg:rounded-full border border-gray-100 lg:flex-nowrap lg:max-w-none">
               {[
-                { label: "À propos", icon: <Info size={18} /> },
-                { label: "Méthodologie", icon: <Zap size={18} /> },
-                { label: "Soutien & Examens", icon: <BookOpen size={18} /> },
-                { label: "Orientation", icon: <Compass size={18} /> },
-                { label: "Certifications", icon: <Trophy size={18} /> },
-                { label: "Espaces", icon: <Map size={18} /> },
-                { label: "Organisation", icon: <Calendar size={18} /> },
-                { label: "À distance", icon: <Globe size={18} /> },
-                { label: "Inscription", icon: <UserPlus size={18} /> }
+                { label: "À propos", icon: <Info size={14} /> },
+                { label: "Méthodologie", icon: <Zap size={14} /> },
+                { label: "Soutien", icon: <BookOpen size={14} /> },
+                { label: "Orientation", icon: <Compass size={14} /> },
+                { label: "Certifications", icon: <Trophy size={14} /> },
+                { label: "Espaces", icon: <Map size={14} /> },
+                { label: "Organisation", icon: <Calendar size={14} /> },
+                { label: "À distance", icon: <Globe size={14} /> },
+                { label: "Inscription", icon: <UserPlus size={14} /> }
               ].map((cat, idx) => (
                 <button
                   key={idx}
@@ -741,127 +769,99 @@ export default function Home() {
                     setOpenFaqId(null);
                   }}
                   className={cn(
-                    "w-full flex items-center gap-3 p-3 lg:p-4 rounded-xl transition-all duration-300 text-left relative overflow-hidden group",
+                    "relative px-4 py-2 lg:px-3 lg:py-2 rounded-full whitespace-nowrap text-[11px] lg:text-[11px] font-bold transition-all duration-200",
                     activeFaqCategory === idx 
-                      ? "bg-brand-darkblue text-white shadow-lg shadow-brand-darkblue/20" 
-                      : "bg-white border border-gray-100 text-gray-600 hover:border-brand-teal hover:bg-brand-teal/5"
+                      ? "bg-brand-darkblue text-white shadow-md scale-105" 
+                      : "bg-white lg:bg-transparent border border-gray-100 lg:border-transparent text-gray-500 hover:text-brand-darkblue shadow-sm lg:shadow-none hover:bg-gray-100 lg:hover:bg-transparent"
                   )}
                 >
-                  <div className={cn(
-                    "w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors",
-                    activeFaqCategory === idx ? "bg-brand-teal/20 text-brand-teal" : "bg-gray-50 text-gray-400 group-hover:bg-brand-teal group-hover:text-brand-teal"
-                  )}>
-                    {cat.icon}
-                  </div>
-                  <span className="font-bold text-xs lg:text-sm">{cat.label}</span>
-                  {activeFaqCategory === idx && (
-                    <motion.div 
-                      layoutId="activeTabIndicator"
-                      className="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-teal"
-                    />
-                  )}
+                  <span className="flex items-center gap-1.5">
+                    <span className={cn("hidden lg:inline-block", activeFaqCategory === idx ? "text-brand-teal" : "text-gray-400")}>{cat.icon}</span>
+                    {cat.label}
+                  </span>
                 </button>
               ))}
             </div>
-
-            {/* QUESTIONS CONTENT */}
-            <div className="flex-1 w-full min-h-[400px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeFaqCategory}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                  className="space-y-4 lg:space-y-5"
-                >
-                  {(() => {
-                    const category = faqData[activeFaqCategory];
-                    return (
-                      <>
-                        <div className="mb-6 lg:mb-8">
-                          <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue mb-3 leading-tight">
-                            {category.category.replace(/^\d+\.\s*/, '')}
-                          </h3>
-                          <div className="w-10 h-1 bg-brand-teal rounded-full" />
-                        </div>
-                        <div className="space-y-3 lg:space-y-4">
-                          {category.questions.map((faq, faqIdx) => {
-                            const id = `${activeFaqCategory}-${faqIdx}`;
-                            const isOpen = openFaqId === id;
-                            return (
-                              <motion.div 
-                                key={id}
-                                layout
-                                className={`group border rounded-2xl lg:rounded-3xl transition-all duration-300 ${
-                                  isOpen ? 'border-brand-teal bg-brand-teal/5 shadow-lg shadow-brand-teal/5' : 'border-gray-100 bg-white hover:border-gray-300'
-                                }`}
-                              >
-                                <button 
-                                  onClick={() => setOpenFaqId(isOpen ? null : id)}
-                                  className="w-full flex items-center justify-between p-5 lg:p-6 text-left focus:outline-none"
-                                >
-                                  <span className={`text-sm lg:text-base font-bold transition-colors duration-300 pr-6 ${
-                                    isOpen ? 'text-brand-darkblue' : 'text-gray-700 group-hover:text-brand-darkblue'
-                                  }`}>
-                                    {faq.q}
-                                  </span>
-                                  <div className={`p-2 rounded-xl transition-all duration-300 shrink-0 ${
-                                    isOpen ? 'bg-brand-teal text-white rotate-180' : 'bg-gray-50 text-gray-400 group-hover:bg-gray-100 group-hover:text-brand-darkblue'
-                                  }`}>
-                                    <ChevronDown size={20} />
-                                  </div>
-                                </button>
-                                
-                                <AnimatePresence>
-                                  {isOpen && (
-                                    <motion.div
-                                      initial={{ height: 0, opacity: 0 }}
-                                      animate={{ height: 'auto', opacity: 1 }}
-                                      exit={{ height: 0, opacity: 0 }}
-                                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                                    >
-                                      <div className="px-5 pb-5 lg:px-6 lg:pb-6">
-                                        <div className="h-px w-full bg-gray-100 mb-4" />
-                                        <p className="text-gray-500 leading-relaxed text-[13px] lg:text-sm">
-                                          {faq.a}
-                                        </p>
-                                      </div>
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      </>
-                    );
-                  })()}
-                </motion.div>
-              </AnimatePresence>
-            </div>
           </div>
 
-            <div className="mt-12 lg:mt-16 p-8 lg:p-10 bg-brand-darkblue rounded-[2rem] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* QUESTIONS CONTENT */}
+          <div className="max-w-3xl mx-auto">
+            <div 
+              key={activeFaqCategory}
+              className="animate-[fadeIn_150ms_ease-out]"
+            >
+              <div className="mb-5">
+                <h3 className="text-xl lg:text-2xl font-black text-brand-darkblue leading-tight">
+                  {faqData[activeFaqCategory].category.replace(/^\d+\.\s*/, '')}
+                </h3>
+              </div>
+              <div className="space-y-3">
+                {faqData[activeFaqCategory].questions.map((faq, faqIdx) => {
+                  const id = `${activeFaqCategory}-${faqIdx}`;
+                  const isOpen = openFaqId === id;
+                  return (
+                    <div 
+                      key={id}
+                      className={`border rounded-2xl transition-colors duration-150 ${
+                        isOpen ? 'border-brand-teal bg-brand-teal/5' : 'border-gray-100 bg-white hover:border-gray-200'
+                      }`}
+                    >
+                      <button 
+                        onClick={() => setOpenFaqId(isOpen ? null : id)}
+                        className="w-full flex items-center justify-between p-4 lg:p-5 text-left focus:outline-none"
+                      >
+                        <span className={`text-sm font-bold pr-4 ${
+                          isOpen ? 'text-brand-darkblue' : 'text-gray-700'
+                        }`}>
+                          {faq.q}
+                        </span>
+                        <div className={`p-1.5 rounded-lg shrink-0 transition-transform duration-150 ${
+                          isOpen ? 'bg-brand-teal text-white rotate-180' : 'bg-gray-50 text-gray-400'
+                        }`}>
+                          <ChevronDown size={16} />
+                        </div>
+                      </button>
+                      
+                      <div
+                        className="grid transition-[grid-template-rows] duration-200 ease-out"
+                        style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="px-4 pb-4 lg:px-5 lg:pb-5">
+                            <div className="h-px w-full bg-gray-100 mb-3" />
+                            <p className="text-gray-500 leading-relaxed text-[13px]">
+                              {faq.a}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="mt-10 p-6 lg:p-8 bg-brand-darkblue rounded-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                  <h3 className="text-white text-lg lg:text-xl font-bold mb-1 lg:mb-2">Vous avez encore des questions ?</h3>
-                  <p className="text-white/60 text-sm">Nos consultants experts sont là pour vous aider à tracer votre voie.</p>
+                  <h3 className="text-white text-base lg:text-lg font-bold mb-1">Vous avez encore des questions ?</h3>
+                  <p className="text-white/60 text-xs">Nos consultants experts sont là pour vous aider.</p>
                 </div>
                 <Link 
                   to="/contact" 
-                  className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-wider hover:bg-white hover:text-brand-darkblue transition-all active:scale-95 shadow-lg shadow-brand-teal/20"
+                  className="bg-brand-teal text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-brand-darkblue transition-all shrink-0"
                 >
                   Contactez-nous
                 </Link>
               </div>
             </div>
           </div>
+        </div>
       </section>
 
       {/* EXPERT ADVICE SECTION */}
-      <section className="py-20 bg-[#f8fbfc]">
+      <section className="py-14 bg-[#f8fbfc]">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-black text-center text-brand-darkblue mb-16 leading-tight">
             Conseils de nos <span className="text-sa-green uppercase">experts</span><br />
@@ -891,7 +891,7 @@ export default function Home() {
       </section>
 
       {/* ============ CTA BAND — "Restez connectés" (teal band, student pops out) ============ */}
-      <section className="relative mt-28 mb-20">
+      <section className="relative mt-14 mb-14">
         <div className="container mx-auto px-6">
           {/* The teal band itself */}
           <div className="relative bg-brand-teal rounded-[2rem] overflow-visible">

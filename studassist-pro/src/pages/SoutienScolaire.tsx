@@ -1,6 +1,9 @@
-import { BookOpen, Pencil, Target, Users, Calendar, Trophy } from "@/src/components/ui/icons";
 import ServicePage from "../components/ServicePage";
 import { buildFaq } from "../data/faq";
+
+const Icon3D = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} className="w-9 h-9 drop-shadow-sm" />
+);
 
 export default function SoutienScolaire() {
   return (
@@ -22,37 +25,37 @@ export default function SoutienScolaire() {
       ]}
       modules={[
         {
-          icon: <Users size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/conference-call.png" alt="Primaire" />,
           title: "Primaire (CP – CM2)",
           description: "Construire des bases solides et développer le plaisir d'apprendre, dans une approche ludique, bienveillante et structurée.",
           points: ["Lecture, écriture, calcul", "Méthodologie et autonomie", "Brain Training & ateliers d'échecs"],
         },
         {
-          icon: <BookOpen size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/open-book.png" alt="Collège" />,
           title: "Collège (6e – 3e)",
           description: "Installer de bonnes méthodes de travail, consolider les fondamentaux et sécuriser la réussite au Brevet.",
           points: ["Toutes matières", "Prépa Brevet", "Suivi personnalisé"],
         },
         {
-          icon: <Trophy size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/trophy.png" alt="Lycée" />,
           title: "Lycée (2nde – Terminale)",
           description: "Maîtriser les programmes denses du lycée, préparer les épreuves anticipées et optimiser son dossier Parcoursup.",
           points: ["Spécialités scientifiques & littéraires", "Prépa Bac", "Grand Oral"],
         },
         {
-          icon: <Target size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/goal.png" alt="Supérieur" />,
           title: "Supérieur",
           description: "Un soutien ciblé pour les étudiants en prépa, licence ou école, avec des enseignants spécialisés par filière.",
           points: ["Maths, Physique, Économie", "Méthodologie universitaire", "Préparation aux partiels"],
         },
         {
-          icon: <Calendar size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/calendar.png" alt="Stages" />,
           title: "Stages de vacances",
           description: "Des stages intensifs pour combler les lacunes, anticiper le trimestre à venir ou préparer une échéance.",
           points: ["Toussaint, Noël, Printemps, Été", "Petits groupes", "Bilan personnalisé"],
         },
         {
-          icon: <Pencil size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/medal.png" alt="Brevet" />,
           title: "Prépa Brevet",
           description: "Un programme dédié pour aborder le Brevet avec méthode, confiance et ambition.",
           points: ["Révisions structurées", "Épreuves blanches", "Coaching mental"],

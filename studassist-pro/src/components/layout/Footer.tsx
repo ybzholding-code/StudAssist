@@ -3,8 +3,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  Send,
-  ShieldCheck,
   Facebook,
   Instagram,
   Linkedin,
@@ -121,28 +119,47 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Call to action card */}
+          {/* Google Maps + Centre Info */}
           <div className="lg:col-span-4">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-7">
-              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-sa-green mb-3">
-                Passez à l'action
-              </h4>
-              <p className="font-display text-2xl lg:text-[26px] font-extrabold leading-tight mb-3">
-                Prêt à construire <span className="sa-wavy sa-wavy-yellow">votre réussite</span> ?
-              </p>
-              <p className="text-sm text-white/65 leading-relaxed mb-5">
-                Réservez votre séance découverte avec un conseiller STUDASSIST — gratuit, sans
-                engagement, 30 minutes pour cadrer votre projet.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sa-pink hover:bg-sa-pink/90 text-white font-semibold text-[13.5px] transition-colors"
-              >
-                Réserver ma séance <Send size={14} />
-              </Link>
-              <div className="mt-5 flex items-center gap-2 text-[11px] text-white/50">
-                <ShieldCheck size={13} className="text-sa-green" />
-                <span>Conseiller dédié · Réponse sous 48 h</span>
+            <div className="bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
+              <div className="relative">
+                <iframe
+                  title="Centre de l'Oasis - STUDASSIST"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8!2d-7.5574!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s15+Rue+des+Ramiers%2C+Dar-el-Beida+20000!5e0!3m2!1sfr!2sma!4v1700000000000"
+                  className="w-full h-[160px] border-0 rounded-t-2xl opacity-90"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+                <a
+                  href="https://maps.google.com/?q=15+Rue+des+Ramiers,+Casablanca+20000,+Maroc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-3 right-3 inline-flex items-center gap-1.5 bg-sa-navy/80 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1.5 rounded-full border border-white/10 hover:bg-sa-green transition-colors"
+                >
+                  <MapPin size={11} />
+                  Ouvrir dans Maps
+                </a>
+              </div>
+              <div className="p-5">
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-sa-green mb-3">
+                  Centre de l'Oasis
+                </h4>
+                <ul className="space-y-2.5">
+                  <li className="flex items-start gap-2.5 text-[13px] text-white/80">
+                    <MapPin size={14} className="text-sa-green mt-0.5 shrink-0" />
+                    <span>15 Rue des Ramiers, Casablanca 20000, Maroc</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 text-[13px] text-white/80">
+                    <Phone size={14} className="text-sa-green mt-0.5 shrink-0" />
+                    <span>0669 495 996 | 0664 779 093</span>
+                  </li>
+                </ul>
+                <div className="mt-3 pt-3 border-t border-white/10">
+                  <p className="text-[11px] text-white/50 font-medium">
+                    Lun–Ven : 9h–19h · Sam : 9h–17h
+                  </p>
+                </div>
               </div>
             </div>
           </div>

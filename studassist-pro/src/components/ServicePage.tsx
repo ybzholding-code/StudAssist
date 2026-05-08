@@ -67,7 +67,7 @@ export default function ServicePage({
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative pt-12 lg:pt-20 pb-16 lg:pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-brand-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -84,25 +84,25 @@ export default function ServicePage({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-black text-brand-darkblue mb-4 uppercase tracking-tighter leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue mb-4 uppercase tracking-tighter leading-[1.1] lg:leading-tight"
             >
               <span className="sa-wavy sa-wavy-teal">{title}</span>
             </motion.h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <ImageFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                 <img
                   src={heroImage}
                   alt={eyebrow}
-                  className="rounded-[2rem] w-full h-[420px] object-cover"
+                  className="rounded-[2rem] w-full h-[280px] lg:h-[420px] object-cover"
                 />
               </div>
             </div>
 
-            <div className="space-y-6 order-1 lg:order-2">
+            <div className="space-y-6 order-1 lg:order-2 text-center lg:text-left">
               <p className="text-gray-500 text-base lg:text-lg leading-relaxed font-medium">
                 {intro}
               </p>
@@ -125,10 +125,10 @@ export default function ServicePage({
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
                 <Link
                   to={ctaHref}
-                  className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
+                  className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center justify-center gap-3"
                 >
                   <span>{ctaLabel}</span>
                   <ArrowRight size={16} />
@@ -140,7 +140,7 @@ export default function ServicePage({
       </section>
 
       {/* ============ MODULES / PROGRAMS ============ */}
-      <section className="py-32 bg-[#f8fbfc] relative overflow-hidden">
+      <section className="py-16 lg:py-32 bg-[#f8fbfc] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
@@ -149,7 +149,7 @@ export default function ServicePage({
             <div className="inline-block px-4 py-1 bg-brand-teal/5 text-brand-teal rounded-full text-[10px] font-black mb-6 tracking-[0.2em] uppercase border border-brand-teal/10">
               Programmes
             </div>
-            <h2 className="text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter mb-6 leading-tight">
               {modulesTitle}
             </h2>
             <p className="text-lg text-gray-500 font-medium leading-relaxed">
@@ -167,17 +167,8 @@ export default function ServicePage({
                 transition={{ delay: idx * 0.08 }}
                 className="relative group"
               >
-                <div className="h-full bg-white border border-gray-100 p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(17,29,74,0.04)] hover:shadow-[0_40px_80px_rgba(17,29,74,0.1)] hover:border-brand-teal/20 transition-all duration-500 overflow-hidden">
-                  <div
-                    className={cn(
-                      "w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-8 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 shadow-lg",
-                      idx % 3 === 0
-                        ? "bg-brand-teal/10 text-brand-teal shadow-brand-teal/10"
-                        : idx % 3 === 1
-                        ? "bg-brand-red/10 text-brand-red shadow-brand-red/10"
-                        : "bg-brand-darkblue/10 text-brand-darkblue shadow-brand-darkblue/10"
-                    )}
-                  >
+                <div className="h-full bg-white border border-gray-100 p-6 lg:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(17,29,74,0.04)] hover:shadow-[0_40px_80px_rgba(17,29,74,0.1)] hover:border-brand-teal/20 transition-all duration-500 overflow-hidden">
+                  <div className="w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-8 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 bg-gray-50">
                     {m.icon}
                   </div>
                   <h3 className="text-brand-darkblue font-black text-lg uppercase tracking-tight mb-4 group-hover:text-brand-teal transition-colors">
@@ -204,13 +195,13 @@ export default function ServicePage({
       </section>
 
       {/* ============ CTA BANNER — Signature Red Executive ============ */}
-      <section className="py-24 relative z-20">
+      <section className="py-16 lg:py-24 relative z-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-brand-red rounded-[3.5rem] p-10 lg:p-20 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
+            className="bg-brand-red rounded-[2.5rem] lg:rounded-[3.5rem] p-8 lg:p-20 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
           >
             <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
               <svg width="100%" height="100%">
@@ -229,7 +220,7 @@ export default function ServicePage({
                 </span>
               </div>
 
-              <h2 className="text-4xl lg:text-6xl font-black mb-8 uppercase tracking-tighter leading-[0.95]">
+              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-6 lg:mb-8 uppercase tracking-tighter leading-[1.05] lg:leading-[0.95]">
                 Votre <span className="text-brand-darkblue italic">succès</span>{" "}
                 <br className="hidden lg:block" /> commence ici.
               </h2>
@@ -274,7 +265,7 @@ export default function ServicePage({
 
       {/* ============ POURQUOI CHOISIR ============ */}
       {whyPoints && whyPoints.length > 0 && (
-        <section className="py-32 bg-white relative overflow-hidden">
+        <section className="py-16 lg:py-32 bg-white relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-20 max-w-3xl mx-auto">
               <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-6">
@@ -282,7 +273,7 @@ export default function ServicePage({
                 <span>Pourquoi choisir</span>
                 <span className="w-8 h-px bg-brand-teal" />
               </div>
-              <h2 className="text-4xl lg:text-5xl font-black text-brand-darkblue mb-8 uppercase tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue mb-8 uppercase tracking-tighter leading-tight">
                 Pourquoi choisir <span className="text-brand-teal">STUDASSIST</span> ?
               </h2>
             </div>
@@ -295,7 +286,7 @@ export default function ServicePage({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white border border-gray-100 p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_30px_70px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group"
+                  className="bg-white border border-gray-100 p-6 lg:p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_30px_70px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-brand-teal/10 text-brand-teal flex items-center justify-center mb-5 group-hover:rotate-6 transition-transform">
                     <CheckCircle2 size={22} />
@@ -320,7 +311,7 @@ export default function ServicePage({
       )}
 
       {/* ============ FINAL REJOIN CTA ============ */}
-      <section className="py-32 bg-brand-darkblue relative overflow-hidden">
+      <section className="py-16 lg:py-32 bg-brand-darkblue relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
           <svg width="100%" height="100%">
             <pattern id={`pattern-final-${eyebrow.replace(/\s/g, "-").toLowerCase()}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -338,7 +329,7 @@ export default function ServicePage({
             <div className="flex justify-center mb-8">
               <Logo variant="light" height={48} />
             </div>
-            <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tighter">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tighter leading-tight">
               Construisons ensemble <br />
               <span className="text-brand-teal">votre avenir</span>.
             </h2>

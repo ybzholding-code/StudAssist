@@ -1,6 +1,9 @@
-import { FileText, BookOpen, Sparkles, Mic, Activity, Trophy } from "@/src/components/ui/icons";
 import ServicePage from "../components/ServicePage";
 import { buildFaq } from "../data/faq";
+
+const Icon3D = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} className="w-9 h-9 drop-shadow-sm" />
+);
 
 export default function PrepasBac() {
   return (
@@ -22,37 +25,37 @@ export default function PrepasBac() {
       ]}
       modules={[
         {
-          icon: <BookOpen size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/open-book.png" alt="Français" />,
           title: "Bac de Français",
           description: "Maîtriser la dissertation, le commentaire et l'oral. Travail intensif sur les œuvres du programme.",
           points: ["Méthodologie écrit & oral", "Œuvres intégrales", "Oraux blancs réguliers"],
         },
         {
-          icon: <Activity size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/test-tube.png" alt="Sciences" />,
           title: "Spécialités scientifiques",
           description: "Maths, Physique-Chimie, SVT, NSI, SI : exigence de contenu et méthode face aux épreuves.",
           points: ["Fiches méthode", "Annales corrigées", "DS et colles"],
         },
         {
-          icon: <FileText size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/document.png" alt="Littéraires" />,
           title: "Spécialités littéraires & éco",
           description: "HGGSP, HLP, SES, LLCE : argumentation, dissertation et culture générale haut niveau.",
           points: ["Construction d'argument", "Culture de référence", "Rédaction académique"],
         },
         {
-          icon: <Sparkles size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/brain.png" alt="Philosophie" />,
           title: "Bac de Philosophie",
           description: "Développer la pensée critique et la technique dissertative pour viser la mention.",
           points: ["Fiches notions", "Dissertations corrigées", "Explications de texte"],
         },
         {
-          icon: <Mic size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/microphone.png" alt="Grand Oral" />,
           title: "Grand Oral",
           description: "Structurer son sujet, maîtriser sa posture et convaincre le jury avec assurance.",
           points: ["Construction du grand oral", "Coaching posture & voix", "Simulations filmées"],
         },
         {
-          icon: <Trophy size={22} />,
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/trophy.png" alt="Stages" />,
           title: "Stages intensifs Bac",
           description: "Des stages de révisions avant chaque échéance pour consolider et rassurer.",
           points: ["Vacances scolaires", "Simulations d'examen", "Bilan individuel"],

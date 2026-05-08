@@ -21,35 +21,39 @@ import { cn } from "@/src/lib/utils";
 import Logo from "../components/Logo";
 import ExpertisePoles from "../components/ExpertisePoles";
 import TestimonialsSection from "../components/TestimonialsSection";
-import ImageFloaters from "../components/ImageFloaters";
+import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
 
+const Icon3D = ({ src, alt, className = "w-9 h-9" }: { src: string; alt: string; className?: string }) => (
+  <img src={src} alt={alt} className={`${className} drop-shadow-sm`} />
+);
+
 const stats = [
-  { value: "+500", label: "Élèves orientés chaque année", icon: <Users size={24} className="text-brand-darkblue" />, color: "text-brand-darkblue" },
-  { value: "+25", label: "Destinations à l'international", icon: <Globe size={24} className="text-brand-teal" />, color: "text-brand-teal" },
-  { value: "97%", label: "De familles satisfaites", icon: <Star size={24} className="text-brand-red" />, color: "text-brand-red" },
-  { value: "100%", label: "D'admissions post-bac", icon: <Trophy size={24} className="text-brand-darkblue" />, color: "text-brand-darkblue" },
+  { value: "+500", label: "Élèves orientés chaque année", icon3d: "https://img.icons8.com/3d-fluency/94/conference-call.png", color: "text-brand-darkblue" },
+  { value: "+25", label: "Destinations à l'international", icon3d: "https://img.icons8.com/3d-fluency/94/globe.png", color: "text-brand-teal" },
+  { value: "97%", label: "De familles satisfaites", icon3d: "https://img.icons8.com/3d-fluency/94/star.png", color: "text-brand-red" },
+  { value: "100%", label: "D'admissions post-bac", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png", color: "text-brand-darkblue" },
 ];
 
 const pillars = [
   {
-    icon: <Compass size={24} />,
+    icon3d: "https://img.icons8.com/3d-fluency/94/compass.png",
     title: "Profiling personnalisé",
     desc: "Un diagnostic complet du profil, des aspirations et des contraintes de l'élève et de sa famille.",
   },
   {
-    icon: <Target size={24} />,
+    icon3d: "https://img.icons8.com/3d-fluency/94/goal.png",
     title: "Stratégie sur mesure",
     desc: "Choix des spécialités, cap sur les filières, short-list d'écoles — chaque décision est argumentée.",
   },
   {
-    icon: <FileText size={24} />,
+    icon3d: "https://img.icons8.com/3d-fluency/94/document.png",
     title: "Candidatures optimisées",
     desc: "Dossiers Parcoursup, lettres de motivation, CV, projet professionnel — tout est travaillé avec nous.",
   },
   {
-    icon: <Rocket size={24} />,
+    icon3d: "https://img.icons8.com/3d-fluency/94/rocket.png",
     title: "Installation facilitée",
     desc: "Visas, logement, compte bancaire et assurance : nous gérons toutes les démarches administratives.",
   },
@@ -118,7 +122,7 @@ export default function OrientationScolaire() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <ImageFloaters />
+              <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                 <img
                   src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
@@ -181,8 +185,8 @@ export default function OrientationScolaire() {
                 className="group flex items-center space-x-4 shrink-0 lg:flex-1 lg:justify-center"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="p-3.5 bg-gray-100 group-hover:bg-brand-teal/10 rounded-xl transition-all duration-300 transform group-hover:scale-110">
-                    {item.icon}
+                  <div className="p-3 bg-gray-50 group-hover:bg-brand-teal/10 rounded-xl transition-all duration-300 transform group-hover:scale-110">
+                    <img src={item.icon3d} alt={item.label} className="w-8 h-8" />
                   </div>
                   <div className="flex flex-col">
                     <div
@@ -313,21 +317,12 @@ export default function OrientationScolaire() {
                 className="relative group h-full"
               >
                 <div className="h-full bg-white border border-gray-100 p-10 rounded-[3.5rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_40px_80px_rgba(17,29,74,0.1)] hover:border-brand-teal/20 transition-all duration-500 overflow-hidden">
-                  <div className="absolute -right-4 -bottom-4 text-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -rotate-12 transform scale-150 pointer-events-none">
-                    {pillar.icon}
+                  <div className="absolute -right-4 -bottom-4 opacity-0 group-hover:opacity-10 transition-opacity duration-500 -rotate-12 transform scale-150 pointer-events-none">
+                    <img src={pillar.icon3d} alt="" className="w-24 h-24" />
                   </div>
 
-                  <div
-                    className={cn(
-                      "w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 shadow-lg",
-                      idx % 3 === 0
-                        ? "bg-brand-teal/10 text-brand-teal shadow-brand-teal/10"
-                        : idx % 3 === 1
-                        ? "bg-brand-red/10 text-brand-red shadow-brand-red/10"
-                        : "bg-brand-darkblue/10 text-brand-darkblue shadow-brand-darkblue/10"
-                    )}
-                  >
-                    {pillar.icon}
+                  <div className="w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 bg-gray-50">
+                    <img src={pillar.icon3d} alt={pillar.title} className="w-10 h-10 drop-shadow-md" />
                   </div>
 
                   <h3 className="text-brand-darkblue font-black text-xl uppercase tracking-tight mb-4 group-hover:text-brand-teal transition-colors">

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
 import Logo from "../components/Logo";
-import ImageFloaters from "../components/ImageFloaters";
+import MediaFrameFloaters from "../components/MediaFrameFloaters";
 
 export default function Contact() {
   const [activeTab, setActiveTab] = useState<"tuteur" | "eleve">("tuteur");
@@ -16,12 +16,12 @@ export default function Contact() {
       <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-sa-pink/10 blur-3xl pointer-events-none" />
       <div className="absolute top-[40%] -left-24 w-[340px] h-[340px] rounded-full bg-sa-gold/15 blur-3xl pointer-events-none" />
 
-      <section className="relative py-16 lg:py-20">
+      <section className="relative py-12 lg:py-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
             {/* ============ LEFT: Brick-wall framed photo with "S" logo ============ */}
             <div className="relative order-2 lg:order-1">
-              <ImageFloaters />
+              <MediaFrameFloaters />
 
               {/* Main frame */}
               <div
@@ -67,7 +67,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="font-display text-[36px] lg:text-[48px] font-extrabold leading-[1.05] tracking-tight mb-2">
+                <h1 className="font-display text-[32px] sm:text-[36px] lg:text-[48px] font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-2">
                   <span className="text-sa-navy">Contactez nos</span>
                   <br />
                   <span className="sa-wavy text-sa-pink">Experts !</span>
@@ -216,7 +216,7 @@ export default function Contact() {
       />
 
       {/* ============ NOS CENTRES ============ */}
-      <section id="centres" className="py-20 bg-gray-50/60">
+      <section id="centres" className="py-16 lg:py-20 bg-gray-50/60">
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 text-sa-green font-black text-[10px] tracking-[0.3em] uppercase mb-4">
@@ -224,7 +224,7 @@ export default function Contact() {
               <span>Nos centres</span>
               <span className="w-6 h-px bg-sa-green" />
             </div>
-            <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-sa-navy tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-sa-navy tracking-tight leading-tight">
               Où nous <span className="sa-wavy sa-wavy-teal">trouver</span>
             </h2>
           </div>
@@ -303,7 +303,7 @@ export default function Contact() {
       </section>
 
       {/* Re-engagement strip — editorial CTA card */}
-      <section className="pb-32 pt-4">
+      <section className="pb-16 lg:pb-32 pt-4">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

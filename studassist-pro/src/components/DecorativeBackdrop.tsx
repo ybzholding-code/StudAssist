@@ -8,156 +8,104 @@
  *
  * Pointer-events are disabled so it never intercepts clicks.
  */
-import {
-  motion,
-  useSpring,
-  useTransform,
-  type MotionValue,
-} from "motion/react";
+import { useMemo } from "react";
+import { motion, useSpring, useTransform } from "motion/react";
 import { mouseX, mouseY } from "@/src/lib/mousePosition";
+import {
+  PiShape, SquareRootShape, AtomShape, SigmaShape, MatrixShape,
+  CompassShape, BookShape, BeakerShape, InfinityShape, IntegralShape,
+  DNAShape, GlobeShape, LightbulbShape,
+  CircleShape, TriangleShape, HexagonShape, ZigZagShape, PlusGridShape
+} from "@/src/components/shapes/AcademicShapes";
 
-/* --------- Reusable shape primitives --------- */
+const NUM_SHAPES = 60; // Perfectly balanced, not too many, not too few
+const TOTAL_VH = 800; // Spread across the whole site
 
-const TealWaves = ({ className = "" }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 80 40"
-    fill="none"
-    stroke="#1CB69B"
-    strokeWidth="3"
-    strokeLinecap="round"
-  >
-    <path d="M2 8 Q 20 0, 40 8 T 78 8" />
-    <path d="M2 20 Q 20 12, 40 20 T 78 20" />
-    <path d="M2 32 Q 20 24, 40 32 T 78 32" />
-  </svg>
-);
+// Elegant brand colors
+const COLORS = ["#1CB69B", "#ee4b62", "#F3B421"];
 
-const DotGrid = ({
-  className = "",
-  color = "#1CB69B",
-}: {
-  className?: string;
-  color?: string;
-}) => (
-  <div
-    className={className}
-    style={{
-      backgroundImage: `radial-gradient(circle, ${color} 1.8px, transparent 1.8px)`,
-      backgroundSize: "10px 10px",
-    }}
-  />
-);
+const COMPONENTS = [
+  PiShape, SquareRootShape, AtomShape, SigmaShape, MatrixShape, 
+  CompassShape, BookShape, BeakerShape, InfinityShape, IntegralShape, 
+  DNAShape, GlobeShape, LightbulbShape,
+  CircleShape, TriangleShape, HexagonShape, ZigZagShape, PlusGridShape
+];
 
-const BrokenRing = ({
-  className = "",
-  color = "#ee4b62",
-}: {
-  className?: string;
-  color?: string;
-}) => (
-  <div
-    className={className}
-    style={{
-      borderColor: color,
-      clipPath: "polygon(0 0, 85% 0, 85% 55%, 100% 55%, 100% 100%, 0 100%)",
-    }}
-  />
-);
-
-/* --------- Parallax helper --------- */
-
-/** Build a pair of transforms that shift a shape by ±intensity px with the mouse. */
-function useParallax(
-  mx: MotionValue<number>,
-  my: MotionValue<number>,
-  intensity: number,
-) {
-  const x = useTransform(mx, [-1, 1], [-intensity, intensity]);
-  const y = useTransform(my, [-1, 1], [-intensity, intensity]);
-  return { x, y };
+// Seeded random for stable hydration
+function mulberry32(a: number) {
+  return function() {
+    let t = a += 0x6D2B79F5;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  }
 }
 
-/* --------- Main backdrop --------- */
+function FloatingShape({ shape, smoothX, smoothY }: { shape: any, smoothX: any, smoothY: any }) {
+  const x = useTransform(smoothX, [-1, 1], [-shape.parallax, shape.parallax]);
+  const y = useTransform(smoothY, [-1, 1], [-shape.parallax, shape.parallax]);
+  
+  return (
+    <motion.div
+      style={{
+        x, y,
+        top: `${shape.top}vh`,
+        left: `${shape.left}%`,
+        width: `${shape.sizeRem}rem`,
+        height: `${shape.sizeRem}rem`,
+        opacity: shape.opacity,
+        color: shape.color
+      }}
+      className="absolute origin-center"
+      initial={{ rotate: shape.rotate }}
+      animate={
+        shape.animateRotate ? { rotate: shape.rotate + shape.animateRotate } : { rotate: shape.rotate }
+      }
+      transition={
+        shape.animateRotate 
+          ? { duration: shape.animationDuration, repeat: Infinity, ease: "linear" } 
+          : undefined
+      }
+    >
+      <shape.Comp className="w-full h-full" />
+    </motion.div>
+  );
+}
 
 export default function DecorativeBackdrop() {
-  // Shared global mouse position (single listener site-wide).
-  const smoothX = useSpring(mouseX, { stiffness: 35, damping: 18, mass: 0.4 });
-  const smoothY = useSpring(mouseY, { stiffness: 35, damping: 18, mass: 0.4 });
+  const smoothX = useSpring(mouseX, { stiffness: 30, damping: 20, mass: 0.5 });
+  const smoothY = useSpring(mouseY, { stiffness: 30, damping: 20, mass: 0.5 });
 
-  // Each shape gets its own parallax depth (deeper = more movement).
-  const s1 = useParallax(smoothX, smoothY, 28);
-  const s2 = useParallax(smoothX, smoothY, 16);
-  const s3 = useParallax(smoothX, smoothY, 40);
-  const s4 = useParallax(smoothX, smoothY, 22);
-  const s5 = useParallax(smoothX, smoothY, 34);
-  const s6 = useParallax(smoothX, smoothY, 18);
-  const s7 = useParallax(smoothX, smoothY, 24);
-  const s8 = useParallax(smoothX, smoothY, 14);
-  const s9 = useParallax(smoothX, smoothY, 30);
-  const s10 = useParallax(smoothX, smoothY, 20);
+  const shapes = useMemo(() => {
+    const rand = mulberry32(42); // Fixed seed
+    return Array.from({ length: NUM_SHAPES }).map((_, i) => {
+      const Comp = COMPONENTS[Math.floor(rand() * COMPONENTS.length)];
+      const color = COLORS[Math.floor(rand() * COLORS.length)];
+      
+      const top = (i / NUM_SHAPES) * TOTAL_VH + (rand() * 10 - 5); 
+      const left = 5 + rand() * 90; 
+      
+      // Control size: mostly small to medium, no giant heavy shapes!
+      const sizeRem = 2 + rand() * 6; // 2rem to 8rem max
+      
+      // Opacity: subtle and elegant
+      const opacity = 0.1 + rand() * 0.15; // 0.1 to 0.25
+      
+      const rotate = rand() * 360;
+      const parallax = 10 + rand() * 30; 
+      
+      const animateRotate = rand() > 0.8 ? (rand() > 0.5 ? 360 : -360) : 0;
+      const animationDuration = 40 + rand() * 60; 
+      
+      return { id: i, Comp, color, top, left, sizeRem, opacity, rotate, parallax, animateRotate, animationDuration };
+    });
+  }, []);
 
   return (
-    <div
-      aria-hidden
-      className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
-    >
-      {/* Top-left teal waves */}
-      <motion.div style={s1} className="absolute top-[8%] left-[3%] opacity-40">
-        <TealWaves className="w-20 h-auto" />
-      </motion.div>
-
-      {/* Mid-left yellow dot */}
-      <motion.div
-        style={s2}
-        className="absolute top-[34%] left-[6%] w-4 h-4 rounded-full bg-[#F3B421]/70"
-      />
-
-      {/* Top-right red broken ring */}
-      <motion.div style={s3} className="absolute top-[14%] right-[5%] opacity-40">
-        <BrokenRing className="w-28 h-28 rounded-full border-[5px]" />
-      </motion.div>
-
-      {/* Mid-right teal dot grid */}
-      <motion.div style={s4} className="absolute top-[38%] right-[2%] opacity-50">
-        <DotGrid className="w-24 h-24" />
-      </motion.div>
-
-      {/* Bottom-right yellow hollow ring */}
-      <motion.div
-        style={s5}
-        className="absolute bottom-[20%] right-[8%] w-14 h-14 rounded-full border-[5px] border-[#F3B421]/60"
-      />
-
-      {/* Bottom-left teal dot grid (smaller) */}
-      <motion.div style={s6} className="absolute bottom-[12%] left-[4%] opacity-40">
-        <DotGrid className="w-20 h-20" />
-      </motion.div>
-
-      {/* Mid-right yellow dot */}
-      <motion.div
-        style={s7}
-        className="absolute top-[58%] right-[20%] w-3 h-3 rounded-full bg-[#F3B421]/80"
-      />
-
-      {/* Top-center teal waves (smaller) */}
-      <motion.div style={s8} className="absolute top-[50%] left-[42%] opacity-25">
-        <TealWaves className="w-14 h-auto" />
-      </motion.div>
-
-      {/* Bottom-left pink dot ring */}
-      <motion.div
-        style={s9}
-        className="absolute bottom-[28%] left-[14%] w-5 h-5 rounded-full border-[3px] border-[#ee4b62]/50"
-      />
-
-      {/* Mid-left red broken ring (smaller, mirrored) */}
-      <motion.div
-        style={s10}
-        className="absolute top-[62%] left-[2%] opacity-30 rotate-180"
-      >
-        <BrokenRing className="w-20 h-20 rounded-full border-[4px]" />
-      </motion.div>
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+      {shapes.map((shape) => (
+        <FloatingShape key={shape.id} shape={shape} smoothX={smoothX} smoothY={smoothY} />
+      ))}
     </div>
   );
 }

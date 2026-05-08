@@ -29,7 +29,7 @@ const cycles = ["Primaire", "Collège", "Lycée", "Supérieur"] as const;
 type Cycle = (typeof cycles)[number];
 
 const levelsByCycle: Record<Cycle, string[]> = {
-  "Primaire": ["Primaire"],
+  "Primaire": ["CP-CE1", "CE2-CM1", "CM2", "Brain Training"],
   "Collège": ["6ème", "5ème", "4ème", "3ème"],
   "Lycée": ["2nde", "1ère", "Terminale"],
   "Supérieur": ["PRÉPAS"],
@@ -46,16 +46,49 @@ interface LevelConfig {
 }
 
 const levelConfigs: Record<string, LevelConfig> = {
-  "Primaire": {
+  "CP-CE1": {
     category: "Primaire",
     icon: <Users size={18} />,
-    title: "Primaire (CP - CM2)",
-    subtitle: "Construire des bases solides et développer le plaisir d’apprendre",
+    title: "CP – CE1",
+    subtitle: "Apprendre à lire, écrire et compter avec confiance",
     description:
-      "Le primaire est une étape fondatrice : lecture, écriture, raisonnement logique et autonomie se construisent progressivement. Chaque année consolide les acquis et prépare l’enfant à une transition sereine vers le collège.",
+      "Le CP et le CE1 sont les années fondatrices de la scolarité : l'apprentissage de la lecture, de l'écriture et du calcul s'y construisent. L'enfant développe ses premières habitudes de travail et sa curiosité intellectuelle.",
     descriptionBold:
-      "Chez STUDASSIST, nous accompagnons nos élèves du primaire avec une approche ludique, bienveillante, structurée et adaptée à leur rythme d’apprentissage.",
-    links: ["Soutien scolaire personnalisé", "Stages de vacances", "Brain Training (calcul mental, ateliers d’échecs, stimulation cognitive)"],
+      "Chez STUDASSIST, nous accompagnons les plus jeunes avec une pédagogie ludique, bienveillante et structurée, adaptée à leur rythme.",
+    links: ["Soutien scolaire personnalisé", "Aide à la lecture", "Calcul & logique", "Stages de vacances"],
+  },
+  "CE2-CM1": {
+    category: "Primaire",
+    icon: <Users size={18} />,
+    title: "CE2 – CM1",
+    subtitle: "Consolider les acquis et développer l'autonomie",
+    description:
+      "En CE2 et CM1, les apprentissages se complexifient : grammaire, conjugaison, résolution de problèmes et premières rédactions. L'enfant gagne en autonomie et apprend à structurer son raisonnement.",
+    descriptionBold:
+      "Nous aidons chaque élève à solidifier ses bases et à prendre confiance dans ses capacités d'apprentissage.",
+    links: ["Soutien scolaire personnalisé", "Méthodologie", "Stages de vacances", "Aide aux devoirs"],
+  },
+  "CM2": {
+    category: "Primaire",
+    icon: <Users size={18} />,
+    title: "CM2",
+    subtitle: "Préparer sereinement l'entrée au collège",
+    description:
+      "Le CM2 est l'année de transition vers le collège : les exigences augmentent, les évaluations se multiplient et l'enfant doit faire preuve de plus d'organisation et de rigueur.",
+    descriptionBold:
+      "STUDASSIST prépare cette transition en renforçant les fondamentaux et en développant des méthodes de travail efficaces pour le collège.",
+    links: ["Soutien scolaire personnalisé", "Préparation entrée 6ème", "Stages de vacances", "Méthodologie"],
+  },
+  "Brain Training": {
+    category: "Primaire",
+    icon: <Sparkles size={18} />,
+    title: "Brain Training",
+    subtitle: "Stimuler l'intelligence et la créativité par le jeu",
+    description:
+      "Notre programme Brain Training développe les capacités cognitives de l'enfant : calcul mental, ateliers d'échecs, jeux de logique et stimulation de la mémoire. Un complément ludique et stimulant à la scolarité classique.",
+    descriptionBold:
+      "Un cerveau bien entraîné apprend plus vite, mémorise mieux et résout les problèmes avec plus d'aisance.",
+    links: ["Calcul mental", "Ateliers d'échecs", "Jeux de logique", "Stimulation cognitive"],
   },
   "6ème": {
     category: "Collège",
@@ -194,7 +227,7 @@ export default function ExpertisePoles({
     <section
       id={id}
       className={cn(
-        "py-10 lg:py-16 bg-white relative overflow-hidden flex flex-col justify-center min-h-[90vh]",
+        "py-14 lg:py-20 bg-white relative overflow-hidden",
         className
       )}
     >
