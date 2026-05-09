@@ -36,7 +36,7 @@ const pillars = [
     desc: "Dossiers Parcoursup, lettres de motivation, CV, projet professionnel — tout est travaillé avec nous.",
   },
   {
-    icon3d: "https://img.icons8.com/3d-fluency/94/rocket.png",
+    icon3d: "https://img.icons8.com/3d-fluency/94/home.png",
     title: "Installation facilitée",
     desc: "Visas, logement, compte bancaire et assurance : nous gérons toutes les démarches administratives.",
   },
@@ -66,22 +66,22 @@ const testimonials = [
 const blog = [
   {
     title: "Orientation en Seconde : comment anticiper le choix des spécialités ?",
-    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
     category: "Lycée",
   },
   {
     title: "Parcoursup : les 5 erreurs à éviter dans vos candidatures",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=600&q=80",
     category: "Post-bac",
   },
   {
     title: "Études à l'étranger : les destinations qui montent en 2025",
-    image: "https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80",
     category: "International",
   },
   {
     title: "Sciences Po : décrypter l'épreuve écrite de la procédure d'admission",
-    image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
     category: "Concours",
   },
 ];
@@ -113,7 +113,7 @@ export default function OrientationScolaire() {
               <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                 <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
                   alt="Conseil en orientation scolaire STUDASSIST - Accompagnement personnalisé au Maroc"
                   className="rounded-[2rem] w-full h-[380px] lg:h-[420px] object-cover"
                 />

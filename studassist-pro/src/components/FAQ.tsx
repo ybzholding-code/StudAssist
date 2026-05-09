@@ -25,9 +25,9 @@ export default function FAQ({
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className={`py-24 bg-sa-light relative overflow-hidden ${className}`}>
-      <div className="absolute -left-40 top-20 w-[400px] h-[400px] rounded-full bg-sa-pink/10 blur-3xl" />
-      <div className="absolute -right-40 bottom-20 w-[400px] h-[400px] rounded-full bg-sa-blue/10 blur-3xl" />
+    <section className={`py-24 bg-sa-light relative ${className}`}>
+      <div className="absolute -left-40 top-20 w-[400px] h-[400px] rounded-full bg-sa-pink/10 blur-3xl pointer-events-none" />
+      <div className="absolute -right-40 bottom-20 w-[400px] h-[400px] rounded-full bg-sa-blue/10 blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className={`grid ${showAside ? "lg:grid-cols-[1fr_2fr]" : ""} gap-12 lg:gap-16 items-start max-w-6xl mx-auto`}>
@@ -40,7 +40,7 @@ export default function FAQ({
               </h2>
               <p className="text-sa-ink/65 leading-relaxed mb-8">{subtitle}</p>
 
-              <div className="sa-card p-6 bg-sa-navy text-white border-0">
+              <div className="p-6 rounded-2xl bg-brand-darkblue text-white">
                 <MessageCircle className="text-sa-gold mb-3" size={22} />
                 <h4 className="font-bold mb-1.5">Une question spécifique ?</h4>
                 <p className="text-sm text-white/70 mb-4 leading-relaxed">

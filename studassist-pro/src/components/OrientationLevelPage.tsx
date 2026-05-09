@@ -38,6 +38,7 @@ export interface OrientationLevelPageProps {
     title: string;
     lead?: string;
     bullets: string[];
+    icons?: string[];
   };
 
   sections: SectionBlock[];
@@ -50,6 +51,7 @@ export interface OrientationLevelPageProps {
   whyChoose?: {
     title: string;
     bullets: string[];
+    icons?: string[];
   };
 
   ctaBanner: {
@@ -72,8 +74,8 @@ const LEVELS = [
   { key: "seconde",       label: "Seconde",       href: "/orientation/seconde" },
   { key: "premiere",      label: "Première",      href: "/orientation/premiere" },
   { key: "terminale",     label: "Terminale",     href: "/orientation/terminale" },
-  { key: "reorientation", label: "Réorientation", href: "/orientation/reorientation" },
   { key: "master",        label: "Master",        href: "/orientation/master" },
+  { key: "reorientation", label: "Réorientation", href: "/orientation/reorientation" },
 ];
 
 function detectLevelKey(eyebrow: string): string {
@@ -249,9 +251,13 @@ export default function OrientationLevelPage({
                   transition={{ delay: i * 0.08 }}
                   className="bg-white rounded-[2rem] p-6 border border-gray-100 shadow-[0_12px_40px_rgba(17,29,74,0.04)] hover:shadow-[0_20px_60px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors">
-                    <CheckCircle2 size={18} className="text-brand-teal" />
-                  </div>
+                  {enjeux.icons && enjeux.icons[i] ? (
+                    <img src={enjeux.icons[i]} alt="" className="w-12 h-12 mb-4" />
+                  ) : (
+                    <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors">
+                      <CheckCircle2 size={18} className="text-brand-teal" />
+                    </div>
+                  )}
                   <p className="text-brand-darkblue font-bold text-sm leading-snug">{b}</p>
                 </motion.div>
               ))}
@@ -264,27 +270,30 @@ export default function OrientationLevelPage({
       <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-[240px_1fr] gap-10 lg:gap-16 max-w-6xl mx-auto">
-            {/* Vertical level tabs */}
+            {/* Vertical level tabs + contact card */}
             <aside>
-              <div className="lg:sticky lg:top-32 space-y-2">
-                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400 mb-3 px-2">Niveaux</p>
-                {LEVELS.map((l) => {
-                  const active = l.key === activeKey;
-                  return (
-                    <Link
-                      key={l.key}
-                      to={l.href}
-                      className={`flex items-center justify-between px-5 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all ${
-                        active
-                          ? "bg-brand-teal text-white shadow-lg shadow-brand-teal/20"
-                          : "bg-gray-50 text-brand-darkblue hover:bg-brand-teal/5 border border-gray-100"
-                      }`}
-                    >
-                      <span>{l.label}</span>
-                      {active && <ArrowRight size={12} />}
-                    </Link>
-                  );
-                })}
+              <div className="lg:sticky lg:top-32 space-y-6">
+                <div className="space-y-2">
+                  <p className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400 mb-3 px-2">Niveaux</p>
+                  {LEVELS.map((l) => {
+                    const active = l.key === activeKey;
+                    return (
+                      <Link
+                        key={l.key}
+                        to={l.href}
+                        className={`flex items-center justify-between px-5 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all ${
+                          active
+                            ? "bg-brand-teal text-white shadow-lg shadow-brand-teal/20"
+                            : "bg-gray-50 text-brand-darkblue hover:bg-brand-teal/5 border border-gray-100"
+                        }`}
+                      >
+                        <span>{l.label}</span>
+                        {active && <ArrowRight size={12} />}
+                      </Link>
+                    );
+                  })}
+                </div>
+
               </div>
             </aside>
 
@@ -372,9 +381,13 @@ export default function OrientationLevelPage({
                   className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-brand-teal/40 hover:bg-white/10 transition-all duration-500 group"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-brand-teal/20 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/30 transition-colors">
-                      <CheckCircle2 size={16} className="text-brand-teal" />
-                    </div>
+                    {whyChoose.icons && whyChoose.icons[i] ? (
+                      <img src={whyChoose.icons[i]} alt="" className="w-10 h-10 shrink-0" />
+                    ) : (
+                      <div className="w-8 h-8 rounded-lg bg-brand-teal/20 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/30 transition-colors">
+                        <CheckCircle2 size={16} className="text-brand-teal" />
+                      </div>
+                    )}
                     <p className="text-white/90 font-medium text-sm leading-relaxed">{b}</p>
                   </div>
                 </motion.div>

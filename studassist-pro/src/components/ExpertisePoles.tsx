@@ -43,6 +43,7 @@ interface LevelConfig {
   links: string[];
   category: string;
   icon: React.ReactNode;
+  image: string;
 }
 
 const levelConfigs: Record<string, LevelConfig> = {
@@ -56,6 +57,7 @@ const levelConfigs: Record<string, LevelConfig> = {
     descriptionBold:
       "Chez STUDASSIST, nous accompagnons les plus jeunes avec une pédagogie ludique, bienveillante et structurée, adaptée à leur rythme.",
     links: ["Soutien scolaire personnalisé", "Aide à la lecture", "Calcul & logique", "Stages de vacances"],
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80",
   },
   "CE2-CM1": {
     category: "Primaire",
@@ -67,6 +69,7 @@ const levelConfigs: Record<string, LevelConfig> = {
     descriptionBold:
       "Nous aidons chaque élève à solidifier ses bases et à prendre confiance dans ses capacités d'apprentissage.",
     links: ["Soutien scolaire personnalisé", "Méthodologie", "Stages de vacances", "Aide aux devoirs"],
+    image: "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=1200&q=80",
   },
   "CM2": {
     category: "Primaire",
@@ -78,6 +81,7 @@ const levelConfigs: Record<string, LevelConfig> = {
     descriptionBold:
       "STUDASSIST prépare cette transition en renforçant les fondamentaux et en développant des méthodes de travail efficaces pour le collège.",
     links: ["Soutien scolaire personnalisé", "Préparation entrée 6ème", "Stages de vacances", "Méthodologie"],
+    image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1200&q=80",
   },
   "Brain Training": {
     category: "Primaire",
@@ -89,16 +93,18 @@ const levelConfigs: Record<string, LevelConfig> = {
     descriptionBold:
       "Un cerveau bien entraîné apprend plus vite, mémorise mieux et résout les problèmes avec plus d'aisance.",
     links: ["Calcul mental", "Ateliers d'échecs", "Jeux de logique", "Stimulation cognitive"],
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1200&q=80",
   },
   "6ème": {
     category: "Collège",
     icon: <BookOpen size={18} />,
     title: "6ème",
-    subtitle: "Réussir l’entrée au collège et gagner en autonomie",
+    subtitle: "Réussir l'entrée au collège et gagner en autonomie",
     description:
-      "La 6ème marque une rupture importante : nouveaux enseignants, nouvelles matières, rythme plus soutenu. L’enjeu est d’aider l’élève à s’adapter sans perte de confiance.",
+      "La 6ème marque une rupture importante : nouveaux enseignants, nouvelles matières, rythme plus soutenu. L'enjeu est d'aider l'élève à s'adapter sans perte de confiance.",
     descriptionBold: "STUDASSIST accompagne cette transition en renforçant les bases et en installant de bonnes méthodes de travail dès le départ.",
     links: ["Soutien scolaire", "Stages de vacances", "Cours découverte"],
+    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
   },
   "5ème": {
     category: "Collège",
@@ -106,29 +112,32 @@ const levelConfigs: Record<string, LevelConfig> = {
     title: "5ème",
     subtitle: "Structurer le travail et consolider les fondamentaux",
     description:
-      "En 5ème, les exigences académiques augmentent et les connaissances s’accumulent. L’élève doit apprendre à raisonner, organiser son travail et gagner en autonomie.",
+      "En 5ème, les exigences académiques augmentent et les connaissances s'accumulent. L'élève doit apprendre à raisonner, organiser son travail et gagner en autonomie.",
     descriptionBold: "Nous aidons nos élèves à assimiler durablement les notions clés et à adopter une méthodologie efficace.",
     links: ["Soutien scolaire", "Stages de vacances", "Cours découverte"],
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
   },
   "4ème": {
     category: "Collège",
     icon: <BookOpen size={18} />,
     title: "4ème",
-    subtitle: "Monter en puissance et développer l’analyse",
+    subtitle: "Monter en puissance et développer l'analyse",
     description:
-      "La 4ème est une année charnière où le rythme s’intensifie et les notions deviennent plus abstraites. L’élève doit apprendre à analyser, synthétiser et gérer un volume de travail plus important.",
+      "La 4ème est une année charnière où le rythme s'intensifie et les notions deviennent plus abstraites. L'élève doit apprendre à analyser, synthétiser et gérer un volume de travail plus important.",
     descriptionBold: "STUDASSIST accompagne cette montée en exigence avec un suivi régulier et structurant.",
     links: ["Soutien scolaire", "Stages de vacances", "Cours découverte"],
+    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=80",
   },
   "3ème": {
     category: "Collège",
     icon: <BookOpen size={18} />,
     title: "3ème",
-    subtitle: "Objectif Brevet et préparation à l’orientation",
+    subtitle: "Objectif Brevet et préparation à l'orientation",
     description:
-      "La 3ème est une année stratégique : réussite du Brevet, consolidation des acquis et premiers choix d’orientation. Un accompagnement ciblé est essentiel pour aborder le lycée avec confiance et sérénité.",
+      "La 3ème est une année stratégique : réussite du Brevet, consolidation des acquis et premiers choix d'orientation. Un accompagnement ciblé est essentiel pour aborder le lycée avec confiance et sérénité.",
     descriptionBold: "",
-    links: ["Prépa Brevet", "Soutien scolaire", "Stages de vacances", "Pré-orientation", "Cours découverte", "Rendez-vous d’orientation"],
+    links: ["Prépa Brevet", "Soutien scolaire", "Stages de vacances", "Pré-orientation", "Cours découverte", "Rendez-vous d'orientation"],
+    image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80",
   },
   "2nde": {
     category: "Lycée",
@@ -136,9 +145,10 @@ const levelConfigs: Record<string, LevelConfig> = {
     title: "Seconde",
     subtitle: "Réussir le passage au lycée et préparer les choix de spécialités",
     description:
-      "La Seconde est un tournant majeur : programmes beaucoup plus denses, nouvelles méthodes de travail et réflexion sur les spécialités. L’enjeu est d’acquérir rigueur, régularité et méthode tout en faisant face à un grand nombre de notions à assimiler ainsi qu’aux premiers questionnements sur ses projets d’études supérieures.",
+      "La Seconde est un tournant majeur : programmes beaucoup plus denses, nouvelles méthodes de travail et réflexion sur les spécialités. L'enjeu est d'acquérir rigueur, régularité et méthode tout en faisant face à un grand nombre de notions à assimiler ainsi qu'aux premiers questionnements sur ses projets d'études supérieures.",
     descriptionBold: "Chez STUDASSIST nous aidons nos élèves à poser des bases solides pour la réussite au lycée et à faire des choix éclairés.",
-    links: ["Soutien scolaire", "Stages de vacances", "Choix des spécialités", "Cours découverte", "Rendez-vous d’orientation"],
+    links: ["Soutien scolaire", "Stages de vacances", "Choix des spécialités", "Cours découverte", "Rendez-vous d'orientation"],
+    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
   },
   "1ère": {
     category: "Lycée",
@@ -146,10 +156,11 @@ const levelConfigs: Record<string, LevelConfig> = {
     title: "Première",
     subtitle: "Préparer le Bac de français et sécuriser son orientation",
     description:
-      "L’année de Première est déterminante : épreuves anticipées du bac de français, choix stratégique de la spécialité à abandonner et premières démarches d’orientation post-bac.",
+      "L'année de Première est déterminante : épreuves anticipées du bac de français, choix stratégique de la spécialité à abandonner et premières démarches d'orientation post-bac.",
     descriptionBold:
-      "STUDASSIST accompagne ses élèves sur le plan académique et stratégique pour maximiser leurs résultats et leurs opportunités d’études supérieures.",
-    links: ["Prépa Bac de français", "Soutien scolaire", "Stages de vacances", "Choix des spécialités", "Séance découverte", "Rendez-vous d’orientation", "Prépa SAT", "Prépa IELTS", "Prépa DELE", "Cours découverte"],
+      "STUDASSIST accompagne ses élèves sur le plan académique et stratégique pour maximiser leurs résultats et leurs opportunités d'études supérieures.",
+    links: ["Prépa Bac de français", "Soutien scolaire", "Stages de vacances", "Choix des spécialités", "Séance découverte", "Rendez-vous d'orientation", "Prépa SAT", "Prépa IELTS", "Prépa DELE", "Cours découverte"],
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
   },
   "Terminale": {
     category: "Lycée",
@@ -157,10 +168,11 @@ const levelConfigs: Record<string, LevelConfig> = {
     title: "Terminale",
     subtitle: "Réussir le Bac et intégrer les meilleures formations",
     description:
-      "La Terminale est une année décisive : spécialités à fort coefficient, Bac de philosophie, Grand Oral et candidatures post-bac. Chaque étape compte et chaque résultat présente un fort impact pour l’avenir de l’élève.",
+      "La Terminale est une année décisive : spécialités à fort coefficient, Bac de philosophie, Grand Oral et candidatures post-bac. Chaque étape compte et chaque résultat présente un fort impact pour l'avenir de l'élève.",
     descriptionBold:
-      "STUDASSIST propose un accompagnement global : académique, méthodologique et stratégique, pour sécuriser le dossier scolaire et optimiser les chances de réussite du projet d’orientation de l’élève.",
-    links: ["Soutien scolaire", "Stages de vacances", "Prépa Bac de philo", "Prépa bac de spés", "Grand oral", "Projet d’orientation & Candidatures post-bac", "Séance découverte", "Rendez-vous d’orientation", "Prépa SAT", "Prépa IELTS", "Prépa DELE", "Cours découverte"],
+      "STUDASSIST propose un accompagnement global : académique, méthodologique et stratégique, pour sécuriser le dossier scolaire et optimiser les chances de réussite du projet d'orientation de l'élève.",
+    links: ["Soutien scolaire", "Stages de vacances", "Prépa Bac de philo", "Prépa bac de spés", "Grand oral", "Projet d'orientation & Candidatures post-bac", "Séance découverte", "Rendez-vous d'orientation", "Prépa SAT", "Prépa IELTS", "Prépa DELE", "Cours découverte"],
+    image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80",
   },
   "PRÉPAS": {
     category: "Supérieur",
@@ -168,10 +180,11 @@ const levelConfigs: Record<string, LevelConfig> = {
     title: "Études supérieures",
     subtitle: "Structurer son parcours, construire une stratégie académique et accéder aux meilleures opportunités",
     description:
-      "Les études supérieures constituent une étape déterminante dans le parcours académique. Elles impliquent des choix structurants, qu’il s’agisse d’une réorientation, d’une spécialisation ou d’une poursuite d’études à l’international.",
+      "Les études supérieures constituent une étape déterminante dans le parcours académique. Elles impliquent des choix structurants, qu'il s'agisse d'une réorientation, d'une spécialisation ou d'une poursuite d'études à l'international.",
     descriptionBold:
-      "Chez STUDASSIST, nous accompagnons les étudiants souhaitant optimiser leur trajectoire, renforcer leur dossier ou accéder à des formations plus sélectives, en France ou à l’international.",
+      "Chez STUDASSIST, nous accompagnons les étudiants souhaitant optimiser leur trajectoire, renforcer leur dossier ou accéder à des formations plus sélectives, en France ou à l'international.",
     links: ["Soutien scolaire", "Réorientation", "Objectif Master", "Prépa SAT & GMAT", "Prépa IELTS & TOEFL"],
+    image: "https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&w=1200&q=80",
   },
 };
 
@@ -429,12 +442,7 @@ export default function ExpertisePoles({
 
                     <div className="hidden lg:block relative bg-sa-navy">
                       <img
-                        src={
-                          levelConfigs[expandedLevel].category === "Supérieur" ||
-                          levelConfigs[expandedLevel].title === "Terminale"
-                            ? "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
-                            : "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80"
-                        }
+                        src={levelConfigs[expandedLevel].image}
                         alt={expandedLevel}
                         className="absolute inset-0 w-full h-full object-cover"
                       />

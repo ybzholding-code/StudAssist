@@ -11,7 +11,7 @@ export default function OrientationReorientation() {
         "Changer d'orientation n'est pas un échec. C'est souvent le signe d'une meilleure compréhension de soi, de ses capacités et de ses aspirations réelles.",
         "Chez STUDASSIST, nous accompagnons les élèves et étudiants dans une démarche de réorientation structurée et personnalisée, en tenant compte du parcours déjà engagé pour construire un nouveau projet cohérent et porteur de sens, au Maroc comme à l'international.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
+      heroImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
 
       enjeux={{
         title: "Les enjeux d'une réorientation réussie",
@@ -21,6 +21,12 @@ export default function OrientationReorientation() {
           "Construire un nouveau projet cohérent avec le potentiel réel",
           "Valoriser l'expérience acquise dans le nouveau parcours",
           "Sécuriser la transition avec un socle académique solide",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/puzzle.png",
+          "https://img.icons8.com/3d-fluency/94/star.png",
+          "https://img.icons8.com/3d-fluency/94/shield.png",
         ],
       }}
 
@@ -86,6 +92,14 @@ export default function OrientationReorientation() {
           "Un accompagnement complet aux candidatures et entretiens",
           "Une remise à niveau académique intégrée si nécessaire",
           "Une expertise Maroc & international couvrant +25 destinations",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/conference-call.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/open-book.png",
+          "https://img.icons8.com/3d-fluency/94/globe.png",
         ],
       }}
 

@@ -11,7 +11,7 @@ export default function OrientationMaster() {
         "Le choix d'un Master est une étape déterminante dans le parcours académique et professionnel. Après un Bac+3, les enjeux évoluent : il s'agit de définir une spécialisation, consolider un positionnement de carrière et intégrer un programme aligné avec vos ambitions.",
         "Chez STUDASSIST, nous accompagnons les étudiants titulaires d'un Bac+3 dans une démarche d'orientation Master structurée, stratégique et personnalisée, au Maroc comme à l'international.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+      heroImage="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&w=1200&q=80"
 
       enjeux={{
         title: "Les enjeux de l'orientation Master",
@@ -21,6 +21,12 @@ export default function OrientationMaster() {
           "Une sélection rigoureuse des programmes adaptés au profil",
           "La constitution de dossiers exigeants et différenciants",
           "La réussite des concours, certifications et entretiens de personnalité",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/school.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/trophy.png",
         ],
       }}
 
@@ -89,6 +95,14 @@ export default function OrientationMaster() {
           "Un coaching aux entretiens de personnalité",
           "Une expertise Maroc & international couvrant +25 destinations",
           "Un accompagnement flexible, en présentiel ou à distance",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/school.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/medal.png",
+          "https://img.icons8.com/3d-fluency/94/conference-call.png",
+          "https://img.icons8.com/3d-fluency/94/globe.png",
+          "https://img.icons8.com/3d-fluency/94/chat.png",
         ],
       }}
 

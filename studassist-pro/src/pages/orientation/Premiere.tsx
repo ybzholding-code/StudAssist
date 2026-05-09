@@ -11,7 +11,7 @@ export default function OrientationPremiere() {
         "La classe de Première est une année charnière : les résultats prennent davantage de poids, les intérêts se précisent et le choix de la spécialité à abandonner conditionne l'accès à certaines formations post-bac.",
         "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d'orientation anticipée et stratégique, pour poser dès maintenant les bases d'un projet solide et aborder la Terminale avec clarté et sérénité.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80"
+      heroImage="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
 
       enjeux={{
         title: "Pourquoi anticiper dès la Première ?",
@@ -21,6 +21,12 @@ export default function OrientationPremiere() {
           "Faire un choix éclairé de la spécialité à conserver en Terminale",
           "Renforcer les matières stratégiques pour le dossier post-bac",
           "Anticiper les exigences des formations sélectives",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/trophy.png",
         ],
       }}
 
@@ -102,6 +108,14 @@ export default function OrientationPremiere() {
           "Un plan d'action académique personnalisé et évolutif",
           "Un soutien scolaire et concours intégré au parcours",
           "Une vision stratégique à long terme du parcours académique",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/calendar.png",
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/school.png",
+          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/medal.png",
+          "https://img.icons8.com/3d-fluency/94/telescope.png",
         ],
       }}
 

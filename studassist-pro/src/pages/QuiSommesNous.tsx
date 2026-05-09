@@ -43,17 +43,17 @@ const QuiSommesNous = () => {
   const philosophy = [
     {
       title: "MISSION",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
       description: "Clarifier, structurer et sécuriser les parcours d'études supérieures. STUDASSIST accompagne les élèves et les étudiants dans les décisions académiques clés, en transformant la complexité de l'orientation, des admissions et de la mobilité internationale en parcours lisibles, stratégiques et maîtrisés."
     },
     {
       title: "VISION",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=800&q=80",
       description: "Devenir la référence internationale du conseil étudiant. STUDASSIST ambitionne de bâtir un écosystème global d'accompagnement académique, permettant à chaque étudiant, quel que soit son parcours ou son pays d'origine, d'accéder aux meilleures opportunités éducatives grâce à des choix éclairés et stratégiques."
     },
     {
       title: "VALEURS",
-      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
       description: "Excellence, Personnalisation, Engagement, Éthique & Bienveillance. Nous appliquons des standards élevés, concevons des parcours sur mesure, nous impliquons pleinement aux côtés des familles, et guidons avec intégrité et transparence."
     }
   ];

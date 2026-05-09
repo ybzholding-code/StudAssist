@@ -16,7 +16,7 @@ export default function PrepasConcours() {
         </>
       }
       intro="Sésame, Accès, ENCG, ISCAE, écoles d'ingénieurs, médecine, architecture, Sciences-Po : nous préparons chaque étudiant à viser haut — avec une stratégie, une méthode et un coaching adaptés."
-      heroImage="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80"
+      heroImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80"
       accent="pink"
       highlights={[
         { value: "20+", label: "Destinations" },

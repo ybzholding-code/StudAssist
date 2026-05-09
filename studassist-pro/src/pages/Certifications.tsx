@@ -16,7 +16,7 @@ export default function Certifications() {
         </>
       }
       intro="IELTS, TOEFL, SAT, TCF, DALF, DELE, Goethe : un coaching linguistique précis, conçu pour franchir les paliers requis par les universités et employeurs à l'international."
-      heroImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80"
+      heroImage="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=900&q=80"
       accent="gold"
       highlights={[
         { value: "+1.5", label: "Score IELTS moyen" },

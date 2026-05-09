@@ -11,7 +11,7 @@ export default function OrientationSeconde() {
         "La classe de Seconde marque une étape déterminante : c'est l'année du choix des trois spécialités de Première, un choix structurant qui conditionne progressivement l'accès aux filières post-bac les plus exigeantes.",
         "Chez STUDASSIST, nous accompagnons les élèves de Seconde et leurs familles dans une démarche d'orientation anticipée et évolutive, pour construire un projet progressif tout en conservant la souplesse nécessaire à la maturation naturelle de l'élève.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80"
+      heroImage="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1200&q=80"
 
       enjeux={{
         title: "Pourquoi agir dès la Seconde ?",
@@ -21,6 +21,12 @@ export default function OrientationSeconde() {
           "Explorer les différents domaines d'études et secteurs professionnels",
           "Préparer le choix stratégique des trois spécialités de Première",
           "Donner du sens au travail scolaire et renforcer la motivation par la projection",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
+          "https://img.icons8.com/3d-fluency/94/rocket.png",
         ],
       }}
 
@@ -104,6 +110,14 @@ export default function OrientationSeconde() {
           "Un plan d'action académique adapté au profil et au projet",
           "Une vision long terme intégrant les exigences du post-bac",
           "Un soutien scolaire et linguistique intégré si nécessaire",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/calendar.png",
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/telescope.png",
+          "https://img.icons8.com/3d-fluency/94/open-book.png",
         ],
       }}
 

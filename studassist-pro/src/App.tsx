@@ -48,7 +48,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative flex flex-col min-h-screen">
+      <div className="relative flex flex-col min-h-screen overflow-x-hidden">
         <DecorativeBackdrop />
         <div className="relative z-10 flex flex-col flex-grow">
           <Navbar />

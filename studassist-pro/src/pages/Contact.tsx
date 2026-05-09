@@ -28,7 +28,7 @@ export default function Contact() {
                 className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-[0_30px_70px_-25px_rgba(12,27,68,0.25)]"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1595844730298-b960ff98fee0?auto=format&fit=crop&w=1200&q=80')",
+                    "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -52,7 +52,7 @@ export default function Contact() {
                 {/* Circular photo cutout bottom-right */}
                 <div className="absolute right-4 bottom-8 lg:right-6 lg:bottom-10 w-24 h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden border-[6px] border-white shadow-lg z-20">
                   <img
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
+                    src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=400&q=80"
                     alt=""
                     className="w-full h-full object-cover"
                   />

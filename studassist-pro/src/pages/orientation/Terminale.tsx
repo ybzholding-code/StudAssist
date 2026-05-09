@@ -11,7 +11,7 @@ export default function OrientationTerminale() {
         "La Terminale marque l'année décisive : les choix deviennent concrets, les candidatures s'organisent et se dessinent les premières trajectoires académiques et professionnelles de l'élève.",
         "Chez STUDASSIST, nous accompagnons les élèves de Terminale et leurs familles dans une démarche d'orientation globale et stratégique, pour transformer cette période charnière en véritable levier de réussite — au Maroc comme à l'international.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1541339907198-e08759dfc3f0?auto=format&fit=crop&w=1200&q=80"
+      heroImage="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=1200&q=80"
 
       enjeux={{
         title: "Les enjeux de la Terminale",
@@ -21,6 +21,12 @@ export default function OrientationTerminale() {
           "Construire un dossier solide et différenciant pour les formations sélectives",
           "Maîtriser des procédures de candidatures de plus en plus complexes",
           "Éviter le stress, les incertitudes et les décisions prises par défaut",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/shield.png",
         ],
       }}
 
@@ -104,6 +110,14 @@ export default function OrientationTerminale() {
           "Un soutien scolaire, concours et langues intégrés au parcours",
           "Un accompagnement humain, transparent et orienté résultats",
           "Un gain de temps considérable pour l'élève et sa famille",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/globe.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/open-book.png",
+          "https://img.icons8.com/3d-fluency/94/handshake.png",
+          "https://img.icons8.com/3d-fluency/94/calendar.png",
         ],
       }}
 

@@ -35,7 +35,7 @@ export default function NousRejoindre() {
                 className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-[0_30px_70px_-25px_rgba(12,27,68,0.25)]"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80')",
+                    "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -59,7 +59,7 @@ export default function NousRejoindre() {
                 {/* Circular photo cutout bottom-right */}
                 <div className="absolute right-4 bottom-8 lg:right-6 lg:bottom-10 w-24 h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden border-[6px] border-white shadow-lg z-20">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
                     alt=""
                     className="w-full h-full object-cover"
                   />
