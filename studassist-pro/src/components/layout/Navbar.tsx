@@ -60,14 +60,29 @@ export default function Navbar() {
   return (
     <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
       {/* HEADER I - Top Bar */}
-      <div className="bg-brand-darkblue text-white text-[10px] font-medium py-2.5 px-4 lg:px-6">
-        <div className="container mx-auto flex justify-between items-center gap-2">
-          <div className="flex items-center space-x-3 xs:space-x-4 lg:space-x-6">
+      <div className="bg-brand-darkblue text-white font-medium px-4 lg:px-6">
+        {/* Mobile top bar */}
+        <div className="sm:hidden flex items-center justify-between py-2.5">
+          <a href="tel:0669495996" className="flex items-center text-xs hover:text-brand-teal transition">
+            <Phone size={14} className="mr-1.5" /> 0669-495996
+          </a>
+          <Link to="/contact" className="bg-brand-teal px-3 py-1.5 rounded text-white font-bold uppercase tracking-wider text-[10px]">
+            Réserver un RDV
+          </Link>
+          <div className="flex items-center space-x-2.5">
+            <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Facebook size={14} /></a>
+            <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Instagram size={14} /></a>
+            <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Linkedin size={14} /></a>
+          </div>
+        </div>
+        {/* Desktop top bar */}
+        <div className="hidden sm:flex container mx-auto justify-between items-center gap-3 py-3 lg:py-4 text-sm">
+          <div className="flex items-center space-x-5 lg:space-x-6">
             <a href="tel:0669495996" className="flex items-center hover:text-brand-teal transition">
-              <Phone size={12} className="mr-1 lg:mr-1.5" /> <span className="hidden sm:inline">0669-495996 | 0664-779093</span><span className="sm:hidden">Appel</span>
+              <Phone size={16} className="mr-1.5 lg:mr-2" /> 0669-495996 | 0664-779093
             </a>
-            <Link to="/contact" className="bg-brand-teal px-2 py-0.5 lg:px-3 lg:py-1 rounded text-white font-bold uppercase tracking-wider text-[8px] xs:text-[9px] lg:text-[10px]">
-              RDV <span className="hidden xs:inline">découverte</span>
+            <Link to="/contact" className="bg-brand-teal px-4 py-1.5 rounded text-white font-bold uppercase tracking-wider text-xs lg:text-sm">
+              Réserver une séance découverte
             </Link>
           </div>
           <div className="flex items-center space-x-4 lg:space-x-6">
@@ -76,12 +91,12 @@ export default function Navbar() {
               <Link to="/nous-rejoindre" className="hover:text-brand-teal transition">Nous rejoindre</Link>
             </div>
             <Link to="/contact#centres" className="flex items-center hover:text-brand-teal transition">
-              <MapPin size={12} className="mr-1.5 text-brand-teal font-bold" /> <span className="hidden sm:inline">Nos centres</span>
+              <MapPin size={16} className="mr-1.5 text-brand-teal font-bold" /> Nos centres
             </Link>
-            <div className="hidden xs:flex items-center space-x-3 lg:ml-4 lg:border-l lg:border-white/20 lg:pl-4">
-              <a href="#" className="hover:text-brand-teal transition"><Facebook size={12} /></a>
-              <a href="#" className="hover:text-brand-teal transition"><Instagram size={12} /></a>
-              <a href="#" className="hover:text-brand-teal transition"><Linkedin size={12} /></a>
+            <div className="flex items-center space-x-3 lg:ml-4 lg:border-l lg:border-white/20 lg:pl-4">
+              <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Facebook size={16} /></a>
+              <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Instagram size={16} /></a>
+              <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Linkedin size={16} /></a>
             </div>
           </div>
         </div>
@@ -94,7 +109,7 @@ export default function Navbar() {
             <Logo variant="full" iconSize={44} className="scale-75 xs:scale-90 lg:scale-100 origin-left" />
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-8 xl:ml-12">
             {NAV_ITEMS.map((item) => (
               <div
                 key={item.name}
@@ -156,19 +171,19 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white border-b border-gray-100 shadow-lg overflow-y-auto max-h-[calc(100vh-120px)]"
           >
-            <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
+            <div className="container mx-auto px-6 py-6 flex flex-col space-y-5">
               {NAV_ITEMS.map((item) => (
                 <div key={item.name} className="flex flex-col space-y-2">
                   <Link 
                     to={item.href} 
-                    className="font-bold text-brand-darkblue"
+                    className="font-bold text-sm text-brand-darkblue uppercase tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
-                  <div className="pl-4 flex flex-col space-y-1">
+                  <div className="pl-4 flex flex-col space-y-1.5 border-l-2 border-brand-teal/20">
                     {item.subItems.map((sub) => {
                       const label = typeof sub === "string" ? sub : sub.label;
                       const to = typeof sub === "string"
@@ -178,7 +193,7 @@ export default function Navbar() {
                         <Link
                           key={label}
                           to={to}
-                          className="text-sm text-gray-500"
+                          className="text-sm text-gray-600 hover:text-brand-teal transition py-0.5"
                           onClick={() => setIsOpen(false)}
                         >
                           {label}
@@ -188,13 +203,23 @@ export default function Navbar() {
                   </div>
                 </div>
               ))}
-              <div className="pt-4 border-t border-gray-100 flex flex-col space-y-3">
-                <Link to="/contact" className="text-center bg-brand-teal text-white py-3 rounded-full font-bold" onClick={() => setIsOpen(false)}>
+              <div className="pt-5 border-t border-gray-200 flex flex-col space-y-3">
+                <Link to="/contact" className="text-center bg-brand-teal text-white py-3.5 rounded-full font-bold text-sm uppercase tracking-wide" onClick={() => setIsOpen(false)}>
                   Réserver ma séance découverte
                 </Link>
-                <Link to="/contact#centres" className="text-center bg-black text-white py-3 rounded-md font-bold" onClick={() => setIsOpen(false)}>
+                <Link to="/contact#centres" className="text-center bg-brand-darkblue text-white py-3 rounded-full font-bold text-sm" onClick={() => setIsOpen(false)}>
                   Où nous trouver
                 </Link>
+              </div>
+              <div className="pt-4 border-t border-gray-100 flex items-center justify-center space-x-5">
+                <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="text-brand-darkblue hover:text-brand-teal transition"><Facebook size={20} /></a>
+                <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="text-brand-darkblue hover:text-brand-teal transition"><Instagram size={20} /></a>
+                <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" className="text-brand-darkblue hover:text-brand-teal transition"><Linkedin size={20} /></a>
+              </div>
+              <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
+                <Link to="/qui-sommes-nous" className="hover:text-brand-teal transition" onClick={() => setIsOpen(false)}>Qui sommes-nous</Link>
+                <span>•</span>
+                <Link to="/nous-rejoindre" className="hover:text-brand-teal transition" onClick={() => setIsOpen(false)}>Nous rejoindre</Link>
               </div>
             </div>
           </motion.div>

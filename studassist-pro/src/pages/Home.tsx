@@ -15,6 +15,7 @@ import {
   Rocket, 
   MessageCircle, 
   Calendar,
+  ChevronLeft,
   ChevronRight,
   Plus,
   Compass,
@@ -42,11 +43,11 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import ImageFloaters from "../components/ImageFloaters";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import { cn } from "@/src/lib/utils";
+import TrustBar from "../components/TrustBar";
 
 import NumberCounter from "@/src/components/ui/NumberCounter";
 
 const RocketIllustration = () => {
-  // Stable stars data
   const stars = [
     { r: 1, cy: 10, d: 1.2, dl: 0.2 },
     { r: 0.5, cy: 25, d: 1.8, dl: 0.5 },
@@ -59,31 +60,14 @@ const RocketIllustration = () => {
   ];
 
   return (
-    <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
-      {/* Decorative Glow */}
-      <div className="absolute inset-0 bg-brand-teal/5 rounded-full blur-3xl scale-125 select-none" />
-      
-      {/* Orbital animations */}
-      <div className="absolute inset-0 border-2 border-dashed border-brand-teal/10 rounded-full animate-[spin_60s_linear_infinite]" />
-      <div className="absolute inset-12 border border-dashed border-brand-red/10 rounded-full animate-[spin_30s_linear_infinite_reverse]" />
-      
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        animate={{ 
-          y: [0, -15, 0],
-          x: [0, 8, 0]
-        }}
-        transition={{ 
-          duration: 4, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
+    <div className="relative w-[120px] h-[120px] lg:w-[160px] lg:h-[160px] flex items-center justify-center shrink-0">
+      <div className="absolute inset-0 border border-dashed border-white/20 rounded-full animate-[spin_60s_linear_infinite]" />
+      <motion.div
+        animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="relative z-10 -rotate-45"
       >
-        <svg id="rocket-icon" viewBox="0 0 75 75" className="w-[180px] lg:w-[320px] drop-shadow-[0_20px_50px_rgba(104,212,248,0.3)]">
-          {/* Animated Stars */}
+        <svg viewBox="0 0 75 75" className="w-[80px] lg:w-[100px] drop-shadow-[0_10px_30px_rgba(104,212,248,0.4)]">
           {stars.map((star, i) => (
             <motion.circle
               key={i}
@@ -92,16 +76,9 @@ const RocketIllustration = () => {
               fill="#AAB7C4"
               initial={{ cx: 75, opacity: 0 }}
               animate={{ cx: [75, 75, 0, 0], opacity: [0, 1, 1, 0] }}
-              transition={{
-                duration: star.d,
-                repeat: Infinity,
-                delay: star.dl,
-                ease: "linear"
-              }}
+              transition={{ duration: star.d, repeat: Infinity, delay: star.dl, ease: "linear" }}
             />
           ))}
-          
-          {/* Rocket SVG Paths */}
           <polygon fill="#68D4F8" points="18 21 35 21 44 30 27 30"/>
           <polygon fill="#68D4F8" points="27 45 44 45 35 54 18 54"/>
           <path fill="#68D4F8" d="M30.94 47.7c-3.79-.93-6.98-2.35-9.25-4.07a14.88 14.88 0 0 0 0-12.26c2.27-1.72 5.46-3.14 9.25-4.08A14.72 14.72 0 0 1 35 37.5c0 3.98-1.55 7.59-4.06 10.2z"/>
@@ -112,21 +89,11 @@ const RocketIllustration = () => {
           <path fill="#FCFEFF" d="M57.06 30.13C52.94 27.88 47.7 26 42 26c-3.99 0-7.75.47-11.06 1.3A14.72 14.72 0 0 1 35 37.5h24c0-2.7-.7-5.21-1.94-7.37z"/>
           <circle cx="49.5" cy="37.5" r="3.5" fill="#68D4F8"/>
           <path fill="#8DDEF9" d="M46 37.5h7a3.5 3.5 0 0 0-7 0z"/>
-
-          {/* Animated Flame */}
-          <motion.path 
-            fill="#EE4B62" 
+          <motion.path
+            fill="#EE4B62"
             d="M21 37.5c0-10.04-11 0-12 0 1 0 12 10.04 12 0z"
-            animate={{ 
-              scaleX: [1, 1.5, 1.2, 1.6, 1],
-              scaleY: [1, 1.1, 0.9, 1.2, 1],
-              opacity: [1, 0.8, 1, 0.7, 1]
-            }}
-            transition={{
-              duration: 0.15,
-              repeat: Infinity,
-              ease: "linear"
-            }}
+            animate={{ scaleX: [1, 1.5, 1.2, 1.6, 1], scaleY: [1, 1.1, 0.9, 1.2, 1], opacity: [1, 0.8, 1, 0.7, 1] }}
+            transition={{ duration: 0.15, repeat: Infinity, ease: "linear" }}
             style={{ originX: "15px", originY: "37.5px" }}
           />
         </svg>
@@ -358,12 +325,14 @@ export default function Home() {
       buttonText: "Découvrez-nous",
       link: "/qui-sommes-nous",
       image: "/hero-1.png",
+      showFloaters: true,
       layout: 'standard',
       accent: 'brand-red',
       bgType: 'dots',
       badge3d: "https://img.icons8.com/3d-fluency/94/guarantee.png",
       badgeLabel: "Qualité certifiée",
-      badgeTitle: "STUDASSIST ELITE"
+      badgeTitle: "STUDASSIST ELITE",
+      imageScale: "scale-[1.05]"
     },
     {
       title: <>ORIENTATION SCOLAIRE & <br />ACCOMPAGNEMENT AUX CANDIDATURES</>,
@@ -371,13 +340,15 @@ export default function Home() {
       description: "Bilan d'orientation, aide aux choix des écoles, optimisation des dossiers de candidatures, préparation aux oraux, suivi des admissions… Traçons ensemble votre projet d'avenir !",
       buttonText: "Réserver mon 1er RDV",
       link: "/orientation-scolaire",
-      image: "/hero-orientation.webp",
+      image: "/hero-orientation-new.png",
+      showFloaters: false,
       layout: 'reverse',
       accent: 'brand-teal',
       bgType: 'grid',
       badge3d: "https://img.icons8.com/3d-fluency/94/goal.png",
       badgeLabel: "Orientation sur mesure",
-      badgeTitle: "PROJET D'AVENIR"
+      badgeTitle: "PROJET D'AVENIR",
+      imageScale: "scale-[1.10]"
     },
     {
       title: "PRÉPAS-BAC",
@@ -385,13 +356,15 @@ export default function Home() {
       description: "Bac de Français écrit et oral, Bac de spécialités, Bac de philo, Grand Oral. Rejoignez notre programme complet pour réussir vos épreuves !",
       buttonText: "Choisir mon programme",
       link: "/prepas-bac",
-      image: "/hero-3.webp",
+      image: "/hero-soutien-new.png",
+      showFloaters: false,
       layout: 'standard',
       accent: 'brand-teal',
       bgType: 'curves',
       badge3d: "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
       badgeLabel: "Objectif mention",
-      badgeTitle: "RÉUSSITE BAC"
+      badgeTitle: "RÉUSSITE BAC",
+      imageScale: "scale-[1.10]"
     },
     {
       title: "PRÉPAS-CONCOURS",
@@ -399,13 +372,15 @@ export default function Home() {
       description: "Sesame, Accès, GEIPI Polytech, Avenir, Médecine Maroc, Médecine Belgique, GMAT, TAGE MAGE, SAT… Mettez toutes les chances de votre côté et décrochez vos concours avec STUDASSIST !",
       buttonText: "Choisir ma préparation",
       link: "/prepas-concours",
-      image: "/hero-4.webp",
+      image: "/hero-concours-new.png",
+      showFloaters: false,
       layout: 'reverse',
       accent: 'brand-red',
       bgType: 'abstract',
       badge3d: "https://img.icons8.com/3d-fluency/94/trophy.png",
       badgeLabel: "Taux d'admission",
-      badgeTitle: "85% ADMIS"
+      badgeTitle: "85% ADMIS",
+      imageScale: "scale-[1.10]"
     },
     {
       title: <>CERTIFICATIONS & <br />TESTS DE LANGUES</>,
@@ -413,14 +388,15 @@ export default function Home() {
       description: "IELTS, TOEIC, TOEFL, DELE, TCF, DELF, DALF… Préparez-vous avec STUDASSIST pour viser les meilleures écoles internationales.",
       buttonText: "Choisir ma certification",
       link: "/certifications",
-      image: "/hero-5-fixed.png",
-      imageClassName: "translate-y-[18%] scale-[1.25]",
+      image: "/hero-bac-new.png",
+      showFloaters: false,
       layout: 'standard',
       accent: 'brand-teal',
       bgType: 'modern',
       badge3d: "https://img.icons8.com/3d-fluency/94/globe.png",
       badgeLabel: "Score certifié",
-      badgeTitle: "IELTS & TOEFL"
+      badgeTitle: "IELTS & TOEFL",
+      imageScale: "scale-[1.10]"
     },
     {
       title: "ACCOMPAGNEMENT SCOLAIRE",
@@ -428,13 +404,15 @@ export default function Home() {
       description: "Maths, Physique-chimie, SVT, Français, SES, HGGSP, Philosophie… Réservez votre séance découverte pour tester notre méthodologie exclusive d'accompagnement scolaire !",
       buttonText: "Réserver mon cours découverte",
       link: "/soutien-scolaire",
-      image: "/hero-6.webp",
+      image: "/hero-certif-new.png",
+      showFloaters: false,
       layout: 'reverse',
       accent: 'brand-teal',
       bgType: 'minimal',
       badge3d: "https://img.icons8.com/3d-fluency/94/conference-call.png",
       badgeLabel: "Petits groupes",
-      badgeTitle: "3 À 4 ÉLÈVES"
+      badgeTitle: "3 À 4 ÉLÈVES",
+      imageScale: "scale-[1.10]"
     },
     {
       title: <>ADMINISTRATIF & <br />LOGEMENT ÉTUDIANT</>,
@@ -442,27 +420,33 @@ export default function Home() {
       description: "Dossiers Visa & titre de séjour étudiant, compte bancaire à l'étranger, assurance & couverture maladie, aide à la recherche de logement étudiant… Libérez-vous de ces tracas et restez concentrés sur la réussite de vos examens.",
       buttonText: "Réserver mon RDV d'information",
       link: "/admin-logement",
-      image: "/hero-7.webp",
+      image: "/hero-admin-new.png",
+      showFloaters: false,
       layout: 'standard',
       accent: 'brand-red',
       bgType: 'service',
       badge3d: "https://img.icons8.com/3d-fluency/94/passport.png",
       badgeLabel: "Installation clé en main",
-      badgeTitle: "20+ DESTINATIONS"
+      badgeTitle: "20+ DESTINATIONS",
+      imageScale: "scale-[1.10]"
     }
   ];
+
+  const goToSlide = (index: number) => setCurrentSlide(index);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 8000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, currentSlide]);
 
   return (
     <div className="overflow-hidden">
-      {/* HERO SECTION — transparent so the global DecorativeBackdrop shapes (with mouse parallax) show through */}
-      <section className="relative pt-6 lg:pt-10 overflow-hidden flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[900px] bg-transparent">
+      {/* HERO SECTION — slide 1 is transparent (shows DecorativeBackdrop), others get solid white bg */}
+      <section className="relative pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[900px] bg-[#FDFDFD]">
 
         <div className="container mx-auto px-6 relative z-10 flex-grow flex flex-col">
           <AnimatePresence mode="wait">
@@ -476,18 +460,8 @@ export default function Home() {
               >
                 {/* Text Content - Bold, Authoritative & Clean */}
                 <div className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left pb-10 lg:pb-16">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 rounded-[2rem] border border-sa-navy/10 mb-6 mx-auto lg:mx-0 max-w-full"
-                  >
-                    <span className="w-2 h-2 bg-sa-pink rounded-full animate-pulse shrink-0" />
-                    <span className="text-sa-navy font-bold text-[9px] sm:text-[10px] lg:text-[11px] tracking-widest sm:tracking-[0.3em] uppercase text-center line-clamp-2">
-                      {slides[currentSlide].subtitle || "Expertise académique d'excellence"}
-                    </span>
-                  </motion.div>
 
-                  <h1 className="text-[32px] sm:text-[42px] lg:text-[68px] xl:text-[76px] font-black text-sa-navy leading-[1.05] lg:leading-[0.95] mb-4 lg:mb-6 uppercase tracking-tighter">
+                  <h1 className="text-[28px] sm:text-[36px] lg:text-[52px] xl:text-[60px] font-black text-sa-navy leading-[1.1] lg:leading-[1.05] mb-4 lg:mb-6 uppercase tracking-tight">
                     {slides[currentSlide].title}
                   </h1>
 
@@ -514,94 +488,59 @@ export default function Home() {
 
                 {/* Hero Image Section — Anchored perfectly to the bottom */}
                 <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto">
-                  <div className="relative w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[600px] flex justify-center items-end mx-auto h-[40vh] min-h-[250px] sm:h-[50vh] lg:h-[75vh]">
+                  <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-[900px] flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-[95vh]">
 
-                    {/* Parallax decorative shapes anchored to the image (dynamic per slide) */}
-                    <ImageFloaters slideIndex={currentSlide} />
+                    {/* Parallax decorative shapes anchored to the image (only for slide 1) */}
+                    {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}
 
                     {/* ===== Cut-out student photo (no frame) anchored bottom ===== */}
                     <motion.img
                       key={currentSlide}
-                      initial={{ scale: 0.94, opacity: 0, y: 40 }}
-                      animate={{ scale: 1, opacity: 1, y: 0 }}
-                      exit={{ scale: 0.94, opacity: 0, y: 40 }}
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 40 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       src={slides[currentSlide].image}
                       alt="Étudiante STUDASSIST"
-                      className={cn(
-                        "relative z-20 w-full h-full object-contain object-bottom drop-shadow-[0_30px_40px_rgba(28,30,70,0.15)] origin-bottom",
-                        slides[currentSlide].imageClassName
-                      )}
+                      className={cn("relative z-20 w-full h-full object-contain object-bottom origin-bottom transition-transform duration-700", slides[currentSlide].imageScale)}
                     />
 
-                    {/* ===== ELITE floating badge — desktop only, keeps the site's signature accent ===== */}
-                    <motion.div
-                      initial={{ x: 60, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.8, type: "spring" }}
-                      className="hidden lg:flex absolute bottom-12 -right-8 bg-white p-6 rounded-[2.5rem] shadow-[-20px_40px_80px_rgba(0,0,0,0.18)] z-30 border border-gray-100 items-center space-x-4"
-                    >
-                      <div className={cn("w-14 h-14 rounded-[1.25rem] flex items-center justify-center shadow-xl transform hover:rotate-6 transition-transform shrink-0", accentClasses[slides[currentSlide].accent].bg)}>
-                        <img src={slides[currentSlide].badge3d} alt="Qualité" className="w-9 h-9" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.25em] mb-1 whitespace-nowrap">{slides[currentSlide].badgeLabel}</div>
-                        <div className="text-base font-black text-brand-darkblue uppercase italic tracking-tight leading-none">{slides[currentSlide].badgeTitle}</div>
-                      </div>
-                    </motion.div>
                   </div>
                 </div>
               </motion.div>
           </AnimatePresence>
         </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all duration-300 active:scale-90"
+          aria-label="Slide précédente"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all duration-300 active:scale-90"
+          aria-label="Slide suivante"
+        >
+          <ChevronRight size={20} />
+        </button>
+
+        {/* Dot Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+          {slides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
+              className={`rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-8 h-2.5 bg-sa-green' : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'}`}
+              aria-label={`Aller au slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </section>
 
-      {/* TRUST BAR / STATS MARQUEE - Redesigned to be fully moving and combine all stats */}
-      <section className="bg-brand-teal py-8 relative z-30 overflow-hidden border-y border-white/20 shadow-2xl">
-        <div className="absolute left-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-r from-brand-teal to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-l from-brand-teal to-transparent z-10 pointer-events-none" />
-        
-        <motion.div 
-          className="flex items-center w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-        >
-          {[
-            { icon: "https://img.icons8.com/3d-fluency/94/graduation-cap.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>3000</>, label: "CANDIDATS ACCOMPAGNÉS" },
-            { icon: "https://img.icons8.com/3d-fluency/94/trophy.png", value: <>≈97<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "ADMIS AU TOP 3" },
-            { icon: "https://img.icons8.com/3d-fluency/94/globe.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>16</>, label: "DESTINATIONS D'ÉTUDES" },
-            { icon: "https://img.icons8.com/3d-fluency/94/star.png", value: <>9<span className="text-xl lg:text-2xl font-light mx-1 opacity-90">/</span>10</>, label: "CLIENTS SATISFAITS" },
-            { icon: "https://img.icons8.com/3d-fluency/94/school.png", value: <>500<span className="text-xl lg:text-2xl font-bold ml-2 opacity-90 tracking-widest uppercase">m²</span></>, label: "ESPACE DÉDIÉ" },
-            { icon: "https://img.icons8.com/3d-fluency/94/handshake.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>20</>, label: "PARTENAIRES MONDIAUX" },
-            { icon: "https://img.icons8.com/3d-fluency/94/training.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>50</>, label: "TUTEURS & PROFESSEURS" },
-            { icon: "https://img.icons8.com/3d-fluency/94/medal.png", value: <>7</>, label: "ANS D'EXPERTISE" },
-            { icon: "https://img.icons8.com/3d-fluency/94/conference-call.png", value: <>2</>, label: "COACHS SCOLAIRES" },
-            { icon: "https://img.icons8.com/3d-fluency/94/compass.png", value: <>9</>, label: "EXPERTS EN ORIENTATION" },
-            { icon: "https://img.icons8.com/3d-fluency/94/graduation-cap.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>3000</>, label: "CANDIDATS ACCOMPAGNÉS" },
-            { icon: "https://img.icons8.com/3d-fluency/94/trophy.png", value: <>≈97<span className="text-2xl lg:text-3xl font-light ml-1 opacity-90">%</span></>, label: "ADMIS AU TOP 3" },
-            { icon: "https://img.icons8.com/3d-fluency/94/globe.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>16</>, label: "DESTINATIONS D'ÉTUDES" },
-            { icon: "https://img.icons8.com/3d-fluency/94/star.png", value: <>9<span className="text-xl lg:text-2xl font-light mx-1 opacity-90">/</span>10</>, label: "CLIENTS SATISFAITS" },
-            { icon: "https://img.icons8.com/3d-fluency/94/school.png", value: <>500<span className="text-xl lg:text-2xl font-bold ml-2 opacity-90 tracking-widest uppercase">m²</span></>, label: "ESPACE DÉDIÉ" },
-            { icon: "https://img.icons8.com/3d-fluency/94/handshake.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>20</>, label: "PARTENAIRES MONDIAUX" },
-            { icon: "https://img.icons8.com/3d-fluency/94/training.png", value: <><span className="text-2xl lg:text-3xl font-light mr-1 opacity-90">+</span>50</>, label: "TUTEURS & PROFESSEURS" },
-            { icon: "https://img.icons8.com/3d-fluency/94/medal.png", value: <>7</>, label: "ANS D'EXPERTISE" },
-            { icon: "https://img.icons8.com/3d-fluency/94/conference-call.png", value: <>2</>, label: "COACHS SCOLAIRES" },
-            { icon: "https://img.icons8.com/3d-fluency/94/compass.png", value: <>9</>, label: "EXPERTS EN ORIENTATION" },
-          ].map((stat, idx) => (
-            <div key={idx} className="flex items-center px-10 lg:px-14 border-r border-white/20 last:border-r-0 shrink-0 py-3">
-              <div className="flex flex-col items-center text-center space-y-1">
-                <img src={stat.icon} alt={stat.label} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 shrink-0 drop-shadow-lg" />
-                <div className="text-[26px] sm:text-[32px] lg:text-[40px] tracking-tight font-black font-display text-white leading-none">
-                  {stat.value}
-                </div>
-                <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
-                  {stat.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </section>
+      <TrustBar />
 
       {/* EXPERTISE POLES — extracted, reusable across pages */}
       <ExpertisePoles />
@@ -690,48 +629,37 @@ export default function Home() {
                     </div>
                  </div>
               </div>
+
+              {/* CTA — merged from rocket section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mt-12 p-8 lg:p-10 bg-sa-navy rounded-3xl relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-sa-green/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+                <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8">
+                  <div className="flex-1">
+                    <h3 className="font-display text-[22px] lg:text-[28px] font-extrabold text-white leading-[1.1] mb-3 tracking-tight">
+                      Prêt à décoller <span className="text-sa-green">pour la réussite ?</span>
+                    </h3>
+                    <p className="text-white/70 text-sm lg:text-[15px] leading-relaxed mb-6 max-w-lg">
+                      Rejoignez STUDASSIST et donnez-vous les moyens de vos ambitions. Nos experts vous attendent pour construire ensemble votre parcours d'excellence.
+                    </p>
+                    <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 bg-sa-green text-white rounded-full font-bold text-sm hover:bg-white hover:text-sa-navy transition-all shadow-[0_10px_30px_-10px_rgba(27,183,157,0.5)]">
+                      Je planifie mon rendez-vous
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                  <div className="hidden lg:flex">
+                    <RocketIllustration />
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* TAKE OFF SECTION */}
-      <section className="py-14 bg-white/80 backdrop-blur-sm relative overflow-hidden">
-        {/* Background Patterns for this section */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03]">
-           <svg width="100%" height="100%">
-              <pattern id="pattern-rocket-v2" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                 <circle cx="2" cy="2" r="1.5" fill="currentColor" className="text-brand-darkblue" />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#pattern-rocket-v2)" />
-           </svg>
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="max-w-2xl text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="sa-eyebrow mb-5">Impact & Carrière</span>
-              <h2 className="font-display text-[34px] lg:text-[52px] font-extrabold text-sa-navy leading-[1.05] mb-6 tracking-tight">
-                Prêt à décoller <br />
-                <span className="sa-gradient-text">pour la réussite ?</span>
-              </h2>
-              <p className="text-base lg:text-lg text-sa-ink/65 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                Rejoignez STUDASSIST et donnez-vous les moyens de vos ambitions. Nos experts vous attendent pour construire ensemble votre parcours d'excellence.
-              </p>
-              <Link to="/contact" className="sa-btn-primary">
-                Je planifie mon rendez-vous
-                <ArrowRight size={16} />
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Dynamic Rocket Illustration - Stripe Inspired */}
-          <RocketIllustration />
         </div>
       </section>
 
@@ -749,19 +677,29 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="flex justify-center mb-8 lg:mb-10">
-            <div className="flex flex-wrap justify-center gap-2 lg:gap-1.5 p-2 lg:p-1.5 bg-gray-50 rounded-[1.5rem] lg:rounded-full border border-gray-100 lg:flex-nowrap lg:max-w-none">
-              {[
-                { label: "À propos", icon: <Info size={14} /> },
-                { label: "Méthodologie", icon: <Zap size={14} /> },
-                { label: "Soutien", icon: <BookOpen size={14} /> },
-                { label: "Orientation", icon: <Compass size={14} /> },
-                { label: "Certifications", icon: <Trophy size={14} /> },
-                { label: "Espaces", icon: <Map size={14} /> },
-                { label: "Organisation", icon: <Calendar size={14} /> },
-                { label: "À distance", icon: <Globe size={14} /> },
-                { label: "Inscription", icon: <UserPlus size={14} /> }
-              ].map((cat, idx) => (
+          {/* Mobile: dropdown select */}
+          <div className="mb-8 lg:hidden">
+            <select
+              value={activeFaqCategory}
+              onChange={(e) => {
+                setActiveFaqCategory(Number(e.target.value));
+                setOpenFaqId(null);
+              }}
+              className="w-full px-5 py-3.5 rounded-2xl bg-gray-50 border border-gray-200 text-sa-navy text-sm font-bold appearance-none focus:outline-none focus:border-sa-green focus:ring-2 focus:ring-sa-green/20 transition-all"
+              style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231C1E46' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 16px center" }}
+            >
+              {faqData.map((cat, idx) => (
+                <option key={idx} value={idx}>
+                  {cat.category.replace(/^\d+\.\s*/, '')}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Desktop: chip buttons */}
+          <div className="hidden lg:flex lg:justify-center mb-10">
+            <div className="flex flex-wrap justify-center gap-2 p-3 bg-gray-50 rounded-[1.5rem] border border-gray-100 max-w-3xl">
+              {faqData.map((cat, idx) => (
                 <button
                   key={idx}
                   onClick={() => {
@@ -769,16 +707,13 @@ export default function Home() {
                     setOpenFaqId(null);
                   }}
                   className={cn(
-                    "relative px-4 py-2 lg:px-3 lg:py-2 rounded-full whitespace-nowrap text-[11px] lg:text-[11px] font-bold transition-all duration-200",
+                    "relative px-4 py-2 rounded-full whitespace-nowrap text-[11px] font-bold transition-all duration-200",
                     activeFaqCategory === idx 
                       ? "bg-brand-darkblue text-white shadow-md scale-105" 
-                      : "bg-white lg:bg-transparent border border-gray-100 lg:border-transparent text-gray-500 hover:text-brand-darkblue shadow-sm lg:shadow-none hover:bg-gray-100 lg:hover:bg-transparent"
+                      : "bg-white border border-gray-100 text-gray-500 hover:text-brand-darkblue shadow-sm hover:bg-gray-100"
                   )}
                 >
-                  <span className="flex items-center gap-1.5">
-                    <span className={cn("hidden lg:inline-block", activeFaqCategory === idx ? "text-brand-teal" : "text-gray-400")}>{cat.icon}</span>
-                    {cat.label}
-                  </span>
+                  {cat.category.replace(/^\d+\.\s*/, '')}
                 </button>
               ))}
             </div>
@@ -848,12 +783,12 @@ export default function Home() {
                   <h3 className="text-white text-base lg:text-lg font-bold mb-1">Vous avez encore des questions ?</h3>
                   <p className="text-white/60 text-xs">Nos consultants experts sont là pour vous aider.</p>
                 </div>
-                <Link 
-                  to="/contact" 
+                <button 
+                  onClick={() => { /* TODO: Open chatbot in future update */ }}
                   className="bg-brand-teal text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-brand-darkblue transition-all shrink-0"
                 >
-                  Contactez-nous
-                </Link>
+                  Discuter avec notre assistant
+                </button>
               </div>
             </div>
           </div>
@@ -962,22 +897,55 @@ export default function Home() {
               {/* Spacer column on desktop to reserve room for the absolutely-positioned photo */}
               <div className="hidden lg:block" />
 
-              {/* RIGHT: Copy + CTA */}
-              <div className="relative z-10 text-white flex flex-col items-center text-center">
-                <h2 className="font-display text-[32px] lg:text-[44px] font-extrabold leading-[1.05] tracking-tight mb-4">
-                  Restez <span className="sa-wavy sa-wavy-yellow">connectés</span> !
+              {/* RIGHT: Mini contact form */}
+              <div className="relative z-10 text-white flex flex-col items-center text-center w-full max-w-lg mx-auto">
+                <h2 className="font-display text-[26px] lg:text-[36px] font-extrabold leading-[1.1] tracking-tight mb-2">
+                  Laissez-nous vos <span className="sa-wavy sa-wavy-yellow">coordonnées</span>
                 </h2>
-                <p className="text-white/90 text-[15px] lg:text-base leading-relaxed max-w-xl mx-auto mb-8">
-                  Que ce soit pour l'orientation scolaire, la préparation au bac, les certifications de
-                  langues ou les démarches administratives, ne manquez aucune information essentielle
-                  pour préparer votre avenir.
+                <p className="text-white/80 text-[14px] lg:text-[15px] leading-relaxed mb-6">
+                  pour qu'un conseiller pédagogique puisse vous contacter
                 </p>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 lg:px-10 py-3.5 lg:py-4 rounded-full bg-sa-pink hover:bg-sa-pink/90 text-white font-semibold text-[14px] lg:text-[15px] tracking-wide shadow-[0_18px_35px_-12px_rgba(238,75,98,0.55)] transition-all"
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    /* TODO: handle form submission */
+                  }}
+                  className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3"
                 >
-                  Réserver ma séance découverte <ArrowRight size={16} />
-                </Link>
+                  <input
+                    type="text"
+                    placeholder="Nom"
+                    required
+                    className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Prénom"
+                    required
+                    className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
+                  />
+                  <select
+                    required
+                    defaultValue=""
+                    className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all appearance-none"
+                  >
+                    <option value="" disabled className="text-gray-800">Vous êtes...</option>
+                    <option value="eleve" className="text-gray-800">Élève</option>
+                    <option value="parent" className="text-gray-800">Parent</option>
+                  </select>
+                  <input
+                    type="tel"
+                    placeholder="Numéro de téléphone"
+                    required
+                    className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
+                  />
+                  <button
+                    type="submit"
+                    className="sm:col-span-2 mt-1 inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-sa-pink hover:bg-sa-pink/90 text-white font-semibold text-[14px] tracking-wide shadow-[0_18px_35px_-12px_rgba(238,75,98,0.55)] transition-all"
+                  >
+                    Être rappelé par un conseiller <ArrowRight size={16} />
+                  </button>
+                </form>
               </div>
             </div>
           </div>

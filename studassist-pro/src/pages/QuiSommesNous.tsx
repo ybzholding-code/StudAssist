@@ -22,9 +22,9 @@ import {
 } from "@/src/components/ui/icons";
 import { Link } from "react-router-dom";
 import { cn } from "@/src/lib/utils";
-import TestimonialsSection from "@/src/components/TestimonialsSection";
 import MediaFrameFloaters from "@/src/components/MediaFrameFloaters";
 import Logo from "../components/Logo";
+import TrustBar from "../components/TrustBar";
 
 const QuiSommesNous = () => {
   const stats = [
@@ -59,25 +59,49 @@ const QuiSommesNous = () => {
   ];
 
   const steps = [
-    { title: "Diagnostic Approfondi", desc: "Analyse complète du profil, des méthodes de travail et des aspirations de l'élève.", icon3d: "https://img.icons8.com/3d-fluency/94/search.png" },
-    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/3d-fluency/94/compass.png" },
-    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour optimiser les dossiers et certifications.", icon3d: "https://img.icons8.com/3d-fluency/94/graduation-cap.png" },
-    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/3d-fluency/94/bar-chart.png" },
-    { title: "Orientation vers l'Avenir", desc: "Aide à la construction du projet professionnel et préparation aux concours les plus exigeants.", icon3d: "https://img.icons8.com/3d-fluency/94/telescope.png" },
+    { title: "Diagnostic Approfondi", desc: "Analyse complète du profil, des méthodes de travail et des aspirations de l'élève.", icon3d: "https://img.icons8.com/3d-fluency/94/magnifying-glass.png" },
+    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/3d-fluency/94/road.png" },
+    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour optimiser les dossiers et certifications.", icon3d: "https://img.icons8.com/3d-fluency/94/open-book.png" },
+    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/3d-fluency/94/increase.png" },
+    { title: "Orientation vers l'Avenir", desc: "Aide à la construction du projet professionnel et préparation aux concours les plus exigeants.", icon3d: "https://img.icons8.com/3d-fluency/94/rocket.png" },
   ];
 
   const pillars = [
-    { title: "Excellence", desc: "Nous appliquons des standards élevés dans chaque accompagnement, fondés sur l'expertise, la rigueur et l'amélioration continue.", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png" },
-    { title: "Personnalisation", desc: "Chaque élève est unique. Nous concevons des parcours sur mesure, alignés avec les aspirations, le potentiel et la réalité de chacun.", icon3d: "https://img.icons8.com/3d-fluency/94/puzzle.png" },
-    { title: "Engagement", desc: "Nous nous impliquons pleinement aux côtés des étudiants et de leurs familles, avec constance, responsabilité et disponibilité.", icon3d: "https://img.icons8.com/3d-fluency/94/handshake.png" },
-    { title: "Éthique & Bienveillance", desc: "Nous guidons avec intégrité, transparence et respect, en plaçant toujours l'intérêt de l'étudiant au cœur de nos recommandations.", icon3d: "https://img.icons8.com/3d-fluency/94/heart-with-pulse.png" },
+    { title: "Approche Globale", desc: "Nous allons au-delà du scolaire pour un accompagnement complet.", icon3d: "https://img.icons8.com/3d-fluency/94/globe.png" },
+    { title: "Logique Stratégique", desc: "Nous construisons un plan cohérent, pas une simple accumulation de cours.", icon3d: "https://img.icons8.com/3d-fluency/94/goal.png" },
+    { title: "Accompagnement Humain", desc: "Nous allions rigueur, structure et une relation de confiance.", icon3d: "https://img.icons8.com/3d-fluency/94/handshake.png" },
+    { title: "Vision Internationale & Long Terme", desc: "Nous préparons les étudiants à des choix alignés sur leur potentiel futur.", icon3d: "https://img.icons8.com/3d-fluency/94/rocket.png" },
   ];
 
   const team = [
-    { name: "Yasmine", title: "Founder", image: "/yasmine-belkhayat-fondatrice-studassist.jpg" },
-    { name: "Hajar", title: "Co-founder & GM", image: "/hajar-cofondatrice-studassist.jpg" },
-    { name: "Mehdi", title: "Co-founder & GM", image: "/mehdi-cofondateur-studassist.jpg" },
-    { name: "Omar Bennis", title: "Co-founder & GM", image: "/omar-bennis-cofondateur-studassist.jpg" },
+    {
+      name: "Yasmine", title: "Founder & CEO", image: "/yasmine-belkhayat-fondatrice-studassist.jpg",
+      pos: "object-[center_18%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
+      bio: "Diplômée du Master Grande École de NEOMA Business School après une classe préparatoire scientifique, Yasmine débute sa carrière dans le conseil en transformation des organisations et la gestion de projets digitaux, notamment chez Natixis et Advents Consulting où elle accompagne des grands groupes du secteur banque & assurance à Paris.",
+      bio2: "Entrepreneure engagée, elle fonde ensuite STUDASSIST en 2018, cabinet d'accompagnement académique dédié aux élèves et étudiants, qu'elle développe progressivement autour d'une approche globale mêlant orientation scolaire, préparation aux concours, accompagnement international et digitalisation des parcours d'accompagnement.",
+      linkedin: "https://www.linkedin.com/in/yasmine-belkhayat-zougari-15b6684a/",
+    },
+    {
+      name: "Omar Bennis", title: "Co-founder & GM", image: "/omar-bennis-cofondateur-studassist-v2.png",
+      pos: "object-[center_12%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "", bgColor: "bg-transparent",
+      bio: "Entrepreneur et dirigeant expérimenté diplômé de l'ISG Paris et du Master Executive de l'ESSEC, Omar Bennis évolue depuis plus de 15 ans dans les secteurs de la distribution, du développement commercial et du pilotage d'activités à l'international. Après une première expérience chez Alterfood en France, il cofonde Taste Distribution, qu'il développe pendant plusieurs années en France.",
+      bio2: "Cofondateur de STUDASSIST, Omar apporte une forte expertise en structuration d'entreprise, développement stratégique et gestion opérationnelle. Depuis 2025, il préside en parallèle la société sportive du MAS de Fès, l'un des clubs les plus emblématiques du football marocain.",
+      linkedin: "",
+    },
+    {
+      name: "Hajar", title: "Co-founder & CMO", image: "/hajar-cofondatrice-studassist.jpg",
+      pos: "object-[55%_15%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "brightness-[0.85] contrast-[1.2]", bgColor: "bg-transparent",
+      bio: "Diplômée de l'ENCG de Settat en Marketing et Actions Commerciales, Hajar construit un parcours solide dans l'univers du marketing stratégique et de la gestion de marques internationales. Elle débute sa carrière chez INWI avant d'évoluer dans l'univers du luxe au sein de Beauté Prestige International, puis rejoint le groupe L'Oréal.",
+      bio2: "Très sensible aux enjeux d'accompagnement et de coaching des jeunes, elle rejoint l'aventure STUDASSIST en 2021 où elle pilote l'image de marque, la stratégie de communication ainsi que le développement commercial de la structure.",
+      linkedin: "",
+    },
+    {
+      name: "Mehdi", title: "Co-founder & COO", image: "/mehdi-cofondateur-studassist.jpg",
+      pos: "object-[center_17%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
+      bio: "Diplômé de l'Université Paris II Panthéon-Assas en Finance et Banque, Mehdi débute sa carrière au sein de Société Générale Corporate & Investment Banking avant de rejoindre PwC, où il intervient sur des missions de contrôle financier et de gestion de trésorerie pour de grands groupes internationaux.",
+      bio2: "En 2021, il rejoint STUDASSIST afin de développer l'ensemble du pôle soutien scolaire, en structurant une offre d'accompagnement académique exigeante et personnalisée, pensée pour répondre aux enjeux de performance et de méthodologie des élèves.",
+      linkedin: "",
+    },
   ];
 
   return (
@@ -96,23 +120,21 @@ const QuiSommesNous = () => {
             </motion.h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+            <div className="relative flex">
               <MediaFrameFloaters />
-              <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2 overflow-hidden">
+              <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2 overflow-hidden flex-1">
                 <img 
-                  src="/studassist-equipe-cabinet-orientation-scolaire.jpg" 
+                  src="/DSC_8739.JPG" 
                   alt="Équipe STUDASSIST - Cabinet de conseil en orientation scolaire Casablanca" 
-                  className="rounded-[2rem] w-full h-[280px] lg:h-[400px] object-cover object-top"
+                  className="rounded-[2rem] w-full h-full object-cover object-top"
                 />
               </div>
             </div>
 
             <div className="space-y-6 text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase">
-                <span className="text-brand-teal">STUDASSIST</span>, cabinet de conseil en <br /> 
-                orientation et soutien scolaire au Maroc et <br className="hidden lg:block" />
-                à l'international
+                <span className="text-brand-teal">STUDASSIST</span>, cabinet de conseil en orientation et soutien scolaire au Maroc et à l'international
               </h2>
               <div className="space-y-4 text-gray-500 leading-relaxed font-medium text-sm lg:text-base">
                 <p>
@@ -133,31 +155,7 @@ const QuiSommesNous = () => {
         </div>
       </section>
 
-      {/* STATS BAR - Scrolling marquee matching homepage trust bar */}
-      <section className="bg-brand-teal py-8 relative z-30 overflow-hidden border-y border-white/20 shadow-2xl">
-        <div className="absolute left-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-r from-brand-teal to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-l from-brand-teal to-transparent z-10 pointer-events-none" />
-        
-        <motion.div 
-          className="flex items-center w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        >
-          {[...stats, ...stats].map((item, idx) => (
-            <div key={idx} className="flex items-center px-10 lg:px-14 border-r border-white/20 last:border-r-0 shrink-0 py-3">
-              <div className="flex flex-col items-center text-center space-y-1">
-                <img src={item.icon3d} alt={item.label} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 shrink-0 drop-shadow-lg" />
-                <div className="text-[26px] sm:text-[32px] lg:text-[40px] tracking-tight font-black font-display text-white leading-none">
-                  {item.value}
-                </div>
-                <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
-                  {item.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </section>
+      <TrustBar />
 
       {/* HISTORY SECTION */}
       <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-gray-50 relative overflow-hidden">
@@ -174,7 +172,7 @@ const QuiSommesNous = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
             <div className="order-2 lg:order-1">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue mb-6 leading-tight uppercase">
                 STUDASSIST – L'histoire d'un cabinet de conseil dédié à la réussite académique internationale
@@ -206,92 +204,46 @@ const QuiSommesNous = () => {
                 </p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 relative">
-               <MediaFrameFloaters />
-               <div className="relative z-20 bg-white p-4 rounded-[3rem] shadow-2xl border border-gray-100 transform rotate-2 overflow-hidden">
-                 <img 
-                   src="/studassist-histoire-fondateurs-equipe.jpg" 
-                   alt="Équipe fondatrice STUDASSIST - Histoire du cabinet d'orientation scolaire" 
-                   className="rounded-[2.5rem] w-full h-[300px] lg:h-[500px] object-cover object-[center_20%]"
-                 />
+            <div className="order-1 lg:order-2 relative flex items-stretch">
+               {/* Two superposed album-style photos */}
+               <div className="relative w-full h-full flex flex-col justify-center">
+                 {/* Top image — slightly rotated left */}
+                 <motion.div
+                   initial={{ opacity: 0, rotate: -6 }}
+                   whileInView={{ opacity: 1, rotate: -4 }}
+                   viewport={{ once: true }}
+                   className="relative z-10 bg-[#fdfdfd] p-3 pb-12 sm:p-4 sm:pb-16 rounded-[2px] shadow-[0_20px_50px_rgba(17,29,74,0.15)] border border-gray-200 w-[85%] ml-auto -mb-20 sm:-mb-24"
+                 >
+                   <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] overflow-hidden bg-gray-100 rounded-[2px] border border-gray-200/50">
+                     <img 
+                       src="/about-photo-1.png" 
+                       alt="Fondateurs STUDASSIST - Portraits équipe direction" 
+                       className="w-full h-full object-cover"
+                     />
+                   </div>
+                 </motion.div>
+                 {/* Bottom image — slightly rotated right */}
+                 <motion.div
+                   initial={{ opacity: 0, rotate: 6 }}
+                   whileInView={{ opacity: 1, rotate: 3 }}
+                   viewport={{ once: true }}
+                   transition={{ delay: 0.15 }}
+                   className="relative z-20 bg-[#fdfdfd] p-3 pb-12 sm:p-4 sm:pb-16 rounded-[2px] shadow-[0_20px_50px_rgba(17,29,74,0.15)] border border-gray-200 w-[85%] mr-auto"
+                 >
+                   <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] overflow-hidden bg-gray-100 rounded-[2px] border border-gray-200/50">
+                     <img 
+                       src="/about-photo-2.png" 
+                       alt="Équipe fondatrice STUDASSIST - Photo de groupe" 
+                       className="w-full h-full object-cover"
+                     />
+                   </div>
+                 </motion.div>
                </div>
-               {/* Decorative floatable — positioned outside overflow-hidden container */}
-               <div className="absolute -top-5 -right-5 z-30 bg-brand-teal p-4 rounded-full shadow-xl hidden xl:block animate-bounce">
-                  <img src="https://img.icons8.com/3d-fluency/94/graduation-cap.png" alt="Graduation Cap" className="w-10 h-10" />
-               </div>
-               {/* Pattern overlay — rotating dashed pink ring */}
-               <motion.div
-                 className="absolute -bottom-20 -left-20 w-64 h-64 opacity-20 pointer-events-none"
-                 animate={{ rotate: -360 }}
-                 transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-               >
-                  <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="#ee4b62" strokeWidth="5" strokeDasharray="10 5"></circle></svg>
-               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA BANNER - Signature Red Executive Style */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 relative z-20">
-        <div className="container mx-auto px-6 w-full">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-brand-red rounded-[2.5rem] lg:rounded-[3.5rem] p-8 lg:p-20 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
-          >
-            {/* Precision Pattern - Geometric Grid */}
-            <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
-              <svg width="100%" height="100%">
-                <pattern id="cta-grid-red" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
-                </pattern>
-                <rect width="100%" height="100%" fill="url(#cta-grid-red)" />
-              </svg>
-            </div>
-
-            <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
-              <div className="flex items-center space-x-3 mb-8">
-                <span className="w-12 h-[2px] bg-brand-darkblue" />
-                <span className="text-brand-darkblue font-black text-[11px] tracking-[0.4em] uppercase">Session Stratégique</span>
-              </div>
-              
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-6 lg:mb-8 uppercase tracking-tighter leading-[1.05] lg:leading-[0.95]">
-                Votre <span className="text-brand-darkblue italic">succès</span> <br className="hidden lg:block" /> commence ici.
-              </h2>
-              
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                <p className="text-white/90 font-medium text-lg leading-relaxed max-w-md">
-                  Bénéficiez d'un diagnostic complet de 30 minutes avec nos experts en orientation.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative z-10 mt-12 lg:mt-0">
-              <div className="flex flex-col items-center lg:items-end space-y-8">
-                <Link 
-                  to="/contact" 
-                  className="bg-brand-darkblue text-white px-14 py-7 rounded-2xl font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-4"
-                >
-                  <span>Réserver ma séance</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                </Link>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white">
-                    <Phone size={16} />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-none mb-1">Ligne Directe</p>
-                    <a href="tel:+212669495996" className="text-white font-bold tracking-tight hover:text-brand-darkblue transition-colors">+212 6 69 49 59 96</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* PHILOSOPHY SECTION */}
       <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16">
@@ -303,29 +255,86 @@ const QuiSommesNous = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight">La philosophie <span className="text-brand-teal">Studassist</span></h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {philosophy.map((item, idx) => (
-              <motion.div 
-                key={idx}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left column — Mission + Vision stacked */}
+            <div className="flex flex-col gap-8">
+              {/* MISSION card */}
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group relative h-[450px] rounded-[40px] overflow-hidden shadow-2xl shadow-brand-darkblue/5 border border-gray-100"
+                className="relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgba(17,29,74,0.06)] p-8 lg:p-10 overflow-hidden flex-1"
               >
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-darkblue via-brand-darkblue/60 to-brand-darkblue/10 flex flex-col justify-end p-10 text-white">
-                  <h3 className="text-3xl font-black mb-4 tracking-tighter">{item.title}</h3>
-                  <p className="text-white/80 font-medium text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-teal rounded-l-[2rem]" />
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-brand-teal/10 flex items-center justify-center shrink-0">
+                    <img src="https://img.icons8.com/3d-fluency/94/rocket.png" alt="" className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight">Mission</h3>
                 </div>
+                <p className="text-brand-darkblue font-bold text-base leading-relaxed mb-3">
+                  Clarifier, structurer et sécuriser les parcours d'études supérieures.
+                </p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  STUDASSIST accompagne les élèves et les étudiants dans les <span className="text-brand-darkblue font-semibold">décisions académiques clés</span>, en transformant la complexité de l'orientation, des admissions et de la mobilité internationale en parcours <span className="text-brand-darkblue font-semibold">lisibles, stratégiques et maîtrisés</span>.
+                </p>
               </motion.div>
-            ))}
+
+              {/* VISION card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgba(17,29,74,0.06)] p-8 lg:p-10 overflow-hidden flex-1"
+              >
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-red rounded-l-[2rem]" />
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-brand-red/10 flex items-center justify-center shrink-0">
+                    <img src="https://img.icons8.com/3d-fluency/94/telescope.png" alt="" className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight">Vision</h3>
+                </div>
+                <p className="text-brand-darkblue font-bold text-base leading-relaxed mb-3">
+                  Devenir la référence internationale du conseil étudiant.
+                </p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  STUDASSIST ambitionne de bâtir un <span className="text-brand-darkblue font-semibold">écosystème global d'accompagnement académique</span>, permettant à chaque étudiant, quel que soit son parcours ou son pays d'origine, d'accéder aux meilleures opportunités éducatives grâce à des choix <span className="text-brand-darkblue font-semibold">éclairés et stratégiques</span>.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Right column — Valeurs card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_60px_rgba(17,29,74,0.06)] p-8 lg:p-10 overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-sa-gold rounded-l-[2rem]" />
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-11 h-11 rounded-xl bg-sa-gold/10 flex items-center justify-center shrink-0">
+                  <img src="https://img.icons8.com/3d-fluency/94/heart-with-pulse.png" alt="" className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight">Valeurs</h3>
+              </div>
+              <div className="space-y-5">
+                {pillars.map((pillar, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + idx * 0.1 }}
+                    className="p-4 rounded-2xl bg-gray-50/80 border border-gray-100/80 hover:bg-white hover:shadow-md hover:border-gray-200 transition-all duration-300"
+                  >
+                    <h4 className="text-brand-darkblue font-black text-sm uppercase tracking-tight mb-1.5">{pillar.title}</h4>
+                    <p className="text-gray-500 text-[13px] leading-relaxed">{pillar.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -338,16 +347,11 @@ const QuiSommesNous = () => {
 
         <div className="container mx-auto px-6 relative z-10 w-full">
           <div className="text-center mb-14 max-w-3xl mx-auto">
-            <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-6">
-              <span className="w-8 h-px bg-brand-teal"></span>
-              <span>Notre Excellence</span>
-              <span className="w-8 h-px bg-brand-teal"></span>
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue mb-8 uppercase tracking-tighter leading-tight">
               La Méthode <span className="text-brand-teal">STUDASSIST</span>
             </h2>
             <p className="text-xl text-gray-500 font-medium leading-relaxed">
-              Une approche structurée, scientifique et humaine en <span className="text-brand-red font-bold underline">5 étapes clés</span> pour garantir votre réussite académique et professionnelle.
+              Une approche structurée, scientifique et humaine en <span className="sa-wavy sa-wavy-pink text-brand-red font-bold">5 étapes clés</span> pour garantir votre réussite académique et professionnelle.
             </p>
           </div>
 
@@ -446,15 +450,9 @@ const QuiSommesNous = () => {
             </div>
           </div>
 
-          {/* WHAT MAKES US DIFFERENT - Redesigned to be Airy & Premium */}
+          {/* WHAT MAKES US DIFFERENT */}
           <div className="mt-20">
-            <div className="flex flex-col items-center mb-12 space-y-6">
-              <div className="px-8 py-6 bg-white rounded-3xl border border-gray-100 shadow-xl mb-2">
-                <Logo variant="full" height={40} />
-              </div>
-              <div className="inline-flex items-center px-4 py-1.5 bg-brand-darkblue text-white rounded-full text-[10px] font-black tracking-[0.2em] uppercase shadow-lg shadow-brand-darkblue/10">
-                L'ADN STUDASSIST
-              </div>
+            <div className="flex flex-col items-center mb-12 space-y-4">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter text-center leading-tight">
                 Ce qui fait notre <span className="text-brand-teal">différence</span>
               </h2>
@@ -471,20 +469,15 @@ const QuiSommesNous = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="relative group h-full"
                 >
-                  <div className="h-full bg-white border border-gray-100 p-10 rounded-[3.5rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_40px_80px_rgba(17,29,74,0.1)] hover:border-brand-teal/20 transition-all duration-500 overflow-hidden">
-                    {/* Decorative Background Icon */}
-                    <div className="absolute -right-4 -bottom-4 opacity-0 group-hover:opacity-10 transition-opacity duration-500 -rotate-12 transform scale-150 pointer-events-none">
-                      <img src={pillar.icon3d} alt="" className="w-24 h-24" />
-                    </div>
-
-                    <div className="w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 bg-gray-50">
+                  <div className="h-full bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_40px_80px_rgba(17,29,74,0.1)] hover:border-brand-teal/20 transition-all duration-500 flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 bg-gray-50">
                       <img src={pillar.icon3d} alt={pillar.title} className="w-10 h-10 drop-shadow-md" />
                     </div>
 
-                    <h3 className="text-brand-darkblue font-black text-xl uppercase tracking-tight mb-4 group-hover:text-brand-teal transition-colors">
+                    <h3 className="text-brand-darkblue font-black text-base uppercase tracking-tight mb-3 group-hover:text-brand-teal transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-gray-400 text-sm font-medium leading-relaxed group-hover:text-gray-600 transition-colors">
+                    <p className="text-gray-500 text-sm font-medium leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>
@@ -504,17 +497,26 @@ const QuiSommesNous = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-[32px] sm:text-[40px] lg:text-[56px] font-black text-brand-darkblue leading-[1.1] lg:leading-tight mb-8 uppercase tracking-tighter">
+            <h2 className="text-[32px] sm:text-[40px] lg:text-[56px] font-black text-brand-darkblue leading-[1.1] lg:leading-tight mb-6 uppercase tracking-tighter">
               Prêt à passer à <span className="text-brand-red">l'action</span> ? <br />
               Votre <span className="text-brand-teal">avenir</span> commence ici !
             </h2>
+            <p className="text-lg text-gray-500 font-medium leading-relaxed mb-8 max-w-xl">
+              Bénéficiez d'un diagnostic complet de 45 minutes avec nos conseillers experts.
+            </p>
             <Link 
               to="/contact" 
-              className="bg-brand-red text-white px-12 py-6 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-3"
+              className="bg-brand-red text-white px-12 py-6 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-3 mb-8"
             >
-              <span>Réserver ma séance découverte</span>
+              <span>Réserver une séance découverte</span>
               <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </Link>
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-full bg-brand-darkblue/5 flex items-center justify-center">
+                <Phone size={16} className="text-brand-darkblue" />
+              </div>
+              <a href="tel:+212669495996" className="text-brand-darkblue font-bold tracking-tight hover:text-brand-teal transition-colors">+212 6 69 49 59 96</a>
+            </div>
           </motion.div>
         </div>
         {/* Background blobs */}
@@ -643,14 +645,22 @@ const QuiSommesNous = () => {
       </section>
 
       {/* LEADERSHIP TEAM */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-white">
+      <section className="py-14 lg:py-20 bg-white">
         <div className="container mx-auto px-6 w-full">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter mb-8 leading-tight">Notre direction</h2>
-            <div className="w-16 h-1 bg-brand-teal mx-auto rounded-full" />
+          <div className="text-center mb-14">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-5"
+            >
+              <span className="w-6 h-px bg-brand-teal" />
+              Équipe dirigeante
+            </motion.span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight">Parcours équipe <span className="text-brand-teal">dirigeante</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {team.map((member, idx) => (
               <motion.div 
                 key={idx}
@@ -658,59 +668,27 @@ const QuiSommesNous = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group flex flex-col items-center"
+                className="group"
               >
-                <div className="relative w-full max-w-[320px] mx-auto mb-8">
-                  {/* Corner brackets */}
-                  <div className="absolute -top-3 -left-3 w-10 h-10 border-t-[3px] border-l-[3px] border-brand-teal rounded-tl-xl z-30 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute -bottom-3 -right-3 w-10 h-10 border-b-[3px] border-r-[3px] border-brand-teal rounded-br-xl z-30 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                  {/* Circular STUDASSIST text — top corner, hover-only */}
-                  <div className="absolute -top-6 -right-6 w-16 h-16 z-30 opacity-0 group-hover:opacity-70 transition-opacity duration-500">
-                    <svg className="w-full h-full animate-[spin_15s_linear_infinite]" viewBox="0 0 120 120">
-                      <defs><path id={`tp-${idx}`} d="M 60,60 m -42,0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" fill="none" /></defs>
-                      <text fill="#1BB79D" fontSize="12" fontWeight="800" letterSpacing="6" fontFamily="system-ui, sans-serif">
-                        <textPath href={`#tp-${idx}`}>STUDASSIST •</textPath>
-                      </text>
-                    </svg>
-                  </div>
-                  {/* Unique hover element per card */}
-                  {idx === 0 && (
-                    <div className="absolute -bottom-5 -left-5 w-10 h-10 z-30 opacity-0 group-hover:opacity-80 transition-all duration-500 group-hover:translate-y-1">
-                      <svg viewBox="0 0 40 40"><polygon points="20,2 38,38 2,38" fill="none" stroke="#F3B421" strokeWidth="2.5" /></svg>
-                    </div>
-                  )}
-                  {idx === 1 && (
-                    <div className="absolute top-1/2 -left-6 w-8 h-8 z-30 opacity-0 group-hover:opacity-70 transition-all duration-500 group-hover:-translate-x-1">
-                      <svg viewBox="0 0 40 40"><rect x="5" y="5" width="30" height="30" rx="6" fill="none" stroke="#EE4B62" strokeWidth="2.5" strokeDasharray="6 4" /></svg>
-                    </div>
-                  )}
-                  {idx === 2 && (
-                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-12 h-3 z-30 opacity-0 group-hover:opacity-70 transition-all duration-500 group-hover:translate-y-1">
-                      <svg viewBox="0 0 60 12"><path d="M2 6 Q10 2 18 6 T34 6 T50 6 T58 6" fill="none" stroke="#1BB79D" strokeWidth="2.5" strokeLinecap="round" /></svg>
-                    </div>
-                  )}
-                  {idx === 3 && (
-                    <div className="absolute top-1/3 -right-6 w-6 h-6 z-30 opacity-0 group-hover:opacity-70 transition-all duration-500 group-hover:translate-x-1">
-                      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#F3B421" strokeWidth="2.5" /></svg>
-                    </div>
-                  )}
-                  {/* Soft glow */}
-                  <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-brand-teal/10 rounded-full blur-xl -z-10 group-hover:bg-brand-teal/20 transition-colors duration-500" />
-                  <div className="relative z-20 w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
+                <div className="relative w-full max-w-[320px] mx-auto mb-4">
+                  <div className={`relative z-20 w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-gray-100 transition-all duration-500 shadow-xl group-hover:border-brand-teal/40 ${member.bgColor}`}>
                     <img 
                       src={member.image} 
-                      alt={`${member.name} - ${member.title} STUDASSIST cabinet orientation scolaire`} 
-                      className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                      alt={`${member.name} - ${member.title} STUDASSIST`} 
+                      className={`absolute inset-0 w-full h-full object-cover ${member.pos} ${member.customScale} ${member.hoverScale} ${member.filter} transition-all duration-700 grayscale group-hover:grayscale-0`}
                     />
                     <div className="absolute inset-0 bg-brand-darkblue/20 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-black text-brand-darkblue mb-1 uppercase tracking-tight">{member.name}</h3>
-                <p className="text-brand-teal font-black text-xs uppercase tracking-widest mb-6">{member.title}</p>
-                <div className="flex space-x-3">
-                   <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-brand-darkblue hover:text-white transition-colors cursor-pointer">
-                      <Globe size={14} />
-                   </div>
+                <div className="text-center max-w-[320px] mx-auto">
+                  <h3 className="text-lg sm:text-xl font-black text-brand-darkblue uppercase tracking-tight">{member.name}</h3>
+                  <p className="text-brand-teal font-bold text-[10px] uppercase tracking-widest mb-3">{member.title}</p>
+                  <p className="text-gray-400 text-xs leading-relaxed mb-3">{member.bio2}</p>
+                  {member.linkedin && (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 text-gray-400 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5] transition-all">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -718,15 +696,80 @@ const QuiSommesNous = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS — shared component */}
-      <TestimonialsSection
-        title={
-          <>
-            Témoignages <br />
-            <span className="text-brand-teal">de nos anciens</span>
-          </>
-        }
-      />
+      {/* TÉMOIGNAGES DES ANCIENS */}
+      <section className="py-14 lg:py-20 bg-[#f8fbfc] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-teal/5 rounded-full blur-[100px] -z-10" />
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight">
+              Témoignages <span className="text-brand-teal">de nos anciens</span>
+            </h2>
+            <div className="w-12 h-1 bg-brand-red rounded-full mx-auto mt-6" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Julie */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+              className="relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_50px_rgba(17,29,74,0.04)] p-8 flex flex-col"
+            >
+              <div className="absolute top-0 left-8 w-8 h-8 -translate-y-1/2">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M4 20c0-5.5 3-10 8-12l1.5 2.5C9.5 12.5 8.5 15 8.5 18H12c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-6zm16 0c0-5.5 3-10 8-12l1.5 2.5c-4 2-5 4.5-5 7.5h3.5c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H22c-1.1 0-2-.9-2-2v-6z" fill="#1BB79D" opacity="0.2"/></svg>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                Ce que j'ai particulièrement apprécié chez STUDASSIST, c'est l'importance accordée à la <span className="text-brand-darkblue font-semibold">formation continue des collaborateurs</span>. On ne cesse jamais d'apprendre, de progresser et d'affiner ses compétences. L'ambiance y est également très particulière : une véritable <span className="text-brand-darkblue font-semibold">culture d'équipe</span>, où la cohésion, l'équité et le bien-être des collaborateurs ne sont pas de simples principes, mais des réalités vécues au quotidien.
+              </p>
+              <div className="border-t border-gray-100 pt-5 mt-auto">
+                <p className="text-brand-darkblue font-black text-sm uppercase tracking-tight">Julie</p>
+                <p className="text-gray-400 text-xs font-medium">Professeure de français et philosophie</p>
+              </div>
+            </motion.div>
+
+            {/* Sara */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_50px_rgba(17,29,74,0.04)] p-8 flex flex-col"
+            >
+              <div className="absolute top-0 left-8 w-8 h-8 -translate-y-1/2">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M4 20c0-5.5 3-10 8-12l1.5 2.5C9.5 12.5 8.5 15 8.5 18H12c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-6zm16 0c0-5.5 3-10 8-12l1.5 2.5c-4 2-5 4.5-5 7.5h3.5c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H22c-1.1 0-2-.9-2-2v-6z" fill="#EE4B62" opacity="0.2"/></svg>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                Dès mon premier entretien de recrutement, j'ai compris que STUDASSIST accordait une attention particulière à l'<span className="text-brand-darkblue font-semibold">évolution des jeunes talents</span>, en leur confiant de véritables responsabilités et en leur offrant de belles perspectives d'apprentissage. J'ai évolué au sein d'une équipe <span className="text-brand-darkblue font-semibold">jeune et engagée</span>, où les fondateurs étaient à l'écoute des collaborateurs et encourageaient l'initiative.
+              </p>
+              <div className="border-t border-gray-100 pt-5 mt-auto">
+                <p className="text-brand-darkblue font-black text-sm uppercase tracking-tight">Sara</p>
+                <p className="text-gray-400 text-xs font-medium">Conseillère en orientation</p>
+              </div>
+            </motion.div>
+
+            {/* Reda */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative bg-white rounded-[2rem] border border-gray-100 shadow-[0_20px_50px_rgba(17,29,74,0.04)] p-8 flex flex-col"
+            >
+              <div className="absolute top-0 left-8 w-8 h-8 -translate-y-1/2">
+                <svg viewBox="0 0 32 32" fill="none"><path d="M4 20c0-5.5 3-10 8-12l1.5 2.5C9.5 12.5 8.5 15 8.5 18H12c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-6zm16 0c0-5.5 3-10 8-12l1.5 2.5c-4 2-5 4.5-5 7.5h3.5c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H22c-1.1 0-2-.9-2-2v-6z" fill="#F3B421" opacity="0.2"/></svg>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                J'ai particulièrement apprécié l'énergie et le <span className="text-brand-darkblue font-semibold">professionnalisme de l'équipe</span>. Leur disponibilité et leur engagement m'ont permis d'évoluer dans un cadre d'apprentissage constant. Chez STUDASSIST, la <span className="text-brand-darkblue font-semibold">rigueur, la qualité du travail et l'exigence</span> sont des valeurs partagées au quotidien. Je suis très fier d'avoir contribué au développement d'une structure aussi innovante.
+              </p>
+              <div className="border-t border-gray-100 pt-5 mt-auto">
+                <p className="text-brand-darkblue font-black text-sm uppercase tracking-tight">Réda</p>
+                <p className="text-gray-400 text-xs font-medium">Stagiaire en développement informatique</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* REJOIN SECTION */}
       <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-brand-darkblue relative overflow-hidden">
@@ -744,12 +787,18 @@ const QuiSommesNous = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-8 lg:mb-12 uppercase tracking-tighter leading-tight">Envie de rejoindre <br /> l'aventure ?</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-4 lg:mb-6 uppercase tracking-tighter leading-tight">Envie de rejoindre <br /> l'aventure ?</h2>
+            <p className="text-white/80 font-bold text-lg lg:text-xl mb-4 max-w-2xl mx-auto">
+              Construire, transmettre et accompagner avec exigence
+            </p>
+            <p className="text-white/60 text-sm lg:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+              Chez STUDASSIST, nous réunissons des profils engagés, passionnés par l'éducation et animés par une ambition commune : accompagner chaque élève vers l'excellence, avec rigueur, méthode et exigence.
+            </p>
             <Link 
               to="/contact" 
               className="bg-brand-red text-white px-16 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
             >
-              <span>Nous rejoindre</span>
+              <span>Postuler maintenant</span>
               <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>

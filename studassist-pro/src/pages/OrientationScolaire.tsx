@@ -11,6 +11,7 @@ import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
 import { usePageMeta } from "../hooks/usePageMeta";
+import TrustBar from "../components/TrustBar";
 
 const stats = [
   { value: "+500", label: "Élèves orientés chaque année", icon3d: "https://img.icons8.com/3d-fluency/94/conference-call.png" },
@@ -150,30 +151,7 @@ export default function OrientationScolaire() {
         </div>
       </section>
 
-      {/* ============ STATS BAR ============ */}
-      <section className="bg-brand-teal py-8 relative z-30 overflow-hidden border-y border-white/20 shadow-2xl">
-        <div className="absolute left-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-r from-brand-teal to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 lg:w-48 bg-gradient-to-l from-brand-teal to-transparent z-10 pointer-events-none" />
-        <motion.div
-          className="flex items-center w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        >
-          {[...stats, ...stats].map((item, idx) => (
-            <div key={idx} className="flex items-center px-10 lg:px-14 border-r border-white/20 last:border-r-0 shrink-0 py-3">
-              <div className="flex flex-col items-center text-center space-y-1">
-                <img src={item.icon3d} alt={item.label} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 shrink-0 drop-shadow-lg" />
-                <div className="text-[26px] sm:text-[32px] lg:text-[40px] tracking-tight font-black font-display text-white leading-none">
-                  {item.value}
-                </div>
-                <div className="text-[9px] lg:text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
-                  {item.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </section>
+      <TrustBar />
 
       {/* ============ EXPERTISE POLES (niveaux) ============ */}
       <ExpertisePoles />

@@ -6,7 +6,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Twitter,
 } from "@/src/components/ui/icons";
 import Logo from "../Logo";
 
@@ -35,10 +34,9 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
 ];
 
 const socials = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/studassist", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/studassistmaroc", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/studassistmaroc", label: "Facebook" },
 ];
 
 export default function Footer() {
@@ -52,7 +50,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-4 space-y-6">
             <Link to="/" className="inline-block">
-              <Logo variant="light" height={44} />
+              <Logo variant="light" height={80} />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               Cabinet de conseil dédié à l'élève et à l'étudiant, spécialisé dans le soutien
