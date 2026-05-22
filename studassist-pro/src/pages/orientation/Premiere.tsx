@@ -1,4 +1,5 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { Link } from "react-router-dom";
 
 export default function OrientationPremiere() {
   return (
@@ -6,108 +7,126 @@ export default function OrientationPremiere() {
       eyebrow="Lycée · Première"
       accent="blue"
       title={<>Orientation scolaire <span className="text-brand-teal">en Première</span></>}
-      subtitle="Structurer le projet post-bac et préparer la Terminale avec une longueur d'avance."
+      subtitle="La classe de Première est une année clé dans la construction du projet post-bac."
       intro={[
-        "La classe de Première est une année charnière : les résultats prennent davantage de poids, les intérêts se précisent et le choix de la spécialité à abandonner conditionne l'accès à certaines formations post-bac.",
-        "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d'orientation anticipée et stratégique, pour poser dès maintenant les bases d'un projet solide et aborder la Terminale avec clarté et sérénité.",
+        "La classe de Première est une année clé dans la construction du projet post-bac.",
+        "C’est le moment où se précisent les intérêts, où les résultats prennent davantage de poids, et où s’opèrent des choix structurants, notamment celui de la spécialité à abandonner en vue de la Terminale.",
+        "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d’orientation anticipée et stratégique, afin de poser dès maintenant les bases d’un projet solide et d’aborder la Terminale avec clarté, méthode et sérénité.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+      heroImage="/hero-orientation-new.png"
+      heroCtaLabel="Réserver un rendez-vous de 1er contact"
+      moveHeroCtaUnderGrid={false}
+      moveNavUnderHero={true}
+      enjeuxEyebrow="Les enjeux de l’orientation en première"
+      whyChooseEyebrow="Ce qui fait notre différence"
+      faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
         title: "Pourquoi anticiper dès la Première ?",
-        lead: "Contrairement aux idées reçues, l'orientation ne commence pas en Terminale. La Première est le moment idéal pour construire un avantage décisif sur les autres candidats.",
+        lead: "Contrairement aux idées reçues, l’orientation ne commence pas en Terminale. La Première est le moment d’anticiper son orientation post-bac afin d’éviter les décisions précipitées et de construire un projet progressif, réfléchi et cohérent.",
         bullets: [
-          "Clarifier les centres d'intérêt et les aspirations professionnelles",
+          "Mieux comprendre le profil de l’élève, clarifier ses centres d’intérêt et ses aspirations",
+          "Explorer différentes pistes de filières et prendre conscience des champs de possibilités post-bac",
           "Faire un choix éclairé de la spécialité à conserver en Terminale",
-          "Renforcer les matières stratégiques pour le dossier post-bac",
-          "Anticiper les exigences des formations sélectives",
+          "Renforcer les matières clés et structurer les méthodes de travail pour le dossier post-bac",
+          "Conscientiser son avenir pour donner du sens au travail scolaire et renforcer la motivation",
+          "Anticiper les exigences futures en termes de langues, de concours et de compétences",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/search.png",
           "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
           "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
           "https://img.icons8.com/3d-fluency/94/trophy.png",
         ],
       }}
 
       sections={[
         {
-          title: "Profiling approfondi et vision globale",
+          title: "Un diagnostic approfondi permettant de choisir la spécialité à abandonner de manière stratégique",
           paragraphs: [
-            "Chaque accompagnement débute par un entretien familial initial pour aligner les attentes des parents et les aspirations de l'élève. Nous poursuivons avec des entretiens individuels de profiling qui analysent le parcours académique, les méthodes de travail, la personnalité et les ambitions.",
-            "Ce travail nous permet de construire une lecture globale du profil — bien au-delà des résultats scolaires — et de poser les fondations d'un projet d'orientation réaliste et ambitieux.",
-          ],
-          callout: "Un profil complet pour des décisions structurantes éclairées.",
-        },
-        {
-          title: "Choix stratégique de la spécialité à conserver",
-          paragraphs: [
-            "La Première est marquée par le choix de la spécialité à abandonner — une décision déterminante pour l'accès à certaines filières. Nous accompagnons cette réflexion en croisant le projet d'études envisagé avec les exigences des formations ciblées et le niveau réel de l'élève.",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Une démarche progressive et structurée</strong>,
+            "En Première, l’objectif est de consolider le parcours scolaire tout en préparant activement la Terminale.",
+            "Nous réalisons un diagnostic complet et un profiling individuel de l’élève afin d’analyser ses forces académiques, sa personnalité et ses aspirations.",
+            "Ce travail permet de guider avec méthode et sérénité l’une des décisions clés de l’année : le choix stratégique de la spécialité à abandonner en vue de la Terminale.",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Un choix de spécialité aligné avec les ambitions</strong>,
+            "Chez STUDASSIST, nous accompagnons cette décision cruciale en croisant :",
           ],
           bullets: [
-            "Analyse des attendus des formations post-bac visées",
-            "Évaluation des performances et appétences de l'élève",
-            "Stratégie de maintien des options les plus porteuses",
+            "les attendus et prérequis des filières d’études supérieures visées,",
+            "les forces académiques réelles et les points d'appui de l’élève,",
+            "son niveau de motivation et ses aspirations à long terme.",
           ],
-          callout: "Un choix aligné avec le potentiel de l'élève et les exigences des établissements.",
+          callout: "Un choix stratégique pour maximiser la qualité du dossier scolaire et sécuriser le parcours post-bac.",
         },
         {
-          title: "Short-list d'écoles anticipée",
+          title: "Définir un cap et poser un plan d’action qui s’inscrit sur le long terme avec une ouverture vers l’international",
           paragraphs: [
-            "Nous établissons dès la Première une première short-list de formations et d'établissements. Ce repère stratégique permet à l'élève de visualiser ses objectifs, comprendre les exigences et adapter son travail scolaire en conséquence.",
-          ],
-          bullets: [
-            "Consolider les acquis dans les matières clés",
-            "Renforcer les points faibles identifiés",
-            "Préparer progressivement les exigences de la Terminale",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Poser un plan d’action et anticiper les objectifs</strong>,
+            "Dès la classe de Première, nous aidons l’élève à se projeter concrètement en établissant une première short-list de formations et d’établissements cibles.",
+            "Cette anticipation donne du sens à son travail quotidien et lui permet d'adapter son investissement scolaire aux exigences des filières visées.",
+            "Nous mettons en place un plan d'action personnalisé visant à :",
+            <ul className="list-disc pl-5 space-y-1 my-2 text-gray-500 text-sm">
+              <li>renforcer la méthodologie de travail et l’autonomie,</li>
+              <li>consolider le niveau académique dans les disciplines clés,</li>
+              <li>préparer sereinement la transition vers les exigences de la Terminale.</li>
+            </ul>,
+            <span>
+              Lorsque requis, nous intégrons du{" "}
+              <Link to="/soutien-scolaire" className="text-brand-teal font-black hover:underline">
+                soutien scolaire
+              </Link>{" "}
+              ciblé pour maximiser le dossier académique (dossier de Première et épreuves anticipées du Bac).
+            </span>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Ouverture vers l'international</strong>,
+            <span>
+              Pour les projets d'études à l'étranger, nous amorçons la réflexion sur les prérequis et les calendriers d'admission spécifiques (inscriptions anticipées, certifications de langues). Nous intégrons au programme la préparation aux{" "}
+              <Link to="/certifications" className="text-brand-teal font-black hover:underline">
+                certifications de langues
+              </Link>{" "}
+              (IELTS, TOEFL, Cambridge) indispensables pour les universités internationales.
+            </span>,
           ],
         },
         {
-          title: "Accompagnement académique intégré",
+          title: "Un tiers de confiance entre l’élève et sa famille - Un accompagnement continu et transparent pensé aussi pour les parents",
           paragraphs: [
-            "Lorsque nécessaire, nous intégrons directement du soutien scolaire ciblé, une préparation progressive aux futures échéances (concours, certifications de langues) et un travail de structuration des méthodes de travail.",
-            "L'objectif : aligner dès la Première le niveau académique de l'élève avec ses ambitions d'orientation.",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Un rôle de médiateur expert</strong>,
+            "Les décisions d'orientation en Première peuvent être génératrices de tensions ou d’incertitudes. STUDASSIST intervient comme un tiers neutre et bienveillant pour faciliter le dialogue familial autour d'arguments objectifs et constructifs.",
+            "Nous permettons ainsi de construire un projet partagé par l’élève et ses parents, libéré de toute pression inutile.",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Transparence et suivi continu</strong>,
+            "Tout au long de l’accompagnement, les parents sont tenus informés des progrès de la réflexion et des étapes franchies, grâce à une communication fluide et des bilans réguliers.",
           ],
         },
         {
-          title: "Ouverture progressive vers l'international",
+          title: "À qui s’adresse l’orientation en Première ?",
           paragraphs: [
-            "Pour les élèves envisageant des études à l'étranger, nous amorçons une réflexion sur les destinations possibles, les prérequis académiques et linguistiques, et les parcours à construire dès maintenant pour maximiser les chances d'admission.",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Aux élèves de Première qui :</strong>,
+            <ul className="list-disc pl-5 space-y-1 my-2 text-gray-500 text-sm">
+              <li>souhaitent clarifier et structurer leur projet d'études avec un an d'avance,</li>
+              <li>veulent faire un choix de spécialité réfléchi, cohérent et stratégique,</li>
+              <li>recherchent une dynamique de travail motivante pour valoriser leur dossier scolaire.</li>
+            </ul>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Aux parents qui :</strong>,
+            <ul className="list-disc pl-5 space-y-1 my-2 text-gray-500 text-sm">
+              <li>désirent accompagner leur enfant sans stress face à des choix structurants,</li>
+              <li>souhaitent comprendre l'impact réel des décisions de Première sur Parcoursup et le post-bac,</li>
+              <li>recherchent l’expertise d'un spécialiste pour sécuriser le parcours de leur enfant.</li>
+            </ul>,
           ],
         },
       ]}
 
-      audience={{
-        title: "À qui s'adresse ce programme ?",
-        groups: [
-          {
-            title: "Élèves de Première",
-            bullets: [
-              "Qui souhaitent clarifier leur projet post-bac avec anticipation",
-              "Qui veulent faire un choix éclairé de la spécialité à conserver",
-              "Qui recherchent un accompagnement pour prendre de l'avance sur la Terminale",
-            ],
-          },
-          {
-            title: "Parents",
-            bullets: [
-              "Qui souhaitent être informés et rassurés face aux décisions structurantes",
-              "Qui veulent anticiper les choix pour ne pas les subir en Terminale",
-              "Qui recherchent un cadre expert pour guider leur enfant avec sérénité",
-            ],
-          },
-        ],
-      }}
-
       whyChoose={{
-        title: "Pourquoi STUDASSIST dès la Première ?",
+        title: "Pourquoi choisir STUDASSIST dès la Première ?",
         bullets: [
-          "Une orientation pensée en amont des échéances de Terminale",
-          "Un profiling complet pour des choix éclairés",
-          "Une short-list d'écoles construite avec un an d'avance",
-          "Un plan d'action académique personnalisé et évolutif",
-          "Un soutien scolaire et concours intégré au parcours",
-          "Une vision stratégique à long terme du parcours académique",
+          "Une orientation anticipée et stratégique dès la Première dans une logique humaine, structurée et rassurante",
+          "Un profiling complet de l’élève pour des choix de spécialités éclairés",
+          "Une short-list d’écoles construite dès la Première avec une vision stratégique et ouverte sur l’international",
+          "Un plan d’action académique personnalisé et évolutif dans un esprit d’anticipation des exigences de Terminale",
+          "Une intégration possible d’un programme de renforcement scolaire, de préparation de concours et des certifications de langues",
+          "Un accompagnement humain, bienveillant, rigoureux et transparent",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/calendar.png",
@@ -115,13 +134,17 @@ export default function OrientationPremiere() {
           "https://img.icons8.com/3d-fluency/94/school.png",
           "https://img.icons8.com/3d-fluency/94/bar-chart.png",
           "https://img.icons8.com/3d-fluency/94/medal.png",
-          "https://img.icons8.com/3d-fluency/94/telescope.png",
+          "https://img.icons8.com/3d-fluency/94/handshake.png",
         ],
       }}
 
       ctaBanner={{
-        title: "Préparez la Terminale avec une longueur d'avance.",
+        title: "Prendre rendez-vous",
         body: "Votre enfant est en Première et doit faire des choix décisifs ? Parlons-en lors d'un premier rendez-vous sans engagement.",
+        primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
+        primaryHref: "/contact",
+        secondaryLabel: "Contacter un conseiller",
+        secondaryHref: "https://wa.me/212669495996",
       }}
 
       prev={{ label: "Orientation en Seconde", to: "/orientation/seconde" }}

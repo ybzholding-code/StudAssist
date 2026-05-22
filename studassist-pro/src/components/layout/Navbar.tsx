@@ -22,8 +22,8 @@ const NAV_ITEMS = [
       { label: "Seconde", href: "/orientation/seconde" },
       { label: "Première", href: "/orientation/premiere" },
       { label: "Terminale", href: "/orientation/terminale" },
-      { label: "Master", href: "/orientation/master" },
       { label: "Réorientation", href: "/orientation/reorientation" },
+      { label: "Master", href: "/orientation/master" },
     ],
   },
   {

@@ -16,7 +16,7 @@ export default function SoutienScolaire() {
         </>
       }
       intro="Chez STUDASSIST, chaque élève bénéficie d'un diagnostic initial, d'objectifs clairs et d'un suivi pédagogique régulier, pensés pour consolider les bases, développer la méthode et gagner en autonomie."
-      heroImage="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80"
+      heroImage="/hero-soutien-new.png"
       accent="pink"
       highlights={[
         { value: "+12", label: "Années d'expérience" },

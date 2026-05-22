@@ -16,7 +16,7 @@ export default function PrepasBac() {
         </>
       }
       intro="Spécialités, Bac de français, Philosophie, Grand Oral : nous structurons la préparation de chaque élève pour maximiser la note finale et sécuriser l'orientation post-bac."
-      heroImage="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80"
+      heroImage="/hero-bac-new.png"
       accent="blue"
       highlights={[
         { value: "17.2", label: "Moyenne obtenue" },

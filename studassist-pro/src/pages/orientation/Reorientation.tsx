@@ -11,7 +11,13 @@ export default function OrientationReorientation() {
         "Changer d'orientation n'est pas un échec. C'est souvent le signe d'une meilleure compréhension de soi, de ses capacités et de ses aspirations réelles.",
         "Chez STUDASSIST, nous accompagnons les élèves et étudiants dans une démarche de réorientation structurée et personnalisée, en tenant compte du parcours déjà engagé pour construire un nouveau projet cohérent et porteur de sens, au Maroc comme à l'international.",
       ]}
-      heroImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+      heroImage="/hero-orientation-new.png"
+      heroCtaLabel="Réserver un rendez-vous de 1er contact"
+      moveHeroCtaUnderGrid={false}
+      moveNavUnderHero={true}
+      enjeuxEyebrow="Les enjeux de la réorientation"
+      whyChooseEyebrow="Ce qui fait notre différence"
+      faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
         title: "Les enjeux d'une réorientation réussie",
@@ -84,31 +90,36 @@ export default function OrientationReorientation() {
       }}
 
       whyChoose={{
-        title: "Pourquoi STUDASSIST pour se réorienter ?",
+        title: "Pourquoi choisir STUDASSIST pour se réorienter ?",
         bullets: [
-          "Un diagnostic complet et objectif du parcours initial",
-          "Un repositionnement stratégique et personnalisé du projet",
-          "Un coaching expert sur la narration du parcours",
-          "Un accompagnement complet aux candidatures et entretiens",
-          "Une remise à niveau académique intégrée si nécessaire",
-          "Une expertise Maroc & international couvrant +25 destinations",
+          "Une orientation anticipée et stratégique pour votre réorientation dans une logique humaine, structurée et rassurante",
+          "Un profiling complet de l’élève pour des choix de réorientation éclairés",
+          "Une short-list d’écoles construite pour votre réorientation avec une vision stratégique et ouverte sur l’international",
+          "Un plan d’action académique personnalisé et évolutif dans un esprit d’anticipation des exigences de votre nouveau parcours",
+          "Une intégration possible d’un programme de renforcement scolaire, de préparation de concours et des certifications de langues",
+          "Un accompagnement humain, bienveillant, rigoureux et transparent",
         ],
         icons: [
+          "https://img.icons8.com/3d-fluency/94/calendar.png",
           "https://img.icons8.com/3d-fluency/94/search.png",
-          "https://img.icons8.com/3d-fluency/94/compass.png",
-          "https://img.icons8.com/3d-fluency/94/conference-call.png",
-          "https://img.icons8.com/3d-fluency/94/document.png",
-          "https://img.icons8.com/3d-fluency/94/open-book.png",
-          "https://img.icons8.com/3d-fluency/94/globe.png",
+          "https://img.icons8.com/3d-fluency/94/school.png",
+          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/medal.png",
+          "https://img.icons8.com/3d-fluency/94/handshake.png",
         ],
       }}
 
       ctaBanner={{
-        title: "Transformons une transition en nouveau départ.",
+        title: "Prendre rendez-vous",
         body: "Vous envisagez une réorientation et souhaitez être accompagné(e) avec méthode et bienveillance ? Prenons rendez-vous.",
+        primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
+        primaryHref: "/contact",
+        secondaryLabel: "Contacter un conseiller",
+        secondaryHref: "https://wa.me/212669495996",
       }}
 
-      prev={{ label: "Orientation Master", to: "/orientation/master" }}
+      prev={{ label: "Orientation en Terminale", to: "/orientation/terminale" }}
+      next={{ label: "Orientation Master", to: "/orientation/master" }}
     />
   );
 }

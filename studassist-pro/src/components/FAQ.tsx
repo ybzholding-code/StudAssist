@@ -11,6 +11,7 @@ interface FAQProps {
   items: FaqItem[];
   /** Show a side panel with "Besoin de plus d'aide ?" CTA */
   showAside?: boolean;
+  faqAsideSubtitle?: string;
   className?: string;
 }
 
@@ -20,6 +21,7 @@ export default function FAQ({
   subtitle = "Tout ce que les parents et élèves nous demandent le plus souvent — au même endroit.",
   items,
   showAside = true,
+  faqAsideSubtitle,
   className = "",
 }: FAQProps) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -44,7 +46,7 @@ export default function FAQ({
                 <MessageCircle className="text-sa-gold mb-3" size={22} />
                 <h4 className="font-bold mb-1.5">Une question spécifique ?</h4>
                 <p className="text-sm text-white/70 mb-4 leading-relaxed">
-                  Notre équipe vous répond sous 24h.
+                  {faqAsideSubtitle || "Notre équipe vous répond sous 24h."}
                 </p>
                 <Link to="/contact" className="inline-flex items-center gap-2 text-sa-gold font-semibold text-sm hover:text-white transition">
                   Nous contacter →

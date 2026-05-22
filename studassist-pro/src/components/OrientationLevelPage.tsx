@@ -33,6 +33,12 @@ export interface OrientationLevelPageProps {
   intro: ReactNode[];
   heroImage: string;
   accent?: "pink" | "gold" | "blue" | "coral" | "navy";
+  heroCtaLabel?: string;
+  moveHeroCtaUnderGrid?: boolean;
+  moveNavUnderHero?: boolean;
+  enjeuxEyebrow?: string;
+  whyChooseEyebrow?: string;
+  faqAsideSubtitle?: string;
 
   enjeux?: {
     title: string;
@@ -74,8 +80,8 @@ const LEVELS = [
   { key: "seconde",       label: "Seconde",       href: "/orientation/seconde" },
   { key: "premiere",      label: "Première",      href: "/orientation/premiere" },
   { key: "terminale",     label: "Terminale",     href: "/orientation/terminale" },
-  { key: "master",        label: "Master",        href: "/orientation/master" },
   { key: "reorientation", label: "Réorientation", href: "/orientation/reorientation" },
+  { key: "master",        label: "Master",        href: "/orientation/master" },
 ];
 
 function detectLevelKey(eyebrow: string): string {
@@ -152,6 +158,12 @@ export default function OrientationLevelPage({
   subtitle,
   intro,
   heroImage,
+  heroCtaLabel,
+  moveHeroCtaUnderGrid = false,
+  moveNavUnderHero = false,
+  enjeuxEyebrow,
+  whyChooseEyebrow,
+  faqAsideSubtitle,
   enjeux,
   sections,
   audience,
@@ -168,6 +180,50 @@ export default function OrientationLevelPage({
     title: `Orientation ${levelLabel} — Accompagnement Académique`,
     description: `Orientation scolaire en ${levelLabel} avec STUDASSIST. ${subtitle} Accompagnement personnalisé au Maroc et à l'international.`,
   });
+
+  const renderNav = () => {
+    if (!prev && !next) return null;
+    return (
+      <section className="py-8 bg-white border-b border-gray-100 relative z-20">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col sm:flex-row justify-between gap-4 max-w-5xl mx-auto">
+            {prev ? (
+              <Link
+                to={prev.to}
+                className="flex-1 p-4 bg-gray-50/50 hover:bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-teal/30 hover:-translate-y-0.5 transition-all flex items-center gap-4 group"
+              >
+                <ArrowLeft size={16} className="text-brand-teal group-hover:-translate-x-1 transition-transform" />
+                <div>
+                  <div className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">
+                    Précédent
+                  </div>
+                  <div className="font-black text-brand-darkblue text-sm">{prev.label}</div>
+                </div>
+              </Link>
+            ) : (
+              <div className="flex-grow sm:flex-1 hidden sm:block" />
+            )}
+            {next ? (
+              <Link
+                to={next.to}
+                className="flex-1 p-4 bg-gray-50/50 hover:bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-teal/30 hover:-translate-y-0.5 transition-all flex items-center gap-4 group justify-end text-right"
+              >
+                <div>
+                  <div className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">
+                    Suivant
+                  </div>
+                  <div className="font-black text-brand-darkblue text-sm">{next.label}</div>
+                </div>
+                <ArrowRight size={16} className="text-brand-teal group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ) : (
+              <div className="flex-grow sm:flex-1 hidden sm:block" />
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  };
 
   return (
     <div className="bg-white">
@@ -189,18 +245,20 @@ export default function OrientationLevelPage({
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative">
-              <MediaFrameFloaters />
-              <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-1">
-                <img
-                  src={heroImage}
-                  alt={`Orientation scolaire ${levelLabel} - STUDASSIST accompagnement académique`}
-                  className="rounded-[2rem] w-full h-[350px] lg:h-[420px] object-cover"
-                />
+            <div className="relative flex justify-center w-full">
+              <div className="relative max-w-[400px] w-full">
+                <MediaFrameFloaters />
+                <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-1">
+                  <img
+                    src={heroImage}
+                    alt={`Orientation scolaire ${levelLabel} - STUDASSIST accompagnement académique`}
+                    className="rounded-[2rem] w-full h-auto aspect-[2/3] object-cover"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="space-y-5">
+            <div className="space-y-5 text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase tracking-tight">
                 {subtitle}
               </h2>
@@ -209,19 +267,36 @@ export default function OrientationLevelPage({
                   <p key={i}>{p}</p>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <Link
-                  to={ctaBanner.primaryHref || "/contact"}
-                  className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
-                >
-                  <span>Réserver ma séance découverte</span>
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
+              {!moveHeroCtaUnderGrid && (
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                  <Link
+                    to={ctaBanner.primaryHref || "/contact"}
+                    className="bg-brand-teal text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
+                  >
+                    <span>{heroCtaLabel || "Réserver ma séance découverte"}</span>
+                    <ArrowRight size={18} />
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
+
+          {moveHeroCtaUnderGrid && (
+            <div className="flex justify-center mt-12">
+              <Link
+                to={ctaBanner.primaryHref || "/contact"}
+                className="bg-brand-teal text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
+              >
+                <span>{heroCtaLabel || "Réserver ma séance découverte"}</span>
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* ============ NAVIGATION JUST UNDER HERO ============ */}
+      {moveNavUnderHero && renderNav()}
 
       {/* ============ ENJEUX — Full-width cards ============ */}
       {enjeux && (
@@ -231,7 +306,7 @@ export default function OrientationLevelPage({
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
                 <span className="w-6 h-px bg-brand-teal"></span>
-                <span>Les enjeux</span>
+                <span>{enjeuxEyebrow || "Les enjeux"}</span>
                 <span className="w-6 h-px bg-brand-teal"></span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-black text-brand-darkblue uppercase tracking-tighter mb-4">
@@ -241,7 +316,13 @@ export default function OrientationLevelPage({
                 <p className="text-gray-500 font-medium leading-relaxed">{enjeux.lead}</p>
               )}
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className={`grid sm:grid-cols-2 ${
+              enjeux.bullets.length === 5
+                ? "lg:grid-cols-5"
+                : enjeux.bullets.length === 6
+                ? "lg:grid-cols-3"
+                : "lg:grid-cols-4"
+            } gap-6 max-w-6xl mx-auto`}>
               {enjeux.bullets.map((b, i) => (
                 <motion.div
                   key={i}
@@ -249,16 +330,16 @@ export default function OrientationLevelPage({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="bg-white rounded-[2rem] p-6 border border-gray-100 shadow-[0_12px_40px_rgba(17,29,74,0.04)] hover:shadow-[0_20px_60px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group"
+                  className="bg-white rounded-[2rem] p-6 border border-gray-100 shadow-[0_12px_40px_rgba(17,29,74,0.04)] hover:shadow-[0_20px_60px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group flex flex-col items-center text-center"
                 >
                   {enjeux.icons && enjeux.icons[i] ? (
-                    <img src={enjeux.icons[i]} alt="" className="w-12 h-12 mb-4" />
+                    <img src={enjeux.icons[i]} alt="" className="w-10 h-10 mb-4 object-contain shrink-0" />
                   ) : (
-                    <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors shrink-0">
                       <CheckCircle2 size={18} className="text-brand-teal" />
                     </div>
                   )}
-                  <p className="text-brand-darkblue font-bold text-sm leading-snug">{b}</p>
+                  <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{b}</p>
                 </motion.div>
               ))}
             </div>
@@ -363,7 +444,7 @@ export default function OrientationLevelPage({
             <div className="text-center mb-12">
               <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
                 <span className="w-6 h-px bg-brand-teal"></span>
-                <span>Nos atouts</span>
+                <span>{whyChooseEyebrow || "Nos atouts"}</span>
                 <span className="w-6 h-px bg-brand-teal"></span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-black text-white uppercase tracking-tighter">
@@ -404,7 +485,7 @@ export default function OrientationLevelPage({
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-brand-red rounded-[3rem] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
+            className="bg-brand-red rounded-[3rem] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10 animate-fade-in"
           >
             <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
               <svg width="100%" height="100%">
@@ -424,14 +505,23 @@ export default function OrientationLevelPage({
               </p>
             </div>
 
-            <div className="relative z-10 mt-8 lg:mt-0">
+            <div className="relative z-10 mt-8 lg:mt-0 flex flex-wrap gap-4 justify-center lg:justify-end">
               <Link
                 to={ctaBanner.primaryHref || "/contact"}
-                className="bg-brand-darkblue text-white px-12 py-6 rounded-2xl font-black uppercase tracking-[0.15em] text-sm hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-4"
+                className="bg-brand-darkblue text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
               >
                 <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
-                <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
+              {ctaBanner.secondaryLabel && (
+                <Link
+                  to={ctaBanner.secondaryHref || "#"}
+                  className="bg-white/10 text-white border border-white/20 px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center space-x-3"
+                >
+                  <span>{ctaBanner.secondaryLabel}</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              )}
             </div>
           </motion.div>
         </div>
@@ -442,49 +532,11 @@ export default function OrientationLevelPage({
         title="Orientation : questions fréquentes"
         subtitle="Les réponses aux questions que nous recevons le plus souvent sur ce programme."
         items={buildFaq(...faqKeys)}
+        faqAsideSubtitle={faqAsideSubtitle}
       />
 
       {/* ============ PREV / NEXT NAV ============ */}
-      {(prev || next) && (
-        <section className="py-10 lg:py-14 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-col sm:flex-row justify-between gap-4 max-w-5xl mx-auto">
-              {prev ? (
-                <Link
-                  to={prev.to}
-                  className="flex-1 p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-teal/30 hover:-translate-y-0.5 transition-all flex items-center gap-4 group"
-                >
-                  <ArrowLeft size={16} className="text-brand-teal group-hover:-translate-x-1 transition-transform" />
-                  <div>
-                    <div className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">
-                      Précédent
-                    </div>
-                    <div className="font-black text-brand-darkblue text-sm">{prev.label}</div>
-                  </div>
-                </Link>
-              ) : (
-                <div className="flex-1" />
-              )}
-              {next ? (
-                <Link
-                  to={next.to}
-                  className="flex-1 p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:border-brand-teal/30 hover:-translate-y-0.5 transition-all flex items-center gap-4 group justify-end text-right"
-                >
-                  <div>
-                    <div className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">
-                      Suivant
-                    </div>
-                    <div className="font-black text-brand-darkblue text-sm">{next.label}</div>
-                  </div>
-                  <ArrowRight size={16} className="text-brand-teal group-hover:translate-x-1 transition-transform" />
-                </Link>
-              ) : (
-                <div className="flex-1" />
-              )}
-            </div>
-          </div>
-        </section>
-      )}
+      {!moveNavUnderHero && renderNav()}
     </div>
   );
 }

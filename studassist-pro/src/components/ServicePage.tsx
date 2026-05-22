@@ -12,7 +12,7 @@ import { cn } from "@/src/lib/utils";
 import FAQ from "./FAQ";
 import Logo from "./Logo";
 import TestimonialsSection from "./TestimonialsSection";
-import ImageFloaters from "./ImageFloaters";
+import MediaFrameFloaters from "./MediaFrameFloaters";
 import type { FaqItem } from "../data/faq";
 
 export interface ServiceModule {
@@ -91,14 +91,16 @@ export default function ServicePage({
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative order-2 lg:order-1">
-              <ImageFloaters />
-              <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
-                <img
-                  src={heroImage}
-                  alt={eyebrow}
-                  className="rounded-[2rem] w-full h-[280px] lg:h-[420px] object-cover"
-                />
+            <div className="relative order-2 lg:order-1 flex justify-center w-full">
+              <div className="relative max-w-[400px] w-full">
+                <MediaFrameFloaters />
+                <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
+                  <img
+                    src={heroImage}
+                    alt={eyebrow}
+                    className="rounded-[2rem] w-full h-auto aspect-[2/3] object-cover"
+                  />
+                </div>
               </div>
             </div>
 

@@ -16,7 +16,7 @@ export default function AdminLogement() {
         </>
       }
       intro="Visa, compte bancaire, assurance, logement étudiant, démarches administratives : notre équipe pluridisciplinaire gère les contraintes d'installation pour que l'étudiant se concentre uniquement sur ses études."
-      heroImage="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=900&q=80"
+      heroImage="/hero-admin-new.png"
       accent="blue"
       highlights={[
         { value: "20+", label: "Destinations" },
