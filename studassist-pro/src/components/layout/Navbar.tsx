@@ -29,27 +29,56 @@ const NAV_ITEMS = [
   {
     name: "SOUTIEN SCOLAIRE",
     href: "/soutien-scolaire",
-    subItems: ["Primaire", "Collège", "Lycée", "Supérieur", "Stages de vacances", "Prépa Brevet"],
+    subItems: [
+      { label: "Primaire", href: "/soutien/primaire" },
+      { label: "Collège", href: "/soutien/college" },
+      { label: "Lycée", href: "/soutien/lycee" },
+      { label: "Supérieur", href: "/soutien/superieur" },
+      { label: "Stages de vacances", href: "/soutien/stages" },
+      { label: "Prépa Brevet", href: "/soutien/brevet" },
+    ],
   },
   {
     name: "PRÉPAS BAC",
     href: "/prepas-bac",
-    subItems: ["Bac de Français", "Bac de Spécialités", "Bac de Philo", "Grand oral"],
+    subItems: [
+      { label: "Bac de Français", href: "/prepas-bac/francais" },
+      { label: "Bac de Spécialités", href: "/prepas-bac/specialites" },
+      { label: "Bac de Philo", href: "/prepas-bac/philo" },
+      { label: "Grand Oral", href: "/prepas-bac/grand-oral" },
+    ],
   },
   {
     name: "PRÉPAS CONCOURS",
     href: "/prepas-concours",
-    subItems: ["SAT/ GMAT", "Écoles de commerce", "Écoles d'ingénieurs", "Médecine", "Sciences-po", "Architecture"],
+    subItems: [
+      { label: "SAT / GMAT", href: "/prepa-sat-gmat" },
+      { label: "Commerce SESAME & ACCÈS", href: "/prepa-concours-sesame-acces" },
+      { label: "Commerce ENCG & ISCAE", href: "/prepa-concours-encg-iscae" },
+      { label: "Ingé Avenir – Geipi – Puissance Alpha", href: "/prepa-concours-avenir-geipi-puissance-alpha" },
+      { label: "Ingé UM6P", href: "/prepa-concours-um6p" },
+      { label: "Médecine Maroc", href: "/prepa-medecine-maroc" },
+      { label: "Médecine Belgique", href: "/prepa-medecine-belgique" },
+      { label: "Sciences Po", href: "/prepa-sciences-po" },
+      { label: "Architecture ENA", href: "/prepa-architecture-ena" },
+    ],
   },
   {
     name: "CERTIFICATIONS DE LANGUES",
     href: "/certifications",
-    subItems: ["IELTS-TOEIC-TOEFL", "TCF-DALF", "DELE"],
+    subItems: [
+      { label: "IELTS & TOEFL", href: "/certifications/ielts-toefl" },
+      { label: "TCF & DALF", href: "/certifications/tcf-dalf" },
+      { label: "DELE", href: "/certifications/dele" },
+    ],
   },
   {
     name: "ADMIN&LOGEMENT",
     href: "/admin-logement",
-    subItems: ["Démarches administratives", "Logement étudiant"],
+    subItems: [
+      { label: "Démarches administratives", href: "/admin-logement/demarches" },
+      { label: "Logement étudiant", href: "/admin-logement/logement" },
+    ],
   },
 ];
 
@@ -131,21 +160,15 @@ export default function Navbar() {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border border-gray-100 py-3 overflow-hidden z-50"
                     >
-                      {item.subItems.map((sub) => {
-                        const label = typeof sub === "string" ? sub : sub.label;
-                        const to = typeof sub === "string"
-                          ? `${item.href}#${sub.toLowerCase().replace(/\s+/g, "-")}`
-                          : sub.href;
-                        return (
+                      {item.subItems.map((sub) => (
                           <Link
-                            key={label}
-                            to={to}
+                            key={sub.label}
+                            to={sub.href}
                             className="block px-6 py-2.5 text-xs font-semibold text-gray-600 hover:bg-brand-light hover:text-brand-teal transition"
                           >
-                            {label}
+                            {sub.label}
                           </Link>
-                        );
-                      })}
+                      ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -184,22 +207,16 @@ export default function Navbar() {
                     {item.name}
                   </Link>
                   <div className="pl-4 flex flex-col space-y-1.5 border-l-2 border-brand-teal/20">
-                    {item.subItems.map((sub) => {
-                      const label = typeof sub === "string" ? sub : sub.label;
-                      const to = typeof sub === "string"
-                        ? `${item.href}#${sub.toLowerCase().replace(/\s+/g, "-")}`
-                        : sub.href;
-                      return (
+                    {item.subItems.map((sub) => (
                         <Link
-                          key={label}
-                          to={to}
+                          key={sub.label}
+                          to={sub.href}
                           className="text-sm text-gray-600 hover:text-brand-teal transition py-0.5"
                           onClick={() => setIsOpen(false)}
                         >
-                          {label}
+                          {sub.label}
                         </Link>
-                      );
-                    })}
+                    ))}
                   </div>
                 </div>
               ))}

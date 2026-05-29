@@ -22,6 +22,20 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
     ],
   },
   {
+    title: "Prépas Concours",
+    links: [
+      { label: "SAT / GMAT", to: "/prepa-sat-gmat" },
+      { label: "Commerce SESAME & ACCÈS", to: "/prepa-concours-sesame-acces" },
+      { label: "Commerce ENCG & ISCAE", to: "/prepa-concours-encg-iscae" },
+      { label: "Ingé Avenir – Geipi – Puissance Alpha", to: "/prepa-concours-avenir-geipi-puissance-alpha" },
+      { label: "Ingé UM6P", to: "/prepa-concours-um6p" },
+      { label: "Médecine Maroc", to: "/prepa-medecine-maroc" },
+      { label: "Médecine Belgique", to: "/prepa-medecine-belgique" },
+      { label: "Sciences Po", to: "/prepa-sciences-po" },
+      { label: "Architecture ENA", to: "/prepa-architecture-ena" },
+    ],
+  },
+  {
     title: "Cabinet",
     links: [
       { label: "Qui sommes-nous", to: "/qui-sommes-nous" },
@@ -48,7 +62,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 pt-20 pb-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14">
           {/* Brand column */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <Link to="/" className="inline-block">
               <Logo variant="light" height={80} />
             </Link>
@@ -118,7 +132,7 @@ export default function Footer() {
           ))}
 
           {/* Google Maps + Centre Info */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <div className="bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
               <div className="relative">
                 <iframe

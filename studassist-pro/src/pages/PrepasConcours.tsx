@@ -11,63 +11,65 @@ export default function PrepasConcours() {
       eyebrow="Prépas concours"
       title={
         <>
-          Intégrer les <span className="sa-gradient-text">meilleures écoles</span><br />
-          au Maroc et à l'international.
+          Intégrer les formations les plus <span className="sa-gradient-text">sélectives</span>
         </>
       }
-      intro="Sésame, Accès, ENCG, ISCAE, écoles d'ingénieurs, médecine, architecture, Sciences-Po : nous préparons chaque étudiant à viser haut — avec une stratégie, une méthode et un coaching adaptés."
+      intro="Les concours d'accès aux grandes écoles et universités exigent bien plus que des connaissances académiques. Ils requièrent méthode, rigueur et capacité à performer dans un environnement compétitif. Chez STUDASSIST, nous accompagnons nos élèves dans des préparations complètes, alliant maîtrise des épreuves, stratégies de performances et développement d'un véritable esprit concours."
       heroImage="/hero-concours-new.png"
       accent="pink"
       highlights={[
-        { value: "20+", label: "Destinations" },
-        { value: "85%", label: "Taux d'admission" },
-        { value: "250+", label: "Admis dans le top 10" },
+        { value: "+6 ans", label: "D'expérience" },
+        { value: "100%", label: "Admis top 3 choix" },
+        { value: "8 max", label: "Élèves par groupe" },
       ]}
+      modulesTitle="Commerce | Ingénieur | Médecine | Architecture | International"
+      modulesSubtitle="Des préparations stratégiques et exigeantes pour chaque concours."
       modules={[
         {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/briefcase.png" alt="Commerce" />,
-          title: "Écoles de commerce",
-          description: "Sésame, Accès, ENCG, ISCAE : raisonnement logique, langues, synthèse et entretiens.",
-          points: ["Concours post-bac & post-prépa", "Entretiens de motivation", "Dossiers de candidature"],
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/briefcase.png" alt="SESAME ACCÈS" />,
+          title: "Commerce SESAME & ACCÈS",
+          description: "Intégrer les meilleures écoles de commerce post-bac en France : ESSEC BBA, EM Lyon, IESEG, ESSCA, KEDGE, SKEMA, NEOMA.",
+          points: ["Raisonnement logique & synthèse", "Anglais & méthodologie", "Concours blancs en conditions réelles"],
         },
         {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/rocket.png" alt="Ingénieurs" />,
-          title: "Écoles d'ingénieurs",
-          description: "GEIPI, Avenir, Puissance Alpha, UM6P, CPGE : maths, physique, logique à haut niveau.",
-          points: ["Programmes intensifs", "Entraînement calibré", "Suivi individuel"],
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/bar-chart.png" alt="ENCG ISCAE" />,
+          title: "Commerce ENCG & ISCAE",
+          description: "Intégrer les meilleures écoles de commerce publiques au Maroc grâce à une préparation intensive et stratégique.",
+          points: ["Raisonnement logique & mathématique", "Culture générale & langues", "Groupes de 10 max"],
+        },
+        {
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/rocket.png" alt="Ingénieurs France" />,
+          title: "Ingé Avenir – Geipi – Puissance Alpha",
+          description: "Réussir les concours d'ingénieurs post-bac en France : EPITA, ESILV, ECE, réseau Polytech, CY Tech.",
+          points: ["Maths & Physique-Chimie", "QCM et résolution rapide", "Esprit concours"],
+        },
+        {
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/university.png" alt="UM6P" />,
+          title: "Ingé UM6P",
+          description: "Réussir la sélection et intégrer les programmes d'ingénierie d'excellence de l'UM6P.",
+          points: ["Raisonnement logique & psychotechnique", "Entretien de personnalité", "Structuration du profil"],
+        },
+        {
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/goal.png" alt="SAT GMAT" />,
+          title: "SAT & GMAT",
+          description: "Atteindre les scores requis pour les meilleures universités internationales et programmes MBA.",
+          points: ["Math, Verbal, Logique", "Format individuel sur mesure", "Stratégie d'optimisation du score"],
         },
         {
           icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/stethoscope.png" alt="Médecine" />,
-          title: "Médecine — Maroc & Belgique",
-          description: "Préparation au TSA, tests d'orientation et examens d'entrée des facultés de médecine.",
-          points: ["Biologie, chimie, raisonnement", "Tests blancs chronométrés", "Coaching stress"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/goal.png" alt="SAT" />,
-          title: "SAT & GMAT",
-          description: "Préparation structurée aux tests standardisés américains, requis pour les universités du top mondial.",
-          points: ["Math & Verbal", "Pratique ciblée", "Simulations officielles"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/globe.png" alt="Sciences Po" />,
-          title: "Sciences Po & écoles françaises",
-          description: "Écrits, dossier Parcoursup, oral : un accompagnement complet pour les filières sélectives.",
-          points: ["Méthodologie écrite", "Dossier et projet", "Entretien jury"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/compass.png" alt="Architecture" />,
-          title: "Architecture & ENA",
-          description: "Concours d'écoles d'architecture : composition, culture, entretien et portfolio.",
-          points: ["Culture archi & arts", "Dessin & composition", "Entretien portfolio"],
+          title: "Médecine Maroc & Belgique",
+          description: "Préparation aux concours et examens d'entrée des facultés de médecine au Maroc et en Belgique.",
+          points: ["Sciences fondamentales", "Concours blancs chronométrés", "Préparation dès la 1ère"],
         },
       ]}
       whyPoints={[
-        { title: "Stratégie de concours", body: "Une feuille de route personnalisée combinant choix d'écoles, calendrier et priorisation des efforts." },
-        { title: "Professeurs spécialisés concours", body: "Des intervenants qui corrigent, coachent et préparent aux spécificités de chaque concours." },
-        { title: "Dossier et entretiens", body: "Un coaching complet pour construire un dossier percutant et maîtriser l'entretien de motivation." },
-        { title: "Réseau & insight", body: "L'accès à des alumni et retours terrain d'étudiants déjà admis dans les meilleures écoles." },
+        { title: "Esprit concours", body: "Nous développons la capacité à performer dans un environnement compétitif : gestion du temps, du stress et stratégies de réponse." },
+        { title: "Enseignants spécialisés concours", body: "Des intervenants maîtrisant parfaitement les exigences de chaque concours et les critères d'évaluation." },
+        { title: "100% admis dans le top 3", body: "Depuis plus de 6 ans, chaque année, 100% de nos élèves sont admis dans le top 3 de leurs choix." },
+        { title: "Accompagnement dans la durée", body: "La préparation ne s'arrête pas : contenus complémentaires, entraînement libre dans nos espaces et suivi jusqu'aux échéances." },
       ]}
-      modulesTitle="Préparations aux concours et grandes écoles"
+      ctaLabel="Réserver un cours découverte"
+      ctaHref="https://wa.me/212669495996"
       faqTitle="Prépas Concours : vos questions"
       faqItems={buildFaq("concours", "orientation")}
     />

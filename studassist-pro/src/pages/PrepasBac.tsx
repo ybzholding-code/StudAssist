@@ -11,63 +11,65 @@ export default function PrepasBac() {
       eyebrow="Prépas Bac"
       title={
         <>
-          Réussir le <span className="sa-gradient-text">Baccalauréat</span><br />
-          avec méthode et ambition.
+          Les prépas-bac avec <span className="sa-gradient-text">STUDASSIST</span>
         </>
       }
-      intro="Spécialités, Bac de français, Philosophie, Grand Oral : nous structurons la préparation de chaque élève pour maximiser la note finale et sécuriser l'orientation post-bac."
+      intro="Chez STUDASSIST, nous accompagnons les élèves dans une préparation rigoureuse et personnalisée du Baccalauréat, en combinant maîtrise des méthodes, entraînement ciblé et suivi individualisé. Notre objectif : transformer chaque épreuve en levier de réussite et d'admission dans les formations post-bac les plus exigeantes."
       heroImage="/hero-bac-new.png"
       accent="blue"
       highlights={[
         { value: "17.2", label: "Moyenne obtenue" },
         { value: "94%", label: "Mention Bien / TB" },
-        { value: "100%", label: "Suivi personnalisé" },
+        { value: "2–4", label: "Élèves par groupe" },
       ]}
+      modulesTitle="Maîtriser les épreuves, optimiser ses résultats et sécuriser son orientation"
+      modulesSubtitle="Des préparations ciblées pour chaque épreuve du Baccalauréat."
       modules={[
         {
           icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/open-book.png" alt="Français" />,
           title: "Bac de Français",
-          description: "Maîtriser la dissertation, le commentaire et l'oral. Travail intensif sur les œuvres du programme.",
-          points: ["Méthodologie écrit & oral", "Œuvres intégrales", "Oraux blancs réguliers"],
+          description: "Une épreuve clé dans le parcours académique et l'orientation. Maîtrise de la dissertation, du commentaire et de l'oral.",
+          points: ["Méthodologie écrit & oral", "Œuvres intégrales au programme", "Simulations régulières"],
         },
         {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/test-tube.png" alt="Sciences" />,
-          title: "Spécialités scientifiques",
-          description: "Maths, Physique-Chimie, SVT, NSI, SI : exigence de contenu et méthode face aux épreuves.",
-          points: ["Fiches méthode", "Annales corrigées", "DS et colles"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/document.png" alt="Littéraires" />,
-          title: "Spécialités littéraires & éco",
-          description: "HGGSP, HLP, SES, LLCE : argumentation, dissertation et culture générale haut niveau.",
-          points: ["Construction d'argument", "Culture de référence", "Rédaction académique"],
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/test-tube.png" alt="Spécialités" />,
+          title: "Épreuves de Spécialités",
+          description: "Coefficient 16 au total — le principal levier de performance au Bac et un rôle déterminant dans les candidatures post-bac.",
+          points: ["Toutes spécialités générales & STMG", "Annales et simulations", "Contrôle continu inclus"],
         },
         {
           icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/brain.png" alt="Philosophie" />,
           title: "Bac de Philosophie",
-          description: "Développer la pensée critique et la technique dissertative pour viser la mention.",
-          points: ["Fiches notions", "Dissertations corrigées", "Explications de texte"],
+          description: "Structurer sa pensée, maîtriser la méthode et développer une argumentation solide pour viser la mention.",
+          points: ["Dissertation & explication de texte", "Références philosophiques", "Entraînement progressif"],
         },
         {
           icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/microphone.png" alt="Grand Oral" />,
           title: "Grand Oral",
-          description: "Structurer son sujet, maîtriser sa posture et convaincre le jury avec assurance.",
-          points: ["Construction du grand oral", "Coaching posture & voix", "Simulations filmées"],
+          description: "Structurer son discours, gagner en assurance et se démarquer face au jury. Une épreuve au cœur de l'orientation.",
+          points: ["Construction de la question", "Coaching posture & expression", "Simulations individuelles"],
         },
         {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/trophy.png" alt="Stages" />,
-          title: "Stages intensifs Bac",
-          description: "Des stages de révisions avant chaque échéance pour consolider et rassurer.",
-          points: ["Vacances scolaires", "Simulations d'examen", "Bilan individuel"],
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/conference-call.png" alt="Enseignants" />,
+          title: "Enseignants experts",
+          description: "Des professeurs spécialisés par matière, certains anciens correcteurs du Bac, maîtrisant les attendus et les critères d'évaluation.",
+          points: ["Connaissance précise des attendus", "Corrections détaillées", "Retours personnalisés"],
+        },
+        {
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/trophy.png" alt="Résultats" />,
+          title: "Stratégie orientée résultats",
+          description: "Une approche stratégique alignée avec l'orientation post-bac pour optimiser chaque coefficient et sécuriser l'admission.",
+          points: ["Priorisation par coefficient", "Suivi de progression", "Cohérence avec Parcoursup"],
         },
       ]}
       whyPoints={[
         { title: "Professeurs-examinateurs", body: "Nos intervenants connaissent parfaitement les exigences du Bac nouvelle formule et les critères d'évaluation." },
-        { title: "Simulations sous conditions réelles", body: "Bac blancs écrits et oraux pour réduire le stress et optimiser la performance le jour J." },
-        { title: "Corrections détaillées", body: "Chaque copie est annotée avec des pistes concrètes de progression." },
-        { title: "Stratégie de notes", body: "Nous aidons à prioriser les efforts matière par matière pour maximiser le coefficient total." },
+        { title: "Simulations en conditions réelles", body: "Bacs blancs écrits et oraux pour réduire le stress et optimiser la performance le jour J." },
+        { title: "Corrections détaillées et personnalisées", body: "Chaque copie est annotée avec des pistes concrètes de progression et des axes d'amélioration." },
+        { title: "Approche stratégique et orientation", body: "Nous alignons la préparation avec le projet d'orientation post-bac pour maximiser les opportunités d'admission." },
       ]}
-      modulesTitle="Une préparation complète pour chaque épreuve"
+      ctaLabel="Réserver un cours découverte"
+      ctaHref="https://wa.me/212669495996"
       faqTitle="Prépas Bac : vos questions"
       faqItems={buildFaq("soutien", "method")}
     />

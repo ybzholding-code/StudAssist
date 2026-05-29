@@ -72,6 +72,9 @@ export interface OrientationLevelPageProps {
   faqKeys?: Parameters<typeof buildFaq>;
   prev?: { label: string; to: string };
   next?: { label: string; to: string };
+  hideSidebar?: boolean;
+  sectionTitle?: string;
+  levels?: { key: string; label: string; href: string }[];
 }
 
 /* ---------- Levels registry (sidebar) ---------- */
@@ -172,13 +175,22 @@ export default function OrientationLevelPage({
   faqKeys = ["orientation", "method"] as Parameters<typeof buildFaq>,
   prev,
   next,
+  hideSidebar = false,
+  sectionTitle,
+  levels: customLevels,
 }: OrientationLevelPageProps) {
-  const activeKey = detectLevelKey(eyebrow);
-  const levelLabel = currentLevelLabel(eyebrow);
+  const activeKey = customLevels
+    ? (customLevels.find((l) => eyebrow.toLowerCase().includes(l.key.toLowerCase()))?.key || customLevels[0]?.key || "")
+    : detectLevelKey(eyebrow);
+  const levelLabel = customLevels
+    ? (customLevels.find((l) => l.key === activeKey)?.label || sectionTitle || eyebrow)
+    : currentLevelLabel(eyebrow);
 
   usePageMeta({
-    title: `Orientation ${levelLabel} — Accompagnement Académique`,
-    description: `Orientation scolaire en ${levelLabel} avec STUDASSIST. ${subtitle} Accompagnement personnalisé au Maroc et à l'international.`,
+    title: hideSidebar
+      ? `${eyebrow} — STUDASSIST`
+      : `Orientation ${levelLabel} — Accompagnement Académique`,
+    description: `${hideSidebar ? eyebrow : `Orientation scolaire en ${levelLabel}`} avec STUDASSIST. ${subtitle} Accompagnement personnalisé au Maroc et à l'international.`,
   });
 
   const renderNav = () => {
@@ -350,13 +362,13 @@ export default function OrientationLevelPage({
       {/* ============ SIDEBAR + ACCORDION CONTENT ============ */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-[240px_1fr] gap-10 lg:gap-16 max-w-6xl mx-auto">
-            {/* Vertical level tabs + contact card */}
+          <div className={`${hideSidebar ? "max-w-4xl mx-auto" : "grid lg:grid-cols-[240px_1fr] gap-10 lg:gap-16 max-w-6xl mx-auto"}`}>
+            {!hideSidebar && (
             <aside>
               <div className="lg:sticky lg:top-32 space-y-6">
                 <div className="space-y-2">
                   <p className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400 mb-3 px-2">Niveaux</p>
-                  {LEVELS.map((l) => {
+                  {(customLevels || LEVELS).map((l) => {
                     const active = l.key === activeKey;
                     return (
                       <Link
@@ -377,11 +389,12 @@ export default function OrientationLevelPage({
 
               </div>
             </aside>
+            )}
 
             {/* Accordion content */}
             <div>
               <h2 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight leading-tight mb-2">
-                Orientation en {levelLabel}
+                {sectionTitle || `Orientation en ${levelLabel}`}
               </h2>
               <div className="w-16 h-1 bg-brand-teal rounded-full mb-8" />
 

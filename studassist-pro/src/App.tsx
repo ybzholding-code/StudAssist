@@ -25,6 +25,40 @@ import OrientationReorientation from "./pages/orientation/Reorientation";
 import WhatsAppButton from "./components/ui/WhatsAppButton";
 import DecorativeBackdrop from "./components/DecorativeBackdrop";
 
+// Soutien Scolaire child pages
+import SoutienPrimaire from "./pages/soutien/Primaire";
+import SoutienCollege from "./pages/soutien/College";
+import SoutienLycee from "./pages/soutien/Lycee";
+import SoutienSuperieur from "./pages/soutien/Superieur";
+import SoutienStages from "./pages/soutien/Stages";
+import SoutienBrevet from "./pages/soutien/Brevet";
+
+// Prépas Bac child pages
+import PrepasBacFrancais from "./pages/prepas-bac/Francais";
+import PrepasBacSpecialites from "./pages/prepas-bac/Specialites";
+import PrepasBacPhilo from "./pages/prepas-bac/Philo";
+import PrepasBacGrandOral from "./pages/prepas-bac/GrandOral";
+
+// Prépas Concours child pages
+import PrepaSatGmat from "./pages/prepas-concours/SatGmat";
+import PrepaConcoursSesameAcces from "./pages/prepas-concours/SesameAcces";
+import PrepaConcoursEncgIscae from "./pages/prepas-concours/EncgIscae";
+import PrepaConcoursAvenirGeipi from "./pages/prepas-concours/AvenirGeipi";
+import PrepaConcoursUm6p from "./pages/prepas-concours/Um6p";
+import PrepaMedecineMaroc from "./pages/prepas-concours/MedecineMaroc";
+import PrepaMedecineBelgique from "./pages/prepas-concours/MedecineBelgique";
+import PrepaSciences from "./pages/prepas-concours/SciencesPo";
+import PrepaArchitecture from "./pages/prepas-concours/Architecture";
+
+// Certifications child pages
+import CertificationsIelts from "./pages/certifications/IeltsToeicToefl";
+import CertificationsTcfDalf from "./pages/certifications/TcfDalf";
+import CertificationsDele from "./pages/certifications/Dele";
+
+// Admin & Logement child pages
+import AdminDemarches from "./pages/admin-logement/Demarches";
+import AdminLogementPage from "./pages/admin-logement/Logement";
+
 // Scroll to top on route change
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -77,6 +111,35 @@ export default function App() {
             <Route path="/nous-rejoindre" element={<NousRejoindre />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/centres" element={<Contact />} />
+            {/* Soutien Scolaire child pages */}
+            <Route path="/soutien/primaire" element={<SoutienPrimaire />} />
+            <Route path="/soutien/college" element={<SoutienCollege />} />
+            <Route path="/soutien/lycee" element={<SoutienLycee />} />
+            <Route path="/soutien/superieur" element={<SoutienSuperieur />} />
+            <Route path="/soutien/stages" element={<SoutienStages />} />
+            <Route path="/soutien/brevet" element={<SoutienBrevet />} />
+            {/* Prépas Bac child pages */}
+            <Route path="/prepas-bac/francais" element={<PrepasBacFrancais />} />
+            <Route path="/prepas-bac/specialites" element={<PrepasBacSpecialites />} />
+            <Route path="/prepas-bac/philo" element={<PrepasBacPhilo />} />
+            <Route path="/prepas-bac/grand-oral" element={<PrepasBacGrandOral />} />
+            {/* Prépas Concours child pages */}
+            <Route path="/prepa-sat-gmat" element={<PrepaSatGmat />} />
+            <Route path="/prepa-concours-sesame-acces" element={<PrepaConcoursSesameAcces />} />
+            <Route path="/prepa-concours-encg-iscae" element={<PrepaConcoursEncgIscae />} />
+            <Route path="/prepa-concours-avenir-geipi-puissance-alpha" element={<PrepaConcoursAvenirGeipi />} />
+            <Route path="/prepa-concours-um6p" element={<PrepaConcoursUm6p />} />
+            <Route path="/prepa-medecine-maroc" element={<PrepaMedecineMaroc />} />
+            <Route path="/prepa-medecine-belgique" element={<PrepaMedecineBelgique />} />
+            <Route path="/prepa-sciences-po" element={<PrepaSciences />} />
+            <Route path="/prepa-architecture-ena" element={<PrepaArchitecture />} />
+            {/* Certifications child pages */}
+            <Route path="/certifications/ielts-toefl" element={<CertificationsIelts />} />
+            <Route path="/certifications/tcf-dalf" element={<CertificationsTcfDalf />} />
+            <Route path="/certifications/dele" element={<CertificationsDele />} />
+            {/* Admin & Logement child pages */}
+            <Route path="/admin-logement/demarches" element={<AdminDemarches />} />
+            <Route path="/admin-logement/logement" element={<AdminLogementPage />} />
             {/* Fallback to Home for demo purposes */}
             <Route path="*" element={<Home />} />
           </Routes>

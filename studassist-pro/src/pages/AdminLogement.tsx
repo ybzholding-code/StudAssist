@@ -11,63 +11,41 @@ export default function AdminLogement() {
       eyebrow="Admin & Logement"
       title={
         <>
-          Votre installation à l'étranger,<br />
-          <span className="sa-gradient-text">en toute sérénité.</span>
+          Sécuriser chaque étape pour démarrer en toute <span className="sa-gradient-text">sérénité</span>
         </>
       }
-      intro="Visa, compte bancaire, assurance, logement étudiant, démarches administratives : notre équipe pluridisciplinaire gère les contraintes d'installation pour que l'étudiant se concentre uniquement sur ses études."
+      intro="Au-delà de l'admission, un projet d'études implique de nombreuses démarches administratives et logistiques : visa, installation, logement. Chez STUDASSIST, nous accompagnons les élèves et leurs familles à chaque étape, afin de structurer les démarches, éviter les erreurs et faciliter l'installation dans les meilleures conditions."
       heroImage="/hero-admin-new.png"
       accent="blue"
       highlights={[
-        { value: "20+", label: "Destinations" },
-        { value: "3–7j", label: "Délai logement" },
-        { value: "100%", label: "Étudiants placés" },
+        { value: "+7 ans", label: "D'expérience" },
+        { value: "100%", label: "Dossiers sécurisés" },
+        { value: "A à Z", label: "Accompagnement complet" },
       ]}
+      modulesTitle="Démarches administratives | Logement étudiant"
+      modulesSubtitle="Un accompagnement opérationnel pour sécuriser chaque étape de l'installation."
       modules={[
         {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/passport.png" alt="Visa" />,
-          title: "Dossier Visa & Études",
-          description: "Constitution et suivi du dossier étudiant : Campus France, VISA D, attestations, prise de RDV consulat.",
-          points: ["Conseil sur les pièces", "Relecture du dossier", "Préparation à l'entretien"],
+          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/passport.png" alt="Démarches" />,
+          title: "Démarches administratives",
+          description: "Sécuriser chaque étape de l'expatriation étudiante : visa, sécurité sociale, compte bancaire, légalisations.",
+          points: ["Cadrage complet des démarches", "Accompagnement opérationnel A à Z", "Suivi jusqu'à l'installation"],
         },
         {
           icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/home.png" alt="Logement" />,
           title: "Logement étudiant",
-          description: "Recherche de logement ciblée selon le budget, la ville et la durée — résidence, colocation, studio.",
-          points: ["Sélection de biens", "Dossier locataire", "Signature du bail"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/bank-card-back-side.png" alt="Banque" />,
-          title: "Compte bancaire & RIB",
-          description: "Ouverture à distance ou sur place d'un compte bancaire étudiant adapté.",
-          points: ["Partenaires bancaires", "Dossier facilité", "Carte internationale"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/shield.png" alt="Assurance" />,
-          title: "Assurance & Sécurité sociale",
-          description: "Mutuelle étudiante, assurance habitation, responsabilité civile : toutes les couvertures nécessaires.",
-          points: ["Comparatif assurances", "Inscription SS étudiante", "Attestations officielles"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/document.png" alt="Admin" />,
-          title: "Démarches administratives",
-          description: "OFII, préfecture, CAF, CROUS : nous vous guidons pour ne rien rater des échéances.",
-          points: ["Checklist personnalisée", "Rappels automatiques", "Support à distance"],
-        },
-        {
-          icon: <Icon3D src="https://img.icons8.com/3d-fluency/94/key.png" alt="Accueil" />,
-          title: "Accueil sur place",
-          description: "Un référent sur place pour l'arrivée, la remise des clés et les premiers pas dans la ville d'études.",
-          points: ["Accueil aéroport", "Orientation quartier", "Support les 2 premiers mois"],
+          description: "Trouver un logement adapté, sécurisé et en cohérence avec le projet de l'élève.",
+          points: ["Recherche ciblée et encadrée", "Dossier locataire solide", "Accompagnement jusqu'à la signature"],
         },
       ]}
       whyPoints={[
-        { title: "Un seul interlocuteur", body: "Un conseiller dédié qui pilote l'ensemble des démarches de A à Z." },
-        { title: "Délais garantis", body: "Logement, visa, compte : nous nous engageons sur des jalons clairs." },
-        { title: "Réseau local", body: "Des partenaires logements, banques et assurances dans chaque destination." },
-        { title: "Sérénité famille", body: "Parents et étudiants informés à chaque étape — plus de stress, plus d'urgence." },
+        { title: "Un accompagnement opérationnel", body: "Nous réalisons concrètement les démarches avec les familles, pas seulement du conseil." },
+        { title: "+7 ans d'expérience", body: "Une équipe professionnelle, rigoureuse et à l'écoute, maîtrisant parfaitement les processus." },
+        { title: "Sérénité pour les familles", body: "Les élèves et leurs familles se déchargent des contraintes pour se concentrer sur la rentrée." },
+        { title: "Réseau et partenaires", body: "Des agences partenaires et contacts locaux pour sécuriser chaque étape efficacement." },
       ]}
-      modulesTitle="Un accompagnement complet à l'installation"
+      ctaLabel="Prendre rendez-vous"
+      ctaHref="https://wa.me/212669495996"
       faqTitle="Admin & Logement : vos questions"
       faqItems={buildFaq("international", "orientation")}
     />
