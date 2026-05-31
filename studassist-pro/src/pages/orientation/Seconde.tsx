@@ -12,7 +12,7 @@ export default function OrientationSeconde() {
         "La classe de Seconde marque une étape déterminante : c’est l’année du choix des trois spécialités de Première, un choix structurant qui conditionne progressivement l’accès à certaines filières post-bac.",
         "Chez STUDASSIST, nous accompagnons les élèves de Seconde et leurs familles dans une démarche d’orientation anticipée, réfléchie et évolutive, afin de construire un projet cohérent tout en conservant la souplesse nécessaire à l’évolution naturelle de l’élève.",
       ]}
-      heroImage="/hero-orientation-new.png"
+      heroImage="/hero-orientation-general.png"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

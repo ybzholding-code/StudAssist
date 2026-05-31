@@ -3,10 +3,10 @@ import OrientationLevelPage from "../../components/OrientationLevelPage";
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
   { key: "college", label: "Collège", href: "/soutien/college" },
+  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
   { key: "lycee", label: "Lycée", href: "/soutien/lycee" },
   { key: "superieur", label: "Supérieur", href: "/soutien/superieur" },
   { key: "stages", label: "Stages de vacances", href: "/soutien/stages" },
-  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
 ];
 
 export default function SoutienSuperieur() {
@@ -129,7 +129,7 @@ export default function SoutienSuperieur() {
       }}
 
       faqKeys={["soutien", "method"]}
-      prev={{ label: "Soutien Lycée", to: "/soutien/lycee" }}
+      prev={{ label: "Lycée", to: "/soutien/lycee" }}
       next={{ label: "Stages de vacances", to: "/soutien/stages" }}
     />
   );

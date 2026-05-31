@@ -32,10 +32,10 @@ const NAV_ITEMS = [
     subItems: [
       { label: "Primaire", href: "/soutien/primaire" },
       { label: "Collège", href: "/soutien/college" },
+      { label: "Prépa Brevet", href: "/soutien/brevet" },
       { label: "Lycée", href: "/soutien/lycee" },
       { label: "Supérieur", href: "/soutien/superieur" },
       { label: "Stages de vacances", href: "/soutien/stages" },
-      { label: "Prépa Brevet", href: "/soutien/brevet" },
     ],
   },
   {

@@ -3,10 +3,10 @@ import OrientationLevelPage from "../../components/OrientationLevelPage";
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
   { key: "college", label: "Collège", href: "/soutien/college" },
+  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
   { key: "lycee", label: "Lycée", href: "/soutien/lycee" },
   { key: "superieur", label: "Supérieur", href: "/soutien/superieur" },
   { key: "stages", label: "Stages de vacances", href: "/soutien/stages" },
-  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
 ];
 
 export default function SoutienCollege() {
@@ -20,7 +20,7 @@ export default function SoutienCollege() {
         "Le collège est une période charnière du parcours scolaire. Les exigences académiques augmentent, le rythme s'intensifie et l'élève doit progressivement gagner en autonomie, en organisation et en méthode.",
         "Chez STUDASSIST, nous proposons un soutien scolaire au collège structuré, exigeant et personnalisé, pensé aussi bien pour accompagner les élèves rencontrant des difficultés que pour ceux disposant déjà d'un bon niveau et souhaitant viser l'excellence, quel que soit leur système scolaire.",
       ]}
-      heroImage="/hero-soutien-new.png"
+      heroImage="/soutien-college.png"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -132,8 +132,8 @@ export default function SoutienCollege() {
       }}
 
       faqKeys={["soutien", "method"]}
-      prev={{ label: "Soutien Primaire", to: "/soutien/primaire" }}
-      next={{ label: "Soutien Lycée", to: "/soutien/lycee" }}
+      prev={{ label: "Primaire", to: "/soutien/primaire" }}
+      next={{ label: "Prépa Brevet", to: "/soutien/brevet" }}
     />
   );
 }

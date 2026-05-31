@@ -15,7 +15,7 @@ export default function OrientationScolaire() {
         </>
       }
       intro="Chez STUDASSIST, nous accompagnons élèves et étudiants du lycée au Master pour des choix éclairés et stratégiques. Analyse de profil, vision long terme et accompagnement personnalisé : nous transformons l'orientation en levier de réussite."
-      heroImage="/hero-orientation-new.png"
+      heroImage="/hero-orientation-general.png"
       accent="pink"
       highlights={[
         { value: "+500", label: "Élèves orientés / an" },

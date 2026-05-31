@@ -3,10 +3,10 @@ import OrientationLevelPage from "../../components/OrientationLevelPage";
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
   { key: "college", label: "Collège", href: "/soutien/college" },
+  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
   { key: "lycee", label: "Lycée", href: "/soutien/lycee" },
   { key: "superieur", label: "Supérieur", href: "/soutien/superieur" },
   { key: "stages", label: "Stages de vacances", href: "/soutien/stages" },
-  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
 ];
 
 export default function SoutienStages() {
@@ -20,7 +20,7 @@ export default function SoutienStages() {
         "Les vacances scolaires représentent une opportunité idéale pour faire le point, renforcer les apprentissages et aborder la rentrée suivante dans les meilleures conditions.",
         "Chez STUDASSIST, nos stages de vacances sont conçus comme des modules intensifs et structurés, permettant aux élèves de progresser efficacement tout en conservant un rythme équilibré. Ils s'adressent aux élèves du primaire, collège et lycée, quels que soient leur niveau et leur système scolaire.",
       ]}
-      heroImage="/hero-soutien-new.png"
+      heroImage="/soutien-stages.png"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -123,8 +123,7 @@ export default function SoutienStages() {
       }}
 
       faqKeys={["soutien", "method"]}
-      prev={{ label: "Soutien Supérieur", to: "/soutien/superieur" }}
-      next={{ label: "Prépa Brevet", to: "/soutien/brevet" }}
+      prev={{ label: "Supérieur", to: "/soutien/superieur" }}
     />
   );
 }

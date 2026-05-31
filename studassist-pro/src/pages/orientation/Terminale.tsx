@@ -13,7 +13,7 @@ export default function OrientationTerminale() {
         "C’est l’année où les choix deviennent concrets, où les candidatures s’organisent, et où se dessinent les premières trajectoires académiques et professionnelles.",
         "Chez STUDASSIST, nous accompagnons les élèves de Terminale et leurs familles dans une démarche d’orientation globale, structurée et stratégique, afin de transformer cette période charnière en véritable levier de réussite, au Maroc comme à l’international.",
       ]}
-      heroImage="/hero-orientation-new.png"
+      heroImage="/hero-orientation-general.png"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

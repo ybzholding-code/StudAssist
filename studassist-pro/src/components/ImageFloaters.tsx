@@ -68,7 +68,7 @@ const HollowRing = ({ color }: { color: string }) => (
 /* ---------- Slide Configurations ---------- */
 // This completely personalizes the hero shape cluster for each slider!
 const SLIDE_CONFIGS = [
-  // Slide 0: Accompagnement Scolaire
+  // Slide 0: General Welcome (Pi, Sigma, Atom, Compass)
   {
     s1: { Comp: PiShape, color: TEAL },
     a1: { Comp: TripleZigZag, color: TEAL },
@@ -81,7 +81,7 @@ const SLIDE_CONFIGS = [
     a6: { Comp: HollowRing, color: PURPLE },
     s4: { Comp: CompassShape, color: TEAL },
   },
-  // Slide 1: Orientation Post-Bac
+  // Slide 1: Orientation Post-Bac (Compass, Globe, Infinity, Book)
   {
     s1: { Comp: CompassShape, color: PINK },
     a1: { Comp: HollowRing, color: YELLOW },
@@ -94,7 +94,20 @@ const SLIDE_CONFIGS = [
     a6: { Comp: SolidCircle, color: TEAL },
     s4: { Comp: BookShape, color: YELLOW },
   },
-  // Slide 2: Prépas-Concours
+  // Slide 2: Prépas-Bac (Integral, Sigma, Atom, Book)
+  {
+    s1: { Comp: IntegralShape, color: TEAL },
+    a1: { Comp: TripleZigZag, color: YELLOW },
+    a2: { Comp: DenseDotGrid, color: PINK },
+    a3: { Comp: SolidCircle, color: TEAL },
+    s2: { Comp: SigmaShape, color: PINK },
+    s3: { Comp: AtomShape, color: PURPLE },
+    a4: { Comp: BrokenRing, color: PINK },
+    a5: { Comp: DenseDotGrid, color: TEAL },
+    a6: { Comp: HollowRing, color: YELLOW },
+    s4: { Comp: BookShape, color: TEAL },
+  },
+  // Slide 3: Prépas-Concours (Matrix, DNA, Atom, Integral)
   {
     s1: { Comp: IntegralShape, color: YELLOW },
     a1: { Comp: TripleZigZag, color: PINK },
@@ -107,7 +120,33 @@ const SLIDE_CONFIGS = [
     a6: { Comp: SolidCircle, color: PINK }, 
     s4: { Comp: AtomShape, color: TEAL },
   },
-  // Slide 3: Administratif & Logement
+  // Slide 4: Certifications & Tests de Langues (Globe, Book, Infinity, Compass)
+  {
+    s1: { Comp: GlobeShape, color: TEAL },
+    a1: { Comp: HollowRing, color: PINK },
+    a2: { Comp: DenseDotGrid, color: YELLOW },
+    a3: { Comp: SolidCircle, color: PURPLE },
+    s2: { Comp: BookShape, color: YELLOW },
+    s3: { Comp: InfinityShape, color: PINK },
+    a4: { Comp: BrokenRing, color: TEAL },
+    a5: { Comp: DenseDotGrid, color: PINK },
+    a6: { Comp: HollowRing, color: YELLOW },
+    s4: { Comp: CompassShape, color: TEAL },
+  },
+  // Slide 5: Accompagnement Scolaire (Pi, Sigma, Atom, Book)
+  {
+    s1: { Comp: PiShape, color: PINK },
+    a1: { Comp: TripleZigZag, color: TEAL },
+    a2: { Comp: DenseDotGrid, color: YELLOW },
+    a3: { Comp: SolidCircle, color: PINK },
+    s2: { Comp: SigmaShape, color: TEAL },
+    s3: { Comp: AtomShape, color: PURPLE },
+    a4: { Comp: BrokenRing, color: YELLOW },
+    a5: { Comp: DenseDotGrid, color: PINK },
+    a6: { Comp: HollowRing, color: TEAL },
+    s4: { Comp: BookShape, color: YELLOW },
+  },
+  // Slide 6: Administratif & Logement Étudiant (Globe, Book, Compass, Infinity)
   {
     s1: { Comp: GlobeShape, color: PURPLE },
     a1: { Comp: HollowRing, color: TEAL },

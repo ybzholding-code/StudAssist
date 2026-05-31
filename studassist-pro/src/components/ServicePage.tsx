@@ -33,6 +33,7 @@ export interface ServicePageProps {
   accent?: "pink" | "gold" | "blue" | "coral" | "orange" | "green";
   /** Hero image URL */
   heroImage: string;
+  heroImagePosition?: string;
   /** Three quick value-prop bullets displayed under hero */
   highlights?: { label: string; value: string }[];
   /** List of modules / programs the service offers */
@@ -54,6 +55,7 @@ export default function ServicePage({
   title,
   intro,
   heroImage,
+  heroImagePosition = "center",
   highlights,
   modules,
   modulesTitle = "Nos programmes d'accompagnement",
@@ -92,13 +94,14 @@ export default function ServicePage({
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative order-2 lg:order-1 flex justify-center w-full">
-              <div className="relative max-w-[400px] w-full">
+              <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                   <img
                     src={heroImage}
                     alt={eyebrow}
-                    className="rounded-[2rem] w-full h-auto aspect-[2/3] object-cover"
+                    className="rounded-[2rem] w-full h-auto aspect-[3/2] object-cover"
+                    style={{ objectPosition: heroImagePosition }}
                   />
                 </div>
               </div>

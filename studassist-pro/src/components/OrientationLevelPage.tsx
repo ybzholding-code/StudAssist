@@ -32,6 +32,7 @@ export interface OrientationLevelPageProps {
   subtitle: string;
   intro: ReactNode[];
   heroImage: string;
+  heroImagePosition?: string;
   accent?: "pink" | "gold" | "blue" | "coral" | "navy";
   heroCtaLabel?: string;
   moveHeroCtaUnderGrid?: boolean;
@@ -161,6 +162,7 @@ export default function OrientationLevelPage({
   subtitle,
   intro,
   heroImage,
+  heroImagePosition = "center",
   heroCtaLabel,
   moveHeroCtaUnderGrid = false,
   moveNavUnderHero = false,
@@ -258,13 +260,14 @@ export default function OrientationLevelPage({
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative flex justify-center w-full">
-              <div className="relative max-w-[400px] w-full">
+              <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-1">
                   <img
                     src={heroImage}
                     alt={`Orientation scolaire ${levelLabel} - STUDASSIST accompagnement académique`}
-                    className="rounded-[2rem] w-full h-auto aspect-[2/3] object-cover"
+                    className="rounded-[2rem] w-full h-auto aspect-[3/2] object-cover"
+                    style={{ objectPosition: heroImagePosition }}
                   />
                 </div>
               </div>

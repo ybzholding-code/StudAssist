@@ -13,7 +13,7 @@ export default function OrientationPremiere() {
         "C’est le moment où se précisent les intérêts, où les résultats prennent davantage de poids, et où s’opèrent des choix structurants, notamment celui de la spécialité à abandonner en vue de la Terminale.",
         "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d’orientation anticipée et stratégique, afin de poser dès maintenant les bases d’un projet solide et d’aborder la Terminale avec clarté, méthode et sérénité.",
       ]}
-      heroImage="/hero-orientation-new.png"
+      heroImage="/hero-orientation-general.png"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

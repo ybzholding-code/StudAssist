@@ -3,10 +3,10 @@ import OrientationLevelPage from "../../components/OrientationLevelPage";
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
   { key: "college", label: "Collège", href: "/soutien/college" },
+  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
   { key: "lycee", label: "Lycée", href: "/soutien/lycee" },
   { key: "superieur", label: "Supérieur", href: "/soutien/superieur" },
   { key: "stages", label: "Stages de vacances", href: "/soutien/stages" },
-  { key: "brevet", label: "Prépa Brevet", href: "/soutien/brevet" },
 ];
 
 export default function SoutienLycee() {
@@ -20,7 +20,7 @@ export default function SoutienLycee() {
         "Le lycée est une étape décisive du parcours scolaire et plus généralement de l'avenir académique de l'élève. Les exigences s'intensifient, les enjeux de notes deviennent stratégiques et les résultats obtenus ont un impact direct sur l'orientation post-bac, en France, au Maroc et à l'international.",
         "Chez STUDASSIST, nous proposons un soutien scolaire au lycée structuré, exigeant et personnalisé, destiné aussi bien aux élèves souhaitant renforcer certaines matières qu'aux lycéens disposant d'un bon niveau académique et souhaitant atteindre l'excellence, quel que soit leur système scolaire.",
       ]}
-      heroImage="/hero-soutien-new.png"
+      heroImage="/soutien-lycee.png"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -132,8 +132,8 @@ export default function SoutienLycee() {
       }}
 
       faqKeys={["soutien", "method"]}
-      prev={{ label: "Soutien Collège", to: "/soutien/college" }}
-      next={{ label: "Soutien Supérieur", to: "/soutien/superieur" }}
+      prev={{ label: "Prépa Brevet", to: "/soutien/brevet" }}
+      next={{ label: "Supérieur", to: "/soutien/superieur" }}
     />
   );
 }

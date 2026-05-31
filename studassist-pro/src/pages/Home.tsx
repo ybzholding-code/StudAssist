@@ -325,6 +325,7 @@ export default function Home() {
       buttonText: "Découvrez-nous",
       link: "/qui-sommes-nous",
       image: "/hero-1.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: true,
       layout: 'standard',
       accent: 'brand-red',
@@ -341,6 +342,7 @@ export default function Home() {
       buttonText: "Réserver mon 1er RDV",
       link: "/orientation-scolaire",
       image: "/hero-orientation-new.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
       accent: 'brand-teal',
@@ -356,7 +358,8 @@ export default function Home() {
       description: "Bac de Français écrit et oral, Bac de spécialités, Bac de philo, Grand Oral. Rejoignez notre programme complet pour réussir vos épreuves !",
       buttonText: "Choisir mon programme",
       link: "/prepas-bac",
-      image: "/hero-soutien-new.png",
+      image: "/hero-bac-new.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'standard',
       accent: 'brand-teal',
@@ -373,6 +376,7 @@ export default function Home() {
       buttonText: "Choisir ma préparation",
       link: "/prepas-concours",
       image: "/hero-concours-new.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
       accent: 'brand-red',
@@ -388,7 +392,8 @@ export default function Home() {
       description: "IELTS, TOEIC, TOEFL, DELE, TCF, DELF, DALF… Préparez-vous avec STUDASSIST pour viser les meilleures écoles internationales.",
       buttonText: "Choisir ma certification",
       link: "/certifications",
-      image: "/hero-bac-new.png",
+      image: "/hero-certif-new.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'standard',
       accent: 'brand-teal',
@@ -404,7 +409,8 @@ export default function Home() {
       description: "Maths, Physique-chimie, SVT, Français, SES, HGGSP, Philosophie… Réservez votre séance découverte pour tester notre méthodologie exclusive d'accompagnement scolaire !",
       buttonText: "Réserver mon cours découverte",
       link: "/soutien-scolaire",
-      image: "/hero-certif-new.png",
+      image: "/hero-soutien-new.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
       accent: 'brand-teal',
@@ -421,6 +427,7 @@ export default function Home() {
       buttonText: "Réserver mon RDV d'information",
       link: "/admin-logement",
       image: "/hero-admin-new.png",
+      imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'standard',
       accent: 'brand-red',
@@ -490,7 +497,7 @@ export default function Home() {
                 <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto">
                   <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-[900px] flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-[95vh]">
 
-                    {/* Parallax decorative shapes anchored to the image (only for slide 1) */}
+                    {/* Parallax decorative shapes */}
                     {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}
 
                     {/* ===== Cut-out student photo (no frame) anchored bottom ===== */}

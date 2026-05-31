@@ -13,7 +13,7 @@ export default function OrientationMaster() {
         "Après un Bac+3, les enjeux évoluent : il ne s'agit plus seulement de choisir une formation, mais de définir une spécialisation, de consolider un positionnement de carrière et d'intégrer un programme aligné avec ses ambitions.",
         "Chez STUDASSIST, nous accompagnons les étudiants titulaires d'un Bac+3 dans une démarche d'orientation Master structurée, stratégique et personnalisée, au Maroc comme à l'international.",
       ]}
-      heroImage="/hero-orientation-new.png"
+      heroImage="/hero-orientation-master.png"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
