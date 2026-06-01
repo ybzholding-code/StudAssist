@@ -112,7 +112,7 @@ export default function SoutienSuperieur() {
           "Une vision globale du parcours académique",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/video-call.png",
+          "https://img.icons8.com/3d-fluency/94/student-male.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",
           "https://img.icons8.com/3d-fluency/94/conference-call.png",
           "https://img.icons8.com/3d-fluency/94/compass.png",
