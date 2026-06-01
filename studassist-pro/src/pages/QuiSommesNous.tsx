@@ -772,35 +772,41 @@ const QuiSommesNous = () => {
       </section>
 
       {/* REJOIN SECTION */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-brand-darkblue relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-           <svg width="100%" height="100%">
-              <pattern id="pattern-final" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                 <circle cx="2" cy="2" r="1.5" fill="white" />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#pattern-final)" />
-           </svg>
-        </div>
-        <div className="container mx-auto px-6 text-center relative z-10 w-full">
+      <section className="py-16 lg:py-24 relative z-20 bg-white">
+        <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            className="bg-brand-darkblue rounded-[3rem] p-10 lg:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-[0_40px_100px_rgba(17,29,74,0.25)] border border-white/10"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-4 lg:mb-6 uppercase tracking-tighter leading-tight">Envie de rejoindre <br /> l'aventure ?</h2>
-            <p className="text-white/80 font-bold text-lg lg:text-xl mb-4 max-w-2xl mx-auto">
-              Construire, transmettre et accompagner avec exigence
-            </p>
-            <p className="text-white/60 text-sm lg:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
-              Chez STUDASSIST, nous réunissons des profils engagés, passionnés par l'éducation et animés par une ambition commune : accompagner chaque élève vers l'excellence, avec rigueur, méthode et exigence.
-            </p>
-            <Link 
-              to="/contact" 
-              className="bg-brand-red text-white px-16 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
-            >
-              <span>Postuler maintenant</span>
-              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-            </Link>
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              <svg width="100%" height="100%">
+                <pattern id="pattern-final-quisommesnous" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1.5" fill="white" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#pattern-final-quisommesnous)" />
+              </svg>
+            </div>
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 lg:mb-6 uppercase tracking-tighter leading-tight">
+                Envie de rejoindre <br /> l'aventure ?
+              </h2>
+              <p className="text-white/80 font-bold text-lg lg:text-xl mb-4 max-w-2xl mx-auto">
+                Construire, transmettre et accompagner avec exigence
+              </p>
+              <p className="text-white/60 text-sm lg:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+                Chez STUDASSIST, nous réunissons des profils engagés, passionnés par l'éducation et animés par une ambition commune : accompagner chaque élève vers l'excellence, avec rigueur, méthode et exigence.
+              </p>
+              <Link 
+                to="/nous-rejoindre" 
+                className="bg-brand-red text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
+              >
+                <span>Postuler maintenant</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
