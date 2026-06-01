@@ -24,6 +24,8 @@ export default function PrepaSatGmat() {
         "Chez STUDASSIST, nous proposons des préparations structurées et stratégiques, permettant aux élèves et étudiants d'atteindre des scores compétitifs et de maximiser leurs chances d'admission.",
       ]}
       heroImage="/hero-concours-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

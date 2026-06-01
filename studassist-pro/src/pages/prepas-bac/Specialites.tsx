@@ -19,6 +19,8 @@ export default function PrepasBacSpecialites() {
         "Chez STUDASSIST, nous proposons une préparation structurée, exigeante et orientée résultats, permettant aux élèves de maîtriser les attendus, d'optimiser leurs performances et de renforcer leur dossier académique.",
       ]}
       heroImage="/hero-bac-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

@@ -18,6 +18,8 @@ export default function CertificationsTcfDalf() {
         "Ces examens sont généralement requis pour tout élève issu d'un système non francophone, notamment les élèves ne provenant pas du système français ou belge, souhaitant poursuivre leurs études en France. Chez STUDASSIST, nous accompagnons les élèves et étudiants dans une préparation ciblée et structurée, avec un objectif clair : atteindre le niveau requis en fonction de leur projet.",
       ]}
       heroImage="/hero-certif-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

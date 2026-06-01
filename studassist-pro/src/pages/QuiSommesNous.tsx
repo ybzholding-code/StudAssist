@@ -93,14 +93,14 @@ const QuiSommesNous = () => {
       pos: "object-[55%_15%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "brightness-[0.85] contrast-[1.2]", bgColor: "bg-transparent",
       bio: "Diplômée de l'ENCG de Settat en Marketing et Actions Commerciales, Hajar construit un parcours solide dans l'univers du marketing stratégique et de la gestion de marques internationales. Elle débute sa carrière chez INWI avant d'évoluer dans l'univers du luxe au sein de Beauté Prestige International, puis rejoint le groupe L'Oréal.",
       bio2: "Très sensible aux enjeux d'accompagnement et de coaching des jeunes, elle rejoint l'aventure STUDASSIST en 2021 où elle pilote l'image de marque, la stratégie de communication ainsi que le développement commercial de la structure.",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/hajar-gherras-44a8284b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
     {
       name: "Mehdi", title: "Co-founder & COO", image: "/mehdi-cofondateur-studassist.jpg",
       pos: "object-[center_17%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
       bio: "Diplômé de l'Université Paris II Panthéon-Assas en Finance et Banque, Mehdi débute sa carrière au sein de Société Générale Corporate & Investment Banking avant de rejoindre PwC, où il intervient sur des missions de contrôle financier et de gestion de trésorerie pour de grands groupes internationaux.",
       bio2: "En 2021, il rejoint STUDASSIST afin de développer l'ensemble du pôle soutien scolaire, en structurant une offre d'accompagnement académique exigeante et personnalisée, pensée pour répondre aux enjeux de performance et de méthodologie des élèves.",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/mehdi-mejjati-alami-52b17184?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
   ];
 

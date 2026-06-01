@@ -18,6 +18,8 @@ export default function CertificationsIelts() {
         "Chez STUDASSIST, nous accompagnons les élèves dans une préparation ciblée et stratégique, avec un objectif clair : atteindre le score requis pour intégrer les formations visées.",
       ]}
       heroImage="/hero-certif-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

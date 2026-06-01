@@ -21,6 +21,8 @@ export default function SoutienPrimaire() {
         "Chez STUDASSIST, le soutien scolaire au primaire repose sur une approche globale et équilibrée, combinant renforcement académique structuré et ateliers de brain training, afin d'accompagner chaque enfant dans toutes les dimensions de son développement, quel que soit son système scolaire.",
       ]}
       heroImage="/soutien-college.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

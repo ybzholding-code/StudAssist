@@ -14,6 +14,8 @@ export default function OrientationPremiere() {
         "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d’orientation anticipée et stratégique, afin de poser dès maintenant les bases d’un projet solide et d’aborder la Terminale avec clarté, méthode et sérénité.",
       ]}
       heroImage="/hero-orientation-general.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

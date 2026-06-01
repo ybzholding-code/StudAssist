@@ -16,6 +16,8 @@ export default function Certifications() {
       }
       intro="Les certifications de langues constituent une étape clé dans les candidatures académiques. Elles permettent de valider un niveau linguistique et de répondre aux exigences des établissements en France et à l'international. Chez STUDASSIST, nous préparons les élèves aux différentes certifications grâce à une approche structurée, ciblée et adaptée à leurs objectifs."
       heroImage="/hero-certif-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       accent="gold"
       highlights={[
         { value: "+6 ans", label: "D'expérience" },

@@ -20,7 +20,9 @@ export default function SoutienSuperieur() {
         "La première année d'études supérieures constitue souvent un tournant décisif. Nouveaux rythmes, programmes plus complexes, autonomie accrue, méthodes de travail différentes : beaucoup d'étudiants se retrouvent déstabilisés, même lorsqu'ils avaient un bon niveau au lycée.",
         "Chez STUDASSIST, nous proposons un soutien scolaire individuel en visioconférence, spécifiquement conçu pour accompagner les étudiants de première année post-bac confrontés à ces nouvelles exigences.",
       ]}
-      heroImage="/hero-soutien-new.png"
+      heroImage="/soutien-college.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

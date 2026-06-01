@@ -18,6 +18,8 @@ export default function CertificationsDele() {
         "Chez STUDASSIST, nous accompagnons les élèves dans une préparation structurée et ciblée, avec un objectif clair : atteindre le niveau requis en fonction de leur projet.",
       ]}
       heroImage="/hero-certif-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

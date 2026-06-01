@@ -33,6 +33,8 @@ export interface OrientationLevelPageProps {
   intro: ReactNode[];
   heroImage: string;
   heroImagePosition?: string;
+  heroImageClassName?: string;
+  heroContainerAspectRatio?: string;
   accent?: "pink" | "gold" | "blue" | "coral" | "navy";
   heroCtaLabel?: string;
   moveHeroCtaUnderGrid?: boolean;
@@ -163,6 +165,8 @@ export default function OrientationLevelPage({
   intro,
   heroImage,
   heroImagePosition = "center",
+  heroImageClassName = "",
+  heroContainerAspectRatio,
   heroCtaLabel,
   moveHeroCtaUnderGrid = false,
   moveNavUnderHero = false,
@@ -258,22 +262,24 @@ export default function OrientationLevelPage({
             </h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative flex justify-center w-full">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="relative order-2 lg:order-1 flex justify-center w-full">
               <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
-                <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-1">
-                  <img
-                    src={heroImage}
-                    alt={`Orientation scolaire ${levelLabel} - STUDASSIST accompagnement académique`}
-                    className="rounded-[2rem] w-full h-auto aspect-[3/2] object-cover"
-                    style={{ objectPosition: heroImagePosition }}
-                  />
+                <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
+                  <div className={`rounded-[2rem] w-full h-auto ${heroContainerAspectRatio || "aspect-square"} overflow-hidden bg-white`}>
+                    <img
+                      src={heroImage}
+                      alt={`Orientation scolaire ${levelLabel} - STUDASSIST accompagnement académique`}
+                      className={`w-full h-full object-cover ${heroImageClassName}`}
+                      style={{ objectPosition: heroImagePosition }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-5 text-center lg:text-left">
+            <div className="space-y-5 order-1 lg:order-2 text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase tracking-tight">
                 {subtitle}
               </h2>
@@ -496,7 +502,7 @@ export default function OrientationLevelPage({
 
       {/* ============ CTA BANNER ============ */}
       <section className="py-16 lg:py-24 relative z-20">
-        <div className="container mx-auto px-6 w-full">
+        <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}

@@ -20,7 +20,9 @@ export default function SoutienBrevet() {
         "Le Diplôme National du Brevet constitue la première évaluation officielle du parcours scolaire. Il marque une étape clé avant l'entrée au lycée et nécessite une préparation spécifique, au-delà du travail effectué en classe.",
         "Chez STUDASSIST, la prépa Brevet s'adresse aux élèves de 4ᵉ et de 3ᵉ, quels que soient leur niveau et leur système scolaire.",
       ]}
-      heroImage="/hero-soutien-new.png"
+      heroImage="/soutien-college.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

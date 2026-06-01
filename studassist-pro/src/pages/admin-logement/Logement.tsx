@@ -17,6 +17,8 @@ export default function AdminLogementPage() {
         "Chez STUDASSIST, nous proposons un accompagnement structuré permettant de trouver un logement adapté, sécurisé et en cohérence avec le projet de l'élève.",
       ]}
       heroImage="/hero-admin-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Prendre rendez-vous"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

@@ -24,6 +24,8 @@ export default function PrepaSciences() {
         "Ces concours exigent une préparation rigoureuse, combinant maîtrise académique, culture générale et capacité d'analyse. Chez STUDASSIST, nous proposons une préparation structurée et exigeante, permettant aux élèves de maximiser leurs chances d'admission.",
       ]}
       heroImage="/hero-concours-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

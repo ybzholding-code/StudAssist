@@ -19,6 +19,8 @@ export default function PrepasBacGrandOral() {
         "Chez STUDASSIST, nous accompagnons les élèves dans une préparation complète et exigeante, afin de transformer cette épreuve en véritable opportunité de se distinguer.",
       ]}
       heroImage="/hero-bac-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver une séance découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

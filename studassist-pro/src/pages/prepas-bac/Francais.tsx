@@ -19,6 +19,8 @@ export default function PrepasBacFrancais() {
         "Au-delà de l'examen, elle joue un rôle structurant dans la construction du dossier académique. Les compétences qu'elle mobilise — rigueur, capacité d'analyse, qualité de l'expression et structuration de la pensée — sont particulièrement valorisées dans les candidatures aux établissements d'enseignement supérieur, en France, au Maroc comme à l'international.",
       ]}
       heroImage="/hero-bac-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver une séance découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

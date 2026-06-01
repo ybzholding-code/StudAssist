@@ -21,6 +21,8 @@ export default function SoutienCollege() {
         "Chez STUDASSIST, nous proposons un soutien scolaire au collège structuré, exigeant et personnalisé, pensé aussi bien pour accompagner les élèves rencontrant des difficultés que pour ceux disposant déjà d'un bon niveau et souhaitant viser l'excellence, quel que soit leur système scolaire.",
       ]}
       heroImage="/soutien-college.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

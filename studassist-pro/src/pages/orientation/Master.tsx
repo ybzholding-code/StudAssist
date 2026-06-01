@@ -14,6 +14,7 @@ export default function OrientationMaster() {
         "Chez STUDASSIST, nous accompagnons les étudiants titulaires d'un Bac+3 dans une démarche d'orientation Master structurée, stratégique et personnalisée, au Maroc comme à l'international.",
       ]}
       heroImage="/hero-orientation-master.png"
+      heroContainerAspectRatio="aspect-[3/2]"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

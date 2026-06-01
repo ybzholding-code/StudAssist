@@ -24,6 +24,8 @@ export default function PrepaConcoursAvenirGeipi() {
         "Ces concours sont sélectifs et nécessitent une préparation rigoureuse, combinant maîtrise des fondamentaux scientifiques, méthodologie et gestion du temps. Chez STUDASSIST, nous proposons une préparation structurée et intensive, permettant aux élèves de maximiser leurs performances et leurs chances d'admission.",
       ]}
       heroImage="/hero-concours-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

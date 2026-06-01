@@ -16,6 +16,8 @@ export default function PrepasBac() {
       }
       intro="Chez STUDASSIST, nous accompagnons les élèves dans une préparation rigoureuse et personnalisée du Baccalauréat, en combinant maîtrise des méthodes, entraînement ciblé et suivi individualisé. Notre objectif : transformer chaque épreuve en levier de réussite et d'admission dans les formations post-bac les plus exigeantes."
       heroImage="/hero-bac-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       accent="blue"
       highlights={[
         { value: "17.2", label: "Moyenne obtenue" },

@@ -24,6 +24,8 @@ export default function PrepaMedecineBelgique() {
         "Chez STUDASSIST, nous proposons un accompagnement structuré et stratégique, permettant aux élèves de comprendre les exigences du système belge et de maximiser leurs chances d'admission.",
       ]}
       heroImage="/hero-concours-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

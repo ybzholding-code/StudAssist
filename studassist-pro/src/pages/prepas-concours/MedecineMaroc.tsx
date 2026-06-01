@@ -24,6 +24,8 @@ export default function PrepaMedecineMaroc() {
         "L'accès à ces formations repose sur des critères de sélection rigoureux, nécessitant une préparation sérieuse, structurée et anticipée. Chez STUDASSIST, nous accompagnons les élèves dans la préparation aux différentes voies d'accès à la médecine au Maroc.",
       ]}
       heroImage="/hero-concours-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

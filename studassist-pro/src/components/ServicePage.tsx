@@ -34,6 +34,8 @@ export interface ServicePageProps {
   /** Hero image URL */
   heroImage: string;
   heroImagePosition?: string;
+  heroImageClassName?: string;
+  heroContainerAspectRatio?: string;
   /** Three quick value-prop bullets displayed under hero */
   highlights?: { label: string; value: string }[];
   /** List of modules / programs the service offers */
@@ -56,6 +58,8 @@ export default function ServicePage({
   intro,
   heroImage,
   heroImagePosition = "center",
+  heroImageClassName = "",
+  heroContainerAspectRatio,
   highlights,
   modules,
   modulesTitle = "Nos programmes d'accompagnement",
@@ -97,12 +101,14 @@ export default function ServicePage({
               <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
-                  <img
-                    src={heroImage}
-                    alt={eyebrow}
-                    className="rounded-[2rem] w-full h-auto aspect-[3/2] object-cover"
-                    style={{ objectPosition: heroImagePosition }}
-                  />
+                  <div className={`rounded-[2rem] w-full h-auto ${heroContainerAspectRatio || "aspect-square"} overflow-hidden bg-white`}>
+                    <img
+                      src={heroImage}
+                      alt={eyebrow}
+                      className={`w-full h-full object-cover ${heroImageClassName}`}
+                      style={{ objectPosition: heroImagePosition }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -316,39 +322,42 @@ export default function ServicePage({
       )}
 
       {/* ============ FINAL REJOIN CTA ============ */}
-      <section className="py-16 lg:py-32 bg-brand-darkblue relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-          <svg width="100%" height="100%">
-            <pattern id={`pattern-final-${eyebrow.replace(/\s/g, "-").toLowerCase()}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="white" />
-            </pattern>
-            <rect width="100%" height="100%" fill={`url(#pattern-final-${eyebrow.replace(/\s/g, "-").toLowerCase()})`} />
-          </svg>
-        </div>
-        <div className="container mx-auto px-6 text-center relative z-10">
+      <section className="py-16 lg:py-24 relative z-20">
+        <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            className="bg-brand-darkblue rounded-[3rem] p-10 lg:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-[0_40px_100px_rgba(17,29,74,0.25)] border border-white/10"
           >
-            <div className="flex justify-center mb-8">
-              <Logo variant="light" height={48} />
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              <svg width="100%" height="100%">
+                <pattern id={`pattern-final-${eyebrow.replace(/\\s/g, "-").toLowerCase()}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1.5" fill="white" />
+                </pattern>
+                <rect width="100%" height="100%" fill={`url(#pattern-final-${eyebrow.replace(/\\s/g, "-").toLowerCase()})`} />
+              </svg>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tighter leading-tight">
-              Construisons ensemble <br />
-              <span className="text-brand-teal">votre avenir</span>.
-            </h2>
-            <p className="text-white/70 text-lg font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
-              Un premier rendez-vous gratuit pour évaluer le profil et poser les bases d'une
-              stratégie adaptée.
-            </p>
-            <Link
-              to={ctaHref}
-              className="bg-brand-red text-white px-16 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
-            >
-              <span>Prendre rendez-vous</span>
-              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-            </Link>
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="flex justify-center mb-6">
+                <Logo variant="light" height={40} />
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-tight">
+                Construisons ensemble <br />
+                <span className="text-brand-teal">votre avenir</span>.
+              </h2>
+              <p className="text-white/80 text-base lg:text-lg font-medium max-w-xl mx-auto mb-10 leading-relaxed">
+                Un premier rendez-vous gratuit pour évaluer le profil et poser les bases d'une
+                stratégie adaptée.
+              </p>
+              <Link
+                to={ctaHref}
+                className="bg-brand-red text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
+              >
+                <span>{ctaLabel}</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

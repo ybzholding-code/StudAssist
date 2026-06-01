@@ -21,6 +21,8 @@ export default function SoutienLycee() {
         "Chez STUDASSIST, nous proposons un soutien scolaire au lycée structuré, exigeant et personnalisé, destiné aussi bien aux élèves souhaitant renforcer certaines matières qu'aux lycéens disposant d'un bon niveau académique et souhaitant atteindre l'excellence, quel que soit leur système scolaire.",
       ]}
       heroImage="/soutien-lycee.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

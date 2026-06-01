@@ -16,6 +16,8 @@ export default function AdminLogement() {
       }
       intro="Au-delà de l'admission, un projet d'études implique de nombreuses démarches administratives et logistiques : visa, installation, logement. Chez STUDASSIST, nous accompagnons les élèves et leurs familles à chaque étape, afin de structurer les démarches, éviter les erreurs et faciliter l'installation dans les meilleures conditions."
       heroImage="/hero-admin-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       accent="blue"
       highlights={[
         { value: "+7 ans", label: "D'expérience" },

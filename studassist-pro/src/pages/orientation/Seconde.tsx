@@ -13,6 +13,8 @@ export default function OrientationSeconde() {
         "Chez STUDASSIST, nous accompagnons les élèves de Seconde et leurs familles dans une démarche d’orientation anticipée, réfléchie et évolutive, afin de construire un projet cohérent tout en conservant la souplesse nécessaire à l’évolution naturelle de l’élève.",
       ]}
       heroImage="/hero-orientation-general.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

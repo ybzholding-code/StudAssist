@@ -21,6 +21,8 @@ export default function SoutienStages() {
         "Chez STUDASSIST, nos stages de vacances sont conçus comme des modules intensifs et structurés, permettant aux élèves de progresser efficacement tout en conservant un rythme équilibré. Ils s'adressent aux élèves du primaire, collège et lycée, quels que soient leur niveau et leur système scolaire.",
       ]}
       heroImage="/soutien-stages.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

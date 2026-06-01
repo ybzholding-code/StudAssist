@@ -17,6 +17,8 @@ export default function AdminDemarches() {
         "Souvent complexes et chronophages, elles peuvent générer du stress pour les élèves et leurs familles. Chez STUDASSIST, nous proposons un accompagnement structuré permettant de cadrer, anticiper et sécuriser l'ensemble des démarches d'expatriation.",
       ]}
       heroImage="/hero-admin-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Prendre rendez-vous"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

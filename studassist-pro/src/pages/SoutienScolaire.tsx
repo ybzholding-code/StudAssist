@@ -15,7 +15,9 @@ export default function SoutienScolaire() {
         </>
       }
       intro="Chez STUDASSIST, le soutien scolaire s'adresse aussi bien aux élèves rencontrant des difficultés qu'à ceux disposant d'un bon niveau académique et souhaitant viser l'excellence. Notre méthodologie différenciée, déployée en petits groupes de 2 à 4 élèves maximum, permet un accompagnement rigoureux, personnalisé et orienté vers une progression durable et structurée, inscrite dans une logique de long terme."
-      heroImage="/hero-soutien-new.png"
+      heroImage="/soutien-college.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 65%"
       accent="pink"
       highlights={[
         { value: "+12", label: "Années d'expérience" },

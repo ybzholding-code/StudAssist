@@ -12,6 +12,7 @@ export default function OrientationReorientation() {
         "Chez STUDASSIST, nous accompagnons les élèves et étudiants dans une démarche de réorientation structurée et personnalisée, en tenant compte du parcours déjà engagé pour construire un nouveau projet cohérent et porteur de sens, au Maroc comme à l'international.",
       ]}
       heroImage="/hero-reorientation.png"
+      heroContainerAspectRatio="aspect-[3/2]"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}

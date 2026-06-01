@@ -24,6 +24,8 @@ export default function PrepaArchitecture() {
         "Chez STUDASSIST, nous proposons une préparation spécifique, permettant aux élèves de développer les compétences attendues et de maximiser leurs chances d'admission.",
       ]}
       heroImage="/hero-concours-new.png"
+      heroImageClassName="!object-cover"
+      heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
