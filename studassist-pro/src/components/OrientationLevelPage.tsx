@@ -502,7 +502,7 @@ export default function OrientationLevelPage({
 
       {/* ============ CTA BANNER ============ */}
       <section className="py-16 lg:py-24 relative z-20">
-        <div className="container mx-auto px-6 max-w-6xl">
+        <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}

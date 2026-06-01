@@ -115,7 +115,7 @@ export default function PrepaSatGmat() {
           "100% de nos élèves admis dans le top 3 de leurs choix",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/video-call.png",
+          "https://img.icons8.com/3d-fluency/94/webcam.png",
           "https://img.icons8.com/3d-fluency/94/trophy.png",
           "https://img.icons8.com/3d-fluency/94/document.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",

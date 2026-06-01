@@ -112,7 +112,7 @@ export default function PrepasBacGrandOral() {
           "Un levier de différenciation pour les admissions post-bac",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/video-call.png",
+          "https://img.icons8.com/3d-fluency/94/webcam.png",
           "https://img.icons8.com/3d-fluency/94/compass.png",
           "https://img.icons8.com/3d-fluency/94/microphone.png",
           "https://img.icons8.com/3d-fluency/94/star.png",

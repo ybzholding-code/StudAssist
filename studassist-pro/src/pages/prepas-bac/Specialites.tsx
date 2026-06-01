@@ -116,7 +116,7 @@ export default function PrepasBacSpecialites() {
           "https://img.icons8.com/3d-fluency/94/test-tube.png",
           "https://img.icons8.com/3d-fluency/94/bar-chart.png",
           "https://img.icons8.com/3d-fluency/94/compass.png",
-          "https://img.icons8.com/3d-fluency/94/video-call.png",
+          "https://img.icons8.com/3d-fluency/94/webcam.png",
         ],
       }}
 
