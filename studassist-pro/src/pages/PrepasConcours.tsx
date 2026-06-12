@@ -15,7 +15,7 @@ export default function PrepasConcours() {
         </>
       }
       intro="Les concours d'accès aux grandes écoles et universités exigent bien plus que des connaissances académiques. Ils requièrent méthode, rigueur et capacité à performer dans un environnement compétitif. Chez STUDASSIST, nous accompagnons nos élèves dans des préparations complètes, alliant maîtrise des épreuves, stratégies de performances et développement d'un véritable esprit concours."
-      heroImage="/hero-concours-new.png"
+      heroImage="/hero-sat-gmat.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       accent="pink"

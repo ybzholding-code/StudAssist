@@ -23,90 +23,92 @@ export default function PrepaConcoursUm6p() {
         "L'Université Mohammed VI Polytechnique (UM6P) propose des programmes d'ingénierie d'excellence, accessibles dès le post-bac à travers un processus de sélection exigeant. Contrairement aux concours classiques, l'admission repose sur une approche globale combinant dossier académique, épreuves écrites et entretien de personnalité.",
         "L'UM6P recherche des profils capables de raisonner, d'analyser et de s'adapter à des situations nouvelles, dans un environnement académique inspiré des standards internationaux. Chez STUDASSIST, nous proposons une préparation spécifique, adaptée à cette logique de sélection.",
       ]}
-      heroImage="/hero-concours-new.png"
+      heroImage="/hero-sat-gmat.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
-      heroCtaLabel="Réserver un cours découverte"
+      heroCtaLabel="Prendre un rendez-vous d'informations"
+      heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
       sectionTitle="Ingé UM6P"
-      enjeuxEyebrow="Comprendre la sélection"
-      whyChooseEyebrow="+6 ans d'expérience — 100% d'admission top 3"
+      enjeuxEyebrow="Les enjeux & exigences"
+      whyChooseEyebrow="Ce qui fait notre différence"
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
-        title: "Comprendre les exigences de la sélection UM6P",
-        lead: "Le processus de sélection repose sur plusieurs étapes et évalue principalement :",
+        title: "Comprendre les enjeux et exigences de la sélection UM6P",
+        lead: "Le processus de sélection de l'UM6P repose généralement sur une étude du dossier académique, des épreuves écrites et un entretien de motivation. L'objectif de ces épreuves n'est pas uniquement de tester les connaissances, mais la capacité du candidat à réfléchir et à s'adapter. Elles évaluent principalement :",
         bullets: [
+          "La qualité du profil global : étude du dossier académique & entretien",
           "Le raisonnement logique",
           "Les capacités d'analyse",
           "La résolution de problèmes",
-          "La compréhension rapide",
-          "La qualité du profil global (dossier + entretien)",
         ],
         icons: [
+          "https://img.icons8.com/3d-fluency/94/star.png",
           "https://img.icons8.com/3d-fluency/94/brain.png",
           "https://img.icons8.com/3d-fluency/94/search.png",
-          "https://img.icons8.com/3d-fluency/94/compass.png",
           "https://img.icons8.com/3d-fluency/94/rocket.png",
-          "https://img.icons8.com/3d-fluency/94/star.png",
         ],
       }}
 
       sections={[
         {
-          title: "Une préparation ciblée et orientée performance",
+          title: "Une sélection fondée sur le profil",
           paragraphs: [
-            "Nous proposons une préparation spécifique à l'UM6P, adaptée à la nature des épreuves : raisonnement logique et tests psychotechniques, résolution de problèmes, rapidité d'analyse et gestion du temps.",
-            "Notre approche repose sur des exercices ciblés inspirés des formats de sélection, des entraînements progressifs et des mises en situation en temps limité.",
+            "L'UM6P accorde une importance particulière à la qualité du profil du candidat. Les résultats académiques, la capacité de réflexion, la curiosité intellectuelle et la cohérence du projet sont autant d'éléments déterminants que nous construisons dans le cadre de l'accompagnement en orientation.",
+            "Une préparation efficace permet de structurer son profil et de se positionner de manière pertinente.",
           ],
         },
         {
-          title: "Développer un véritable esprit de sélection",
+          title: "Une préparation ciblée et orientée performance dans un véritable esprit de sélection",
           paragraphs: [
-            "L'objectif est de développer des réflexes de rapidité, de logique et d'efficacité. Nous accompagnons les élèves dans le développement de leur capacité à raisonner rapidement, prioriser les questions, gérer le stress et optimiser leur performance.",
+            "Chez STUDASSIST, nous proposons une préparation spécifique à l'UM6P, adaptée à la nature des épreuves. Nos sessions permettent de travailler : le raisonnement logique et les tests psychotechniques, la résolution de problèmes, la rapidité d'analyse et la gestion du temps.",
+            "Notre approche repose sur : des exercices ciblés inspirés des formats de sélection, des entraînements progressifs et des mises en situation en temps limité.",
+            "L'objectif est de développer des réflexes de rapidité, de logique et d'efficacité. Pour leur permettre de se démarquer, nous accompagnons les élèves dans le développement de leur capacité à : raisonner rapidement, prioriser les questions, gérer le stress et optimiser leur performance.",
           ],
         },
         {
           title: "Préparer l'entretien et valoriser son profil",
           paragraphs: [
-            "L'entretien constitue une étape clé du processus de sélection. Nous accompagnons les élèves dans la structuration de leur discours, la présentation de leur parcours et la mise en cohérence de leur projet.",
+            "L'entretien constitue une étape clé du processus de sélection. Nous accompagnons les élèves dans : la structuration de leur discours, la présentation de leur parcours et la mise en cohérence de leur projet.",
             "Des simulations permettent de gagner en assurance et en clarté.",
+          ],
+        },
+        {
+          title: "À qui s'adresse la préparation du dossier UM6P ?",
+          paragraphs: [
+            "Cette préparation s'adresse aux élèves de Terminale souhaitant intégrer les programmes d'ingénierie de l'UM6P et optimiser leur candidature dans le cadre d'un processus de sélection exigeant et multidimensionnel.",
+          ],
+          bullets: [
+            "Valoriser leur dossier académique et renforcer leur candidature",
+            "Développer leurs capacités de raisonnement logique et d'analyse",
+            "Se préparer aux épreuves de sélection et aux tests psychotechniques",
+            "Structurer un projet académique cohérent et ambitieux",
+            "Préparer efficacement leur entretien de motivation",
+            "Gagner en confiance dans la présentation de leur parcours et de leurs objectifs",
+            "Intégrer une université d'excellence inspirée des standards internationaux",
+            "Maximiser leurs chances d'admission dans l'un des programmes les plus sélectifs du Maroc",
           ],
         },
       ]}
 
-      audience={{
-        title: "À qui s'adresse cette préparation ?",
-        groups: [{
-          title: "Élèves visant l'UM6P",
-          bullets: [
-            "souhaitant intégrer les programmes d'ingénierie de l'UM6P,",
-            "ayant un bon profil académique et souhaitant se démarquer,",
-            "cherchant à maîtriser les épreuves de raisonnement et psychotechniques,",
-            "recherchant un accompagnement pour l'entretien de personnalité.",
-          ],
-        }],
-      }}
-
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST ?",
         bullets: [
-          "Une préparation spécifique au processus de sélection UM6P",
-          "Travail sur les épreuves + structuration du profil + entretien",
-          "Une logique globale : académique, méthodologique et humaine",
-          "Des simulations d'entretien pour gagner en assurance",
-          "+6 ans d'expérience dans la préparation",
-          "100% de nos élèves admis dans le top 3 de leurs choix",
+          "Une approche adaptée à la logique de sélection de l'UM6P",
+          "Une préparation spécifique aux tests de raisonnement",
+          "Une logique globale pour construire un dossier solide : académique, méthodologique et humaine",
+          "Des experts de l'orientation et des admissions sélectives avec une parfaite maîtrise des stratégies d'admission",
+          "+7 ans d'expertise et des résultats reconnus — 100% de nos élèves sont admis dans le top 3 de leurs choix",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/university.png",
-          "https://img.icons8.com/3d-fluency/94/compass.png",
+          "https://img.icons8.com/3d-fluency/94/goal.png",
           "https://img.icons8.com/3d-fluency/94/brain.png",
-          "https://img.icons8.com/3d-fluency/94/microphone.png",
-          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
-          "https://img.icons8.com/3d-fluency/94/star.png",
+          "https://img.icons8.com/3d-fluency/94/globe.png",
+          "https://img.icons8.com/3d-fluency/94/group.png",
+          "https://img.icons8.com/3d-fluency/94/trophy.png",
         ],
       }}
 
@@ -119,7 +121,9 @@ export default function PrepaConcoursUm6p() {
         secondaryHref: "/contact",
       }}
 
-      faqKeys={["concours", "orientation"]}
+      faqKeys={["prepas-concours"]}
+      faqTitle="FAQ – Préparation aux concours"
+      faqSubtitle="Les réponses aux questions que les familles nous posent le plus souvent sur la préparation aux concours."
       prev={{ label: "Ingé Avenir – Geipi – Puissance Alpha", to: "/prepa-concours-avenir-geipi-puissance-alpha" }}
       next={{ label: "Médecine Maroc", to: "/prepa-medecine-maroc" }}
     />

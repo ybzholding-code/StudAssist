@@ -107,12 +107,12 @@ export default function SoutienLycee() {
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour le soutien scolaire au lycée ?",
         bullets: [
-          "Une approche stratégique, alignée avec les enjeux post-bac",
+          "Une approche stratégique et long terme, alignée avec les enjeux d'orientation post-bac",
           "Des groupes très restreints (2 à 4 élèves maximum)",
           "Des enseignants expérimentés, certifiés et multi-systèmes",
-          "Prise en charge complète tronc commun et spécialités",
+          "Prise en charge complète du tronc commun et spécialités",
           "Une méthodologie différenciée favorisant autonomie et performance",
-          "Un suivi rigoureux et transparent, vision long terme",
+          "Un suivi rigoureux et transparent",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/compass.png",
@@ -133,7 +133,9 @@ export default function SoutienLycee() {
         secondaryHref: "/contact",
       }}
 
-      faqKeys={["soutien", "method"]}
+      faqKeys={["lycee"]}
+      faqTitle="Soutien scolaire collège & lycée : questions fréquentes"
+      faqSubtitle="Les réponses aux questions que les familles nous posent le plus souvent sur l'accompagnement au collège et au lycée."
       prev={{ label: "Prépa Brevet", to: "/soutien/brevet" }}
       next={{ label: "Supérieur", to: "/soutien/superieur" }}
     />

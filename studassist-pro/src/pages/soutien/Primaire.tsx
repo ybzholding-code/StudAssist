@@ -131,7 +131,9 @@ export default function SoutienPrimaire() {
         secondaryHref: "/contact",
       }}
 
-      faqKeys={["soutien", "method"]}
+      faqKeys={["primaire"]}
+      faqTitle="Soutien scolaire primaire : questions fréquentes"
+      faqSubtitle="Les réponses aux questions que les familles nous posent le plus souvent sur l'accompagnement au primaire."
       next={{ label: "Collège", to: "/soutien/college" }}
     />
   );

@@ -37,6 +37,7 @@ export interface OrientationLevelPageProps {
   heroContainerAspectRatio?: string;
   accent?: "pink" | "gold" | "blue" | "coral" | "navy";
   heroCtaLabel?: string;
+  heroBadge?: string;
   moveHeroCtaUnderGrid?: boolean;
   moveNavUnderHero?: boolean;
   enjeuxEyebrow?: string;
@@ -73,6 +74,8 @@ export interface OrientationLevelPageProps {
   };
 
   faqKeys?: Parameters<typeof buildFaq>;
+  faqTitle?: string;
+  faqSubtitle?: string;
   prev?: { label: string; to: string };
   next?: { label: string; to: string };
   hideSidebar?: boolean;
@@ -89,6 +92,11 @@ const LEVELS = [
   { key: "reorientation", label: "Réorientation", href: "/orientation/reorientation" },
   { key: "master",        label: "Master",        href: "/orientation/master" },
 ];
+
+/** Strip diacritics so "Français" matches "francais", "SPÉCIALITÉS" matches "specialites", etc. */
+function stripAccents(s: string): string {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 
 function detectLevelKey(eyebrow: string): string {
   const e = eyebrow.toLowerCase();
@@ -168,6 +176,7 @@ export default function OrientationLevelPage({
   heroImageClassName = "",
   heroContainerAspectRatio,
   heroCtaLabel,
+  heroBadge,
   moveHeroCtaUnderGrid = false,
   moveNavUnderHero = false,
   enjeuxEyebrow,
@@ -179,6 +188,8 @@ export default function OrientationLevelPage({
   whyChoose,
   ctaBanner,
   faqKeys = ["orientation", "method"] as Parameters<typeof buildFaq>,
+  faqTitle = "Orientation : questions fréquentes",
+  faqSubtitle = "Les réponses aux questions que nous recevons le plus souvent sur ce programme.",
   prev,
   next,
   hideSidebar = false,
@@ -186,7 +197,7 @@ export default function OrientationLevelPage({
   levels: customLevels,
 }: OrientationLevelPageProps) {
   const activeKey = customLevels
-    ? (customLevels.find((l) => eyebrow.toLowerCase().includes(l.key.toLowerCase()))?.key || customLevels[0]?.key || "")
+    ? (customLevels.find((l) => stripAccents(eyebrow.toLowerCase()).includes(stripAccents(l.key.toLowerCase())))?.key || customLevels[0]?.key || "")
     : detectLevelKey(eyebrow);
   const levelLabel = customLevels
     ? (customLevels.find((l) => l.key === activeKey)?.label || sectionTitle || eyebrow)
@@ -288,6 +299,14 @@ export default function OrientationLevelPage({
                   <p key={i}>{p}</p>
                 ))}
               </div>
+              {heroBadge && (
+                <div className="flex justify-center lg:justify-start pt-1">
+                  <span className="inline-flex items-center gap-2 bg-brand-darkblue/5 border border-brand-darkblue/10 text-brand-darkblue font-bold text-xs tracking-wide rounded-full px-5 py-2.5">
+                    <span className="w-2 h-2 rounded-full bg-brand-teal shrink-0" />
+                    {heroBadge}
+                  </span>
+                </div>
+              )}
               {!moveHeroCtaUnderGrid && (
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
                   <Link
@@ -451,108 +470,104 @@ export default function OrientationLevelPage({
         </div>
       </section>
 
-      {/* ============ POURQUOI CHOISIR — Premium dark section ============ */}
+      {/* ============ POURQUOI CHOISIR — Contained banner ============ */}
       {whyChoose && (
-        <section className="py-16 lg:py-24 bg-brand-darkblue relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-            <svg width="100%" height="100%">
-              <pattern id="pattern-why-choose" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1.5" fill="white" />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#pattern-why-choose)" />
-            </svg>
-          </div>
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
-                <span className="w-6 h-px bg-brand-teal"></span>
-                <span>{whyChooseEyebrow || "Nos atouts"}</span>
-                <span className="w-6 h-px bg-brand-teal"></span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-black text-white uppercase tracking-tighter">
-                {whyChoose.title}
-              </h2>
+        <section className="py-16 lg:py-24">
+          <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto bg-brand-darkblue rounded-[2.5rem] py-14 lg:py-20 px-8 lg:px-16 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              <svg width="100%" height="100%">
+                <pattern id="pattern-why-choose" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1.5" fill="white" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#pattern-why-choose)" />
+              </svg>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {whyChoose.bullets.map((b, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-brand-teal/40 hover:bg-white/10 transition-all duration-500 group"
-                >
-                  <div className="flex items-start gap-4">
+            <div className="relative z-10">
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
+                  <span className="w-6 h-px bg-brand-teal"></span>
+                  <span>{whyChooseEyebrow || "Ce qui fait notre différence"}</span>
+                  <span className="w-6 h-px bg-brand-teal"></span>
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-black text-white uppercase tracking-tighter">
+                  {whyChoose.title}
+                </h2>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-5 max-w-6xl mx-auto">
+                {whyChoose.bullets.map((b, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="flex items-start gap-3 py-3"
+                  >
                     {whyChoose.icons && whyChoose.icons[i] ? (
-                      <img src={whyChoose.icons[i]} alt="" className="w-10 h-10 shrink-0" />
+                      <img src={whyChoose.icons[i]} alt="" className="w-8 h-8 shrink-0" />
                     ) : (
-                      <div className="w-8 h-8 rounded-lg bg-brand-teal/20 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/30 transition-colors">
-                        <CheckCircle2 size={16} className="text-brand-teal" />
-                      </div>
+                      <CheckCircle2 size={18} className="text-brand-teal shrink-0 mt-0.5" />
                     )}
                     <p className="text-white/90 font-medium text-sm leading-relaxed">{b}</p>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* ============ CTA BANNER ============ */}
-      <section className="py-16 lg:py-24 relative z-20">
-        <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-brand-red rounded-[3rem] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10 animate-fade-in"
-          >
-            <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
-              <svg width="100%" height="100%">
-                <pattern id="cta-grid-level" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                </pattern>
-                <rect width="100%" height="100%" fill="url(#cta-grid-level)" />
-              </svg>
-            </div>
+      {/* ============ CTA BANNER — Full-width banner ============ */}
+      <section className="relative z-20 bg-brand-red py-14 lg:py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <svg width="100%" height="100%">
+            <pattern id="cta-grid-level" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#cta-grid-level)" />
+          </svg>
+        </div>
 
-            <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
-              <h2 className="text-3xl lg:text-5xl font-black mb-6 uppercase tracking-tighter leading-[0.95]">
-                {ctaBanner.title}
-              </h2>
-              <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md">
-                {ctaBanner.body}
-              </p>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between text-white relative z-10"
+        >
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
+            <h2 className="text-3xl lg:text-5xl font-black mb-4 uppercase tracking-tighter leading-[0.95]">
+              {ctaBanner.title}
+            </h2>
+            <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md">
+              {ctaBanner.body}
+            </p>
+          </div>
 
-            <div className="relative z-10 mt-8 lg:mt-0 flex flex-wrap gap-4 justify-center lg:justify-end">
+          <div className="mt-8 lg:mt-0 flex flex-wrap gap-4 justify-center lg:justify-end">
+            <Link
+              to={ctaBanner.primaryHref || "/contact"}
+              className="bg-brand-darkblue text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
+            >
+              <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            {ctaBanner.secondaryLabel && (
               <Link
-                to={ctaBanner.primaryHref || "/contact"}
-                className="bg-brand-darkblue text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
+                to={ctaBanner.secondaryHref || "#"}
+                className="bg-white/10 text-white border border-white/20 px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center space-x-3"
               >
-                <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
+                <span>{ctaBanner.secondaryLabel}</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              {ctaBanner.secondaryLabel && (
-                <Link
-                  to={ctaBanner.secondaryHref || "#"}
-                  className="bg-white/10 text-white border border-white/20 px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center space-x-3"
-                >
-                  <span>{ctaBanner.secondaryLabel}</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              )}
-            </div>
-          </motion.div>
-        </div>
+            )}
+          </div>
+        </motion.div>
       </section>
 
       {/* ============ FAQ ============ */}
       <FAQ
-        title="Orientation : questions fréquentes"
-        subtitle="Les réponses aux questions que nous recevons le plus souvent sur ce programme."
+        title={faqTitle}
+        subtitle={faqSubtitle}
         items={buildFaq(...faqKeys)}
         faqAsideSubtitle={faqAsideSubtitle}
       />

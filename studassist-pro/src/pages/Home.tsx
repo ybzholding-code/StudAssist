@@ -375,7 +375,7 @@ export default function Home() {
       description: "Sesame, Accès, GEIPI Polytech, Avenir, Médecine Maroc, Médecine Belgique, GMAT, TAGE MAGE, SAT… Mettez toutes les chances de votre côté et décrochez vos concours avec STUDASSIST !",
       buttonText: "Choisir ma préparation",
       link: "/prepas-concours",
-      image: "/hero-concours-new.png",
+      image: "/hero-sat-gmat.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',

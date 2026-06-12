@@ -23,104 +23,93 @@ export default function PrepaSatGmat() {
         "Les tests SAT et GMAT constituent des éléments clés dans les processus d'admission des universités et grandes écoles à l'international. Ils sont utilisés pour évaluer les capacités académiques, le raisonnement et la rigueur des candidats dans un environnement hautement compétitif.",
         "Chez STUDASSIST, nous proposons des préparations structurées et stratégiques, permettant aux élèves et étudiants d'atteindre des scores compétitifs et de maximiser leurs chances d'admission.",
       ]}
-      heroImage="/hero-concours-new.png"
+      heroImage="/hero-sat-gmat.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
-      heroCtaLabel="Réserver un cours découverte"
+      heroCtaLabel="Prendre un rendez-vous d'informations"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
       sectionTitle="SAT & GMAT"
-      enjeuxEyebrow="Comprendre les enjeux"
-      whyChooseEyebrow="+6 ans d'expérience — 100% d'admission top 3"
+      enjeuxEyebrow="Les enjeux & exigences"
+      whyChooseEyebrow="Ce qui fait notre différence"
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
         title: "Comprendre les enjeux du SAT et du GMAT",
-        lead: "Ces tests ne mesurent pas uniquement les connaissances, mais surtout :",
+        lead: "Le SAT s'adresse principalement aux élèves de lycée souhaitant intégrer une université internationale, notamment aux États-Unis. Le GMAT concerne les étudiants visant des programmes de haut niveau, tels que les Masters en management (MiM) ou les MBA. Ces tests qui s'inscrivent dans une logique de sélection globale, aux côtés du dossier académique, des lettres de motivation et des entretiens, ne mesurent pas uniquement les connaissances, mais surtout :",
         bullets: [
           "Le raisonnement logique",
           "Les compétences en mathématiques",
           "La maîtrise de l'anglais académique",
           "La capacité à travailler sous contrainte de temps",
-          "Un score élevé = avantage décisif pour les admissions internationales",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/brain.png",
           "https://img.icons8.com/3d-fluency/94/calculator.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",
           "https://img.icons8.com/3d-fluency/94/calendar.png",
-          "https://img.icons8.com/3d-fluency/94/trophy.png",
         ],
       }}
 
       sections={[
         {
-          title: "Une préparation individualisée et adaptée à chaque profil",
+          title: "Une préparation ciblée avec une méthodologie orientée performance",
           paragraphs: [
-            "Nous privilégions un accompagnement en format individuel, en présentiel ou à distance. Chaque programme est construit sur mesure, en fonction du niveau initial, du score cible, des échéances et des axes de progression.",
-            "Ce format permet un travail ciblé, des ajustements continus et une progression plus rapide.",
+            "Un levier déterminant pour les admissions internationales — Un score élevé au SAT ou au GMAT constitue un avantage décisif dans les candidatures. Il permet de se démarquer dans un processus de sélection international, de renforcer la crédibilité du dossier et d'accéder à des universités et programmes plus sélectifs. Dans certains cas, il peut également ouvrir l'accès à des bourses.",
+            "Une préparation individualisée et adaptée à chaque profil — Chez STUDASSIST, nous privilégions un accompagnement en format individuel, en présentiel ou à distance, afin de nous adapter précisément au niveau, aux objectifs et au rythme de chaque élève. Chaque programme est construit sur mesure, en fonction du niveau initial, du score cible, des échéances et des axes de progression. Ce format permet un travail ciblé, des ajustements continus et une progression plus rapide.",
+            "Une méthodologie orientée score — Notre approche repose sur une préparation concrète et efficace : maîtrise des formats spécifiques des tests, travail ciblé sur chaque section (math, verbal, logique), stratégies de résolution rapide et simulations en conditions réelles. L'objectif est clair : optimiser le score, et non simplement progresser.",
           ],
         },
         {
-          title: "Une méthodologie orientée score",
+          title: "L'approche de STUDASSIST dans la préparation de ces tests",
           paragraphs: [
-            "Notre approche repose sur : maîtrise des formats spécifiques des tests, travail ciblé sur chaque section (math, verbal, logique), stratégies de résolution rapide et simulations en conditions réelles.",
-            "L'objectif est clair : optimiser le score, et non simplement progresser.",
+            "Développer un véritable esprit de performance — Le SAT et le GMAT sont des tests de performance. Nous accompagnons les élèves dans le développement de réflexes essentiels : gestion du temps, stratégie de réponse, priorisation des questions et gestion du stress. L'objectif est de maximiser le nombre de points obtenus dans un temps limité.",
+            "Une préparation complémentaire en anglais académique — La maîtrise de l'anglais est centrale dans ces tests. Nous accompagnons les élèves dans le développement de leurs compétences linguistiques, notamment : compréhension de textes complexes, analyse grammaticale et vocabulaire académique. Nous préparons également les élèves aux tests complémentaires tels que IELTS ou TOEFL, souvent requis dans les candidatures internationales.",
           ],
         },
         {
-          title: "Développer un véritable esprit de performance",
+          title: "Un accompagnement en continu par des enseignants experts de ces tests",
           paragraphs: [
-            "Le SAT et le GMAT sont des tests de performance. Nous développons : gestion du temps, stratégie de réponse, priorisation des questions et gestion du stress.",
-            "L'objectif est de maximiser le nombre de points obtenus dans un temps limité.",
+            "Un accompagnement assuré par des enseignants experts des tests internationaux — Les candidats sont accompagnés par des enseignants maîtrisant parfaitement les exigences, les formats et les stratégies propres au SAT et au GMAT. Grâce à leur expertise, ils sont en mesure d'identifier rapidement les axes de progression de chaque candidat, de proposer des méthodes de travail adaptées et d'optimiser efficacement les performances sur chaque section du test. Leur accompagnement ne se limite pas aux contenus académiques : ils transmettent également les stratégies de gestion du temps, les techniques de résolution rapide et les réflexes indispensables pour performer dans un environnement hautement compétitif.",
+            "Un accompagnement qui se prolonge dans le temps — Chez STUDASSIST, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus d'entraînement complémentaires et les accompagnons jusqu'aux échéances. Les élèves peuvent également revenir s'entraîner à tout moment dans notre espace.",
           ],
         },
         {
-          title: "Une préparation complémentaire en anglais académique",
+          title: "À qui s'adressent les préparations SAT & GMAT ?",
           paragraphs: [
-            "La maîtrise de l'anglais est centrale. Nous accompagnons les élèves dans : compréhension de textes complexes, analyse grammaticale et vocabulaire académique.",
-            "Nous préparons également aux tests complémentaires tels que IELTS ou TOEFL, souvent requis dans les candidatures internationales.",
+            "Ces préparations s'adressent aux élèves et étudiants souhaitant intégrer des universités ou programmes sélectifs à l'international et ayant besoin d'obtenir un score compétitif au SAT ou au GMAT.",
           ],
-        },
-        {
-          title: "Un accompagnement qui se prolonge dans le temps",
-          paragraphs: [
-            "La préparation ne s'arrête pas à la fin des sessions. Nous restons en contact, fournissons des contenus d'entraînement complémentaires et accompagnons jusqu'aux échéances. Les élèves peuvent revenir s'entraîner à tout moment dans notre espace.",
+          bullets: [
+            "Préparer une candidature dans une université internationale, notamment aux États-Unis",
+            "Intégrer un Bachelor, un Master en Management (MiM) ou un MBA de haut niveau",
+            "Atteindre un score cible dans le cadre d'un projet d'études à l'étranger",
+            "Renforcer leur dossier académique et se démarquer dans un processus de sélection international",
+            "Développer leurs compétences en raisonnement logique, mathématiques et anglais académique",
+            "Acquérir les méthodes et stratégies spécifiques aux tests standardisés",
+            "Maximiser leurs chances d'admission dans les universités et écoles les plus sélectives",
+            "Accéder à davantage d'opportunités académiques et, dans certains cas, à des bourses d'études",
           ],
         },
       ]}
 
-      audience={{
-        title: "À qui s'adresse cette préparation ?",
-        groups: [{
-          title: "Élèves et étudiants",
-          bullets: [
-            "visant des universités internationales (SAT) ou des programmes MBA/MiM (GMAT),",
-            "souhaitant atteindre un score compétitif pour se démarquer,",
-            "recherchant un accompagnement individuel et sur mesure,",
-            "ayant besoin de renforcer leur anglais académique en parallèle.",
-          ],
-        }],
-      }}
-
       whyChoose={{
-        title: "Pourquoi choisir STUDASSIST ?",
+        title: "Pourquoi choisir STUDASSIST pour la préparation du SAT & GMAT ?",
         bullets: [
-          "Accompagnement 100% individuel et sur mesure",
-          "Une méthodologie orientée optimisation du score",
-          "Simulations en conditions réelles",
-          "Préparation complémentaire en anglais académique",
-          "+6 ans d'expérience dans la préparation",
-          "100% de nos élèves admis dans le top 3 de leurs choix",
+          "Un accompagnement 100% individuel et sur mesure",
+          "Une préparation orientée score avec des stratégies de performances éprouvées",
+          "Une parfaite maîtrise des formats des tests et de leurs spécificités",
+          "Une préparation complémentaire et renforcée en anglais académique",
+          "+7 ans d'expertise et des résultats reconnus",
+          "100% de nos élèves sont admis dans le top 3 de leurs choix",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/webcam.png",
-          "https://img.icons8.com/3d-fluency/94/trophy.png",
-          "https://img.icons8.com/3d-fluency/94/document.png",
-          "https://img.icons8.com/3d-fluency/94/globe.png",
-          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/goal.png",
           "https://img.icons8.com/3d-fluency/94/star.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/trophy.png",
+          "https://img.icons8.com/3d-fluency/94/rocket.png",
         ],
       }}
 
@@ -133,7 +122,9 @@ export default function PrepaSatGmat() {
         secondaryHref: "/contact",
       }}
 
-      faqKeys={["concours", "orientation"]}
+      faqKeys={["prepas-concours"]}
+      faqTitle="FAQ – Préparation aux concours"
+      faqSubtitle="Les réponses aux questions que les familles nous posent le plus souvent sur la préparation aux concours."
       next={{ label: "Commerce SESAME & ACCÈS", to: "/prepa-concours-sesame-acces" }}
     />
   );

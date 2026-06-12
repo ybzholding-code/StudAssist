@@ -53,57 +53,48 @@ export default function SoutienBrevet() {
 
       sections={[
         {
-          title: "Un accompagnement encadré par des professeurs expérimentés",
+          title: "Une préparation ciblée et progressive dispensée par des professeurs expérimentés",
           paragraphs: [
             "Notre accompagnement repose sur une préparation ciblée et progressive, encadrée par des professeurs expérimentés, habitués à préparer les élèves à cet examen et maîtrisant parfaitement ses exigences.",
-            "La plupart de nos enseignants ont également exercé en tant que correcteurs du Diplôme National du Brevet, ce qui leur permet de transmettre une lecture précise des attentes officielles, des critères d'évaluation et des erreurs fréquentes.",
-          ],
-        },
-        {
-          title: "La préparation inclut",
-          paragraphs: [
-            "Révisions approfondies des matières évaluées, entraînements sur sujets types et annales, travail méthodologique sur les épreuves écrites et préparation à l'oral du Brevet (présentation, argumentation, posture).",
+            "La plupart de nos enseignants ont également exercé en tant que correcteurs du Diplôme National du Brevet, ce qui leur permet de transmettre aux élèves une lecture précise des attentes officielles, des critères d'évaluation et des erreurs fréquentes.",
+            "La préparation inclut : révisions approfondies des matières évaluées, entraînements sur sujets types et annales, travail méthodologique sur les épreuves écrites, préparation à l'oral du Brevet (présentation, argumentation, posture).",
             "Cette expertise terrain permet un travail ciblé sur la compréhension des consignes, la structuration des réponses et l'optimisation des points à chaque épreuve.",
           ],
         },
         {
           title: "Des formats flexibles, pensés pour la réussite",
           paragraphs: [
-            "La prépa Brevet est proposée en groupes de travail pouvant aller jusqu'à 8 élèves, afin de favoriser l'émulation tout en conservant un cadre structuré. Les volumes horaires sont adaptés en fonction du niveau, des objectifs et des besoins spécifiques de chaque élève.",
-            "Les plannings sont construits selon les disponibilités du groupe, permettant une organisation fluide et compatible avec la scolarité de chacun. Cette flexibilité garantit un accompagnement réaliste, progressif et efficace, sans surcharge inutile.",
+            "La prépa Brevet est proposée en groupes de travail pouvant aller jusqu'à 8 élèves, afin de favoriser l'émulation tout en conservant un cadre structuré.",
+            "Les volumes horaires sont adaptés en fonction du niveau, des objectifs et des besoins spécifiques de chaque élève.",
+            "Les plannings sont construits selon les disponibilités du groupe, permettant une organisation fluide et compatible avec la scolarité de chacun.",
+            "Cette flexibilité garantit un accompagnement réaliste, progressif et efficace, sans surcharge inutile.",
           ],
         },
         {
-          title: "Une continuité naturelle avec le soutien scolaire",
+          title: "Une méthodologie adaptée à chaque élève incluant une continuité naturelle avec le soutien scolaire",
           paragraphs: [
             "La prépa Brevet STUDASSIST s'inscrit dans une continuité directe avec le soutien scolaire : consolidation des bases tout au long de l'année, intensification du travail à l'approche de l'examen, accompagnement progressif et sans rupture.",
-            "Chaque élève avance à son rythme, dans une logique de progression maîtrisée. Nos enseignants adaptent les contenus, les méthodes et le rythme de travail au niveau réel de chaque élève et au système scolaire suivi.",
+            "Chaque élève avance à son rythme, dans une logique de progression maîtrisée.",
+            "Nos enseignants adaptent les contenus, les méthodes et le rythme de travail au niveau réel de chaque élève et au système scolaire suivi (français, marocain, bilingue ou international), tout en maintenant un haut niveau d'exigence académique.",
+          ],
+        },
+        {
+          title: "À qui s'adresse la prépa Brevet ?",
+          paragraphs: [
+            "Cette préparation s'adresse aux élèves : souhaitant sécuriser la réussite du Brevet, manquant de méthode ou de confiance, disposant d'un bon niveau et visant un excellent résultat, préparant une entrée au lycée sereine et structurée.",
           ],
         },
       ]}
-
-      audience={{
-        title: "À qui s'adresse la prépa Brevet ?",
-        groups: [{
-          title: "Cette préparation s'adresse aux élèves",
-          bullets: [
-            "souhaitant sécuriser la réussite du Brevet,",
-            "manquant de méthode ou de confiance,",
-            "disposant d'un bon niveau et visant un excellent résultat,",
-            "préparant une entrée au lycée sereine et structurée.",
-          ],
-        }],
-      }}
 
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour la prépa Brevet ?",
         bullets: [
           "Une préparation structurée et progressive",
-          "Des professeurs expérimentés, pour la plupart anciens correcteurs",
+          "Des professeurs expérimentés, pour la plupart anciens correcteurs du Brevet",
           "Des groupes jusqu'à 8 élèves, favorisant dynamique et encadrement",
           "Des volumes horaires modulables selon les besoins",
           "Des plannings adaptés aux disponibilités des élèves",
-          "Un suivi rigoureux et une vision long terme",
+          "Un suivi rigoureux, une vision long terme au-delà de l'examen",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/open-book.png",

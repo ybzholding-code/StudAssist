@@ -205,109 +205,119 @@ export default function ServicePage({
         </div>
       </section>
 
-      {/* ============ CTA BANNER — Signature Red Executive ============ */}
-      <section className="py-16 lg:py-24 relative z-20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-brand-red rounded-[2.5rem] lg:rounded-[3.5rem] p-8 lg:p-20 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden shadow-[0_40px_100px_rgba(239,71,111,0.25)] border border-white/10"
-          >
-            <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
-              <svg width="100%" height="100%">
-                <pattern id={`cta-grid-${eyebrow.replace(/\s/g, "-").toLowerCase()}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                </pattern>
-                <rect width="100%" height="100%" fill={`url(#cta-grid-${eyebrow.replace(/\s/g, "-").toLowerCase()})`} />
-              </svg>
+      {/* ============ CTA BANNER — Full-width banner ============ */}
+      <section className="relative z-20 bg-brand-red py-14 lg:py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <svg width="100%" height="100%">
+            <pattern id={`cta-grid-${eyebrow.replace(/\s/g, "-").toLowerCase()}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill={`url(#cta-grid-${eyebrow.replace(/\s/g, "-").toLowerCase()})`} />
+          </svg>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between text-white relative z-10"
+        >
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
+            <div className="flex items-center space-x-3 mb-6">
+              <span className="w-12 h-[2px] bg-brand-darkblue" />
+              <span className="text-brand-darkblue font-black text-[11px] tracking-[0.4em] uppercase">
+                Séance découverte
+              </span>
             </div>
 
-            <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
-              <div className="flex items-center space-x-3 mb-8">
-                <span className="w-12 h-[2px] bg-brand-darkblue" />
-                <span className="text-brand-darkblue font-black text-[11px] tracking-[0.4em] uppercase">
-                  Séance découverte
-                </span>
-              </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 uppercase tracking-tighter leading-[0.95]">
+              Votre <span className="text-brand-darkblue italic">succès</span>{" "}
+              <br className="hidden lg:block" /> commence ici.
+            </h2>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-6 lg:mb-8 uppercase tracking-tighter leading-[1.05] lg:leading-[0.95]">
-                Votre <span className="text-brand-darkblue italic">succès</span>{" "}
-                <br className="hidden lg:block" /> commence ici.
-              </h2>
+            <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md">
+              Un diagnostic complet de 30 minutes avec un expert STUDASSIST pour analyser le
+              profil et poser les bases d'une stratégie adaptée.
+            </p>
+          </div>
 
-              <p className="text-white/90 font-medium text-lg leading-relaxed max-w-md">
-                Un diagnostic complet de 30 minutes avec un expert STUDASSIST pour analyser le
-                profil et poser les bases d'une stratégie adaptée.
-              </p>
-            </div>
+          <div className="mt-8 lg:mt-0">
+            <div className="flex flex-col items-center lg:items-end space-y-6">
+              <Link
+                to={ctaHref}
+                className="bg-brand-darkblue text-white px-10 py-6 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
+              >
+                <span>Réserver ma séance</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-            <div className="relative z-10 mt-12 lg:mt-0">
-              <div className="flex flex-col items-center lg:items-end space-y-8">
-                <Link
-                  to={ctaHref}
-                  className="bg-brand-darkblue text-white px-14 py-7 rounded-2xl font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-4"
-                >
-                  <span>Réserver ma séance</span>
-                  <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                </Link>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white">
-                    <Phone size={16} />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-none mb-1">
-                      Ligne Directe
-                    </p>
-                    <a
-                      href="tel:+212669495996"
-                      className="text-white font-bold tracking-tight hover:text-brand-darkblue transition-colors"
-                    >
-                      +212 6 69 49 59 96
-                    </a>
-                  </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white">
+                  <Phone size={16} />
+                </div>
+                <div className="text-left">
+                  <p className="text-white/60 text-[10px] font-black uppercase tracking-widest leading-none mb-1">
+                    Ligne Directe
+                  </p>
+                  <a
+                    href="tel:+212669495996"
+                    className="text-white font-bold tracking-tight hover:text-brand-darkblue transition-colors"
+                  >
+                    +212 6 69 49 59 96
+                  </a>
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </section>
 
-      {/* ============ POURQUOI CHOISIR ============ */}
+      {/* ============ POURQUOI CHOISIR — Contained banner ============ */}
       {whyPoints && whyPoints.length > 0 && (
-        <section className="py-16 lg:py-32 bg-white relative overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-20 max-w-3xl mx-auto">
-              <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-6">
-                <span className="w-8 h-px bg-brand-teal" />
-                <span>Pourquoi choisir</span>
-                <span className="w-8 h-px bg-brand-teal" />
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue mb-8 uppercase tracking-tighter leading-tight">
-                Pourquoi choisir <span className="text-brand-teal">STUDASSIST</span> ?
-              </h2>
+        <section className="py-16 lg:py-24">
+          <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto bg-brand-darkblue rounded-[2.5rem] py-14 lg:py-20 px-8 lg:px-16 relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              <svg width="100%" height="100%">
+                <pattern id={`pattern-why-${eyebrow.replace(/\s/g, "-").toLowerCase()}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1.5" fill="white" />
+                </pattern>
+                <rect width="100%" height="100%" fill={`url(#pattern-why-${eyebrow.replace(/\s/g, "-").toLowerCase()})`} />
+              </svg>
             </div>
+            <div className="relative z-10">
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
+                  <span className="w-6 h-px bg-brand-teal" />
+                  <span>Ce qui fait notre différence</span>
+                  <span className="w-6 h-px bg-brand-teal" />
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-black text-white uppercase tracking-tighter">
+                  Pourquoi choisir <span className="text-brand-teal">STUDASSIST</span> ?
+                </h2>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {whyPoints.map((w, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-white border border-gray-100 p-6 lg:p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_30px_70px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-brand-teal/10 text-brand-teal flex items-center justify-center mb-5 group-hover:rotate-6 transition-transform">
-                    <CheckCircle2 size={22} />
-                  </div>
-                  <h3 className="text-brand-darkblue font-black text-lg uppercase tracking-tight mb-3 group-hover:text-brand-teal transition-colors">
-                    {w.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm font-medium leading-relaxed">{w.body}</p>
-                </motion.div>
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 max-w-5xl mx-auto">
+                {whyPoints.map((w, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06 }}
+                    className="flex items-start gap-4 py-3"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-brand-teal/20 text-brand-teal flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle2 size={18} />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-black text-sm uppercase tracking-tight mb-1">
+                        {w.title}
+                      </h3>
+                      <p className="text-white/70 text-sm font-medium leading-relaxed">{w.body}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -321,45 +331,41 @@ export default function ServicePage({
         <FAQ title={faqTitle} subtitle="Les réponses aux questions les plus fréquentes." items={faqItems} />
       )}
 
-      {/* ============ FINAL REJOIN CTA ============ */}
-      <section className="py-16 lg:py-24 relative z-20">
-        <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-brand-darkblue rounded-[3rem] p-10 lg:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-[0_40px_100px_rgba(17,29,74,0.25)] border border-white/10"
-          >
-            <div className="absolute inset-0 opacity-5 pointer-events-none">
-              <svg width="100%" height="100%">
-                <pattern id={`pattern-final-${eyebrow.replace(/\\s/g, "-").toLowerCase()}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.5" fill="white" />
-                </pattern>
-                <rect width="100%" height="100%" fill={`url(#pattern-final-${eyebrow.replace(/\\s/g, "-").toLowerCase()})`} />
-              </svg>
-            </div>
-            <div className="relative z-10 flex flex-col items-center">
-              <div className="flex justify-center mb-6">
-                <Logo variant="light" height={40} />
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-tight">
-                Construisons ensemble <br />
-                <span className="text-brand-teal">votre avenir</span>.
-              </h2>
-              <p className="text-white/80 text-base lg:text-lg font-medium max-w-xl mx-auto mb-10 leading-relaxed">
-                Un premier rendez-vous gratuit pour évaluer le profil et poser les bases d'une
-                stratégie adaptée.
-              </p>
-              <Link
-                to={ctaHref}
-                className="bg-brand-red text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
-              >
-                <span>{ctaLabel}</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
+      {/* ============ FINAL REJOIN CTA — Full-width banner ============ */}
+      <section className="bg-brand-darkblue py-14 lg:py-20 relative z-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <svg width="100%" height="100%">
+            <pattern id={`pattern-final-${eyebrow.replace(/\s/g, "-").toLowerCase()}`} x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.5" fill="white" />
+            </pattern>
+            <rect width="100%" height="100%" fill={`url(#pattern-final-${eyebrow.replace(/\s/g, "-").toLowerCase()})`} />
+          </svg>
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center text-white"
+        >
+          <div className="flex justify-center mb-6">
+            <Logo variant="light" height={40} />
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 uppercase tracking-tighter leading-tight">
+            Construisons ensemble <br />
+            <span className="text-brand-teal">votre avenir</span>.
+          </h2>
+          <p className="text-white/80 text-base lg:text-lg font-medium max-w-xl mx-auto mb-10 leading-relaxed">
+            Un premier rendez-vous gratuit pour évaluer le profil et poser les bases d'une
+            stratégie adaptée.
+          </p>
+          <Link
+            to={ctaHref}
+            className="bg-brand-red text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
+          >
+            <span>{ctaLabel}</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </section>
     </div>
   );
