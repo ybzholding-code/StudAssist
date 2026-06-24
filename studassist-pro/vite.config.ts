@@ -13,6 +13,7 @@ export default defineConfig(({mode}) => {
   process.env.TALENT_APPS_SCRIPT_URL = env.TALENT_APPS_SCRIPT_URL || process.env.TALENT_APPS_SCRIPT_URL || '';
   process.env.VITE_GOOGLE_PLACES_API_KEY = env.VITE_GOOGLE_PLACES_API_KEY || process.env.VITE_GOOGLE_PLACES_API_KEY || '';
   process.env.VITE_GOOGLE_PLACE_ID = env.VITE_GOOGLE_PLACE_ID || process.env.VITE_GOOGLE_PLACE_ID || '';
+  process.env.GROQ_API_KEY = env.GROQ_API_KEY || env.VITE_GROQ_API_KEY || process.env.GROQ_API_KEY || '';
 
   return {
     plugins: [
