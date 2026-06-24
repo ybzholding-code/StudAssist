@@ -85,14 +85,131 @@ export default function StudAssistChat() {
     }
   };
 
-  // Simple markdown bold parser
-  const renderText = (text: string) => {
-    const parts = text.split(/(\*\*[^*]+\*\*)/g);
-    return parts.map((part, i) =>
-      part.startsWith("**") && part.endsWith("**")
-        ? <strong key={i}>{part.slice(2, -2)}</strong>
-        : <span key={i}>{part}</span>
-    );
+  // Advanced inline parser for links, bold, emails, and phone numbers
+  const parseInline = (text: string): React.ReactNode[] => {
+    const regex = /(\[.*?\]\(.*?\)|\*\*.*?\*\*|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|\+212[-\s]?[5-7][-\s]*(?:\d[-\s]*){7}\d|\b0[5-7][-\s]*(?:\d[-\s]*){7}\d)/g;
+    const parts = text.split(regex);
+
+    return parts.map((part, i) => {
+      if (!part) return null;
+
+      // Link: [text](url)
+      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        return (
+          <a
+            key={i}
+            href={linkMatch[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#1BB79D] underline hover:text-[#0B1F5C] font-semibold transition-colors"
+          >
+            {linkMatch[1]}
+          </a>
+        );
+      }
+
+      // Bold: **text**
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return (
+          <strong key={i} className="font-extrabold text-[#0B1F5C]">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+
+      // Email: test@example.com
+      if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(part)) {
+        return (
+          <a
+            key={i}
+            href={`mailto:${part}`}
+            className="text-[#1BB79D] underline hover:text-[#0B1F5C] font-semibold transition-colors"
+          >
+            {part}
+          </a>
+        );
+      }
+
+      // Phone: +2126... or 06...
+      if (/^(\+212|0)/.test(part)) {
+        const cleanPhone = part.replace(/[-\s]/g, "");
+        return (
+          <a
+            key={i}
+            href={`tel:${cleanPhone}`}
+            className="text-[#1BB79D] underline hover:text-[#0B1F5C] font-bold transition-colors whitespace-nowrap"
+          >
+            {part}
+          </a>
+        );
+      }
+
+      return <span key={i}>{part}</span>;
+    });
+  };
+
+  // Structured block and list parser
+  const renderMessageContent = (content: string) => {
+    const lines = content.split("\n");
+    const elements: React.ReactNode[] = [];
+    let currentListItems: React.ReactNode[] = [];
+    let inList = false;
+
+    const flushList = (key: number) => {
+      if (currentListItems.length > 0) {
+        elements.push(
+          <ul key={`list-${key}`} className="list-disc pl-4 my-1.5 space-y-1 text-[#0B1F5C]">
+            {currentListItems}
+          </ul>
+        );
+        currentListItems = [];
+      }
+    };
+
+    lines.forEach((line, index) => {
+      const trimmed = line.trim();
+      const isListItem =
+        trimmed.startsWith("- ") ||
+        trimmed.startsWith("* ") ||
+        trimmed.startsWith("• ") ||
+        /^\d+\.\s/.test(trimmed);
+
+      if (isListItem) {
+        if (!inList) {
+          inList = true;
+        }
+        const itemText = trimmed
+          .replace(/^[-*•]\s+/, "")
+          .replace(/^\d+\.\s+/, "");
+        currentListItems.push(
+          <li key={`li-${index}`} className="text-[13px] leading-relaxed">
+            {parseInline(itemText)}
+          </li>
+        );
+      } else {
+        if (inList) {
+          flushList(index);
+          inList = false;
+        }
+
+        if (trimmed === "") {
+          elements.push(<div key={`space-${index}`} className="h-1.5" />);
+        } else {
+          elements.push(
+            <p key={`p-${index}`} className="text-[13px] leading-relaxed mb-1">
+              {parseInline(line)}
+            </p>
+          );
+        }
+      }
+    });
+
+    if (inList) {
+      flushList(lines.length);
+    }
+
+    return elements;
   };
 
   return (
@@ -149,7 +266,7 @@ export default function StudAssistChat() {
                             : "bg-[#EEF9F7] text-[#0B1F5C] rounded-bl-md border border-[#C6EDE7] font-medium"
                         }`}
                       >
-                        {renderText(msg.content)}
+                        {msg.role === "user" ? msg.content : renderMessageContent(msg.content)}
                       </div>
                     </div>
                   ))}
