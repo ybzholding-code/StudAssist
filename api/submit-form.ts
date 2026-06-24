@@ -146,7 +146,7 @@ function buildEmailHtml(data: FormPayload): string {
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td style="padding-bottom:24px;">
-                    <img src="https://www.studassist.ma/logo-white.svg" alt="STUDASSIST" style="height:36px;width:auto;display:block;border:0;outline:none;" height="36" />
+                    <img src="https://www.studassist.ma/logo-white.png" alt="STUDASSIST" style="height:36px;width:auto;display:block;border:0;outline:none;" height="36" />
                   </td>
                 </tr>
                 <tr>
