@@ -104,7 +104,7 @@ export default function PrepasBacFrancais() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez accompagner votre enfant vers une réussite solide et maîtrisée au Bac de Français ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver une séance découverte",
         secondaryHref: "/contact",
       }}

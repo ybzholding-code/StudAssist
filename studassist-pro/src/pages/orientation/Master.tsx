@@ -23,21 +23,19 @@ export default function OrientationMaster() {
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
-        title: "Les enjeux de l'orientation en Master",
-        lead: "L'orientation en Master implique :",
+        title: "Les 4 piliers de l'orientation pour le Master",
+        lead: "Sans accompagnement, les démarches d'admission en Master peuvent devenir complexes, chronophages et parfois décourageantes.",
         bullets: [
           "un choix de spécialisation cohérent avec le projet professionnel,",
           "une sélection rigoureuse des programmes,",
           "la constitution de dossiers exigeants,",
-          "la préparation aux concours et certifications,",
-          "la réussite des entretiens de personnalité.",
+          "La préparation des concours, certifications de langues et entretiens de personnalité",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/compass.png",
           "https://img.icons8.com/3d-fluency/94/school.png",
           "https://img.icons8.com/3d-fluency/94/document.png",
           "https://img.icons8.com/3d-fluency/94/trophy.png",
-          "https://img.icons8.com/3d-fluency/94/microphone.png",
         ],
       }}
 
@@ -64,11 +62,11 @@ export default function OrientationMaster() {
             <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2">Préparation aux concours, certifications et entretiens :</span>,
             <>
               Lorsque requis, nous intégrons la préparation aux concours et tests tels que le{" "}
-              <Link to="/prepas-concours" className="text-brand-teal font-black hover:underline">
+              <Link to="/prepas-concours" className="text-brand-darkblue font-black underline underline-offset-2">
                 GMAT ou le TAGE MAGE
               </Link>
               , ainsi qu'aux{" "}
-              <Link to="/certifications" className="text-brand-teal font-black hover:underline">
+              <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">
                 certifications de langues (TOEFL, IELTS, TOEIC)
               </Link>
               . Ces préparations sont adaptées au niveau de départ de l'étudiant et intégrées dans un planning réaliste, en lien avec les échéances de candidature.
@@ -77,7 +75,7 @@ export default function OrientationMaster() {
             <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2">Une expertise internationale :</span>,
             <>
               Pour les étudiants souhaitant poursuivre leurs études à l'étranger, STUDASSIST accompagne les projets vers plus de 25 destinations. Grâce à notre expérience, nous maîtrisons les procédures de candidatures, sur plateformes officielles comme hors plateformes, et assurons un suivi complet, de la sélection des programmes jusqu'aux{" "}
-              <Link to="/admin-logement" className="text-brand-teal font-black hover:underline">
+              <Link to="/admin-logement" className="text-brand-darkblue font-black underline underline-offset-2">
                 démarches administratives et à l'installation
               </Link>
               {" "}si nécessaire.
@@ -106,11 +104,10 @@ export default function OrientationMaster() {
         title: "Pourquoi choisir STUDASSIST pour votre orientation Master ?",
         bullets: [
           "Une analyse approfondie du profil pour une shortlist de programmes personnalisée et stratégique",
-          "Une short-list de programmes personnalisée et stratégique",
-          "Un accompagnement complet de A à Z aux candidatures",
-          "Une préparation aux concours et certifications intégrée",
+          "Construction d’un dossier solide et accompagnement de A à Z aux candidatures",
+          "Une préparation aux concours et certifications de langues intégrée au programme",
           "Un coaching aux entretiens de personnalité",
-          "Une expertise Maroc & international couvrant +25 destinations",
+          "Une expertise Maroc & international couvrant +25 destinations en visioconférence",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/search.png",
@@ -128,7 +125,7 @@ export default function OrientationMaster() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "https://wa.me/212669495996",
+        secondaryHref: "/contact",
       }}
 
       prev={{ label: "Réorientation académique", to: "/orientation/reorientation" }}

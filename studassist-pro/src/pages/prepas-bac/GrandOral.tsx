@@ -110,7 +110,7 @@ export default function PrepasBacGrandOral() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez être accompagné(e) vers une réussite impactante au Grand Oral ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver une séance découverte",
         secondaryHref: "/contact",
       }}

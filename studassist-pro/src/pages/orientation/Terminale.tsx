@@ -19,46 +19,28 @@ export default function OrientationTerminale() {
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
-      enjeuxEyebrow="Pourquoi se faire accompagner ?"
+      enjeuxEyebrow="Les enjeux de la Terminale"
       whyChooseEyebrow="Ce qui fait notre différence"
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
         title: "Pourquoi se faire accompagner par des professionnels pour son orientation en Terminale ?",
-        lead: "Les enjeux de l’orientation en Terminale. S’orienter ne consiste pas simplement à choisir une formation. Il s’agit de :",
+        lead: "S’orienter ne consiste pas simplement à choisir une formation. Il s’agit de bâtir un projet d’avenir cohérent, différenciant et parfaitement préparé. Chez STUDASSIST, l’orientation est pensée comme un projet à part entière, piloté avec méthode, rigueur et humanité.",
         bullets: [
-          "définir un projet d’études cohérent et ambitieux,",
-          "aligner les aspirations de l’élève avec les exigences académiques,",
-          "construire un dossier solide et différenciant,",
-          "anticiper concours et certifications,",
-          "maîtriser des procédures de candidatures de plus en plus complexes.",
+          "Définir un projet d’études ambitieux et aligné avec le profil et les aspirations de l’élève",
+          "Construire un dossier solide et différenciant pour les formations sélectives",
+          "Maîtriser des procédures de candidatures de plus en plus complexes",
+          "Éviter le stress, les incertitudes et les décisions prises par défaut : anticiper concours et certifications et mettre en place un plan d’action structuré de manière à atteindre les objectifs visés",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/compass.png",
           "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
           "https://img.icons8.com/3d-fluency/94/document.png",
-          "https://img.icons8.com/3d-fluency/94/calendar.png",
           "https://img.icons8.com/3d-fluency/94/shield.png",
         ],
       }}
 
       sections={[
-        {
-          title: "Une approche globale de l’orientation post-bac",
-          paragraphs: [
-            "Sans accompagnement expert, ces étapes peuvent rapidement générer stress, incertitudes ou décisions par défaut.",
-            "Chez STUDASSIST, l’orientation est pensée comme un projet à part entière, piloté avec méthode, rigueur et humanité.",
-            "Notre accompagnement combine :",
-          ],
-          bullets: [
-            "analyse approfondie du profil,",
-            "stratégie académique,",
-            "construction des dossiers de candidature,",
-            "préparation aux entretiens,",
-            "suivi des admissions,",
-            "accompagnement international.",
-          ],
-        },
         {
           title: "Un diagnostic approfondi et un profiling global permettant de construire d’un projet post-bac sur mesure",
           paragraphs: [
@@ -82,15 +64,15 @@ export default function OrientationTerminale() {
             <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2">Alignement du niveau réel de l’élève avec les ambitions de son projet post-bac :</span>,
             <>
               Lorsque nécessaire, nous intégrons directement au parcours du{" "}
-              <Link to="/soutien-scolaire" className="text-brand-teal font-black hover:underline">
+              <Link to="/soutien-scolaire" className="text-brand-darkblue font-black underline underline-offset-2">
                 soutien scolaire ciblé
               </Link>{" "}
               pour renforcer certaines matières clés, des{" "}
-              <Link to="/prepas-concours" className="text-brand-teal font-black hover:underline">
+              <Link to="/prepas-concours" className="text-brand-darkblue font-black underline underline-offset-2">
                 préparations aux concours
               </Link>{" "}
               pour les filières sélectives, et des{" "}
-              <Link to="/certifications" className="text-brand-teal font-black hover:underline">
+              <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">
                 préparations aux certifications de langues
               </Link>{" "}
               anticipées selon les exigences des établissements visés.
@@ -103,11 +85,11 @@ export default function OrientationTerminale() {
             </>,
             <>
               Notre accompagnement international inclut la définition du projet d’orientation et le choix des destinations, la gestion et le suivi des candidatures, les{" "}
-              <Link to="/admin-logement" className="text-brand-teal font-black hover:underline">
+              <Link to="/admin-logement" className="text-brand-darkblue font-black underline underline-offset-2">
                 démarches administratives
               </Link>{" "}
               et l’aide à l’{" "}
-              <Link to="/admin-logement" className="text-brand-teal font-black hover:underline">
+              <Link to="/admin-logement" className="text-brand-darkblue font-black underline underline-offset-2">
                 installation à l’étranger
               </Link>.
             </>
@@ -156,22 +138,22 @@ export default function OrientationTerminale() {
       }}
 
       whyChoose={{
-        title: "Pourquoi choisir STUDASSIST dès la Terminale ?",
+        title: "Pourquoi STUDASSIST en Terminale ?",
         bullets: [
-          "Une approche globale et structurée",
-          "Un profiling complet de chaque élève",
-          "Une stratégie de candidature personnalisée",
-          "Une expertise Maroc & international (+25 destinations)",
-          "Une maîtrise parfaites des procédures plateformes et hors plateforme",
-          "Une intégration possible du soutien scolaire, concours et langues",
+          "Une approche globale et structurée avec une stratégie de candidature personnalisée et pilotée de A à Z dans une vision long terme du parcours académique",
+          "Une expertise Maroc & international couvrant +25 destinations",
+          "Une maîtrise complète des procédures plateformes et hors plateforme",
+          "Un soutien scolaire, concours et certifications de langues intégrés au parcours",
+          "Un accompagnement humain, bienveillant, rigoureux et transparent",
+          "Un gain de temps considérable pour l'élève et sa famille",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/compass.png",
-          "https://img.icons8.com/3d-fluency/94/search.png",
-          "https://img.icons8.com/3d-fluency/94/school.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",
           "https://img.icons8.com/3d-fluency/94/document.png",
           "https://img.icons8.com/3d-fluency/94/open-book.png",
+          "https://img.icons8.com/3d-fluency/94/handshake.png",
+          "https://img.icons8.com/3d-fluency/94/calendar.png",
         ],
       }}
 
@@ -181,9 +163,10 @@ export default function OrientationTerminale() {
         primaryLabel: "Prendre rendez-vous avec un consultant STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un consultant STUDASSIST",
-        secondaryHref: "https://wa.me/212669495996",
+        secondaryHref: "/contact",
       }}
 
+      faqKeys={["orientation"]}
       prev={{ label: "Orientation en Première", to: "/orientation/premiere" }}
       next={{ label: "Réorientation académique", to: "/orientation/reorientation" }}
     />

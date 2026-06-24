@@ -85,20 +85,22 @@ export default function AdminLogementPage() {
       ]}
 
       whyChoose={{
-        title: "Pourquoi choisir STUDASSIST dans la recherche de logement étudiant",
+        title: "Pourquoi choisir STUDASSIST dans la recherche de logement étudiant ?",
         bullets: [
           "Une expertise de plusieurs destinations étudiantes depuis plus de 7 ans",
           "Un réseau de partenaires et de solutions fiables dans les principales destinations",
+          "Un accompagnement personnalisé adapté aux contraintes de chaque projet",
           "La constitution d'un dossier locataire solide et convaincant",
           "Un accompagnement de A à Z jusqu'à la signature du bail",
           "Un levier de réussite pour les études à travers une installation réussie",
         ],
         icons: [
+          "https://img.icons8.com/3d-fluency/94/compass.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",
-          "https://img.icons8.com/3d-fluency/94/handshake.png",
-          "https://img.icons8.com/3d-fluency/94/document.png",
           "https://img.icons8.com/3d-fluency/94/goal.png",
-          "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
+          "https://img.icons8.com/3d-fluency/94/document.png",
+          "https://img.icons8.com/3d-fluency/94/key.png",
+          "https://img.icons8.com/3d-fluency/94/star.png",
         ],
       }}
 
@@ -106,7 +108,7 @@ export default function AdminLogementPage() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez être accompagné dans votre recherche de logement étudiant ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Nous écrire",
         secondaryHref: "/contact",
       }}

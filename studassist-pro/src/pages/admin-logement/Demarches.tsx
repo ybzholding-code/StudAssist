@@ -85,15 +85,21 @@ export default function AdminDemarches() {
       ]}
 
       whyChoose={{
-        title: "Pourquoi choisir STUDASSIST ?",
+        title: "Pourquoi choisir STUDASSIST dans l'accompagnement aux démarches administratives ?",
         bullets: [
+          "+7 ans d'expérience dans l'accompagnement administratif étudiant",
+          "Une équipe professionnelle, rigoureuse et à l'écoute",
+          "Un pilotage efficace de chaque étape du processus",
           "Une anticipation des contraintes et des délais ainsi que la prévention des erreurs",
           "Un accompagnement personnalisé, fiable et serein de A à Z",
-          "Un gain de temps et d'énergie considérable pour les élèves ainsi que leurs parents",
+          "Un gain de temps et d'énergie considérable pour les élèves ainsi que les parents",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/trophy.png",
-          "https://img.icons8.com/3d-fluency/94/goal.png",
+          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
+          "https://img.icons8.com/3d-fluency/94/group.png",
+          "https://img.icons8.com/3d-fluency/94/rocket.png",
+          "https://img.icons8.com/3d-fluency/94/shield.png",
+          "https://img.icons8.com/3d-fluency/94/compass.png",
           "https://img.icons8.com/3d-fluency/94/star.png",
         ],
       }}
@@ -102,7 +108,7 @@ export default function AdminDemarches() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez être accompagné dans les démarches administratives liées aux études à l'étranger ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Nous écrire",
         secondaryHref: "/contact",
       }}

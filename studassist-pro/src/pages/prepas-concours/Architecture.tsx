@@ -119,7 +119,7 @@ export default function PrepaArchitecture() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez maximiser vos chances d'admission en architecture au Maroc ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
         secondaryHref: "/contact",
       }}

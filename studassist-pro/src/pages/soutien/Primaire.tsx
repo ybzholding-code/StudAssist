@@ -124,9 +124,9 @@ export default function SoutienPrimaire() {
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Apprendre avec plaisir, structurer les bases et révéler le potentiel dès le plus jeune âge. Vous souhaitez mettre en place un accompagnement scolaire adapté, exigeant et compatible avec le système scolaire ainsi que le rythme d'apprentissage de votre enfant ?",
+        body: "Vous souhaitez mettre en place un accompagnement scolaire adapté, exigeant et compatible avec le système scolaire ainsi que le rythme d'apprentissage de votre enfant ?",
         primaryLabel: "Réserver un cours découverte",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         secondaryHref: "/contact",
       }}

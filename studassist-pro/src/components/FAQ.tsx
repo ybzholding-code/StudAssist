@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Plus, HelpCircle, MessageCircle } from "@/src/components/ui/icons";
-import { Link } from "react-router-dom";
 import type { FaqItem } from "../data/faq";
 
 interface FAQProps {
@@ -48,9 +47,13 @@ export default function FAQ({
                 <p className="text-sm text-white/70 mb-4 leading-relaxed">
                   {faqAsideSubtitle || "Notre équipe vous répond sous 24h."}
                 </p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-sa-gold font-semibold text-sm hover:text-white transition">
-                  Nous contacter →
-                </Link>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event("open-studassist-chat"))}
+                  className="inline-flex items-center gap-2 text-sa-gold font-semibold text-sm hover:text-white transition"
+                >
+                  Discuter avec notre assistant →
+                </button>
               </div>
             </div>
           )}

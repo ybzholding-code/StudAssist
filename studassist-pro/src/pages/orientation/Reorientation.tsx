@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 
 export default function OrientationReorientation() {
@@ -25,9 +26,9 @@ export default function OrientationReorientation() {
         lead: "Une réorientation bien accompagnée transforme une situation d'insatisfaction en opportunité de repositionnement stratégique.",
         bullets: [
           "Comprendre les raisons profondes du besoin de changement",
-          "Construire un nouveau projet cohérent avec le potentiel réel",
+          "Construire un nouveau projet cohérent avec les aspirations réelles et le potentiel du candidat",
           "Valoriser l'expérience acquise dans le nouveau parcours",
-          "Sécuriser la transition avec un socle académique solide",
+          "Sécuriser la transition avec un socle académique solide et une méthodologie de candidatures structurée et éprouvée",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/search.png",
@@ -39,56 +40,55 @@ export default function OrientationReorientation() {
 
       sections={[
         {
-          title: "Comprendre avant de réorienter",
+          title: "Comprendre avant de réorienter pour repositionner le projet avec méthode",
           paragraphs: [
-            "Une réorientation réussie commence par une analyse approfondie du parcours initial : cursus suivi, résultats obtenus, compétences développées, expériences vécues et difficultés rencontrées.",
-            "Au-delà du diagnostic académique, nous réalisons un travail approfondi sur les aspirations, les centres d'intérêt, les forces et la personnalité de l'élève ou de l'étudiant.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2">Comprendre avant de réorienter</span>,
+            "Une réorientation réussie commence par une analyse approfondie du parcours initial. Nous prenons le temps d’étudier le cursus suivi, les résultats obtenus, les compétences développées, les expériences vécues et les difficultés rencontrées.",
+            "Au-delà de ce premier diagnostic académique, nous réalisons également un travail approfondi sur qui est réellement l’étudiant : ses aspirations, ses centres d’intérêt, ses forces, ses axes de progression et sa personnalité.",
+            "Cette approche globale nous permet de dépasser la simple notion d’insatisfaction pour construire un repositionnement stratégique du projet d’orientation, aligné à la fois avec le potentiel réel de l’étudiant et ses ambitions personnelles.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2">Repositionner le projet avec méthode</span>,
+            "À partir de cette analyse complète, nous accompagnons l’étudiant dans la construction d’un nouveau projet académique. Nous clarifions les objectifs, explorons les filières alternatives et sélectionnons des établissements adaptés au profil et aux ambitions.",
           ],
-          callout: "Cette approche globale permet de dépasser la simple insatisfaction pour construire un repositionnement stratégique aligné avec le potentiel réel.",
+          callout: "La réorientation n’est jamais traitée comme un simple changement de direction. Elle est pensée comme une reconstruction cohérente, intégrant l’expérience déjà acquise et visant une trajectoire plus alignée avec le potentiel de l’étudiant.",
         },
         {
-          title: "Repositionner le projet avec méthode",
+          title: "Aligner le niveau académique avec le nouveau cap et reconstruire des candidatures convaincantes",
           paragraphs: [
-            "À partir de cette analyse complète, nous accompagnons la construction d'un nouveau projet académique : clarification des objectifs, exploration des filières alternatives et sélection d'établissements adaptés au profil et aux ambitions.",
-            "La réorientation n'est jamais traitée comme un simple changement de direction. Elle est pensée comme une reconstruction cohérente, intégrant l'expérience déjà acquise et visant une trajectoire plus alignée.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2">Aligner le niveau académique avec le nouveau cap</span>,
+            <>
+              Lorsque le projet l’exige, nous intégrons un accompagnement académique complémentaire. Cela peut inclure une{" "}
+              <Link to="/soutien-scolaire" className="text-brand-darkblue font-black underline underline-offset-2">remise à niveau</Link>{" "}
+              dans certaines matières, une{" "}
+              <Link to="/prepas-concours" className="text-brand-darkblue font-black underline underline-offset-2">préparation à des concours</Link>{" "}
+              spécifiques ou des{" "}
+              <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">certifications de langues</Link>
+              , selon les exigences des formations visées.
+            </>,
+            "Cette étape permet de sécuriser la transition et d’aborder la nouvelle orientation avec un socle académique solide.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2">Reconstruire des candidatures convaincantes</span>,
+            "La réorientation nécessite souvent d’expliquer son parcours avec clarté et maturité. Nous accompagnons les étudiants dans la constitution de leurs dossiers, la rédaction de lettres de motivation cohérentes et la structuration d’un discours valorisant le chemin parcouru.",
+            "Une attention particulière est portée à la narration du projet : il s’agit de transformer une bifurcation en preuve de réflexion, d’évolution et de détermination.",
+            "Les étudiants sont également préparés aux entretiens à travers des simulations et un travail approfondi sur la posture, la confiance et la cohérence du discours.",
           ],
         },
         {
-          title: "Aligner le niveau académique avec le nouveau cap",
+          title: "Une expertise globale au service d’un accompagnement humain",
           paragraphs: [
-            "Lorsque le projet l'exige, nous intégrons un accompagnement académique complémentaire : remise à niveau dans certaines matières, préparation à des concours spécifiques ou certifications de langues selon les exigences des formations visées.",
-          ],
-          callout: "Cette étape sécurise la transition et permet d'aborder la nouvelle orientation avec un socle solide.",
-        },
-        {
-          title: "Reconstruire des candidatures convaincantes",
-          paragraphs: [
-            "La réorientation nécessite d'expliquer son parcours avec clarté et maturité. Nous accompagnons la constitution des dossiers, la rédaction de lettres de motivation cohérentes et la structuration d'un discours qui valorise le chemin parcouru.",
-            "Les étudiants sont également préparés aux entretiens à travers des simulations et un travail sur la posture, la confiance et la cohérence du discours.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2">Une expertise nationale et internationale</span>,
+            "Pour les projets au Maroc comme à l’étranger, nous mettons à profit notre expérience et notre maîtrise des procédures de candidatures, sur plateformes officielles ou hors plateformes. Nous accompagnons les étudiants vers plus de 25 destinations, en construisant des stratégies adaptées à chaque contexte académique.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2">Un accompagnement humain et rassurant</span>,
+            "La réorientation est souvent une période sensible, marquée par des interrogations personnelles et parfois une perte de confiance.",
+            "Chez STUDASSIST, nous accordons une place centrale à l’écoute, à la pédagogie et à l’accompagnement humain, afin de transformer cette transition en expérience constructive et structurante.",
+            "Nous travaillons en lien direct avec l’étudiant — et, lorsque cela est pertinent, avec sa famille — afin d’assurer un cadre transparent et sécurisant tout au long du processus.",
           ],
         },
         {
-          title: "Expertise nationale et internationale",
+          title: "À qui s’adresse la réorientation ?",
           paragraphs: [
-            "Pour les projets au Maroc comme à l'étranger, nous mettons à profit notre expérience et notre maîtrise des procédures de candidatures — sur plateformes officielles ou hors plateformes — vers plus de 25 destinations, avec des stratégies adaptées à chaque contexte académique.",
+            "Notre accompagnement s’adresse aux lycéens souhaitant changer de filière, aux étudiants post-bac remettant en question leur premier choix, ainsi qu’aux titulaires de Bac+3 désireux de repositionner leur trajectoire académique. Plus largement, il concerne toute personne souhaitant redonner du sens à son parcours et construire une orientation plus alignée avec son potentiel.",
           ],
         },
       ]}
-
-      audience={{
-        title: "À qui s'adresse la réorientation ?",
-        groups: [
-          {
-            title: "Publics concernés",
-            bullets: [
-              "Lycéens souhaitant changer de filière pour un parcours plus adapté",
-              "Étudiants post-bac qui remettent en question leur premier choix d'orientation",
-              "Titulaires d'un Bac+3 désireux de repositionner leur trajectoire académique",
-              "Toute personne souhaitant redonner du sens à son parcours d'études",
-            ],
-          },
-        ],
-      }}
 
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour se réorienter ?",
@@ -116,9 +116,10 @@ export default function OrientationReorientation() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "https://wa.me/212669495996",
+        secondaryHref: "/contact",
       }}
 
+      faqKeys={["orientation"]}
       prev={{ label: "Orientation en Terminale", to: "/orientation/terminale" }}
       next={{ label: "Orientation Master", to: "/orientation/master" }}
     />

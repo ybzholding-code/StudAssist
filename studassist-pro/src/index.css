@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sans: "Inter", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -39,7 +40,7 @@ html {
 }
 
 body {
-  @apply bg-white text-sa-ink antialiased overflow-x-hidden font-sans;
+  @apply bg-white text-sa-ink antialiased overflow-x-clip font-sans;
   font-feature-settings: "ss01", "cv11";
 }
 

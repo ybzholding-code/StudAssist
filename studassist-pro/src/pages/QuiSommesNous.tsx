@@ -67,39 +67,51 @@ const QuiSommesNous = () => {
   ];
 
   const pillars = [
-    { title: "Approche Globale", desc: "Nous allons au-delà du scolaire pour un accompagnement complet.", icon3d: "https://img.icons8.com/3d-fluency/94/globe.png" },
-    { title: "Logique Stratégique", desc: "Nous construisons un plan cohérent, pas une simple accumulation de cours.", icon3d: "https://img.icons8.com/3d-fluency/94/goal.png" },
-    { title: "Accompagnement Humain", desc: "Nous allions rigueur, structure et une relation de confiance.", icon3d: "https://img.icons8.com/3d-fluency/94/handshake.png" },
-    { title: "Vision Internationale & Long Terme", desc: "Nous préparons les étudiants à des choix alignés sur leur potentiel futur.", icon3d: "https://img.icons8.com/3d-fluency/94/rocket.png" },
+    { title: "Excellence", desc: "Nous appliquons des standards élevés dans chaque accompagnement, fondés sur l'expertise, la rigueur et l'amélioration continue.", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png" },
+    { title: "Personnalisation", desc: "Chaque élève est unique. Nous concevons des parcours sur mesure, alignés avec les aspirations, le potentiel et la réalité de chacun.", icon3d: "https://img.icons8.com/3d-fluency/94/goal.png" },
+    { title: "Engagement", desc: "Nous nous impliquons pleinement aux côtés des étudiants et de leurs familles, avec constance, responsabilité et disponibilité.", icon3d: "https://img.icons8.com/3d-fluency/94/handshake.png" },
+    { title: "Éthique & Bienveillance", desc: "Nous guidons avec intégrité, transparence et respect, en plaçant toujours l'intérêt de l'étudiant au cœur de nos recommandations.", icon3d: "https://img.icons8.com/3d-fluency/94/heart-with-pulse.png" },
   ];
 
   const team = [
     {
-      name: "Yasmine", title: "Founder & CEO", image: "/yasmine-belkhayat-fondatrice-studassist.jpg",
+      name: "Yasmine", 
+      image: "/yasmine-belkhayat-fondatrice-studassist.jpg",
       pos: "object-[center_18%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
-      bio: "Diplômée du Master Grande École de NEOMA Business School après une classe préparatoire scientifique, Yasmine débute sa carrière dans le conseil en transformation des organisations et la gestion de projets digitaux, notamment chez Natixis et Advents Consulting où elle accompagne des grands groupes du secteur banque & assurance à Paris.",
-      bio2: "Entrepreneure engagée, elle fonde ensuite STUDASSIST en 2018, cabinet d'accompagnement académique dédié aux élèves et étudiants, qu'elle développe progressivement autour d'une approche globale mêlant orientation scolaire, préparation aux concours, accompagnement international et digitalisation des parcours d'accompagnement.",
+      paragraphs: [
+        "Diplômée du Master Grande Ecole de NEOMA Business School après une classe préparatoire scientifique, Yasmine débute sa carrière dans le conseil en transformation des organisations et la gestion de projets digitaux, notamment chez Natixis et Advents Consulting ou elle accompagne des grands groupes du secteur banque & assurance à Paris. Son parcours lui permet de développer une solide expertise en gestion de projet, structuration de processus, stratégie digitale et accompagnement du changement.",
+        "Entrepreneure engagée, elle fonde ensuite STUDASSIST en 2018, cabinet d’accompagnement académique dédié aux élèves et étudiants, qu’elle développe progressivement autour d’une approche globale mêlant orientation scolaire, préparation aux concours, accompagnement international et digitalisation des parcours d’accompagnement. À la croisée de l’éducation, du conseil et de l’innovation, son parcours combine vision stratégique, sens de l’entrepreneuriat et forte compréhension des enjeux académiques et humains liés à l’orientation des jeunes."
+      ],
       linkedin: "https://www.linkedin.com/in/yasmine-belkhayat-zougari-15b6684a/",
     },
     {
-      name: "Omar Bennis", title: "Co-founder & GM", image: "/omar-bennis-cofondateur-studassist-v2.png",
+      name: "Omar", 
+      image: "/omar-bennis-cofondateur-studassist-v2.png",
       pos: "object-[center_12%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "", bgColor: "bg-transparent",
-      bio: "Entrepreneur et dirigeant expérimenté diplômé de l'ISG Paris et du Master Executive de l'ESSEC, Omar Bennis évolue depuis plus de 15 ans dans les secteurs de la distribution, du développement commercial et du pilotage d'activités à l'international. Après une première expérience chez Alterfood en France, il cofonde Taste Distribution, qu'il développe pendant plusieurs années en France.",
-      bio2: "Cofondateur de STUDASSIST, Omar apporte une forte expertise en structuration d'entreprise, développement stratégique et gestion opérationnelle. Depuis 2025, il préside en parallèle la société sportive du MAS de Fès, l'un des clubs les plus emblématiques du football marocain.",
+      paragraphs: [
+        "Entrepreneur et dirigeant expérimenté diplômé de l'ISG Paris et du Master Executive de l'ESSEC, Omar Bennis évolue depuis plus de 15 ans dans les secteurs de la distribution, du développement commercial et du pilotage d’activités à l’international. Après une première expérience chez Alterfood en France, il cofonde Taste Distribution, société spécialisée dans la distribution de produits alimentaires premium en grande distribution, qu’il développe pendant plusieurs années en France. Il rejoint ensuite Dislog Group où il pilote les opérations des filiales européennes du groupe et contribue au développement international de ses activités.",
+        "Cofondateur de STUDASSIST, Omar apporte également une forte expertise en structuration d’entreprise, développement stratégique et gestion opérationnelle. Depuis 2025, il préside en parallèle la société sportive du MAS de Fès, l’un des clubs les plus emblématiques du football marocain, où il pilote un important travail de restructuration et de redressement du club, aussi bien sur les volets organisationnels que stratégiques."
+      ],
       linkedin: "",
     },
     {
-      name: "Hajar", title: "Co-founder & CMO", image: "/hajar-cofondatrice-studassist.jpg",
+      name: "Hajar", 
+      image: "/hajar-cofondatrice-studassist.jpg",
       pos: "object-[55%_15%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "brightness-[0.85] contrast-[1.2]", bgColor: "bg-transparent",
-      bio: "Diplômée de l'ENCG de Settat en Marketing et Actions Commerciales, Hajar construit un parcours solide dans l'univers du marketing stratégique et de la gestion de marques internationales. Elle débute sa carrière chez INWI avant d'évoluer dans l'univers du luxe au sein de Beauté Prestige International, puis rejoint le groupe L'Oréal.",
-      bio2: "Très sensible aux enjeux d'accompagnement et de coaching des jeunes, elle rejoint l'aventure STUDASSIST en 2021 où elle pilote l'image de marque, la stratégie de communication ainsi que le développement commercial de la structure.",
+      paragraphs: [
+        "Diplômée de l’ENCG de Settat en Marketing et Actions Commerciales, Hajar construit un parcours solide dans l’univers du marketing stratégique et de la gestion de marques internationales. Elle débute sa carrière chez INWI avant d’évoluer dans l’univers du luxe dans lequel elle participe au développement de marques de parfum prestigieuses. Elle rejoint ensuite le groupe L’Oréal, où elle occupe plusieurs fonctions en gestion de marque et management marketing sur des références du FMCG telles que L’Oréal Paris et Garnier. Son expérience combine expertise marketing, pilotage de projets stratégiques, gestion d’équipes et forte compréhension des enjeux de positionnement, de communication et de développement de marque.",
+        "Très sensible aux enjeux d’accompagnement et de coaching des jeunes, elle rejoint l’aventure STUDASSIST en 2021 où elle pilote l’image de marque, la stratégie de communication ainsi que le développement commercial de la structure. Elle contribue également à la mise en place de partenariats stratégiques participant activement au rayonnement et à la croissance de STUDASSIST."
+      ],
       linkedin: "https://www.linkedin.com/in/hajar-gherras-44a8284b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
     {
-      name: "Mehdi", title: "Co-founder & COO", image: "/mehdi-cofondateur-studassist.jpg",
+      name: "Mehdi", 
+      image: "/mehdi-cofondateur-studassist.jpg",
       pos: "object-[center_17%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
-      bio: "Diplômé de l'Université Paris II Panthéon-Assas en Finance et Banque, Mehdi débute sa carrière au sein de Société Générale Corporate & Investment Banking avant de rejoindre PwC, où il intervient sur des missions de contrôle financier et de gestion de trésorerie pour de grands groupes internationaux.",
-      bio2: "En 2021, il rejoint STUDASSIST afin de développer l'ensemble du pôle soutien scolaire, en structurant une offre d'accompagnement académique exigeante et personnalisée, pensée pour répondre aux enjeux de performance et de méthodologie des élèves.",
+      paragraphs: [
+        "Diplômé de l’Université Paris II Panthéon-Assas en Finance et Banque, Mehdi débute sa carrière au sein de Société Générale Corporate & Investment Banking avant de rejoindre PwC, où il intervient sur des missions de contrôle financier et de gestion de trésorerie pour de grands groupes internationaux des secteurs de l’énérgie, banque& assurance. Animé par une forte sensibilité entrepreneuriale et par les enjeux de transmission académique, il fonde ensuite Mathassistance / Mon Prof & Moi, un réseau de soutien scolaire développé à Paris et à l’échelle nationale, alliant accompagnement pédagogique de proximité et structuration opérationnelle.",
+        "En 2021, il rejoint STUDASSIST afin de développer l’ensemble du pôle soutien scolaire, en structurant une offre d’accompagnement académique exigeante et personnalisée, pensée pour répondre aux enjeux de performance et de méthodologie des élèves. Son parcours combine ainsi expertise financière, expérience entrepreneuriale et parfaite compréhension des enjeux éducatifs et académiques."
+      ],
       linkedin: "https://www.linkedin.com/in/mehdi-mejjati-alami-52b17184?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
   ];
@@ -107,7 +119,7 @@ const QuiSommesNous = () => {
   return (
     <div className="bg-white">
       {/* HERO SECTION */}
-      <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden py-10 lg:py-16">
+      <section className="relative flex items-center overflow-hidden py-16 lg:py-24">
         <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-brand-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10 w-full">
           <div className="text-center mb-10 lg:mb-14">
@@ -605,7 +617,7 @@ const QuiSommesNous = () => {
             <div className="space-y-8 order-1 lg:order-2">
               <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase">
                 <span className="w-8 h-px bg-brand-teal"></span>
-                <span>L'Humain au cœur</span>
+                <span>L'humain au coeur de notre ADN</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-[1.1] lg:leading-tight">
                 Une équipe <span className="text-brand-teal italic">d'experts</span> engagés
@@ -674,18 +686,21 @@ const QuiSommesNous = () => {
                   <div className={`relative z-20 w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-gray-100 transition-all duration-500 shadow-xl group-hover:border-brand-teal/40 ${member.bgColor}`}>
                     <img 
                       src={member.image} 
-                      alt={`${member.name} - ${member.title} STUDASSIST`} 
+                      alt={`${member.name} STUDASSIST`} 
                       className={`absolute inset-0 w-full h-full object-cover ${member.pos} ${member.customScale} ${member.hoverScale} ${member.filter} transition-all duration-700 grayscale group-hover:grayscale-0`}
                     />
                     <div className="absolute inset-0 bg-brand-darkblue/20 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
                 </div>
-                <div className="text-center max-w-[320px] mx-auto">
-                  <h3 className="text-lg sm:text-xl font-black text-brand-darkblue uppercase tracking-tight">{member.name}</h3>
-                  <p className="text-brand-teal font-bold text-[10px] uppercase tracking-widest mb-3">{member.title}</p>
-                  <p className="text-gray-400 text-xs leading-relaxed mb-3">{member.bio2}</p>
+                <div className="text-center max-w-[320px] mx-auto flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-black text-brand-darkblue uppercase tracking-tight mb-2">{member.name}</h3>
+                  <div className="space-y-3 mb-4">
+                    {member.paragraphs.map((p, i) => (
+                      <p key={i} className="text-gray-400 text-xs leading-relaxed text-justify sm:text-center">{p}</p>
+                    ))}
+                  </div>
                   {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 text-gray-400 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5] transition-all">
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-200 text-gray-400 hover:bg-[#0077B5] hover:text-white hover:border-[#0077B5] transition-all mx-auto">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
                   )}

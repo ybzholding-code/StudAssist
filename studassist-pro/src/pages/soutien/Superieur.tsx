@@ -106,7 +106,7 @@ export default function SoutienSuperieur() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez mettre en place un soutien scolaire personnalisé pour réussir votre première année post-bac ou repenser votre orientation ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Nous contacter",
         secondaryHref: "/contact",
       }}

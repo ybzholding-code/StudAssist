@@ -76,7 +76,7 @@ export default function OrientationPremiere() {
             </ul>,
             <span>
               Lorsque requis, nous intégrons du{" "}
-              <Link to="/soutien-scolaire" className="text-brand-teal font-black hover:underline">
+              <Link to="/soutien-scolaire" className="text-brand-darkblue font-black underline underline-offset-2">
                 soutien scolaire
               </Link>{" "}
               ciblé pour maximiser le dossier académique (dossier de Première et épreuves anticipées du Bac).
@@ -84,7 +84,7 @@ export default function OrientationPremiere() {
             <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Ouverture vers l'international</strong>,
             <span>
               Pour les projets d'études à l'étranger, nous amorçons la réflexion sur les prérequis et les calendriers d'admission spécifiques (inscriptions anticipées, certifications de langues). Nous intégrons au programme la préparation aux{" "}
-              <Link to="/certifications" className="text-brand-teal font-black hover:underline">
+              <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">
                 certifications de langues
               </Link>{" "}
               (IELTS, TOEFL, Cambridge) indispensables pour les universités internationales.
@@ -146,7 +146,7 @@ export default function OrientationPremiere() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "https://wa.me/212669495996",
+        secondaryHref: "/contact",
       }}
 
       prev={{ label: "Orientation en Seconde", to: "/orientation/seconde" }}

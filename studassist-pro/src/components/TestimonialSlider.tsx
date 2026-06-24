@@ -1,65 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, ChevronLeft, ChevronRight, Quote } from '@/src/components/ui/icons';
+import { Star } from '@/src/components/ui/icons';
+import { useGoogleReviews, type GoogleReview } from '@/src/hooks/useGoogleReviews';
 
-interface Testimonial {
-  name: string;
-  text: string;
-  rating: number;
-  image: string;
-  role?: string;
-}
-
-const testimonials: Testimonial[] = [
-  { 
-    name: "Reda El Bouri", 
-    text: "Une expérience transformationnelle. Grâce à STUDASSIST, j'ai pu clarifier mon projet d'études et intégrer l'école de mes rêves. L'accompagnement est personnalisé et extrêmement rigoureux.", 
-    rating: 5,
-    image: "https://picsum.photos/seed/reda/100/100",
-    role: "Étudiant — École de Management"
-  },
-  { 
-    name: "Othmane Zerktouni", 
-    text: "L'équipe de STUDASSIST m'a aidé à surmonter mes difficultés en mathématiques et m'a préparé efficacement pour le concours. Aujourd'hui en prépa, je leur en suis très reconnaissant.", 
-    rating: 5,
-    image: "https://picsum.photos/seed/othmane/100/100",
-    role: "Étudiant — CPGE"
-  },
-  { 
-    name: "Yasmine Mansouri", 
-    text: "L'orientation a toujours été un stress pour moi. Avec STUDASSIST, j'ai découvert des options auxquelles je n'avais pas pensé. Leur méthode est vraiment scientifique et humaine.", 
-    rating: 5,
-    image: "https://picsum.photos/seed/yasmine/100/100",
-    role: "Lycéenne — Bac Français"
-  },
-  { 
-    name: "Amine Alami", 
-    text: "Excellent cabinet de conseil. La préparation aux certifications de langues a été un franc succès. Je recommande vivement pour le sérieux et le professionnalisme de toute l'équipe.", 
-    rating: 5,
-    image: "https://picsum.photos/seed/amine/100/100",
-    role: "Étudiant — International Business"
-  },
-  { 
-    name: "Sofia Bennani", 
-    text: "Un accompagnement sur mesure. STUDASSIST ne se contente pas de donner des cours, ils transmettent une véritable méthodologie de travail qui me sert chaque jour à l'université.", 
-    rating: 5,
-    image: "https://picsum.photos/seed/sofia/100/100",
-    role: "Étudiante — Université"
-  },
-  { 
-    name: "Anas El idrissi", 
-    text: "J'ai suivi le stage intensif de préparation au Bac. Les professeurs sont exceptionnels et les supports de cours sont de très grande qualité. Merci à toute l'équipe !", 
-    rating: 5,
-    image: "https://picsum.photos/seed/anas/100/100",
-    role: "Bachelier 2023"
-  }
-];
+const SLIDE_DURATION = 15000;
 
 export const TestimonialSlider = () => {
+  const { reviews } = useGoogleReviews();
   const [index, setIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(2);
+  const [progress, setProgress] = useState(0);
+  const progressRef = useRef<number>(0);
+  const startTimeRef = useRef<number>(Date.now());
 
-  const totalPages = Math.ceil(testimonials.length / itemsToShow);
+  const totalPages = Math.ceil(reviews.length / itemsToShow);
 
   useEffect(() => {
     const handleResize = () => {
@@ -74,32 +28,45 @@ export const TestimonialSlider = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto-slide effect
+  // Auto-slide + progress bar
   useEffect(() => {
+    startTimeRef.current = Date.now();
+    setProgress(0);
+
     const timer = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % totalPages);
-    }, 5000); // Slide every 5 seconds
-    return () => clearInterval(timer);
-  }, [totalPages]);
+    }, SLIDE_DURATION);
+
+    const raf = () => {
+      const elapsed = Date.now() - startTimeRef.current;
+      const pct = Math.min((elapsed / SLIDE_DURATION) * 100, 100);
+      setProgress(pct);
+      progressRef.current = requestAnimationFrame(raf);
+    };
+    progressRef.current = requestAnimationFrame(raf);
+
+    return () => {
+      clearInterval(timer);
+      cancelAnimationFrame(progressRef.current);
+    };
+  }, [totalPages, index]);
 
   const variants = {
-    enter: {
-      opacity: 0,
-      x: 20,
-    },
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: {
-      zIndex: 0,
-      x: -20,
-      opacity: 0
-    }
+    enter: { opacity: 0, x: 20 },
+    center: { zIndex: 1, x: 0, opacity: 1 },
+    exit: { zIndex: 0, x: -20, opacity: 0 },
   };
 
-  const visibleTestimonials = testimonials.slice(index * itemsToShow, (index + 1) * itemsToShow);
+  const visibleReviews = reviews.slice(index * itemsToShow, (index + 1) * itemsToShow);
+
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   return (
     <div className="relative w-full">
@@ -113,32 +80,81 @@ export const TestimonialSlider = () => {
             exit="exit"
             transition={{
               opacity: { duration: 0.5 },
-              x: { duration: 0.5 }
+              x: { duration: 0.5 },
             }}
             className="grid md:grid-cols-2 gap-8 w-full"
           >
-            {visibleTestimonials.map((item) => (
-              <div key={item.name} className="bg-white p-8 rounded-2xl shadow-soft border border-gray-50 flex flex-col items-center text-center h-full">
-                <div className="w-16 h-16 bg-gray-200 rounded-full mb-4 overflow-hidden shadow-sm">
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+            {visibleReviews.map((item: GoogleReview, idx: number) => (
+              <div
+                key={`${item.authorName}-${idx}`}
+                className="bg-white p-8 rounded-2xl shadow-soft border border-gray-50 flex flex-col items-center text-center h-full"
+              >
+                {/* Author avatar */}
+                <div className="w-14 h-14 rounded-full mb-4 overflow-hidden shadow-sm flex items-center justify-center bg-brand-teal/10 text-brand-teal font-black text-lg">
+                  {item.authorPhoto ? (
+                    <img
+                      src={item.authorPhoto}
+                      alt={item.authorName}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <span>{getInitials(item.authorName)}</span>
+                  )}
                 </div>
-                <p className="text-gray-500 text-xs italic mb-6 leading-relaxed px-4">"{item.text}"</p>
+
+                {/* Review text */}
+                <p className="text-gray-500 text-xs italic mb-6 leading-relaxed px-4 line-clamp-5">
+                  "{item.text}"
+                </p>
+
+                {/* Rating stars */}
                 <div className="flex text-sa-gold mb-2">
-                  {[...Array(item.rating)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
+                  {[...Array(item.rating)].map((_, i) => (
+                    <span key={i}><Star size={12} fill="currentColor" /></span>
+                  ))}
                 </div>
-                <h4 className="font-bold text-brand-darkblue text-sm uppercase tracking-tight">{item.name}</h4>
+
+                {/* Author name & time */}
+                <h4 className="font-bold text-brand-darkblue text-sm uppercase tracking-tight">
+                  {item.authorName}
+                </h4>
+                {item.relativeTime && (
+                  <span className="text-[10px] text-gray-400 mt-1">{item.relativeTime}</span>
+                )}
+
+                {/* Google badge */}
+                <div className="flex items-center gap-1.5 mt-3">
+                  <img
+                    src="https://www.google.com/favicon.ico"
+                    alt="Google"
+                    className="h-4 w-4"
+                  />
+                  <span className="text-[9px] font-medium text-gray-400">Avis Google</span>
+                </div>
               </div>
             ))}
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Discrete pagination indicator (no buttons) */}
-      <div className="flex justify-center mt-12 space-x-2">
+      {/* Progress bar */}
+      <div className="w-full h-0.5 bg-gray-100 rounded-full mt-10 overflow-hidden">
+        <div
+          className="h-full bg-brand-teal rounded-full"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      {/* Pagination dots */}
+      <div className="flex justify-center mt-4 space-x-2">
         {Array.from({ length: totalPages }).map((_, i) => (
-          <div
+          <button
             key={i}
-            className={`h-2 rounded-full transition-all duration-500 ${i === index ? 'w-8 bg-brand-teal' : 'w-2 bg-gray-200'}`}
+            onClick={() => setIndex(i)}
+            className={`h-2 rounded-full transition-all duration-500 ${
+              i === index ? "w-8 bg-brand-teal" : "w-2 bg-gray-200 hover:bg-gray-300"
+            }`}
           />
         ))}
       </div>

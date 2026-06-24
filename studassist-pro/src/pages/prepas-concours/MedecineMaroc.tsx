@@ -129,7 +129,7 @@ export default function PrepaMedecineMaroc() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez optimiser vos chances d'admission en médecine au Maroc ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
         secondaryHref: "/contact",
       }}

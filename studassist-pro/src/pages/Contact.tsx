@@ -1,62 +1,95 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Phone, MapPin, Clock } from "@/src/components/ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useFormSubmit } from "../hooks/useFormSubmit";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 
 export default function Contact() {
-  const [activeTab, setActiveTab] = useState<"tuteur" | "eleve">("tuteur");
+  const [searchParams] = useSearchParams();
+  const [intentTab, setIntentTab] = useState<"orientation" | "cours">("orientation");
+  const roleFromParams = searchParams.get("role") as "parent" | "eleve" | null;
+  const [userRole, setUserRole] = useState<"parent" | "eleve">(roleFromParams || "parent");
+  
+  // States for checkbox sections
+  const [matieres, setMatieres] = useState<string[]>([]);
+  const [prepas, setPrepas] = useState<string[]>([]);
+  const [certifications, setCertifications] = useState<string[]>([]);
+  const [disponibilites, setDisponibilites] = useState<string[]>([]);
+  const { submit, status: submitStatus } = useFormSubmit();
+  const isSubmitted = submitStatus === "success";
+
+  const MATIERES = [
+    "Mathématiques", "Physique-chimie", "SVT / Biologie", "Français", 
+    "Philosophie", "Histoire-Géographie / Géopolitique", 
+    "Sciences écononomiques et sociales", "NSI", "Anglais", 
+    "Arabe", "Eco-droit - Spé STMG", "Autre"
+  ];
+
+  const PREPAS = [
+    "Prépa concours SESAME/ACCES", "Prépa concours Ingé France", 
+    "Prépa concours Sciences Po", "Prépa concours Médecine Maroc", 
+    "Prépa concours Médecine Belgique", "Prépa concours UM6P", 
+    "Prépa Concours Archi ENA", "Prépa concours ISCAE/ENCG"
+  ];
+
+  const CERTIFICATIONS = ["IELTS/TOEFL", "TCF/DALF", "DELE"];
+
+  const DISPOS = [
+    "Lundi matin", "Lundi après-midi", "Mardi matin", "Mardi après-midi",
+    "Mercredi matin", "Mercredi après-midi", "Jeudi matin", "Jeudi après-midi",
+    "Vendredi matin", "Vendredi après-midi", "Samedi matin", "Samedi après-midi",
+    "Dimanche matin", "Dimanche après-midi"
+  ];
+
+  const toggleArray = (arr: string[], setArr: (val: string[]) => void, item: string) => {
+    if (arr.includes(item)) setArr(arr.filter(i => i !== item));
+    else setArr([...arr, item]);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const nom = (form.elements.namedItem("nom") as HTMLInputElement)?.value || "";
+    const prenom = (form.elements.namedItem("prenom") as HTMLInputElement)?.value || "";
+    const tel = (form.elements.namedItem("tel") as HTMLInputElement)?.value || "";
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value || "";
+    const niveau = (form.elements.namedItem("niveau") as HTMLSelectElement)?.value || "";
+    const systeme = (form.elements.namedItem("systeme") as HTMLSelectElement)?.value || "";
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+    await submit({
+      nom, prenom, tel, email,
+      role: userRole,
+      intent: intentTab,
+      niveau, systeme,
+      matieres, prepas, certifications, disponibilites,
+      message,
+      source: "Page Contact — formulaire principal",
+    });
+  };
 
   return (
-    <div className="bg-white relative overflow-hidden">
+    <div className="bg-white relative overflow-clip">
       {/* Decorative background blobs */}
       <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-sa-pink/10 blur-3xl pointer-events-none" />
       <div className="absolute top-[40%] -left-24 w-[340px] h-[340px] rounded-full bg-sa-gold/15 blur-3xl pointer-events-none" />
 
       <section className="relative py-12 lg:py-20">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-20 items-start max-w-[1400px] mx-auto">
             {/* ============ LEFT: Brick-wall framed photo with "S" logo ============ */}
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] w-full flex flex-col justify-center">
               <MediaFrameFloaters />
 
-              {/* Main frame */}
-              <div
-                className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-[0_30px_70px_-25px_rgba(12,27,68,0.25)]"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/5" />
-
-                {/* Decorative shelf with plants */}
-                <div className="absolute top-[18%] left-[10%] right-[30%] flex items-end gap-2 z-10">
-                  <div className="w-10 h-14 bg-white rounded-sm shadow" />
-                  <div className="w-8 h-10 bg-emerald-700 rounded-sm" />
-                  <div className="w-9 h-12 bg-white rounded-sm shadow" />
-                </div>
-
-                {/* Big "S" logo card in the middle */}
-                <div className="absolute inset-x-0 bottom-[18%] flex justify-center z-10">
-                  <div className="bg-sa-navy rounded-2xl p-6 lg:p-8 shadow-xl">
-                    <Logo variant="header" />
-                  </div>
-                </div>
-
-                {/* Circular photo cutout bottom-right */}
-                <div className="absolute right-4 bottom-8 lg:right-6 lg:bottom-10 w-24 h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden border-[6px] border-white shadow-lg z-20">
-                  <img
-                    src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=400&q=80"
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="relative w-full aspect-square rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10 group bg-white">
+                <img
+                  src="/hero-contact.png"
+                  alt="Contact"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]"
+                />
               </div>
             </div>
 
@@ -68,140 +101,261 @@ export default function Contact() {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="font-display text-[32px] sm:text-[36px] lg:text-[48px] font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-2">
-                  <span className="text-sa-navy">Contactez nos</span>
+                  <span className="text-sa-navy">Parlons de votre</span>
                   <br />
-                  <span className="sa-wavy text-sa-pink">Experts !</span>
+                  <span className="sa-wavy text-sa-pink">projet académique</span>
                 </h1>
 
-                <div className="space-y-4 text-sa-ink/75 leading-relaxed text-[15px] mt-6 max-w-md">
+                <div className="space-y-4 text-sa-ink/75 leading-relaxed text-[15px] mt-6 max-w-xl">
                   <p>
-                    Que vous soyez parent d'élève à la recherche d'informations, enseignant souhaitant rejoindre notre équipe, ou simplement curieux d'en savoir plus sur notre établissement,{" "}
-                    <span className="font-semibold text-sa-navy">
-                      nous sommes là pour répondre à toutes vos questions.
-                    </span>
+                    Que vous souhaitiez définir une orientation claire ou tester notre accompagnement avec un cours découverte, <span className="font-semibold text-sa-navy">notre équipe vous accompagne à chaque étape.</span>
                   </p>
                   <p>
-                    N'hésitez pas à remplir le formulaire ci-dessous : notre équipe se fera un plaisir de vous répondre dans les plus brefs délais.{" "}
-                    <span className="font-semibold text-sa-navy">
-                      Votre satisfaction et votre confiance sont au cœur de nos priorités.
-                    </span>
+                    Remplissez ce formulaire et nous vous recontactons rapidement pour organiser un échange adapté à votre besoin.
                   </p>
-                  <p className="font-semibold text-sa-navy">Nous avons hâte d'échanger avec vous !</p>
                 </div>
 
-                {/* Tabs */}
-                <div className="flex gap-8 mt-8 border-b border-sa-navy/10 max-w-md">
-                  {(
-                    [
-                      { key: "tuteur", label: "Je suis tuteur" },
-                      { key: "eleve", label: "Je suis élève" },
-                    ] as const
-                  ).map((t) => (
-                    <button
-                      key={t.key}
-                      onClick={() => setActiveTab(t.key)}
-                      className={`pb-3 text-[15px] font-semibold transition-colors relative ${
-                        activeTab === t.key ? "text-sa-pink" : "text-sa-ink/50 hover:text-sa-navy"
-                      }`}
-                    >
-                      {t.label}
-                      {activeTab === t.key && (
-                        <motion.div
-                          layoutId="contact-tab-underline"
-                          className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-sa-pink"
-                        />
-                      )}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Sub-heading */}
-                <h3 className="font-display text-lg font-extrabold text-sa-navy mt-8 mb-2">
-                  Nous sommes là pour vous
-                </h3>
-                <p className="text-sa-ink/60 text-sm mb-8 max-w-md">
-                  Remplissez ce formulaire et un conseiller STUDASSIST vous recontacte sous 24&nbsp;heures.
-                </p>
-
-                {/* Form */}
-                <AnimatePresence mode="wait">
-                  <motion.form
-                    key={activeTab}
-                    initial={{ opacity: 0, y: 8 }}
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.25 }}
-                    className="space-y-6 max-w-md"
-                    onSubmit={(e) => e.preventDefault()}
+                    className="mt-10 p-8 rounded-2xl bg-sa-green/10 border border-sa-green/20"
                   >
-                    {(
-                      [
-                        { label: "Nom *", type: "text", placeholder: "Nom *" },
-                        { label: "Prénom *", type: "text", placeholder: "Prénom *" },
-                        { label: "Téléphone *", type: "tel", placeholder: "Téléphone *" },
-                        { label: "Votre adresse mail *", type: "email", placeholder: "Votre adresse mail *" },
-                      ] as const
-                    ).map((f) => (
-                      <div key={f.label} className="group">
-                        <input
-                          type={f.type}
-                          required
-                          placeholder={f.placeholder}
-                          className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40"
-                        />
+                    <h3 className="text-xl font-display font-extrabold text-sa-navy mb-3">Merci !</h3>
+                    <p className="text-sa-ink/80 leading-relaxed text-[15px]">
+                      Nous vous recontacterons au créneau choisi pour mieux comprendre votre besoin.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <div className="mt-10">
+                    {/* Tabs "Je souhaite :" */}
+                    <div className="mb-8">
+                      <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-4 block">
+                        Je souhaite : (Obligatoire)
+                      </label>
+                      <div className="flex flex-wrap gap-4 border-b border-sa-navy/10 pb-0">
+                        {(
+                          [
+                            { key: "orientation", label: "Réserver une séance d'orientation" },
+                            { key: "cours", label: "Réserver un cours découverte" },
+                          ] as const
+                        ).map((t) => (
+                          <button
+                            key={t.key}
+                            onClick={() => setIntentTab(t.key)}
+                            className={`pb-3 px-2 text-[15px] font-semibold transition-colors relative ${
+                              intentTab === t.key ? "text-sa-pink" : "text-sa-ink/50 hover:text-sa-navy"
+                            }`}
+                          >
+                            {t.label}
+                            {intentTab === t.key && (
+                              <motion.div
+                                layoutId="contact-intent-tab"
+                                className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-sa-pink"
+                              />
+                            )}
+                          </button>
+                        ))}
                       </div>
-                    ))}
-
-                    <div className="group">
-                      <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
-                        Système scolaire
-                      </label>
-                      <select
-                        defaultValue=""
-                        className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none"
-                      >
-                        <option value="">Primaire</option>
-                        <option>Collège</option>
-                        <option>Lycée</option>
-                        <option>Supérieur</option>
-                      </select>
                     </div>
 
-                    <div className="group">
-                      <select
-                        defaultValue=""
-                        className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none"
-                      >
-                        <option value="">Veuillez choisir un niveau d'abord</option>
-                        <option>CP</option>
-                        <option>CE1</option>
-                        <option>Seconde</option>
-                        <option>Première</option>
-                        <option>Terminale</option>
-                      </select>
-                    </div>
+                    <form onSubmit={handleSubmit} className="space-y-10">
+                      
+                      {/* Je suis : */}
+                      <div>
+                        <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-3 block">
+                          Je suis : (Obligatoire)
+                        </label>
+                        <div className="flex gap-6">
+                          {(
+                            [
+                              { key: "parent", label: "Parent" },
+                              { key: "eleve", label: "Élève" },
+                            ] as const
+                          ).map((r) => (
+                            <label key={r.key} className="flex items-center gap-2 cursor-pointer group">
+                              <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${userRole === r.key ? 'border-sa-pink bg-sa-pink/10' : 'border-gray-300 group-hover:border-sa-pink/50'}`}>
+                                {userRole === r.key && <div className="w-2.5 h-2.5 rounded-full bg-sa-pink" />}
+                              </div>
+                              <span className="text-[15px] font-medium text-sa-navy">{r.label}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
 
-                    <div className="group">
-                      <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
-                        Commentaire
-                      </label>
-                      <textarea
-                        rows={3}
-                        placeholder=""
-                        className="w-full py-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent resize-none text-[15px]"
-                      />
-                    </div>
+                      {/* INFORMATIONS DE CONTACT */}
+                      <div>
+                        <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Informations de contact</h4>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <input type="text" name="nom" required placeholder="Nom *" defaultValue={searchParams.get("nom") || ""} className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
+                          <input type="text" name="prenom" required placeholder="Prénom *" defaultValue={searchParams.get("prenom") || ""} className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
+                          <input type="tel" name="tel" required placeholder="Téléphone *" defaultValue={searchParams.get("tel") || ""} className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
+                          <input type="email" name="email" required placeholder="Email *" className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
+                        </div>
+                      </div>
 
-                    <div className="pt-3">
-                      <button
-                        type="submit"
-                        className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-sa-green hover:bg-emerald-500 text-white font-semibold text-[14.5px] transition-all shadow-[0_14px_30px_-12px_rgba(127,192,116,0.55)]"
-                      >
-                        Envoyer <ArrowRight size={15} />
-                      </button>
-                    </div>
-                  </motion.form>
-                </AnimatePresence>
+                      {/* INFORMATIONS DE L'ÉLÈVE */}
+                      <div>
+                        <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Informations de l'élève</h4>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div className="group">
+                            <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
+                              Niveau académique *
+                            </label>
+                            <select required defaultValue="" className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none">
+                              <option value="" disabled>Sélectionner un niveau</option>
+                              <option>Primaire</option>
+                              <option>Collège</option>
+                              <option>Seconde / tronc commun</option>
+                              <option>Première / 1ère année bac</option>
+                              <option>Terminale / 2ème année bac</option>
+                              <option>Post-bac</option>
+                            </select>
+                          </div>
+                          <div className="group">
+                            <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
+                              Système scolaire *
+                            </label>
+                            <select required defaultValue="" className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none">
+                              <option value="" disabled>Sélectionner un système</option>
+                              <option>Français</option>
+                              <option>Bilingue</option>
+                              <option>Espagnol</option>
+                              <option>Belge</option>
+                              <option>Italien</option>
+                              <option>Américain</option>
+                              <option>Anglais</option>
+                              <option>Autre</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* CONDITIONAL SECTION: COURS DECOUVERTE */}
+                      <AnimatePresence>
+                        {intentTab === "cours" && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="space-y-8 pt-2 pb-2">
+                              {/* Matières */}
+                              <div>
+                                <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-3 block">
+                                  Matière(s) souhaitée(s) (Facultatif)
+                                </label>
+                                <div className="flex flex-wrap gap-2">
+                                  {MATIERES.map(m => (
+                                    <button
+                                      type="button"
+                                      key={m}
+                                      onClick={() => toggleArray(matieres, setMatieres, m)}
+                                      className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all border ${matieres.includes(m) ? 'bg-sa-navy border-sa-navy text-white' : 'bg-gray-50 border-gray-200 text-sa-ink/70 hover:border-sa-navy/30'}`}
+                                    >
+                                      {m}
+                                    </button>
+                                  ))}
+                                </div>
+                              </div>
+                              
+                              {/* Prepas */}
+                              <div>
+                                <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-3 block">
+                                  Préparation(s) de concours souhaitée(s) (Facultatif)
+                                </label>
+                                <div className="flex flex-wrap gap-2">
+                                  {PREPAS.map(m => (
+                                    <button
+                                      type="button"
+                                      key={m}
+                                      onClick={() => toggleArray(prepas, setPrepas, m)}
+                                      className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all border ${prepas.includes(m) ? 'bg-sa-navy border-sa-navy text-white' : 'bg-gray-50 border-gray-200 text-sa-ink/70 hover:border-sa-navy/30'}`}
+                                    >
+                                      {m}
+                                    </button>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Certifications */}
+                              <div>
+                                <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-3 block">
+                                  Certification(s) de langue(s) souhaitée(s) (Facultatif)
+                                </label>
+                                <div className="flex flex-wrap gap-2">
+                                  {CERTIFICATIONS.map(m => (
+                                    <button
+                                      type="button"
+                                      key={m}
+                                      onClick={() => toggleArray(certifications, setCertifications, m)}
+                                      className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all border ${certifications.includes(m) ? 'bg-sa-navy border-sa-navy text-white' : 'bg-gray-50 border-gray-200 text-sa-ink/70 hover:border-sa-navy/30'}`}
+                                    >
+                                      {m}
+                                    </button>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+
+                      {/* MESSAGE */}
+                      <div>
+                        <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Message</h4>
+                        <div className="group">
+                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
+                            Votre besoin (Facultatif)
+                          </label>
+                          <textarea
+                            rows={3}
+                            placeholder="Décrivez ici vos objectifs d'orientation, vos difficultés, votre projet d'études, peut-être un besoin spécifique…etc."
+                            className="w-full py-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent resize-none text-[15px] placeholder:text-sa-ink/40"
+                          />
+                        </div>
+                      </div>
+
+                      {/* DISPONIBILITÉS */}
+                      <div>
+                        <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Disponibilités</h4>
+                        <div>
+                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-3 block">
+                            Vos disponibilités *
+                          </label>
+                          <p className="text-sa-ink/50 text-[13px] mb-3">Indiquez ici vos disponibilités et préférences de créneaux pour nous aider à mieux organiser votre séance</p>
+                          <div className="flex flex-wrap gap-2">
+                            {DISPOS.map(m => (
+                              <button
+                                type="button"
+                                key={m}
+                                onClick={() => toggleArray(disponibilites, setDisponibilites, m)}
+                                className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all border ${disponibilites.includes(m) ? 'bg-sa-green border-sa-green text-white' : 'bg-gray-50 border-gray-200 text-sa-ink/70 hover:border-sa-green/30'}`}
+                              >
+                                {m}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="pt-6">
+                        <button
+                          type="submit"
+                          disabled={submitStatus === "loading"}
+                          className="inline-flex items-center justify-center w-full sm:w-auto gap-3 px-10 py-4 rounded-full bg-sa-pink hover:bg-[#d02d6a] disabled:opacity-60 text-white font-extrabold text-[15px] transition-all shadow-[0_14px_30px_-12px_rgba(235,62,130,0.55)] uppercase tracking-wide"
+                        >
+                          {submitStatus === "loading" ? "Envoi en cours…" : <>Être recontacté(e) <ArrowRight size={18} /></>}
+                        </button>
+                        {submitStatus === "error" && (
+                          <p className="mt-3 text-sm text-red-500 font-medium">Une erreur s'est produite. Veuillez réessayer ou nous appeler directement.</p>
+                        )}
+                      </div>
+
+                    </form>
+                  </div>
+                )}
               </motion.div>
             </div>
           </div>

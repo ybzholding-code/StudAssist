@@ -128,7 +128,7 @@ export default function SoutienCollege() {
         title: "Prendre rendez-vous",
         body: "Un cadre maîtrisé, quelle que soit la voie scolaire suivie. Vous souhaitez mettre en place un soutien scolaire adapté, exigeant et compatible avec le système scolaire de votre enfant ?",
         primaryLabel: "Réserver un cours découverte",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         secondaryHref: "/contact",
       }}

@@ -79,6 +79,8 @@ import {
   IoClose,
   IoFlash,
   IoTime,
+  IoPricetag,
+  IoCloudUpload,
 } from "react-icons/io5";
 
 type Props = IconBaseProps & {
@@ -164,3 +166,5 @@ export const Users = wrap(IoPeople);
 export const X = wrap(IoClose);
 export const Zap = wrap(IoFlash);
 export const Clock = wrap(IoTime);
+export const Tag = wrap(IoPricetag);
+export const Upload = wrap(IoCloudUpload);

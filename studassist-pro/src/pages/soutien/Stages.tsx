@@ -111,7 +111,7 @@ export default function SoutienStages() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez inscrire votre enfant à un stage de vacances STUDASSIST ?",
         primaryLabel: "Découvrir les prochains stages",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         secondaryHref: "/contact",
       }}

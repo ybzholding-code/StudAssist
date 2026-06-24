@@ -110,7 +110,7 @@ export default function SoutienBrevet() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez mettre en place une préparation efficace pour le Brevet ?",
         primaryLabel: "Découvrir la prochaine édition de notre prépa Brevet",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         secondaryHref: "/contact",
       }}

@@ -150,6 +150,56 @@ const levelConfigs: Record<string, LevelConfig> = {
   },
 };
 
+function getLinkHref(linkName: string, level: string): string {
+  const name = linkName.toLowerCase();
+
+  // Soutien scolaire — route depends on level/cycle
+  if (name.includes("soutien scolaire")) {
+    if (level === "CP-CM2") return "/soutien/primaire";
+    if (["6ème", "5ème", "4ème", "3ème"].includes(level)) return "/soutien/college";
+    if (["2nde", "1ère", "Terminale"].includes(level)) return "/soutien/lycee";
+    if (level === "Études supérieures") return "/soutien/superieur";
+    return "/soutien-scolaire";
+  }
+
+  // Stages
+  if (name.includes("stage")) return "/soutien/stages";
+
+  // Brevet
+  if (name.includes("brevet")) return "/soutien/brevet";
+
+  // Prépas Bac
+  if (name.includes("bac de français") || name.includes("bac de francais")) return "/prepas-bac/francais";
+  if (name.includes("bac de spé") || name.includes("spécialités") || name.includes("specialites")) return "/prepas-bac/specialites";
+  if (name.includes("philo")) return "/prepas-bac/philo";
+  if (name.includes("grand oral")) return "/prepas-bac/grand-oral";
+
+  // Orientation
+  if (name.includes("choix des spécialités") || name.includes("choix des specialites")) {
+    if (level === "2nde") return "/orientation/seconde";
+    return "/orientation/premiere";
+  }
+  if (name.includes("pré-orientation")) return "/orientation/seconde";
+  if (name.includes("projet d'orientation") || name.includes("candidatures post-bac")) return "/orientation/terminale";
+  if (name.includes("rendez-vous d'orientation") || name.includes("rdv") || name.includes("orientation")) {
+    if (level === "2nde") return "/orientation/seconde";
+    if (level === "1ère") return "/orientation/premiere";
+    if (level === "Terminale") return "/orientation/terminale";
+    return "/orientation-scolaire";
+  }
+  if (name.includes("réorientation") || name.includes("reorientation")) return "/orientation/reorientation";
+  if (name.includes("master")) return "/orientation/master";
+
+  // Certifications / langues
+  if (name.includes("sat") || name.includes("gmat")) return "/prepa-sat-gmat";
+  if (name.includes("ielts") || name.includes("toefl") || name.includes("toeic")) return "/certifications/ielts-toefl";
+  if (name.includes("tcf") || name.includes("dalf")) return "/certifications/tcf-dalf";
+  if (name.includes("dele")) return "/certifications/dele";
+
+  // Fallback: contact
+  return "/contact";
+}
+
 function getIconForLink(linkName: string) {
   const name = linkName.toLowerCase();
   if (name.includes("soutien")) return <BookOpen size={14} />;
@@ -335,7 +385,7 @@ export default function ExpertisePoles({
                         {currentConfig.links.map((link, idx) => (
                           <Link
                             key={idx}
-                            to="/contact"
+                            to={getLinkHref(link, activeLevel)}
                             className="flex items-center gap-2 px-3.5 py-2 bg-sa-light rounded-full text-[11px] font-semibold text-sa-ink/75 border border-transparent hover:border-sa-green/30 hover:text-sa-green transition-colors"
                           >
                             <span className="text-sa-green">{getIconForLink(link)}</span>

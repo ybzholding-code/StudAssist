@@ -22,7 +22,9 @@ import OrientationPremiere from "./pages/orientation/Premiere";
 import OrientationTerminale from "./pages/orientation/Terminale";
 import OrientationMaster from "./pages/orientation/Master";
 import OrientationReorientation from "./pages/orientation/Reorientation";
-import WhatsAppButton from "./components/ui/WhatsAppButton";
+import Blogs from "./pages/Blogs";
+import BlogPost from "./pages/BlogPost";
+import StudAssistChat from "./components/ui/StudAssistChat";
 import DecorativeBackdrop from "./components/DecorativeBackdrop";
 
 // Soutien Scolaire child pages
@@ -82,7 +84,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative flex flex-col min-h-screen overflow-x-hidden">
+      <div className="relative flex flex-col min-h-screen overflow-x-clip">
         <DecorativeBackdrop />
         <div className="relative z-10 flex flex-col flex-grow">
           <Navbar />
@@ -111,6 +113,9 @@ export default function App() {
             <Route path="/nous-rejoindre" element={<NousRejoindre />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/centres" element={<Contact />} />
+            {/* Blog pages */}
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:slug" element={<BlogPost />} />
             {/* Soutien Scolaire child pages */}
             <Route path="/soutien/primaire" element={<SoutienPrimaire />} />
             <Route path="/soutien/college" element={<SoutienCollege />} />
@@ -145,7 +150,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <WhatsAppButton />
+        <StudAssistChat />
       </div>
       </div>
     </Router>

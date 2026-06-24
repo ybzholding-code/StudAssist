@@ -80,16 +80,40 @@ export const FAQ_CATEGORIES: Record<string, FaqCategory> = {
     label: "Orientation scolaire & études supérieures",
     items: [
       {
-        q: "Proposez-vous un accompagnement en orientation scolaire ?",
-        a: "Oui. L'orientation est au cœur de notre expertise : choix des spécialités, choix des filières, sélection des établissements et construction d'un projet cohérent et réaliste.",
+        q: "Comment se déroule un accompagnement en orientation chez STUDASSIST ?",
+        a: "Chaque accompagnement débute par un entretien initial avec l'élève et sa famille, suivi d'un travail de diagnostic et de profiling approfondi. Nous construisons ensuite une stratégie d'orientation personnalisée : choix des filières, sélection des établissements, planification des candidatures, accompagnement académique et suivi global.",
       },
       {
-        q: "Accompagnez-vous les candidatures post-bac ?",
-        a: "Oui. Nous accompagnons les élèves dans la constitution, l'optimisation et la gestion de leurs dossiers de candidatures au Maroc et à l'international.",
+        q: "Quelle est l'expertise des consultants en orientation STUDASSIST ?",
+        a: "Les consultants en orientation STUDASSIST disposent de parcours académiques et professionnels solides, souvent construits entre le Maroc et l'international. Notre équipe réunit des profils issus de grandes écoles et d'universités reconnues, avec des expériences en conseil, éducation, accompagnement académique, gestion de projets et recrutement. Au-delà de leur parcours, nos consultants sont formés aux enjeux d'orientation, aux procédures d'admission nationales et internationales, ainsi qu'aux spécificités des différents systèmes éducatifs. Cette double approche, à la fois académique, stratégique et humaine, nous permet d'accompagner les élèves avec exigence, méthode et réalisme.",
       },
       {
-        q: "Aidez-vous les étudiants pour les études à l'étranger ?",
-        a: "Oui. STUDASSIST accompagne les étudiants vers plus de 20 destinations d'études, de la définition du projet jusqu'aux démarches administratives.",
+        q: "L'accompagnement est-il réservé aux élèves souhaitant partir à l'étranger ?",
+        a: "Non. Nous accompagnons aussi bien les projets d'études au Maroc qu'à l'international. Notre rôle est d'aider chaque élève à construire un projet cohérent, ambitieux et adapté à son profil, quelle que soit la destination envisagée.",
+      },
+      {
+        q: "Prenez-vous en charge les candidatures et démarches administratives ?",
+        a: "Oui. Nous accompagnons les élèves dans la constitution des dossiers de candidatures, les lettres de motivation, les essays, les CV, les formulaires administratifs, les inscriptions aux examens ainsi que les préparations aux entretiens. Nous proposons également un accompagnement spécifique pour les démarches administratives et l'installation à l'étranger.",
+      },
+      {
+        q: "Proposez-vous également du soutien scolaire et des préparations aux concours ?",
+        a: "Oui. Notre approche est globale. Lorsque cela est nécessaire, nous intégrons du soutien scolaire, des préparations aux concours ou des certifications de langues afin d'aligner le niveau académique de l'élève avec les exigences de son projet d'orientation.",
+      },
+      {
+        q: "Travaillez-vous avec des élèves de tous les systèmes scolaires ?",
+        a: "Oui. Nous accompagnons des élèves issus de différents systèmes : mission française, système marocain, système américain, britannique, belge ou international.",
+      },
+      {
+        q: "Comment se fait la communication avec STUDASSIST ?",
+        a: "Les échanges sont centralisés par écrit via WhatsApp afin de garantir une communication fluide, réactive et une traçabilité complète des informations, documents et étapes importantes du parcours.",
+      },
+      {
+        q: "Les parents sont-ils impliqués dans l'accompagnement ?",
+        a: "Oui. Nous considérons les parents comme des acteurs essentiels du projet d'orientation. Des points réguliers sont réalisés afin d'assurer une vision claire et partagée des avancées et des décisions stratégiques.",
+      },
+      {
+        q: "Pourquoi faire appel à un cabinet d'orientation ?",
+        a: "Les procédures d'admission deviennent de plus en plus complexes et concurrentielles. Un accompagnement structuré permet à l'élève de gagner en clarté, de faire des choix cohérents, d'éviter certaines erreurs stratégiques et de construire un dossier plus solide et différenciant.",
       },
     ],
   },

@@ -35,8 +35,12 @@ export default function TestimonialsSection({
 }: TestimonialsSectionProps) {
   // Live sync with Google Places API (falls back to props if no API key)
   const googleData = useGoogleReviews();
-  const rating = googleData.rating || ratingProp;
-  const reviewCount = googleData.reviewCount || reviewCountProp;
+  const rating = googleData.isLive ? googleData.rating : ratingProp;
+  const reviewCount = googleData.isLive
+    ? googleData.reviewCount
+    : reviewCountProp;
+  const isLive = googleData.isLive;
+  const googleMapsUrl = googleData.googleMapsUrl || ctaHref;
 
   return (
     <section
@@ -68,7 +72,7 @@ export default function TestimonialsSection({
             </h2>
 
             <a
-              href={ctaHref}
+              href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-white p-6 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-gray-100 mb-8 max-w-sm mx-auto lg:mx-0 hover:shadow-lg hover:border-brand-teal/30 transition-all cursor-pointer"
@@ -83,10 +87,18 @@ export default function TestimonialsSection({
                   <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                     Avis Clients
                   </span>
+                  {isLive ? (
+                    <span
+                      className="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                      title="Synchronisé en temps réel"
+                    />
+                  ) : null}
                 </div>
                 <div className="flex text-sa-gold">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} fill="currentColor" />
+                    <span key={i}>
+                      <Star size={14} fill="currentColor" />
+                    </span>
                   ))}
                 </div>
               </div>
@@ -105,7 +117,7 @@ export default function TestimonialsSection({
             </p>
 
             <a
-              href={ctaHref}
+              href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-3 bg-brand-darkblue text-white px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-brand-teal transition-all shadow-xl active:scale-95"

@@ -127,7 +127,7 @@ export default function PrepaMedecineBelgique() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez optimiser vos chances de décrocher le concours de médecine en Belgique ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
         secondaryHref: "/contact",
       }}

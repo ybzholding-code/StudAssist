@@ -379,7 +379,20 @@ export default function OrientationLevelPage({
                       <CheckCircle2 size={18} className="text-brand-teal" />
                     </div>
                   )}
-                  <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{b}</p>
+                  {(() => {
+                    const colonIdx = b.indexOf(": ");
+                    if (colonIdx !== -1) {
+                      const title = b.slice(0, colonIdx);
+                      const body = b.slice(colonIdx + 2);
+                      return (
+                        <>
+                          <p className="text-brand-darkblue font-black text-sm mb-1">{title}</p>
+                          <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{body}</p>
+                        </>
+                      );
+                    }
+                    return <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{b}</p>;
+                  })()}
                 </motion.div>
               ))}
             </div>
@@ -421,15 +434,71 @@ export default function OrientationLevelPage({
 
             {/* Accordion content */}
             <div>
-              <h2 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight leading-tight mb-2">
-                {sectionTitle || `Orientation en ${levelLabel}`}
-              </h2>
-              <div className="w-16 h-1 bg-brand-teal rounded-full mb-8" />
-
               <div>
                 {sections.map((s, i) => (
-                  <AccordionItem key={i} title={s.title} defaultOpen={i === 0}>
-                    {s.paragraphs && s.paragraphs.map((p, k) => <p key={k}>{p}</p>)}
+                  <AccordionItem key={i} title={s.title} defaultOpen={false}>
+                    {s.paragraphs && s.paragraphs.map((p, k) => {
+                      if (typeof p !== "string") return <div key={k}>{p}</div>;
+
+                      // Pattern: "Subtitle — body text"
+                      if (p.includes(" — ")) {
+                        const dashIdx = p.indexOf(" — ");
+                        const subtitle = p.slice(0, dashIdx);
+                        const body = p.slice(dashIdx + 3);
+
+                        // Body contains semicolons → render as list
+                        if (body.includes(" : ") && body.includes(" ; ")) {
+                          const colonIdx = body.indexOf(" : ");
+                          const intro = body.slice(0, colonIdx + 3);
+                          const items = body.slice(colonIdx + 3).split(" ; ").map(s => s.replace(/\.$/, "").trim()).filter(Boolean);
+                          return (
+                            <div key={k} className="mt-3">
+                              <span className="block font-bold text-brand-darkblue text-[15px] mt-4 mb-1">{subtitle}</span>
+                              {intro && <p className="mb-2">{intro}</p>}
+                              <ul className="space-y-1.5 ml-1">
+                                {items.map((item, j) => (
+                                  <li key={j} className="flex gap-2.5 items-start">
+                                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" />
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <div key={k} className="mt-3">
+                            <span className="block font-bold text-brand-darkblue text-[15px] mt-4 mb-1">{subtitle}</span>
+                            <p>{body}</p>
+                          </div>
+                        );
+                      }
+
+                      // Plain text with colon + semicolons → render as intro + list
+                      if (p.includes(" : ") && p.includes(" ; ")) {
+                        const colonIdx = p.indexOf(" : ");
+                        const intro = p.slice(0, colonIdx + 3);
+                        const items = p.slice(colonIdx + 3).split(" ; ").map(s => s.replace(/[.;]$/, "").trim()).filter(Boolean);
+                        if (items.length >= 3) {
+                          return (
+                            <div key={k} className="mt-2">
+                              <p className="mb-2">{intro}</p>
+                              <ul className="space-y-1.5 ml-1">
+                                {items.map((item, j) => (
+                                  <li key={j} className="flex gap-2.5 items-start">
+                                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" />
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        }
+                      }
+
+                      return <p key={k}>{p}</p>;
+                    })}
                     {s.bullets && s.bullets.length > 0 && (
                       <ul className="space-y-2 mt-2">
                         {s.bullets.map((b, k) => (
@@ -501,14 +570,31 @@ export default function OrientationLevelPage({
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-3 py-3"
+                    className="flex items-center gap-4 p-5 rounded-[1.25rem] bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-colors shadow-lg"
                   >
                     {whyChoose.icons && whyChoose.icons[i] ? (
-                      <img src={whyChoose.icons[i]} alt="" className="w-8 h-8 shrink-0" />
+                      <div className="w-12 h-12 shrink-0 flex items-center justify-center">
+                        <img src={whyChoose.icons[i]} alt="" className="w-10 h-10 object-contain drop-shadow-md" />
+                      </div>
                     ) : (
-                      <CheckCircle2 size={18} className="text-brand-teal shrink-0 mt-0.5" />
+                      <div className="w-10 h-10 rounded-full bg-brand-teal/20 shrink-0 flex items-center justify-center">
+                        <CheckCircle2 size={20} className="text-brand-teal" />
+                      </div>
                     )}
-                    <p className="text-white/90 font-medium text-sm leading-relaxed">{b}</p>
+                    {(() => {
+                      const colonIdx = b.indexOf(": ");
+                      if (colonIdx !== -1) {
+                        const title = b.slice(0, colonIdx);
+                        const body = b.slice(colonIdx + 2);
+                        return (
+                          <div>
+                            <p className="text-white font-black text-[13px] mb-0.5">{title}</p>
+                            <p className="text-white/70 font-medium text-[12px] leading-snug">{body}</p>
+                          </div>
+                        );
+                      }
+                      return <p className="text-white/90 font-medium text-[13px] leading-snug">{b}</p>;
+                    })()}
                   </motion.div>
                 ))}
               </div>

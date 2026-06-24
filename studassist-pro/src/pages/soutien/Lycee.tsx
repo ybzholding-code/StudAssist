@@ -128,7 +128,7 @@ export default function SoutienLycee() {
         title: "Prendre rendez-vous",
         body: "Un cadre maîtrisé, quelle que soit la filière suivie. Vous souhaitez mettre en place un soutien scolaire exigeant et stratégique, tout en préparant les prochaines échéances académiques de votre enfant ?",
         primaryLabel: "Réserver un cours découverte",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         secondaryHref: "/contact",
       }}

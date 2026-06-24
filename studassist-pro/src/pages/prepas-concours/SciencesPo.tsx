@@ -123,7 +123,7 @@ export default function PrepaSciences() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez optimiser vos chances de réussite au concours Sciences Po ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
         secondaryHref: "/contact",
       }}

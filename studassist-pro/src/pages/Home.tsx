@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { 
   ArrowRight, 
   ArrowUpRight,
@@ -44,8 +44,10 @@ import ImageFloaters from "../components/ImageFloaters";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import { cn } from "@/src/lib/utils";
 import TrustBar from "../components/TrustBar";
+import { useFormSubmit } from "../hooks/useFormSubmit";
 
 import NumberCounter from "@/src/components/ui/NumberCounter";
+import { blogs } from "@/src/data/blogs";
 
 const RocketIllustration = () => {
   const stars = [
@@ -176,6 +178,8 @@ const faqData = [
 ];
 
 export default function Home() {
+  const navigate = useNavigate();
+  const { submit: submitMiniForm, status: miniFormStatus } = useFormSubmit();
   const [selectedCycle, setSelectedCycle] = useState("Lycée");
   const [expandedLevel, setExpandedLevel] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -341,7 +345,7 @@ export default function Home() {
       description: "Bilan d'orientation, aide aux choix des écoles, optimisation des dossiers de candidatures, préparation aux oraux, suivi des admissions… Traçons ensemble votre projet d'avenir !",
       buttonText: "Réserver mon 1er RDV",
       link: "/orientation-scolaire",
-      image: "/hero-orientation-new.png",
+      image: "/conseil-orientation-candidatures-international.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
@@ -409,7 +413,7 @@ export default function Home() {
       description: "Maths, Physique-chimie, SVT, Français, SES, HGGSP, Philosophie… Réservez votre séance découverte pour tester notre méthodologie exclusive d'accompagnement scolaire !",
       buttonText: "Réserver mon cours découverte",
       link: "/soutien-scolaire",
-      image: "/hero-soutien-new.png",
+      image: "/soutien-college.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
@@ -426,7 +430,7 @@ export default function Home() {
       description: "Dossiers Visa & titre de séjour étudiant, compte bancaire à l'étranger, assurance & couverture maladie, aide à la recherche de logement étudiant… Libérez-vous de ces tracas et restez concentrés sur la réussite de vos examens.",
       buttonText: "Réserver mon RDV d'information",
       link: "/admin-logement",
-      image: "/hero-admin-new.png",
+      image: "/hero-admin-logement.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'standard',
@@ -791,7 +795,7 @@ export default function Home() {
                   <p className="text-white/60 text-xs">Nos consultants experts sont là pour vous aider.</p>
                 </div>
                 <button 
-                  onClick={() => { /* TODO: Open chatbot in future update */ }}
+                  onClick={() => window.dispatchEvent(new Event("open-studassist-chat"))}
                   className="bg-brand-teal text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-brand-darkblue transition-all shrink-0"
                 >
                   Discuter avec notre assistant
@@ -810,24 +814,28 @@ export default function Home() {
             & dernières actus
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-             {[
-               { date: "15 Nov, 2023", cat: "MÉTHODES D'APPRENTISSAGE", title: "Apprendre en Jouant : L'École de Demain ?", img: "https://picsum.photos/seed/learn/400/300" },
-               { date: "14 Nov, 2023", cat: "MÉTHODES D'APPRENTISSAGE", title: "Les Écrans à l'École : Fausse Bonne Idée ?", img: "https://picsum.photos/seed/screens/400/300" },
-               { date: "13 Nov, 2023", cat: "ÉTUDES SUPÉRIEURES", title: "Devoirs à la Maison : Une Pratique Dépassée ?", img: "https://picsum.photos/seed/homework/400/300" },
-               { date: "11 Nov, 2023", cat: "SYSTÈMES ÉDUCATIF", title: "Et Si On Réinventait L'Évaluation ?", img: "https://picsum.photos/seed/exam/400/300" }
-             ].map((post, i) => (
-               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-soft border border-gray-50 group cursor-pointer">
-                  <div className="relative h-48 overflow-hidden">
-                     <img src={post.img} alt={post.title} className="w-full h-full object-cover transition duration-500 group-hover:scale-110" />
-                     <div className="absolute top-4 left-4 bg-brand-teal text-white px-3 py-1 rounded text-[10px] font-bold">{post.date}</div>
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+             {blogs.slice(0, 5).map((post) => (
+               <Link key={post.id} to={`/blogs/${post.slug}`} className="bg-white rounded-xl overflow-hidden shadow-soft border border-gray-50 group cursor-pointer flex flex-col">
+                  <div className="relative overflow-hidden bg-white flex">
+                     <img src={post.image} alt={post.title} className="w-full h-auto object-cover transition duration-500 group-hover:scale-105" />
                   </div>
-                  <div className="p-6">
-                     <div className="text-[10px] font-bold text-brand-teal mb-2 uppercase tracking-widest">{post.cat}</div>
+                  <div className="p-6 flex flex-col flex-grow">
+                     <div className="text-[10px] font-bold text-gray-400 mb-2">{post.date}</div>
                      <h4 className="font-black text-brand-darkblue text-sm line-clamp-2 leading-snug group-hover:text-brand-teal transition">{post.title}</h4>
                   </div>
-               </div>
+               </Link>
              ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link 
+              to="/blogs" 
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-darkblue text-white rounded-full font-bold text-sm hover:bg-sa-green transition-all shadow-md hover:shadow-lg"
+            >
+              Voir tous nos articles
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
@@ -913,25 +921,33 @@ export default function Home() {
                   pour qu'un conseiller pédagogique puisse vous contacter
                 </p>
                 <form
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    /* TODO: handle form submission */
+                    const form = e.currentTarget;
+                    const nom = (form.elements.namedItem("nom") as HTMLInputElement).value;
+                    const prenom = (form.elements.namedItem("prenom") as HTMLInputElement).value;
+                    const role = (form.elements.namedItem("role") as HTMLSelectElement).value;
+                    const tel = (form.elements.namedItem("tel") as HTMLInputElement).value;
+                    await submitMiniForm({ nom, prenom, role, tel, source: "Homepage — mini-formulaire" });
                   }}
                   className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3"
                 >
                   <input
+                    name="nom"
                     type="text"
                     placeholder="Nom"
                     required
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
                   />
                   <input
+                    name="prenom"
                     type="text"
                     placeholder="Prénom"
                     required
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
                   />
                   <select
+                    name="role"
                     required
                     defaultValue=""
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all appearance-none"
@@ -941,17 +957,25 @@ export default function Home() {
                     <option value="parent" className="text-gray-800">Parent</option>
                   </select>
                   <input
+                    name="tel"
                     type="tel"
                     placeholder="Numéro de téléphone"
                     required
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
                   />
-                  <button
-                    type="submit"
-                    className="sm:col-span-2 mt-1 inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-sa-pink hover:bg-sa-pink/90 text-white font-semibold text-[14px] tracking-wide shadow-[0_18px_35px_-12px_rgba(238,75,98,0.55)] transition-all"
-                  >
-                    Être rappelé par un conseiller <ArrowRight size={16} />
-                  </button>
+                  {miniFormStatus === "success" ? (
+                    <div className="sm:col-span-2 mt-1 flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-sa-green/20 border border-sa-green/30 text-sa-green font-semibold text-[14px]">
+                      <CheckCircle2 size={18} /> Merci ! Nous vous recontactons très vite.
+                    </div>
+                  ) : (
+                    <button
+                      type="submit"
+                      disabled={miniFormStatus === "loading"}
+                      className="sm:col-span-2 mt-1 inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-sa-pink hover:bg-sa-pink/90 disabled:opacity-60 text-white font-semibold text-[14px] tracking-wide shadow-[0_18px_35px_-12px_rgba(238,75,98,0.55)] transition-all"
+                    >
+                      {miniFormStatus === "loading" ? "Envoi en cours…" : <>Être rappelé par un conseiller <ArrowRight size={16} /></>}
+                    </button>
+                  )}
                 </form>
               </div>
             </div>

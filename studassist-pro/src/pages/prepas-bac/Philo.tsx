@@ -110,7 +110,7 @@ export default function PrepasBacPhilo() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez être accompagné vers une réussite solide en philosophie ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
         secondaryHref: "/contact",
       }}

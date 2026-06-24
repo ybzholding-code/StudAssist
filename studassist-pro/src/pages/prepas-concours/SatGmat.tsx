@@ -117,7 +117,7 @@ export default function PrepaSatGmat() {
         title: "Prendre rendez-vous",
         body: "Vous souhaitez maximiser vos chances de réussite aux tests SAT ou GMAT pour décrocher une admission dans les meilleures universités ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        primaryHref: "https://wa.me/212669495996",
+        primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
         secondaryHref: "/contact",
       }}

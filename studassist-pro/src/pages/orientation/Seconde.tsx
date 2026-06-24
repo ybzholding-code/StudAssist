@@ -23,21 +23,19 @@ export default function OrientationSeconde() {
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
-        title: "Pourquoi travailler l’orientation dès la Seconde ?",
-        lead: "Poser les bases d’un pré-projet d’orientation pour donner du sens au parcours scolaire.",
+        title: "Pourquoi aborder l’orientation dès la Seconde ?",
+        lead: "La Seconde constitue une étape clé dans la construction du projet d’avenir. Bien menée, la réflexion d’orientation permet à l’élève de mieux se connaître, de faire des choix éclairés et de donner progressivement du sens à son parcours scolaire.",
         bullets: [
-          "Anticiper sereinement : L’orientation ne doit pas être subie. C’est l’année idéale pour poser les bases d’un projet adaptable.",
-          "Décider par soi-même : Éviter les choix guidés uniquement par les influences extérieures ou les tendances éphémères.",
-          "Donner une direction : Mieux comprendre le lien direct entre les choix d’aujourd’hui et les opportunités futures.",
-          "Valoriser l'effort : Se projeter dans un projet d’études permet de donner un sens concret au travail scolaire quotidien.",
-          "Activer la motivation : Favoriser un engagement fort en classe, une meilleure autonomie et une progression des résultats.",
+          "Mieux se connaître pour mieux s’orienter : Identifier ses centres d’intérêt, ses motivations ainsi que ses points forts et axes de progression afin de construire un projet cohérent avec son profil.",
+          "Préparer le choix stratégique des spécialités : Explorer les différentes filières d’études et secteurs professionnels pour sélectionner les spécialités les plus adaptées à ses ambitions.",
+          "Construire progressivement son projet d’avenir : Découvrir les parcours possibles afin de poser les bases d’un projet pré-orienté, tout en conservant la flexibilité nécessaire pour faire évoluer ses choix.",
+          "Donner du sens à ses études et gagner en motivation : Comprendre le lien entre les efforts fournis aujourd’hui et les opportunités de demain. Une prise de conscience qui favorise l’engagement scolaire.",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/compass.png",
-          "https://img.icons8.com/3d-fluency/94/shield.png",
-          "https://img.icons8.com/3d-fluency/94/telescope.png",
-          "https://img.icons8.com/3d-fluency/94/open-book.png",
-          "https://img.icons8.com/3d-fluency/94/trophy.png",
+          "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
+          "https://img.icons8.com/3d-fluency/94/rocket.png",
+          "https://img.icons8.com/3d-fluency/94/idea.png",
         ],
       }}
 
@@ -83,7 +81,7 @@ export default function OrientationSeconde() {
             </ul>,
             <span>
               L’objectif est d’aborder les années de spécialisation avec clarté et confiance. Lorsque nécessaire, nous intégrons du{" "}
-              <Link to="/soutien-scolaire" className="text-brand-teal font-black hover:underline">
+              <Link to="/soutien-scolaire" className="text-brand-darkblue font-black underline underline-offset-2">
                 soutien scolaire
               </Link>{" "}
               ciblé avec un travail approfondi sur la méthodologie et un renforcement des matières stratégiques en lien avec le projet envisagé. Cette approche permet d’aligner dès la Seconde le travail académique avec les ambitions futures.
@@ -91,7 +89,7 @@ export default function OrientationSeconde() {
             <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Garder une ouverture sur l’international</strong>,
             <span>
               Pour les élèves envisageant des études à l’étranger, nous amorçons dès la Seconde une réflexion sur les parcours académiques adaptés, les exigences linguistiques futures ainsi que les choix stratégiques à effectuer dès le lycée. Cette anticipation permet de préparer un profil compétitif pour les meilleures universités internationales sur le long terme. Lorsque nécessaire, nous intégrons dans le programme une préparation aux{" "}
-              <Link to="/certifications" className="text-brand-teal font-black hover:underline">
+              <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">
                 certifications de langues
               </Link>{" "}
               pour anticiper au mieux les exigences du projet d’orientation de l’élève.
@@ -154,7 +152,7 @@ export default function OrientationSeconde() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "https://wa.me/212669495996",
+        secondaryHref: "/contact",
       }}
 
       next={{ label: "Orientation en Première", to: "/orientation/premiere" }}
