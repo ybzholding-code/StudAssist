@@ -36,7 +36,7 @@ export default defineConfig(({mode}) => {
                     status(code) { res.statusCode = code; return this; },
                     json(data) { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(data)); return this; }
                   };
-                  const module = await server.ssrLoadModule('/api/submit-form.ts');
+                  const module = await server.ssrLoadModule('../api/submit-form.ts');
                   await module.default(vercelReq, vercelRes);
                 } catch (err) {
                   res.statusCode = 500;
@@ -66,7 +66,7 @@ export default defineConfig(({mode}) => {
                     status(code) { res.statusCode = code; return this; },
                     json(data) { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(data)); return this; }
                   };
-                  const module = await server.ssrLoadModule('/api/submit-candidature.ts');
+                  const module = await server.ssrLoadModule('../api/submit-candidature.ts');
                   await module.default(vercelReq, vercelRes);
                 } catch (err) {
                   res.statusCode = 500;
@@ -79,7 +79,7 @@ export default defineConfig(({mode}) => {
             } else if (url === '/api/google-reviews' && req.method === 'GET') {
               (async () => {
                 try {
-                  const module = await server.ssrLoadModule('/api/google-reviews.ts');
+                  const module = await server.ssrLoadModule('../api/google-reviews.ts');
                   const vercelReq = { method: 'GET', query: {} };
                   const vercelRes = {
                     statusCode: 200,
@@ -112,8 +112,11 @@ export default defineConfig(({mode}) => {
       },
     },
     server: {
+      fs: {
+        allow: ['..']
+      },
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
+      // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };
