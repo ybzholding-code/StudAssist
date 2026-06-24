@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 interface Message {
   role: "user" | "assistant";
@@ -96,15 +97,29 @@ export default function StudAssistChat() {
       // Link: [text](url)
       const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if (linkMatch) {
+        const url = linkMatch[2];
+        const label = linkMatch[1];
+        if (url.startsWith("/")) {
+          return (
+            <Link
+              key={i}
+              to={url}
+              onClick={() => setIsOpen(false)}
+              className="text-[#1BB79D] underline hover:text-[#0B1F5C] font-semibold transition-colors"
+            >
+              {label}
+            </Link>
+          );
+        }
         return (
           <a
             key={i}
-            href={linkMatch[2]}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#1BB79D] underline hover:text-[#0B1F5C] font-semibold transition-colors"
           >
-            {linkMatch[1]}
+            {label}
           </a>
         );
       }
