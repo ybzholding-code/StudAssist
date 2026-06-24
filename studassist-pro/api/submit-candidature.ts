@@ -249,6 +249,12 @@ function buildCandidatureEmailHtml(data: CandidaturePayload, cvFilename?: string
 
 
 // ─── Handler ──────────────────────────────────────────────────────────────────
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
