@@ -96,6 +96,27 @@ export default defineConfig(({mode}) => {
                 }
               })();
 
+            // ── /api/chat (POST — JSON) ──────────────────────────────────
+            } else if (url === '/api/chat' && req.method === 'POST') {
+              let body = '';
+              req.on('data', chunk => { body += chunk; });
+              req.on('end', async () => {
+                try {
+                  const parsedBody = body ? JSON.parse(body) : {};
+                  const vercelReq = { method: 'POST', body: parsedBody, query: {} };
+                  const vercelRes = {
+                    status(code: number) { res.statusCode = code; return this; },
+                    json(data: any) { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(data)); return this; }
+                  };
+                  const module = await server.ssrLoadModule('../api/chat.ts');
+                  await module.default(vercelReq, vercelRes);
+                } catch (err: any) {
+                  res.statusCode = 500;
+                  res.setHeader('Content-Type', 'application/json');
+                  res.end(JSON.stringify({ error: err.message }));
+                }
+              });
+
             } else {
               next();
             }
