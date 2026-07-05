@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
+import { waLink } from "../../lib/utils";
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +26,7 @@ const WhatsAppButton = () => {
       {isVisible && (
         <div className="fixed bottom-4 right-4 lg:bottom-8 lg:right-8 z-[999] flex items-center">
           <motion.a
-            href="https://wa.me/212694919191"
+            href={waLink("Bonjour STUDASSIST, j'aimerais obtenir des informations sur vos services.")}
             target="_blank"
             rel="noreferrer"
             initial={{ opacity: 0, scale: 0, y: 20 }}

@@ -23,10 +23,11 @@ export default function PrepaConcoursSesameAcces() {
         "Les concours SESAME et ACCÈS constituent les principales voies d'accès aux écoles de commerce post-bac en France. Ils permettent d'intégrer des établissements reconnus, tels que l'ESSEC Global BBA, l'EM Lyon, l'IESEG, l'ESSCA, ou encore KEDGE, SKEMA et NEOMA.",
         "Ces concours sont exigeants et sélectifs. Ils évaluent à la fois les capacités de raisonnement, la maîtrise de l'anglais, la compréhension et la méthodologie. Chez STUDASSIST, nous proposons une préparation structurée et intensive, permettant aux élèves de maîtriser les épreuves et de maximiser leurs chances d'admission.",
       ]}
-      heroImage="/hero-sat-gmat.png"
+      heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours SESAME & ACCÈS (écoles de commerce post-bac en France)."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight } from "@/src/components/ui/icons";
+import { waLink } from "../lib/utils";
 import FAQ from "../components/FAQ";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
@@ -49,68 +50,93 @@ const faqItems = [
   },
 ];
 
-const programmes = [
+const programmeGroups = [
   {
-    icon: "https://img.icons8.com/3d-fluency/94/briefcase.png",
-    title: "SESAME & ACCÈS",
-    description: "Préparer les concours d'admission des grandes écoles de commerce post-bac en France.",
-    link: "/prepas-concours/sesame-acces",
+    category: "Commerce & Management",
+    items: [
+      {
+        icon: "https://img.icons8.com/?size=100&id=qZ3IKpKF9Cun&format=png&color=000000",
+        title: "SESAME & ACCÈS",
+        description: "Préparer les concours d'admission des grandes écoles de commerce post-bac en France.",
+        link: "/prepas-concours/sesame-acces",
+      },
+      {
+        icon: "https://img.icons8.com/?size=100&id=DAoPjn2XoTUN&format=png&color=000000",
+        title: "ENCG & ISCAE",
+        description: "Préparer les concours d'accès aux grandes écoles de commerce marocaines.",
+        link: "/prepas-concours/encg-iscae",
+      },
+      {
+        icon: "https://img.icons8.com/?size=100&id=B0YxODenuYvG&format=png&color=000000",
+        title: "UM6P",
+        description: "Optimiser son profil, réussir les épreuves et préparer les entretiens.",
+        link: "/prepas-concours/um6p",
+      },
+    ],
   },
   {
-    icon: "https://img.icons8.com/3d-fluency/94/bar-chart.png",
-    title: "ENCG & ISCAE",
-    description: "Préparer les concours d'admission des écoles de commerce publiques au Maroc.",
-    link: "/prepas-concours/encg-iscae",
+    category: "Sciences politiques & Sciences humaines",
+    items: [
+      {
+        icon: "https://img.icons8.com/?size=100&id=H0fT5t4BS8rR&format=png&color=000000",
+        title: "Sciences Po & IEP",
+        description: "Préparer les épreuves d'analyse, de culture générale et les dossiers de candidature à Sciences Po.",
+        link: "/prepas-concours/sciences-po",
+      },
+    ],
   },
   {
-    icon: "https://img.icons8.com/3d-fluency/94/rocket.png",
-    title: "UM6P",
-    description: "Réussir la sélection et intégrer les programmes d'excellence de l'UM6P.",
-    link: "/prepas-concours/um6p",
+    category: "Santé",
+    items: [
+      {
+        icon: "https://img.icons8.com/?size=100&id=CEO59cK8uKjA&format=png&color=000000",
+        title: "Médecine Maroc",
+        description: "Préparer les épreuves de sélection et optimiser son dossier académique.",
+        link: "/prepas-concours/medecine-maroc",
+      },
+      {
+        icon: "https://img.icons8.com/?size=100&id=rOWUIuBluRNI&format=png&color=000000",
+        title: "Médecine Belgique",
+        description: "Réussir l'examen d'entrée et sécuriser son projet d'études médicales.",
+        link: "/prepas-concours/medecine-belgique",
+      },
+    ],
   },
   {
-    icon: "https://img.icons8.com/3d-fluency/94/bank-building.png",
-    title: "Sciences Po & IEP",
-    description: "Préparer les épreuves d'analyse, de culture générale et les dossiers de candidatures à Scpo.",
-    link: "/prepas-concours/sciences-po",
+    category: "Ingénierie & Architecture",
+    items: [
+      {
+        icon: "https://img.icons8.com/?size=100&id=XsvEZR0h6fav&format=png&color=000000",
+        title: "Écoles d'ingénieurs post-bac GEIPI POLYTECH | PUISSANCE ALPHA | AVENIR",
+        description: "Préparer les concours des formations d'ingénierie réputées en France.",
+        link: "/prepas-concours/ingenieurs",
+      },
+      {
+        icon: "https://img.icons8.com/3d-fluency/94/diploma.png",
+        title: "Architecture ENA",
+        description: "Développer sa culture architecturale, son analyse et sa préparation aux épreuves.",
+        link: "/prepas-concours/architecture",
+      },
+    ],
   },
   {
-    icon: "https://img.icons8.com/3d-fluency/94/stethoscope.png",
-    title: "Médecine Maroc",
-    description: "Préparer les épreuves de sélection et optimiser son dossier académique.",
-    link: "/prepas-concours/medecine-maroc",
-  },
-  {
-    icon: "https://img.icons8.com/3d-fluency/94/globe.png",
-    title: "Médecine Belgique",
-    description: "Préparer l'examen d'entrée en médecine en Belgique avec rigueur et méthode.",
-    link: "/prepas-concours/medecine-belgique",
-  },
-  {
-    icon: "https://img.icons8.com/3d-fluency/94/compass.png",
-    title: "Écoles d'ingénieurs",
-    description: "Préparer les concours d'ingénieurs post-bac en France : Avenir, Geipi, Puissance Alpha.",
-    link: "/prepas-concours/ingenieurs",
-  },
-  {
-    icon: "https://img.icons8.com/3d-fluency/94/diploma.png",
-    title: "Architecture ENA",
-    description: "Préparer les épreuves d'admission à l'École Nationale d'Architecture.",
-    link: "/prepas-concours/architecture",
-  },
-  {
-    icon: "https://img.icons8.com/3d-fluency/94/goal.png",
-    title: "SAT & GMAT",
-    description: "Atteindre les scores requis pour les meilleures universités internationales.",
-    link: "/prepas-concours/sat-gmat",
+    category: "International",
+    items: [
+      {
+        icon: "https://img.icons8.com/3d-fluency/94/goal.png",
+        title: "SAT & GMAT",
+        description: "Atteindre les scores requis pour intégrer les meilleures universités internationales.",
+        link: "/prepas-concours/sat-gmat",
+      },
+    ],
   },
 ];
 
 const objectifs = [
-  { icon: "https://img.icons8.com/3d-fluency/94/goal.png", title: "Des capacités d'analyse renforcées", description: "Apprendre à raisonner efficacement et à résoudre des problèmes complexes." },
-  { icon: "https://img.icons8.com/3d-fluency/94/calendar.png", title: "Une meilleure gestion du temps", description: "Acquérir les réflexes nécessaires pour performer dans un temps limité." },
+  { icon: "https://img.icons8.com/?size=100&id=4prjBhjIN59x&format=png&color=000000", title: "Des capacités d'analyse renforcées", description: "Apprendre à raisonner efficacement et à résoudre des problèmes complexes." },
+  { icon: "https://img.icons8.com/?size=100&id=E8UDNc2M7twd&format=png&color=000000", title: "Une meilleure gestion du temps", description: "Acquérir les réflexes nécessaires pour performer dans un temps limité." },
   { icon: "https://img.icons8.com/3d-fluency/94/compass.png", title: "Une méthodologie de concours", description: "Comprendre les attentes spécifiques des épreuves et adopter les bonnes stratégies." },
-  { icon: "https://img.icons8.com/3d-fluency/94/star.png", title: "Une meilleure gestion du stress", description: "Développer sa confiance et apprendre à performer sous pression." },
+  { icon: "https://img.icons8.com/?size=100&id=bocBCRpgDfu8&format=png&color=000000", title: "Une meilleure gestion du stress", description: "Développer sa confiance et apprendre à performer sous pression." },
   { icon: "https://img.icons8.com/3d-fluency/94/open-book.png", title: "Des connaissances ciblées", description: "Concentrer ses efforts sur les notions réellement évaluées." },
   { icon: "https://img.icons8.com/3d-fluency/94/rocket.png", title: "Un profil plus compétitif", description: "Renforcer son dossier et ses chances d'intégrer les formations les plus sélectives." },
 ];
@@ -169,7 +195,7 @@ export default function PrepasConcours() {
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                   <div className="rounded-[2rem] w-full h-auto aspect-square overflow-hidden bg-white">
                     <img
-                      src="/hero-sat-gmat.png"
+                      src="/prepas-concours.png"
                       alt="Prépas Concours"
                       className="w-full h-full object-cover"
                       style={{ objectPosition: "center 33%" }}
@@ -203,13 +229,15 @@ export default function PrepasConcours() {
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                <Link
-                  to="/contact"
+                <a
+                  href={waLink("Bonjour STUDASSIST, je souhaite obtenir des informations sur les préparations aux concours post-bac.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center justify-center gap-3"
                 >
                   <span>Réserver une séance découverte</span>
                   <ArrowRight size={16} />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -274,36 +302,45 @@ export default function PrepasConcours() {
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
-            {programmes.map((prog, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.06 }}
-                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-teal/30 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <img src={prog.icon} alt={prog.title} className="w-7 h-7 drop-shadow-sm" />
-                      <h3 className="text-brand-darkblue font-black text-base uppercase tracking-tight group-hover:text-brand-teal transition-colors">
-                        {prog.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-500 text-sm font-medium leading-relaxed pl-10">
-                      {prog.description}
-                    </p>
-                  </div>
-                  <Link
-                    to={prog.link}
-                    className="text-brand-teal font-bold text-sm hover:text-brand-darkblue transition-colors shrink-0 mt-2"
-                  >
-                    Découvrir
-                  </Link>
+          <div className="max-w-4xl mx-auto space-y-8">
+            {programmeGroups.map((group, gIdx) => (
+              <div key={gIdx}>
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-brand-teal mb-3 pl-1">
+                  {group.category}
+                </h3>
+                <div className="space-y-3">
+                  {group.items.map((prog, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.06 }}
+                      className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-brand-teal/30 hover:shadow-lg transition-all duration-300 group"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-2">
+                            <img src={prog.icon} alt={prog.title} className="w-7 h-7 drop-shadow-sm" />
+                            <h4 className="text-brand-darkblue font-black text-base uppercase tracking-tight group-hover:text-brand-teal transition-colors">
+                              {prog.title}
+                            </h4>
+                          </div>
+                          <p className="text-gray-500 text-sm font-medium leading-relaxed pl-10">
+                            {prog.description}
+                          </p>
+                        </div>
+                        <Link
+                          to={prog.link}
+                          className="text-brand-teal font-bold text-sm hover:text-brand-darkblue transition-colors shrink-0 mt-2"
+                        >
+                          Découvrir
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -405,13 +442,15 @@ export default function PrepasConcours() {
           <p className="text-white/80 text-base lg:text-lg font-medium max-w-xl mx-auto mb-10 leading-relaxed">
             Vous souhaitez mettre en place un accompagnement académique personnalisé ? Réservez un premier rendez-vous d'informations pour évaluer votre profil et poser les bases d'une stratégie adaptée.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href={waLink("Bonjour STUDASSIST, je souhaite obtenir des informations sur les préparations aux concours post-bac.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-brand-red text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
           >
             <span>Prendre rendez-vous</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
         </motion.div>
       </section>
 

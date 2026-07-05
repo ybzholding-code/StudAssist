@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowRight,
   ArrowLeft,
@@ -11,6 +11,7 @@ import FAQ from "./FAQ";
 import MediaFrameFloaters from "./MediaFrameFloaters";
 import { buildFaq } from "../data/faq";
 import { usePageMeta } from "../hooks/usePageMeta";
+import { waLink } from "../lib/utils";
 
 /* ---------- Types ---------- */
 
@@ -19,6 +20,7 @@ export interface SectionBlock {
   paragraphs?: ReactNode[];
   bullets?: string[];
   callout?: string;
+  extraParagraphs?: ReactNode[];
 }
 
 export interface AudienceGroup {
@@ -46,7 +48,7 @@ export interface OrientationLevelPageProps {
 
   enjeux?: {
     title: string;
-    lead?: string;
+    lead?: React.ReactNode;
     bullets: string[];
     icons?: string[];
   };
@@ -81,6 +83,7 @@ export interface OrientationLevelPageProps {
   hideSidebar?: boolean;
   sectionTitle?: string;
   levels?: { key: string; label: string; href: string }[];
+  whatsappMessage?: string;
 }
 
 /* ---------- Levels registry (sidebar) ---------- */
@@ -187,21 +190,31 @@ export default function OrientationLevelPage({
   audience,
   whyChoose,
   ctaBanner,
-  faqKeys = ["orientation", "method"] as Parameters<typeof buildFaq>,
-  faqTitle = "Orientation : questions fréquentes",
+  faqKeys = ["orientation"] as Parameters<typeof buildFaq>,
+  faqTitle,
   faqSubtitle = "Les réponses aux questions que nous recevons le plus souvent sur ce programme.",
   prev,
   next,
   hideSidebar = false,
   sectionTitle,
   levels: customLevels,
+  whatsappMessage,
 }: OrientationLevelPageProps) {
+  const { pathname } = useLocation();
   const activeKey = customLevels
-    ? (customLevels.find((l) => stripAccents(eyebrow.toLowerCase()).includes(stripAccents(l.key.toLowerCase())))?.key || customLevels[0]?.key || "")
+    ? (customLevels.find((l) => pathname === l.href || pathname.startsWith(l.href + "/"))?.key || customLevels[0]?.key || "")
     : detectLevelKey(eyebrow);
   const levelLabel = customLevels
     ? (customLevels.find((l) => l.key === activeKey)?.label || sectionTitle || eyebrow)
     : currentLevelLabel(eyebrow);
+
+  const resolvedFaqTitle = faqTitle ?? (
+    activeKey === "reorientation"
+      ? "Réorientation : questions fréquentes"
+      : activeKey === "master"
+      ? "Orientation Master : questions fréquentes"
+      : `Orientation ${levelLabel} : questions fréquentes`
+  );
 
   usePageMeta({
     title: hideSidebar
@@ -309,13 +322,15 @@ export default function OrientationLevelPage({
               )}
               {!moveHeroCtaUnderGrid && (
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                  <Link
-                    to={ctaBanner.primaryHref || "/contact"}
+                  <a
+                    href={waLink(whatsappMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-brand-teal text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
                   >
                     <span>{heroCtaLabel || "Réserver ma séance découverte"}</span>
                     <ArrowRight size={18} />
-                  </Link>
+                  </a>
                 </div>
               )}
             </div>
@@ -323,13 +338,15 @@ export default function OrientationLevelPage({
 
           {moveHeroCtaUnderGrid && (
             <div className="flex justify-center mt-12">
-              <Link
-                to={ctaBanner.primaryHref || "/contact"}
+              <a
+                href={waLink(whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-brand-teal text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
               >
                 <span>{heroCtaLabel || "Réserver ma séance découverte"}</span>
                 <ArrowRight size={18} />
-              </Link>
+              </a>
             </div>
           )}
         </div>
@@ -353,7 +370,7 @@ export default function OrientationLevelPage({
                 {enjeux.title}
               </h2>
               {enjeux.lead && (
-                <p className="text-gray-500 font-medium leading-relaxed">{enjeux.lead}</p>
+                <div className="text-gray-500 font-medium leading-relaxed">{enjeux.lead}</div>
               )}
             </div>
             <div className={`grid sm:grid-cols-2 ${
@@ -372,26 +389,31 @@ export default function OrientationLevelPage({
                   transition={{ delay: i * 0.08 }}
                   className="bg-white rounded-[2rem] p-6 border border-gray-100 shadow-[0_12px_40px_rgba(17,29,74,0.04)] hover:shadow-[0_20px_60px_rgba(17,29,74,0.08)] hover:border-brand-teal/20 transition-all duration-500 group flex flex-col items-center text-center"
                 >
-                  {enjeux.icons && enjeux.icons[i] ? (
-                    <img src={enjeux.icons[i]} alt="" className="w-10 h-10 mb-4 object-contain shrink-0" />
-                  ) : (
-                    <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors shrink-0">
-                      <CheckCircle2 size={18} className="text-brand-teal" />
-                    </div>
-                  )}
                   {(() => {
-                    const colonIdx = b.indexOf(": ");
-                    if (colonIdx !== -1) {
-                      const title = b.slice(0, colonIdx);
-                      const body = b.slice(colonIdx + 2);
-                      return (
-                        <>
-                          <p className="text-brand-darkblue font-black text-sm mb-1">{title}</p>
-                          <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{body}</p>
-                        </>
-                      );
-                    }
-                    return <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{b}</p>;
+                    const colonIdx = b.indexOf(": ") !== -1 ? b.indexOf(": ") : b.indexOf(" — ");
+                    const sepLen = b.indexOf(": ") !== -1 ? 2 : 3;
+                    const rawTitle = colonIdx !== -1 ? b.slice(0, colonIdx) : null;
+                    const body = colonIdx !== -1 ? b.slice(colonIdx + sepLen) : b;
+                    const emojiMatch = rawTitle ? rawTitle.match(/^(\p{Emoji_Presentation}|\p{Emoji}\uFE0F)\s*/u) : null;
+                    const emoji = emojiMatch ? emojiMatch[0].trim() : null;
+                    const title = rawTitle ? (emoji ? rawTitle.replace(emojiMatch![0], "").trim() : rawTitle) : null;
+                    const showImg = !emoji && enjeux.icons && enjeux.icons[i];
+                    return (
+                      <>
+                        {emoji ? (
+                          <div className="w-10 h-10 flex items-center justify-center mb-4 shrink-0 text-3xl leading-none">{emoji}</div>
+                        ) : showImg ? (
+                          <img src={enjeux.icons![i]} alt="" className="w-10 h-10 mb-4 object-contain shrink-0" />
+                        ) : (
+                          <div className="w-10 h-10 rounded-xl bg-brand-teal/10 flex items-center justify-center mb-4 group-hover:bg-brand-teal/20 transition-colors shrink-0">
+                            <CheckCircle2 size={18} className="text-brand-teal" />
+                          </div>
+                        )}
+                        {title && <p className="text-brand-darkblue font-black text-sm mb-1">{title}</p>}
+                        {colonIdx !== -1 && <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{body}</p>}
+                        {colonIdx === -1 && <p className="text-gray-500 font-medium text-xs lg:text-[13px] leading-relaxed">{b}</p>}
+                      </>
+                    );
                   })()}
                 </motion.div>
               ))}
@@ -514,6 +536,9 @@ export default function OrientationLevelPage({
                         <p className="text-brand-darkblue font-bold italic text-sm">{s.callout}</p>
                       </div>
                     )}
+                    {s.extraParagraphs && s.extraParagraphs.map((p, k) => (
+                      <div key={k}>{p}</div>
+                    ))}
                   </AccordionItem>
                 ))}
 
@@ -630,13 +655,15 @@ export default function OrientationLevelPage({
           </div>
 
           <div className="mt-8 lg:mt-0 flex flex-wrap gap-4 justify-center lg:justify-end">
-            <Link
-              to={ctaBanner.primaryHref || "/contact"}
+            <a
+              href={waLink(whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brand-darkblue text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
             >
               <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
             {ctaBanner.secondaryLabel && (
               <Link
                 to={ctaBanner.secondaryHref || "#"}
@@ -652,7 +679,7 @@ export default function OrientationLevelPage({
 
       {/* ============ FAQ ============ */}
       <FAQ
-        title={faqTitle}
+        title={resolvedFaqTitle}
         subtitle={faqSubtitle}
         items={buildFaq(...faqKeys)}
         faqAsideSubtitle={faqAsideSubtitle}

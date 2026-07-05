@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 
 const LEVELS = [
@@ -50,45 +51,65 @@ export default function CertificationsDele() {
         {
           title: "Pourquoi passer le DELE et quel score viser ?",
           paragraphs: [
-            "Un atout pour les candidatures en Espagne et à l'international — L'Espagne attire chaque année un nombre croissant d'étudiants internationaux grâce à la qualité de son enseignement supérieur, à la diversité de ses formations et à son coût souvent plus accessible que d'autres destinations européennes. Dans ce contexte, le DELE constitue un véritable avantage pour les candidats souhaitant intégrer une université espagnole ou un programme dispensé partiellement en espagnol. Il permet de démontrer sa capacité à suivre des études dans un environnement hispanophone et de renforcer significativement la crédibilité de son dossier académique.",
-            "Quel niveau viser au DELE ? — Le niveau à atteindre dépend directement du projet académique de l'élève et des exigences des établissements visés. De manière générale : le niveau B1 permet de démontrer une autonomie dans les situations courantes ; le niveau B2 est généralement requis pour l'accès aux études supérieures en Espagne ; le niveau C1 est recommandé pour les formations les plus sélectives ou les cursus exigeant une excellente maîtrise de l'espagnol. Chez STUDASSIST, nous accompagnons chaque élève dans la définition d'un objectif réaliste et cohérent avec son projet d'études, les universités ciblées et son niveau initial.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un atout pour les candidatures en Espagne et à l'international</span>,
+            <span>L'Espagne attire chaque année un nombre croissant d'étudiants internationaux grâce à la <strong className="font-extrabold text-brand-darkblue">qualité de son enseignement supérieur</strong>, à la diversité de ses formations et à son coût souvent plus accessible que d'autres destinations européennes. Le DELE constitue un <strong className="font-extrabold text-brand-darkblue">véritable avantage</strong> pour les candidats souhaitant intégrer une université espagnole ou un programme dispensé partiellement en espagnol. Il permet de démontrer sa capacité à suivre des études dans un <strong className="font-extrabold text-brand-darkblue">environnement hispanophone</strong> et de renforcer significativement la crédibilité de son dossier académique.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Quel niveau viser au DELE ?</span>,
+            <span>Le niveau à atteindre dépend directement du projet académique de l'élève et des exigences des établissements visés. De manière générale :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>le niveau <strong className="font-extrabold text-brand-darkblue">B1</strong> permet de démontrer une autonomie dans les situations courantes ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>le niveau <strong className="font-extrabold text-brand-darkblue">B2</strong> est généralement requis pour l'accès aux études supérieures en Espagne ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>le niveau <strong className="font-extrabold text-brand-darkblue">C1</strong> est recommandé pour les formations les plus sélectives ou les cursus exigeant une excellente maîtrise de l'espagnol.</span></li>
+            </ul>,
+            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons chaque élève dans la définition d'un <strong className="font-extrabold text-brand-darkblue">objectif réaliste et cohérent</strong> avec son projet d'études, les universités ciblées et son niveau initial.</span>,
           ],
         },
         {
           title: "Une préparation stratégique et personnalisée avec une méthodologie orientée performance",
           paragraphs: [
-            "Une préparation structurée et personnalisée — La préparation débute par un test de niveau, permettant d'évaluer les compétences de l'élève et de définir un plan de progression adapté. Nous proposons ensuite un accompagnement flexible, en petits groupes de 4 élèves maximum, afin de garantir une progression efficace et un suivi de qualité, ou en format individuel pour répondre à des besoins spécifiques. Selon les objectifs et les échéances, la préparation peut s'inscrire dans la durée à travers des séances régulières, ou se concentrer sous forme de sessions intensives pendant les vacances scolaires.",
-            "Une méthodologie adaptée aux exigences du DELE — Notre approche repose sur une préparation complète aux différentes épreuves. Les élèves travaillent la compréhension de documents, la structuration de leurs productions écrites et leur aisance à l'oral. Des entraînements réguliers et des mises en situation permettent de se familiariser avec les exigences du test et de progresser efficacement.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une préparation structurée et personnalisée</span>,
+            <span>La préparation débute par un <strong className="font-extrabold text-brand-darkblue">test de niveau</strong>, permettant d'évaluer les compétences de l'élève et de définir un plan de progression adapté. Nous proposons un accompagnement flexible :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>en <strong className="font-extrabold text-brand-darkblue">petits groupes de 4 élèves maximum</strong>, afin de garantir une progression efficace et un suivi de qualité ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>en <strong className="font-extrabold text-brand-darkblue">format individuel</strong> pour répondre à des besoins spécifiques.</span></li>
+            </ul>,
+            <span>Selon les objectifs et les échéances, la préparation peut s'inscrire dans la durée à travers des <strong className="font-extrabold text-brand-darkblue">séances régulières</strong>, ou se concentrer sous forme de <strong className="font-extrabold text-brand-darkblue">sessions intensives pendant les vacances scolaires</strong>.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie adaptée aux exigences du DELE</span>,
+            <span>Notre approche repose sur une <strong className="font-extrabold text-brand-darkblue">préparation complète</strong> aux différentes épreuves. Les élèves travaillent la <strong className="font-extrabold text-brand-darkblue">compréhension de documents</strong>, la structuration de leurs productions écrites et leur <strong className="font-extrabold text-brand-darkblue">aisance à l'oral</strong>. Des entraînements réguliers et des mises en situation permettent de se familiariser avec les exigences du test et de progresser efficacement.</span>,
           ],
         },
         {
           title: "L'approche STUDASSIST dans la préparation du DELE",
           paragraphs: [
-            "Développer un espagnol académique et opérationnel — Au-delà de la préparation à l'examen, nous accompagnons les élèves dans le développement d'un espagnol structuré, précis et fluide. Ils apprennent à argumenter, à organiser leurs idées et à s'exprimer avec clarté, à l'écrit comme à l'oral. Cette approche leur permet non seulement de réussir le DELE, mais aussi de s'intégrer dans un environnement académique hispanophone.",
-            "Une préparation intégrée au projet d'orientation — Chez STUDASSIST, la préparation au DELE s'inscrit dans une démarche globale d'orientation. Elle est directement liée au projet d'études de l'élève, aux universités hispanophones envisagées, aux formations ciblées et aux exigences des procédures d'admission. Notre accompagnement permet ainsi de définir une stratégie cohérente associant choix des établissements, niveau linguistique à atteindre et construction du dossier de candidature.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un espagnol académique et opérationnel</span>,
+            <span>Au-delà de la préparation à l'examen, nous accompagnons les élèves dans le développement d'un <strong className="font-extrabold text-brand-darkblue">espagnol structuré, précis et fluide</strong>. Ils apprennent à argumenter, à organiser leurs idées et à s'exprimer avec clarté, à l'écrit comme à l'oral. Cette approche leur permet non seulement de réussir le DELE, mais aussi de s'intégrer dans un <strong className="font-extrabold text-brand-darkblue">environnement académique hispanophone</strong>.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation intégrée au projet d'orientation</span>,
+            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, la préparation au DELE s'inscrit dans une <strong className="font-extrabold text-brand-darkblue">démarche globale</strong> d'<Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">orientation scolaire</Link>. Elle est directement liée au projet d'études de l'élève, aux universités hispanophones envisagées, aux formations ciblées et aux exigences des procédures d'admission. Notre accompagnement permet ainsi de définir une stratégie cohérente associant choix des établissements, <strong className="font-extrabold text-brand-darkblue">niveau linguistique à atteindre</strong> et construction du dossier de candidature.</span>,
           ],
         },
         {
           title: "Un accompagnement en continu avec des professeurs expérimentés",
           paragraphs: [
-            "Un encadrement par des professeurs experts de la langue espagnole — Les élèves sont accompagnés par des enseignants spécialisés dans l'enseignement de l'espagnol et la préparation aux certifications internationales. Leur parfaite connaissance des exigences du DELE leur permet d'identifier rapidement les axes de progression de chaque candidat et de mettre en place un accompagnement adapté à son niveau et à ses objectifs. Au-delà de la préparation aux épreuves, ils accompagnent les élèves dans le développement d'un espagnol académique solide, indispensable pour réussir leurs études dans un environnement hispanophone.",
-            "Un accompagnement dans la durée — Nous accompagnons les élèves tout au long de leur préparation, en leur proposant des supports complémentaires et un suivi régulier. L'objectif est de sécuriser leur progression et de les préparer dans les meilleures conditions à l'examen.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un encadrement par des professeurs experts de la langue espagnole</span>,
+            <span>Les élèves sont accompagnés par des <strong className="font-extrabold text-brand-darkblue">enseignants spécialisés</strong> dans l'enseignement de l'espagnol et la préparation aux certifications internationales. Leur parfaite connaissance des exigences du DELE leur permet d'identifier rapidement les <strong className="font-extrabold text-brand-darkblue">axes de progression</strong> de chaque candidat et de mettre en place un accompagnement adapté à son niveau et à ses objectifs.</span>,
+            <span>Au-delà de la préparation aux épreuves, ils accompagnent les élèves dans le développement d'un <strong className="font-extrabold text-brand-darkblue">espagnol académique solide</strong>, indispensable pour réussir leurs études dans un environnement hispanophone.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement dans la durée</span>,
+            <span>Nous accompagnons les élèves tout au long de leur préparation, en leur proposant des <strong className="font-extrabold text-brand-darkblue">supports complémentaires</strong> et un suivi régulier. L'objectif est de <strong className="font-extrabold text-brand-darkblue">sécuriser leur progression</strong> et de les préparer dans les meilleures conditions à l'examen.</span>,
           ],
         },
         {
-          title: "À qui s'adresse la préparation du DELE ?",
+          title: "À qui s'adresse la préparation du DELE ?",
           paragraphs: [
-            "Cette préparation s'adresse aux élèves, étudiants et jeunes diplômés souhaitant certifier officiellement leur niveau d'espagnol dans le cadre d'un projet académique ou professionnel à l'international.",
+            <span>Cette préparation s'adresse aux <strong className="font-extrabold text-brand-darkblue">élèves, étudiants et jeunes diplômés</strong> souhaitant certifier officiellement leur niveau d'espagnol dans le cadre d'un projet académique ou professionnel à l'international. Elle est particulièrement adaptée aux candidats qui souhaitent :</span>,
           ],
           bullets: [
-            "Intégrer une université ou une grande école en Espagne",
-            "Préparer une candidature dans le cadre d'un programme international",
-            "Atteindre le niveau linguistique exigé par un établissement d'enseignement supérieur",
-            "Renforcer leur dossier académique et maximiser leurs chances d'admission",
-            "Développer leur maîtrise de l'espagnol écrit et oral dans un contexte académique",
-            "Acquérir les méthodes spécifiques aux épreuves du DELE",
-            "Préparer un projet d'études à l'international dans le cadre d'un accompagnement en orientation",
-            "Gagner en confiance avant le passage de l'examen",
+            "Intégrer une université ou une grande école en Espagne ;",
+            "Préparer une candidature dans le cadre d'un programme international ;",
+            "Atteindre le niveau linguistique exigé par un établissement d'enseignement supérieur ;",
+            "Renforcer leur dossier académique et maximiser leurs chances d'admission ;",
+            "Développer leur maîtrise de l'espagnol écrit et oral dans un contexte académique ;",
+            "Acquérir les méthodes spécifiques aux épreuves du DELE ;",
+            "Préparer un projet d'études à l'international dans le cadre d'un accompagnement en orientation ;",
+            "Gagner en confiance avant le passage de l'examen.",
           ],
         },
       ]}

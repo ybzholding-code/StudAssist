@@ -18,10 +18,11 @@ export default function PrepasBacPhilo() {
         "L'épreuve de philosophie du Baccalauréat constitue un moment clé de l'année de Terminale. Elle exige des compétences spécifiques : capacité d'analyse, rigueur du raisonnement et maîtrise de l'expression écrite.",
         "Chez STUDASSIST, nous proposons une préparation exigeante et structurée, permettant aux élèves de comprendre les attentes de l'épreuve, d'acquérir une méthodologie solide et de développer une réflexion claire et argumentée.",
       ]}
-      heroImage="/hero-bac-new.png"
+      heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Bac de Philosophie."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -34,16 +35,16 @@ export default function PrepasBacPhilo() {
         title: "Un levier de réussite pour le bac et l'accès aux études supérieures",
         lead: "La philosophie est bien plus qu'une simple épreuve du Baccalauréat. Elle mobilise des compétences essentielles qui seront utiles tout au long des études supérieures et de la vie professionnelle.",
         bullets: [
-          "Développer son esprit critique — La philosophie apprend à analyser, questionner et construire un raisonnement rigoureux face à des problématiques complexes.",
-          "Optimiser sa performance au Baccalauréat — Grâce à son coefficient significatif, l'épreuve de philosophie peut avoir un impact important sur la note finale et l'obtention d'une mention.",
-          "Maîtriser l'art de l'argumentation — La dissertation et l'explication de texte évaluent la capacité à structurer sa pensée, défendre un point de vue et construire une démonstration convaincante.",
-          "Préparer les études supérieures — Les compétences développées en philosophie — analyse, réflexion, expression écrite et autonomie intellectuelle — sont particulièrement valorisées dans l'enseignement supérieur.",
+          "Développer son esprit critique: La philosophie apprend à analyser, questionner et construire un raisonnement rigoureux face à des problématiques complexes.",
+          "Optimiser sa performance au Baccalauréat: Grâce à son coefficient significatif, l'épreuve de philosophie peut avoir un impact important sur la note finale et l'obtention d'une mention.",
+          "Maîtriser l'art de l'argumentation: La dissertation et l'explication de texte évaluent la capacité à structurer sa pensée, défendre un point de vue et construire une démonstration convaincante.",
+          "Préparer les études supérieures: Les compétences développées en philosophie — analyse, réflexion, expression écrite et autonomie intellectuelle — sont particulièrement valorisées dans l'enseignement supérieur.",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/brain.png",
-          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
-          "https://img.icons8.com/3d-fluency/94/document.png",
-          "https://img.icons8.com/3d-fluency/94/diploma.png",
+          "https://img.icons8.com/?size=100&id=4prjBhjIN59x&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=OlDzEETWpjI7&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=sy9tMN9SEkLP&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=qZ3IKpKF9Cun&format=png&color=000000",
         ],
       }}
 
@@ -95,7 +96,7 @@ export default function PrepasBacPhilo() {
           "Un travail progressif sur les notions, les références, et la qualité de la rédaction",
           "Des entraînements réguliers et des bacs blancs avec corrections détaillées",
           "Un format flexible et personnalisé avec des groupes restreints (2 à 4 élèves) ou un suivi individuel en fonction du besoin",
-          "Des compétences clés développées pour l'avenir académique : analyse, argumentation, autonomie intellectuelle et esprit critique",
+          "Des compétences clés développées pour l'avenir académique - analyse, argumentation, autonomie intellectuelle et esprit critique",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/brain.png",

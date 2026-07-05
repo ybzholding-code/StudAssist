@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Phone, MapPin, Clock } from "@/src/components/ui/icons";
+import { ArrowRight, Phone, MapPin, Clock, MessageCircle } from "@/src/components/ui/icons";
 import { Link, useSearchParams } from "react-router-dom";
 import { useFormSubmit } from "../hooks/useFormSubmit";
+import { waLink } from "../lib/utils";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
 import Logo from "../components/Logo";
@@ -10,7 +11,7 @@ import MediaFrameFloaters from "../components/MediaFrameFloaters";
 
 export default function Contact() {
   const [searchParams] = useSearchParams();
-  const [intentTab, setIntentTab] = useState<"orientation" | "cours">("orientation");
+  const [intentTab, setIntentTab] = useState<"orientation" | "cours" | "rdv">("orientation");
   const roleFromParams = searchParams.get("role") as "parent" | "eleve" | null;
   const [userRole, setUserRole] = useState<"parent" | "eleve">(roleFromParams || "parent");
   
@@ -21,6 +22,7 @@ export default function Contact() {
   const [disponibilites, setDisponibilites] = useState<string[]>([]);
   const { submit, status: submitStatus } = useFormSubmit();
   const isSubmitted = submitStatus === "success";
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
   const MATIERES = [
     "Mathématiques", "Physique-chimie", "SVT / Biologie", "Français", 
@@ -60,6 +62,22 @@ export default function Contact() {
     const niveau = (form.elements.namedItem("niveau") as HTMLSelectElement)?.value || "";
     const systeme = (form.elements.namedItem("systeme") as HTMLSelectElement)?.value || "";
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "";
+
+    const errors: Record<string, string> = {};
+    if (!nom.trim()) errors.nom = "Ce champ est obligatoire.";
+    if (!prenom.trim()) errors.prenom = "Ce champ est obligatoire.";
+    if (!tel.trim()) errors.tel = "Ce champ est obligatoire.";
+    else if (!/^[+0-9\s\-()]{6,20}$/.test(tel.trim())) errors.tel = "Numéro de téléphone invalide.";
+    if (!email.trim()) errors.email = "Ce champ est obligatoire.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) errors.email = "Adresse email invalide.";
+    if (!niveau) errors.niveau = "Veuillez sélectionner un niveau.";
+    if (!systeme) errors.systeme = "Veuillez sélectionner un système.";
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+    setFormErrors({});
     await submit({
       nom, prenom, tel, email,
       role: userRole,
@@ -86,7 +104,7 @@ export default function Contact() {
 
               <div className="relative w-full aspect-square rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10 group bg-white">
                 <img
-                  src="/hero-contact.png"
+                  src="/hero-soutien-scolaire.png"
                   alt="Contact"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]"
                 />
@@ -123,7 +141,7 @@ export default function Contact() {
                   >
                     <h3 className="text-xl font-display font-extrabold text-sa-navy mb-3">Merci !</h3>
                     <p className="text-sa-ink/80 leading-relaxed text-[15px]">
-                      Nous vous recontacterons au créneau choisi pour mieux comprendre votre besoin.
+                      Nous vous recontacterons dans les plus brefs délais afin de mieux comprendre votre besoin et organiser votre première séance.
                     </p>
                   </motion.div>
                 ) : (
@@ -131,13 +149,14 @@ export default function Contact() {
                     {/* Tabs "Je souhaite :" */}
                     <div className="mb-8">
                       <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-4 block">
-                        Je souhaite : (Obligatoire)
+                        Je souhaite réserver : *
                       </label>
                       <div className="flex flex-wrap gap-4 border-b border-sa-navy/10 pb-0">
                         {(
                           [
-                            { key: "orientation", label: "Réserver une séance d'orientation" },
-                            { key: "cours", label: "Réserver un cours découverte" },
+                            { key: "orientation", label: "Une séance d'orientation" },
+                            { key: "cours", label: "Un cours découverte" },
+                            { key: "rdv", label: "Un rendez-vous d'information" },
                           ] as const
                         ).map((t) => (
                           <button
@@ -164,7 +183,7 @@ export default function Contact() {
                       {/* Je suis : */}
                       <div>
                         <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-3 block">
-                          Je suis : (Obligatoire)
+                          Je suis : *
                         </label>
                         <div className="flex gap-6">
                           {(
@@ -173,12 +192,17 @@ export default function Contact() {
                               { key: "eleve", label: "Élève" },
                             ] as const
                           ).map((r) => (
-                            <label key={r.key} className="flex items-center gap-2 cursor-pointer group">
+                            <button
+                              type="button"
+                              key={r.key}
+                              onClick={() => setUserRole(r.key)}
+                              className="flex items-center gap-2 cursor-pointer group"
+                            >
                               <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${userRole === r.key ? 'border-sa-pink bg-sa-pink/10' : 'border-gray-300 group-hover:border-sa-pink/50'}`}>
                                 {userRole === r.key && <div className="w-2.5 h-2.5 rounded-full bg-sa-pink" />}
                               </div>
                               <span className="text-[15px] font-medium text-sa-navy">{r.label}</span>
-                            </label>
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -187,10 +211,22 @@ export default function Contact() {
                       <div>
                         <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Informations de contact</h4>
                         <div className="grid md:grid-cols-2 gap-6">
-                          <input type="text" name="nom" required placeholder="Nom *" defaultValue={searchParams.get("nom") || ""} className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
-                          <input type="text" name="prenom" required placeholder="Prénom *" defaultValue={searchParams.get("prenom") || ""} className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
-                          <input type="tel" name="tel" required placeholder="Téléphone *" defaultValue={searchParams.get("tel") || ""} className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
-                          <input type="email" name="email" required placeholder="Email *" className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40" />
+                          <div>
+                            <input type="text" name="nom" required placeholder="Nom *" defaultValue={searchParams.get("nom") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.nom ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            {formErrors.nom && <p className="text-red-500 text-xs mt-1">{formErrors.nom}</p>}
+                          </div>
+                          <div>
+                            <input type="text" name="prenom" required placeholder="Prénom *" defaultValue={searchParams.get("prenom") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.prenom ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            {formErrors.prenom && <p className="text-red-500 text-xs mt-1">{formErrors.prenom}</p>}
+                          </div>
+                          <div>
+                            <input type="tel" name="tel" required placeholder="Téléphone *" defaultValue={searchParams.get("tel") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.tel ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            {formErrors.tel && <p className="text-red-500 text-xs mt-1">{formErrors.tel}</p>}
+                          </div>
+                          <div>
+                            <input type="email" name="email" required placeholder="Email *" className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.email ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            {formErrors.email && <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>}
+                          </div>
                         </div>
                       </div>
 
@@ -202,7 +238,7 @@ export default function Contact() {
                             <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
                               Niveau académique *
                             </label>
-                            <select required defaultValue="" className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none">
+                            <select name="niveau" required defaultValue="" className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none ${formErrors.niveau ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`}>
                               <option value="" disabled>Sélectionner un niveau</option>
                               <option>Primaire</option>
                               <option>Collège</option>
@@ -216,7 +252,7 @@ export default function Contact() {
                             <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
                               Système scolaire *
                             </label>
-                            <select required defaultValue="" className="w-full pb-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none">
+                            <select name="systeme" required defaultValue="" className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] text-sa-ink/80 appearance-none ${formErrors.systeme ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`}>
                               <option value="" disabled>Sélectionner un système</option>
                               <option>Français</option>
                               <option>Bilingue</option>
@@ -307,7 +343,7 @@ export default function Contact() {
                         <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Message</h4>
                         <div className="group">
                           <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-2 block">
-                            Votre besoin (Facultatif)
+                            Votre besoin
                           </label>
                           <textarea
                             rows={3}
@@ -367,6 +403,7 @@ export default function Contact() {
         title="Avant de nous contacter"
         subtitle="Les réponses aux questions les plus posées sur l'inscription et le fonctionnement de STUDASSIST."
         items={buildFaq("signup", "organization")}
+        faqAsideSubtitle="Notre assistant vous répond instantanément."
       />
 
       {/* ============ NOS CENTRES ============ */}
@@ -493,11 +530,13 @@ export default function Contact() {
                   <span>0669-495996</span>
                 </a>
                 <a
-                  href="#centres"
+                  href={waLink("Bonjour, je souhaite avoir plus d'informations sur les services de STUDASSIST.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group bg-brand-darkblue text-white px-7 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[11px] hover:bg-brand-red transition-all shadow-xl shadow-brand-darkblue/20 inline-flex items-center justify-center gap-3 active:scale-95"
                 >
-                  <MapPin size={18} />
-                  <span>Nos centres</span>
+                  <MessageCircle size={18} />
+                  <span>Nous écrire</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

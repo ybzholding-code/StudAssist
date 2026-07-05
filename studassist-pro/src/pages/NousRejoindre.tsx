@@ -103,19 +103,19 @@ export default function NousRejoindre() {
   const testimonials = [
     {
       name: "Julie",
-      role: "Professeure de français et philosophie",
-      text: "Ce que j'ai particulièrement apprécié chez STUDASSIST, c'est l'importance accordée à la formation continue des collaborateurs. On ne cesse jamais d'apprendre. L'ambiance y est également très particulière : une véritable culture d'équipe.",
+      role: "Professeure de Français & Philosophie",
+      text: "J'ai rejoint STUDASSIST en faisant le choix de m'installer au Maroc, séduite par son projet et ses valeurs. J'y ai découvert une véritable culture d'équipe, où la formation, la bienveillance et l'exigence font partie du quotidien. Une expérience humaine et professionnelle particulièrement enrichissante, que je garde avec beaucoup d'attachement.",
     },
     {
       name: "Sara",
-      role: "Conseillère en orientation",
-      text: "Dès mon premier entretien, j'ai compris que STUDASSIST accordait une attention particulière à l'évolution des jeunes talents. J'ai évolué au sein d'une équipe jeune et engagée, où les fondateurs étaient à l'écoute.",
+      role: "Conseillère en Orientation",
+      text: "Rejoindre STUDASSIST m'a permis d'évoluer rapidement grâce à des missions variées et de réelles responsabilités. J'ai découvert une équipe jeune, engagée et toujours à l'écoute, où l'on apprend chaque jour et où chacun est encouragé à prendre des initiatives. Une expérience extrêmement formatrice.",
     },
     {
       name: "Réda",
-      role: "Stagiaire en développement informatique",
-      text: "J'ai particulièrement apprécié l'énergie et le professionnalisme de l'équipe. Chez STUDASSIST, la rigueur, la qualité du travail et l'exigence sont des valeurs partagées au quotidien.",
-    }
+      role: "Stagiaire en Développement Informatique",
+      text: "Mon stage chez STUDASSIST m'a permis de développer rapidement mes compétences et de participer à des projets à forte valeur ajoutée. J'y ai découvert une équipe exigeante, bienveillante et passionnée, portée par une véritable ambition : transformer l'accompagnement des élèves au Maroc. Une expérience dont je suis particulièrement fier.",
+    },
   ];
 
   return (
@@ -124,7 +124,7 @@ export default function NousRejoindre() {
       <section className="relative min-h-[calc(100vh-80px)] flex items-center pt-10 lg:pt-16 pb-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 items-stretch">
             <div className="order-2 lg:order-1 space-y-8 text-center lg:text-left">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                 <span className="inline-flex items-center gap-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase mb-4">
@@ -153,19 +153,13 @@ export default function NousRejoindre() {
               </motion.div>
             </div>
             
-            <div className="order-1 lg:order-2 relative">
-              <MediaFrameFloaters />
-              <div className="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10 group">
+            <div className="order-1 lg:order-2 relative flex">
+              <div className="relative w-full rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10 group">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                  src="/photo-entree.jpeg"
                   alt="Équipe STUDASSIST"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]"
+                  className="w-full h-full object-contain object-center"
                 />
-                <div className="absolute inset-0 bg-brand-darkblue/10" />
-                <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-2xl">
-                  <Logo variant="header" className="h-8" />
-                  <p className="text-brand-darkblue font-bold text-sm mt-3 uppercase tracking-widest">Une aventure humaine et intellectuelle</p>
-                </div>
               </div>
             </div>
           </div>
@@ -174,29 +168,42 @@ export default function NousRejoindre() {
 
       {/* 2. NOTRE PHILOSOPHIE */}
       <section className="py-20 bg-gray-50 overflow-hidden relative">
-        <Logo variant="watermark" className="absolute top-1/2 -left-[10%] -translate-y-1/2 w-[600px] h-[600px] text-brand-teal opacity-5 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight mb-8">
-              Une équipe exigeante, <br /><span className="text-brand-teal">structurée et engagée</span>
-            </h2>
-            <div className="space-y-6 text-gray-500 font-medium text-lg leading-relaxed">
-              <p>
-                Depuis sa création, STUDASSIST s'est construit autour d'une conviction forte : chaque élève mérite un accompagnement à la fois stratégique, structuré et profondément humain.
-              </p>
-              <p>
-                Cette vision, portée au quotidien dans notre accompagnement des élèves et des familles, guide également notre manière de recruter et de faire évoluer nos équipes.
-              </p>
-              <p>
-                Nous ne recherchons pas uniquement des compétences, mais des profils capables de s'inscrire dans une démarche exigeante, rigoureuse et tournée vers l'impact.
-              </p>
-            </div>
-            <div className="mt-10">
-              <Link to="/qui-sommes-nous" className="inline-flex items-center gap-2 text-brand-teal font-black uppercase tracking-widest hover:text-brand-darkblue transition-colors">
-                <ArrowRight size={20} />
-                <span>Découvrir notre vision</span>
-              </Link>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Image left */}
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative flex">
+              <MediaFrameFloaters />
+              <div className="relative w-full rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10">
+                <img
+                  src="/photo-equipe-dirigeante.png"
+                  alt="Équipe dirigeante STUDASSIST"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+            {/* Text right */}
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight mb-8">
+                Une équipe exigeante, <span className="text-brand-teal">structurée et engagée</span>
+              </h2>
+              <div className="space-y-6 text-gray-500 font-medium text-lg leading-relaxed">
+                <p>
+                  Depuis sa création, STUDASSIST s'est construit autour d'une conviction forte : chaque élève mérite un accompagnement à la fois stratégique, structuré et profondément humain.
+                </p>
+                <p>
+                  Cette vision, portée au quotidien dans notre accompagnement des élèves et des familles, guide également notre manière de recruter et de faire évoluer nos équipes.
+                </p>
+                <p>
+                  Nous ne recherchons pas uniquement des compétences, mais des profils capables de s'inscrire dans une démarche exigeante, rigoureuse et tournée vers l'impact.
+                </p>
+              </div>
+              <div className="mt-10">
+                <Link to="/qui-sommes-nous" className="inline-flex items-center gap-2 text-brand-teal font-black uppercase tracking-widest hover:text-brand-darkblue transition-colors">
+                  <ArrowRight size={20} />
+                  <span>Découvrir notre vision</span>
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -208,7 +215,7 @@ export default function NousRejoindre() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Pourquoi nous rejoindre */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-[3rem] p-10 lg:p-14 shadow-[0_20px_60px_rgba(17,29,74,0.06)] border border-gray-100">
-              <div className="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center mb-8">
+              <div className="w-14 h-14 bg-brand-red/10 rounded-2xl flex items-center justify-center mb-8 mx-auto">
                 <Award size={28} className="text-brand-red" />
               </div>
               <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight mb-6 leading-tight">
@@ -229,7 +236,7 @@ export default function NousRejoindre() {
 
             {/* Notre Equipe */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-[3rem] p-10 lg:p-14 shadow-[0_20px_60px_rgba(17,29,74,0.06)] border border-gray-100">
-              <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-8">
+              <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-8 mx-auto">
                 <Heart size={28} className="text-brand-teal" />
               </div>
               <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight mb-6 leading-tight">
@@ -296,27 +303,43 @@ export default function NousRejoindre() {
       </section>
 
       {/* 6. PROFILS RECHERCHÉS */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight mb-8">
-            Des profils exigeants, <br /><span className="text-brand-red">alignés avec notre vision</span>
-          </h2>
-          <div className="space-y-6 text-gray-500 font-medium text-lg leading-relaxed">
-            <p>
-              Nous recherchons des profils capables de s'inscrire dans un cadre structuré, tout en faisant preuve d'autonomie, de rigueur et de sens des responsabilités.
-            </p>
-            <p>
-              Au-delà des compétences techniques, nous attachons une importance particulière à l'adhésion à notre vision, à la qualité de l'engagement et à la capacité à accompagner des élèves avec exigence et bienveillance.
-            </p>
-            <div className="bg-[#f8fbfc] p-8 rounded-3xl border border-brand-teal/10 mt-10 text-left">
-              <h4 className="text-xl font-black text-brand-darkblue uppercase tracking-tight mb-4">Rejoindre STUDASSIST, c'est faire le choix de l'exigence</h4>
-              <p className="text-[15px] mb-4">
-                C'est évoluer dans un environnement structuré, participer à des projets à fort impact et contribuer concrètement à la réussite des élèves, en cohérence avec la vision qui nous anime depuis notre création.
-              </p>
-              <p className="text-[15px] font-bold text-brand-teal">
-                Déposez votre candidature. Chaque profil est étudié avec attention, dans une logique de cohérence, d'exigence et de potentiel d'évolution.
-              </p>
-            </div>
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text left */}
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight mb-8">
+                Des profils exigeants, <br /><span className="text-brand-red">alignés avec notre vision</span>
+              </h2>
+              <div className="space-y-6 text-gray-500 font-medium text-lg leading-relaxed">
+                <p>
+                  Nous recherchons des profils capables de s'inscrire dans un cadre structuré, tout en faisant preuve d'autonomie, de rigueur et de sens des responsabilités.
+                </p>
+                <p>
+                  Au-delà des compétences techniques, nous attachons une importance particulière à l'adhésion à notre vision, à la qualité de l'engagement et à la capacité à accompagner des élèves avec exigence et bienveillance.
+                </p>
+                <div className="bg-[#f8fbfc] p-8 rounded-3xl border border-brand-teal/10 mt-4">
+                  <h4 className="text-xl font-black text-brand-darkblue uppercase tracking-tight mb-4">Rejoindre STUDASSIST, c'est faire le choix de l'exigence</h4>
+                  <p className="text-[15px] mb-4">
+                    C'est évoluer dans un environnement structuré, participer à des projets à fort impact et contribuer concrètement à la réussite des élèves, en cohérence avec la vision qui nous anime depuis notre création.
+                  </p>
+                  <p className="text-[15px] font-bold text-brand-teal">
+                    Déposez votre candidature. Chaque profil est étudié avec attention, dans une logique de cohérence, d'exigence et de potentiel d'évolution.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+            {/* Image right */}
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative flex">
+              <MediaFrameFloaters />
+              <div className="relative w-full rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10">
+                <img
+                  src="/photo-locaux.png"
+                  alt="Locaux STUDASSIST"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -340,7 +363,8 @@ export default function NousRejoindre() {
               <div className="w-20 h-20 bg-brand-teal/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle2 size={40} className="text-brand-teal" />
               </div>
-              <h3 className="text-2xl font-black text-brand-darkblue uppercase tracking-tight mb-4">Candidature envoyée !</h3>
+              <h3 className="text-2xl font-black text-brand-darkblue uppercase tracking-tight mb-2">Candidature envoyée !</h3>
+              <p className="text-brand-teal font-black text-lg uppercase tracking-widest mb-4">Merci pour votre intérêt !</p>
               <p className="text-gray-500 font-medium leading-relaxed">
                 Nous accordons une attention particulière à chaque candidature et nous engageons à revenir vers vous dans les meilleurs délais.
               </p>
@@ -349,13 +373,13 @@ export default function NousRejoindre() {
             <div className="bg-white rounded-[3rem] p-8 lg:p-14 shadow-[0_30px_80px_rgba(17,29,74,0.06)] border border-gray-100">
               {/* Onglets */}
               <div className="mb-10">
-                <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-4 block">Je suis : (Obligatoire)</label>
+                <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-4 block">Je suis : *</label>
                 <div className="flex flex-col sm:flex-row gap-4">
                   {(
                     [
-                      { id: "professeur", label: "Je suis professeur" },
-                      { id: "consultant", label: "Je suis consultant(e) en orientation" },
-                      { id: "support", label: "J'exerce une fonction support" },
+                      { id: "professeur", label: "Professeur" },
+                      { id: "consultant", label: "Consultant(e) en orientation" },
+                      { id: "support", label: "Fonction support" },
                     ] as const
                   ).map((tab) => (
                     <button
@@ -382,10 +406,22 @@ export default function NousRejoindre() {
                     Informations de contact
                   </h4>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <input type="text" required value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom *" className="w-full pb-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium" />
-                    <input type="text" required value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom *" className="w-full pb-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium" />
-                    <input type="tel" required value={tel} onChange={e => setTel(e.target.value)} placeholder="Téléphone *" className="w-full pb-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium" />
-                    <input type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Email *" className="w-full pb-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium" />
+                    <div>
+                      <input type="text" required value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${nom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {nom === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
+                    </div>
+                    <div>
+                      <input type="text" required value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${prenom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {prenom === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
+                    </div>
+                    <div>
+                      <input type="tel" required value={tel} onChange={e => setTel(e.target.value)} placeholder="Téléphone *" pattern="[+0-9\s\-()]{6,20}" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${tel === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {tel === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
+                    </div>
+                    <div>
+                      <input type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Email *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${email === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {email === '' && submitError && <p className="text-red-500 text-xs mt-1">Veuillez saisir une adresse email valide.</p>}
+                    </div>
                   </div>
                 </div>
 
@@ -486,7 +522,7 @@ export default function NousRejoindre() {
                       <div className="space-y-6">
                         <div>
                           <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Fonction / Domaine *</label>
-                          <textarea required rows={2} value={fonctionDomaine} onChange={e => setFonctionDomaine(e.target.value)} placeholder="Indiquez vos domaines de prédilection. Ex : coordination d'équipe, administratif, relation client, gestion commercial, comptabilité, contrôle de gestion, finance, Marketing, communication ... Etc." className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
+                          <textarea required rows={2} value={fonctionDomaine} onChange={e => setFonctionDomaine(e.target.value)} placeholder="Indiquez vos domaines de prédilection. Ex : coordination d'équipe, administratif, relation client, gestion commerciale, comptabilité, contrôle de gestion, finance, Marketing, communication ... Etc." className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
                         </div>
                         <div>
                           <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Années d'expérience *</label>
@@ -582,13 +618,6 @@ export default function NousRejoindre() {
             </div>
           )}
 
-          {/* Conclusion below form */}
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-black text-brand-darkblue uppercase tracking-tight mb-4">Rejoindre STUDASSIST, c'est faire le choix de l'exigence</h3>
-            <p className="text-gray-500 font-medium leading-relaxed max-w-2xl mx-auto">
-              C'est évoluer dans un environnement structuré, participer à des projets à fort impact et contribuer concrètement à la réussite des élèves, en cohérence avec la vision qui nous anime depuis notre création.
-            </p>
-          </div>
         </div>
       </section>
     </div>

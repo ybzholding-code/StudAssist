@@ -115,9 +115,10 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex items-center space-x-4 lg:space-x-6">
-            <div className="hidden md:flex items-center space-x-4">
-              <Link to="/qui-sommes-nous" className="hover:text-brand-teal transition">Qui sommes-nous</Link>
-              <Link to="/nous-rejoindre" className="hover:text-brand-teal transition">Nous rejoindre</Link>
+            <div className="hidden md:flex items-center space-x-2">
+              <Link to="/qui-sommes-nous" className="px-3 py-1 rounded-full border border-white/20 text-white/80 hover:border-brand-teal hover:text-brand-teal transition text-xs font-semibold tracking-wide">Qui sommes-nous</Link>
+              <Link to="/nous-rejoindre" className="px-3 py-1 rounded-full border border-white/20 text-white/80 hover:border-brand-teal hover:text-brand-teal transition text-xs font-semibold tracking-wide">Nous rejoindre</Link>
+              <Link to="/blogs" className="px-3 py-1 rounded-full border border-white/20 text-white/80 hover:border-brand-teal hover:text-brand-teal transition text-xs font-semibold tracking-wide">Blog</Link>
             </div>
             <Link to="/contact#centres" className="flex items-center hover:text-brand-teal transition">
               <MapPin size={16} className="mr-1.5 text-brand-teal font-bold" /> Nos centres
@@ -237,6 +238,8 @@ export default function Navbar() {
                 <Link to="/qui-sommes-nous" className="hover:text-brand-teal transition" onClick={() => setIsOpen(false)}>Qui sommes-nous</Link>
                 <span>•</span>
                 <Link to="/nous-rejoindre" className="hover:text-brand-teal transition" onClick={() => setIsOpen(false)}>Nous rejoindre</Link>
+                <span>•</span>
+                <Link to="/blogs" className="hover:text-brand-teal transition" onClick={() => setIsOpen(false)}>Blog</Link>
               </div>
             </div>
           </motion.div>

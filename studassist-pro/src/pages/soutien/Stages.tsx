@@ -20,10 +20,11 @@ export default function SoutienStages() {
         "Les vacances scolaires représentent une opportunité idéale pour faire le point, renforcer les apprentissages et aborder la rentrée suivante dans les meilleures conditions.",
         "Chez STUDASSIST, nos stages de vacances sont conçus comme des modules intensifs et structurés, permettant aux élèves de progresser efficacement tout en conservant un rythme équilibré. Ils s'adressent aux élèves du primaire, collège et lycée, quels que soient leur niveau et leur système scolaire.",
       ]}
-      heroImage="/soutien-stages.png"
+      heroImage="/soutien-scolaire-main.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur les stages de vacances."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -56,8 +57,8 @@ export default function SoutienStages() {
           title: "Un stage personnalisé pour répondre aux besoins de chaque élève",
           paragraphs: [
             "Chaque élève aborde les vacances avec des besoins différents. Certains souhaitent combler des lacunes, d'autres consolider leurs acquis, préparer un changement de niveau ou approfondir certaines matières pour viser l'excellence.",
-            "C'est pourquoi chaque stage débute par un diagnostic pédagogique permettant d'identifier précisément les points forts, les difficultés et les objectifs de progression de l'élève. À partir de ce bilan, un programme de travail personnalisé est mis en place afin de concentrer les efforts sur les notions réellement prioritaires.",
-            "Les stages STUDASSIST sont organisés en groupes de seulement 2 à 4 élèves afin de garantir une attention individualisée, une forte interaction avec l'enseignant et une adaptation permanente au niveau de chacun.",
+            "Un diagnostic pédagogique en début de stage — Chaque stage débute par une évaluation permettant d'identifier précisément les points forts, les difficultés et les objectifs de progression de l'élève. À partir de ce bilan, un programme de travail personnalisé est mis en place afin de concentrer les efforts sur les notions réellement prioritaires.",
+            "Des groupes de 2 à 4 élèves maximum — Les stages STUDASSIST sont organisés en petits groupes afin de garantir : une attention individualisée ; une forte interaction avec l'enseignant ; une adaptation permanente au niveau de chacun.",
           ],
         },
         {
@@ -73,16 +74,15 @@ export default function SoutienStages() {
           paragraphs: [
             "Les stages de vacances ne servent pas uniquement à rattraper un retard. Ils permettent également d'anticiper les exigences du niveau suivant et d'aborder la rentrée avec davantage de sérénité.",
             "Selon l'âge et le parcours de l'élève, les stages peuvent contribuer à : préparer l'entrée au collège ; anticiper l'entrée au lycée ; renforcer les matières stratégiques ; préparer le choix des spécialités ; aborder plus sereinement le Brevet ou le Baccalauréat ; découvrir certaines notions du programme à venir.",
-            "Cette approche permet de réduire le stress lié aux changements de niveau tout en développant la confiance et la motivation.",
+            "Cette approche permet de réduire le stress lié aux changements de niveau tout en développant la confiance et la motivation de l'élève.",
           ],
         },
         {
           title: "Une méthodologie STUDASSIST orientée progression",
           paragraphs: [
-            "Chaque stage est organisé sur 5 jours à raison de 2 heures par jour et par matière, soit un total de 10 heures d'accompagnement. Ce format intensif mais équilibré favorise une immersion progressive et une réelle continuité pédagogique sur la semaine.",
-            "En fin de stage, un bilan personnalisé est réalisé afin de mesurer les progrès accomplis, les notions consolidées et les axes de travail à poursuivre.",
-            "Nos enseignants adaptent leur pédagogie aux systèmes scolaires marocain, français, bilingue et international tout en maintenant un haut niveau d'exigence académique.",
-            "L'objectif n'est pas seulement de progresser pendant les vacances, mais de développer des méthodes de travail et des réflexes qui accompagneront l'élève tout au long de sa scolarité.",
+            "Un format clair et intensif — Chaque stage est organisé sur 5 jours, à raison de 2 heures de cours par jour et par matière, soit un total de 10 heures d'accompagnement. Ce format intensif mais équilibré favorise une immersion progressive et une réelle continuité pédagogique sur la semaine.",
+            "Un bilan personnalisé en fin de stage — En fin de stage, un bilan est réalisé afin de mesurer les progrès accomplis, les notions consolidées et les axes de travail à poursuivre.",
+            "Nos enseignants adaptent leur pédagogie aux systèmes scolaires marocain, français, bilingue et international tout en maintenant un haut niveau d'exigence académique. L'objectif n'est pas seulement de progresser pendant les vacances, mais de développer des méthodes de travail et des réflexes qui accompagneront l'élève tout au long de sa scolarité.",
           ],
         },
       ]}

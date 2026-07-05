@@ -18,10 +18,11 @@ export default function PrepasBacSpecialites() {
         "Les épreuves de spécialités du Baccalauréat occupent une place centrale dans le parcours de Terminale. Avec un coefficient élevé (16 au total), elles constituent le principal levier de performance au Bac et jouent un rôle déterminant dans les candidatures post-bac.",
         "Chez STUDASSIST, nous proposons une préparation structurée, exigeante et orientée résultats, permettant aux élèves de maîtriser les attendus, d'optimiser leurs performances et de renforcer leur dossier académique.",
       ]}
-      heroImage="/hero-bac-new.png"
+      heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux épreuves de spécialités du Bac."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -34,16 +35,16 @@ export default function PrepasBacSpecialites() {
         title: "Un levier de réussite pour le bac et l'accès aux études supérieures",
         lead: "Bien plus qu'un simple examen, les épreuves de spécialités jouent un rôle déterminant dans la réussite au Baccalauréat, l'orientation post-bac et l'accès aux formations sélectives. Elles constituent un véritable levier pour construire un dossier académique solide et cohérent.",
         bullets: [
-          "Performance académique",
-          "Admissions post-bac",
-          "Cohérence du parcours",
-          "Réussite dans le supérieur",
+          "Performance académique: Optimiser sa note au Baccalauréat grâce à des matières à très fort coefficient.",
+          "Admissions post-bac: Renforcer son dossier pour les formations sélectives.",
+          "Cohérence du parcours: Valoriser son projet d'orientation à travers ses spécialités.",
+          "Réussite dans le supérieur: Développer les compétences attendues dans les études post-bac.",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/bar-chart.png",
-          "https://img.icons8.com/3d-fluency/94/diploma.png",
-          "https://img.icons8.com/3d-fluency/94/goal.png",
-          "https://img.icons8.com/3d-fluency/94/rocket.png",
+          "https://img.icons8.com/?size=100&id=OlDzEETWpjI7&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=qZ3IKpKF9Cun&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=1WpD5bksxBe1&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=B0YxODenuYvG&format=png&color=000000",
         ],
       }}
 

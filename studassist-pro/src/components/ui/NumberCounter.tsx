@@ -23,7 +23,7 @@ export default function NumberCounter({
     stiffness: 80,
     mass: 0.8,
   });
-  const isInView = useInView(ref, { once: true, margin: "-50px 0px" });
+  const isInView = useInView(ref, { once: true, amount: 0.8 });
 
   useEffect(() => {
     if (isInView) {

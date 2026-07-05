@@ -18,10 +18,11 @@ export default function PrepasBacGrandOral() {
         "Le Grand Oral du Baccalauréat est une épreuve singulière, à la croisée des compétences académiques et des qualités personnelles. Elle évalue à la fois la maîtrise des connaissances, la capacité à structurer une réflexion et l'aisance à l'oral.",
         "Chez STUDASSIST, nous accompagnons les élèves dans une préparation complète et exigeante, afin de transformer cette épreuve en véritable opportunité de se distinguer.",
       ]}
-      heroImage="/hero-bac-new.png"
+      heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver une séance découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Grand Oral du Bac."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -34,10 +35,10 @@ export default function PrepasBacGrandOral() {
         title: "Comprendre les enjeux du Grand Oral",
         lead: "Le Grand Oral permet aux élèves de démontrer leurs connaissances, leur capacité à argumenter et leur aptitude à prendre la parole avec assurance.",
         bullets: [
-          "Développer son aisance à l'oral — Apprendre à s'exprimer avec clarté, confiance et conviction devant un jury.",
-          "Structurer sa pensée et son argumentation — Construire un raisonnement cohérent, défendre ses idées et répondre aux questions avec pertinence.",
-          "Valoriser son projet d'orientation — Présenter la cohérence de son parcours, ses centres d'intérêt et ses ambitions pour l'après-bac.",
-          "Acquérir une compétence utile pour l'avenir — Prise de parole, persuasion et communication sont des compétences clés pour les études supérieures et la vie professionnelle.",
+          "Développer son aisance à l'oral: Apprendre à s'exprimer avec clarté, confiance et conviction devant un jury.",
+          "Structurer sa pensée et son argumentation: Construire un raisonnement cohérent, défendre ses idées et répondre aux questions avec pertinence.",
+          "Valoriser son projet d'orientation: Présenter la cohérence de son parcours, ses centres d'intérêt et ses ambitions pour l'après-bac.",
+          "Acquérir une compétence utile pour l'avenir: Prise de parole, persuasion et communication sont des compétences clés pour les études supérieures et la vie professionnelle.",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/microphone.png",

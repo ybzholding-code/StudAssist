@@ -60,10 +60,10 @@ const QuiSommesNous = () => {
 
   const steps = [
     { title: "Diagnostic Approfondi", desc: "Analyse complète du profil, des méthodes de travail et des aspirations de l'élève.", icon3d: "https://img.icons8.com/3d-fluency/94/magnifying-glass.png" },
-    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/3d-fluency/94/road.png" },
-    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour optimiser les dossiers et certifications.", icon3d: "https://img.icons8.com/3d-fluency/94/open-book.png" },
-    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/3d-fluency/94/increase.png" },
-    { title: "Orientation vers l'Avenir", desc: "Aide à la construction du projet professionnel et préparation aux concours les plus exigeants.", icon3d: "https://img.icons8.com/3d-fluency/94/rocket.png" },
+    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/?size=100&id=1WpD5bksxBe1&format=png&color=000000" },
+    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour optimiser les dossiers et certifications de langues.", icon3d: "https://img.icons8.com/?size=100&id=qZ3IKpKF9Cun&format=png&color=000000" },
+    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/?size=100&id=OlDzEETWpjI7&format=png&color=000000" },
+    { title: "Orientation vers l'Avenir", desc: "Aide à la définition du projet professionnel, à la construction des candidatures et à la préparation des concours les plus exigeants.", icon3d: "https://img.icons8.com/?size=100&id=KA0zLOyspZIE&format=png&color=000000" },
   ];
 
   const pillars = [
@@ -75,42 +75,42 @@ const QuiSommesNous = () => {
 
   const team = [
     {
-      name: "Yasmine", 
+      name: "Yasmine Belkhayat",
+      role: "Vision stratégique & Innovation",
       image: "/yasmine-belkhayat-fondatrice-studassist.jpg",
       pos: "object-[center_18%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
       paragraphs: [
-        "Diplômée du Master Grande Ecole de NEOMA Business School après une classe préparatoire scientifique, Yasmine débute sa carrière dans le conseil en transformation des organisations et la gestion de projets digitaux, notamment chez Natixis et Advents Consulting ou elle accompagne des grands groupes du secteur banque & assurance à Paris. Son parcours lui permet de développer une solide expertise en gestion de projet, structuration de processus, stratégie digitale et accompagnement du changement.",
-        "Entrepreneure engagée, elle fonde ensuite STUDASSIST en 2018, cabinet d’accompagnement académique dédié aux élèves et étudiants, qu’elle développe progressivement autour d’une approche globale mêlant orientation scolaire, préparation aux concours, accompagnement international et digitalisation des parcours d’accompagnement. À la croisée de l’éducation, du conseil et de l’innovation, son parcours combine vision stratégique, sens de l’entrepreneuriat et forte compréhension des enjeux académiques et humains liés à l’orientation des jeunes."
+        "Diplômée de NEOMA Business School après une classe préparatoire, Yasmine débute sa carrière dans le conseil en transformation digitale chez Natixis et Advents Consulting. Elle fonde STUDASSIST en 2018 et en pilote aujourd\'hui la stratégie, l\'innovation et le développement du parcours client, avec l\'ambition de réinventer l\'accompagnement et l\'orientation académique des étudiants.",
       ],
       linkedin: "https://www.linkedin.com/in/yasmine-belkhayat-zougari-15b6684a/",
     },
     {
-      name: "Omar", 
+      name: "Omar Bennis",
+      role: "Finance & Développement",
       image: "/omar-bennis-cofondateur-studassist-v2.png",
       pos: "object-[center_12%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "", bgColor: "bg-transparent",
       paragraphs: [
-        "Entrepreneur et dirigeant expérimenté diplômé de l'ISG Paris et du Master Executive de l'ESSEC, Omar Bennis évolue depuis plus de 15 ans dans les secteurs de la distribution, du développement commercial et du pilotage d’activités à l’international. Après une première expérience chez Alterfood en France, il cofonde Taste Distribution, société spécialisée dans la distribution de produits alimentaires premium en grande distribution, qu’il développe pendant plusieurs années en France. Il rejoint ensuite Dislog Group où il pilote les opérations des filiales européennes du groupe et contribue au développement international de ses activités.",
-        "Cofondateur de STUDASSIST, Omar apporte également une forte expertise en structuration d’entreprise, développement stratégique et gestion opérationnelle. Depuis 2025, il préside en parallèle la société sportive du MAS de Fès, l’un des clubs les plus emblématiques du football marocain, où il pilote un important travail de restructuration et de redressement du club, aussi bien sur les volets organisationnels que stratégiques."
+        "Diplômé de l\'ISG Paris et de l\'ESSEC Executive Education, Omar possède plus de 15 ans d\'expérience en entrepreneuriat et management international. En ayant créé et dirigé plusieurs projets et entreprises en France puis au sein de Dislog Group, il met son expertise au service de la structuration et du développement stratégique de STUDASSIST. Depuis 2025, il préside également la société sportive du MAS de Fès.",
       ],
       linkedin: "",
     },
     {
-      name: "Hajar", 
+      name: "Hajar Gherras",
+      role: "Image de Marque & Rayonnement",
       image: "/hajar-cofondatrice-studassist.jpg",
       pos: "object-[55%_15%]", customScale: "scale-[1.06] origin-top", hoverScale: "group-hover:scale-[1.11] origin-top", filter: "brightness-[0.85] contrast-[1.2]", bgColor: "bg-transparent",
       paragraphs: [
-        "Diplômée de l’ENCG de Settat en Marketing et Actions Commerciales, Hajar construit un parcours solide dans l’univers du marketing stratégique et de la gestion de marques internationales. Elle débute sa carrière chez INWI avant d’évoluer dans l’univers du luxe dans lequel elle participe au développement de marques de parfum prestigieuses. Elle rejoint ensuite le groupe L’Oréal, où elle occupe plusieurs fonctions en gestion de marque et management marketing sur des références du FMCG telles que L’Oréal Paris et Garnier. Son expérience combine expertise marketing, pilotage de projets stratégiques, gestion d’équipes et forte compréhension des enjeux de positionnement, de communication et de développement de marque.",
-        "Très sensible aux enjeux d’accompagnement et de coaching des jeunes, elle rejoint l’aventure STUDASSIST en 2021 où elle pilote l’image de marque, la stratégie de communication ainsi que le développement commercial de la structure. Elle contribue également à la mise en place de partenariats stratégiques participant activement au rayonnement et à la croissance de STUDASSIST."
+        "Diplômée de l\'ENCG Settat, Hajar construit d\'abord son expertise en Marketing chez INWI, puis dans l\'univers du luxe au sein du groupe L\'Oréal, où elle pilote plusieurs marques internationales. Depuis 2021, elle dirige la stratégie marketing et communication de STUDASSIST et contribue activement au développement de son image de marque, de ses partenariats et de sa croissance commerciale.",
       ],
       linkedin: "https://www.linkedin.com/in/hajar-gherras-44a8284b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
     {
-      name: "Mehdi", 
+      name: "Mehdi Mejjati Alami",
+      role: "Excellence pédagogique",
       image: "/mehdi-cofondateur-studassist.jpg",
       pos: "object-[center_17%]", customScale: "scale-[1.03] origin-top", hoverScale: "group-hover:scale-[1.08] origin-top", filter: "", bgColor: "bg-transparent",
       paragraphs: [
-        "Diplômé de l’Université Paris II Panthéon-Assas en Finance et Banque, Mehdi débute sa carrière au sein de Société Générale Corporate & Investment Banking avant de rejoindre PwC, où il intervient sur des missions de contrôle financier et de gestion de trésorerie pour de grands groupes internationaux des secteurs de l’énérgie, banque& assurance. Animé par une forte sensibilité entrepreneuriale et par les enjeux de transmission académique, il fonde ensuite Mathassistance / Mon Prof & Moi, un réseau de soutien scolaire développé à Paris et à l’échelle nationale, alliant accompagnement pédagogique de proximité et structuration opérationnelle.",
-        "En 2021, il rejoint STUDASSIST afin de développer l’ensemble du pôle soutien scolaire, en structurant une offre d’accompagnement académique exigeante et personnalisée, pensée pour répondre aux enjeux de performance et de méthodologie des élèves. Son parcours combine ainsi expertise financière, expérience entrepreneuriale et parfaite compréhension des enjeux éducatifs et académiques."
+        "Diplômé de l\'Université Paris II Panthéon-Assas, Mehdi débute sa carrière en finance chez Société Générale CIB puis à PwC avant de créer Mathassistance / Mon Prof & Moi, réseau national de soutien scolaire en France. Depuis 2021, il pilote le soutien scolaire et préparations de concours de STUDASSIST en développant une méthodologie d\'accompagnement exigeante, centrée sur la réussite des élèves.",
       ],
       linkedin: "https://www.linkedin.com/in/mehdi-mejjati-alami-52b17184?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
@@ -137,7 +137,7 @@ const QuiSommesNous = () => {
               <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2 overflow-hidden flex-1">
                 <img 
-                  src="/DSC_8739.JPG" 
+                  src="/DSC_8768-copie.JPG" 
                   alt="Équipe STUDASSIST - Cabinet de conseil en orientation scolaire Casablanca" 
                   className="rounded-[2rem] w-full h-full object-cover object-top"
                 />
@@ -262,7 +262,7 @@ const QuiSommesNous = () => {
         <div className="container mx-auto px-6 w-full">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-1 bg-brand-teal/5 text-brand-teal rounded-full text-[10px] font-black mb-6 tracking-[0.2em] uppercase border border-brand-teal/10">
-              Nos Fondations
+              Notre culture d'entreprise
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight">La philosophie <span className="text-brand-teal">Studassist</span></h2>
           </div>
@@ -500,40 +500,41 @@ const QuiSommesNous = () => {
         </div>
       </section>
 
-      {/* FINAL CTA SECTION */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 text-center w-full">
+      {/* FINAL CTA SECTION — Banner format */}
+      <section className="py-10 lg:py-14 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center"
+            className="bg-brand-darkblue rounded-[2rem] px-8 py-10 lg:px-16 lg:py-12 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.2)]"
           >
-            <h2 className="text-[32px] sm:text-[40px] lg:text-[56px] font-black text-brand-darkblue leading-[1.1] lg:leading-tight mb-6 uppercase tracking-tighter">
-              Prêt à passer à <span className="text-brand-red">l'action</span> ? <br />
-              Votre <span className="text-brand-teal">avenir</span> commence ici !
-            </h2>
-            <p className="text-lg text-gray-500 font-medium leading-relaxed mb-8 max-w-xl">
-              Bénéficiez d'un diagnostic complet de 45 minutes avec nos conseillers experts.
-            </p>
-            <Link 
-              to="/contact" 
-              className="bg-brand-red text-white px-12 py-6 rounded-[2rem] font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-3 mb-8"
-            >
-              <span>Réserver une séance découverte</span>
-              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-            </Link>
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-brand-darkblue/5 flex items-center justify-center">
-                <Phone size={16} className="text-brand-darkblue" />
-              </div>
-              <a href="tel:+212669495996" className="text-brand-darkblue font-bold tracking-tight hover:text-brand-teal transition-colors">+212 6 69 49 59 96</a>
+            <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+              <svg width="100%" height="100%"><pattern id="cta-dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="white" /></pattern><rect width="100%" height="100%" fill="url(#cta-dots)" /></svg>
+            </div>
+            <div className="relative z-10 text-center lg:text-left">
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[36px] font-black text-white leading-tight mb-2 uppercase tracking-tighter">
+                Prêt à passer à <span className="text-brand-red">l'action</span> ?<br className="hidden lg:block" /> Votre <span className="text-brand-teal">avenir</span> commence ici !
+              </h2>
+              <p className="text-white/60 text-sm lg:text-base font-medium">
+                Bénéficiez d'un diagnostic complet de 45 minutes avec nos conseillers experts.
+              </p>
+            </div>
+            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 shrink-0">
+              <Link
+                to="/contact"
+                className="bg-brand-red text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-brand-red/30 group inline-flex items-center gap-3"
+              >
+                <span>Réserver une séance découverte</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a href="tel:+212669495996" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-bold">
+                <Phone size={15} />
+                +212 6 69 49 59 96
+              </a>
             </div>
           </motion.div>
         </div>
-        {/* Background blobs */}
-        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none -z-10" />
-        <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-red/5 rounded-full blur-[100px] pointer-events-none -z-10" />
       </section>
 
       {/* OUR TEAM TEXT SECTION */}
@@ -693,7 +694,8 @@ const QuiSommesNous = () => {
                   </div>
                 </div>
                 <div className="text-center max-w-[320px] mx-auto flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-black text-brand-darkblue uppercase tracking-tight mb-2">{member.name}</h3>
+                  <h3 className="text-lg sm:text-xl font-black text-brand-darkblue uppercase tracking-tight mb-1">{member.name}</h3>
+                  {member.role && <p className="text-brand-teal text-[11px] font-bold uppercase tracking-widest mb-3">{member.role}</p>}
                   <div className="space-y-3 mb-4">
                     {member.paragraphs.map((p, i) => (
                       <p key={i} className="text-gray-400 text-xs leading-relaxed text-justify sm:text-center">{p}</p>

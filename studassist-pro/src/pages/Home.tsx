@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useNavigate } from "react-router-dom";
@@ -177,6 +177,111 @@ const faqData = [
   }
 ];
 
+function BlogCarousel({ blogs }: { blogs: { id: string | number; slug: string; image: string; title: string; date: string }[] }) {
+  const visible = 3;
+  const gap = 24;
+  // Triple the items so we always have enough to loop seamlessly
+  const items = [...blogs, ...blogs, ...blogs];
+  const [idx, setIdx] = useState(blogs.length); // start at the middle copy
+  const [animated, setAnimated] = useState(true);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const cardWidth = `calc((100% - ${(visible - 1) * gap}px) / ${visible})`;
+
+  const goTo = (i: number, anim = true) => {
+    setAnimated(anim);
+    setIdx(i);
+  };
+
+  // After transition ends, if we've drifted outside the middle copy, snap silently
+  const handleTransitionEnd = () => {
+    if (idx <= 0) {
+      goTo(blogs.length, false);
+    } else if (idx >= blogs.length * 2) {
+      goTo(blogs.length, false);
+    }
+  };
+
+  const prev = () => {
+    resetInterval();
+    goTo(idx - 1);
+  };
+  const next = () => {
+    resetInterval();
+    goTo(idx + 1);
+  };
+
+  const resetInterval = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => { setAnimated(true); setIdx((i) => i + 1); }, 3500);
+  };
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => setIdx((i) => i + 1), 3500);
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, []);
+
+  // Snap without animation when looping
+  useEffect(() => {
+    if (!animated) {
+      const t = setTimeout(() => setAnimated(true), 20);
+      return () => clearTimeout(t);
+    }
+  }, [animated, idx]);
+
+  const offset = `calc(-${idx} * (${cardWidth} + ${gap}px))`;
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden">
+        <div
+          className="flex"
+          style={{
+            gap: `${gap}px`,
+            transform: `translateX(${offset})`,
+            transition: animated ? "transform 500ms cubic-bezier(0.23,1,0.32,1)" : "none",
+          }}
+          onTransitionEnd={handleTransitionEnd}
+        >
+          {items.map((post, i) => (
+            <Link
+              key={`${post.id}-${i}`}
+              to={`/blogs/${post.slug}`}
+              className="bg-white rounded-xl overflow-hidden shadow-soft border border-gray-50 group cursor-pointer flex flex-col flex-shrink-0"
+              style={{ width: cardWidth }}
+            >
+              <div className="relative overflow-hidden bg-white flex">
+                <img src={post.image} alt={post.title} className="w-full h-auto object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="text-[10px] font-bold text-gray-400 mb-2">{post.date}</div>
+                <h4 className="font-black text-brand-darkblue text-sm line-clamp-2 leading-snug group-hover:text-brand-teal transition">{post.title}</h4>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-center gap-4 mt-8">
+        <button onClick={prev} className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all">
+          <ChevronLeft size={18} />
+        </button>
+        <div className="flex gap-1.5">
+          {blogs.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { resetInterval(); goTo(blogs.length + i); }}
+              className={cn("h-2 rounded-full transition-all", ((idx - blogs.length + blogs.length * 10) % blogs.length) === i ? "bg-sa-green w-5" : "bg-gray-300 w-2")}
+            />
+          ))}
+        </div>
+        <button onClick={next} className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all">
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const navigate = useNavigate();
   const { submit: submitMiniForm, status: miniFormStatus } = useFormSubmit();
@@ -328,7 +433,7 @@ export default function Home() {
       description: "Nous vous offrons un accompagnement 360° pour vous permettre de libérer votre potentiel et atteindre vos objectifs académiques !",
       buttonText: "Découvrez-nous",
       link: "/qui-sommes-nous",
-      image: "/hero-1.png",
+      image: "/hero-main-new2.png",
       imageOrientation: 'portrait' as const,
       showFloaters: true,
       layout: 'standard',
@@ -337,7 +442,9 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/guarantee.png",
       badgeLabel: "Qualité certifiée",
       badgeTitle: "STUDASSIST ELITE",
-      imageScale: "scale-[1.05]"
+      imageScale: "1.05",
+      imagePosition: "object-bottom",
+      bgColor: "#FDFDFD"
     },
     {
       title: <>ORIENTATION SCOLAIRE & <br />ACCOMPAGNEMENT AUX CANDIDATURES</>,
@@ -345,7 +452,7 @@ export default function Home() {
       description: "Bilan d'orientation, aide aux choix des écoles, optimisation des dossiers de candidatures, préparation aux oraux, suivi des admissions… Traçons ensemble votre projet d'avenir !",
       buttonText: "Réserver mon 1er RDV",
       link: "/orientation-scolaire",
-      image: "/conseil-orientation-candidatures-international.png",
+      image: "/orientation-new2.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
@@ -354,7 +461,11 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/goal.png",
       badgeLabel: "Orientation sur mesure",
       badgeTitle: "PROJET D'AVENIR",
-      imageScale: "scale-[1.10]"
+      imageScale: "1.00",
+      imagePosition: "object-bottom",
+      imageTranslateX: "5%",
+      imageTranslateY: "-5%",
+      bgColor: "#FBFAFA"
     },
     {
       title: "PRÉPAS-BAC",
@@ -362,7 +473,7 @@ export default function Home() {
       description: "Bac de Français écrit et oral, Bac de spécialités, Bac de philo, Grand Oral. Rejoignez notre programme complet pour réussir vos épreuves !",
       buttonText: "Choisir mon programme",
       link: "/prepas-bac",
-      image: "/hero-bac-new.png",
+      image: "/prepas-bac-new2.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'standard',
@@ -371,7 +482,10 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/graduation-cap.png",
       badgeLabel: "Objectif mention",
       badgeTitle: "RÉUSSITE BAC",
-      imageScale: "scale-[1.10]"
+      imageScale: "1.00",
+      imagePosition: "object-bottom",
+      imageTranslateY: "-5%",
+      bgColor: "#FDFDFD"
     },
     {
       title: "PRÉPAS-CONCOURS",
@@ -379,7 +493,7 @@ export default function Home() {
       description: "Sesame, Accès, GEIPI Polytech, Avenir, Médecine Maroc, Médecine Belgique, GMAT, TAGE MAGE, SAT… Mettez toutes les chances de votre côté et décrochez vos concours avec STUDASSIST !",
       buttonText: "Choisir ma préparation",
       link: "/prepas-concours",
-      image: "/hero-sat-gmat.png",
+      image: "/prepas-concours-new2.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
@@ -388,7 +502,9 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/trophy.png",
       badgeLabel: "Taux d'admission",
       badgeTitle: "85% ADMIS",
-      imageScale: "scale-[1.10]"
+      imageScale: "1.00",
+      imagePosition: "object-bottom",
+      bgColor: "#FCFBFB"
     },
     {
       title: <>CERTIFICATIONS & <br />TESTS DE LANGUES</>,
@@ -396,7 +512,7 @@ export default function Home() {
       description: "IELTS, TOEIC, TOEFL, DELE, TCF, DELF, DALF… Préparez-vous avec STUDASSIST pour viser les meilleures écoles internationales.",
       buttonText: "Choisir ma certification",
       link: "/certifications",
-      image: "/hero-certif-new.png",
+      image: "/certifications-new2.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'standard',
@@ -405,7 +521,9 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/globe.png",
       badgeLabel: "Score certifié",
       badgeTitle: "IELTS & TOEFL",
-      imageScale: "scale-[1.10]"
+      imageScale: "1.00",
+      imagePosition: "object-bottom",
+      bgColor: "#f9fbfa"
     },
     {
       title: "ACCOMPAGNEMENT SCOLAIRE",
@@ -413,7 +531,7 @@ export default function Home() {
       description: "Maths, Physique-chimie, SVT, Français, SES, HGGSP, Philosophie… Réservez votre séance découverte pour tester notre méthodologie exclusive d'accompagnement scolaire !",
       buttonText: "Réserver mon cours découverte",
       link: "/soutien-scolaire",
-      image: "/soutien-college.png",
+      image: "/soutien-scolaire-new2.png",
       imageOrientation: 'portrait' as const,
       showFloaters: false,
       layout: 'reverse',
@@ -422,7 +540,10 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/conference-call.png",
       badgeLabel: "Petits groupes",
       badgeTitle: "3 À 4 ÉLÈVES",
-      imageScale: "scale-[1.10]"
+      imageScale: "1.00",
+      imagePosition: "object-bottom",
+      imageTranslateY: "-5%",
+      bgColor: "#F9F9F9"
     },
     {
       title: <>ADMINISTRATIF & <br />LOGEMENT ÉTUDIANT</>,
@@ -439,7 +560,9 @@ export default function Home() {
       badge3d: "https://img.icons8.com/3d-fluency/94/passport.png",
       badgeLabel: "Installation clé en main",
       badgeTitle: "20+ DESTINATIONS",
-      imageScale: "scale-[1.10]"
+      imageScale: "1.05",
+      imagePosition: "object-bottom",
+      bgColor: "#fdfdfd"
     }
   ];
 
@@ -456,8 +579,11 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden">
-      {/* HERO SECTION — slide 1 is transparent (shows DecorativeBackdrop), others get solid white bg */}
-      <section className="relative pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[900px] bg-[#FDFDFD]">
+      {/* HERO SECTION */}
+      <section 
+        className="relative pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[900px] transition-colors duration-700 ease-in-out"
+        style={{ backgroundColor: slides[currentSlide].bgColor || '#FDFDFD' }}
+      >
 
         <div className="container mx-auto px-6 relative z-10 flex-grow flex flex-col">
           <AnimatePresence mode="wait">
@@ -498,8 +624,8 @@ export default function Home() {
                 </div>
 
                 {/* Hero Image Section — Anchored perfectly to the bottom */}
-                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto">
-                  <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-[900px] flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-[95vh]">
+                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-visible">
+                  <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-[900px] flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-[95vh] overflow-visible">
 
                     {/* Parallax decorative shapes */}
                     {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}
@@ -507,13 +633,14 @@ export default function Home() {
                     {/* ===== Cut-out student photo (no frame) anchored bottom ===== */}
                     <motion.img
                       key={currentSlide}
-                      initial={{ opacity: 0, y: 40 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 40 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       src={slides[currentSlide].image}
                       alt="Étudiante STUDASSIST"
-                      className={cn("relative z-20 w-full h-full object-contain object-bottom origin-bottom transition-transform duration-700", slides[currentSlide].imageScale)}
+                      style={(() => { const tx = slides[currentSlide].imageTranslateX; const ty = slides[currentSlide].imageTranslateY; const sc = slides[currentSlide].imageScale ?? '1'; return { transform: `translateX(calc(-50% + ${tx ?? '0%'})) translateY(${ty ?? '0%'}) scale(${sc})` }; })()}
+                      className="absolute bottom-0 left-1/2 h-full w-auto max-w-none object-contain object-bottom origin-bottom transition-transform duration-700 z-20"
                     />
 
                   </div>
@@ -562,7 +689,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Video column */}
             <div className="flex justify-center">
-               <div className="relative w-full max-w-[360px]">
+               <div className="relative w-full max-w-[420px]">
                  <MediaFrameFloaters />
                  
                  {/* The Video Container (z-20) */}
@@ -814,19 +941,7 @@ export default function Home() {
             & dernières actus
           </h2>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-             {blogs.slice(0, 5).map((post) => (
-               <Link key={post.id} to={`/blogs/${post.slug}`} className="bg-white rounded-xl overflow-hidden shadow-soft border border-gray-50 group cursor-pointer flex flex-col">
-                  <div className="relative overflow-hidden bg-white flex">
-                     <img src={post.image} alt={post.title} className="w-full h-auto object-cover transition duration-500 group-hover:scale-105" />
-                  </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                     <div className="text-[10px] font-bold text-gray-400 mb-2">{post.date}</div>
-                     <h4 className="font-black text-brand-darkblue text-sm line-clamp-2 leading-snug group-hover:text-brand-teal transition">{post.title}</h4>
-                  </div>
-               </Link>
-             ))}
-          </div>
+          <BlogCarousel blogs={blogs} />
 
           <div className="mt-12 text-center">
             <Link 

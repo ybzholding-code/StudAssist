@@ -27,7 +27,7 @@ const cycles = ["Primaire", "Collège", "Lycée", "Supérieur"] as const;
 type Cycle = (typeof cycles)[number];
 
 const levelsByCycle: Record<Cycle, string[]> = {
-  "Primaire": ["CP-CM2"],
+  "Primaire": ["Classes élémentaires"],
   "Collège": ["6ème", "5ème", "4ème", "3ème"],
   "Lycée": ["2nde", "1ère", "Terminale"],
   "Supérieur": ["Études supérieures"],
@@ -45,10 +45,10 @@ interface LevelConfig {
 }
 
 const levelConfigs: Record<string, LevelConfig> = {
-  "CP-CM2": {
+  "Classes élémentaires": {
     category: "Primaire",
     icon: <Users size={18} />,
-    title: "Primaire (CP - CM2)",
+    title: "CP l CE1 l CE2 l CM1 l CM2",
     subtitle: "Construire des bases solides et développer le plaisir d'apprendre",
     description:
       "Le primaire est une étape fondatrice : lecture, écriture, raisonnement logique et autonomie se construisent progressivement. Chaque année consolide les acquis et prépare l'enfant à une transition sereine vers le collège.",
@@ -139,7 +139,7 @@ const levelConfigs: Record<string, LevelConfig> = {
   "Études supérieures": {
     category: "Supérieur",
     icon: <Rocket size={18} />,
-    title: "Études supérieures",
+    title: "POST-BAC",
     subtitle: "Structurer son parcours, construire une stratégie académique et accéder aux meilleures opportunités",
     description:
       "Les études supérieures constituent une étape déterminante dans le parcours académique. Elles impliquent des choix structurants, qu'il s'agisse d'une réorientation, d'une spécialisation ou d'une poursuite d'études à l'international.",
@@ -155,7 +155,7 @@ function getLinkHref(linkName: string, level: string): string {
 
   // Soutien scolaire — route depends on level/cycle
   if (name.includes("soutien scolaire")) {
-    if (level === "CP-CM2") return "/soutien/primaire";
+    if (level === "Classes élémentaires") return "/soutien/primaire";
     if (["6ème", "5ème", "4ème", "3ème"].includes(level)) return "/soutien/college";
     if (["2nde", "1ère", "Terminale"].includes(level)) return "/soutien/lycee";
     if (level === "Études supérieures") return "/soutien/superieur";

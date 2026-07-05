@@ -19,32 +19,33 @@ export default function PrepasBacFrancais() {
         <>Au-delà de l'examen, elle joue un rôle <strong>structurant</strong> dans la construction du <strong>dossier académique</strong>. Les compétences qu'elle mobilise — rigueur, capacité d'analyse, qualité de l'expression et structuration de la pensée — sont particulièrement valorisées dans les candidatures aux établissements d'enseignement supérieur, en France, au Maroc comme à l'international.</>,
         <>Chez STUDASSIST, la préparation au Bac de Français s'inscrit dans une <strong>démarche globale</strong> : permettre à l'élève de maîtriser les fondamentaux, d'optimiser ses résultats et de renforcer la qualité de son dossier dans une logique d'<strong>orientation stratégique</strong>.</>,
       ]}
-      heroImage="/hero-bac-new.png"
+      heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver une séance découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Bac de Français."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
       sectionTitle="PRÉPARATION AU BAC DE FRANÇAIS"
       enjeuxEyebrow="Les enjeux du bac de français"
-      whyChooseEyebrow="Pourquoi choisir STUDASSIST ?"
+      whyChooseEyebrow="Ce qui fait notre différence"
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
         title: "Un levier de réussite pour le lycée et les études supérieures",
         lead: "Le Bac de Français joue un rôle central dans la réussite scolaire et la préparation de l'après-bac. Au-delà de la note obtenue, il permet de développer des compétences particulièrement recherchées dans l'enseignement supérieur et les formations sélectives.",
         bullets: [
-          "Maîtriser l'expression écrite",
-          "Construire un dossier solide",
-          "Préparer la Terminale",
-          "Développer sa confiance",
+          "Maîtriser l'expression écrite: Développer sa capacité d'analyse, d'argumentation et de rédaction grâce aux méthodes attendues au Baccalauréat.",
+          "Construire un dossier solide: Valoriser son niveau académique et renforcer son profil pour les candidatures post-bac.",
+          "Préparer la Terminale: Acquérir les méthodes qui seront réutilisées en Philosophie, dans les spécialités et lors du Grand Oral.",
+          "Développer sa confiance: Gagner en aisance à l'oral, structurer sa pensée et apprendre à défendre ses idées avec clarté.",
         ],
         icons: [
-          "https://img.icons8.com/3d-fluency/94/document.png",
-          "https://img.icons8.com/3d-fluency/94/diploma.png",
-          "https://img.icons8.com/3d-fluency/94/open-book.png",
-          "https://img.icons8.com/3d-fluency/94/star.png",
+          "https://img.icons8.com/?size=100&id=37FAjZOSDlVk&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=qZ3IKpKF9Cun&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=TDweCFuioxNi&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=B0YxODenuYvG&format=png&color=000000",
         ],
       }}
 
@@ -81,11 +82,11 @@ export default function PrepasBacFrancais() {
       ]}
 
       whyChoose={{
-        title: "Pourquoi choisir STUDASSIST ?",
+        title: "Pourquoi choisir STUDASSIST POUR PRÉPARER LE BAC DE FRANÇAIS ?",
         bullets: [
           "Une préparation rigoureuse et des enseignants experts et anciens correcteurs du Bac",
           "Un format flexible et personnalisé avec des groupes restreints (2 à 4 élèves) ou un suivi individuel en fonction du besoin",
-          "Une méthodologie orientée progression : méthodes, annales, et simulations pour gagner en efficacité, en confiance et en autonomie",
+          "Une méthodologie orientée progression - méthodes, annales, et simulations pour gagner en efficacité, en confiance et en autonomie",
           "Une parfaite maîtrise des attentes du programme, des épreuves et des critères d'évaluation",
           "Une préparation qui s'inscrit dans une logique de réussite au lycée, d'orientation et de préparation des études supérieures",
           "Un levier de réussite académique et de valorisation du dossier post-bac",

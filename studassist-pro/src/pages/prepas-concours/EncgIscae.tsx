@@ -23,10 +23,11 @@ export default function PrepaConcoursEncgIscae() {
         "Les concours ENCG et ISCAE constituent les principales voies d'accès aux écoles de commerce publiques les plus sélectives au Maroc. Ils permettent d'intégrer des formations reconnues pour leur exigence académique et leur forte employabilité.",
         "Ces concours sont compétitifs et demandent une préparation spécifique, alliant maîtrise des fondamentaux, rapidité d'exécution et méthodologie. Chez STUDASSIST, nous proposons une préparation structurée et intensive, permettant aux élèves de maximiser leurs chances d'admission.",
       ]}
-      heroImage="/hero-sat-gmat.png"
+      heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours ENCG & ISCAE."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}

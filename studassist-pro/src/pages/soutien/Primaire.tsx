@@ -20,10 +20,11 @@ export default function SoutienPrimaire() {
         "Les premières années de scolarité sont fondatrices. C'est au primaire que se construisent les apprentissages essentiels, la confiance en soi et la relation à l'apprentissage.",
         "Chez STUDASSIST, le soutien scolaire au primaire repose sur une approche globale et équilibrée, combinant renforcement académique structuré et ateliers de brain training, afin d'accompagner chaque enfant dans toutes les dimensions de son développement, quel que soit son système scolaire.",
       ]}
-      heroImage="/soutien-college.png"
+      heroImage="/soutien-scolaire-main.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au primaire."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -33,7 +34,7 @@ export default function SoutienPrimaire() {
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
-        title: "Une approche en deux volets complémentaires",
+        title: "Pourquoi envisager un accompagnement scolaire au primaire ?",
         lead: "Combinant un soutien scolaire académique structuré et des ateliers de brain training.",
         bullets: [
           "Consolider les acquis essentiels",
@@ -53,54 +54,27 @@ export default function SoutienPrimaire() {
 
       sections={[
         {
-          title: "Un soutien scolaire académique structuré",
+          title: "Une approche en deux volets complémentaires",
           paragraphs: [
-            "Nous accompagnons les élèves du primaire dans les matières fondamentales, en adaptant nos contenus et nos méthodes aux programmes et systèmes scolaires (français, marocain, bilingue ou international).",
-            "Cet accompagnement vise à : consolider les acquis essentiels, installer de bonnes méthodes de travail, sécuriser les apprentissages, accompagner aussi bien les enfants en difficulté que ceux disposant d'un bon niveau et souhaitant aller plus loin.",
+            "Nous accompagnons les élèves du primaire dans les matières fondamentales, en adaptant nos contenus et nos méthodes aux programmes et systèmes scolaires (français, marocain, bilingue ou international). Cet accompagnement vise à : consolider les acquis essentiels ; installer de bonnes méthodes de travail ; sécuriser les apprentissages ; accompagner aussi bien les enfants en difficulté que ceux disposant d'un bon niveau et souhaitant aller plus loin.",
+            "En complément du soutien scolaire académique, nous proposons des ateliers de brain training intégrés, conçus pour stimuler les capacités cognitives et favoriser l'apprentissage par l'expérience et le plaisir. Ces ateliers font partie intégrante de notre approche du soutien scolaire au primaire. Ils incluent notamment : Calcul mental au soroban ; Théâtre en langue étrangère ; Ateliers Montessori (mathématiques, histoire-géographie, sciences, lecture, écriture) ; Ateliers de robotique ; Cours d'échecs ; Ateliers artistiques.",
           ],
         },
         {
-          title: "Des ateliers de brain training intégrés au parcours",
+          title: "Une pédagogie ludique et structurée avec une méthodologie en petits groupes adaptée aux plus jeunes",
           paragraphs: [
-            "En complément du soutien scolaire académique, nous proposons des ateliers de brain training intégrés, conçus pour stimuler les capacités cognitives et favoriser l'apprentissage par l'expérience et le plaisir. Ces ateliers font partie intégrante de notre approche du soutien scolaire au primaire.",
-            "Ils incluent notamment : Calcul mental au soroban (concentration et logique), Théâtre en langue étrangère (expression orale et confiance), Ateliers Montessori (mathématiques, histoire-géographie, sciences, lecture, écriture), Ateliers de robotique (pensée logique et créative), Cours d'échecs (stratégie et prise de décision), Ateliers artistiques (créativité et expression personnelle).",
-          ],
-        },
-        {
-          title: "Une pédagogie ludique et structurée",
-          paragraphs: [
-            "Chez STUDASSIST, apprendre doit rester une expérience positive. Nos séances, qu'elles soient académiques ou issues du brain training, intègrent une dimension ludique, interactive et engageante, tout en respectant un cadre structuré et exigeant.",
-            "Cette approche permet : d'apprendre avec plaisir, de renforcer la motivation et la curiosité, de développer des compétences transversales essentielles, de favoriser une progression durable.",
-          ],
-        },
-        {
-          title: "Une méthodologie adaptée aux plus jeunes",
-          paragraphs: [
-            "Le soutien scolaire au primaire est proposé en petits groupes de 2 à 4 enfants maximum, garantissant : une attention individualisée, un respect du rythme de chacun, une dynamique de groupe bienveillante.",
-            "Nos enseignants adaptent leurs approches pédagogiques, leurs supports et leurs exigences au système scolaire suivi, tout en maintenant des standards de qualité élevés.",
-          ],
-        },
-        {
-          title: "Un suivi rassurant pour les familles",
-          paragraphs: [
+            "Chez STUDASSIST, apprendre doit rester une expérience positive. Nos séances, qu'elles soient académiques ou issues du brain training, intègrent une dimension ludique, interactive et engageante, tout en respectant un cadre structuré et exigeant. Cette approche permet : d'apprendre avec plaisir ; de renforcer la motivation et la curiosité ; de développer des compétences transversales essentielles ; de favoriser une progression durable.",
+            "Le soutien scolaire au primaire est proposé en petits groupes de 2 à 4 enfants maximum, garantissant : une attention individualisée ; un respect du rythme de chacun ; une dynamique de groupe bienveillante. Nos enseignants adaptent leurs approches pédagogiques, leurs supports et leurs exigences au système scolaire suivi, tout en maintenant des standards de qualité élevés.",
             "Les familles bénéficient d'un suivi régulier et transparent, leur permettant de comprendre les progrès réalisés et les axes de développement de leur enfant.",
           ],
         },
-      ]}
-
-      audience={{
-        title: "À qui s'adresse le soutien scolaire au primaire ?",
-        groups: [{
-          title: "Ce service s'adresse aux enfants",
-          bullets: [
-            "ayant besoin de consolider leurs apprentissages,",
-            "rencontrant des difficultés ponctuelles,",
-            "disposant d'un bon niveau et souhaitant développer leur potentiel,",
-            "scolarisés dans des systèmes français, marocains, bilingues ou internationaux,",
-            "dont les familles recherchent un accompagnement global, structuré et épanouissant.",
+        {
+          title: "À qui s'adresse le soutien scolaire au primaire ?",
+          paragraphs: [
+            "Ce service s'adresse aux enfants : ayant besoin de consolider leurs apprentissages ; rencontrant des difficultés ponctuelles ; disposant d'un bon niveau et souhaitant développer leur potentiel ; scolarisés dans des systèmes français, marocains, bilingues ou internationaux ; dont les familles recherchent un accompagnement global, structuré et épanouissant.",
           ],
-        }],
-      }}
+        },
+      ]}
 
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour le soutien scolaire au primaire ?",

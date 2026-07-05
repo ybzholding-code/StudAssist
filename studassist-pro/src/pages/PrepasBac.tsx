@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight } from "@/src/components/ui/icons";
+import { waLink } from "../lib/utils";
 import FAQ from "../components/FAQ";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
@@ -139,7 +140,7 @@ export default function PrepasBac() {
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
                   <div className="rounded-[2rem] w-full h-auto aspect-square overflow-hidden bg-white">
                     <img
-                      src="/hero-bac-new.png"
+                      src="/prepas-bac-new.png"
                       alt="Prépas Bac"
                       className="w-full h-full object-cover"
                       style={{ objectPosition: "center 33%" }}
@@ -173,13 +174,15 @@ export default function PrepasBac() {
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                <Link
-                  to="/contact"
+                <a
+                  href={waLink("Bonjour STUDASSIST, je souhaite obtenir des informations sur les préparations au Baccalauréat.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-brand-teal text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center justify-center gap-3"
                 >
                   <span>Réserver une séance découverte</span>
                   <ArrowRight size={16} />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -375,13 +378,15 @@ export default function PrepasBac() {
           <p className="text-white/80 text-base lg:text-lg font-medium max-w-xl mx-auto mb-10 leading-relaxed">
             Vous souhaitez mettre en place un accompagnement académique personnalisé ? Réservez un premier rendez-vous d'informations pour évaluer votre profil et poser les bases d'une stratégie adaptée.
           </p>
-          <Link
-            to="/contact"
+          <a
+            href={waLink("Bonjour STUDASSIST, je souhaite obtenir des informations sur les préparations au Baccalauréat.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-brand-red text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:scale-105 transition-all shadow-2xl shadow-brand-red/30 group inline-flex items-center space-x-4"
           >
             <span>Prendre rendez-vous</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
         </motion.div>
       </section>
 

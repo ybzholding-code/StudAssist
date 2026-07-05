@@ -20,10 +20,11 @@ export default function SoutienLycee() {
         "Le lycée est une étape décisive du parcours scolaire et plus généralement de l'avenir académique de l'élève. Les exigences s'intensifient, les enjeux de notes deviennent stratégiques et les résultats obtenus ont un impact direct sur l'orientation post-bac, en France, au Maroc et à l'international.",
         "Chez STUDASSIST, nous proposons un soutien scolaire au lycée structuré, exigeant et personnalisé, destiné aussi bien aux élèves souhaitant renforcer certaines matières qu'aux lycéens disposant d'un bon niveau académique et souhaitant atteindre l'excellence, quel que soit leur système scolaire.",
       ]}
-      heroImage="/soutien-lycee.png"
+      heroImage="/soutien-lycee-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au lycée."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -34,7 +35,7 @@ export default function SoutienLycee() {
 
       enjeux={{
         title: "Les enjeux du lycée",
-        lead: "Les années de lycée conditionnent directement l'accès aux filières sélectives et aux études supérieures. C'est à ce stade que se jouent :",
+        lead: "Les années de lycée conditionnent directement l'accès aux filières sélectives et aux études supérieures. Si les programmes et les modalités d'évaluation diffèrent selon les systèmes éducatifs, une constante demeure : la régularité, la méthode et la cohérence du dossier scolaire font la différence. C'est à ce stade que se jouent :",
         bullets: [
           "La maîtrise approfondie des matières",
           "La performance académique dans les matières à fort coefficient",
@@ -53,56 +54,39 @@ export default function SoutienLycee() {
 
       sections={[
         {
-          title: "Un diagnostic académique et méthodologique précis",
+          title: "Une approche globale et un accompagnement académique exigeant",
           paragraphs: [
-            "Chaque élève bénéficie d'une évaluation approfondie de son niveau, de ses méthodes de travail, de ses matières de spécialité, de ses matières du tronc commun et de ses objectifs d'orientation, en tenant compte du système scolaire suivi (français, marocain, bilingue ou international).",
-            "Ce diagnostic permet de définir un plan d'accompagnement ciblé, aligné à la fois avec les exigences du programme et les ambitions post-bac.",
+            "Notre soutien scolaire au lycée repose sur une approche globale et stratégique, bien au-delà d'un simple renforcement académique.",
+            "Chaque élève bénéficie d'une évaluation approfondie de son niveau, de ses méthodes de travail, de ses matières de spécialité, de ses matières du tronc commun et de ses objectifs d'orientation, en tenant compte du système scolaire suivi (français, marocain, bilingue ou international). Ce diagnostic permet de définir un plan d'accompagnement ciblé, aligné à la fois avec les exigences du programme et les ambitions post-bac.",
+            "Nous accompagnons les lycéens aussi bien dans leurs matières de spécialité que dans les matières du tronc commun, qui restent déterminantes pour la moyenne générale, la cohérence du dossier scolaire et la réussite aux épreuves du bac. Notre accompagnement s'adapte au parcours et au système scolaire de chaque élève, avec pour objectifs : optimiser les résultats dans l'ensemble des matières (tronc commun et spécialités) ; renforcer la compréhension en profondeur des notions clés ; développer des méthodes de travail efficaces pour préparer l'entrée aux études supérieures ; sécuriser un dossier académique solide et cohérent, en lien avec les projets d'orientation post-bac et les ambitions de l'élève.",
+            "Chez STUDASSIST, la performance se construit autant dans l'excellence disciplinaire que dans la maîtrise rigoureuse des fondamentaux.",
           ],
         },
         {
-          title: "Un accompagnement académique exigeant",
+          title: "Notre méthodologie différenciée nous permet un suivi rigoureux orienté résultats et orientation",
           paragraphs: [
-            "Nous accompagnons les lycéens aussi bien dans leurs matières de spécialité que dans les matières du tronc commun, qui restent déterminantes pour la moyenne générale, la cohérence du dossier scolaire et la réussite aux épreuves du bac.",
-            "L'objectif : optimiser les résultats dans l'ensemble des matières, renforcer la compréhension en profondeur des notions clés, développer des méthodes de travail efficaces et sécuriser un dossier académique solide et cohérent en lien avec les projets d'orientation post-bac.",
+            "Chez STUDASSIST, le soutien scolaire au lycée repose sur une pédagogie différenciée, déployée en petits groupes de 2 à 4 élèves maximum, avec des niveaux hétérogènes maîtrisés. Cette méthodologie permet : de développer l'autonomie intellectuelle de l'élève ; de stimuler l'émulation académique et l'apprentissage par observation ; d'encourager une dynamique de travail structurante ; tout en garantissant un suivi individualisé, adapté à l'avancement réel de chaque élève.",
+            "Nos enseignants ajustent leurs approches pédagogiques, leurs contenus et leurs exigences en fonction du système scolaire suivi, tout en maintenant des standards académiques élevés, indispensables à la réussite au lycée.",
+            "Le soutien scolaire STUDASSIST s'appuie sur un suivi continu et structuré : évaluation régulière des performances par l'envoi de rapports pédagogiques réguliers ; ajustement des objectifs académiques ; coordination avec les objectifs d'orientation post-bac ; échanges réguliers avec l'élève et sa famille. Ce pilotage permet d'inscrire le travail scolaire dans une logique de progression durable, cohérente avec les projets d'études supérieures.",
           ],
         },
         {
-          title: "Une méthodologie de soutien scolaire différenciée",
+          title: "Un accompagnement qui va au-delà du soutien scolaire et qui s'inscrit sur le long terme",
           paragraphs: [
-            "Le soutien scolaire au lycée repose sur une pédagogie différenciée, déployée en petits groupes de 2 à 4 élèves maximum, avec des niveaux hétérogènes maîtrisés.",
-            "Cette méthodologie permet de développer l'autonomie intellectuelle de l'élève, de stimuler l'émulation académique, d'encourager une dynamique de travail structurante, tout en garantissant un suivi individualisé adapté à l'avancement réel de chaque élève.",
+            "Au lycée, le soutien scolaire ne peut être envisagé isolément. Les enjeux académiques s'articulent progressivement avec la préparation aux examens, l'accès aux filières sélectives et la constitution d'un dossier post-bac solide, au Maroc, en France et à l'international. Chez STUDASSIST, le soutien scolaire s'inscrit naturellement dans une logique de continuité avec nos autres pôles d'expertise.",
+            "Pour les élèves de Première et de Terminale, l'accompagnement peut être complété par des préparations ciblées au baccalauréat, notamment le Bac de français (écrit et oral), les épreuves de spécialités, l'épreuve finale de philosophie et le Grand Oral. Le soutien scolaire permet de consolider les bases, tandis que les Prépas Bac ciblent la maîtrise des attendus, la méthodologie d'examen et la performance le jour J des épreuves du baccalauréat.",
+            "Pour les lycéens visant des parcours d'excellence, le soutien scolaire peut être articulé avec une préparation spécifique aux concours, notamment pour les écoles de commerce, les écoles d'ingénieurs, Sciences Po, les écoles d'architecture, les universités de médecine publiques et privées, et autres filières sélectives. Le travail académique est alors orienté vers la sélectivité, la stratégie de concours et les exigences propres à chaque épreuve.",
+            "Dans de nombreux parcours post-bac, les certifications de langues constituent un critère déterminant d'admission. STUDASSIST propose des préparations dédiées aux certifications internationales : anglais (IELTS, TOEFL, TOEIC), français (DELF, DALF), espagnol (DELE), et allemand (Goethe). Le soutien scolaire assure la régularité et la progression linguistique, tandis que les préparations aux certifications visent l'obtention des scores requis.",
+            "Chez STUDASSIST, chaque accompagnement est pensé comme un parcours évolutif et cohérent. Le soutien scolaire au lycée constitue souvent la première étape structurante, avant d'orienter l'élève vers des préparations plus spécifiques, en fonction de son projet académique et de ses ambitions, et de l'accompagner à concrétiser son projet d'orientation post-bac.",
           ],
         },
         {
-          title: "Un suivi rigoureux orienté résultats et orientation",
+          title: "À qui s'adresse le soutien scolaire au lycée ?",
           paragraphs: [
-            "Le soutien scolaire STUDASSIST s'appuie sur un suivi continu et structuré : évaluation régulière des performances par l'envoi de rapports pédagogiques, ajustement des objectifs académiques, coordination avec les objectifs d'orientation post-bac et échanges réguliers avec l'élève et sa famille.",
-            "Ce pilotage permet d'inscrire le travail scolaire dans une logique de progression durable, cohérente avec les projets d'études supérieures.",
-          ],
-        },
-        {
-          title: "Un accompagnement qui va au-delà du soutien scolaire",
-          paragraphs: [
-            "Au lycée, les enjeux académiques s'articulent progressivement avec la préparation aux examens, l'accès aux filières sélectives et la constitution d'un dossier post-bac solide. Le soutien scolaire s'inscrit naturellement dans une logique de continuité avec nos Prépas Bac (français, spécialités, philo, Grand Oral), nos Prépas Concours (commerce, ingénieurs, Sciences Po, médecine, architecture) et nos préparations aux certifications de langues (IELTS, TOEFL, TOEIC, DELF, DALF, DELE).",
-            "Le soutien scolaire permet de consolider les bases, tandis que les préparations ciblées visent la maîtrise des attendus et la performance le jour J.",
+            "Notre accompagnement s'adresse aux lycéens : rencontrant des difficultés ciblées dans certaines matières ; souhaitant améliorer significativement leurs résultats ; ayant besoin de méthodes de travail plus efficaces ; préparant des filières sélectives ou internationales ; disposant déjà d'un bon niveau académique et souhaitant viser l'excellence ; scolarisés dans des systèmes français, marocains, bilingues ou internationaux ; recherchant un accompagnement holistique qui soit exigeant, structuré et orienté résultats.",
           ],
         },
       ]}
-
-      audience={{
-        title: "À qui s'adresse le soutien scolaire au lycée ?",
-        groups: [{
-          title: "Notre accompagnement s'adresse aux lycéens",
-          bullets: [
-            "rencontrant des difficultés ciblées dans certaines matières,",
-            "souhaitant améliorer significativement leurs résultats,",
-            "ayant besoin de méthodes de travail plus efficaces,",
-            "préparant des filières sélectives ou internationales,",
-            "disposant déjà d'un bon niveau et souhaitant viser l'excellence,",
-            "scolarisés dans des systèmes français, marocains, bilingues ou internationaux.",
-          ],
-        }],
-      }}
 
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour le soutien scolaire au lycée ?",
@@ -125,8 +109,8 @@ export default function SoutienLycee() {
       }}
 
       ctaBanner={{
-        title: "Prendre rendez-vous",
-        body: "Un cadre maîtrisé, quelle que soit la filière suivie. Vous souhaitez mettre en place un soutien scolaire exigeant et stratégique, tout en préparant les prochaines échéances académiques de votre enfant ?",
+        title: "Un cadre maîtrisé, quelle que soit la filière suivie.",
+        body: "Vous souhaitez mettre en place un soutien scolaire exigeant et stratégique, tout en préparant les prochaines échéances académiques de votre enfant ?",
         primaryLabel: "Réserver un cours découverte",
         primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",

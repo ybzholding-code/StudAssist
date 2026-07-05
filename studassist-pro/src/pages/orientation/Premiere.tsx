@@ -13,10 +13,11 @@ export default function OrientationPremiere() {
         "C’est le moment où se précisent les intérêts, où les résultats prennent davantage de poids, et où s’opèrent des choix structurants, notamment celui de la spécialité à abandonner en vue de la Terminale.",
         "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d’orientation anticipée et stratégique, afin de poser dès maintenant les bases d’un projet solide et d’aborder la Terminale avec clarté, méthode et sérénité.",
       ]}
-      heroImage="/hero-orientation-general.png"
+      heroImage="/orientation-seconde-premiere.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
+      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Première."
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       enjeuxEyebrow="Les enjeux de l’orientation en première"
@@ -48,12 +49,12 @@ export default function OrientationPremiere() {
         {
           title: "Un diagnostic approfondi permettant de choisir la spécialité à abandonner de manière stratégique",
           paragraphs: [
-            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Une démarche progressive et structurée</strong>,
-            "En Première, l’objectif est de consolider le parcours scolaire tout en préparant activement la Terminale.",
-            "Nous réalisons un diagnostic complet et un profiling individuel de l’élève afin d’analyser ses forces académiques, sa personnalité et ses aspirations.",
-            "Ce travail permet de guider avec méthode et sérénité l’une des décisions clés de l’année : le choix stratégique de la spécialité à abandonner en vue de la Terminale.",
-            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Un choix de spécialité aligné avec les ambitions</strong>,
-            "Chez STUDASSIST, nous accompagnons cette décision cruciale en croisant :",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1 uppercase tracking-tight">Une démarche progressive et structurée</strong>,
+            <span>En Première, l’objectif est de consolider le parcours scolaire tout en <strong className="font-extrabold text-brand-darkblue">préparant activement la Terminale</strong>.</span>,
+            <span>Nous réalisons un <strong className="font-extrabold text-brand-darkblue">diagnostic complet et un profiling individuel</strong> de l’élève afin d’analyser ses forces académiques, sa personnalité et ses aspirations.</span>,
+            <span>Ce travail permet de guider avec méthode et sérénité l’une des décisions clés de l’année : le <strong className="font-extrabold text-brand-darkblue">choix stratégique de la spécialité à abandonner</strong> en vue de la Terminale.</span>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1 uppercase tracking-tight">Un choix de spécialité aligné avec les ambitions</strong>,
+            <span>Chez STUDASSIST, nous accompagnons cette <strong className="font-extrabold text-brand-darkblue">décision cruciale</strong> en croisant :</span>,
           ],
           bullets: [
             "les attendus et prérequis des filières d’études supérieures visées,",
@@ -65,10 +66,10 @@ export default function OrientationPremiere() {
         {
           title: "Définir un cap et poser un plan d’action qui s’inscrit sur le long terme avec une ouverture vers l’international",
           paragraphs: [
-            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Poser un plan d’action et anticiper les objectifs</strong>,
-            "Dès la classe de Première, nous aidons l’élève à se projeter concrètement en établissant une première short-list de formations et d’établissements cibles.",
-            "Cette anticipation donne du sens à son travail quotidien et lui permet d'adapter son investissement scolaire aux exigences des filières visées.",
-            "Nous mettons en place un plan d'action personnalisé visant à :",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1 uppercase tracking-tight">Poser un plan d’action et anticiper les objectifs</strong>,
+            <span>Dès la classe de Première, nous aidons l’élève à se projeter concrètement en établissant une première <strong className="font-extrabold text-brand-darkblue">short-list de formations et d’établissements cibles</strong>.</span>,
+            <span>Cette anticipation donne <strong className="font-extrabold text-brand-darkblue">du sens à son travail quotidien</strong> et lui permet d'adapter son investissement scolaire aux exigences des filières visées.</span>,
+            <span>Nous mettons en place un <strong className="font-extrabold text-brand-darkblue">plan d'action personnalisé</strong> visant à :</span>,
             <ul className="list-disc pl-5 space-y-1 my-2 text-gray-500 text-sm">
               <li>renforcer la méthodologie de travail et l’autonomie,</li>
               <li>consolider le niveau académique dans les disciplines clés,</li>
@@ -81,7 +82,7 @@ export default function OrientationPremiere() {
               </Link>{" "}
               ciblé pour maximiser le dossier académique (dossier de Première et épreuves anticipées du Bac).
             </span>,
-            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Ouverture vers l'international</strong>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1 uppercase tracking-tight">Ouverture vers l'international</strong>,
             <span>
               Pour les projets d'études à l'étranger, nous amorçons la réflexion sur les prérequis et les calendriers d'admission spécifiques (inscriptions anticipées, certifications de langues). Nous intégrons au programme la préparation aux{" "}
               <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">
@@ -94,23 +95,23 @@ export default function OrientationPremiere() {
         {
           title: "Un tiers de confiance entre l’élève et sa famille - Un accompagnement continu et transparent pensé aussi pour les parents",
           paragraphs: [
-            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Un rôle de médiateur expert</strong>,
-            "Les décisions d'orientation en Première peuvent être génératrices de tensions ou d’incertitudes. STUDASSIST intervient comme un tiers neutre et bienveillant pour faciliter le dialogue familial autour d'arguments objectifs et constructifs.",
-            "Nous permettons ainsi de construire un projet partagé par l’élève et ses parents, libéré de toute pression inutile.",
-            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Transparence et suivi continu</strong>,
-            "Tout au long de l’accompagnement, les parents sont tenus informés des progrès de la réflexion et des étapes franchies, grâce à une communication fluide et des bilans réguliers.",
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1 uppercase tracking-tight">Un rôle de médiateur expert</strong>,
+            <span>Les décisions d'orientation en Première peuvent être génératrices de tensions ou d’incertitudes. STUDASSIST intervient comme un <strong className="font-extrabold text-brand-darkblue">tiers neutre et bienveillant</strong> pour faciliter le dialogue familial autour d'arguments objectifs et constructifs.</span>,
+            <span>Nous permettons ainsi de construire un <strong className="font-extrabold text-brand-darkblue">projet partagé</strong> par l’élève et ses parents, libéré de toute pression inutile.</span>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1 uppercase tracking-tight">Transparence et suivi continu</strong>,
+            <span>Tout au long de l’accompagnement, les parents sont tenus informés des progrès de la réflexion et des étapes franchies, grâce à une <strong className="font-extrabold text-brand-darkblue">communication fluide et des bilans réguliers</strong>.</span>,
           ],
         },
         {
           title: "À qui s’adresse l’orientation en Première ?",
           paragraphs: [
-            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1">Aux élèves de Première qui :</strong>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mb-1 uppercase tracking-tight">Aux élèves de Première qui :</strong>,
             <ul className="list-disc pl-5 space-y-1 my-2 text-gray-500 text-sm">
               <li>souhaitent clarifier et structurer leur projet d'études avec un an d'avance,</li>
               <li>veulent faire un choix de spécialité réfléchi, cohérent et stratégique,</li>
               <li>recherchent une dynamique de travail motivante pour valoriser leur dossier scolaire.</li>
             </ul>,
-            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1">Aux parents qui :</strong>,
+            <strong className="block text-brand-darkblue font-extrabold text-sm mt-4 mb-1 uppercase tracking-tight">Aux parents qui :</strong>,
             <ul className="list-disc pl-5 space-y-1 my-2 text-gray-500 text-sm">
               <li>désirent accompagner leur enfant sans stress face à des choix structurants,</li>
               <li>souhaitent comprendre l'impact réel des décisions de Première sur Parcoursup et le post-bac,</li>
