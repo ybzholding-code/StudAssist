@@ -26,6 +26,7 @@ import Blogs from "./pages/Blogs";
 import BlogPost from "./pages/BlogPost";
 import StudAssistChat from "./components/ui/StudAssistChat";
 import DecorativeBackdrop from "./components/DecorativeBackdrop";
+import { Analytics } from "@vercel/analytics/react";
 
 // Soutien Scolaire child pages
 import SoutienPrimaire from "./pages/soutien/Primaire";
@@ -151,6 +152,7 @@ export default function App() {
         </main>
         <Footer />
         <StudAssistChat />
+      <Analytics />
       </div>
       </div>
     </Router>

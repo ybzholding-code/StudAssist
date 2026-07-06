@@ -15,6 +15,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.1.14",
     "@types/busboy": "^1.5.4",
+    "@vercel/analytics": "^2.0.1",
     "@vitejs/plugin-react": "^5.0.4",
     "busboy": "^1.6.0",
     "clsx": "^2.1.1",
