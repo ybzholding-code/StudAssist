@@ -151,7 +151,7 @@ export default function Contact() {
                       <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-4 block">
                         Je souhaite réserver : *
                       </label>
-                      <div className="flex flex-wrap gap-4 border-b border-sa-navy/10 pb-0">
+                      <div className="flex flex-nowrap gap-2 border-b border-sa-navy/10 pb-0">
                         {(
                           [
                             { key: "orientation", label: "Une séance d'orientation" },
@@ -162,7 +162,7 @@ export default function Contact() {
                           <button
                             key={t.key}
                             onClick={() => setIntentTab(t.key)}
-                            className={`pb-3 px-2 text-[15px] font-semibold transition-colors relative ${
+                            className={`pb-3 px-1 text-[13px] font-semibold transition-colors relative whitespace-nowrap ${
                               intentTab === t.key ? "text-sa-pink" : "text-sa-ink/50 hover:text-sa-navy"
                             }`}
                           >
