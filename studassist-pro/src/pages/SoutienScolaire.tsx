@@ -7,6 +7,7 @@ import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import TestimonialsSection from "../components/TestimonialsSection";
 import { buildFaq } from "../data/faq";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const programmes = [
   {
@@ -74,6 +75,11 @@ const services = [
 ];
 
 export default function SoutienScolaire() {
+  usePageMeta({
+    title: "Soutien Scolaire à Casablanca — Primaire, Collège, Lycée",
+    description: "Soutien scolaire personnalisé à Casablanca pour tous niveaux : primaire, collège, lycée, supérieur. Cours particuliers, stages vacances et préparation aux examens avec STUDASSIST.",
+    canonical: "/soutien-scolaire",
+  });
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}

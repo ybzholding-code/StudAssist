@@ -45,6 +45,7 @@ import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import { cn } from "@/src/lib/utils";
 import TrustBar from "../components/TrustBar";
 import { useFormSubmit } from "../hooks/useFormSubmit";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 import NumberCounter from "@/src/components/ui/NumberCounter";
 import { blogs } from "@/src/data/blogs";
@@ -283,6 +284,11 @@ function BlogCarousel({ blogs }: { blogs: { id: string | number; slug: string; i
 }
 
 export default function Home() {
+  usePageMeta({
+    title: "Orientation Scolaire & Accompagnement Académique au Maroc",
+    description: "STUDASSIST, cabinet d'orientation scolaire et d'accompagnement académique à Casablanca. Soutien scolaire, prépa concours, prépa bac, certifications de langues. +500 élèves orientés, +25 destinations.",
+    canonical: "/",
+  });
   const navigate = useNavigate();
   const { submit: submitMiniForm, status: miniFormStatus } = useFormSubmit();
   const [selectedCycle, setSelectedCycle] = useState("Lycée");

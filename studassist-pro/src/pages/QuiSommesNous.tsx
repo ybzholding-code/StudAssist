@@ -25,8 +25,14 @@ import { cn } from "@/src/lib/utils";
 import MediaFrameFloaters from "@/src/components/MediaFrameFloaters";
 import Logo from "../components/Logo";
 import TrustBar from "../components/TrustBar";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const QuiSommesNous = () => {
+  usePageMeta({
+    title: "Qui sommes-nous — Cabinet d'Orientation STUDASSIST à Casablanca",
+    description: "Découvrez STUDASSIST, cabinet d'orientation scolaire et d'accompagnement académique basé à Casablanca. Notre mission, notre équipe et notre méthode d'accompagnement personnalisé.",
+    canonical: "/qui-sommes-nous",
+  });
   const stats = [
     { label: "candidats et élèves accompagnés", value: "+3000", icon3d: "https://img.icons8.com/3d-fluency/94/graduation-cap.png", color: "text-brand-darkblue" },
     { label: "taux d'admission au Top 3", value: "≈97%", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png", color: "text-brand-red" },

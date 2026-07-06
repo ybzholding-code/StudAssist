@@ -2,8 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar } from "@/src/components/ui/icons";
 import { blogs } from "@/src/data/blogs";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 export default function Blogs() {
+  usePageMeta({
+    title: "Blog — Conseils Orientation & Accompagnement Scolaire",
+    description: "Découvrez les articles de blog STUDASSIST : conseils en orientation scolaire, méthodes de travail, préparation aux concours et aux études à l'international.",
+    canonical: "/blogs",
+  });
   return (
     <div className="pt-10 pb-20 bg-[#f8fbfc] min-h-screen">
       <div className="container mx-auto px-6">

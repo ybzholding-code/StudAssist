@@ -2,12 +2,18 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Heart, Award, Star, Upload, FileText } from "@/src/components/ui/icons";
+import { usePageMeta } from "../hooks/usePageMeta";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import Logo from "../components/Logo";
 
 type ProfileTab = "professeur" | "consultant" | "support";
 
 export default function NousRejoindre() {
+  usePageMeta({
+    title: "Rejoindre STUDASSIST — Professeurs, Consultants, Équipe Support",
+    description: "Rejoignez l'équipe STUDASSIST. Nous recrutons des professeurs, consultants en orientation et profils support. Postulez et contribuez à la réussite des élèves.",
+    canonical: "/nous-rejoindre",
+  });
   const [activeTab, setActiveTab] = useState<ProfileTab>("professeur");
 
   // Contact fields

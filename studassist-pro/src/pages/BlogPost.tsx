@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Tag } from "@/src/components/ui/icons";
 import { getBlogPostBySlug } from "@/src/data/blogs";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -9,20 +10,15 @@ export default function BlogPost() {
   
   const post = getBlogPostBySlug(slug || "");
 
-  // SEO and Scroll to top when post changes
+  usePageMeta({
+    title: post ? post.title : "Article introuvable",
+    description: post ? post.excerpt : "Cet article n'existe pas ou a été déplacé.",
+    canonical: post ? `/blogs/${post.slug}` : "/blogs",
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (post) {
-      document.title = `${post.title} | StudAssist Blog`;
-      let metaDesc = document.querySelector('meta[name="description"]');
-      if (!metaDesc) {
-        metaDesc = document.createElement('meta');
-        metaDesc.setAttribute('name', 'description');
-        document.head.appendChild(metaDesc);
-      }
-      metaDesc.setAttribute('content', post.excerpt);
-    }
-  }, [slug, post]);
+  }, [slug]);
 
   if (!post) {
     return (

@@ -6,6 +6,7 @@ import FAQ from "../components/FAQ";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import TestimonialsSection from "../components/TestimonialsSection";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const faqItems = [
   {
@@ -98,6 +99,11 @@ const services = [
 ];
 
 export default function Certifications() {
+  usePageMeta({
+    title: "Certifications de Langues — IELTS, TOEFL, DELE, TCF, DALF",
+    description: "Préparez vos certifications de langues avec STUDASSIST : IELTS, TOEFL, TOEIC, DELE, TCF, DALF. Entraînement intensif et coaching personnalisé au Maroc.",
+    canonical: "/langues",
+  });
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}

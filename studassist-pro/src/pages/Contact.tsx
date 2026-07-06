@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Phone, MapPin, Clock, MessageCircle } from "@/src/components/ui/icons";
 import { Link, useSearchParams } from "react-router-dom";
 import { useFormSubmit } from "../hooks/useFormSubmit";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { waLink } from "../lib/utils";
 import FAQ from "../components/FAQ";
 import { buildFaq } from "../data/faq";
@@ -11,6 +12,11 @@ import MediaFrameFloaters from "../components/MediaFrameFloaters";
 
 export default function Contact() {
   const [searchParams] = useSearchParams();
+  usePageMeta({
+    title: "Nous Contacter — Réserver une Séance",
+    description: "Contactez STUDASSIST pour réserver une séance d'orientation, un cours découverte ou un rendez-vous d'information. Notre équipe vous répond rapidement.",
+    canonical: "/contact",
+  });
   const [intentTab, setIntentTab] = useState<"orientation" | "cours" | "rdv">("orientation");
   const roleFromParams = searchParams.get("role") as "parent" | "eleve" | null;
   const [userRole, setUserRole] = useState<"parent" | "eleve">(roleFromParams || "parent");

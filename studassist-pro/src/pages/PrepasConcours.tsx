@@ -6,6 +6,7 @@ import FAQ from "../components/FAQ";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import TestimonialsSection from "../components/TestimonialsSection";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const faqItems = [
   {
@@ -159,6 +160,11 @@ const services = [
 ];
 
 export default function PrepasConcours() {
+  usePageMeta({
+    title: "Préparation aux Concours — Médecine, Ingénieur, Sciences Po, UM6P",
+    description: "Préparez les grands concours avec STUDASSIST : médecine Maroc et Belgique, écoles d'ingénieurs, Sciences Po, UM6P, SAT/GMAT. Coaching personnalisé et méthode éprouvée.",
+    canonical: "/prepas-concours",
+  });
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}

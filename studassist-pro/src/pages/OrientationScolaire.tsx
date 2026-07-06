@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { motion } from "motion/react";
 import { ArrowRight } from "@/src/components/ui/icons";
 import { waLink } from "../lib/utils";
@@ -105,6 +106,11 @@ const services = [
 ];
 
 export default function OrientationScolaire() {
+  usePageMeta({
+    title: "Orientation Scolaire — Du Lycée au Master",
+    description: "STUDASSIST vous accompagne dans votre orientation scolaire : bilan d'orientation, choix des spécialités, candidatures post-bac, études à l'étranger. Accompagnement personnalisé au Maroc.",
+    canonical: "/orientation-scolaire",
+  });
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}

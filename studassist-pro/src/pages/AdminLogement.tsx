@@ -6,6 +6,7 @@ import FAQ from "../components/FAQ";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import TestimonialsSection from "../components/TestimonialsSection";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const faqItems = [
   {
@@ -92,6 +93,11 @@ const services = [
 ];
 
 export default function AdminLogement() {
+  usePageMeta({
+    title: "Démarches Administratives & Logement Étudiant à l'International",
+    description: "STUDASSIST vous accompagne dans toutes vos démarches administratives et la recherche de logement étudiant à l'étranger. Visa, inscription, hébergement — un suivi complet.",
+    canonical: "/admin-logement",
+  });
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}

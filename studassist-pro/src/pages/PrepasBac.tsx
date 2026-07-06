@@ -6,6 +6,7 @@ import FAQ from "../components/FAQ";
 import Logo from "../components/Logo";
 import MediaFrameFloaters from "../components/MediaFrameFloaters";
 import TestimonialsSection from "../components/TestimonialsSection";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 const faqItems = [
   {
@@ -104,6 +105,11 @@ const services = [
 ];
 
 export default function PrepasBac() {
+  usePageMeta({
+    title: "Préparation au Bac — Français, Philo, Spécialités, Grand Oral",
+    description: "Préparez le Bac avec STUDASSIST : cours de français, philosophie, spécialités et Grand Oral. Accompagnement personnalisé pour lycéens au Maroc et à l'international.",
+    canonical: "/prepas-bac",
+  });
   return (
     <div className="bg-white">
       {/* ============ HERO SECTION ============ */}
