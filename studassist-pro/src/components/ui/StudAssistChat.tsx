@@ -256,6 +256,7 @@ export default function StudAssistChat() {
                     </div>
                   </div>
                   <button
+                    aria-label="Fermer le chat"
                     onClick={() => setIsOpen(false)}
                     className="w-7 h-7 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors shrink-0"
                   >
@@ -333,12 +334,14 @@ export default function StudAssistChat() {
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
+                      aria-label="Votre question"
                       placeholder="Votre question..."
                       className="flex-1 bg-transparent text-[13px] text-gray-800 placeholder:text-gray-400 outline-none font-medium"
                       disabled={isLoading}
                     />
                     <button
                       type="submit"
+                      aria-label="Envoyer le message"
                       disabled={!input.trim() || isLoading}
                       className="w-8 h-8 bg-[#1BB79D] disabled:opacity-40 rounded-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 shrink-0"
                     >
@@ -377,6 +380,7 @@ export default function StudAssistChat() {
             </AnimatePresence>
 
             <motion.button
+              aria-label="Ouvrir l'assistant STUDASSIST"
               onClick={() => { setIsOpen((v) => !v); setShowPulse(false); }}
               initial={{ opacity: 0, scale: 0, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 260, damping: 20 } }}

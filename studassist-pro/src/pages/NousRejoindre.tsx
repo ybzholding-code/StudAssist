@@ -413,19 +413,19 @@ export default function NousRejoindre() {
                   </h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <input type="text" required value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${nom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      <input type="text" required aria-label="Nom" value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${nom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
                       {nom === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
                     </div>
                     <div>
-                      <input type="text" required value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${prenom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      <input type="text" required aria-label="Prénom" value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${prenom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
                       {prenom === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
                     </div>
                     <div>
-                      <input type="tel" required value={tel} onChange={e => setTel(e.target.value)} placeholder="Téléphone *" pattern="[+0-9\s\-()]{6,20}" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${tel === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      <input type="tel" required aria-label="Téléphone" value={tel} onChange={e => setTel(e.target.value)} placeholder="Téléphone *" pattern="[+0-9\s\-()]{6,20}" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${tel === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
                       {tel === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
                     </div>
                     <div>
-                      <input type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Email *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${email === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      <input type="email" required aria-label="Email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${email === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
                       {email === '' && submitError && <p className="text-red-500 text-xs mt-1">Veuillez saisir une adresse email valide.</p>}
                     </div>
                   </div>

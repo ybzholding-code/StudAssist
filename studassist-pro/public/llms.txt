@@ -1,0 +1,21 @@
+# STUDASSIST
+
+> Cabinet d'orientation scolaire et accompagnement académique au Maroc, basé à Casablanca.
+
+STUDASSIST accompagne les élèves et étudiants du lycée au Master dans leur orientation scolaire, soutien scolaire, préparation aux concours, préparation au bac, certifications de langues et démarches administratives à l'international.
+
+## Services
+
+- [Orientation Scolaire](https://www.studassist.ma/orientation-scolaire)
+- [Soutien Scolaire](https://www.studassist.ma/soutien-scolaire)
+- [Prépas Bac](https://www.studassist.ma/prepas-bac)
+- [Prépas Concours](https://www.studassist.ma/prepas-concours)
+- [Certifications de Langues](https://www.studassist.ma/langues)
+- [Admin & Logement Étudiant](https://www.studassist.ma/admin-logement)
+
+## Contact
+
+- Site : https://www.studassist.ma
+- Email : contact@studassist.ma
+- Téléphone : +212 669 495 996
+- Adresse : 15 Rue des Ramiers, Casablanca 20000, Maroc

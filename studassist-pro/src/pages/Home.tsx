@@ -263,19 +263,20 @@ function BlogCarousel({ blogs }: { blogs: { id: string | number; slug: string; i
         </div>
       </div>
       <div className="flex items-center justify-center gap-4 mt-8">
-        <button onClick={prev} className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all">
+        <button onClick={prev} aria-label="Article précédent" className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all">
           <ChevronLeft size={18} />
         </button>
         <div className="flex gap-1.5">
           {blogs.map((_, i) => (
             <button
               key={i}
+              aria-label={`Aller à l'article ${i + 1}`}
               onClick={() => { resetInterval(); goTo(blogs.length + i); }}
               className={cn("h-2 rounded-full transition-all", ((idx - blogs.length + blogs.length * 10) % blogs.length) === i ? "bg-sa-green w-5" : "bg-gray-300 w-2")}
             />
           ))}
         </div>
-        <button onClick={next} className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all">
+        <button onClick={next} aria-label="Article suivant" className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all">
           <ChevronRight size={18} />
         </button>
       </div>
