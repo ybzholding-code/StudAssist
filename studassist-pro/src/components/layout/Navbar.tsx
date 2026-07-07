@@ -99,9 +99,9 @@ export default function Navbar() {
             Réserver un RDV
           </Link>
           <div className="flex items-center space-x-2.5">
-            <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Facebook size={14} /></a>
-            <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Instagram size={14} /></a>
-            <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Linkedin size={14} /></a>
+            <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="hover:text-brand-teal transition"><Facebook size={14} /></a>
+            <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Instagram STUDASSIST" className="hover:text-brand-teal transition"><Instagram size={14} /></a>
+            <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn STUDASSIST" className="hover:text-brand-teal transition"><Linkedin size={14} /></a>
           </div>
         </div>
         {/* Desktop top bar */}
@@ -124,9 +124,9 @@ export default function Navbar() {
               <MapPin size={16} className="mr-1.5 text-brand-teal font-bold" /> Nos centres
             </Link>
             <div className="flex items-center space-x-3 lg:ml-4 lg:border-l lg:border-white/20 lg:pl-4">
-              <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Facebook size={16} /></a>
-              <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Instagram size={16} /></a>
-              <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition"><Linkedin size={16} /></a>
+              <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="hover:text-brand-teal transition"><Facebook size={16} /></a>
+              <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Instagram STUDASSIST" className="hover:text-brand-teal transition"><Instagram size={16} /></a>
+              <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn STUDASSIST" className="hover:text-brand-teal transition"><Linkedin size={16} /></a>
             </div>
           </div>
         </div>
@@ -178,10 +178,10 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center space-x-1 lg:space-x-2">
-            <button className="p-2 text-brand-darkblue hover:text-brand-teal transition">
+            <button aria-label="Rechercher" className="p-2 text-brand-darkblue hover:text-brand-teal transition">
               <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </button>
-            <button id="mobile-menu-toggle" className="lg:hidden p-2 text-brand-darkblue" onClick={() => setIsOpen(!isOpen)}>
+            <button id="mobile-menu-toggle" aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"} className="lg:hidden p-2 text-brand-darkblue" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -230,9 +230,9 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="pt-4 border-t border-gray-100 flex items-center justify-center space-x-5">
-                <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="text-brand-darkblue hover:text-brand-teal transition"><Facebook size={20} /></a>
-                <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" className="text-brand-darkblue hover:text-brand-teal transition"><Instagram size={20} /></a>
-                <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" className="text-brand-darkblue hover:text-brand-teal transition"><Linkedin size={20} /></a>
+                <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Facebook size={20} /></a>
+                <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Instagram STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Instagram size={20} /></a>
+                <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Linkedin size={20} /></a>
               </div>
               <div className="flex items-center justify-center space-x-4 text-xs text-gray-500">
                 <Link to="/qui-sommes-nous" className="hover:text-brand-teal transition" onClick={() => setIsOpen(false)}>Qui sommes-nous</Link>

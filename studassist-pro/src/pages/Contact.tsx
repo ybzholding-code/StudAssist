@@ -218,19 +218,19 @@ export default function Contact() {
                         <h4 className="font-display font-extrabold text-lg text-sa-navy mb-4">Informations de contact</h4>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
-                            <input type="text" name="nom" required placeholder="Nom *" defaultValue={searchParams.get("nom") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.nom ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            <input type="text" name="nom" required aria-label="Nom" placeholder="Nom *" defaultValue={searchParams.get("nom") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.nom ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
                             {formErrors.nom && <p className="text-red-500 text-xs mt-1">{formErrors.nom}</p>}
                           </div>
                           <div>
-                            <input type="text" name="prenom" required placeholder="Prénom *" defaultValue={searchParams.get("prenom") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.prenom ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            <input type="text" name="prenom" required aria-label="Prénom" placeholder="Prénom *" defaultValue={searchParams.get("prenom") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.prenom ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
                             {formErrors.prenom && <p className="text-red-500 text-xs mt-1">{formErrors.prenom}</p>}
                           </div>
                           <div>
-                            <input type="tel" name="tel" required placeholder="Téléphone *" defaultValue={searchParams.get("tel") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.tel ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            <input type="tel" name="tel" required aria-label="Téléphone" placeholder="Téléphone *" defaultValue={searchParams.get("tel") || ""} className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.tel ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
                             {formErrors.tel && <p className="text-red-500 text-xs mt-1">{formErrors.tel}</p>}
                           </div>
                           <div>
-                            <input type="email" name="email" required placeholder="Email *" className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.email ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
+                            <input type="email" name="email" required aria-label="Email" placeholder="Email *" className={`w-full pb-2 border-b focus:outline-none transition bg-transparent text-[15px] placeholder:text-sa-ink/40 ${formErrors.email ? 'border-red-400' : 'border-sa-navy/15 focus:border-sa-pink'}`} />
                             {formErrors.email && <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>}
                           </div>
                         </div>

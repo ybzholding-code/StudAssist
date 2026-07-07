@@ -645,6 +645,7 @@ export default function Home() {
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       src={slides[currentSlide].image}
                       alt="Étudiante STUDASSIST"
+                      fetchPriority={currentSlide === 0 ? "high" : "auto"}
                       style={(() => { const tx = slides[currentSlide].imageTranslateX; const ty = slides[currentSlide].imageTranslateY; const sc = slides[currentSlide].imageScale ?? '1'; return { transform: `translateX(calc(-50% + ${tx ?? '0%'})) translateY(${ty ?? '0%'}) scale(${sc})` }; })()}
                       className="absolute bottom-0 left-1/2 h-full w-auto max-w-none object-contain object-bottom origin-bottom transition-transform duration-700 z-20"
                     />
@@ -1056,6 +1057,7 @@ export default function Home() {
                   <input
                     name="nom"
                     type="text"
+                    aria-label="Nom"
                     placeholder="Nom"
                     required
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
@@ -1063,12 +1065,14 @@ export default function Home() {
                   <input
                     name="prenom"
                     type="text"
+                    aria-label="Prénom"
                     placeholder="Prénom"
                     required
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
                   />
                   <select
                     name="role"
+                    aria-label="Vous êtes"
                     required
                     defaultValue=""
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all appearance-none"
@@ -1080,6 +1084,7 @@ export default function Home() {
                   <input
                     name="tel"
                     type="tel"
+                    aria-label="Numéro de téléphone"
                     placeholder="Numéro de téléphone"
                     required
                     className="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm font-medium focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
