@@ -588,7 +588,7 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* HERO SECTION */}
       <section 
-        className="relative pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[900px] transition-colors duration-700 ease-in-out"
+        className="relative pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[820px] xl:max-h-[900px] transition-colors duration-700 ease-in-out overflow-hidden"
         style={{ backgroundColor: slides[currentSlide].bgColor || '#FDFDFD' }}
       >
 
@@ -600,12 +600,12 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8 }}
-                className="flex-grow grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch"
+                className="flex-grow grid lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-16 items-stretch"
               >
                 {/* Text Content - Bold, Authoritative & Clean */}
                 <div className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left pb-10 lg:pb-16">
 
-                  <h1 className="text-[28px] sm:text-[36px] lg:text-[52px] xl:text-[60px] font-black text-sa-navy leading-[1.1] lg:leading-[1.05] mb-4 lg:mb-6 uppercase tracking-tight">
+                  <h1 className="text-[28px] sm:text-[36px] lg:text-[40px] xl:text-[52px] 2xl:text-[60px] font-black text-sa-navy leading-[1.1] lg:leading-[1.05] mb-4 lg:mb-6 uppercase tracking-tight">
                     {slides[currentSlide].title}
                   </h1>
 
@@ -631,8 +631,8 @@ export default function Home() {
                 </div>
 
                 {/* Hero Image Section — Anchored perfectly to the bottom */}
-                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-visible">
-                  <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-[900px] flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-[95vh] overflow-visible">
+                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-hidden">
+                  <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-full flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-full overflow-hidden">
 
                     {/* Parallax decorative shapes */}
                     {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}

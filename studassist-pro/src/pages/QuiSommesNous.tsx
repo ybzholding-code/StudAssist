@@ -138,8 +138,8 @@ const QuiSommesNous = () => {
             </motion.h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-            <div className="relative flex">
+          <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-stretch">
+            <div className="relative flex min-h-[400px] lg:min-h-[500px]">
               <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2 overflow-hidden flex-1">
                 <img 
@@ -150,7 +150,7 @@ const QuiSommesNous = () => {
               </div>
             </div>
 
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center lg:text-left min-w-0">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase">
                 <span className="text-brand-teal">STUDASSIST</span>, cabinet de conseil en orientation et soutien scolaire au Maroc et à l'international
               </h2>
