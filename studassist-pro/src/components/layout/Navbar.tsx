@@ -99,7 +99,7 @@ export default function Navbar() {
             Réserver un RDV
           </Link>
           <div className="flex items-center space-x-2.5">
-            <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="hover:text-brand-teal transition"><Facebook size={14} /></a>
+            <a href="https://web.facebook.com/studassist.fr" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="hover:text-brand-teal transition"><Facebook size={14} /></a>
             <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Instagram STUDASSIST" className="hover:text-brand-teal transition"><Instagram size={14} /></a>
             <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn STUDASSIST" className="hover:text-brand-teal transition"><Linkedin size={14} /></a>
           </div>
@@ -124,7 +124,7 @@ export default function Navbar() {
               <MapPin size={16} className="mr-1.5 text-brand-teal font-bold" /> Nos centres
             </Link>
             <div className="flex items-center space-x-3 lg:ml-4 lg:border-l lg:border-white/20 lg:pl-4">
-              <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="hover:text-brand-teal transition"><Facebook size={16} /></a>
+              <a href="https://web.facebook.com/studassist.fr" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="hover:text-brand-teal transition"><Facebook size={16} /></a>
               <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Instagram STUDASSIST" className="hover:text-brand-teal transition"><Instagram size={16} /></a>
               <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn STUDASSIST" className="hover:text-brand-teal transition"><Linkedin size={16} /></a>
             </div>
@@ -230,7 +230,7 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="pt-4 border-t border-gray-100 flex items-center justify-center space-x-5">
-                <a href="https://www.facebook.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Facebook size={20} /></a>
+                <a href="https://web.facebook.com/studassist.fr" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Facebook size={20} /></a>
                 <a href="https://www.instagram.com/studassistmaroc" target="_blank" rel="noopener noreferrer" aria-label="Instagram STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Instagram size={20} /></a>
                 <a href="https://www.linkedin.com/company/studassist" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Linkedin size={20} /></a>
               </div>

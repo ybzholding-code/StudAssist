@@ -50,7 +50,7 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
 const socials = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/studassist", label: "LinkedIn" },
   { icon: Instagram, href: "https://www.instagram.com/studassistmaroc", label: "Instagram" },
-  { icon: Facebook, href: "https://www.facebook.com/studassistmaroc", label: "Facebook" },
+  { icon: Facebook, href: "https://web.facebook.com/studassist.fr", label: "Facebook" },
 ];
 
 export default function Footer() {
