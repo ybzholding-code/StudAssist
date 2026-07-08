@@ -212,98 +212,97 @@ export default function ImageFloaters({ scale = 1, slideIndex = 0 }: Props) {
           className="absolute inset-0"
         >
           {/* =========================================================
-              LEFT SIDE (Staggered vertically to avoid squishing)
+              All floaters cluster around/behind the figure for 3D depth
+              The figure is centered in this column (left:50%)
+              Left-of-figure = roughly left-[15%..40%]
+              Right-of-figure = roughly right-[5%..25%]
+              Behind = z-10, In front of arm = z-30
               ========================================================= */}
 
-          {/* 1. Highest Left: s1 (Subject) -> Foreground */}
+          {/* 1. Top-left of figure: s1 — behind shoulder */}
           <motion.div
             style={{ ...p1, width: s(2.5), height: s(2.5) }}
-            className="absolute top-[8%] left-[2%] lg:top-[10%] lg:left-[5%] z-30 scale-[0.6] lg:scale-100 origin-center"
-            animate={{ y: [0, -10, 0] }}
+            className="absolute top-[8%] left-[18%] z-10 origin-center"
+            animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
             <conf.s1.Comp color={conf.s1.color} className="w-full h-full opacity-70" />
           </motion.div>
 
-          {/* 2. Upper-Mid Left: a1 (Abstract) -> Foreground */}
+          {/* 2. Upper-left of figure: a1 — behind head/shoulder */}
           <motion.div
-            style={{ ...a1, width: s(6), height: s(6) }}
-            className="absolute top-[22%] -left-[6%] lg:top-[25%] lg:-left-[10%] z-30 flex items-center justify-center scale-[0.6] lg:scale-100 origin-center"
+            style={{ ...a1, width: s(5), height: s(5) }}
+            className="absolute top-[18%] left-[12%] z-10 flex items-center justify-center opacity-70"
           >
             <conf.a1.Comp color={conf.a1.color} />
           </motion.div>
 
-          {/* 3. Lower-Mid Left: a2 (Abstract) -> Background (Behind body) */}
+          {/* 3. Mid-left of figure: a2 — behind torso */}
           <motion.div
-            style={{ ...a2, width: s(8), height: s(8) }}
-            className="absolute top-[48%] -left-[10%] lg:top-[50%] lg:-left-[15%] z-10 opacity-40 hidden lg:block"
+            style={{ ...a2, width: s(7), height: s(7) }}
+            className="absolute top-[42%] left-[8%] z-10 opacity-35 hidden lg:block"
           >
             <conf.a2.Comp color={conf.a2.color} />
           </motion.div>
 
-          {/* 4. Bottom Left: a3 (Abstract) -> Background */}
+          {/* 4. Lower-left of figure: a3 — behind hip */}
           <motion.div
-            style={{ ...a3, width: s(3.5), height: s(3.5) }}
-            className="absolute top-[70%] -left-[12%] lg:top-[72%] lg:-left-[18%] z-10 hidden lg:block"
+            style={{ ...a3, width: s(3), height: s(3) }}
+            className="absolute top-[65%] left-[18%] z-10 hidden lg:block opacity-60"
           >
             <conf.a3.Comp color={conf.a3.color} />
           </motion.div>
 
-          {/* 5. Lowest Left: s2 (Subject) -> Foreground */}
+          {/* 5. Bottom-left: s2 — in front of figure leg area */}
           <motion.div
-            style={{ ...p3, width: s(3.5), height: s(3.5) }}
-            className="absolute bottom-[2%] left-[2%] lg:bottom-[5%] lg:left-[0%] z-30 scale-[0.6] lg:scale-100 origin-center"
-            animate={{ y: [0, 10, 0] }}
+            style={{ ...p3, width: s(3), height: s(3) }}
+            className="absolute bottom-[6%] left-[22%] z-30 origin-center"
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
             <conf.s2.Comp color={conf.s2.color} className="w-full h-full opacity-80" />
           </motion.div>
 
-
-          {/* =========================================================
-              RIGHT SIDE (Staggered vertically to avoid squishing)
-              ========================================================= */}
-
-          {/* 6. Highest Right: s3 (Subject) -> Foreground */}
+          {/* 6. Top-right of figure: s3 — behind upper-right */}
           <motion.div
-            style={{ ...p2, width: s(4), height: s(4) }}
-            className="absolute top-[0%] -right-[8%] lg:top-[2%] lg:-right-[12%] z-30 scale-[0.6] lg:scale-100 origin-center"
+            style={{ ...p2, width: s(3.5), height: s(3.5) }}
+            className="absolute top-[5%] right-[12%] z-10 origin-center"
             animate={{ rotate: -360 }}
             transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           >
             <conf.s3.Comp color={conf.s3.color} className="w-full h-full opacity-60" />
           </motion.div>
 
-          {/* 7. Upper-Mid Right: a4 (Abstract) -> Background (Behind head) */}
+          {/* 7. Upper-right of figure: a4 — large ring behind head */}
           <motion.div
-            style={{ ...a4, width: s(10), height: s(10) }}
-            className="absolute top-[18%] -right-[6%] lg:top-[20%] lg:-right-[8%] z-10 hidden lg:flex"
+            style={{ ...a4, width: s(9), height: s(9) }}
+            className="absolute top-[12%] right-[5%] z-10 hidden lg:flex"
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           >
             <conf.a4.Comp color={conf.a4.color} />
           </motion.div>
 
-          {/* 8. Lower-Mid Right: a5 (Abstract) -> Foreground (Over arm) */}
+          {/* 8. Mid-right of figure: a5 — behind arm */}
           <motion.div
-            style={{ ...a5, width: s(6), height: s(6) }}
-            className="absolute top-[55%] -right-[10%] lg:top-[58%] lg:-right-[14%] z-30 opacity-40 lg:opacity-60 scale-[0.6] lg:scale-100 origin-center"
+            style={{ ...a5, width: s(5), height: s(5) }}
+            className="absolute top-[50%] right-[8%] z-10 opacity-50"
           >
             <conf.a5.Comp color={conf.a5.color} />
           </motion.div>
 
-          {/* 9. Bottom Right: a6 (Abstract) -> Foreground */}
+          {/* 9. Lower-right of figure: a6 — behind torso lower */}
           <motion.div
-            style={{ ...a6, width: s(4.5), height: s(4.5) }}
-            className="absolute bottom-[18%] -right-[6%] lg:bottom-[20%] lg:-right-[10%] z-30 hidden lg:block"
+            style={{ ...a6, width: s(4), height: s(4) }}
+            className="absolute bottom-[22%] right-[10%] z-10 hidden lg:block opacity-60"
           >
             <conf.a6.Comp color={conf.a6.color} />
           </motion.div>
 
-          {/* 10. Lowest Right: s4 (Subject) -> Background */}
+          {/* 10. Bottom-right: s4 — behind feet */}
           <motion.div
-            style={{ ...p4, width: s(3), height: s(3) }}
-            className="absolute bottom-[0%] right-[4%] lg:bottom-[2%] lg:right-[6%] z-10 hidden lg:block"
+            style={{ ...p4, width: s(2.5), height: s(2.5) }}
+            className="absolute bottom-[4%] right-[18%] z-10 hidden lg:block"
             animate={{ rotate: [10, -10, 10] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >

@@ -470,8 +470,6 @@ export default function Home() {
       badgeTitle: "PROJET D'AVENIR",
       imageScale: "1.00",
       imagePosition: "object-bottom",
-      imageTranslateX: "5%",
-      imageTranslateY: "-5%",
       bgColor: "#FBFAFA"
     },
     {
@@ -491,7 +489,6 @@ export default function Home() {
       badgeTitle: "RÉUSSITE BAC",
       imageScale: "1.00",
       imagePosition: "object-bottom",
-      imageTranslateY: "-5%",
       bgColor: "#FDFDFD"
     },
     {
@@ -549,7 +546,6 @@ export default function Home() {
       badgeTitle: "3 À 4 ÉLÈVES",
       imageScale: "1.00",
       imagePosition: "object-bottom",
-      imageTranslateY: "-5%",
       bgColor: "#F9F9F9"
     },
     {
@@ -587,74 +583,122 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* HERO SECTION */}
-      <section 
-        className="relative pt-4 sm:pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[860px] xl:max-h-[960px] 2xl:max-h-[1020px] transition-colors duration-700 ease-in-out"
-        style={{ backgroundColor: slides[currentSlide].bgColor || '#FDFDFD' }}
+      <section
+        className="relative transition-colors duration-700 ease-in-out"
+        style={{
+          backgroundColor: slides[currentSlide].bgColor || '#FDFDFD',
+          height: 'clamp(560px, calc(100svh - 140px), 960px)',
+          overflow: 'hidden',
+        }}
       >
-
-        <div className="container mx-auto px-6 relative z-10 flex-grow flex flex-col">
+        {/* ── MOBILE (< md): stacked — image top, text bottom ── */}
+        <div className="md:hidden h-full flex flex-col pt-4 px-5">
           <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide + '-mob'}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7 }}
+              className="h-full flex flex-col"
+            >
+              {/* Image */}
+              <div className="relative flex-1 min-h-0">
+                <img
+                  src={slides[currentSlide].image}
+                  alt="STUDASSIST"
+                  fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto max-w-none object-contain object-bottom"
+                />
+              </div>
+              {/* Text */}
+              <div className="flex-shrink-0 text-center py-5">
+                <h1 className="text-[20px] sm:text-[26px] font-black text-sa-navy leading-[1.1] mb-3 uppercase tracking-tight">
+                  {slides[currentSlide].title}
+                </h1>
+                <p className="text-sa-ink/70 text-sm font-medium mb-5 leading-relaxed max-w-sm mx-auto">
+                  {slides[currentSlide].description}
+                </p>
+                <div className="flex justify-center">
+                  <Link
+                    to={slides[currentSlide].link || "/contact"}
+                    className={cn(
+                      "inline-flex items-center gap-2 px-7 py-3 rounded-[2rem] font-black text-[11px] uppercase tracking-widest transition-all shadow-[0_12px_30px_rgba(0,0,0,0.25)]",
+                      accentClasses[slides[currentSlide].accent].bg,
+                      "text-white"
+                    )}
+                  >
+                    <span>{slides[currentSlide].buttonText}</span>
+                    <ArrowRight size={15} />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* ── DESKTOP (≥ md): CSS grid, text left, image right, zero bleed ── */}
+        <div className="hidden md:grid h-full" style={{ gridTemplateColumns: '1fr 1fr' }}>
+
+          {/* LEFT: Text column — strict 50% width, image cannot enter */}
+          <div className="flex flex-col justify-center px-6 md:px-10 lg:px-16 xl:px-20 z-10 min-w-0">
+            <AnimatePresence mode="wait">
               <motion.div
-                key={currentSlide}
+                key={currentSlide + '-text'}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8 }}
-                className="flex-grow grid md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-16 items-stretch"
+                className="min-w-0"
               >
-                {/* Text Content - Bold, Authoritative & Clean */}
-                <div className="order-2 md:order-1 flex flex-col justify-center text-center md:text-left pb-6 md:pb-10 lg:pb-16">
-
-                  <h1 className="text-[22px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[52px] 2xl:text-[60px] font-black text-sa-navy leading-[1.1] lg:leading-[1.05] mb-3 md:mb-4 lg:mb-6 uppercase tracking-tight">
-                    {slides[currentSlide].title}
-                  </h1>
-
-                  <p className="text-sa-ink/70 text-sm md:text-base lg:text-lg font-medium mb-5 md:mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed font-sans">
-                    {slides[currentSlide].description}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 lg:gap-6">
-                    <Link 
-                      to={slides[currentSlide].link || "/contact"}
-                      className={cn(
-                        "group flex items-center justify-center space-x-2 sm:space-x-3 px-6 sm:px-10 py-3.5 sm:py-4 rounded-[2rem] font-black text-[10px] sm:text-xs uppercase tracking-widest sm:tracking-[0.2em] transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-w-full text-center",
-                        accentClasses[slides[currentSlide].accent].bg,
-                        "text-white hover:scale-105 hover:-translate-y-1 active:scale-95"
-                      )}
-                    >
-                      <span className="relative z-10 leading-tight">{slides[currentSlide].buttonText}</span>
-                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform relative z-10 shrink-0" />
-                    </Link>
-                  </div>
-
-
-                </div>
-
-                {/* Hero Image Section — Anchored perfectly to the bottom */}
-                <div className="order-1 md:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-visible">
-                  <div className="relative w-full max-w-[400px] sm:max-w-[600px] md:max-w-[720px] lg:max-w-full flex justify-center items-end mx-auto h-[42vh] min-h-[260px] sm:h-[55vh] md:h-[60vh] lg:h-[75vh] xl:h-[80vh] 2xl:h-full overflow-visible" style={{maxHeight: '100%'}}>
-
-                    {/* Parallax decorative shapes */}
-                    {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}
-
-                    {/* ===== Cut-out student photo (no frame) anchored bottom ===== */}
-                    <motion.img
-                      key={currentSlide}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                      src={slides[currentSlide].image}
-                      alt="Étudiante STUDASSIST"
-                      fetchPriority={currentSlide === 0 ? "high" : "auto"}
-                      style={(() => { const tx = slides[currentSlide].imageTranslateX; const ty = slides[currentSlide].imageTranslateY; const sc = slides[currentSlide].imageScale ?? '1'; return { transform: `translateX(calc(-50% + ${tx ?? '0%'})) translateY(${ty ?? '0%'}) scale(${sc})` }; })()}
-                      className="absolute bottom-0 left-1/2 h-full w-auto max-w-none object-contain object-bottom origin-bottom transition-transform duration-700 z-20"
-                    />
-
-                  </div>
-                </div>
+                <h1 className="text-[26px] md:text-[30px] lg:text-[38px] xl:text-[50px] 2xl:text-[58px] font-black text-sa-navy leading-[1.05] mb-4 lg:mb-6 uppercase tracking-tight break-words">
+                  {slides[currentSlide].title}
+                </h1>
+                <p className="text-sa-ink/70 text-sm md:text-base lg:text-lg font-medium mb-6 lg:mb-8 leading-relaxed font-sans">
+                  {slides[currentSlide].description}
+                </p>
+                <Link
+                  to={slides[currentSlide].link || "/contact"}
+                  className={cn(
+                    "group inline-flex items-center gap-3 px-8 lg:px-10 py-3.5 lg:py-4 rounded-[2rem] font-black text-[10px] lg:text-xs uppercase tracking-[0.18em] transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-w-full",
+                    accentClasses[slides[currentSlide].accent].bg,
+                    "text-white hover:scale-105 hover:-translate-y-1 active:scale-95"
+                  )}
+                >
+                  <span className="truncate">{slides[currentSlide].buttonText}</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform shrink-0" />
+                </Link>
               </motion.div>
-          </AnimatePresence>
+            </AnimatePresence>
+          </div>
+
+          {/* RIGHT: Image column — overflow-visible so image is 100% shown, max-w keeps it in bounds */}
+          <div className="relative overflow-visible">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide + '-img'}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 overflow-visible"
+              >
+                {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}
+                <img
+                  src={slides[currentSlide].image}
+                  alt="Étudiante STUDASSIST"
+                  fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                  style={(() => {
+                    const s = slides[currentSlide] as any;
+                    const sc = s.imageScale ?? '1';
+                    return { transform: `translateX(-50%) scale(${sc})` };
+                  })()}
+                  className="absolute bottom-0 left-1/2 h-full w-auto max-w-[58vw] object-contain object-bottom origin-bottom z-20"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
         </div>
 
         {/* Navigation Arrows */}
