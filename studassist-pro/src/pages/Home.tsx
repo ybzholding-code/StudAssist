@@ -587,12 +587,12 @@ export default function Home() {
         className="relative transition-colors duration-700 ease-in-out"
         style={{
           backgroundColor: slides[currentSlide].bgColor || '#FDFDFD',
-          height: 'clamp(560px, calc(100svh - 140px), 960px)',
+          height: 'clamp(520px, calc(100svh - 100px), 960px)',
           overflow: 'hidden',
         }}
       >
         {/* ── MOBILE (< md): stacked — image top, text bottom ── */}
-        <div className="md:hidden h-full flex flex-col pt-4 px-5">
+        <div className="md:hidden h-full flex flex-col">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide + '-mob'}
@@ -603,35 +603,34 @@ export default function Home() {
               className="h-full flex flex-col"
             >
               {/* Image */}
-              <div className="relative flex-1 min-h-0">
+              <div className="relative flex-[4] min-h-0 w-full">
                 <img
                   src={slides[currentSlide].image}
                   alt="STUDASSIST"
                   fetchPriority={currentSlide === 0 ? "high" : "auto"}
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto max-w-none object-contain object-bottom"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 max-h-full w-auto max-w-none object-contain object-bottom"
+                  style={{ maxWidth: '120%' }}
                 />
               </div>
               {/* Text */}
-              <div className="flex-shrink-0 text-center py-5">
-                <h1 className="text-[20px] sm:text-[26px] font-black text-sa-navy leading-[1.1] mb-3 uppercase tracking-tight">
+              <div className="flex-[2] flex flex-col justify-center items-center text-center px-5 pb-8">
+                <h1 className="text-[18px] sm:text-[24px] font-black text-sa-navy leading-[1.1] mb-2 uppercase tracking-tight">
                   {slides[currentSlide].title}
                 </h1>
-                <p className="text-sa-ink/70 text-sm font-medium mb-5 leading-relaxed max-w-sm mx-auto">
+                <p className="text-sa-ink/70 text-xs sm:text-sm font-medium mb-4 leading-relaxed max-w-xs mx-auto">
                   {slides[currentSlide].description}
                 </p>
-                <div className="flex justify-center">
-                  <Link
-                    to={slides[currentSlide].link || "/contact"}
-                    className={cn(
-                      "inline-flex items-center gap-2 px-7 py-3 rounded-[2rem] font-black text-[11px] uppercase tracking-widest transition-all shadow-[0_12px_30px_rgba(0,0,0,0.25)]",
-                      accentClasses[slides[currentSlide].accent].bg,
-                      "text-white"
-                    )}
-                  >
-                    <span>{slides[currentSlide].buttonText}</span>
-                    <ArrowRight size={15} />
-                  </Link>
-                </div>
+                <Link
+                  to={slides[currentSlide].link || "/contact"}
+                  className={cn(
+                    "inline-flex items-center gap-2 px-6 py-2.5 rounded-[2rem] font-black text-[10px] uppercase tracking-widest transition-all shadow-[0_12px_30px_rgba(0,0,0,0.25)]",
+                    accentClasses[slides[currentSlide].accent].bg,
+                    "text-white"
+                  )}
+                >
+                  <span>{slides[currentSlide].buttonText}</span>
+                  <ArrowRight size={13} />
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>
