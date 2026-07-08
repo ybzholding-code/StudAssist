@@ -190,8 +190,8 @@ const QuiSommesNous = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-            <div className="order-2 lg:order-1">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-stretch">
+            <div className="order-2 md:order-1">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue mb-6 leading-tight uppercase">
                 STUDASSIST – L'histoire d'un cabinet de conseil dédié à la réussite académique internationale
               </h2>

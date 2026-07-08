@@ -60,9 +60,9 @@ export default function Footer() {
     <footer className="bg-sa-navy text-white relative">
       {/* ============ MAIN ============ */}
       <div className="container mx-auto px-6 pt-20 pb-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-14">
           {/* Brand column */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="sm:col-span-2 lg:col-span-3 space-y-6">
             <Link to="/" className="inline-block">
               <Logo variant="light" height={80} />
             </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
 
           {/* Link columns */}
           {columns.map((col) => (
-            <div key={col.title} className="lg:col-span-2">
+            <div key={col.title} className="lg:col-span-2 min-w-0">
               <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-5">
                 {col.title}
               </h4>

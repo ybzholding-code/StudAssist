@@ -588,7 +588,7 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* HERO SECTION */}
       <section 
-        className="relative pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[820px] xl:max-h-[900px] transition-colors duration-700 ease-in-out"
+        className="relative pt-4 sm:pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[820px] xl:max-h-[900px] transition-colors duration-700 ease-in-out"
         style={{ backgroundColor: slides[currentSlide].bgColor || '#FDFDFD' }}
       >
 
@@ -600,20 +600,20 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8 }}
-                className="flex-grow grid lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-16 items-stretch"
+                className="flex-grow grid md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-16 items-stretch"
               >
                 {/* Text Content - Bold, Authoritative & Clean */}
-                <div className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left pb-10 lg:pb-16">
+                <div className="order-2 md:order-1 flex flex-col justify-center text-center md:text-left pb-6 md:pb-10 lg:pb-16">
 
-                  <h1 className="text-[28px] sm:text-[36px] lg:text-[40px] xl:text-[52px] 2xl:text-[60px] font-black text-sa-navy leading-[1.1] lg:leading-[1.05] mb-4 lg:mb-6 uppercase tracking-tight">
+                  <h1 className="text-[22px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[52px] 2xl:text-[60px] font-black text-sa-navy leading-[1.1] lg:leading-[1.05] mb-3 md:mb-4 lg:mb-6 uppercase tracking-tight">
                     {slides[currentSlide].title}
                   </h1>
 
-                  <p className="text-sa-ink/70 text-base lg:text-lg font-medium mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-sans">
+                  <p className="text-sa-ink/70 text-sm md:text-base lg:text-lg font-medium mb-5 md:mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed font-sans">
                     {slides[currentSlide].description}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">
+                  <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 lg:gap-6">
                     <Link 
                       to={slides[currentSlide].link || "/contact"}
                       className={cn(
@@ -631,8 +631,8 @@ export default function Home() {
                 </div>
 
                 {/* Hero Image Section — Anchored perfectly to the bottom */}
-                <div className="order-1 lg:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-visible">
-                  <div className="relative w-full max-w-[600px] sm:max-w-[720px] lg:max-w-full flex justify-center items-end mx-auto h-[55vh] min-h-[380px] sm:h-[65vh] lg:h-full overflow-visible">
+                <div className="order-1 md:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-visible">
+                  <div className="relative w-full max-w-[400px] sm:max-w-[600px] md:max-w-[720px] lg:max-w-full flex justify-center items-end mx-auto h-[42vh] min-h-[260px] sm:h-[55vh] md:h-[60vh] lg:h-full overflow-visible">
 
                     {/* Parallax decorative shapes */}
                     {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}
@@ -660,14 +660,14 @@ export default function Home() {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all duration-300 active:scale-90"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all duration-300 active:scale-90"
           aria-label="Slide précédente"
         >
           <ChevronLeft size={20} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all duration-300 active:scale-90"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg flex items-center justify-center text-sa-navy hover:bg-sa-green hover:text-white hover:border-sa-green transition-all duration-300 active:scale-90"
           aria-label="Slide suivante"
         >
           <ChevronRight size={20} />
@@ -694,10 +694,10 @@ export default function Home() {
       {/* WHY CHOOSE SECTION */}
       <section className="py-14 lg:py-16 bg-[#f8fbfc]/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
             {/* Video column */}
             <div className="flex justify-center">
-               <div className="relative w-full max-w-[420px]">
+               <div className="relative w-full max-w-[340px] sm:max-w-[380px] md:max-w-[420px] mx-auto">
                  <MediaFrameFloaters />
                  
                  {/* The Video Container (z-20) */}
@@ -736,7 +736,7 @@ export default function Home() {
                  <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-sa-pink/10 via-sa-gold/30 to-sa-green/10" />
 
                  {/* STAT 1: Élèves */}
-                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pb-8 pr-4 lg:pr-8 overflow-hidden">
+                 <div className="relative flex flex-row items-center space-x-3 sm:space-x-4 group pb-6 sm:pb-8 pr-3 sm:pr-4 lg:pr-8 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-sa-navy/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-2xl -z-10" />
                     <img src="https://img.icons8.com/3d-fluency/94/conference-call.png" alt="Élèves" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
@@ -746,7 +746,7 @@ export default function Home() {
                  </div>
 
                  {/* STAT 2: Moyenne */}
-                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pb-8 pl-4 lg:pl-8 overflow-hidden">
+                 <div className="relative flex flex-row items-center space-x-3 sm:space-x-4 group pb-6 sm:pb-8 pl-3 sm:pl-4 lg:pl-8 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-bl from-sa-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-2xl -z-10" />
                     <img src="https://img.icons8.com/3d-fluency/94/star.png" alt="Moyenne" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
@@ -756,7 +756,7 @@ export default function Home() {
                  </div>
 
                  {/* STAT 3: Réussite */}
-                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pt-8 pr-4 lg:pr-8 overflow-hidden">
+                 <div className="relative flex flex-row items-center space-x-3 sm:space-x-4 group pt-6 sm:pt-8 pr-3 sm:pr-4 lg:pr-8 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-tr from-sa-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl -z-10" />
                     <img src="https://img.icons8.com/3d-fluency/94/trophy.png" alt="Réussite" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
@@ -766,7 +766,7 @@ export default function Home() {
                  </div>
 
                  {/* STAT 4: Top 3 Ecoles */}
-                 <div className="relative flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 group pt-8 pl-4 lg:pl-8 overflow-hidden">
+                 <div className="relative flex flex-row items-center space-x-3 sm:space-x-4 group pt-6 sm:pt-8 pl-3 sm:pl-4 lg:pl-8 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-tl from-sa-pink/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-2xl -z-10" />
                     <img src="https://img.icons8.com/3d-fluency/94/graduation-cap.png" alt="Écoles" className="w-10 h-10 shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 drop-shadow-sm" />
                     <div>
@@ -786,9 +786,9 @@ export default function Home() {
               >
                 <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-sa-green/10 rounded-full translate-y-1/2 -translate-x-1/2" />
-                <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8">
+                <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 md:gap-8">
                   <div className="flex-1">
-                    <h3 className="font-display text-[22px] lg:text-[28px] font-extrabold text-white leading-[1.1] mb-3 tracking-tight">
+                    <h3 className="font-display text-[20px] sm:text-[22px] lg:text-[28px] font-extrabold text-white leading-[1.1] mb-3 tracking-tight">
                       Prêt à décoller <span className="text-sa-green">pour la réussite ?</span>
                     </h3>
                     <p className="text-white/70 text-sm lg:text-[15px] leading-relaxed mb-6 max-w-lg">
@@ -1023,21 +1023,21 @@ export default function Home() {
             </div>
 
             {/* Mobile-only photo placed above the band */}
-            <div className="lg:hidden flex justify-center pt-8">
+            <div className="lg:hidden flex justify-center -mb-2 mt-6">
               <img
                 src="/cta-student.webp"
                 alt="Étudiant STUDASSIST"
-                className="w-[220px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]"
+                className="w-[180px] sm:w-[220px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]"
               />
             </div>
 
-            <div className="grid lg:grid-cols-[380px_1fr] items-center gap-8 lg:gap-12 px-6 lg:pr-14 lg:pl-0 pt-8 lg:pt-14 pb-10 lg:pb-14">
+            <div className="grid lg:grid-cols-[380px_1fr] items-center gap-6 md:gap-8 lg:gap-12 px-5 sm:px-6 lg:pr-14 lg:pl-0 pt-0 md:pt-8 lg:pt-14 pb-8 md:pb-10 lg:pb-14">
               {/* Spacer column on desktop to reserve room for the absolutely-positioned photo */}
               <div className="hidden lg:block" />
 
               {/* RIGHT: Mini contact form */}
               <div className="relative z-10 text-white flex flex-col items-center text-center w-full max-w-lg mx-auto">
-                <h2 className="font-display text-[26px] lg:text-[36px] font-extrabold leading-[1.1] tracking-tight mb-2">
+                <h2 className="font-display text-[22px] sm:text-[26px] lg:text-[36px] font-extrabold leading-[1.1] tracking-tight mb-2">
                   Laissez-nous vos <span className="sa-wavy sa-wavy-yellow">coordonnées</span>
                 </h2>
                 <p className="text-white/80 text-[14px] lg:text-[15px] leading-relaxed mb-6">
