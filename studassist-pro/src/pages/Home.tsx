@@ -588,7 +588,7 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* HERO SECTION */}
       <section 
-        className="relative pt-4 sm:pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[820px] xl:max-h-[900px] transition-colors duration-700 ease-in-out"
+        className="relative pt-4 sm:pt-6 lg:pt-10 flex flex-col min-h-[calc(100svh-80px)] h-auto lg:h-[calc(100svh-140px)] lg:max-h-[860px] xl:max-h-[960px] 2xl:max-h-[1020px] transition-colors duration-700 ease-in-out"
         style={{ backgroundColor: slides[currentSlide].bgColor || '#FDFDFD' }}
       >
 
@@ -632,7 +632,7 @@ export default function Home() {
 
                 {/* Hero Image Section — Anchored perfectly to the bottom */}
                 <div className="order-1 md:order-2 relative flex justify-center items-end w-full h-full mt-auto overflow-visible">
-                  <div className="relative w-full max-w-[400px] sm:max-w-[600px] md:max-w-[720px] lg:max-w-full flex justify-center items-end mx-auto h-[42vh] min-h-[260px] sm:h-[55vh] md:h-[60vh] lg:h-full overflow-visible">
+                  <div className="relative w-full max-w-[400px] sm:max-w-[600px] md:max-w-[720px] lg:max-w-full flex justify-center items-end mx-auto h-[42vh] min-h-[260px] sm:h-[55vh] md:h-[60vh] lg:h-[75vh] xl:h-[80vh] 2xl:h-full overflow-visible" style={{maxHeight: '100%'}}>
 
                     {/* Parallax decorative shapes */}
                     {slides[currentSlide].showFloaters && <ImageFloaters slideIndex={currentSlide} />}

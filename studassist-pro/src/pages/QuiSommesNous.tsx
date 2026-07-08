@@ -138,14 +138,14 @@ const QuiSommesNous = () => {
             </motion.h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-stretch">
-            <div className="relative flex min-h-[400px] lg:min-h-[500px]">
+          <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-start">
+            <div className="relative flex min-h-[400px] lg:min-h-[520px] xl:min-h-[580px]">
               <MediaFrameFloaters />
               <div className="relative z-20 bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2 overflow-hidden flex-1">
                 <img 
                   src="/DSC_8768-copie.JPG" 
                   alt="Équipe STUDASSIST - Cabinet de conseil en orientation scolaire Casablanca" 
-                  className="rounded-[2rem] w-full h-full object-cover object-top"
+                  className="rounded-[2rem] w-full h-full object-cover object-top absolute inset-0"
                 />
               </div>
             </div>
