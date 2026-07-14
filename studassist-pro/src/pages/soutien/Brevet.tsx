@@ -30,13 +30,13 @@ export default function SoutienBrevet() {
       moveNavUnderHero={true}
       levels={LEVELS}
       sectionTitle="Prépa Brevet"
-      enjeuxEyebrow="Les enjeux du Brevet"
+      enjeuxEyebrow="Les enjeux"
       whyChooseEyebrow="Ce qui fait notre différence"
       faqAsideSubtitle="Nous vous répondons instantanément"
 
       enjeux={{
         title: "Les enjeux du Brevet",
-        lead: "La réussite au Brevet repose sur :",
+        lead: "Une préparation structurée permet d'aborder l'examen avec confiance, méthode et sérénité. La réussite du Brevet repose sur :",
         bullets: [
           "La maîtrise des fondamentaux",
           "La compréhension des attendus officiels",
@@ -117,6 +117,7 @@ export default function SoutienBrevet() {
       }}
 
       faqKeys={["soutien", "method"]}
+      faqTitle="Prépa Brevet : questions fréquentes"
       prev={{ label: "Collège", to: "/soutien/college" }}
       next={{ label: "Lycée", to: "/soutien/lycee" }}
     />

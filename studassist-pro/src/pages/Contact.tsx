@@ -352,6 +352,7 @@ export default function Contact() {
                             Votre besoin
                           </label>
                           <textarea
+                            name="message"
                             rows={3}
                             placeholder="Décrivez ici vos objectifs d'orientation, vos difficultés, votre projet d'études, peut-être un besoin spécifique…etc."
                             className="w-full py-2 border-b border-sa-navy/15 focus:border-sa-pink focus:outline-none transition bg-transparent resize-none text-[15px] placeholder:text-sa-ink/40"

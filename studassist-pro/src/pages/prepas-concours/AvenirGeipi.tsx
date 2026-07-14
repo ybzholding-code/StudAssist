@@ -117,7 +117,7 @@ export default function PrepaConcoursAvenirGeipi() {
           "Une préparation orientée score avec des stratégies de performances éprouvées et un véritable esprit concours",
           "Des petits groupes à effectif réduit (10 élèves max) avec un suivi personnalisé",
           "Des concours blancs en conditions réelles pour développer les bons réflexes et automatismes",
-          "Une préparation à la fois utile pour les concours blancs et pour les révisions des épreuves du baccalauréat",
+          "Une préparation à la fois utile pour les concours et pour les révisions des épreuves du baccalauréat",
           "+7 ans d'expertise et des résultats reconnus — 100% de nos élèves sont admis dans le top 3 de leurs choix",
         ],
         icons: [
@@ -132,7 +132,7 @@ export default function PrepaConcoursAvenirGeipi() {
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Vous souhaitez performer aux concours d'ingénieurs en France ?",
+        body: "Vous souhaitez performer aux concours des écoles d'ingénieurs post-bac en France ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",

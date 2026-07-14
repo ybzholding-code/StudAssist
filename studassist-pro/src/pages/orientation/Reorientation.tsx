@@ -4,7 +4,7 @@ import OrientationLevelPage from "../../components/OrientationLevelPage";
 export default function OrientationReorientation() {
   return (
     <OrientationLevelPage
-      eyebrow="Transition · Réorientation"
+      eyebrow="Transition Post-Bac"
       accent="coral"
       title={<>Réorientation <span className="text-brand-teal">académique</span></>}
       subtitle="Transformer un premier choix en nouveau départ stratégique et assumé."
@@ -21,6 +21,25 @@ export default function OrientationReorientation() {
       moveNavUnderHero={true}
       whyChooseEyebrow="Ce qui fait notre différence"
       faqAsideSubtitle="Nous vous répondons instantanément"
+
+      enjeux={{
+        title: "Les enjeux d'une réorientation réussie",
+        lead: "Une réorientation bien accompagnée transforme une situation d'insatisfaction en opportunité de repositionnement stratégique.",
+        bullets: [
+          "Comprendre les raisons profondes du besoin de changement",
+          "Construire un nouveau projet cohérent avec le potentiel réel",
+          "Valoriser l'expérience acquise dans le nouveau parcours",
+          "Sécuriser la transition avec un socle académique solide",
+          "Sécuriser la transition avec un socle académique solide et une méthodologie de candidatures structurée et éprouvée",
+        ],
+        icons: [
+          "https://img.icons8.com/3d-fluency/94/search.png",
+          "https://img.icons8.com/3d-fluency/94/puzzle.png",
+          "https://img.icons8.com/3d-fluency/94/star.png",
+          "https://img.icons8.com/3d-fluency/94/shield.png",
+          "https://img.icons8.com/3d-fluency/94/shield.png",
+        ],
+      }}
 
       sections={[
         {
@@ -75,14 +94,14 @@ export default function OrientationReorientation() {
       ]}
 
       whyChoose={{
-        title: "Pourquoi choisir STUDASSIST pour se réorienter ?",
+        title: "Pourquoi se faire accompagner par des professionnels pour sa réorientation ?",
         bullets: [
-          "Une orientation anticipée et stratégique pour votre réorientation dans une logique humaine, structurée et rassurante",
-          "Un profiling complet de l’élève pour des choix de réorientation éclairés",
-          "Une short-list d’écoles construite pour votre réorientation avec une vision stratégique et ouverte sur l’international",
-          "Un plan d’action académique personnalisé et évolutif dans un esprit d’anticipation des exigences de votre nouveau parcours",
-          "Une intégration possible d’un programme de renforcement scolaire, de préparation de concours et des certifications de langues",
-          "Un accompagnement humain, bienveillant, rigoureux et transparent",
+          "Un diagnostic complet, objectif et bienveillant du parcours initial",
+          "Un repositionnement stratégique et personnalisé du projet",
+          "Un coaching expert sur la narration du parcours",
+          "Un accompagnement complet aux candidatures et entretiens",
+          "Une remise à niveau académique intégrée si nécessaire",
+          "Une expertise Maroc & international couvrant +25 destinations",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/calendar.png",
@@ -97,7 +116,7 @@ export default function OrientationReorientation() {
       ctaBanner={{
         title: "Prendre rendez-vous",
         body: "Vous envisagez une réorientation et souhaitez être accompagné(e) avec méthode et bienveillance ? Prenons rendez-vous.",
-        primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
+        primaryLabel: "Réserver une séance d'orientation",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
         secondaryHref: "/contact",

@@ -41,7 +41,7 @@ export default function CertificationsIelts() {
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/open-book.png",
-          "https://img.icons8.com/3d-fluency/94/chat.png",
+          "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=1BB79D",
           "https://img.icons8.com/3d-fluency/94/document.png",
           "https://img.icons8.com/3d-fluency/94/microphone.png",
         ],

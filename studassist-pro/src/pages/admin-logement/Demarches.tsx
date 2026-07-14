@@ -49,37 +49,39 @@ export default function AdminDemarches() {
         {
           title: "Un cadrage complet des démarches après l'admission",
           paragraphs: [
-            "Notre intervention débute une fois le projet académique validé. À partir de ce moment, nous réalisons un cadrage complet des démarches administratives à effectuer, en fonction du pays de destination, du statut de l'étudiant et des exigences locales.",
-            "Nous identifions et organisons l'ensemble des étapes nécessaires à l'installation de l'étudiant à l'étranger, notamment : les démarches de visa étudiant et titre de séjour, l'affiliation à la sécurité sociale et à une mutuelle santé, l'ouverture d'un compte bancaire à l'étranger et l'ensemble des formalités administratives liées à l'installation.",
-            "Ce cadrage permet d'avoir une vision claire, structurée et anticipée de toutes les étapes.",
-            "Nous accompagnons les étudiants dans leurs démarches administratives pour de nombreuses destinations d'études, notamment la France, l'Espagne, la Belgique, le Royaume-Uni, le Canada, la Suisse et d'autres pays accueillant des étudiants internationaux. Chaque accompagnement est adapté aux exigences spécifiques du pays de destination et au profil de l'étudiant.",
+            <span>Notre intervention débute une fois le <strong className="font-extrabold text-brand-darkblue">projet académique validé</strong>. À partir de ce moment, nous réalisons un <strong className="font-extrabold text-brand-darkblue">cadrage complet</strong> des démarches administratives à effectuer, en fonction du pays de destination, du statut de l'étudiant et des exigences locales.</span>,
+            <span>Nous identifions et organisons l'ensemble des étapes nécessaires à l'installation de l'étudiant à l'étranger, notamment :</span>,
+            <span>• Les démarches de <strong className="font-extrabold text-brand-darkblue">visa étudiant</strong> et <strong className="font-extrabold text-brand-darkblue">titre de séjour</strong></span>,
+            <span>• L'affiliation à la <strong className="font-extrabold text-brand-darkblue">sécurité sociale</strong> et à une mutuelle santé</span>,
+            <span>• L'ouverture d'un <strong className="font-extrabold text-brand-darkblue">compte bancaire</strong> à l'étranger</span>,
+            <span>• L'ensemble des <strong className="font-extrabold text-brand-darkblue">formalités administratives</strong> liées à l'installation</span>,
+            <span>Ce cadrage permet d'avoir une vision claire, structurée et anticipée de toutes les étapes.</span>,
+            <span>Nous accompagnons les étudiants dans leurs démarches administratives pour de nombreuses destinations d'études, notamment la <strong className="font-extrabold text-brand-darkblue">France</strong>, l'<strong className="font-extrabold text-brand-darkblue">Espagne</strong>, la <strong className="font-extrabold text-brand-darkblue">Belgique</strong>, le <strong className="font-extrabold text-brand-darkblue">Royaume-Uni</strong>, le <strong className="font-extrabold text-brand-darkblue">Canada</strong>, la <strong className="font-extrabold text-brand-darkblue">Suisse</strong> et d'autres pays accueillant des étudiants internationaux. Chaque accompagnement est adapté aux exigences spécifiques du pays de destination et au profil de l'étudiant.</span>,
           ],
         },
         {
           title: "Un accompagnement opérationnel de A à Z",
           paragraphs: [
-            "Une fois le cadrage accompli, nous accompagnons concrètement les élèves et leurs familles dans la réalisation de chaque démarche en mettant en place un plan d'action spécifique en fonction du besoin.",
-            "Nous intervenons notamment sur : la collecte et la vérification des documents, les démarches en ligne, le suivi des dossiers administratifs et la coordination avec les différentes institutions.",
-            "Nous prenons également en charge les démarches nécessaires au Maroc, telles que : la légalisation de documents, les apostilles et la traduction officielle. L'objectif est de simplifier chaque étape à l'étudiant et sa famille et d'éviter toute erreur ou retard.",
+            <span>Une fois le cadrage accompli, nous accompagnons concrètement les élèves et leurs familles dans la réalisation de chaque démarche en mettant en place un <strong className="font-extrabold text-brand-darkblue">plan d'action spécifique</strong> en fonction du besoin.</span>,
+            <span>Nous intervenons notamment sur : la <strong className="font-extrabold text-brand-darkblue">collecte et la vérification des documents</strong>, les <strong className="font-extrabold text-brand-darkblue">démarches en ligne</strong>, le <strong className="font-extrabold text-brand-darkblue">suivi des dossiers administratifs</strong> et la coordination avec les différentes institutions.</span>,
+            <span>Nous prenons également en charge les démarches nécessaires au Maroc, telles que : la <strong className="font-extrabold text-brand-darkblue">légalisation de documents</strong>, les <strong className="font-extrabold text-brand-darkblue">apostilles</strong> et la <strong className="font-extrabold text-brand-darkblue">traduction officielle</strong>. L'objectif est de simplifier chaque étape à l'étudiant et sa famille et d'éviter toute erreur ou retard.</span>,
           ],
         },
         {
           title: "Aborder son installation avec sérénité",
           paragraphs: [
-            "Cet accompagnement permet aux élèves et à leurs familles de se décharger des contraintes administratives. Ils peuvent ainsi se concentrer pleinement sur leur rentrée et aborder le début de leur parcours universitaire dans les meilleures conditions.",
+            <span>Cet accompagnement permet aux élèves et à leurs familles de se <strong className="font-extrabold text-brand-darkblue">décharger des contraintes administratives</strong>. Ils peuvent ainsi se concentrer pleinement sur leur rentrée et aborder le début de leur parcours universitaire dans les meilleures conditions.</span>,
           ],
         },
         {
           title: "À qui s'adresse notre accompagnement administratif ?",
           paragraphs: [
-            "Cet accompagnement s'adresse aux élèves, étudiants et familles ayant obtenu une admission dans un établissement à l'étranger et souhaitant être guidés dans les démarches liées à leur installation.",
-          ],
-          bullets: [
-            "Aux étudiants préparant un départ pour la France, l'Espagne, la Belgique, le Royaume-Uni, le Canada ou toute autre destination internationale",
-            "Aux familles souhaitant sécuriser les démarches administratives et éviter les erreurs ou oublis",
-            "Aux étudiants devant effectuer des formalités complexes de visa, titre de séjour ou équivalence de diplôme",
-            "Aux candidats souhaitant gagner du temps et bénéficier d'un accompagnement structuré",
-            "Aux familles recherchant un interlocuteur unique pour coordonner l'ensemble des démarches avant le départ",
+            <span>Cet accompagnement s'adresse aux élèves, étudiants et familles ayant obtenu une admission dans un établissement à l'étranger et souhaitant être guidés dans les démarches liées à leur installation.</span>,
+            <span>• Aux étudiants préparant un départ pour la France, l'Espagne, la Belgique, le Royaume-Uni, le Canada ou toute autre destination internationale</span>,
+            <span>• Aux familles souhaitant sécuriser les démarches administratives et éviter les erreurs ou oublis</span>,
+            <span>• Aux étudiants devant effectuer des formalités complexes de visa, titre de séjour ou équivalence de diplôme</span>,
+            <span>• Aux candidats souhaitant gagner du temps et bénéficier d'un accompagnement structuré</span>,
+            <span>• Aux familles recherchant un interlocuteur unique pour coordonner l'ensemble des démarches avant le départ</span>,
           ],
         },
       ]}
@@ -106,8 +108,8 @@ export default function AdminDemarches() {
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Vous souhaitez être accompagné dans les démarches administratives liées aux études à l'étranger ?",
-        primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
+        body: "Vous souhaitez être accompagnés dans les démarches administratives liées aux études à l'étranger ?",
+        primaryLabel: "Réserver un rendez-vous pour définir mon besoin",
         primaryHref: "/contact",
         secondaryLabel: "Nous écrire",
         secondaryHref: "/contact",

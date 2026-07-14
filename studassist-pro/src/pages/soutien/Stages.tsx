@@ -117,6 +117,7 @@ export default function SoutienStages() {
       }}
 
       faqKeys={["soutien", "method"]}
+      faqTitle="Stages de vacances : questions fréquentes"
       prev={{ label: "Supérieur", to: "/soutien/superieur" }}
     />
   );

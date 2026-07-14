@@ -92,18 +92,20 @@ export default function PrepasBacPhilo() {
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour le Bac de Philo ?",
         bullets: [
+          "Des enseignants spécialisés maîtrisant les exigences de l'épreuve",
           "Une approche centrée sur la réflexion et la méthode : apprendre à raisonner, argumenter et structurer les pensées",
           "Un travail progressif sur les notions, les références, et la qualité de la rédaction",
           "Des entraînements réguliers et des bacs blancs avec corrections détaillées",
           "Un format flexible et personnalisé avec des groupes restreints (2 à 4 élèves) ou un suivi individuel en fonction du besoin",
-          "Des compétences clés développées pour l'avenir académique - analyse, argumentation, autonomie intellectuelle et esprit critique",
+          "Des compétences clés développées pour l'avenir académique : analyse, argumentation, autonomie intellectuelle et esprit critique",
         ],
         icons: [
+          "https://img.icons8.com/?size=100&id=1WpD5bksxBe1&format=png&color=000000",
           "https://img.icons8.com/3d-fluency/94/brain.png",
-          "https://img.icons8.com/3d-fluency/94/compass.png",
-          "https://img.icons8.com/3d-fluency/94/open-book.png",
-          "https://img.icons8.com/3d-fluency/94/goal.png",
-          "https://img.icons8.com/3d-fluency/94/trophy.png",
+          "https://img.icons8.com/?size=100&id=sy9tMN9SEkLP&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=xv9gnRfYNsNJ&format=png&color=000000",
+          "https://img.icons8.com/?size=100&id=UWNhN9bLYG1k&format=png&color=000000",
+          "https://img.icons8.com/3d-fluency/94/star.png",
         ],
       }}
 

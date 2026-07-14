@@ -149,7 +149,7 @@ export default function OrientationSeconde() {
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Vous souhaitez accompagner votre child dans le choix stratégique de ses spécialités et poser les bases d’un projet d’avenir cohérent ?",
+        body: "Vous souhaitez accompagner votre enfant dans le choix stratégique de ses spécialités et poser les bases d’un projet d’avenir cohérent ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",

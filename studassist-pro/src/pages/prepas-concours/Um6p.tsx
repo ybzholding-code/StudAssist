@@ -59,7 +59,6 @@ export default function PrepaConcoursUm6p() {
         {
           title: "Une sélection fondée sur le profil",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une sélection fondée sur le profil</span>,
             <span>L'UM6P accorde une <strong className="font-extrabold text-brand-darkblue">importance particulière à la qualité du profil</strong> du candidat. Les <strong className="font-extrabold text-brand-darkblue">résultats académiques</strong>, la <strong className="font-extrabold text-brand-darkblue">capacité de réflexion</strong>, la curiosité intellectuelle et la <strong className="font-extrabold text-brand-darkblue">cohérence du projet</strong> sont autant d'éléments déterminants que nous construisons dans le cadre de l'<Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link>.</span>,
             <span>Une préparation efficace permet de <strong className="font-extrabold text-brand-darkblue">structurer son profil</strong> et de se positionner de manière pertinente.</span>,
           ],
@@ -125,16 +124,18 @@ export default function PrepaConcoursUm6p() {
         bullets: [
           "Une approche adaptée à la logique de sélection de l'UM6P",
           "Une préparation spécifique aux tests de raisonnement",
-          "Une logique globale pour construire un dossier solide : académique, méthodologique et humaine",
-          "Des experts de l'orientation et des admissions sélectives avec une parfaite maîtrise des stratégies d'admission",
-          "+7 ans d'expertise et des résultats reconnus — 100% de nos élèves sont admis dans le top 3 de leurs choix",
+          "Une logique globale pour construire un dossier solide - académique, méthodologique et humaine",
+          "Des simulations d'entretien pour gagner en assurance",
+          "Des experts de l'orientation et des admissions sélectives avec une parfaite maîtrise des stratégies de candidatures",
+          "+7 ans d'expertise et des résultats reconnus - 100% de nos élèves sont admis dans le top 3 de leurs choix",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/goal.png",
           "https://img.icons8.com/3d-fluency/94/brain.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",
+          "https://img.icons8.com/3d-fluency/94/microphone.png",
           "https://img.icons8.com/3d-fluency/94/group.png",
-          "https://img.icons8.com/3d-fluency/94/trophy.png",
+          "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=000000",
         ],
       }}
 

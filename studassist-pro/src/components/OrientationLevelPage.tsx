@@ -101,9 +101,13 @@ function stripAccents(s: string): string {
   return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function detectLevelKey(eyebrow: string): string {
+function detectLevelKey(eyebrow: string, pathname?: string): string {
+  if (pathname) {
+    const match = LEVELS.find((l) => pathname === l.href || pathname.startsWith(l.href + "/"));
+    if (match) return match.key;
+  }
   const e = eyebrow.toLowerCase();
-  if (e.includes("réorientation") || e.includes("reorientation")) return "reorientation";
+  if (e.includes("réorientation") || e.includes("reorientation") || e.includes("transition")) return "reorientation";
   if (e.includes("master")) return "master";
   if (e.includes("terminale")) return "terminale";
   if (e.includes("première") || e.includes("premiere")) return "premiere";
@@ -203,7 +207,7 @@ export default function OrientationLevelPage({
   const { pathname } = useLocation();
   const activeKey = customLevels
     ? (customLevels.find((l) => pathname === l.href || pathname.startsWith(l.href + "/"))?.key || customLevels[0]?.key || "")
-    : detectLevelKey(eyebrow);
+    : detectLevelKey(eyebrow, pathname);
   const levelLabel = customLevels
     ? (customLevels.find((l) => l.key === activeKey)?.label || sectionTitle || eyebrow)
     : currentLevelLabel(eyebrow);
@@ -654,24 +658,24 @@ export default function OrientationLevelPage({
             </p>
           </div>
 
-          <div className="mt-8 lg:mt-0 flex flex-wrap gap-4 justify-center lg:justify-end">
-            <a
-              href={waLink(whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="mt-8 lg:mt-0 flex flex-col gap-4 items-center lg:items-end">
+            <Link
+              to={ctaBanner.primaryHref || "/contact"}
               className="bg-brand-darkblue text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
             >
               <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
             {ctaBanner.secondaryLabel && (
-              <Link
-                to={ctaBanner.secondaryHref || "#"}
+              <a
+                href={waLink(whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 text-white border border-white/20 px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center space-x-3"
               >
                 <span>{ctaBanner.secondaryLabel}</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             )}
           </div>
         </motion.div>

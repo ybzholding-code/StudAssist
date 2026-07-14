@@ -155,7 +155,7 @@ const services = [
   { icon: "https://img.icons8.com/3d-fluency/94/open-book.png", title: "Soutien Scolaire", link: "/soutien-scolaire" },
   { icon: "https://img.icons8.com/3d-fluency/94/diploma.png", title: "Prépas-Bac", link: "/prepas-bac" },
   { icon: "https://img.icons8.com/3d-fluency/94/compass.png", title: "Orientation", link: "/orientation-scolaire" },
-  { icon: "https://img.icons8.com/3d-fluency/94/chat.png", title: "Certifications de langues", link: "/certifications" },
+  { icon: "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=1BB79D", title: "Certifications de langues", link: "/certifications" },
   { icon: "https://img.icons8.com/3d-fluency/94/home.png", title: "Admin & Logement", link: "/admin-logement" },
 ];
 

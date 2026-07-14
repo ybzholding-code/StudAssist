@@ -151,7 +151,7 @@ export default function OrientationTerminale() {
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Vous souhaitez être accompagnés dans la construction d'un projet post-bac solide et ambitieux pour votre enfant ?",
+        body: "Vous souhaitez être accompagnés dans la construction d'un projet post-bac solide et ambitieux ? Réservez votre rendez-vous de premier contact pour obtenir une évaluation de profil et tracer ensemble une stratégie d'admissions post-bac.",
         primaryLabel: "Prendre rendez-vous avec un consultant STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un consultant STUDASSIST",

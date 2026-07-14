@@ -106,6 +106,7 @@ export default function OrientationMaster() {
           "Une préparation aux concours et certifications de langues intégrée au programme",
           "Un coaching aux entretiens de personnalité",
           "Une expertise Maroc & international couvrant +25 destinations en visioconférence",
+          "Un accompagnement flexible, en présentiel ou en visioconférence",
         ],
         icons: [
           "https://img.icons8.com/3d-fluency/94/search.png",
@@ -114,12 +115,13 @@ export default function OrientationMaster() {
           "https://img.icons8.com/3d-fluency/94/star.png",
           "https://img.icons8.com/3d-fluency/94/conference-call.png",
           "https://img.icons8.com/3d-fluency/94/globe.png",
+          "https://img.icons8.com/?size=100&id=hCvhdugyicF1&format=png&color=000000",
         ],
       }}
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Vous souhaitez structurer votre projet de Master et maximiser vos chances d'admission ?",
+        body: "Vous êtes étudiant(e) en Bac+3 et souhaitez structurer votre projet de Master ? Prenons rendez-vous pour évaluer votre profil et maximiser vos chances d'admission.",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",

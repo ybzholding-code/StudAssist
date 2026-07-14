@@ -65,7 +65,7 @@ const programmes = [
     link: "/certifications/tcf-dalf",
   },
   {
-    icon: "https://img.icons8.com/3d-fluency/94/chat.png",
+    icon: "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=1BB79D",
     title: "DELE",
     description: "Certifiez votre niveau d'espagnol et préparez vos projets d'études en Espagne ou dans des établissements internationaux exigeant une maîtrise de la langue espagnole.",
     link: "/certifications/dele",

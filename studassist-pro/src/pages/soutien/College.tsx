@@ -36,7 +36,7 @@ export default function SoutienCollege() {
 
       enjeux={{
         title: "Les enjeux du collège",
-        lead: "Les années de collège sont déterminantes pour la suite du parcours scolaire. C'est à ce stade que se construisent durablement :",
+        lead: "Les années de collège sont déterminantes pour la suite du parcours scolaire. Sans accompagnement adapté, les lacunes ou le manque de méthode peuvent fragiliser l'entrée au lycée. C'est à ce stade que se construisent durablement :",
         bullets: [
           "Les fondamentaux académiques (français, mathématiques, sciences)",
           "Les méthodes de travail (organisation, régularité, autonomie)",
@@ -165,6 +165,7 @@ export default function SoutienCollege() {
       }}
 
       faqKeys={["soutien", "method"]}
+      faqTitle="Soutien scolaire au collège : questions fréquentes"
       prev={{ label: "Primaire", to: "/soutien/primaire" }}
       next={{ label: "Prépa Brevet", to: "/soutien/brevet" }}
     />

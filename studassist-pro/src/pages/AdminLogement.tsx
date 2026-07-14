@@ -89,7 +89,7 @@ const services = [
   { icon: "https://img.icons8.com/3d-fluency/94/diploma.png", title: "Prépas-Bac", link: "/prepas-bac" },
   { icon: "https://img.icons8.com/3d-fluency/94/compass.png", title: "Orientation", link: "/orientation-scolaire" },
   { icon: "https://img.icons8.com/3d-fluency/94/trophy.png", title: "Prépas-concours", link: "/prepas-concours" },
-  { icon: "https://img.icons8.com/3d-fluency/94/chat.png", title: "Certifications de langues", link: "/certifications" },
+  { icon: "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=1BB79D", title: "Certifications de langues", link: "/certifications" },
 ];
 
 export default function AdminLogement() {

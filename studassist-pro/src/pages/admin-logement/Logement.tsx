@@ -119,7 +119,7 @@ export default function AdminLogementPage() {
       ctaBanner={{
         title: "Prendre rendez-vous",
         body: "Vous souhaitez être accompagné dans votre recherche de logement étudiant ?",
-        primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
+        primaryLabel: "Réserver un rendez-vous pour définir mon besoin",
         primaryHref: "/contact",
         secondaryLabel: "Nous écrire",
         secondaryHref: "/contact",

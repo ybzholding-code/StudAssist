@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 
 const LEVELS = [
@@ -56,29 +57,77 @@ export default function SoutienSuperieur() {
         {
           title: "Une approche personnalisée et ciblée pour un accompagnement individualisé",
           paragraphs: [
-            "Notre soutien scolaire post-bac repose sur une approche personnalisée et ciblée, pensée pour répondre aux besoins spécifiques de chaque étudiant.",
-            "Un accompagnement 100 % individuel, en visioconférence — Toutes nos séances sont proposées en format individuel, à distance, permettant : une flexibilité totale d'organisation ; un suivi personnalisé ; un travail en profondeur sur les difficultés propres à chaque étudiant.",
-            "Un professeur adapté à chaque profil — Chez STUDASSIST, nous sélectionnons le professeur en fonction du parcours, de la filière et des besoins précis de l'étudiant. L'objectif est de créer un binôme pédagogique efficace afin de : combler les lacunes identifiées ; clarifier les notions complexes ; structurer les méthodes de travail ; accompagner l'étudiant vers une autonomie durable.",
+            <span>Notre soutien scolaire post-bac repose sur une <strong className="font-extrabold text-brand-darkblue">approche personnalisée et ciblée</strong>, pensée pour répondre aux besoins spécifiques de chaque étudiant.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement 100 % individuel, en visioconférence</span>,
+            <span>Toutes nos séances sont proposées en <strong className="font-extrabold text-brand-darkblue">format individuel</strong>, à distance, permettant :</span>,
+            <span>• Une flexibilité totale d'organisation</span>,
+            <span>• Un suivi personnalisé</span>,
+            <span>• Un travail en profondeur sur les difficultés propres à chaque étudiant</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un professeur adapté à chaque profil</span>,
+            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous sélectionnons le professeur <strong className="font-extrabold text-brand-darkblue">en fonction du parcours, de la filière et des besoins précis de l'étudiant</strong>.</span>,
+            <span>L'objectif est de créer un binôme pédagogique efficace afin de :</span>,
+            <span>• Combler les lacunes identifiées</span>,
+            <span>• Clarifier les notions complexes</span>,
+            <span>• Structurer les méthodes de travail</span>,
+            <span>• Accompagner l'étudiant vers une <strong className="font-extrabold text-brand-darkblue">autonomie durable</strong></span>,
           ],
         },
         {
           title: "Une méthodologie centrée sur la compréhension et le coaching pour la réussite de l'année",
           paragraphs: [
-            "Une approche centrée sur la compréhension et la méthode — Au-delà du contenu académique, notre accompagnement vise à transmettre : des méthodes de travail adaptées au supérieur ; une meilleure organisation personnelle ; des techniques de révision efficaces ; une lecture stratégique des cours et des attentes des enseignants. Cette approche permet à l'étudiant de reprendre le contrôle de ses études et de progresser durablement.",
-            "Un soutien pensé pour la réussite de l'année — Chaque accompagnement débute par un diagnostic rapide afin d'identifier : les matières problématiques ; les lacunes de compréhension ; les difficultés méthodologiques. Un plan de travail personnalisé est ensuite mis en place, avec des objectifs clairs et évolutifs.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une approche centrée sur la compréhension et la méthode</span>,
+            <span>Au-delà du contenu académique, notre accompagnement vise à transmettre :</span>,
+            <span>• Des <strong className="font-extrabold text-brand-darkblue">méthodes de travail adaptées au supérieur</strong></span>,
+            <span>• Une meilleure organisation personnelle</span>,
+            <span>• Des techniques de révision efficaces</span>,
+            <span>• Une lecture stratégique des cours et des attentes des enseignants</span>,
+            <span>Cette approche permet à l'étudiant de <strong className="font-extrabold text-brand-darkblue">reprendre le contrôle de ses études</strong> et de progresser durablement.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un soutien pensé pour la réussite de l'année</span>,
+            <span>Chaque accompagnement débute par un <strong className="font-extrabold text-brand-darkblue">diagnostic rapide</strong> afin d'identifier :</span>,
+            <span>• Les matières problématiques</span>,
+            <span>• Les lacunes de compréhension</span>,
+            <span>• Les difficultés méthodologiques</span>,
+            <span>Un plan de travail personnalisé est ensuite mis en place, avec des objectifs clairs et évolutifs.</span>,
           ],
         },
         {
           title: "Une vision globale du parcours académique",
           paragraphs: [
-            "Un accompagnement qui inclut orientation et réorientation — La première année d'études supérieures est aussi, pour beaucoup d'étudiants, un temps de questionnement. Certains découvrent que la filière choisie ne correspond pas pleinement à leurs attentes, à leurs capacités ou à leur projet professionnel. Chez STUDASSIST, le soutien scolaire post-bac peut être complété par un accompagnement en orientation ou réorientation, afin d'aider l'étudiant à : prendre du recul sur son parcours ; clarifier ses aspirations ; identifier des alternatives réalistes et cohérentes ; construire un nouveau projet académique, au Maroc ou à l'international. Cette approche permet de transformer une difficulté académique en opportunité de repositionnement, dans une logique structurée et rassurante.",
-            "Un accompagnement qui prépare également les prochaines étapes du parcours académique — Pour certains étudiants, la 1ère année post-bac ne constitue pas seulement un défi académique. Elle marque également le début d'une réflexion sur la suite du parcours : spécialisation, poursuite d'études, mobilité internationale ou admission en Master. Chez STUDASSIST, notre accompagnement peut évoluer au fil des besoins de l'étudiant. Selon les objectifs envisagés, nous pouvons notamment accompagner les étudiants dans : la réflexion sur leur orientation et leur projet professionnel ; la préparation d'une candidature en Master ou en MSc ; la construction d'un dossier académique solide ; la préparation aux certifications de langues (IELTS, TOEFL, TOEIC) ; la préparation aux tests d'admission (GMAT, TAGE MAGE) ; les projets d'études à l'international. Cette continuité d'accompagnement permet aux étudiants de développer simultanément leurs performances académiques et leur stratégie d'évolution à moyen terme.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui inclut orientation et réorientation</span>,
+            <span>La première année d'études supérieures est aussi, pour beaucoup d'étudiants, un temps de questionnement. Certains découvrent que la filière choisie ne correspond pas pleinement à leurs attentes, à leurs capacités ou à leur projet professionnel.</span>,
+            <>
+              Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire post-bac peut être complété par un accompagnement en{" "}
+              <Link to="/orientation" className="text-brand-darkblue font-black underline underline-offset-2">orientation</Link> ou{" "}
+              <Link to="/orientation/reorientation" className="text-brand-darkblue font-black underline underline-offset-2">réorientation</Link>, afin d'aider l'étudiant à :
+            </>,
+            <span>• Prendre du recul sur son parcours</span>,
+            <span>• Clarifier ses aspirations</span>,
+            <span>• Identifier des alternatives réalistes et cohérentes</span>,
+            <span>• Construire un nouveau projet académique, au Maroc ou à l'international</span>,
+            <span>Cette approche permet de transformer une difficulté académique en <strong className="font-extrabold text-brand-darkblue">opportunité de repositionnement</strong>, dans une logique structurée et rassurante.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui prépare également les prochaines étapes du parcours académique</span>,
+            <span>Pour certains étudiants, la première année post-bac ne constitue pas seulement un défi académique. Elle marque également le début d'une réflexion sur la suite de leur parcours : spécialisation, poursuite d'études, mobilité internationale ou admission en Master.</span>,
+            <span>Chez STUDASSIST, notre accompagnement peut évoluer au fil des besoins de l'étudiant afin de l'aider à préparer sereinement les prochaines étapes de son projet académique.</span>,
+            <span>Selon les objectifs envisagés, nous pouvons notamment accompagner les étudiants dans :</span>,
+            <span>• La réflexion sur leur orientation et leur projet professionnel</span>,
+            <>• La préparation d'une <Link to="/orientation/master" className="text-brand-darkblue font-black underline underline-offset-2">candidature en Master ou en MSc</Link></>,
+            <span>• La construction d'un dossier académique solide</span>,
+            <>• La préparation aux <Link to="/certifications/ielts-toeic-toefl" className="text-brand-darkblue font-black underline underline-offset-2">certifications de langues</Link> telles que l'IELTS, le TOEFL ou le TOEIC</>,
+            <>• La préparation aux tests d'admission comme <Link to="/prepas-concours/sat-gmat" className="text-brand-darkblue font-black underline underline-offset-2">le GMAT ou le TAGE MAGE</Link></>,
+            <span>• Les projets d'études à l'international</span>,
+            <span>Cette continuité d'accompagnement permet aux étudiants de développer simultanément leurs performances académiques et leur stratégie d'évolution à moyen terme.</span>,
           ],
         },
         {
           title: "À qui s'adresse le soutien scolaire dans le supérieur ?",
           paragraphs: [
-            "Ce service s'adresse aux étudiants de 1ère année post-bac : rencontrant des difficultés dans certaines matières ; ayant du mal à s'adapter aux méthodes du supérieur ; souhaitant reprendre confiance ; désirant sécuriser la validation de leur année ; envisageant une orientation ou une réorientation ; recherchant un accompagnement individualisé, flexible et exigeant.",
+            <span>Ce service s'adresse aux étudiants de première année post-bac :</span>,
+            <span>• Rencontrant des difficultés dans certaines matières</span>,
+            <span>• Ayant du mal à s'adapter aux méthodes du supérieur</span>,
+            <span>• Souhaitant reprendre confiance</span>,
+            <span>• Désirant sécuriser la validation de leur année</span>,
+            <span>• Envisageant une orientation ou une réorientation</span>,
+            <span>• Recherchant un accompagnement individualisé, flexible et exigeant</span>,
           ],
         },
       ]}

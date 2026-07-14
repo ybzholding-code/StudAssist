@@ -65,18 +65,18 @@ const QuiSommesNous = () => {
   ];
 
   const steps = [
-    { title: "Diagnostic Approfondi", desc: "Analyse complète du profil, des méthodes de travail et des aspirations de l'élève.", icon3d: "https://img.icons8.com/3d-fluency/94/magnifying-glass.png" },
-    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/?size=100&id=1WpD5bksxBe1&format=png&color=000000" },
-    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour optimiser les dossiers et certifications de langues.", icon3d: "https://img.icons8.com/?size=100&id=qZ3IKpKF9Cun&format=png&color=000000" },
-    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/?size=100&id=OlDzEETWpjI7&format=png&color=000000" },
-    { title: "Orientation vers l'Avenir", desc: "Aide à la définition du projet professionnel, à la construction des candidatures et à la préparation des concours les plus exigeants.", icon3d: "https://img.icons8.com/?size=100&id=KA0zLOyspZIE&format=png&color=000000" },
+    { title: "Diagnostic Approfondi", desc: "Analyse complète du profil, des méthodes de travail et des aspirations de l'élève.", icon3d: "https://img.icons8.com/?size=100&id=zISPlrLZsaxM&format=png&color=000000" },
+    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/?size=100&id=8HdUlVRnnhtt&format=png&color=000000" },
+    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour renforcer les acquis, optimiser les dossiers académiques, préparer les certifications de langues et consolider les compétences nécessaires à la réussite.", icon3d: "https://img.icons8.com/?size=100&id=49470&format=png&color=000000" },
+    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/?size=100&id=43605&format=png&color=000000" },
+    { title: "Orientation vers l'Avenir", desc: "Aide à la définition du projet professionnel, à l'élaboration du plan d'études, à la construction des candidatures et à la préparation rigoureuse des concours et entretiens les plus exigeants.", icon3d: "https://img.icons8.com/?size=100&id=SBawbHHY3oRD&format=png&color=000000" },
   ];
 
   const pillars = [
-    { title: "Excellence", desc: "Nous appliquons des standards élevés dans chaque accompagnement, fondés sur l'expertise, la rigueur et l'amélioration continue.", icon3d: "https://img.icons8.com/3d-fluency/94/trophy.png" },
-    { title: "Personnalisation", desc: "Chaque élève est unique. Nous concevons des parcours sur mesure, alignés avec les aspirations, le potentiel et la réalité de chacun.", icon3d: "https://img.icons8.com/3d-fluency/94/goal.png" },
-    { title: "Engagement", desc: "Nous nous impliquons pleinement aux côtés des étudiants et de leurs familles, avec constance, responsabilité et disponibilité.", icon3d: "https://img.icons8.com/3d-fluency/94/handshake.png" },
-    { title: "Éthique & Bienveillance", desc: "Nous guidons avec intégrité, transparence et respect, en plaçant toujours l'intérêt de l'étudiant au cœur de nos recommandations.", icon3d: "https://img.icons8.com/3d-fluency/94/heart-with-pulse.png" },
+    { title: "Excellence", desc: "Nous appliquons des standards élevés dans chaque accompagnement, fondés sur l'expertise, la rigueur et l'amélioration continue.", icon3d: "https://img.icons8.com/?size=100&id=5WjOdLKtFCfj&format=png&color=000000" },
+    { title: "Personnalisation", desc: "Chaque élève est unique. Nous concevons des parcours sur mesure, alignés avec les aspirations, le potentiel et la réalité de chacun.", icon3d: "https://img.icons8.com/?size=100&id=5WjOdLKtFCfj&format=png&color=000000" },
+    { title: "Engagement", desc: "Nous nous impliquons pleinement aux côtés des étudiants et de leurs familles, avec constance, responsabilité et disponibilité.", icon3d: "https://img.icons8.com/?size=100&id=43627&format=png&color=000000" },
+    { title: "Éthique & Bienveillance", desc: "Nous guidons avec intégrité, transparence et respect, en plaçant toujours l'intérêt de l'étudiant au cœur de nos recommandations.", icon3d: "https://img.icons8.com/?size=100&id=DEiE76V3bFiN&format=png&color=000000" },
   ];
 
   const team = [
@@ -427,7 +427,6 @@ const QuiSommesNous = () => {
                         : "0 20px 50px rgba(245,180,62,0.08), 0 4px 12px rgba(245,180,62,0.05)",
                     }}
                   >
-                    {/* Colored top accent bar */}
                     <div
                       className="absolute top-0 left-0 right-0 h-1 rounded-t-[2.5rem]"
                       style={{
@@ -442,21 +441,8 @@ const QuiSommesNous = () => {
                           : "linear-gradient(90deg, #F19A38, #F5B43E)"
                       }}
                     />
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform"
-                      style={{
-                        backgroundColor: idx === 0
-                          ? "rgba(127,192,116,0.1)"
-                          : idx === 1
-                          ? "rgba(21,71,150,0.08)"
-                          : idx === 2
-                          ? "rgba(233,51,127,0.08)"
-                          : idx === 3
-                          ? "rgba(238,92,95,0.08)"
-                          : "rgba(245,180,62,0.1)"
-                      }}
-                    >
-                      <img src={step.icon3d} alt={step.title} className="w-8 h-8 drop-shadow-sm" />
+                    <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <img src={step.icon3d} alt={step.title} className="w-10 h-10 drop-shadow-sm" />
                     </div>
                     <h3 className="text-[13px] font-black text-brand-darkblue uppercase tracking-tight mb-4 leading-tight">
                       {step.title}
@@ -490,7 +476,7 @@ const QuiSommesNous = () => {
                   className="relative group h-full"
                 >
                   <div className="h-full bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(17,29,74,0.03)] hover:shadow-[0_40px_80px_rgba(17,29,74,0.1)] hover:border-brand-teal/20 transition-all duration-500 flex flex-col items-center text-center">
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 bg-gray-50">
+                    <div className="w-16 h-16 flex items-center justify-center mb-6 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3">
                       <img src={pillar.icon3d} alt={pillar.title} className="w-10 h-10 drop-shadow-md" />
                     </div>
 
@@ -522,13 +508,13 @@ const QuiSommesNous = () => {
             </div>
             <div className="relative z-10 text-center lg:text-left">
               <h2 className="text-[22px] sm:text-[28px] lg:text-[36px] font-black text-white leading-tight mb-2 uppercase tracking-tighter">
-                Prêt à passer à <span className="text-brand-red">l'action</span> ?<br className="hidden lg:block" /> Votre <span className="text-brand-teal">avenir</span> commence ici !
+                Prêt à passer à <span className="text-brand-red">l'action</span>&nbsp;?<br className="hidden lg:block" /> Votre <span className="text-brand-teal">avenir</span> commence <span className="whitespace-nowrap">ici&nbsp;!</span>
               </h2>
               <p className="text-white/60 text-sm lg:text-base font-medium">
                 Bénéficiez d'un diagnostic complet de 45 minutes avec nos conseillers experts.
               </p>
             </div>
-            <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 shrink-0">
+            <div className="relative z-10 flex flex-col items-center gap-3 shrink-0">
               <Link
                 to="/contact"
                 className="bg-brand-red text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-brand-red/30 group inline-flex items-center gap-3"

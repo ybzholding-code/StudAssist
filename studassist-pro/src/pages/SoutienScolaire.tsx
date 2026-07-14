@@ -70,7 +70,7 @@ const services = [
   { icon: "https://img.icons8.com/3d-fluency/94/goal.png", title: "Prépas Bac", link: "/prepas-bac" },
   { icon: "https://img.icons8.com/3d-fluency/94/trophy.png", title: "Prépas Concours", link: "/prepas-concours" },
   { icon: "https://img.icons8.com/3d-fluency/94/compass.png", title: "Orientation scolaire", link: "/orientation-scolaire" },
-  { icon: "https://img.icons8.com/3d-fluency/94/chat.png", title: "Certifications de langues", link: "/certifications" },
+  { icon: "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=1BB79D", title: "Certifications de langues", link: "/certifications" },
   { icon: "https://img.icons8.com/3d-fluency/94/home.png", title: "Admin & Logement", link: "/admin-logement" },
 ];
 
@@ -354,7 +354,7 @@ export default function SoutienScolaire() {
             <span className="text-brand-teal">votre avenir</span>.
           </h2>
           <p className="text-white/80 text-base lg:text-lg font-medium max-w-xl mx-auto mb-10 leading-relaxed">
-            Vous souhaitez mettre en place un accompagnement scolaire personnalisé ? Réserver un premier rendez-vous d'informations pour évaluer votre profil et poser les bases d'une stratégie adaptée.
+            Vous souhaitez mettre en place un accompagnement scolaire personnalisé ? Réservez un premier rendez-vous d'informations pour évaluer votre profil et poser les bases d'une stratégie adaptée.
           </p>
           <a
             href={waLink("Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire personnalisé.")}

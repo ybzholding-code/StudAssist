@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 
 const LEVELS = [
@@ -56,34 +57,91 @@ export default function SoutienLycee() {
         {
           title: "Une approche globale et un accompagnement académique exigeant",
           paragraphs: [
-            "Notre soutien scolaire au lycée repose sur une approche globale et stratégique, bien au-delà d'un simple renforcement académique.",
-            "Chaque élève bénéficie d'une évaluation approfondie de son niveau, de ses méthodes de travail, de ses matières de spécialité, de ses matières du tronc commun et de ses objectifs d'orientation, en tenant compte du système scolaire suivi (français, marocain, bilingue ou international). Ce diagnostic permet de définir un plan d'accompagnement ciblé, aligné à la fois avec les exigences du programme et les ambitions post-bac.",
-            "Nous accompagnons les lycéens aussi bien dans leurs matières de spécialité que dans les matières du tronc commun, qui restent déterminantes pour la moyenne générale, la cohérence du dossier scolaire et la réussite aux épreuves du bac. Notre accompagnement s'adapte au parcours et au système scolaire de chaque élève, avec pour objectifs : optimiser les résultats dans l'ensemble des matières (tronc commun et spécialités) ; renforcer la compréhension en profondeur des notions clés ; développer des méthodes de travail efficaces pour préparer l'entrée aux études supérieures ; sécuriser un dossier académique solide et cohérent, en lien avec les projets d'orientation post-bac et les ambitions de l'élève.",
-            "Chez STUDASSIST, la performance se construit autant dans l'excellence disciplinaire que dans la maîtrise rigoureuse des fondamentaux.",
+            <span>Notre soutien scolaire au lycée repose sur une <strong className="font-extrabold text-brand-darkblue">approche globale et stratégique</strong>, bien au-delà d'un simple renforcement académique.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un diagnostic académique et méthodologique précis</span>,
+            <span>Chaque élève bénéficie d'une <strong className="font-extrabold text-brand-darkblue">évaluation approfondie</strong> de son niveau, de ses méthodes de travail, de ses <strong className="font-extrabold text-brand-darkblue">matières de spécialité</strong>, de ses <strong className="font-extrabold text-brand-darkblue">matières du tronc commun</strong> et de ses objectifs d'orientation, <strong className="font-extrabold text-brand-darkblue">en tenant compte du système scolaire suivi</strong> (français, marocain, bilingue ou international).</span>,
+            <span>Ce diagnostic permet de définir un <strong className="font-extrabold text-brand-darkblue">plan d'accompagnement ciblé</strong>, aligné à la fois avec les exigences du programme et les ambitions post-bac.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement académique exigeant</span>,
+            <span>Nous accompagnons les lycéens aussi bien dans leurs <strong className="font-extrabold text-brand-darkblue">matières de spécialité</strong> que dans les <strong className="font-extrabold text-brand-darkblue">matières du tronc commun</strong>, qui restent déterminantes pour la <strong className="font-extrabold text-brand-darkblue">moyenne générale</strong>, la <strong className="font-extrabold text-brand-darkblue">cohérence du dossier scolaire</strong> et la <strong className="font-extrabold text-brand-darkblue">réussite aux épreuves du bac</strong>.</span>,
+            <span>Notre accompagnement s'adapte au parcours et au système scolaire de chaque élève, avec pour objectifs :</span>,
+            <span>• <strong className="font-extrabold text-brand-darkblue">Optimiser les résultats</strong> dans l'ensemble des matières (tronc commun et spécialités)</span>,
+            <span>• Renforcer la <strong className="font-extrabold text-brand-darkblue">compréhension en profondeur des notions clés</strong></span>,
+            <span>• Développer des <strong className="font-extrabold text-brand-darkblue">méthodes de travail efficaces pour préparer l'entrée aux études supérieures</strong></span>,
+            <span>• Sécuriser un <strong className="font-extrabold text-brand-darkblue">dossier académique solide et cohérent</strong>, en lien avec les projets d'orientation post-bac et les ambitions de l'élève</span>,
+            <span>Chez STUDASSIST, la performance se construit autant dans l'excellence disciplinaire que dans la <strong className="font-extrabold text-brand-darkblue">maîtrise rigoureuse des fondamentaux</strong>.</span>,
           ],
         },
         {
           title: "Notre méthodologie différenciée nous permet un suivi rigoureux orienté résultats et orientation",
           paragraphs: [
-            "Chez STUDASSIST, le soutien scolaire au lycée repose sur une pédagogie différenciée, déployée en petits groupes de 2 à 4 élèves maximum, avec des niveaux hétérogènes maîtrisés. Cette méthodologie permet : de développer l'autonomie intellectuelle de l'élève ; de stimuler l'émulation académique et l'apprentissage par observation ; d'encourager une dynamique de travail structurante ; tout en garantissant un suivi individualisé, adapté à l'avancement réel de chaque élève.",
-            "Nos enseignants ajustent leurs approches pédagogiques, leurs contenus et leurs exigences en fonction du système scolaire suivi, tout en maintenant des standards académiques élevés, indispensables à la réussite au lycée.",
-            "Le soutien scolaire STUDASSIST s'appuie sur un suivi continu et structuré : évaluation régulière des performances par l'envoi de rapports pédagogiques réguliers ; ajustement des objectifs académiques ; coordination avec les objectifs d'orientation post-bac ; échanges réguliers avec l'élève et sa famille. Ce pilotage permet d'inscrire le travail scolaire dans une logique de progression durable, cohérente avec les projets d'études supérieures.",
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une méthodologie de soutien scolaire différenciée</span>,
+            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire au lycée repose sur une <strong className="font-extrabold text-brand-darkblue">pédagogie différenciée</strong>, déployée en <strong className="font-extrabold text-brand-darkblue">petits groupes de 2 à 4 élèves maximum</strong>, avec des <strong className="font-extrabold text-brand-darkblue">niveaux hétérogènes maîtrisés</strong>.</span>,
+            <span>Cette méthodologie permet :</span>,
+            <span>• De développer l'<strong className="font-extrabold text-brand-darkblue">autonomie intellectuelle</strong> de l'élève</span>,
+            <span>• De stimuler l'<strong className="font-extrabold text-brand-darkblue">émulation académique</strong> et l'apprentissage par observation</span>,
+            <span>• D'encourager une <strong className="font-extrabold text-brand-darkblue">dynamique de travail structurante</strong></span>,
+            <span>• Tout en garantissant un <strong className="font-extrabold text-brand-darkblue">suivi individualisé</strong>, adapté à l'avancement réel de chaque élève</span>,
+            <span>Nos enseignants ajustent leurs approches pédagogiques, leurs contenus et leurs exigences <strong className="font-extrabold text-brand-darkblue">en fonction du système scolaire suivi</strong>, tout en maintenant des <strong className="font-extrabold text-brand-darkblue">standards académiques élevés</strong>, indispensables à la réussite au lycée.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un suivi rigoureux orienté résultats et orientation</span>,
+            <span>Le soutien scolaire STUDASSIST s'appuie sur un <strong className="font-extrabold text-brand-darkblue">suivi continu et structuré</strong> :</span>,
+            <span>• Évaluation régulière des performances par l'envoi de rapports pédagogiques réguliers</span>,
+            <span>• Ajustement des objectifs académiques</span>,
+            <span>• Coordination avec les objectifs d'orientation post-bac</span>,
+            <span>• Échanges réguliers avec l'élève et sa famille</span>,
+            <span>Ce pilotage permet d'inscrire le travail scolaire dans une <strong className="font-extrabold text-brand-darkblue">logique de progression durable</strong>, cohérente avec les projets d'études supérieures.</span>,
           ],
         },
         {
           title: "Un accompagnement qui va au-delà du soutien scolaire et qui s'inscrit sur le long terme",
           paragraphs: [
-            "Au lycée, le soutien scolaire ne peut être envisagé isolément. Les enjeux académiques s'articulent progressivement avec la préparation aux examens, l'accès aux filières sélectives et la constitution d'un dossier post-bac solide, au Maroc, en France et à l'international. Chez STUDASSIST, le soutien scolaire s'inscrit naturellement dans une logique de continuité avec nos autres pôles d'expertise.",
-            "Pour les élèves de Première et de Terminale, l'accompagnement peut être complété par des préparations ciblées au baccalauréat, notamment le Bac de français (écrit et oral), les épreuves de spécialités, l'épreuve finale de philosophie et le Grand Oral. Le soutien scolaire permet de consolider les bases, tandis que les Prépas Bac ciblent la maîtrise des attendus, la méthodologie d'examen et la performance le jour J des épreuves du baccalauréat.",
-            "Pour les lycéens visant des parcours d'excellence, le soutien scolaire peut être articulé avec une préparation spécifique aux concours, notamment pour les écoles de commerce, les écoles d'ingénieurs, Sciences Po, les écoles d'architecture, les universités de médecine publiques et privées, et autres filières sélectives. Le travail académique est alors orienté vers la sélectivité, la stratégie de concours et les exigences propres à chaque épreuve.",
-            "Dans de nombreux parcours post-bac, les certifications de langues constituent un critère déterminant d'admission. STUDASSIST propose des préparations dédiées aux certifications internationales : anglais (IELTS, TOEFL, TOEIC), français (DELF, DALF), espagnol (DELE), et allemand (Goethe). Le soutien scolaire assure la régularité et la progression linguistique, tandis que les préparations aux certifications visent l'obtention des scores requis.",
-            "Chez STUDASSIST, chaque accompagnement est pensé comme un parcours évolutif et cohérent. Le soutien scolaire au lycée constitue souvent la première étape structurante, avant d'orienter l'élève vers des préparations plus spécifiques, en fonction de son projet académique et de ses ambitions, et de l'accompagner à concrétiser son projet d'orientation post-bac.",
+            <span>Au lycée, le soutien scolaire ne peut être envisagé isolément. Les enjeux académiques s'articulent progressivement avec la <strong className="font-extrabold text-brand-darkblue">préparation aux examens</strong>, l'<strong className="font-extrabold text-brand-darkblue">accès aux filières sélectives</strong> et la <strong className="font-extrabold text-brand-darkblue">constitution d'un dossier post-bac solide</strong>, au Maroc, en France et à l'international.</span>,
+            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire s'inscrit naturellement dans une <strong className="font-extrabold text-brand-darkblue">logique de continuité</strong> avec nos autres pôles d'expertise.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Préparation au baccalauréat</span>,
+            <>
+              Pour les élèves de Première et de Terminale, l'accompagnement peut être complété par des <strong className="font-extrabold text-brand-darkblue">préparations ciblées au baccalauréat</strong>, notamment le{" "}
+              <Link to="/prepas-bac/francais" className="text-brand-darkblue font-black underline underline-offset-2">Bac de français</Link> (écrit et oral), les{" "}
+              <Link to="/prepas-bac/specialites" className="text-brand-darkblue font-black underline underline-offset-2">épreuves de spécialités</Link>, l'{" "}
+              <Link to="/prepas-bac/philo" className="text-brand-darkblue font-black underline underline-offset-2">épreuve finale de philosophie</Link>, et le{" "}
+              <Link to="/prepas-bac/grand-oral" className="text-brand-darkblue font-black underline underline-offset-2">Grand Oral</Link>.
+            </>,
+            <span>Le soutien scolaire permet de consolider les bases, tandis que les <strong className="font-extrabold text-brand-darkblue">Prépas Bac</strong> ciblent la <strong className="font-extrabold text-brand-darkblue">maîtrise des attendus, la méthodologie d'examen et la performance le jour J des épreuves du baccalauréat</strong>.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Préparations aux concours et filières sélectives</span>,
+            <>
+              Pour les lycéens visant des <strong className="font-extrabold text-brand-darkblue">parcours d'excellence</strong>, le soutien scolaire peut être articulé avec une <strong className="font-extrabold text-brand-darkblue">préparation spécifique aux concours</strong>, notamment pour les{" "}
+              <Link to="/prepas-concours/sesame-acces" className="text-brand-darkblue font-black underline underline-offset-2">écoles de commerce</Link>, les{" "}
+              <Link to="/prepas-concours/avenir-geipi" className="text-brand-darkblue font-black underline underline-offset-2">écoles d'ingénieurs</Link>,{" "}
+              <Link to="/prepas-concours/sciences-po" className="text-brand-darkblue font-black underline underline-offset-2">Sciences Po</Link>, les{" "}
+              <Link to="/prepas-concours/architecture" className="text-brand-darkblue font-black underline underline-offset-2">écoles d'architecture</Link>, les{" "}
+              <Link to="/prepas-concours/medecine-maroc" className="text-brand-darkblue font-black underline underline-offset-2">universités de médecine publiques et privées</Link>, et autres filières sélectives.
+            </>,
+            <span>Le travail académique est alors orienté vers la <strong className="font-extrabold text-brand-darkblue">sélectivité, la stratégie de concours et les exigences propres à chaque épreuve</strong>.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Certifications de langues</span>,
+            <span>Dans de nombreux parcours post-bac, les <strong className="font-extrabold text-brand-darkblue">certifications de langues</strong> constituent un critère déterminant d'admission.</span>,
+            <>
+              STUDASSIST propose des préparations dédiées aux certifications internationales dans plusieurs langues, telles que l'anglais avec{" "}
+              <Link to="/certifications/ielts-toeic-toefl" className="text-brand-darkblue font-black underline underline-offset-2">l'IELTS, le TOEFL, et le TOEIC</Link>, le français avec le{" "}
+              <Link to="/certifications/tcf-dalf" className="text-brand-darkblue font-black underline underline-offset-2">DELF et le DALF</Link>, l'espagnol avec l'examen du{" "}
+              <Link to="/certifications/dele" className="text-brand-darkblue font-black underline underline-offset-2">DELE</Link>, ainsi que l'allemand avec le Goethe.
+            </>,
+            <span>Le soutien scolaire assure la régularité et la progression linguistique, tandis que les <strong className="font-extrabold text-brand-darkblue">préparations aux certifications</strong> visent l'<strong className="font-extrabold text-brand-darkblue">obtention des scores requis</strong>.</span>,
+            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une logique de parcours maîtrisé</span>,
+            <>
+              Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, chaque accompagnement est pensé comme un <strong className="font-extrabold text-brand-darkblue">parcours évolutif et cohérent</strong>. Le soutien scolaire au lycée constitue souvent la <strong className="font-extrabold text-brand-darkblue">première étape structurante</strong>, avant d'orienter l'élève vers des préparations plus spécifiques, en fonction de son projet académique et de ses ambitions, et de l'accompagner à concrétiser son projet d'{" "}
+              <Link to="/orientation" className="text-brand-darkblue font-black underline underline-offset-2">orientation post-bac</Link>.
+            </>,
           ],
         },
         {
           title: "À qui s'adresse le soutien scolaire au lycée ?",
           paragraphs: [
-            "Notre accompagnement s'adresse aux lycéens : rencontrant des difficultés ciblées dans certaines matières ; souhaitant améliorer significativement leurs résultats ; ayant besoin de méthodes de travail plus efficaces ; préparant des filières sélectives ou internationales ; disposant déjà d'un bon niveau académique et souhaitant viser l'excellence ; scolarisés dans des systèmes français, marocains, bilingues ou internationaux ; recherchant un accompagnement holistique qui soit exigeant, structuré et orienté résultats.",
+            <span>Notre accompagnement s'adresse aux lycéens :</span>,
+            <span>• Rencontrant des <strong className="font-extrabold text-brand-darkblue">difficultés ciblées</strong> dans certaines matières</span>,
+            <span>• Souhaitant <strong className="font-extrabold text-brand-darkblue">améliorer significativement leurs résultats</strong></span>,
+            <span>• Ayant besoin de <strong className="font-extrabold text-brand-darkblue">méthodes de travail plus efficaces</strong></span>,
+            <span>• Préparant des <strong className="font-extrabold text-brand-darkblue">filières sélectives ou internationales</strong></span>,
+            <span>• <strong className="font-extrabold text-brand-darkblue">Disposant déjà d'un bon niveau académique et souhaitant viser l'excellence</strong></span>,
+            <span>• Scolarisés dans des <strong className="font-extrabold text-brand-darkblue">systèmes français, marocains, bilingues ou internationaux</strong></span>,
+            <span>• Recherchant un <strong className="font-extrabold text-brand-darkblue">accompagnement holistique qui soit exigeant, structuré et orienté résultats</strong></span>,
           ],
         },
       ]}

@@ -50,6 +50,7 @@ export default function NousRejoindre() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setFile: (f: File | null) => void) => {
     if (e.target.files && e.target.files[0]) setFile(e.target.files[0]);
@@ -69,10 +70,60 @@ export default function NousRejoindre() {
   const SYSTEMES = ["Français", "Marocain", "Espagnol", "Belge", "Italien", "Américain", "Anglais", "Autre"];
   const NIVEAUX = ["Collège", "Seconde / tronc commun", "Première / 1ère année bac", "Terminale / 2ème année bac", "Post-bac"];
 
+  const validateForm = (): boolean => {
+    const errors: Record<string, string> = {};
+
+    // Required text fields
+    if (!nom.trim()) errors.nom = "Le nom est obligatoire.";
+    if (!prenom.trim()) errors.prenom = "Le prénom est obligatoire.";
+
+    // Phone validation
+    if (!tel.trim()) {
+      errors.tel = "Le numéro de téléphone est obligatoire.";
+    } else if (!/^[+0-9][\s\-().0-9]{5,19}$/.test(tel.trim())) {
+      errors.tel = "Format de téléphone invalide. Exemple : +212 6 61 23 45 67";
+    }
+
+    // Email validation
+    if (!email.trim()) {
+      errors.email = "L'adresse email est obligatoire.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      errors.email = "Format d'email invalide. Exemple : prenom.nom@email.com";
+    }
+
+    // CV required
+    if (!cvFile) errors.cvFile = "Le CV (PDF) est obligatoire.";
+
+    // Motivation required
+    if (!motivation.trim()) errors.motivation = "Veuillez indiquer votre motivation.";
+
+    // Profile-specific
+    if (activeTab === "professeur") {
+      if (matieres.length === 0) errors.matieres = "Veuillez sélectionner au moins une matière.";
+      if (systemes.length === 0) errors.systemes = "Veuillez sélectionner au moins un système scolaire.";
+      if (niveaux.length === 0) errors.niveaux = "Veuillez sélectionner au moins un niveau.";
+    } else if (activeTab === "consultant") {
+      if (!domaines.trim()) errors.domaines = "Veuillez décrire vos domaines d'expertise.";
+      if (!experienceDetail.trim()) errors.experienceDetail = "Veuillez décrire votre expérience.";
+    } else if (activeTab === "support") {
+      if (!fonctionDomaine.trim()) errors.fonctionDomaine = "Veuillez indiquer votre fonction / domaine.";
+    }
+
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmitError("");
+
+    if (!validateForm()) {
+      setSubmitError("Veuillez corriger les erreurs ci-dessus avant d'envoyer votre candidature.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setFieldErrors({});
 
     try {
       const fd = new FormData();
@@ -413,20 +464,20 @@ export default function NousRejoindre() {
                   </h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <input type="text" required aria-label="Nom" value={nom} onChange={e => setNom(e.target.value)} placeholder="Nom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${nom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
-                      {nom === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
+                      <input type="text" required aria-label="Nom" value={nom} onChange={e => { setNom(e.target.value); setFieldErrors(fe => ({ ...fe, nom: '' })); }} placeholder="Nom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${fieldErrors.nom ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {fieldErrors.nom && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.nom}</p>}
                     </div>
                     <div>
-                      <input type="text" required aria-label="Prénom" value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Prénom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${prenom === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
-                      {prenom === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
+                      <input type="text" required aria-label="Prénom" value={prenom} onChange={e => { setPrenom(e.target.value); setFieldErrors(fe => ({ ...fe, prenom: '' })); }} placeholder="Prénom *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${fieldErrors.prenom ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {fieldErrors.prenom && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.prenom}</p>}
                     </div>
                     <div>
-                      <input type="tel" required aria-label="Téléphone" value={tel} onChange={e => setTel(e.target.value)} placeholder="Téléphone *" pattern="[+0-9\s\-()]{6,20}" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${tel === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
-                      {tel === '' && submitError && <p className="text-red-500 text-xs mt-1">Ce champ est obligatoire.</p>}
+                      <input type="tel" required aria-label="Téléphone" value={tel} onChange={e => { setTel(e.target.value); setFieldErrors(fe => ({ ...fe, tel: '' })); }} placeholder="Téléphone * (ex: +212 6 61 23 45 67)" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${fieldErrors.tel ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {fieldErrors.tel && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.tel}</p>}
                     </div>
                     <div>
-                      <input type="email" required aria-label="Email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email *" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${email === '' && submitError ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
-                      {email === '' && submitError && <p className="text-red-500 text-xs mt-1">Veuillez saisir une adresse email valide.</p>}
+                      <input type="email" required aria-label="Email" value={email} onChange={e => { setEmail(e.target.value); setFieldErrors(fe => ({ ...fe, email: '' })); }} placeholder="Email * (ex: prenom.nom@email.com)" className={`w-full pb-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium ${fieldErrors.email ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {fieldErrors.email && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.email}</p>}
                     </div>
                   </div>
                 </div>
@@ -449,51 +500,54 @@ export default function NousRejoindre() {
                     {activeTab === "professeur" && (
                       <div className="space-y-8">
                         <div>
-                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-4 block">Matière(s) enseignée(s) *</label>
+                          <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-4 block ${fieldErrors.matieres ? 'text-red-500' : 'text-gray-400'}`}>Matière(s) enseignée(s) *</label>
                           <div className="flex flex-wrap gap-2">
                             {MATIERES.map(m => (
                               <button
                                 type="button"
                                 key={m}
-                                onClick={() => toggleArray(matieres, setMatieres, m)}
+                                onClick={() => { toggleArray(matieres, setMatieres, m); setFieldErrors(fe => ({ ...fe, matieres: '' })); }}
                                 className={`px-5 py-2.5 rounded-full text-[13px] font-semibold transition-all border ${matieres.includes(m) ? 'bg-brand-teal border-brand-teal text-white shadow-md' : 'bg-gray-50 border-gray-100 text-gray-500 hover:border-gray-300'}`}
                               >
                                 {m}
                               </button>
                             ))}
                           </div>
+                          {fieldErrors.matieres && <p className="text-red-500 text-xs mt-2 flex items-center gap-1"><span>⚠</span> {fieldErrors.matieres}</p>}
                         </div>
 
                         <div>
-                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-4 block">Système(s) scolaire(s) maîtrisé(s) *</label>
+                          <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-4 block ${fieldErrors.systemes ? 'text-red-500' : 'text-gray-400'}`}>Système(s) scolaire(s) maîtrisé(s) *</label>
                           <div className="flex flex-wrap gap-2">
                             {SYSTEMES.map(s => (
                               <button
                                 type="button"
                                 key={s}
-                                onClick={() => toggleArray(systemes, setSystemes, s)}
+                                onClick={() => { toggleArray(systemes, setSystemes, s); setFieldErrors(fe => ({ ...fe, systemes: '' })); }}
                                 className={`px-5 py-2.5 rounded-full text-[13px] font-semibold transition-all border ${systemes.includes(s) ? 'bg-brand-teal border-brand-teal text-white shadow-md' : 'bg-gray-50 border-gray-100 text-gray-500 hover:border-gray-300'}`}
                               >
                                 {s}
                               </button>
                             ))}
                           </div>
+                          {fieldErrors.systemes && <p className="text-red-500 text-xs mt-2 flex items-center gap-1"><span>⚠</span> {fieldErrors.systemes}</p>}
                         </div>
 
                         <div>
-                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-4 block">Niveau(x) enseigné(s) *</label>
+                          <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-4 block ${fieldErrors.niveaux ? 'text-red-500' : 'text-gray-400'}`}>Niveau(x) enseigné(s) *</label>
                           <div className="flex flex-wrap gap-2">
                             {NIVEAUX.map(n => (
                               <button
                                 type="button"
                                 key={n}
-                                onClick={() => toggleArray(niveaux, setNiveaux, n)}
+                                onClick={() => { toggleArray(niveaux, setNiveaux, n); setFieldErrors(fe => ({ ...fe, niveaux: '' })); }}
                                 className={`px-5 py-2.5 rounded-full text-[13px] font-semibold transition-all border ${niveaux.includes(n) ? 'bg-brand-teal border-brand-teal text-white shadow-md' : 'bg-gray-50 border-gray-100 text-gray-500 hover:border-gray-300'}`}
                               >
                                 {n}
                               </button>
                             ))}
                           </div>
+                          {fieldErrors.niveaux && <p className="text-red-500 text-xs mt-2 flex items-center gap-1"><span>⚠</span> {fieldErrors.niveaux}</p>}
                         </div>
 
                         <div>
@@ -513,12 +567,14 @@ export default function NousRejoindre() {
                     {activeTab === "consultant" && (
                       <div className="space-y-6">
                         <div>
-                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Domaine(s) d'expertise(s) *</label>
-                          <textarea required rows={2} value={domaines} onChange={e => setDomaines(e.target.value)} placeholder="Indiquez vos domaines de prédilection. Ex : Orientation scolaire, admissions en Angleterre, Processus Etudes en France,...etc." className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
+                          <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.domaines ? 'text-red-500' : 'text-gray-400'}`}>Domaine(s) d'expertise(s) *</label>
+                          <textarea required rows={2} value={domaines} onChange={e => { setDomaines(e.target.value); setFieldErrors(fe => ({ ...fe, domaines: '' })); }} placeholder="Indiquez vos domaines de prédilection. Ex : Orientation scolaire, admissions en Angleterre, Processus Etudes en France,...etc." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.domaines ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                          {fieldErrors.domaines && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.domaines}</p>}
                         </div>
                         <div>
-                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Expérience *</label>
-                          <textarea required rows={3} value={experienceDetail} onChange={e => setExperienceDetail(e.target.value)} placeholder="Décrivez brièvement votre expérience dans ce domaine et sa durée" className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
+                          <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.experienceDetail ? 'text-red-500' : 'text-gray-400'}`}>Expérience *</label>
+                          <textarea required rows={3} value={experienceDetail} onChange={e => { setExperienceDetail(e.target.value); setFieldErrors(fe => ({ ...fe, experienceDetail: '' })); }} placeholder="Décrivez brièvement votre expérience dans ce domaine et sa durée" className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.experienceDetail ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                          {fieldErrors.experienceDetail && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.experienceDetail}</p>}
                         </div>
                       </div>
                     )}
@@ -527,8 +583,9 @@ export default function NousRejoindre() {
                     {activeTab === "support" && (
                       <div className="space-y-6">
                         <div>
-                          <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Fonction / Domaine *</label>
-                          <textarea required rows={2} value={fonctionDomaine} onChange={e => setFonctionDomaine(e.target.value)} placeholder="Indiquez vos domaines de prédilection. Ex : coordination d'équipe, administratif, relation client, gestion commerciale, comptabilité, contrôle de gestion, finance, Marketing, communication ... Etc." className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
+                          <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.fonctionDomaine ? 'text-red-500' : 'text-gray-400'}`}>Fonction / Domaine *</label>
+                          <textarea required rows={2} value={fonctionDomaine} onChange={e => { setFonctionDomaine(e.target.value); setFieldErrors(fe => ({ ...fe, fonctionDomaine: '' })); }} placeholder="Indiquez vos domaines de prédilection. Ex : coordination d'équipe, administratif, relation client, gestion commerciale, comptabilité, contrôle de gestion, finance, Marketing, communication ... Etc." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.fonctionDomaine ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                          {fieldErrors.fonctionDomaine && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.fonctionDomaine}</p>}
                         </div>
                         <div>
                           <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Années d'expérience *</label>
@@ -552,15 +609,15 @@ export default function NousRejoindre() {
                     Documents
                   </h4>
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="relative group border-2 border-dashed border-gray-200 rounded-2xl p-6 text-center hover:border-brand-teal hover:bg-brand-teal/5 transition-all cursor-pointer">
-                      <input type="file" required accept=".pdf" onChange={(e) => handleFileChange(e, setCvFile)} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+                    <div className={`relative group border-2 border-dashed rounded-2xl p-6 text-center hover:border-brand-teal hover:bg-brand-teal/5 transition-all cursor-pointer ${fieldErrors.cvFile ? 'border-red-400 bg-red-50/30' : 'border-gray-200'}`}>
+                      <input type="file" required accept=".pdf" onChange={(e) => { handleFileChange(e, setCvFile); setFieldErrors(fe => ({ ...fe, cvFile: '' })); }} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
                       <div className="flex flex-col items-center gap-3">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${cvFile ? 'bg-brand-teal text-white' : 'bg-gray-50 text-gray-400 group-hover:bg-brand-teal group-hover:text-white'}`}>
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${cvFile ? 'bg-brand-teal text-white' : fieldErrors.cvFile ? 'bg-red-100 text-red-500' : 'bg-gray-50 text-gray-400 group-hover:bg-brand-teal group-hover:text-white'}`}>
                           <Upload size={20} />
                         </div>
                         <div>
-                          <p className="font-bold text-brand-darkblue text-sm">CV</p>
-                          <p className="text-xs mt-1 transition-colors px-2 leading-relaxed max-w-xs mx-auto text-brand-teal font-medium">{cvFile ? cvFile.name : <span className="text-gray-400 font-normal">Importer votre CV (format PDF obligatoire)</span>}</p>
+                          <p className={`font-bold text-sm ${fieldErrors.cvFile ? 'text-red-600' : 'text-brand-darkblue'}`}>CV *</p>
+                          <p className="text-xs mt-1 transition-colors px-2 leading-relaxed max-w-xs mx-auto text-brand-teal font-medium">{cvFile ? cvFile.name : <span className={fieldErrors.cvFile ? 'text-red-500 font-medium' : 'text-gray-400 font-normal'}>{fieldErrors.cvFile || 'Importer votre CV (format PDF obligatoire)'}</span>}</p>
                         </div>
                       </div>
                     </div>
@@ -587,8 +644,9 @@ export default function NousRejoindre() {
                   </h4>
                   <div className="space-y-6">
                     <div>
-                      <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Pourquoi souhaitez-vous rejoindre STUDASSIST ? *</label>
-                      <textarea required rows={4} value={motivation} onChange={e => setMotivation(e.target.value)} placeholder="Expliquez brièvement votre motivation et ce que vous pouvez apporter à notre équipe." className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
+                      <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.motivation ? 'text-red-500' : 'text-gray-400'}`}>Pourquoi souhaitez-vous rejoindre STUDASSIST ? *</label>
+                      <textarea required rows={4} value={motivation} onChange={e => { setMotivation(e.target.value); setFieldErrors(fe => ({ ...fe, motivation: '' })); }} placeholder="Expliquez brièvement votre motivation et ce que vous pouvez apporter à notre équipe." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.motivation ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      {fieldErrors.motivation && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.motivation}</p>}
                     </div>
                     <div>
                       <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Message complémentaire (Facultatif)</label>

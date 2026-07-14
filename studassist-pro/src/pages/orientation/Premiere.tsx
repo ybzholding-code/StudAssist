@@ -143,7 +143,7 @@ export default function OrientationPremiere() {
 
       ctaBanner={{
         title: "Prendre rendez-vous",
-        body: "Votre enfant est en Première et doit faire des choix décisifs ? Parlons-en lors d'un premier rendez-vous sans engagement.",
+        body: "Vous souhaitez aider votre enfant à faire les bons choix dès la Première et à préparer sa Terminale sereinement ?",
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
