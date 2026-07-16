@@ -11,7 +11,7 @@ import FAQ from "./FAQ";
 import MediaFrameFloaters from "./MediaFrameFloaters";
 import { buildFaq } from "../data/faq";
 import { usePageMeta } from "../hooks/usePageMeta";
-import { waLink } from "../lib/utils";
+
 
 /* ---------- Types ---------- */
 
@@ -326,15 +326,13 @@ export default function OrientationLevelPage({
               )}
               {!moveHeroCtaUnderGrid && (
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                  <a
-                    href={waLink(whatsappMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/contact"
                     className="bg-brand-teal text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
                   >
-                    <span>{heroCtaLabel || "Réserver ma séance découverte"}</span>
+                    <span>{heroCtaLabel || "Réserver un rendez-vous de 1er contact"}</span>
                     <ArrowRight size={18} />
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
@@ -342,15 +340,13 @@ export default function OrientationLevelPage({
 
           {moveHeroCtaUnderGrid && (
             <div className="flex justify-center mt-12">
-              <a
-                href={waLink(whatsappMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="bg-brand-teal text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center gap-3"
               >
-                <span>{heroCtaLabel || "Réserver ma séance découverte"}</span>
+                <span>{heroCtaLabel || "Réserver un rendez-vous de 1er contact"}</span>
                 <ArrowRight size={18} />
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -667,15 +663,13 @@ export default function OrientationLevelPage({
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             {ctaBanner.secondaryLabel && (
-              <a
-                href={waLink(whatsappMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
                 className="bg-white/10 text-white border border-white/20 px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center space-x-3"
               >
                 <span>{ctaBanner.secondaryLabel}</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             )}
           </div>
         </motion.div>
