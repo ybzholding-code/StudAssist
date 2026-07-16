@@ -376,16 +376,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     let sheetSuccess = false;
     let emailSuccess = false;
+    let sheetError = "";
+    let emailError = "";
 
     // 1. Append to Google Sheets (primary — most reliable)
     try {
       const result = await appendToTalentSheet(data);
       sheetSuccess = !!result;
-    } catch (sheetErr) {
+    } catch (sheetErr: any) {
+      sheetError = sheetErr?.message || String(sheetErr);
       console.error("Talent Google Sheets error:", sheetErr);
     }
 
-    // 2. Send email with CV & lettre attachments via Resend (studassist.ma domain verified)
+    // 2. Send email with CV & lettre attachments via Resend
     try {
       const attachments: { filename: string; content: Buffer }[] = [];
       if (cvFile && cvFile.content.length > 0) {
@@ -405,11 +408,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
 
       if (emailResult.error) {
-        console.error("Resend Talent error:", JSON.stringify(emailResult.error));
+        emailError = JSON.stringify(emailResult.error);
+        console.error("Resend Talent error:", emailError);
       } else {
         emailSuccess = true;
       }
-    } catch (emailErr) {
+    } catch (emailErr: any) {
+      emailError = emailErr?.message || String(emailErr);
       console.error("Resend Talent exception:", emailErr);
     }
 
@@ -418,7 +423,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).json({ success: true, sheet: sheetSuccess, email: emailSuccess });
     }
 
-    return res.status(500).json({ error: "Erreur lors de l'envoi de la candidature" });
+    return res.status(500).json({
+      error: "Erreur lors de l'envoi de la candidature",
+      sheetError: sheetError || "TALENT_APPS_SCRIPT_URL not configured",
+      emailError: emailError || "Unknown email error",
+      hasApiKey: !!process.env.RESEND_TALENT_API_KEY,
+    });
   } catch (err: any) {
     console.error("submit-candidature error:", err);
     return res.status(500).json({ error: err.message || "Internal server error", details: String(err) });
