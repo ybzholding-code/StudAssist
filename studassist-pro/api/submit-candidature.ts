@@ -58,10 +58,21 @@ function parseMultipart(req: VercelRequest): Promise<{ fields: Record<string, st
     bb.on("finish", () => resolve({ fields, files }));
     bb.on("error", reject);
 
-    if (req.pipe) {
+    // Vercel provides the raw body as a Buffer when bodyParser is false
+    // In that case req is not a readable stream, so we write the buffer directly
+    if ((req as any).body && Buffer.isBuffer((req as any).body)) {
+      bb.end((req as any).body);
+    } else if (req.pipe) {
       (req as any).pipe(bb);
     } else {
-      reject(new Error("Request is not a readable stream"));
+      // Fallback: try to convert body to buffer
+      const rawBody = (req as any).body;
+      if (rawBody) {
+        const buf = typeof rawBody === 'string' ? Buffer.from(rawBody) : Buffer.from(rawBody);
+        bb.end(buf);
+      } else {
+        reject(new Error("Request has no body to parse"));
+      }
     }
   });
 }
@@ -392,6 +403,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "Erreur lors de l'envoi de la candidature" });
   } catch (err: any) {
     console.error("submit-candidature error:", err);
-    return res.status(500).json({ error: err.message || "Internal server error" });
+    return res.status(500).json({ error: err.message || "Internal server error", details: String(err) });
   }
 }
