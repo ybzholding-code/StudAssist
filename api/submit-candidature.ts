@@ -33,46 +33,64 @@ interface AttachedFile {
 }
 
 // ─── Multipart parser ─────────────────────────────────────────────────────────
-function parseMultipart(req: VercelRequest): Promise<{ fields: Record<string, string>; files: Record<string, AttachedFile> }> {
-  return new Promise((resolve, reject) => {
-    const bb = Busboy({ headers: req.headers as Record<string, string> });
-    const fields: Record<string, string> = {};
-    const files: Record<string, AttachedFile> = {};
-
-    bb.on("field", (name, val) => {
-      fields[name] = val;
-    });
-
-    bb.on("file", (name, stream, info) => {
+function getRawBody(req: VercelRequest): Promise<Buffer> {
+  // If Vercel already parsed the body into a Buffer
+  if (Buffer.isBuffer((req as any).body)) {
+    return Promise.resolve((req as any).body);
+  }
+  // If body is a string (Vercel sometimes does this)
+  if (typeof (req as any).body === 'string') {
+    return Promise.resolve(Buffer.from((req as any).body, 'binary'));
+  }
+  // If body is an object (Vercel parsed it as JSON somehow)
+  if ((req as any).body && typeof (req as any).body === 'object' && !Buffer.isBuffer((req as any).body)) {
+    // Collect from stream
+    return new Promise((resolve, reject) => {
       const chunks: Buffer[] = [];
-      stream.on("data", (chunk: Buffer) => chunks.push(chunk));
-      stream.on("end", () => {
-        files[name] = {
-          filename: info.filename,
-          content: Buffer.concat(chunks),
-          mimeType: info.mimeType,
-        };
-      });
+      req.on('data', (chunk: Buffer) => chunks.push(chunk));
+      req.on('end', () => resolve(Buffer.concat(chunks)));
+      req.on('error', reject);
     });
+  }
+  // Default: collect from stream
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = [];
+    req.on('data', (chunk: Buffer) => chunks.push(chunk));
+    req.on('end', () => resolve(Buffer.concat(chunks)));
+    req.on('error', reject);
+  });
+}
 
-    bb.on("finish", () => resolve({ fields, files }));
-    bb.on("error", reject);
+function parseMultipart(req: VercelRequest): Promise<{ fields: Record<string, string>; files: Record<string, AttachedFile> }> {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const rawBody = await getRawBody(req);
+      const bb = Busboy({ headers: req.headers as Record<string, string> });
+      const fields: Record<string, string> = {};
+      const files: Record<string, AttachedFile> = {};
 
-    // Vercel provides the raw body as a Buffer when bodyParser is false
-    // In that case req is not a readable stream, so we write the buffer directly
-    if ((req as any).body && Buffer.isBuffer((req as any).body)) {
-      bb.end((req as any).body);
-    } else if (req.pipe) {
-      (req as any).pipe(bb);
-    } else {
-      // Fallback: try to convert body to buffer
-      const rawBody = (req as any).body;
-      if (rawBody) {
-        const buf = typeof rawBody === 'string' ? Buffer.from(rawBody) : Buffer.from(rawBody);
-        bb.end(buf);
-      } else {
-        reject(new Error("Request has no body to parse"));
-      }
+      bb.on("field", (name, val) => {
+        fields[name] = val;
+      });
+
+      bb.on("file", (name, stream, info) => {
+        const chunks: Buffer[] = [];
+        stream.on("data", (chunk: Buffer) => chunks.push(chunk));
+        stream.on("end", () => {
+          files[name] = {
+            filename: info.filename,
+            content: Buffer.concat(chunks),
+            mimeType: info.mimeType,
+          };
+        });
+      });
+
+      bb.on("finish", () => resolve({ fields, files }));
+      bb.on("error", reject);
+
+      bb.end(rawBody);
+    } catch (err) {
+      reject(err);
     }
   });
 }
