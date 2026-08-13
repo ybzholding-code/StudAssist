@@ -105,7 +105,7 @@ export default function Contact() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-20 items-start max-w-[1400px] mx-auto">
             {/* ============ LEFT: Brick-wall framed photo with "S" logo ============ */}
-            <div className="relative order-2 lg:order-1 lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] w-full flex flex-col justify-center">
+            <div className="relative hidden lg:flex order-2 lg:order-1 lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] w-full flex-col justify-center">
               <MediaFrameFloaters />
 
               <div className="relative w-full aspect-square rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10 group bg-white">
@@ -118,13 +118,13 @@ export default function Contact() {
             </div>
 
             {/* ============ RIGHT: Heading + form ============ */}
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 min-w-0 overflow-hidden">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="font-display text-[32px] sm:text-[36px] lg:text-[48px] font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-2">
+                <h1 className="font-display text-[26px] sm:text-[36px] lg:text-[48px] font-extrabold leading-[1.1] lg:leading-[1.05] tracking-tight mb-2">
                   <span className="text-sa-navy">Parlons de votre</span>
                   <br />
                   <span className="sa-wavy text-sa-pink">projet académique</span>
@@ -137,6 +137,17 @@ export default function Contact() {
                   <p>
                     Remplissez ce formulaire et nous vous recontactons rapidement pour organiser un échange adapté à votre besoin.
                   </p>
+                </div>
+
+                {/* Mobile-only image after title */}
+                <div className="lg:hidden mt-6 mb-2">
+                  <div className="w-full rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                    <img
+                      src="/hero-soutien-scolaire.png"
+                      alt="Contact"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
 
                 {isSubmitted ? (
@@ -157,7 +168,7 @@ export default function Contact() {
                       <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-sa-ink/50 mb-4 block">
                         Je souhaite réserver : *
                       </label>
-                      <div className="flex flex-nowrap gap-2 border-b border-sa-navy/10 pb-0">
+                      <div className="flex flex-col sm:flex-row flex-nowrap gap-1 sm:gap-2 border-b border-sa-navy/10 pb-0">
                         {(
                           [
                             { key: "orientation", label: "Une séance d'orientation" },
@@ -168,7 +179,7 @@ export default function Contact() {
                           <button
                             key={t.key}
                             onClick={() => setIntentTab(t.key)}
-                            className={`pb-3 px-1 text-[13px] font-semibold transition-colors relative whitespace-nowrap ${
+                            className={`pb-3 px-1 text-[11px] sm:text-[13px] font-semibold transition-colors relative whitespace-nowrap ${
                               intentTab === t.key ? "text-sa-pink" : "text-sa-ink/50 hover:text-sa-navy"
                             }`}
                           >

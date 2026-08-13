@@ -234,6 +234,9 @@ export default function Navbar() {
                 <Link to="/contact#centres" className="text-center bg-brand-darkblue text-white py-3 rounded-full font-bold text-sm" onClick={() => setIsOpen(false)}>
                   Où nous trouver
                 </Link>
+                <Link to="/qui-sommes-nous" className="text-center border-2 border-brand-darkblue text-brand-darkblue py-3 rounded-full font-bold text-sm hover:bg-brand-darkblue hover:text-white transition-colors" onClick={() => setIsOpen(false)}>
+                  Qui sommes-nous
+                </Link>
               </div>
               <div className="pt-4 border-t border-gray-100 flex items-center justify-center space-x-5">
                 <a href="https://web.facebook.com/studassist.fr" target="_blank" rel="noopener noreferrer" aria-label="Facebook STUDASSIST" className="text-brand-darkblue hover:text-brand-teal transition"><Facebook size={20} /></a>
