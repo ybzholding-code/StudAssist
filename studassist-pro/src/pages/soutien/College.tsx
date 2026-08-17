@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_College ="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au collège."
+
 
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
@@ -18,14 +23,18 @@ export default function SoutienCollege() {
       title={<>Soutien scolaire au <span className="text-brand-teal">collège</span></>}
       subtitle="Consolider les acquis, structurer la méthode et préparer l'entrée au lycée"
       intro={[
-        "Le collège est une période charnière du parcours scolaire. Les exigences académiques augmentent, le rythme s'intensifie et l'élève doit progressivement gagner en autonomie, en organisation et en méthode.",
-        "Chez STUDASSIST, nous proposons un soutien scolaire au collège structuré, exigeant et personnalisé, pensé aussi bien pour accompagner les élèves rencontrant des difficultés que pour ceux disposant déjà d'un bon niveau et souhaitant viser l'excellence, quel que soit leur système scolaire.",
+        <>
+          Le collège est une <strong className="font-semibold text-brand-darkblue">période charnière</strong> du parcours scolaire. Les exigences académiques augmentent, le rythme s'intensifie et l'élève doit progressivement gagner en autonomie, en organisation et en méthode.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons un <strong className="font-semibold text-brand-darkblue">soutien scolaire au collège structuré, exigeant et personnalisé</strong>, pensé aussi bien pour accompagner les élèves rencontrant des difficultés que pour ceux disposant déjà d'un bon niveau et souhaitant <strong className="font-semibold text-brand-darkblue">viser l'excellence</strong>, quel que soit leur <strong className="font-semibold text-brand-darkblue">système scolaire</strong>.
+        </>,
       ]}
       heroImage="/soutien-scolaire-main.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au collège."
+      whatsappMessage={WHATSAPP_MSG_College}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -161,7 +170,7 @@ export default function SoutienCollege() {
         primaryLabel: "Réserver un cours découverte",
         primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_College),
       }}
 
       faqKeys={["soutien", "method"]}

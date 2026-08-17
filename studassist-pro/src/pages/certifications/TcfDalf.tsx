@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_TCF_DALF =
+  "Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au TCF ou au DALF.";
 
 const LEVELS = [
   { key: "ielts", label: "IELTS & TOEFL", href: "/certifications/ielts-toefl" },
@@ -15,8 +19,8 @@ export default function CertificationsTcfDalf() {
       title={<>Prépa <span className="text-brand-teal">TCF & DALF</span></>}
       subtitle="Attester de son niveau de français pour étudier ou s'installer en France"
       intro={[
-        "Les certifications TCF et DALF sont des références incontournables pour toute démarche académique ou administrative en France. Elles permettent d'attester officiellement d'un niveau de français et sont exigées dans de nombreux contextes : candidatures universitaires, procédures Campus France, ou projets d'expatriation.",
-        "Ces examens sont généralement requis pour tout élève issu d'un système non francophone, notamment les élèves ne provenant pas du système français ou belge, souhaitant poursuivre leurs études en France. Chez STUDASSIST, nous accompagnons les élèves et étudiants dans une préparation ciblée et structurée, avec un objectif clair : atteindre le niveau requis en fonction de leur projet.",
+        <>Les certifications <strong className="font-semibold text-brand-darkblue">TCF</strong> et <strong className="font-semibold text-brand-darkblue">DALF</strong> sont des références incontournables pour toute démarche académique ou administrative en France. Elles permettent d'attester officiellement d'un niveau de français et sont exigées dans de nombreux contextes : candidatures universitaires, procédures Campus France, ou projets d'expatriation.</>,
+        <>Ces examens sont généralement requis pour tout élève <strong className="font-semibold text-brand-darkblue">issu d'un système non francophone</strong>, notamment les élèves ne provenant pas du système français ou belge, souhaitant poursuivre leurs études en France. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves et étudiants dans une préparation ciblée et structurée, avec un objectif clair : <strong className="font-semibold text-brand-darkblue">atteindre le niveau requis en fonction de leur projet</strong>.</>,
       ]}
       heroImage="/hero-certif-new.png"
       heroImageClassName="!object-cover"
@@ -134,7 +138,7 @@ export default function CertificationsTcfDalf() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_TCF_DALF),
       }}
 
       faqKeys={["certifications"]}

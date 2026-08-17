@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_MASTER ="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation pour un Master."
 
 export default function OrientationMaster() {
   return (
@@ -10,13 +13,19 @@ export default function OrientationMaster() {
       subtitle="Construire une stratégie d'admission cohérente après un Bac+3"
       intro={[
         "Le choix d'un Master est une étape déterminante dans le parcours académique et professionnel.",
-        "Après un Bac+3, les enjeux évoluent : il ne s'agit plus seulement de choisir une formation, mais de définir une spécialisation, de consolider un positionnement de carrière et d'intégrer un programme aligné avec ses ambitions.",
-        "Chez STUDASSIST, nous accompagnons les étudiants titulaires d'un Bac+3 dans une démarche d'orientation Master structurée, stratégique et personnalisée, au Maroc comme à l'international.",
+        <>
+          Après un Bac+3, les enjeux évoluent : il ne s'agit plus seulement de choisir une formation, mais de définir une{" "}
+          <strong className="font-semibold text-brand-darkblue">spécialisation</strong>, de consolider un positionnement de carrière et d'intégrer un programme aligné avec ses ambitions.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les étudiants titulaires d'un Bac+3 dans une démarche d'orientation Master{" "}
+          <strong className="font-semibold text-brand-darkblue">structurée, stratégique et personnalisée</strong>, au Maroc comme à l'international.
+        </>,
       ]}
       heroImage="/hero-orientation-master-new.png"
       heroContainerAspectRatio="aspect-[3/2]"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation pour un Master."
+      whatsappMessage={WHATSAPP_MSG_MASTER}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       enjeuxEyebrow="Les enjeux de l'orientation en Master"
@@ -125,7 +134,7 @@ export default function OrientationMaster() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_MASTER),
       }}
 
       prev={{ label: "Réorientation académique", to: "/orientation/reorientation" }}

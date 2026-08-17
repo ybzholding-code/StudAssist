@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Superieur ="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire dans le supérieur."
+
+
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
   { key: "college", label: "Collège", href: "/soutien/college" },
@@ -18,14 +24,18 @@ export default function SoutienSuperieur() {
       title={<>Soutien scolaire dans le <span className="text-brand-teal">supérieur</span></>}
       subtitle="Réussir sa première année post-bac avec méthode, accompagnement et exigence"
       intro={[
-        "La première année d'études supérieures constitue souvent un tournant décisif. Nouveaux rythmes, programmes plus complexes, autonomie accrue, méthodes de travail différentes : beaucoup d'étudiants se retrouvent déstabilisés, même lorsqu'ils avaient un bon niveau au lycée.",
-        "Chez STUDASSIST, nous proposons un soutien scolaire individuel en visioconférence, spécifiquement conçu pour accompagner les étudiants de première année post-bac confrontés à ces nouvelles exigences.",
+        <>
+          La première année d'études supérieures constitue souvent un <strong className="font-semibold text-brand-darkblue">tournant décisif</strong>. Nouveaux rythmes, programmes plus complexes, autonomie accrue, méthodes de travail différentes : beaucoup d'étudiants se retrouvent déstabilisés, même lorsqu'ils avaient un bon niveau au lycée.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons un <strong className="font-semibold text-brand-darkblue">soutien scolaire individuel en visioconférence</strong>, spécifiquement conçu pour accompagner les étudiants de <strong className="font-semibold text-brand-darkblue">première année post-bac</strong> confrontés à ces nouvelles exigences.
+        </>,
       ]}
       heroImage="/soutien-superieur-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire dans le supérieur."
+      whatsappMessage={WHATSAPP_MSG_Superieur}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -158,7 +168,7 @@ export default function SoutienSuperieur() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Nous contacter",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Superieur),
       }}
 
       faqKeys={["superieur"]}

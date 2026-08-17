@@ -59,13 +59,13 @@ const programmes = [
     link: "/certifications/ielts-toefl",
   },
   {
-    icon: "https://img.icons8.com/3d-fluency/94/open-book.png",
+    icon: "https://img.icons8.com/3d-fluency/94/globe.png",
     title: "TCF & DALF",
     description: "Validez officiellement votre niveau de français pour poursuivre vos études dans un environnement francophone ou répondre aux exigences de certaines procédures d'admission et démarches académiques en France.",
     link: "/certifications/tcf-dalf",
   },
   {
-    icon: "https://img.icons8.com/?size=100&id=XBMnwwJYQvfN&format=png&color=1BB79D",
+    icon: "https://img.icons8.com/3d-fluency/94/globe.png",
     title: "DELE",
     description: "Certifiez votre niveau d'espagnol et préparez vos projets d'études en Espagne ou dans des établissements internationaux exigeant une maîtrise de la langue espagnole.",
     link: "/certifications/dele",
@@ -74,7 +74,7 @@ const programmes = [
 
 const objectifs = [
   { icon: "https://img.icons8.com/3d-fluency/94/document.png", title: "Compréhension écrite", description: "Apprendre à analyser et comprendre des documents académiques complexes." },
-  { icon: "https://img.icons8.com/3d-fluency/94/hearing.png", title: "Compréhension orale", description: "Développer sa capacité à comprendre des conférences, échanges et présentations." },
+  { icon: "https://img.icons8.com/3d-fluency/94/headset.png", title: "Compréhension orale", description: "Développer sa capacité à comprendre des conférences, échanges et présentations." },
   { icon: "https://img.icons8.com/3d-fluency/94/pencil.png", title: "Expression écrite", description: "Structurer ses idées et produire des écrits conformes aux attentes des examens." },
   { icon: "https://img.icons8.com/3d-fluency/94/microphone.png", title: "Expression orale", description: "Gagner en fluidité, en précision et en aisance dans la langue cible." },
   { icon: "https://img.icons8.com/3d-fluency/94/calendar.png", title: "Maîtrise des formats d'examen", description: "Acquérir les stratégies et réflexes nécessaires pour performer sous contrainte de temps." },
@@ -207,7 +207,7 @@ export default function Certifications() {
             {[
               { icon: "https://img.icons8.com/3d-fluency/94/globe.png", title: "Accéder aux études à l'international", description: "De nombreuses universités exigent une certification linguistique dans le cadre de leurs admissions." },
               { icon: "https://img.icons8.com/3d-fluency/94/goal.png", title: "Atteindre le niveau ou le score requis", description: "Chaque établissement fixe ses propres exigences linguistiques selon les formations et les pays." },
-              { icon: "https://img.icons8.com/3d-fluency/94/compass.png", title: "Développer des compétences académiques", description: "Compréhension écrite, compréhension orale, expression écrite et expression orale sont au cœur des certifications." },
+              { icon: "https://img.icons8.com/3d-fluency/94/star.png", title: "Développer des compétences académiques", description: "Compréhension écrite, compréhension orale, expression écrite et expression orale sont au cœur des certifications." },
               { icon: "https://img.icons8.com/3d-fluency/94/rocket.png", title: "Renforcer son dossier de candidature", description: "Un bon score constitue un véritable atout pour se démarquer des autres candidats." },
             ].map((item, idx) => (
               <motion.div

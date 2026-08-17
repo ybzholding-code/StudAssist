@@ -1,5 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 import { Link } from "react-router-dom";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_PREMIERE = "Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Première."
 
 export default function OrientationPremiere() {
   return (
@@ -11,13 +14,16 @@ export default function OrientationPremiere() {
       intro={[
         "La classe de Première est une année clé dans la construction du projet post-bac.",
         "C’est le moment où se précisent les intérêts, où les résultats prennent davantage de poids, et où s’opèrent des choix structurants, notamment celui de la spécialité à abandonner en vue de la Terminale.",
-        "Chez STUDASSIST, nous accompagnons les élèves de Première et leurs familles dans une démarche d’orientation anticipée et stratégique, afin de poser dès maintenant les bases d’un projet solide et d’aborder la Terminale avec clarté, méthode et sérénité.",
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves de Première et leurs familles dans une démarche d’orientation{" "}
+          <strong className="font-semibold text-brand-darkblue">anticipée et stratégique</strong>, afin de poser dès maintenant les bases d’un projet solide et d’aborder la Terminale avec clarté, méthode et sérénité.
+        </>,
       ]}
       heroImage="/orientation-seconde-premiere.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Première."
+      whatsappMessage={WHATSAPP_MSG_PREMIERE}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       enjeuxEyebrow="Les enjeux de l’orientation en première"
@@ -147,7 +153,7 @@ export default function OrientationPremiere() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_PREMIERE),
       }}
 
       prev={{ label: "Orientation en Seconde", to: "/orientation/seconde" }}

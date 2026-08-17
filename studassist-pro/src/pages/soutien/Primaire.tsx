@@ -1,4 +1,7 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_Primaire ="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au primaire."
 
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
@@ -17,14 +20,18 @@ export default function SoutienPrimaire() {
       title={<>Accompagnement scolaire au <span className="text-brand-teal">primaire</span></>}
       subtitle="Poser des bases solides, apprendre avec plaisir et développer le potentiel global"
       intro={[
-        "Les premières années de scolarité sont fondatrices. C'est au primaire que se construisent les apprentissages essentiels, la confiance en soi et la relation à l'apprentissage.",
-        "Chez STUDASSIST, le soutien scolaire au primaire repose sur une approche globale et équilibrée, combinant renforcement académique structuré et ateliers de brain training, afin d'accompagner chaque enfant dans toutes les dimensions de son développement, quel que soit son système scolaire.",
+        <>
+          Les premières années de scolarité sont <strong className="font-semibold text-brand-darkblue">fondatrices</strong>. C'est au primaire que se construisent les <strong className="font-semibold text-brand-darkblue">apprentissages essentiels</strong>, la <strong className="font-semibold text-brand-darkblue">confiance en soi</strong> et la <strong className="font-semibold text-brand-darkblue">relation à l'apprentissage</strong>.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire au primaire repose sur une <strong className="font-semibold text-brand-darkblue">approche globale et équilibrée</strong>, combinant <strong className="font-semibold text-brand-darkblue">renforcement académique structuré</strong> et <strong className="font-semibold text-brand-darkblue">ateliers de brain training</strong>, afin d'accompagner chaque enfant dans toutes les dimensions de son développement, quel que soit son <strong className="font-semibold text-brand-darkblue">système scolaire</strong>.
+        </>,
       ]}
       heroImage="/soutien-scolaire-main.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au primaire."
+      whatsappMessage={WHATSAPP_MSG_Primaire}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -123,12 +130,12 @@ export default function SoutienPrimaire() {
       }}
 
       ctaBanner={{
-        title: "Prendre rendez-vous",
+        title: "Apprendre avec plaisir, structurer les bases et révéler le potentiel dès le plus jeune âge ",
         body: "Vous souhaitez mettre en place un accompagnement scolaire adapté, exigeant et compatible avec le système scolaire ainsi que le rythme d'apprentissage de votre enfant ?",
         primaryLabel: "Réserver un cours découverte",
         primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Primaire) ,
       }}
 
       faqKeys={["primaire"]}

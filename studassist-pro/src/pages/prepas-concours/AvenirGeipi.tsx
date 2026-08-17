@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_AvenirGeipi ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours Avenir, GEIPI Polytech et Puissance Alpha (écoles d'ingénieurs en France)."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,19 @@ export default function PrepaConcoursAvenirGeipi() {
       title={<>Prépa Concours des <span className="text-brand-teal">Écoles d'Ingénieurs en France</span></>}
       subtitle="Réussir les concours et intégrer les meilleures écoles d'ingénieurs post-bac"
       intro={[
-        "Les concours Avenir, Geipi Polytech et Puissance Alpha constituent les principales voies d'accès aux écoles d'ingénieurs post-bac en France. Ils permettent d'intégrer des établissements reconnus tels que EPITA, ESILV, ECE, ESIGELEC, les écoles du réseau Polytech ou encore CY Tech.",
-        "Ces concours sont sélectifs et nécessitent une préparation rigoureuse, combinant maîtrise des fondamentaux scientifiques, méthodologie et gestion du temps. Chez STUDASSIST, nous proposons une préparation structurée et intensive, permettant aux élèves de maximiser leurs performances et leurs chances d'admission.",
+        <>
+          Les concours <strong className="font-semibold text-brand-darkblue">Avenir, Geipi Polytech et Puissance Alpha</strong> constituent les principales voies d'accès aux <strong className="font-semibold text-brand-darkblue">écoles d'ingénieurs post-bac en France</strong>. Ils permettent d'intégrer des établissements reconnus tels que <strong className="font-semibold text-brand-darkblue">EPITA, ESILV, ECE, ESIGELEC, les écoles du réseau Polytech ou encore CY Tech</strong>.
+        </>,
+        <>
+          Ces concours sont sélectifs et nécessitent une préparation rigoureuse, combinant maîtrise des fondamentaux scientifiques, méthodologie et gestion du temps. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation structurée et intensive, permettant aux élèves de maximiser leurs performances et leurs chances d'admission.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours Avenir, GEIPI Polytech et Puissance Alpha (écoles d'ingénieurs en France)."
+      whatsappMessage={WHATSAPP_MSG_AvenirGeipi}
+      heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -136,7 +145,7 @@ export default function PrepaConcoursAvenirGeipi() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_AvenirGeipi),
       }}
 
       faqKeys={["prepas-concours"]}

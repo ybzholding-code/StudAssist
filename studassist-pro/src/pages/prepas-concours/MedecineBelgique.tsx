@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_MedecineBelgique ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux études de médecine en Belgique."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,18 @@ export default function PrepaMedecineBelgique() {
       title={<>Prépa <span className="text-brand-teal">Médecine Belgique</span></>}
       subtitle="Intégrer la médecine en Belgique"
       intro={[
-        "Les études de médecine en Belgique attirent chaque année de nombreux étudiants internationaux, en raison de la qualité de l'enseignement et de l'accès direct aux études médicales après le baccalauréat. Cependant, l'accès est strictement encadré et très sélectif, notamment pour les étudiants non-résidents.",
-        "Chez STUDASSIST, nous proposons un accompagnement structuré et stratégique, permettant aux élèves de comprendre les exigences du système belge et de maximiser leurs chances d'admission.",
+        <>
+          Les études de médecine en Belgique attirent chaque année de nombreux étudiants internationaux, en raison de la qualité de l'enseignement et de l'accès direct aux études médicales après le baccalauréat. Cependant, l'accès est <strong className="font-semibold text-brand-darkblue">strictement encadré et très sélectif</strong>, notamment pour les étudiants non-résidents.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons un accompagnement structuré et stratégique, permettant aux élèves de comprendre les exigences du système belge et de maximiser leurs chances d'admission.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux études de médecine en Belgique."
+      whatsappMessage={WHATSAPP_MSG_MedecineBelgique}
       heroBadge="+7 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -182,7 +190,7 @@ export default function PrepaMedecineBelgique() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_MedecineBelgique),
       }}
 
       faqKeys={["prepas-concours"]}

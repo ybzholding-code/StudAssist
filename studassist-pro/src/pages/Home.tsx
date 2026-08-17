@@ -179,8 +179,19 @@ const faqData = [
 ];
 
 function BlogCarousel({ blogs }: { blogs: { id: string | number; slug: string; image: string; title: string; date: string }[] }) {
-  const visible = 3;
+  const [visible, setVisible] = useState(3);
   const gap = 24;
+
+  useEffect(() => {
+    const updateVisible = () => {
+      if (window.innerWidth < 640) setVisible(1);
+      else if (window.innerWidth < 1024) setVisible(2);
+      else setVisible(3);
+    };
+    updateVisible();
+    window.addEventListener('resize', updateVisible);
+    return () => window.removeEventListener('resize', updateVisible);
+  }, []);
   // Triple the items so we always have enough to loop seamlessly
   const items = [...blogs, ...blogs, ...blogs];
   const [idx, setIdx] = useState(blogs.length); // start at the middle copy
@@ -1014,7 +1025,7 @@ export default function Home() {
             {/* Decorative SVG shapes (matching original site) */}
             {/* Left wavy lines */}
             <svg
-              className="absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 w-16 lg:w-24 opacity-80 pointer-events-none"
+              className="hidden lg:block absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 w-16 lg:w-24 opacity-80 pointer-events-none"
               viewBox="0 0 80 40"
               fill="none"
             >

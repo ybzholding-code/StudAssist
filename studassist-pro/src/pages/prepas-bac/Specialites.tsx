@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Specialites ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux épreuves de spécialités du Bac."
 
 const LEVELS = [
   { key: "francais", label: "Bac de Français", href: "/prepas-bac/francais" },
@@ -16,14 +20,18 @@ export default function PrepasBacSpecialites() {
       title={<>Prépa Bac – Épreuves de <span className="text-brand-teal">spécialités</span></>}
       subtitle="Performer sur les matières clés et sécuriser son orientation"
       intro={[
-        "Les épreuves de spécialités du Baccalauréat occupent une place centrale dans le parcours de Terminale. Avec un coefficient élevé (16 au total), elles constituent le principal levier de performance au Bac et jouent un rôle déterminant dans les candidatures post-bac.",
-        "Chez STUDASSIST, nous proposons une préparation structurée, exigeante et orientée résultats, permettant aux élèves de maîtriser les attendus, d'optimiser leurs performances et de renforcer leur dossier académique.",
+        <>
+          Les <strong className="font-semibold text-brand-darkblue">épreuves de spécialités du Baccalauréat</strong> occupent une place centrale dans le parcours de Terminale. Avec un <strong className="font-semibold text-brand-darkblue">coefficient élevé (16 au total)</strong>, elles constituent le principal levier de performance au Bac et jouent un rôle déterminant dans les candidatures post-bac.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation structurée, exigeante et orientée résultats, permettant aux élèves de maîtriser les attendus, d'optimiser leurs performances et de renforcer leur dossier académique.
+        </>,
       ]}
       heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux épreuves de spécialités du Bac."
+      whatsappMessage={WHATSAPP_MSG_Specialites}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -142,7 +150,7 @@ export default function PrepasBacSpecialites() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Specialites),
       }}
 
       faqKeys={["prepas-bac"]}

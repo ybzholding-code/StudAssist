@@ -1,4 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_EncgIscae ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours ENCG & ISCAE."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -20,14 +24,19 @@ export default function PrepaConcoursEncgIscae() {
       title={<>Prépa Concours <span className="text-brand-teal">ENCG & ISCAE</span></>}
       subtitle="Intégrer les meilleures écoles de commerce au Maroc"
       intro={[
-        "Les concours ENCG et ISCAE constituent les principales voies d'accès aux écoles de commerce publiques les plus sélectives au Maroc. Ils permettent d'intégrer des formations reconnues pour leur exigence académique et leur forte employabilité.",
-        "Ces concours sont compétitifs et demandent une préparation spécifique, alliant maîtrise des fondamentaux, rapidité d'exécution et méthodologie. Chez STUDASSIST, nous proposons une préparation structurée et intensive, permettant aux élèves de maximiser leurs chances d'admission.",
+        <>
+          Les concours <strong className="font-semibold text-brand-darkblue">ENCG</strong> et <strong className="font-semibold text-brand-darkblue">ISCAE</strong> constituent les principales voies d'accès aux <strong className="font-semibold text-brand-darkblue">écoles de commerce publiques les plus sélectives au Maroc</strong>. Ils permettent d'intégrer des formations reconnues pour leur exigence académique et leur forte employabilité.
+        </>,
+        <>
+          Ces concours sont compétitifs et demandent une préparation spécifique, alliant maîtrise des fondamentaux, rapidité d'exécution et méthodologie. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation structurée et intensive, permettant aux élèves de maximiser leurs chances d'admission.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours ENCG & ISCAE."
+      whatsappMessage={WHATSAPP_MSG_EncgIscae}
+      heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -119,7 +128,7 @@ export default function PrepaConcoursEncgIscae() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_EncgIscae),
       }}
 
       faqKeys={["prepas-concours"]}

@@ -1,4 +1,9 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Stages ="Bonjour STUDASSIST, je souhaite obtenir des informations sur les stages de vacances."
+
 
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
@@ -18,13 +23,15 @@ export default function SoutienStages() {
       subtitle="Consolider les acquis, combler les lacunes et préparer la rentrée avec une longueur d'avance"
       intro={[
         "Les vacances scolaires représentent une opportunité idéale pour faire le point, renforcer les apprentissages et aborder la rentrée suivante dans les meilleures conditions.",
-        "Chez STUDASSIST, nos stages de vacances sont conçus comme des modules intensifs et structurés, permettant aux élèves de progresser efficacement tout en conservant un rythme équilibré. Ils s'adressent aux élèves du primaire, collège et lycée, quels que soient leur niveau et leur système scolaire.",
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nos <strong className="font-semibold text-brand-darkblue">stages de vacances</strong> sont conçus comme des <strong className="font-semibold text-brand-darkblue">modules intensifs et structurés</strong>, permettant aux élèves de progresser efficacement tout en conservant un rythme équilibré. Ils s'adressent aux élèves du <strong className="font-semibold text-brand-darkblue">primaire, collège et lycée</strong>, quels que soient leur niveau et leur système scolaire.
+        </>,
       ]}
       heroImage="/soutien-scolaire-main.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur les stages de vacances."
+      whatsappMessage={WHATSAPP_MSG_Stages}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -113,7 +120,7 @@ export default function SoutienStages() {
         primaryLabel: "Découvrir les prochains stages",
         primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Stages),
       }}
 
       faqKeys={["soutien", "method"]}

@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Lycee ="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au lycée."
+
 
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
@@ -18,14 +23,18 @@ export default function SoutienLycee() {
       title={<>Soutien scolaire au <span className="text-brand-teal">lycée</span></>}
       subtitle="Optimiser les performances, viser l'excellence et sécuriser l'orientation post-bac"
       intro={[
-        "Le lycée est une étape décisive du parcours scolaire et plus généralement de l'avenir académique de l'élève. Les exigences s'intensifient, les enjeux de notes deviennent stratégiques et les résultats obtenus ont un impact direct sur l'orientation post-bac, en France, au Maroc et à l'international.",
-        "Chez STUDASSIST, nous proposons un soutien scolaire au lycée structuré, exigeant et personnalisé, destiné aussi bien aux élèves souhaitant renforcer certaines matières qu'aux lycéens disposant d'un bon niveau académique et souhaitant atteindre l'excellence, quel que soit leur système scolaire.",
+        <>
+          Le lycée est une <strong className="font-semibold text-brand-darkblue">étape décisive</strong> du parcours scolaire et plus généralement de l'avenir académique de l'élève. Les exigences s'intensifient, les enjeux de notes deviennent stratégiques et les résultats obtenus ont un <strong className="font-semibold text-brand-darkblue">impact direct sur l'orientation post-bac</strong>, en France, au Maroc et à l'international.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons un <strong className="font-semibold text-brand-darkblue">soutien scolaire au lycée structuré, exigeant et personnalisé</strong>, destiné aussi bien aux élèves souhaitant renforcer certaines matières qu'aux lycéens disposant d'un bon niveau académique et souhaitant <strong className="font-semibold text-brand-darkblue">atteindre l'excellence</strong>, quel que soit leur <strong className="font-semibold text-brand-darkblue">système scolaire</strong>.
+        </>,
       ]}
       heroImage="/soutien-lycee-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur le soutien scolaire au lycée."
+      whatsappMessage={WHATSAPP_MSG_Lycee}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -172,7 +181,7 @@ export default function SoutienLycee() {
         primaryLabel: "Réserver un cours découverte",
         primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Lycee),
       }}
 
       faqKeys={["lycee"]}

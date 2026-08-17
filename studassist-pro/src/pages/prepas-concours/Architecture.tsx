@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Architecture ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au concours Architecture ENA."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,18 @@ export default function PrepaArchitecture() {
       title={<>Prépa Concours <span className="text-brand-teal">Architecture ENA</span></>}
       subtitle="Réussir le concours et intégrer les Écoles Nationales d'Architecture au Maroc"
       intro={[
-        "Les Écoles Nationales d'Architecture (ENA) forment les futurs architectes appelés à concevoir les espaces, bâtiments et villes de demain, à travers un cursus exigeant, alliant créativité, rigueur et réflexion.",
-        "L'accès à ces écoles se fait via un concours sélectif, qui évalue autant les capacités académiques que le potentiel créatif des candidats. Chez STUDASSIST, nous proposons une préparation spécifique, permettant aux élèves de développer les compétences attendues et de maximiser leurs chances d'admission.",
+        <>
+          Les <strong className="font-semibold text-brand-darkblue">Écoles Nationales d'Architecture (ENA)</strong> forment les futurs architectes appelés à concevoir les espaces, bâtiments et villes de demain, à travers un cursus exigeant, alliant créativité, rigueur et réflexion.
+        </>,
+        <>
+          L'accès à ces écoles se fait via un <strong className="font-semibold text-brand-darkblue">concours sélectif</strong>, qui évalue autant les capacités académiques que le potentiel créatif des candidats. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation spécifique, permettant aux élèves de développer les compétences attendues et de maximiser leurs chances d'admission.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au concours Architecture ENA."
+      whatsappMessage={WHATSAPP_MSG_Architecture}
       heroBadge="+7 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -173,7 +181,7 @@ export default function PrepaArchitecture() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Architecture),
       }}
 
       faqKeys={["prepas-concours"]}

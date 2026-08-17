@@ -166,7 +166,7 @@ export default function OrientationScolaire() {
                 Chez STUDASSIST, nous accompagnons les élèves et les étudiants dans la construction et la réalisation d'un projet académique cohérent, réaliste et aligné avec leurs ambitions, leurs compétences et les opportunités qui s'offrent à eux.
               </p>
               <p className="text-gray-500 text-base lg:text-lg leading-relaxed font-medium">
-                Grâce à une analyse approfondie du profil, une vision long terme et un accompagnement personnalisé, nous transformons l'orientation en véritable levier de réussite et d'épanouissement académique.
+                Grâce à une analyse approfondie du profil, une vision long terme et un accompagnement personnalisé, nous transformons l'orientation en véritable <strong className="font-semibold text-brand-darkblue">levier de réussite et d'épanouissement académique</strong>.
               </p>
 
               <div className="grid grid-cols-3 gap-4 pt-4">

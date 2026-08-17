@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Brevet ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Diplôme National du Brevet."
 
 const LEVELS = [
   { key: "primaire", label: "Primaire", href: "/soutien/primaire" },
@@ -18,14 +22,18 @@ export default function SoutienBrevet() {
       title={<>Préparation au Diplôme National du <span className="text-brand-teal">Brevet</span></>}
       subtitle="Aborder la première échéance officielle avec méthode et sérénité"
       intro={[
-        "Le Diplôme National du Brevet constitue la première évaluation officielle du parcours scolaire. Il marque une étape clé avant l'entrée au lycée et nécessite une préparation spécifique, au-delà du travail effectué en classe.",
-        "Chez STUDASSIST, la prépa Brevet s'adresse aux élèves de 4ᵉ et de 3ᵉ, quels que soient leur niveau et leur système scolaire.",
+        <>
+          Le Diplôme National du Brevet constitue la première évaluation officielle du parcours scolaire. Il marque une étape clé avant l'entrée au lycée et nécessite une <strong className="font-semibold text-brand-darkblue">préparation spécifique</strong>, au-delà du travail effectué en classe.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, la <strong className="font-semibold text-brand-darkblue">prépa Brevet</strong> s'adresse aux élèves de <strong className="font-semibold text-brand-darkblue">4ᵉ et de 3ᵉ</strong>, quels que soient leur niveau et leur système scolaire.
+        </>,
       ]}
       heroImage="/soutien-scolaire-main.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 65%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Diplôme National du Brevet."
+      whatsappMessage={WHATSAPP_MSG_Brevet}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -113,7 +121,7 @@ export default function SoutienBrevet() {
         primaryLabel: "Découvrir la prochaine édition de notre prépa Brevet",
         primaryHref: "/contact",
         secondaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Brevet),
       }}
 
       faqKeys={["soutien", "method"]}

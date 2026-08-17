@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_DELE =
+  "Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au DELE.";
 
 const LEVELS = [
   { key: "ielts", label: "IELTS & TOEFL", href: "/certifications/ielts-toefl" },
@@ -15,8 +19,8 @@ export default function CertificationsDele() {
       title={<>Prépa <span className="text-brand-teal">DELE</span></>}
       subtitle="Valider son niveau d'espagnol pour étudier et évoluer à l'international"
       intro={[
-        "Le DELE (Diploma de Español como Lengua Extranjera) est une certification officielle délivrée par l'Institut Cervantes, reconnue à l'international. Il permet d'attester d'un niveau d'espagnol et constitue un atout important dans les candidatures académiques, notamment en Espagne et dans de nombreuses universités internationales.",
-        "Chez STUDASSIST, nous accompagnons les élèves dans une préparation structurée et ciblée, avec un objectif clair : atteindre le niveau requis en fonction de leur projet.",
+        <>Le <strong className="font-semibold text-brand-darkblue">DELE (Diploma de Español como Lengua Extranjera)</strong> est une certification officielle délivrée par l'Institut Cervantes, reconnue à l'international. Il permet d'attester d'un niveau d'espagnol et constitue un atout important dans les candidatures académiques, notamment en Espagne et dans de nombreuses universités internationales.</>,
+        <>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves dans une préparation structurée et ciblée, avec un objectif clair : <strong className="font-semibold text-brand-darkblue">atteindre le niveau requis en fonction de leur projet</strong>.</>,
       ]}
       heroImage="/hero-certif-new.png"
       heroImageClassName="!object-cover"
@@ -140,7 +144,7 @@ export default function CertificationsDele() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_DELE),
       }}
 
       faqKeys={["certifications"]}

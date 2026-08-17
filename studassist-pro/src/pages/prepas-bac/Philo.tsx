@@ -1,4 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Philo ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Bac de Philosophie."
 
 const LEVELS = [
   { key: "francais", label: "Bac de Français", href: "/prepas-bac/francais" },
@@ -15,14 +19,18 @@ export default function PrepasBacPhilo() {
       title={<>Prépa Bac – <span className="text-brand-teal">Philosophie</span></>}
       subtitle="Structurer sa pensée, maîtriser la méthode et développer une argumentation solide"
       intro={[
-        "L'épreuve de philosophie du Baccalauréat constitue un moment clé de l'année de Terminale. Elle exige des compétences spécifiques : capacité d'analyse, rigueur du raisonnement et maîtrise de l'expression écrite.",
-        "Chez STUDASSIST, nous proposons une préparation exigeante et structurée, permettant aux élèves de comprendre les attentes de l'épreuve, d'acquérir une méthodologie solide et de développer une réflexion claire et argumentée.",
+        <>
+          L'épreuve de <strong className="font-semibold text-brand-darkblue">philosophie du Baccalauréat</strong> constitue un moment clé de l'année de Terminale. Elle exige des compétences spécifiques : capacité d'analyse, rigueur du raisonnement et maîtrise de l'expression écrite.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation exigeante et structurée, permettant aux élèves de comprendre les attentes de l'épreuve, d'acquérir une méthodologie solide et de développer une réflexion claire et argumentée.
+        </>,
       ]}
       heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver un cours découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Bac de Philosophie."
+      whatsappMessage={WHATSAPP_MSG_Philo}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -115,7 +123,7 @@ export default function PrepasBacPhilo() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Philo),
       }}
 
       faqKeys={["prepas-bac"]}

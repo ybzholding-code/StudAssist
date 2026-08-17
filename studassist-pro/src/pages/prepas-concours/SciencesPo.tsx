@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Sciences ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au concours Sciences Po (réseau IEP)."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,21 @@ export default function PrepaSciences() {
       title={<>Prépa Concours <span className="text-brand-teal">Sciences Po</span> (Réseau IEP)</>}
       subtitle="Réussir les épreuves et intégrer les Instituts d'Études Politiques"
       intro={[
-        "Les Instituts d'Études Politiques (IEP), communément appelés Sciences Po, comptent parmi les formations les plus sélectives en sciences humaines et sociales. Le concours commun du réseau Sciences Po permet d'intégrer plusieurs IEP en France, reconnus pour la qualité de leur enseignement et leurs débouchés dans les domaines de la politique, de l'économie, du droit ou des relations internationales.",
-        "Ces concours exigent une préparation rigoureuse, combinant maîtrise académique, culture générale et capacité d'analyse. Chez STUDASSIST, nous proposons une préparation au concours structurée et exigeante, permettant aux élèves de maximiser leurs chances d'admission. Cet accompagnement peut être complété par notre service d'orientation, afin de construire un dossier de candidature solide et cohérent.",
+        <>
+          Les <strong className="font-semibold text-brand-darkblue">Instituts d'Études Politiques (IEP)</strong>, communément appelés Sciences Po, comptent parmi les formations les plus sélectives en sciences humaines et sociales. Le concours commun du <strong className="font-semibold text-brand-darkblue">réseau Sciences Po</strong> permet d'intégrer plusieurs IEP en France, reconnus pour la qualité de leur enseignement et leurs débouchés dans les domaines de la politique, de l'économie, du droit ou des relations internationales.
+        </>,
+        <>
+          Ces concours exigent une préparation rigoureuse, combinant maîtrise académique, culture générale et capacité d'analyse. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation au concours structurée et exigeante, permettant aux élèves de maximiser leurs chances d'admission. Cet accompagnement peut être complété par{" "}
+          <Link to="/orientation" className="text-brand-darkblue font-black underline underline-offset-2">notre service d'orientation</Link>
+          , afin de construire un dossier de candidature solide et cohérent.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au concours Sciences Po (réseau IEP)."
+      whatsappMessage={WHATSAPP_MSG_Sciences}
+      heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -169,7 +180,7 @@ export default function PrepaSciences() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Sciences),
       }}
 
       faqKeys={["prepas-concours"]}

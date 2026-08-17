@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Um6p ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation à l'admission en ingénierie à l'UM6P."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,18 @@ export default function PrepaConcoursUm6p() {
       title={<>Prépa Admission <span className="text-brand-teal">Ingénieur UM6P</span></>}
       subtitle="Réussir les épreuves de sélection et intégrer une université d'excellence"
       intro={[
-        "L'Université Mohammed VI Polytechnique (UM6P) propose des programmes d'ingénierie d'excellence, accessibles dès le post-bac à travers un processus de sélection exigeant. Contrairement aux concours classiques, l'admission repose sur une approche globale combinant dossier académique, épreuves écrites et entretien de personnalité.",
-        "L'UM6P recherche des profils capables de raisonner, d'analyser et de s'adapter à des situations nouvelles, dans un environnement académique inspiré des standards internationaux. Chez STUDASSIST, nous proposons une préparation spécifique, adaptée à cette logique de sélection.",
+        <>
+          L'<strong className="font-semibold text-brand-darkblue">Université Mohammed VI Polytechnique (UM6P)</strong> propose des programmes d'ingénierie d'excellence, accessibles dès le post-bac à travers un processus de sélection exigeant. Contrairement aux concours classiques, l'admission repose sur une approche globale combinant <strong className="font-semibold text-brand-darkblue">dossier académique, épreuves écrites et entretien de personnalité</strong>.
+        </>,
+        <>
+          L'UM6P recherche des profils capables de raisonner, d'analyser et de s'adapter à des situations nouvelles, dans un environnement académique inspiré des standards internationaux. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation spécifique, adaptée à cette logique de sélection.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation à l'admission en ingénierie à l'UM6P."
+      whatsappMessage={WHATSAPP_MSG_Um6p}
       heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -145,7 +153,7 @@ export default function PrepaConcoursUm6p() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Um6p),
       }}
 
       faqKeys={["prepas-concours"]}

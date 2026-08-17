@@ -1,4 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_Francais ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Bac de Français."
 
 const LEVELS = [
   { key: "francais", label: "Bac de Français", href: "/prepas-bac/francais" },
@@ -23,7 +27,7 @@ export default function PrepasBacFrancais() {
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver une séance découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Bac de Français."
+      whatsappMessage={WHATSAPP_MSG_Francais}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -147,7 +151,7 @@ export default function PrepasBacFrancais() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver une séance découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_Francais),
       }}
 
       faqKeys={["prepas-bac"]}

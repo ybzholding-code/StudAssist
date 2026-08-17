@@ -1,4 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_SesameAcces ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours SESAME & ACCÈS (écoles de commerce post-bac en France)."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -20,14 +24,19 @@ export default function PrepaConcoursSesameAcces() {
       title={<>Prépa Concours <span className="text-brand-teal">SESAME & ACCÈS</span></>}
       subtitle="Intégrer les meilleures écoles de commerce post-bac en France"
       intro={[
-        "Les concours SESAME et ACCÈS constituent les principales voies d'accès aux écoles de commerce post-bac en France. Ils permettent d'intégrer des établissements reconnus, tels que l'ESSEC Global BBA, l'EM Lyon, l'IESEG, l'ESSCA, ou encore KEDGE, SKEMA et NEOMA.",
-        "Ces concours sont exigeants et sélectifs. Ils évaluent à la fois les capacités de raisonnement, la maîtrise de l'anglais, la compréhension et la méthodologie. Chez STUDASSIST, nous proposons une préparation structurée et intensive, permettant aux élèves de maîtriser les épreuves et de maximiser leurs chances d'admission.",
+        <>
+          Les concours <strong className="font-semibold text-brand-darkblue">SESAME</strong> et <strong className="font-semibold text-brand-darkblue">ACCÈS</strong> constituent les principales voies d'accès aux <strong className="font-semibold text-brand-darkblue">écoles de commerce post-bac en France</strong>. Ils permettent d'intégrer des établissements reconnus, tels que l'ESSEC Global BBA, l'EM Lyon, l'IESEG, l'ESSCA, ou encore KEDGE, SKEMA et NEOMA.
+        </>,
+        <>
+          Ces concours sont exigeants et sélectifs. Ils évaluent à la fois les capacités de raisonnement, la maîtrise de l'anglais, la compréhension et la méthodologie. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation structurée et intensive, permettant aux élèves de maîtriser les épreuves et de maximiser leurs chances d'admission.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux concours SESAME & ACCÈS (écoles de commerce post-bac en France)."
+      whatsappMessage={WHATSAPP_MSG_SesameAcces}
+      heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -121,7 +130,7 @@ export default function PrepaConcoursSesameAcces() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_SesameAcces),
       }}
 
       faqKeys={["prepas-concours"]}

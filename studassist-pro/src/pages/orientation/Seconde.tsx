@@ -1,5 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 import { Link } from "react-router-dom";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_SECONDE = "Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Seconde."
 
 export default function OrientationSeconde() {
   return (
@@ -9,14 +12,20 @@ export default function OrientationSeconde() {
       title={<>Orientation scolaire <span className="text-brand-teal">en Seconde</span></>}
       subtitle="Explorer, choisir ses spécialités et poser les bases d’un projet cohérent"
       intro={[
-        "La classe de Seconde marque une étape déterminante : c’est l’année du choix des trois spécialités de Première, un choix structurant qui conditionne progressivement l’accès à certaines filières post-bac.",
-        "Chez STUDASSIST, nous accompagnons les élèves de Seconde et leurs familles dans une démarche d’orientation anticipée, réfléchie et évolutive, afin de construire un projet cohérent tout en conservant la souplesse nécessaire à l’évolution naturelle de l’élève.",
+        <>
+          La classe de Seconde marque une étape déterminante : c’est l’année du choix des{" "}
+          <strong className="font-semibold text-brand-darkblue">trois spécialités de Première</strong>, un choix structurant qui conditionne progressivement l’accès à certaines filières post-bac.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves de Seconde et leurs familles dans une démarche d’orientation{" "}
+          <strong className="font-semibold text-brand-darkblue">anticipée, réfléchie et évolutive</strong>, afin de construire un projet cohérent tout en conservant la souplesse nécessaire à l’évolution naturelle de l’élève.
+        </>,
       ]}
       heroImage="/orientation-seconde-premiere.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Seconde."
+      whatsappMessage={WHATSAPP_MSG_SECONDE}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       enjeuxEyebrow="Les enjeux de l’orientation en seconde"
@@ -153,7 +162,7 @@ export default function OrientationSeconde() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_SECONDE),
       }}
 
       next={{ label: "Orientation en Première", to: "/orientation/premiere" }}

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_GrandOral ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Grand Oral du Bac."
 
 const LEVELS = [
   { key: "francais", label: "Bac de Français", href: "/prepas-bac/francais" },
@@ -16,14 +20,18 @@ export default function PrepasBacGrandOral() {
       title={<>Prépas Bac – <span className="text-brand-teal">Grand Oral</span></>}
       subtitle="Structurer son discours, gagner en assurance et se démarquer face au jury"
       intro={[
-        "Le Grand Oral du Baccalauréat est une épreuve singulière, à la croisée des compétences académiques et des qualités personnelles. Elle évalue à la fois la maîtrise des connaissances, la capacité à structurer une réflexion et l'aisance à l'oral.",
-        "Chez STUDASSIST, nous accompagnons les élèves dans une préparation complète et exigeante, afin de transformer cette épreuve en véritable opportunité de se distinguer.",
+        <>
+          Le <strong className="font-semibold text-brand-darkblue">Grand Oral du Baccalauréat</strong> est une épreuve singulière, à la croisée des compétences académiques et des qualités personnelles. Elle évalue à la fois la maîtrise des connaissances, la capacité à structurer une réflexion et l'aisance à l'oral.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves dans une préparation complète et exigeante, afin de transformer cette épreuve en <strong className="font-semibold text-brand-darkblue">véritable opportunité de se distinguer</strong>.
+        </>,
       ]}
       heroImage="/prepas-bac-new.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Réserver une séance découverte"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation au Grand Oral du Bac."
+      whatsappMessage={WHATSAPP_MSG_GrandOral}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -132,7 +140,7 @@ export default function PrepasBacGrandOral() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver une séance découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_GrandOral),
       }}
 
       faqKeys={["prepas-bac"]}

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_SatGmat ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux tests SAT & GMAT."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,19 @@ export default function PrepaSatGmat() {
       title={<>Prépa <span className="text-brand-teal">SAT & GMAT</span></>}
       subtitle="Atteindre les scores requis et intégrer les meilleures universités internationales"
       intro={[
-        "Les tests SAT et GMAT constituent des éléments clés dans les processus d'admission des universités et grandes écoles à l'international. Ils sont utilisés pour évaluer les capacités académiques, le raisonnement et la rigueur des candidats dans un environnement hautement compétitif.",
-        "Chez STUDASSIST, nous proposons des préparations structurées et stratégiques, permettant aux élèves et étudiants d'atteindre des scores compétitifs et de maximiser leurs chances d'admission.",
+        <>
+          Les tests <strong className="font-semibold text-brand-darkblue">SAT</strong> et <strong className="font-semibold text-brand-darkblue">GMAT</strong> constituent des éléments clés dans les processus d'admission des universités et grandes écoles à l'international. Ils sont utilisés pour évaluer les capacités académiques, le raisonnement et la rigueur des candidats dans un environnement hautement compétitif.
+        </>,
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons des préparations structurées et stratégiques, permettant aux élèves et étudiants d'atteindre des scores compétitifs et de maximiser leurs chances d'admission.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux tests SAT & GMAT."
+      whatsappMessage={WHATSAPP_MSG_SatGmat}
+      heroBadge="+6 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       levels={LEVELS}
@@ -167,7 +176,7 @@ export default function PrepaSatGmat() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_SatGmat),
       }}
 
       faqKeys={["prepas-concours"]}

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_REORIENTATION ="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en réorientation académique."
 
 export default function OrientationReorientation() {
   return (
@@ -10,13 +13,15 @@ export default function OrientationReorientation() {
       subtitle="Transformer un premier choix en nouveau départ stratégique et assumé."
       intro={[
         "Changer d'orientation n'est pas un échec. C'est souvent le signe d'une meilleure compréhension de soi, de ses capacités et de ses aspirations réelles.",
-        "Chez STUDASSIST, nous accompagnons les élèves et étudiants dans une démarche de réorientation structurée et personnalisée, en tenant compte du parcours déjà engagé pour construire un nouveau projet cohérent et porteur de sens, au Maroc comme à l'international.",
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves et étudiants dans une démarche de réorientation structurée et personnalisée, en tenant compte du parcours déjà engagé pour construire un nouveau projet cohérent et porteur de sens, au Maroc comme à l'international.
+        </>,
       ]}
       heroImage="/hero-reorientation-new.png"
       heroContainerAspectRatio="aspect-[4/3]"
       heroImageClassName="!object-contain bg-gray-50"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en réorientation académique."
+      whatsappMessage={WHATSAPP_MSG_REORIENTATION}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       whyChooseEyebrow="Ce qui fait notre différence"
@@ -119,7 +124,7 @@ export default function OrientationReorientation() {
         primaryLabel: "Réserver une séance d'orientation",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un conseiller",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_REORIENTATION),
       }}
 
       faqKeys={["orientation"]}

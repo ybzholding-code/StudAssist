@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_IELTS =
+  "Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation à l'IELTS ou au TOEFL.";
 
 const LEVELS = [
   { key: "ielts", label: "IELTS & TOEFL", href: "/certifications/ielts-toefl" },
@@ -15,8 +19,8 @@ export default function CertificationsIelts() {
       title={<>Prépa <span className="text-brand-teal">IELTS & TOEFL</span></>}
       subtitle="Atteindre le score requis et valider son niveau pour les études à l'international"
       intro={[
-        "Les tests IELTS et TOEFL sont aujourd'hui incontournables pour intégrer des universités et grandes écoles à l'international. Ils permettent d'attester d'un niveau d'anglais académique et constituent une étape clé dans de nombreux processus de candidature.",
-        "Chez STUDASSIST, nous accompagnons les élèves dans une préparation ciblée et stratégique, avec un objectif clair : atteindre le score requis pour intégrer les formations visées.",
+        <>Les tests <strong className="font-semibold text-brand-darkblue">IELTS et TOEFL</strong> sont aujourd'hui incontournables pour intégrer des universités et grandes écoles à l'international. Ils permettent d'attester d'un niveau d'anglais académique et constituent une étape clé dans de nombreux processus de candidature.</>,
+        <>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves dans une préparation ciblée et stratégique, avec un objectif clair : <strong className="font-semibold text-brand-darkblue">atteindre le score requis pour intégrer les formations visées</strong>.</>,
       ]}
       heroImage="/hero-certif-new.png"
       heroImageClassName="!object-cover"
@@ -152,7 +156,7 @@ export default function CertificationsIelts() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_IELTS),
       }}
 
       faqKeys={["certifications"]}

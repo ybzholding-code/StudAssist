@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_LOGEMENT =
+  "Bonjour STUDASSIST, je souhaite obtenir des informations sur la recherche de logement étudiant à l'étranger.";
 
 const LEVELS = [
   { key: "demarches", label: "Démarches administratives", href: "/admin-logement/demarches" },
@@ -15,7 +19,7 @@ export default function AdminLogementPage() {
       subtitle="Trouver un logement adapté pour bien démarrer son parcours"
       intro={[
         "La recherche de logement constitue une étape clé dans un projet d'études, notamment à l'étranger. Elle implique de nombreux critères — budget, localisation, type de logement — et peut rapidement devenir complexe pour les élèves et leurs familles.",
-        "Chez STUDASSIST, nous proposons un accompagnement structuré permettant de trouver un logement adapté, sécurisé et en cohérence avec le projet de l'élève. Cet accompagnement s'inscrit dans la continuité du projet d'études construit avec l'élève, depuis l'orientation et l'admission jusqu'à son installation dans le pays de destination.",
+        <>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons un accompagnement structuré permettant de <strong className="font-semibold text-brand-darkblue">trouver un logement adapté, sécurisé et en cohérence avec le projet de l'élève</strong>. Cet accompagnement s'inscrit dans la continuité du projet d'études construit avec l'élève, depuis l'orientation et l'admission jusqu'à son installation dans le pays de destination.</>,
       ]}
       heroImage="/hero-admin-logement.png"
       heroImageClassName="!object-cover"
@@ -122,7 +126,7 @@ export default function AdminLogementPage() {
         primaryLabel: "Réserver un rendez-vous pour définir mon besoin",
         primaryHref: "/contact",
         secondaryLabel: "Nous écrire",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_LOGEMENT),
       }}
 
       faqKeys={["admin-logement"]}

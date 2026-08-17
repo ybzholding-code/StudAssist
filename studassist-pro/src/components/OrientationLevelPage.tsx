@@ -73,6 +73,8 @@ export interface OrientationLevelPageProps {
     primaryHref?: string;
     secondaryLabel?: string;
     secondaryHref?: string;
+    image?: string;
+    imageAlt?: string;
   };
 
   faqKeys?: Parameters<typeof buildFaq>;
@@ -85,6 +87,8 @@ export interface OrientationLevelPageProps {
   levels?: { key: string; label: string; href: string }[];
   whatsappMessage?: string;
 }
+const DEFAULT_CTA_IMAGE = "/cta-banner-people.png";
+const DEFAULT_CTA_IMAGE_ALT = "Élèves accompagnés par STUDASSIST";
 
 /* ---------- Levels registry (sidebar) ---------- */
 
@@ -566,7 +570,7 @@ export default function OrientationLevelPage({
 
       {/* ============ POURQUOI CHOISIR — Contained banner ============ */}
       {whyChoose && (
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-24 mb-6">
           <div className="w-[95%] lg:w-[90%] max-w-7xl mx-auto bg-brand-darkblue rounded-[2.5rem] py-14 lg:py-20 px-8 lg:px-16 relative overflow-hidden">
             <div className="absolute inset-0 opacity-5 pointer-events-none">
               <svg width="100%" height="100%">
@@ -629,8 +633,8 @@ export default function OrientationLevelPage({
       )}
 
       {/* ============ CTA BANNER — Full-width banner ============ */}
-      <section className="relative z-20 bg-brand-red py-14 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+      <section className="relative isolate z-20 bg-brand-red overflow-visible py-14 lg:py-0 lg:flex lg:items-center lg:min-h-[460px] xl:min-h-[500px]">
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none overflow-hidden">
           <svg width="100%" height="100%">
             <pattern id="cta-grid-level" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
@@ -639,38 +643,87 @@ export default function OrientationLevelPage({
           </svg>
         </div>
 
+        {(ctaBanner.image || DEFAULT_CTA_IMAGE) && (
+          <div
+            className="hidden lg:block absolute left-4 lg:left-6 xl:left-10 bottom-0 w-[350px] lg:w-[400px] xl:w-[450px] pointer-events-none select-none"
+            style={{ zIndex: 30 }}
+          >
+            <img
+              src={ctaBanner.image || DEFAULT_CTA_IMAGE}
+              alt={ctaBanner.imageAlt || DEFAULT_CTA_IMAGE_ALT}
+              loading="lazy"
+              className="block w-full h-auto object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]"
+            />
+          </div>
+        )}
+        {/* Image mobile/tablette — centrée au-dessus du bandeau, comme sur la page d'accueil */}
+        {(ctaBanner.image || DEFAULT_CTA_IMAGE) && (
+          <div className="lg:hidden flex justify-center pt-2 pb-4 relative z-10">
+            <img
+              src={ctaBanner.image || DEFAULT_CTA_IMAGE}
+              alt={ctaBanner.imageAlt || DEFAULT_CTA_IMAGE_ALT}
+              loading="lazy"
+              className="w-[200px] sm:w-[260px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]"
+            />
+          </div>
+        )}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between text-white relative z-10"
+          className="container mx-auto px-6 relative z-10 w-full"
         >
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
-            <h2 className="text-3xl lg:text-5xl font-black mb-4 uppercase tracking-tighter leading-[0.95]">
-              {ctaBanner.title}
-            </h2>
-            <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md">
-              {ctaBanner.body}
-            </p>
-          </div>
+          <div
+            className={`text-white text-center lg:text-left ${
+              (ctaBanner.image || DEFAULT_CTA_IMAGE) ? "lg:pl-[390px] xl:pl-[440px]" : ""
+            }`}
+          >
+            <div className="max-w-2xl mx-auto lg:mx-0">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black mb-4 uppercase tracking-tight leading-[1.1]">
+                {ctaBanner.title}
+              </h2>
+              <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md mb-8">
+                {ctaBanner.body}
+              </p>
+            </div>
 
-          <div className="mt-8 lg:mt-0 flex flex-col gap-4 items-center lg:items-end">
-            <Link
-              to={ctaBanner.primaryHref || "/contact"}
-              className="bg-brand-darkblue text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center space-x-3"
-            >
-              <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            {ctaBanner.secondaryLabel && (
+            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-3 lg:gap-4">
               <Link
-                to="/contact"
-                className="bg-white/10 text-white border border-white/20 px-8 py-5 rounded-2xl font-black uppercase tracking-[0.15em] text-xs hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center space-x-3"
+                to={ctaBanner.primaryHref || "/contact"}
+                className="bg-brand-darkblue text-white px-5 lg:px-6 py-4 lg:py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] lg:text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center justify-center gap-2 whitespace-nowrap"
               >
-                <span>{ctaBanner.secondaryLabel}</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
               </Link>
-            )}
+              {ctaBanner.secondaryLabel && (
+                ctaBanner.secondaryHref?.startsWith("http") ? (
+                  <a
+                    href={ctaBanner.secondaryHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 text-white border border-white/20 px-5 lg:px-6 py-4 lg:py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] lg:text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap"
+                  >
+                    <span>{ctaBanner.secondaryLabel}</span>
+                    <ArrowRight
+                      size={14}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </a>
+                ) : (
+                  <Link
+                    to={ctaBanner.secondaryHref || "/contact"}
+                    className="bg-white/10 text-white border border-white/20 px-5 lg:px-6 py-4 lg:py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] lg:text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap"
+                  >
+                    <span>{ctaBanner.secondaryLabel}</span>
+                    <ArrowRight
+                      size={14}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </Link>
+                )
+              )}
+            </div>
           </div>
         </motion.div>
       </section>

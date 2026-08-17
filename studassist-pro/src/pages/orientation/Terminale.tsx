@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_TERMINALE ="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Terminale."
 
 export default function OrientationTerminale() {
   return (
@@ -11,13 +14,16 @@ export default function OrientationTerminale() {
       intro={[
         "La Terminale marque une étape déterminante dans le parcours d'un élève.",
         "C'est l'année où les choix deviennent concrets, où les candidatures s'organisent, et où se dessinent les premières trajectoires académiques et professionnelles.",
-        "Chez STUDASSIST, nous accompagnons les élèves de Terminale et leurs familles dans une démarche d'orientation globale, structurée et stratégique, afin de transformer cette période charnière en véritable levier de réussite, au Maroc comme à l'international.",
+        <>
+          Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves de Terminale et leurs familles dans une{" "}
+          <strong className="font-semibold text-brand-darkblue">démarche d'orientation globale, structurée et stratégique</strong>, afin de transformer cette période charnière en véritable levier de réussite, au Maroc comme à l'international.
+        </>,
       ]}
       heroImage="/orientation-terminale.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center"
       heroCtaLabel="Réserver un rendez-vous de 1er contact"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur l'accompagnement en orientation scolaire pour la classe de Terminale."
+      whatsappMessage={WHATSAPP_MSG_TERMINALE}
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
       enjeuxEyebrow="Les enjeux de la Terminale"
@@ -152,10 +158,10 @@ export default function OrientationTerminale() {
       ctaBanner={{
         title: "Prendre rendez-vous",
         body: "Vous souhaitez être accompagnés dans la construction d'un projet post-bac solide et ambitieux ? Réservez votre rendez-vous de premier contact pour obtenir une évaluation de profil et tracer ensemble une stratégie d'admissions post-bac.",
-        primaryLabel: "Prendre rendez-vous avec un consultant STUDASSIST",
+        primaryLabel: "Réserver une séance d’orientation",
         primaryHref: "/contact",
         secondaryLabel: "Contacter un consultant STUDASSIST",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_TERMINALE),
       }}
 
       faqKeys={["orientation"]}

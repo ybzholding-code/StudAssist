@@ -55,7 +55,7 @@ const QuiSommesNous = () => {
     {
       title: "VISION",
       image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=800&q=80",
-      description: "Devenir la référence internationale du conseil étudiant. STUDASSIST ambitionne de bâtir un écosystème global d'accompagnement académique, permettant à chaque étudiant, quel que soit son parcours ou son pays d'origine, d'accéder aux meilleures opportunités éducatives grâce à des choix éclairés et stratégiques."
+      description: "Devenir la référence du conseil académique et de l'orientation, au Maroc et à l'international. Nous construisons un écosystème d'accompagnement innovant permettant à chaque élève et étudiant de révéler son potentiel, de faire des choix éclairés et de sécuriser les meilleures opportunités académiques grâce à un accompagnement d'excellence."
     },
     {
       title: "VALEURS",
@@ -65,18 +65,18 @@ const QuiSommesNous = () => {
   ];
 
   const steps = [
-    { title: "Diagnostic Approfondi", desc: "Analyse complète du profil, des méthodes de travail et des aspirations de l'élève.", icon3d: "https://img.icons8.com/?size=100&id=zISPlrLZsaxM&format=png&color=000000" },
-    { title: "Parcours sur Mesure", desc: "Construction d'un plan d'accompagnement stratégique avec des objectifs clairs et mesurables.", icon3d: "https://img.icons8.com/?size=100&id=8HdUlVRnnhtt&format=png&color=000000" },
-    { title: "Accompagnement Académique", desc: "Soutien scolaire ciblé dans les matières clés pour renforcer les acquis, optimiser les dossiers académiques, préparer les certifications de langues et consolider les compétences nécessaires à la réussite.", icon3d: "https://img.icons8.com/?size=100&id=49470&format=png&color=000000" },
-    { title: "Suivi Continu", desc: "Pilotage constant des progrès et ajustements stratégiques pour optimiser le parcours.", icon3d: "https://img.icons8.com/?size=100&id=43605&format=png&color=000000" },
-    { title: "Orientation vers l'Avenir", desc: "Aide à la définition du projet professionnel, à l'élaboration du plan d'études, à la construction des candidatures et à la préparation rigoureuse des concours et entretiens les plus exigeants.", icon3d: "https://img.icons8.com/?size=100&id=SBawbHHY3oRD&format=png&color=000000" },
+    { title: "Diagnostic Approfondi", desc: "Nous analysons le profil académique, les aspirations, la personnalité, les méthodes de travail et le potentiel afin de construire un accompagnement réellement adapté.", icon3d: "https://img.icons8.com/?size=100&id=M9qgDCA7L9As&format=png&color=68A487" },
+    { title: "Parcours sur Mesure", desc: "Nous définissons une feuille de route claire : objectifs, filières, établissements, calendrier et plan d'action.", icon3d: "https://img.icons8.com/?size=100&id=sGNEMWKG3WcQ&format=png&color=2F52A4" },
+    { title: "Accompagnement Académique", desc: "Selon les besoins, nous renforçons les compétences grâce au soutien scolaire, aux préparations aux concours, aux certifications de langues et au coaching méthodologique.", icon3d: "https://img.icons8.com/?size=100&id=IJ7yETPMYNTy&format=png&color=DB5C69" },
+    { title: "Suivi Continu", desc: "Chaque étape est suivie, évaluée et ajustée afin de maintenir une dynamique de progression constante.", icon3d: "https://img.icons8.com/?size=100&id=CKlCW599p0wL&format=png&color=DF7959" },
+    { title: "Orientation vers l'Avenir", desc: "Nous accompagnons les candidatures, les entretiens, les admissions et la préparation du départ vers l'établissement choisi.", icon3d: "https://img.icons8.com/?size=100&id=SCQVeCkY6ZWr&format=png&color=E8AD52" },
   ];
 
   const pillars = [
-    { title: "Excellence", desc: "Nous appliquons des standards élevés dans chaque accompagnement, fondés sur l'expertise, la rigueur et l'amélioration continue.", icon3d: "https://img.icons8.com/?size=100&id=5WjOdLKtFCfj&format=png&color=000000" },
-    { title: "Personnalisation", desc: "Chaque élève est unique. Nous concevons des parcours sur mesure, alignés avec les aspirations, le potentiel et la réalité de chacun.", icon3d: "https://img.icons8.com/?size=100&id=5WjOdLKtFCfj&format=png&color=000000" },
-    { title: "Engagement", desc: "Nous nous impliquons pleinement aux côtés des étudiants et de leurs familles, avec constance, responsabilité et disponibilité.", icon3d: "https://img.icons8.com/?size=100&id=43627&format=png&color=000000" },
-    { title: "Éthique & Bienveillance", desc: "Nous guidons avec intégrité, transparence et respect, en plaçant toujours l'intérêt de l'étudiant au cœur de nos recommandations.", icon3d: "https://img.icons8.com/?size=100&id=DEiE76V3bFiN&format=png&color=000000" },
+    { title: "Une approche individualisée", desc: "Chaque accompagnement est entièrement personnalisé selon le profil, les ambitions et le potentiel de l'élève.", icon3d: "https://img.icons8.com/?size=100&id=FJweVEY2J0Dz&format=png&color=0695FF" },
+    { title: "Une vision internationale", desc: "Plus de 25 destinations accompagnées et une parfaite maîtrise des procédures d'admission nationales et internationales.", icon3d: "https://img.icons8.com/?size=100&id=3685&format=png&color=0695FF" },
+    { title: "Un accompagnement humain", desc: "Une relation de proximité fondée sur l'écoute, la confiance et la bienveillance.", icon3d: "https://img.icons8.com/?size=100&id=41462&format=png&color=0695FF" },
+    { title: "Une logique de progression", desc: "Nous accompagnons les élèves sur la durée avec un suivi rigoureux et des objectifs mesurables.", icon3d: "https://img.icons8.com/?size=100&id=SUV5hWClGZl4&format=png&color=0695FF" },
   ];
 
   const team = [
@@ -98,7 +98,7 @@ const QuiSommesNous = () => {
       paragraphs: [
         "Diplômé de l\'ISG Paris et de l\'ESSEC Executive Education, Omar possède plus de 15 ans d\'expérience en entrepreneuriat et management international. En ayant créé et dirigé plusieurs projets et entreprises en France puis au sein de Dislog Group, il met son expertise au service de la structuration et du développement stratégique de STUDASSIST. Depuis 2025, il préside également la société sportive du MAS de Fès.",
       ],
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/omar-bennis-007bb8174/",
     },
     {
       name: "Hajar Gherras",
@@ -316,10 +316,10 @@ const QuiSommesNous = () => {
                   <h3 className="text-2xl lg:text-3xl font-black text-brand-darkblue uppercase tracking-tight">Vision</h3>
                 </div>
                 <p className="text-brand-darkblue font-bold text-base leading-relaxed mb-3">
-                  Devenir la référence internationale du conseil étudiant.
+                  Devenir la référence du conseil académique et de l'orientation, au Maroc et à l'international.
                 </p>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  STUDASSIST ambitionne de bâtir un <span className="text-brand-darkblue font-semibold">écosystème global d'accompagnement académique</span>, permettant à chaque étudiant, quel que soit son parcours ou son pays d'origine, d'accéder aux meilleures opportunités éducatives grâce à des choix <span className="text-brand-darkblue font-semibold">éclairés et stratégiques</span>.
+                  Nous construisons un <span className="text-brand-darkblue font-semibold">écosystème d'accompagnement innovant</span> permettant à chaque élève et étudiant de révéler son potentiel, de faire des choix éclairés et de sécuriser les meilleures opportunités académiques grâce à un <span className="text-brand-darkblue font-semibold">accompagnement d'excellence</span>.
                 </p>
               </motion.div>
             </div>
@@ -664,7 +664,7 @@ const QuiSommesNous = () => {
               <span className="w-6 h-px bg-brand-teal" />
               Équipe dirigeante
             </motion.span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight">Parcours équipe <span className="text-brand-teal">dirigeante</span></h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight">Nos parcours</h2>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">

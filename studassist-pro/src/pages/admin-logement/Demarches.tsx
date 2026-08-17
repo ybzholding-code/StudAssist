@@ -1,4 +1,8 @@
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+const WHATSAPP_MSG_DEMARCHES =
+  "Bonjour STUDASSIST, je souhaite obtenir des informations sur les démarches administratives d'installation à l'étranger.";
 
 const LEVELS = [
   { key: "demarches", label: "Démarches administratives", href: "/admin-logement/demarches" },
@@ -14,7 +18,7 @@ export default function AdminDemarches() {
       subtitle="Sécuriser chaque étape de l'expatriation étudiante"
       intro={[
         "Les démarches administratives constituent une étape essentielle dans un projet d'études à l'international. Elles interviennent une fois l'admission confirmée et l'établissement d'enseignement supérieur définitivement choisi.",
-        "Souvent complexes et chronophages, elles peuvent générer du stress pour les élèves et leurs familles. Chez STUDASSIST, nous proposons un accompagnement structuré permettant de cadrer, anticiper et sécuriser l'ensemble des démarches d'expatriation.",
+        <>Souvent complexes et chronophages, elles peuvent générer du stress pour les élèves et leurs familles. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons un accompagnement structuré permettant de <strong className="font-semibold text-brand-darkblue">cadrer, anticiper et sécuriser l'ensemble des démarches d'expatriation</strong>.</>,
       ]}
       heroImage="/hero-admin-logement.png"
       heroImageClassName="!object-cover"
@@ -112,7 +116,7 @@ export default function AdminDemarches() {
         primaryLabel: "Réserver un rendez-vous pour définir mon besoin",
         primaryHref: "/contact",
         secondaryLabel: "Nous écrire",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_DEMARCHES),
       }}
 
       faqKeys={["admin-logement"]}

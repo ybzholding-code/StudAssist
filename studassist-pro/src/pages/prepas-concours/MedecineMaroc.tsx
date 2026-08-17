@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
+import { waLink } from "../../lib/utils";
+
+
+const WHATSAPP_MSG_MedecineMaroc ="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux études de médecine au Maroc."
 
 const LEVELS = [
   { key: "sat-gmat", label: "SAT / GMAT", href: "/prepa-sat-gmat" },
@@ -21,14 +25,18 @@ export default function PrepaMedecineMaroc() {
       title={<>Prépa <span className="text-brand-teal">Médecine Maroc</span> Systèmes Public & Privé</>}
       subtitle="Réussir les sélections et intégrer les études de médecine au Maroc"
       intro={[
-        "Les études de médecine au Maroc, qu'elles soient dans le secteur public ou privé, figurent parmi les parcours les plus sélectifs et exigeants. Chaque année, un grand nombre d'élèves candidats se présentent, pour un nombre de places limité.",
-        "L'accès à ces formations repose sur des critères de sélection rigoureux, nécessitant une préparation sérieuse, structurée et anticipée. Chez STUDASSIST, nous accompagnons les élèves dans la préparation aux différentes voies d'accès à la médecine au Maroc.",
+        <>
+          Les études de médecine au Maroc, qu'elles soient dans le <strong className="font-semibold text-brand-darkblue">secteur public ou privé</strong>, figurent parmi les parcours les plus sélectifs et exigeants. Chaque année, un grand nombre d'élèves candidats se présentent, pour un nombre de places limité.
+        </>,
+        <>
+          L'accès à ces formations repose sur des critères de sélection rigoureux, nécessitant une préparation sérieuse, structurée et anticipée. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves dans la préparation aux différentes voies d'accès à la médecine au Maroc.
+        </>,
       ]}
       heroImage="/prepas-concours.png"
       heroImageClassName="!object-cover"
       heroImagePosition="center 33%"
       heroCtaLabel="Prendre un rendez-vous d'informations"
-      whatsappMessage="Bonjour STUDASSIST, je souhaite obtenir des informations sur la préparation aux études de médecine au Maroc."
+      whatsappMessage={WHATSAPP_MSG_MedecineMaroc}
       heroBadge="+7 ans d'expérience — 100 % d'admission dans le top 3 des écoles chaque année"
       moveHeroCtaUnderGrid={false}
       moveNavUnderHero={true}
@@ -181,7 +189,7 @@ export default function PrepaMedecineMaroc() {
         primaryLabel: "Prendre rendez-vous avec un conseiller STUDASSIST",
         primaryHref: "/contact",
         secondaryLabel: "Réserver un cours découverte",
-        secondaryHref: "/contact",
+        secondaryHref: waLink(WHATSAPP_MSG_MedecineMaroc),
       }}
 
       faqKeys={["prepas-concours"]}
