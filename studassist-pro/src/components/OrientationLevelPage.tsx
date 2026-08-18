@@ -657,16 +657,14 @@ export default function OrientationLevelPage({
           </div>
         )}
         {/* Image mobile/tablette — centrée au-dessus du bandeau, comme sur la page d'accueil */}
-        {(ctaBanner.image || DEFAULT_CTA_IMAGE) && (
-          <div className="lg:hidden flex justify-center pt-2 pb-4 relative z-10">
-            <img
-              src={ctaBanner.image || DEFAULT_CTA_IMAGE}
-              alt={ctaBanner.imageAlt || DEFAULT_CTA_IMAGE_ALT}
-              loading="lazy"
-              className="w-[200px] sm:w-[260px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]"
-            />
-          </div>
-        )}
+        <div className="lg:hidden flex justify-center pt-2 pb-4 relative z-10">
+          <img
+            src={ctaBanner.image || DEFAULT_CTA_IMAGE}
+            alt={ctaBanner.imageAlt || DEFAULT_CTA_IMAGE_ALT}
+            loading="lazy"
+            className="w-[240px] sm:w-[320px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]"
+          />
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -688,10 +686,10 @@ export default function OrientationLevelPage({
               </p>
             </div>
 
-            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-3 lg:gap-4">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap justify-center lg:justify-start gap-3 lg:gap-4 w-full">
               <Link
                 to={ctaBanner.primaryHref || "/contact"}
-                className="bg-brand-darkblue text-white px-5 lg:px-6 py-4 lg:py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] lg:text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center justify-center gap-2 whitespace-nowrap"
+                className="w-full sm:w-auto bg-brand-darkblue text-white px-5 lg:px-6 py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 shadow-2xl shadow-black/20 group flex items-center justify-center gap-2 text-center sm:whitespace-nowrap"
               >
                 <span>{ctaBanner.primaryLabel || "Prendre rendez-vous"}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
@@ -702,7 +700,7 @@ export default function OrientationLevelPage({
                     href={ctaBanner.secondaryHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 text-white border border-white/20 px-5 lg:px-6 py-4 lg:py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] lg:text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap"
+                    className="w-full sm:w-auto bg-white/10 text-white border border-white/20 px-5 lg:px-6 py-4 rounded-2xl font-black uppercase tracking-[0.1em] text-[11px] hover:bg-white hover:text-brand-darkblue transition-all duration-300 group flex items-center justify-center gap-2 text-center sm:whitespace-nowrap"
                   >
                     <span>{ctaBanner.secondaryLabel}</span>
                     <ArrowRight
