@@ -67,12 +67,7 @@ const programmeGroups = [
         description: "Préparer les concours d'accès aux grandes écoles de commerce marocaines.",
         link: "/prepas-concours/encg-iscae",
       },
-      {
-        icon: "https://img.icons8.com/?size=100&id=B0YxODenuYvG&format=png&color=000000",
-        title: "UM6P",
-        description: "Optimiser son profil, réussir les épreuves et préparer les entretiens.",
-        link: "/prepas-concours/um6p",
-      },
+      
     ],
   },
   {
@@ -111,6 +106,12 @@ const programmeGroups = [
         title: "Écoles d'ingénieurs post-bac GEIPI POLYTECH | PUISSANCE ALPHA | AVENIR",
         description: "Préparer les concours des formations d'ingénierie réputées en France.",
         link: "/prepas-concours/ingenieurs",
+      },
+      {
+        icon: "https://img.icons8.com/?size=100&id=B0YxODenuYvG&format=png&color=000000",
+        title: "UM6P",
+        description: "Optimiser son profil, réussir les épreuves et préparer les entretiens.",
+        link: "/prepas-concours/um6p",
       },
       {
         icon: "https://img.icons8.com/3d-fluency/94/diploma.png",
