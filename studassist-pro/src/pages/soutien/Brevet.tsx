@@ -61,36 +61,58 @@ export default function SoutienBrevet() {
         ],
       }}
 
-      sections={[
+            sections={[
         {
           title: "Une préparation ciblée et progressive dispensée par des professeurs expérimentés",
           paragraphs: [
-            "Notre accompagnement repose sur une préparation ciblée et progressive, encadrée par des professeurs expérimentés, habitués à préparer les élèves à cet examen et maîtrisant parfaitement ses exigences.",
-            "Des professeurs qui connaissent l'examen de l'intérieur — La plupart de nos enseignants ont également exercé en tant que correcteurs du Diplôme National du Brevet, ce qui leur permet de transmettre aux élèves une lecture précise des attentes officielles, des critères d'évaluation et des erreurs fréquentes.",
-            "La préparation inclut : révisions approfondies des matières évaluées ; entraînements sur sujets types et annales ; travail méthodologique sur les épreuves écrites ; préparation à l'oral du Brevet (présentation, argumentation, posture).",
-            "Cette expertise terrain permet un travail ciblé sur la compréhension des consignes, la structuration des réponses et l'optimisation des points à chaque épreuve.",
+            <span>Notre accompagnement repose sur une <strong className="font-semibold text-brand-darkblue">préparation ciblée et progressive</strong>, encadrée par des <strong className="font-semibold text-brand-darkblue">professeurs expérimentés</strong>, habitués à préparer les élèves à cet examen et maîtrisant parfaitement ses exigences.</span>,
+            <span>La plupart de nos enseignants ont également exercé en tant que <strong className="font-semibold text-brand-darkblue">correcteurs du Diplôme National du Brevet</strong>, ce qui leur permet de transmettre aux élèves une lecture précise des attentes officielles, des critères d'évaluation et des erreurs fréquentes.</span>,
+            <span>La préparation inclut :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>révisions approfondies des matières évaluées ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>entraînements sur <strong className="font-semibold text-brand-darkblue">sujets types et annales</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>travail méthodologique sur les épreuves écrites ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>préparation à l'<strong className="font-semibold text-brand-darkblue">oral du Brevet</strong> (présentation, argumentation, posture).</span></li>
+            </ul>,
+            <span>Cette expertise terrain permet un travail ciblé sur la compréhension des consignes, la structuration des réponses et l'optimisation des points à chaque épreuve.</span>,
           ],
         },
         {
           title: "Des formats flexibles, pensés pour la réussite",
           paragraphs: [
-            "Des groupes jusqu'à 8 élèves — La prépa Brevet est proposée en groupes de travail pouvant aller jusqu'à 8 élèves, afin de favoriser l'émulation tout en conservant un cadre structuré.",
-            "Des volumes horaires modulables — Les volumes horaires sont adaptés en fonction du niveau, des objectifs et des besoins spécifiques de chaque élève.",
-            "Des plannings adaptés aux disponibilités — Les plannings sont construits selon les disponibilités du groupe, permettant une organisation fluide et compatible avec la scolarité de chacun.",
-            "Cette flexibilité garantit un accompagnement réaliste, progressif et efficace, sans surcharge inutile.",
+            <span>La prépa Brevet est proposée en <strong className="font-semibold text-brand-darkblue">groupes de travail pouvant aller jusqu'à 8 élèves</strong>, afin de favoriser l'émulation tout en conservant un cadre structuré.</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>Les <strong className="font-semibold text-brand-darkblue">volumes horaires sont adaptés</strong> en fonction du niveau, des objectifs et des besoins spécifiques de chaque élève.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>Les <strong className="font-semibold text-brand-darkblue">plannings sont construits selon les disponibilités du groupe</strong>, permettant une organisation fluide et compatible avec la scolarité de chacun.</span></li>
+            </ul>,
+            <span>Cette flexibilité garantit un accompagnement <strong className="font-semibold text-brand-darkblue">réaliste, progressif et efficace</strong>, sans surcharge inutile.</span>,
           ],
         },
         {
-          title: "Une méthodologie adaptée à chaque élève et une continuité naturelle avec le soutien scolaire",
+          title: "Une méthodologie adaptée à chaque élève incluant une continuité naturelle avec le soutien scolaire",
           paragraphs: [
-            <span><span className="font-bold text-brand-darkblue text-[15px]">Une continuité directe avec le soutien scolaire</span> — La prépa Brevet STUDASSIST s'inscrit dans une continuité directe avec le{" "}<Link to="/soutien/college" className="text-brand-teal font-semibold hover:underline">soutien scolaire au collège</Link> : consolidation des bases tout au long de l'année, intensification du travail à l'approche de l'examen, accompagnement progressif et sans rupture. Chaque élève avance à son rythme, dans une logique de progression maîtrisée.</span>,
-            "Une méthodologie adaptée à chaque élève — Nos enseignants adaptent les contenus, les méthodes et le rythme de travail au niveau réel de chaque élève et au système scolaire suivi (français, marocain, bilingue ou international), tout en maintenant un haut niveau d'exigence académique.",
+            <span>La prépa Brevet STUDASSIST s'inscrit dans une <strong className="font-semibold text-brand-darkblue">continuité directe avec le</strong>{" "}<Link to="/soutien/college" className="text-brand-teal font-semibold hover:underline">soutien scolaire</Link> :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>consolidation des bases tout au long de l'année ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>intensification du travail à l'approche de l'examen ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>accompagnement progressif et sans rupture.</span></li>
+            </ul>,
+            <span>Chaque élève avance à son rythme, dans une logique de <strong className="font-semibold text-brand-darkblue">progression maîtrisée</strong>.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie adaptée à chaque élève</span>,
+            <span>Nos enseignants adaptent les contenus, les méthodes et le rythme de travail <strong className="font-semibold text-brand-darkblue">au niveau réel de chaque élève</strong> et au système scolaire suivi (français, marocain, bilingue ou international), tout en maintenant un <strong className="font-semibold text-brand-darkblue">haut niveau d'exigence académique</strong>.</span>,
           ],
         },
         {
           title: "À qui s'adresse la prépa Brevet ?",
           paragraphs: [
-            "Cette préparation s'adresse aux élèves : souhaitant sécuriser la réussite du Brevet ; manquant de méthode ou de confiance ; disposant d'un bon niveau et visant un excellent résultat ; préparant une entrée au lycée sereine et structurée.",
+            <span>Cette préparation s'adresse aux élèves :</span>,
+          ],
+          bullets: [
+            "Souhaitant sécuriser la réussite du Brevet",
+            "Manquant de méthode ou de confiance",
+            "Disposant d'un bon niveau et visant un excellent résultat",
+            "Préparant une entrée au lycée sereine et structurée",
           ],
         },
       ]}

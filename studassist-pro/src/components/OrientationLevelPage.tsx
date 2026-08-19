@@ -295,7 +295,7 @@ export default function OrientationLevelPage({
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative order-2 lg:order-1 flex justify-center w-full">
+            <div className="relative order-1 lg:order-1 flex justify-center w-full">
               <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
@@ -311,7 +311,7 @@ export default function OrientationLevelPage({
               </div>
             </div>
 
-            <div className="space-y-5 order-1 lg:order-2 text-center lg:text-left">
+            <div className="space-y-5 order-2 lg:order-2 text-center lg:text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-darkblue leading-tight uppercase tracking-tight">
                 {subtitle}
               </h2>
@@ -633,7 +633,7 @@ export default function OrientationLevelPage({
       )}
 
       {/* ============ CTA BANNER — Full-width banner ============ */}
-      <section className="relative isolate z-20 bg-brand-red overflow-visible py-14 lg:py-0 lg:flex lg:items-center lg:min-h-[460px] xl:min-h-[500px]">
+      <section className="relative isolate z-20 bg-brand-red overflow-visible py-12 xl:py-0 xl:flex xl:items-center xl:min-h-[460px] 2xl:min-h-[500px]">
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none overflow-hidden">
           <svg width="100%" height="100%">
             <pattern id="cta-grid-level" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -645,7 +645,7 @@ export default function OrientationLevelPage({
 
         {(ctaBanner.image || DEFAULT_CTA_IMAGE) && (
           <div
-            className="hidden lg:block absolute left-4 lg:left-6 xl:left-10 bottom-0 w-[350px] lg:w-[400px] xl:w-[450px] pointer-events-none select-none"
+            className="hidden xl:block absolute left-4 xl:left-6 2xl:left-10 bottom-0 w-[350px] xl:w-[400px] 2xl:w-[450px] pointer-events-none select-none"
             style={{ zIndex: 30 }}
           >
             <img
@@ -656,13 +656,13 @@ export default function OrientationLevelPage({
             />
           </div>
         )}
-        {/* Image mobile/tablette — centrée au-dessus du bandeau, comme sur la page d'accueil */}
-        <div className="lg:hidden flex justify-center pt-2 pb-4 relative z-10">
+        {/* Image mobile/tablette — déborde légèrement du bandeau, même esprit que desktop */}
+        <div className="xl:hidden flex justify-center relative z-10 -mt-36 sm:-mt-48 md:-mt-52 lg:-mt-48 pb-4 pointer-events-none select-none">
           <img
             src={ctaBanner.image || DEFAULT_CTA_IMAGE}
             alt={ctaBanner.imageAlt || DEFAULT_CTA_IMAGE_ALT}
             loading="lazy"
-            className="w-[240px] sm:w-[320px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]"
+            className="w-[260px] sm:w-[360px] md:w-[420px] lg:w-[480px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.25)]"
           />
         </div>
 
@@ -673,15 +673,15 @@ export default function OrientationLevelPage({
           className="container mx-auto px-6 relative z-10 w-full"
         >
           <div
-            className={`text-white text-center lg:text-left ${
-              (ctaBanner.image || DEFAULT_CTA_IMAGE) ? "lg:pl-[390px] xl:pl-[440px]" : ""
+            className={`text-white text-center xl:text-left ${
+              (ctaBanner.image || DEFAULT_CTA_IMAGE) ? "xl:pl-[390px] 2xl:pl-[440px]" : ""
             }`}
           >
-            <div className="max-w-2xl mx-auto lg:mx-0">
+            <div className="max-w-2xl mx-auto xl:mx-0">
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black mb-4 uppercase tracking-tight leading-[1.1]">
                 {ctaBanner.title}
               </h2>
-              <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md mb-8">
+              <p className="text-white/90 font-medium text-base lg:text-lg leading-relaxed max-w-md mx-auto xl:mx-0 mb-8">
                 {ctaBanner.body}
               </p>
             </div>

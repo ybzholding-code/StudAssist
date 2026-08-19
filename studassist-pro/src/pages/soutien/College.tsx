@@ -66,11 +66,11 @@ export default function SoutienCollege() {
         {
           title: "Une approche globale pour un accompagnement académique structuré",
           paragraphs: [
-            <span>Notre soutien scolaire au collège repose sur une <strong className="font-extrabold text-brand-darkblue">approche globale</strong>, qui va bien au-delà de l'aide aux devoirs.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un diagnostic initial approfondi</span>,
-            <span>Chaque élève bénéficie d'une <strong className="font-extrabold text-brand-darkblue">évaluation complète</strong> de son niveau académique, de ses méthodes de travail et de ses besoins spécifiques, <strong className="font-extrabold text-brand-darkblue">en tenant compte du système scolaire suivi</strong> (français, marocain, bilingue ou international).</span>,
-            <span>Ce diagnostic permet de définir des <strong className="font-extrabold text-brand-darkblue">priorités claires</strong> et un plan d'accompagnement cohérent, réaliste et adapté.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement académique structuré</span>,
+            <span>Notre soutien scolaire au collège repose sur une <strong className="font-semibold text-brand-darkblue">approche globale</strong>, qui va bien au-delà de l'aide aux devoirs.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un diagnostic initial approfondi</span>,
+            <span>Chaque élève bénéficie d'une <strong className="font-semibold text-brand-darkblue">évaluation complète</strong> de son niveau académique, de ses méthodes de travail et de ses besoins spécifiques, <strong className="font-semibold text-brand-darkblue">en tenant compte du système scolaire suivi</strong> (français, marocain, bilingue ou international).</span>,
+            <span>Ce diagnostic permet de définir des <strong className="font-semibold text-brand-darkblue">priorités claires</strong> et un plan d'accompagnement cohérent, réaliste et adapté.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement académique structuré</span>,
             <span>Nous intervenons sur les matières clés du collège :</span>,
           ],
           bullets: [
@@ -80,14 +80,14 @@ export default function SoutienCollege() {
             "histoire-géographie,",
           ],
           extraParagraphs: [
-            <span>en <strong className="font-extrabold text-brand-darkblue">nous adaptant aux programmes, aux méthodes et aux exigences propres à chaque système scolaire</strong>. L'objectif est double : <strong className="font-extrabold text-brand-darkblue">améliorer les résultats</strong> et <strong className="font-extrabold text-brand-darkblue">installer des bases solides pour préparer l'entrée au lycée</strong>, quel que soit le parcours académique de l'élève.</span>,
+            <span>en <strong className="font-semibold text-brand-darkblue">nous adaptant aux programmes, aux méthodes et aux exigences propres à chaque système scolaire</strong>. L'objectif est double : <strong className="font-semibold text-brand-darkblue">améliorer les résultats</strong> et <strong className="font-semibold text-brand-darkblue">installer des bases solides pour préparer l'entrée au lycée</strong>, quel que soit le parcours académique de l'élève.</span>,
           ],
         },
         {
           title: "Une méthodologie de soutien scolaire différenciée avec un suivi régulier et structurant",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Les atouts de notre méthodologie différenciée</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire au collège repose sur une <strong className="font-extrabold text-brand-darkblue">pédagogie différenciée</strong>, déployée en <strong className="font-extrabold text-brand-darkblue">petits groupes de 2 à 4 élèves maximum</strong>, avec des <strong className="font-extrabold text-brand-darkblue">niveaux hétérogènes maîtrisés</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Les atouts de notre méthodologie différenciée</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire au collège repose sur une <strong className="font-semibold text-brand-darkblue">pédagogie différenciée</strong>, déployée en <strong className="font-semibold text-brand-darkblue">petits groupes de 2 à 4 élèves maximum</strong>, avec des <strong className="font-semibold text-brand-darkblue">niveaux hétérogènes maîtrisés</strong>.</span>,
             <span>Ce format permet :</span>,
           ],
           bullets: [
@@ -97,27 +97,27 @@ export default function SoutienCollege() {
             "tout en garantissant un suivi individualisé, adapté à l'avancement réel de chaque élève.",
           ],
           extraParagraphs: [
-            <span>Nos enseignants ajustent en permanence leurs approches pédagogiques en fonction de l'avancement de l'élève en classe, et leurs contenus <strong className="font-extrabold text-brand-darkblue">en fonction du système scolaire suivi</strong>, tout en maintenant un <strong className="font-extrabold text-brand-darkblue">haut niveau d'exigence académique</strong> et une progression mesurable.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un suivi régulier et structurant</span>,
-            <span>Le soutien scolaire STUDASSIST repose sur un <strong className="font-extrabold text-brand-darkblue">suivi continu et rigoureux</strong> :</span>,
+            <span>Nos enseignants ajustent en permanence leurs approches pédagogiques en fonction de l'avancement de l'élève en classe, et leurs contenus <strong className="font-semibold text-brand-darkblue">en fonction du système scolaire suivi</strong>, tout en maintenant un <strong className="font-semibold text-brand-darkblue">haut niveau d'exigence académique</strong> et une progression mesurable.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un suivi régulier et structurant</span>,
+            <span>Le soutien scolaire STUDASSIST repose sur un <strong className="font-semibold text-brand-darkblue">suivi continu et rigoureux</strong> :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>évaluation régulière des progrès,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>ajustement des objectifs et des méthodes,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>envois réguliers de rapports pédagogiques,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>échanges constants avec l'élève et sa famille.</span></li>
             </ul>,
-            <span>Ce pilotage permet d'anticiper les difficultés, de maintenir la motivation et d'assurer une <strong className="font-extrabold text-brand-darkblue">cohérence durable entre le travail scolaire et le travail à la maison</strong>.</span>,
+            <span>Ce pilotage permet d'anticiper les difficultés, de maintenir la motivation et d'assurer une <strong className="font-semibold text-brand-darkblue">cohérence durable entre le travail scolaire et le travail à la maison</strong>.</span>,
           ],
         },
         {
           title: "Un accompagnement qui prépare aussi le Brevet",
           paragraphs: [
-            <span>Au collège, le soutien scolaire ne se limite pas à l'amélioration des résultats au quotidien. Il constitue également une <strong className="font-extrabold text-brand-darkblue">préparation progressive et stratégique au Diplôme National du Brevet</strong>, première échéance officielle du parcours scolaire.</span>,
+            <span>Au collège, le soutien scolaire ne se limite pas à l'amélioration des résultats au quotidien. Il constitue également une <strong className="font-semibold text-brand-darkblue">préparation progressive et stratégique au Diplôme National du Brevet</strong>, première échéance officielle du parcours scolaire.</span>,
             <>
-              Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire s'inscrit naturellement dans une <strong className="font-extrabold text-brand-darkblue">logique de continuité avec notre{" "}<Link to="/soutien/brevet" className="text-brand-darkblue font-black underline underline-offset-2">préparation au Brevet</Link></strong>, afin d'assurer une parfaite cohérence entre le travail de fond et les exigences de l'examen.
+              Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire s'inscrit naturellement dans une <strong className="font-semibold text-brand-darkblue">logique de continuité avec notre{" "}<Link to="/soutien/brevet" className="text-brand-darkblue font-black underline underline-offset-2">préparation au Brevet</Link></strong>, afin d'assurer une parfaite cohérence entre le travail de fond et les exigences de l'examen.
             </>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Préparation au Diplôme National du Brevet</span>,
-            <span>À partir de la <strong className="font-extrabold text-brand-darkblue">4ᵉ</strong>, et plus particulièrement en <strong className="font-extrabold text-brand-darkblue">3ᵉ</strong>, l'accompagnement peut être complété par une{" "}<Link to="/soutien/brevet" className="text-brand-darkblue font-black underline underline-offset-2">préparation spécifique au Brevet</Link>, incluant :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Préparation au Diplôme National du Brevet</span>,
+            <span>À partir de la <strong className="font-semibold text-brand-darkblue">4ᵉ</strong>, et plus particulièrement en <strong className="font-semibold text-brand-darkblue">3ᵉ</strong>, l'accompagnement peut être complété par une{" "}<Link to="/soutien/brevet" className="text-brand-darkblue font-black underline underline-offset-2">préparation spécifique au Brevet</Link>, incluant :</span>,
           ],
           bullets: [
             "la consolidation des fondamentaux dans les matières évaluées,",

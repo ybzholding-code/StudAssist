@@ -67,27 +67,27 @@ export default function PrepaConcoursUm6p() {
         {
           title: "Une sélection fondée sur le profil",
           paragraphs: [
-            <span>L'UM6P accorde une <strong className="font-extrabold text-brand-darkblue">importance particulière à la qualité du profil</strong> du candidat. Les <strong className="font-extrabold text-brand-darkblue">résultats académiques</strong>, la <strong className="font-extrabold text-brand-darkblue">capacité de réflexion</strong>, la curiosité intellectuelle et la <strong className="font-extrabold text-brand-darkblue">cohérence du projet</strong> sont autant d'éléments déterminants que nous construisons dans le cadre de l'<Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link>.</span>,
-            <span>Une préparation efficace permet de <strong className="font-extrabold text-brand-darkblue">structurer son profil</strong> et de se positionner de manière pertinente.</span>,
+            <span>L'UM6P accorde une <strong className="font-semibold text-brand-darkblue">importance particulière à la qualité du profil</strong> du candidat. Les <strong className="font-semibold text-brand-darkblue">résultats académiques</strong>, la <strong className="font-semibold text-brand-darkblue">capacité de réflexion</strong>, la curiosité intellectuelle et la <strong className="font-semibold text-brand-darkblue">cohérence du projet</strong> sont autant d'éléments déterminants que nous construisons dans le cadre de l'<Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link>.</span>,
+            <span>Une préparation efficace permet de <strong className="font-semibold text-brand-darkblue">structurer son profil</strong> et de se positionner de manière pertinente.</span>,
           ],
         },
         {
           title: "Une préparation ciblée et orientée performance dans un véritable esprit de sélection",
           paragraphs: [
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous proposons une <strong className="font-extrabold text-brand-darkblue">préparation spécifique à l'UM6P</strong>, adaptée à la nature des épreuves. Nos sessions permettent de travailler :</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une <strong className="font-semibold text-brand-darkblue">préparation spécifique à l'UM6P</strong>, adaptée à la nature des épreuves. Nos sessions permettent de travailler :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>le <strong className="font-extrabold text-brand-darkblue">raisonnement logique</strong> et les tests psychotechniques ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la <strong className="font-extrabold text-brand-darkblue">résolution de problèmes</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la <strong className="font-extrabold text-brand-darkblue">rapidité d'analyse</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la <strong className="font-extrabold text-brand-darkblue">gestion du temps</strong>.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>le <strong className="font-semibold text-brand-darkblue">raisonnement logique</strong> et les tests psychotechniques ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la <strong className="font-semibold text-brand-darkblue">résolution de problèmes</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la <strong className="font-semibold text-brand-darkblue">rapidité d'analyse</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la <strong className="font-semibold text-brand-darkblue">gestion du temps</strong>.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Notre approche repose sur :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Notre approche repose sur :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des exercices ciblés inspirés des formats de sélection ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des entraînements progressifs ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des mises en situation en temps limité.</span></li>
             </ul>,
-            <span>L'objectif est de développer des <strong className="font-extrabold text-brand-darkblue">réflexes de rapidité, de logique et d'efficacité</strong>. Pour leur permettre de se démarquer, nous accompagnons les élèves dans le développement de leur capacité à :</span>,
+            <span>L'objectif est de développer des <strong className="font-semibold text-brand-darkblue">réflexes de rapidité, de logique et d'efficacité</strong>. Pour leur permettre de se démarquer, nous accompagnons les élèves dans le développement de leur capacité à :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>raisonner rapidement ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>prioriser les questions ;</span></li>
@@ -99,19 +99,19 @@ export default function PrepaConcoursUm6p() {
         {
           title: "Préparer l'entretien et valoriser son profil",
           paragraphs: [
-            <span>L'<strong className="font-extrabold text-brand-darkblue">entretien</strong> constitue une <strong className="font-extrabold text-brand-darkblue">étape clé</strong> du processus de sélection. Nous accompagnons les élèves dans :</span>,
+            <span>L'<strong className="font-semibold text-brand-darkblue">entretien</strong> constitue une <strong className="font-semibold text-brand-darkblue">étape clé</strong> du processus de sélection. Nous accompagnons les élèves dans :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la structuration de leur discours ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la présentation de leur parcours ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la mise en cohérence de leur projet.</span></li>
             </ul>,
-            <span>Des <strong className="font-extrabold text-brand-darkblue">simulations</strong> permettent de gagner en assurance et en clarté.</span>,
+            <span>Des <strong className="font-semibold text-brand-darkblue">simulations</strong> permettent de gagner en assurance et en clarté.</span>,
           ],
         },
         {
           title: "À qui s'adresse la préparation du dossier UM6P ?",
           paragraphs: [
-            <span>Cette préparation s'adresse aux élèves de <strong className="font-extrabold text-brand-darkblue">Terminale</strong> souhaitant intégrer les programmes d'ingénierie de l'<strong className="font-extrabold text-brand-darkblue">UM6P</strong> et optimiser leur candidature dans le cadre d'un processus de sélection exigeant et multidimensionnel.</span>,
+            <span>Cette préparation s'adresse aux élèves de <strong className="font-semibold text-brand-darkblue">Terminale</strong> souhaitant intégrer les programmes d'ingénierie de l'<strong className="font-semibold text-brand-darkblue">UM6P</strong> et optimiser leur candidature dans le cadre d'un processus de sélection exigeant et multidimensionnel.</span>,
             <span>Elle est particulièrement adaptée aux élèves qui souhaitent :</span>,
           ],
           bullets: [

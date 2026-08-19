@@ -57,45 +57,74 @@ export default function PrepasBacPhilo() {
       }}
 
       sections={[
-        {
-          title: "Le Bac de philosophie, qu'est-ce que c'est ?",
-          paragraphs: [
-            "Comprendre les exigences de l'épreuve de philosophie — L'épreuve de philosophie repose sur deux types de sujets : la dissertation et l'explication de texte. Elle évalue la capacité de l'élève à problématiser une question, construire un raisonnement structuré et mobiliser des références pertinentes pour soutenir son argumentation. Au-delà des connaissances, c'est la qualité de la réflexion et la rigueur de la démonstration qui sont valorisées.",
-            "Une épreuve à fort impact académique — Avec un coefficient significatif, la philosophie peut faire la différence dans l'obtention d'une mention. Elle constitue également un marqueur important dans le dossier académique, en particulier pour les formations valorisant les capacités d'analyse, de réflexion et d'expression. Une copie claire, structurée et argumentée reflète un profil académique solide et mature.",
-            "Une épreuve pour se démarquer — La philosophie est souvent perçue comme une matière difficile. Bien préparée, elle devient au contraire une opportunité de se distinguer. Une copie structurée, claire et réfléchie peut faire la différence dans les résultats finaux et valoriser le profil de l'élève.",
-          ],
-        },
-        {
-          title: "L'approche STUDASSIST dans la préparation de l'épreuve de philosophie",
-          paragraphs: [
-            "Maîtriser les fondamentaux de la réflexion — Chez STUDASSIST, la préparation repose sur l'acquisition des fondamentaux : comprendre les notions du programme (liberté, vérité, justice, bonheur, conscience…), apprendre à problématiser un sujet, structurer une dissertation, analyser un texte philosophique avec rigueur. Nous accompagnons les élèves dans le développement de leur capacité à penser de manière autonome, à organiser leurs idées et à produire un raisonnement cohérent.",
-            "Une méthodologie claire et progressive — La réussite en philosophie repose avant tout sur la méthode. Nous proposons un accompagnement structuré, permettant aux élèves de : construire des plans clairs et efficaces, éviter les hors-sujets, maîtriser l'introduction et la conclusion, développer une argumentation progressive et pertinente. Des entraînements réguliers sur des sujets types et des bacs blancs permettent d'ancrer les bons réflexes et de gagner en confiance.",
-            "Mobiliser les références avec pertinence — La philosophie ne consiste pas à réciter un cours, mais à mobiliser des références de manière intelligente. Nous aidons les élèves à comprendre les grandes pensées philosophiques (Descartes, Kant, Nietzsche, Rousseau…) et à les intégrer dans leurs raisonnements de manière pertinente et nuancée.",
-          ],
-        },
-        {
-          title: "Une préparation adaptée pour chaque profil et encadrée par des enseignants experts",
-          paragraphs: [
-            "Un encadrement exigeant et personnalisé — Les élèves sont accompagnés par des enseignants spécialisés, maîtrisant parfaitement les exigences du Bac de philosophie. Les séances sont proposées en petits groupes de 2 à 4 élèves maximum ou en format individuel, afin de garantir un suivi précis et adapté à chaque profil.",
-            "Une préparation alignée avec la réussite globale — Chez STUDASSIST, la préparation à la philosophie s'inscrit dans une logique globale. Elle permet de renforcer des compétences essentielles — analyse, argumentation, expression — qui seront déterminantes pour les études supérieures et les processus de sélection des établissements post-bac.",
-          ],
-        },
-        {
-          title: "À qui s'adresse la préparation du Bac de philosophie ?",
-          paragraphs: [
-            "Cette préparation s'adresse aux élèves de Terminale souhaitant acquérir une méthodologie solide, renforcer leurs capacités de réflexion et aborder l'épreuve avec davantage de confiance.",
-          ],
-          bullets: [
-            "Comprendre les notions et auteurs au programme",
-            "Apprendre à problématiser un sujet et construire une dissertation",
-            "Maîtriser la méthode de l'explication de texte",
-            "Développer une argumentation claire, structurée et pertinente",
-            "Gagner en confiance face à une matière souvent perçue comme complexe",
-            "Viser une excellente note au Baccalauréat",
-            "Renforcer leurs compétences d'analyse et d'expression pour les études supérieures",
-          ],
-        },
-      ]}
+          {
+            title: "Le Bac de philosophie, qu'est-ce que c'est ?",
+            paragraphs: [
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Comprendre les exigences de l'épreuve de philosophie</span>,
+              <span>L'épreuve de philosophie repose sur deux types de sujets : la dissertation et l'explication de texte. Elle évalue la capacité de l'élève à problématiser une question, construire un raisonnement structuré et mobiliser des références pertinentes pour soutenir son argumentation.</span>,
+              <span>Au-delà des connaissances, c'est la qualité de la réflexion et la rigueur de la démonstration qui sont valorisées.</span>,
+
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une épreuve à fort impact académique</span>,
+              <span>Avec un coefficient significatif, la philosophie peut faire la différence dans l'obtention d'une mention. Elle constitue également un marqueur important dans le dossier académique, en particulier pour les formations valorisant les capacités d'analyse, de réflexion et d'expression.</span>,
+              <span>Une copie claire, structurée et argumentée reflète un profil académique solide et mature.</span>,
+
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une épreuve pour se démarquer</span>,
+              <span>La philosophie est souvent perçue comme une matière difficile. Bien préparée, elle devient au contraire une opportunité de se distinguer. Une copie structurée, claire et réfléchie peut faire la différence dans les résultats finaux et valoriser le profil de l'élève.</span>,
+            ],
+          },
+          {
+            title: "L'approche de STUDASSIST dans la préparation de l'épreuve de philosophie",
+            paragraphs: [
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Maîtriser les fondamentaux de la réflexion</span>,
+              <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, la préparation repose sur l'acquisition des fondamentaux :</span>,
+              <ul className="space-y-2 mt-2 ml-1">
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>comprendre les notions du programme (liberté, vérité, justice, bonheur, conscience…) ;</span></li>
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>apprendre à problématiser un sujet ;</span></li>
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>structurer une dissertation ;</span></li>
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>analyser un texte philosophique avec rigueur.</span></li>
+              </ul>,
+              <span>Nous accompagnons les élèves dans le développement de leur capacité à <strong className="font-semibold text-brand-darkblue">penser de manière autonome</strong>, à organiser leurs idées et à produire un raisonnement cohérent.</span>,
+
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie claire et progressive</span>,
+              <span>La réussite en philosophie repose avant tout sur la <strong className="font-semibold text-brand-darkblue">méthode</strong>. Nous proposons un accompagnement structuré, permettant aux élèves de :</span>,
+              <ul className="space-y-2 mt-2 ml-1">
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>construire des plans clairs et efficaces ;</span></li>
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>éviter les hors-sujets ;</span></li>
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>maîtriser l'introduction et la conclusion ;</span></li>
+                <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>développer une argumentation progressive et pertinente.</span></li>
+              </ul>,
+              <span>Des entraînements réguliers sur des sujets types et des <strong className="font-semibold text-brand-darkblue">bacs blancs</strong> permettent d'ancrer les bons réflexes et de gagner en confiance.</span>,
+
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Mobiliser les références avec pertinence</span>,
+              <span>La philosophie ne consiste pas à réciter un cours, mais à mobiliser des références de manière intelligente. Nous aidons les élèves à comprendre les grandes pensées philosophiques (Descartes, Kant, Nietzsche, Rousseau…) et à les intégrer dans leurs raisonnements de manière <strong className="font-semibold text-brand-darkblue">pertinente et nuancée</strong>.</span>,
+            ],
+          },
+          {
+            title: "Une préparation adaptée pour chaque profil et encadrée par des enseignants experts",
+            paragraphs: [
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un encadrement exigeant et personnalisé</span>,
+              <span>Les élèves sont accompagnés par des <strong className="font-semibold text-brand-darkblue">enseignants spécialisés</strong>, maîtrisant parfaitement les exigences du Bac de philosophie. Les séances sont proposées en petits groupes de 2 à 4 élèves maximum ou en format individuel, afin de garantir un suivi précis et adapté à chaque profil.</span>,
+
+              <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation alignée avec la réussite globale</span>,
+              <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, la préparation à la philosophie s'inscrit dans une logique globale. Elle permet de renforcer des compétences essentielles — <strong className="font-semibold text-brand-darkblue">analyse, argumentation, expression</strong> — qui seront déterminantes pour les études supérieures et les processus de sélection des établissements post-bac.</span>,
+            ],
+          },
+          {
+            title: "À qui s'adresse la préparation du Bac de philosophie ?",
+            paragraphs: [
+              "Cette préparation s'adresse aux élèves de Terminale souhaitant acquérir une méthodologie solide, renforcer leurs capacités de réflexion et aborder l'épreuve avec davantage de confiance.",
+            ],
+            bullets: [
+              "Comprendre les notions et auteurs au programme",
+              "Apprendre à problématiser un sujet et construire une dissertation",
+              "Maîtriser la méthode de l'explication de texte",
+              "Développer une argumentation claire, structurée et pertinente",
+              "Gagner en confiance face à une matière souvent perçue comme complexe",
+              "Viser une excellente note au Baccalauréat",
+              "Renforcer leurs compétences d'analyse et d'expression pour les études supérieures",
+            ],
+          },
+        ]}
 
       whyChoose={{
         title: "Pourquoi choisir STUDASSIST pour le Bac de Philo ?",

@@ -59,37 +59,52 @@ export default function SoutienStages() {
         ],
       }}
 
-      sections={[
+            sections={[
         {
           title: "Un stage personnalisé pour répondre aux besoins de chaque élève",
           paragraphs: [
-            "Chaque élève aborde les vacances avec des besoins différents. Certains souhaitent combler des lacunes, d'autres consolider leurs acquis, préparer un changement de niveau ou approfondir certaines matières pour viser l'excellence.",
-            "Un diagnostic pédagogique en début de stage — Chaque stage débute par une évaluation permettant d'identifier précisément les points forts, les difficultés et les objectifs de progression de l'élève. À partir de ce bilan, un programme de travail personnalisé est mis en place afin de concentrer les efforts sur les notions réellement prioritaires.",
-            "Des groupes de 2 à 4 élèves maximum — Les stages STUDASSIST sont organisés en petits groupes afin de garantir : une attention individualisée ; une forte interaction avec l'enseignant ; une adaptation permanente au niveau de chacun.",
+            <span>Chaque élève aborde les vacances avec des besoins différents. Certains souhaitent combler des lacunes, d'autres consolider leurs acquis, préparer un changement de niveau ou approfondir certaines matières pour viser l'excellence.</span>,
+            <span>C'est pourquoi chaque stage débute par un <strong className="font-semibold text-brand-darkblue">diagnostic pédagogique</strong> permettant d'identifier précisément les points forts, les difficultés et les objectifs de progression de l'élève. À partir de ce bilan, un programme de travail personnalisé est mis en place afin de concentrer les efforts sur les notions réellement prioritaires.</span>,
+            <span>Les stages <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong> sont organisés en groupes de seulement <strong className="font-semibold text-brand-darkblue">2 à 4 élèves</strong> afin de garantir une attention individualisée, une forte interaction avec l'enseignant et une adaptation permanente au niveau de chacun.</span>,
           ],
         },
         {
           title: "Consolider les acquis, combler les lacunes et retrouver confiance",
           paragraphs: [
-            "Les vacances constituent un moment privilégié pour prendre du recul sur l'année scolaire et renforcer les apprentissages dans un cadre plus serein.",
-            "Les stages permettent notamment de : identifier et combler les lacunes accumulées ; consolider les fondamentaux ; renforcer la méthodologie ; améliorer la compréhension des notions clés ; retrouver confiance dans les matières importantes.",
-            "Grâce à un travail ciblé et progressif, les élèves repartent sur des bases plus solides et développent davantage d'autonomie dans leur travail.",
+            <span>Les vacances constituent un moment privilégié pour prendre du recul sur l'année scolaire et renforcer les apprentissages dans un cadre plus serein.</span>,
+            <span>Les stages permettent notamment de :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>identifier et combler les lacunes accumulées ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>consolider les fondamentaux ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>renforcer la méthodologie ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>améliorer la compréhension des notions clés ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>retrouver confiance dans les matières importantes.</span></li>
+            </ul>,
+            <span>Grâce à un travail ciblé et progressif, les élèves repartent sur des bases plus solides et développent davantage d'autonomie dans leur travail.</span>,
           ],
         },
         {
           title: "Préparer la rentrée avec une longueur d'avance",
           paragraphs: [
-            "Les stages de vacances ne servent pas uniquement à rattraper un retard. Ils permettent également d'anticiper les exigences du niveau suivant et d'aborder la rentrée avec davantage de sérénité.",
-            "Selon l'âge et le parcours de l'élève, les stages peuvent contribuer à : préparer l'entrée au collège ; anticiper l'entrée au lycée ; renforcer les matières stratégiques ; préparer le choix des spécialités ; aborder plus sereinement le Brevet ou le Baccalauréat ; découvrir certaines notions du programme à venir.",
-            "Cette approche permet de réduire le stress lié aux changements de niveau tout en développant la confiance et la motivation de l'élève.",
+            <span>Les stages de vacances ne servent pas uniquement à rattraper un retard. Ils permettent également d'anticiper les exigences du niveau suivant et d'aborder la rentrée avec davantage de sérénité.</span>,
+            <span>Selon l'âge et le parcours de l'élève, les stages peuvent contribuer à :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>préparer l'entrée au collège ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>anticiper l'entrée au lycée ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>renforcer les matières stratégiques ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>préparer le choix des spécialités ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>aborder plus sereinement le Brevet ou le Baccalauréat ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>découvrir certaines notions du programme à venir.</span></li>
+            </ul>,
+            <span>Cette approche permet de réduire le stress lié aux changements de niveau tout en développant la confiance et la motivation.</span>,
           ],
         },
         {
           title: "Une méthodologie STUDASSIST orientée progression",
           paragraphs: [
-            "Un format clair et intensif — Chaque stage est organisé sur 5 jours, à raison de 2 heures de cours par jour et par matière, soit un total de 10 heures d'accompagnement. Ce format intensif mais équilibré favorise une immersion progressive et une réelle continuité pédagogique sur la semaine.",
-            "Un bilan personnalisé en fin de stage — En fin de stage, un bilan est réalisé afin de mesurer les progrès accomplis, les notions consolidées et les axes de travail à poursuivre.",
-            "Nos enseignants adaptent leur pédagogie aux systèmes scolaires marocain, français, bilingue et international tout en maintenant un haut niveau d'exigence académique. L'objectif n'est pas seulement de progresser pendant les vacances, mais de développer des méthodes de travail et des réflexes qui accompagneront l'élève tout au long de sa scolarité.",
+            <span>Chaque stage est organisé sur <strong className="font-semibold text-brand-darkblue">5 jours</strong> à raison de <strong className="font-semibold text-brand-darkblue">2 heures par jour et par matière</strong>, soit un total de <strong className="font-semibold text-brand-darkblue">10 heures d'accompagnement</strong>. Ce format intensif mais équilibré favorise une immersion progressive et une réelle continuité pédagogique sur la semaine.</span>,
+            <span>En fin de stage, un <strong className="font-semibold text-brand-darkblue">bilan personnalisé</strong> est réalisé afin de mesurer les progrès accomplis, les notions consolidées et les axes de travail à poursuivre.</span>,
+            <span>Nos enseignants adaptent leur pédagogie aux systèmes scolaires marocain, français, bilingue et international tout en maintenant un haut niveau d'exigence académique. L'objectif n'est pas seulement de progresser pendant les vacances, mais de développer des méthodes de travail et des réflexes qui accompagneront l'élève tout au long de sa scolarité.</span>,
           ],
         },
       ]}

@@ -196,7 +196,7 @@ export default function PrepasConcours() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative order-2 lg:order-1 flex justify-center w-full">
+            <div className="relative order-1 lg:order-1 flex justify-center w-full">
               <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
@@ -212,7 +212,7 @@ export default function PrepasConcours() {
               </div>
             </div>
 
-            <div className="space-y-6 order-1 lg:order-2 text-center lg:text-left">
+            <div className="space-y-6 order-2 lg:order-2 text-center lg:text-left">
               <p className="text-gray-500 text-base lg:text-lg leading-relaxed font-medium">
                 Les concours d'accès aux grandes écoles et universités exigent bien plus que des connaissances académiques. Ils requièrent méthode, rigueur et capacité à performer dans un environnement compétitif.
               </p>

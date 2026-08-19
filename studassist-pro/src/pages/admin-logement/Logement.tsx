@@ -54,40 +54,40 @@ export default function AdminLogementPage() {
         {
           title: "Bien définir ses besoins et construire un dossier locataire solide qui puisse mettre en confiance le bailleur",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement dès la définition du besoin</span>,
-            <span>Chaque recherche débute par un <strong className="font-extrabold text-brand-darkblue">rendez-vous préalable</strong>, au cours duquel nous définissons précisément les critères du logement. Nous prenons en compte le <strong className="font-extrabold text-brand-darkblue">budget, la localisation, le type de logement</strong> (studio, appartement, résidence étudiante) ainsi que les préférences de l'élève et de sa famille. Cette étape permet de cadrer la recherche et de garantir sa pertinence.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Constitution d'un dossier locataire solide</span>,
-            <span>Une fois le cadrage effectué, nous accompagnons l'élève et sa famille dans la constitution d'un <strong className="font-extrabold text-brand-darkblue">dossier locataire complet et structuré</strong>. Cela inclut la préparation des documents, des justificatifs de moyens, des garanties et de l'ensemble des éléments nécessaires pour rassurer les propriétaires. Un dossier solide permet de <strong className="font-extrabold text-brand-darkblue">mettre en confiance les bailleurs</strong> et d'augmenter significativement les chances que la candidature de l'élève soit retenue.</span>,
-            <span>Cette étape est particulièrement importante pour les <strong className="font-extrabold text-brand-darkblue">étudiants internationaux</strong>, qui doivent souvent apporter davantage de garanties afin de rassurer les bailleurs. Nous accompagnons les familles dans la présentation des <strong className="font-extrabold text-brand-darkblue">justificatifs financiers, des garants</strong> et de l'ensemble des éléments permettant de renforcer la crédibilité du dossier locataire.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement dès la définition du besoin</span>,
+            <span>Chaque recherche débute par un <strong className="font-semibold text-brand-darkblue">rendez-vous préalable</strong>, au cours duquel nous définissons précisément les critères du logement. Nous prenons en compte le <strong className="font-semibold text-brand-darkblue">budget, la localisation, le type de logement</strong> (studio, appartement, résidence étudiante) ainsi que les préférences de l'élève et de sa famille. Cette étape permet de cadrer la recherche et de garantir sa pertinence.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Constitution d'un dossier locataire solide</span>,
+            <span>Une fois le cadrage effectué, nous accompagnons l'élève et sa famille dans la constitution d'un <strong className="font-semibold text-brand-darkblue">dossier locataire complet et structuré</strong>. Cela inclut la préparation des documents, des justificatifs de moyens, des garanties et de l'ensemble des éléments nécessaires pour rassurer les propriétaires. Un dossier solide permet de <strong className="font-semibold text-brand-darkblue">mettre en confiance les bailleurs</strong> et d'augmenter significativement les chances que la candidature de l'élève soit retenue.</span>,
+            <span>Cette étape est particulièrement importante pour les <strong className="font-semibold text-brand-darkblue">étudiants internationaux</strong>, qui doivent souvent apporter davantage de garanties afin de rassurer les bailleurs. Nous accompagnons les familles dans la présentation des <strong className="font-semibold text-brand-darkblue">justificatifs financiers, des garants</strong> et de l'ensemble des éléments permettant de renforcer la crédibilité du dossier locataire.</span>,
           ],
         },
         {
           title: "Une recherche ciblée pour un accompagnement efficace dans le choix final du logement",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une recherche ciblée et encadrée</span>,
-            <span>Une fois les critères validés, notre équipe se charge de la recherche de manière active. Nous mobilisons notre <strong className="font-extrabold text-brand-darkblue">réseau d'agences partenaires</strong> et des recherches directes, afin d'identifier des opportunités correspondant aux attentes définies. L'objectif est de proposer des biens <strong className="font-extrabold text-brand-darkblue">adaptés, fiables et disponibles</strong> dans les délais.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Organisation des visites et sélection du logement</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une recherche ciblée et encadrée</span>,
+            <span>Une fois les critères validés, notre équipe se charge de la recherche de manière active. Nous mobilisons notre <strong className="font-semibold text-brand-darkblue">réseau d'agences partenaires</strong> et des recherches directes, afin d'identifier des opportunités correspondant aux attentes définies. L'objectif est de proposer des biens <strong className="font-semibold text-brand-darkblue">adaptés, fiables et disponibles</strong> dans les délais.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Organisation des visites et sélection du logement</span>,
             <span>Selon la situation de l'élève, nous adaptons notre accompagnement :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>lorsque l'élève est déjà sur place, nous organisons des <strong className="font-extrabold text-brand-darkblue">visites physiques</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>dans le cas contraire, nous transmettons des <strong className="font-extrabold text-brand-darkblue">photos et vidéos détaillées</strong>, permettant de faciliter la prise de décision à distance.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>lorsque l'élève est déjà sur place, nous organisons des <strong className="font-semibold text-brand-darkblue">visites physiques</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>dans le cas contraire, nous transmettons des <strong className="font-semibold text-brand-darkblue">photos et vidéos détaillées</strong>, permettant de faciliter la prise de décision à distance.</span></li>
             </ul>,
-            <span>Nous accompagnons les familles dans l'analyse des biens proposés afin de <strong className="font-extrabold text-brand-darkblue">sécuriser leur choix</strong>.</span>,
+            <span>Nous accompagnons les familles dans l'analyse des biens proposés afin de <strong className="font-semibold text-brand-darkblue">sécuriser leur choix</strong>.</span>,
           ],
         },
         {
           title: "Un accompagnement jusqu'à l'installation de l'étudiant",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement jusqu'à la signature</span>,
-            <span>Notre intervention se poursuit jusqu'à la finalisation du projet. Nous accompagnons l'élève et sa famille dans les différentes étapes, jusqu'à la <strong className="font-extrabold text-brand-darkblue">signature du contrat de bail</strong>, en veillant à la compréhension des engagements et des conditions.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un facteur clé de réussite</span>,
-            <span>Un <strong className="font-extrabold text-brand-darkblue">logement adapté</strong> permet à l'élève de démarrer son parcours dans de bonnes conditions. Il contribue à son <strong className="font-extrabold text-brand-darkblue">intégration, à sa sérénité</strong> et à sa capacité à se concentrer pleinement sur ses études.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement jusqu'à la signature</span>,
+            <span>Notre intervention se poursuit jusqu'à la finalisation du projet. Nous accompagnons l'élève et sa famille dans les différentes étapes, jusqu'à la <strong className="font-semibold text-brand-darkblue">signature du contrat de bail</strong>, en veillant à la compréhension des engagements et des conditions.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un facteur clé de réussite</span>,
+            <span>Un <strong className="font-semibold text-brand-darkblue">logement adapté</strong> permet à l'élève de démarrer son parcours dans de bonnes conditions. Il contribue à son <strong className="font-semibold text-brand-darkblue">intégration, à sa sérénité</strong> et à sa capacité à se concentrer pleinement sur ses études.</span>,
           ],
         },
         {
           title: "À qui s'adresse notre accompagnement à la recherche de logement étudiant ?",
           paragraphs: [
-            <span>Cet accompagnement s'adresse aux <strong className="font-extrabold text-brand-darkblue">élèves, étudiants et familles</strong> souhaitant sécuriser la recherche d'un logement dans le cadre d'un projet d'études à l'étranger. Il est particulièrement adapté :</span>,
+            <span>Cet accompagnement s'adresse aux <strong className="font-semibold text-brand-darkblue">élèves, étudiants et familles</strong> souhaitant sécuriser la recherche d'un logement dans le cadre d'un projet d'études à l'étranger. Il est particulièrement adapté :</span>,
           ],
           bullets: [
             "Aux étudiants admis dans une université ou une grande école à l'international ;",

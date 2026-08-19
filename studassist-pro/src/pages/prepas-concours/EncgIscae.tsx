@@ -66,29 +66,47 @@ export default function PrepaConcoursEncgIscae() {
         {
           title: "Une préparation ciblée avec une méthodologie orientée performance",
           paragraphs: [
-            "Un enjeu déterminant pour l'orientation — L'accès à ces écoles repose sur un niveau élevé de performance. Les résultats obtenus conditionnent directement les possibilités d'intégration et la qualité des parcours académiques accessibles. Une préparation rigoureuse permet de se positionner efficacement dans un environnement très concurrentiel.",
-            "Une préparation intensive et ciblée — Chez STUDASSIST, nous organisons des sessions intensives, principalement pendant les vacances scolaires, afin de permettre aux élèves de se concentrer pleinement sur leur préparation. Les groupes sont limités à 10 élèves maximum, garantissant un encadrement exigeant et une progression rapide. Les plannings sont adaptés en fonction des échéances et des disponibilités.",
-            "Une méthodologie orientée performance — Notre préparation repose sur une approche concrète et efficace : travail sur les typologies d'épreuves, exercices d'application ciblés, entraînements progressifs et concours blancs en conditions réelles. Cette méthode permet de développer des automatismes et d'optimiser la gestion du temps.",
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un enjeu déterminant pour l'orientation</span>,
+            <span>L'accès à ces écoles repose sur un niveau élevé de performance. Les résultats obtenus conditionnent directement les possibilités d'intégration et la qualité des parcours académiques accessibles. Une préparation rigoureuse permet de se positionner efficacement dans un environnement très concurrentiel.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation intensive et ciblée</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous organisons des <strong className="font-semibold text-brand-darkblue">sessions intensives</strong>, principalement pendant les vacances scolaires, afin de permettre aux élèves de se concentrer pleinement sur leur préparation. Les groupes sont limités à <strong className="font-semibold text-brand-darkblue">10 élèves maximum</strong>, garantissant un encadrement exigeant et une progression rapide. Les plannings sont adaptés en fonction des échéances et des disponibilités.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie orientée performance</span>,
+            <span>Notre préparation repose sur une approche concrète et efficace :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>travail sur les typologies d'épreuves ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>exercices d'application ciblés ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>entraînements progressifs ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>concours blancs en conditions réelles.</span></li>
+            </ul>,
+            <span>Cette méthode permet de développer des automatismes et d'optimiser la gestion du temps.</span>,
           ],
         },
         {
           title: "L'approche de STUDASSIST dans la préparation de ces concours",
           paragraphs: [
-            "Développer un véritable esprit concours — Au-delà de la maîtrise des exercices types, nous accompagnons les élèves dans le développement d'un véritable esprit concours. Réussir ces épreuves implique de savoir se positionner face aux autres candidats. Nous travaillons ainsi sur des dimensions clés : gestion du temps, gestion du stress, stratégies de réponse et capacité à prioriser pour optimiser son score. L'objectif est clair : permettre à chaque élève de performer dans un environnement compétitif.",
-            "Une dynamique de groupe stimulante — Les sessions en petits groupes favorisent une dynamique collective de travail, dans laquelle les élèves progressent ensemble. Nous encourageons l'échange, le challenge et l'entraide, afin de créer un environnement propice à la progression et à l'excellence.",
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un véritable esprit concours</span>,
+            <span>Au-delà de la maîtrise des exercices types, nous accompagnons les élèves dans le développement d'un <strong className="font-semibold text-brand-darkblue">véritable esprit concours</strong>. Réussir ces épreuves implique de savoir se positionner face aux autres candidats. Nous travaillons ainsi sur des dimensions clés : gestion du temps, gestion du stress, stratégies de réponse et capacité à prioriser pour optimiser son score. L'objectif est clair : permettre à chaque élève de performer dans un environnement compétitif.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une dynamique de groupe stimulante</span>,
+            <span>Les sessions en petits groupes favorisent une <strong className="font-semibold text-brand-darkblue">dynamique collective de travail</strong>, dans laquelle les élèves progressent ensemble. Nous encourageons l'échange, le challenge et l'entraide, afin de créer un environnement propice à la progression et à l'excellence.</span>,
           ],
         },
         {
           title: "Un accompagnement en continu par des enseignants experts des épreuves",
           paragraphs: [
-            "Un accompagnement qui se prolonge dans le temps — Chez STUDASSIST, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus d'entraînement complémentaires et restons disponibles pour les accompagner jusqu'aux échéances. Les élèves peuvent également revenir s'entraîner à tout moment dans notre espace.",
-            "Un encadrement par des enseignants expérimentés — Les élèves sont accompagnés par des enseignants spécialisés, maîtrisant parfaitement les exigences des concours ENCG et ISCAE. Leur accompagnement permet d'apporter des méthodes efficaces, des explications claires et un suivi personnalisé.",
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui se prolonge dans le temps</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus d'entraînement complémentaires et restons disponibles pour les accompagner jusqu'aux échéances. Les élèves peuvent également revenir s'entraîner à tout moment dans notre espace.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un encadrement par des enseignants expérimentés</span>,
+            <span>Les élèves sont accompagnés par des enseignants spécialisés, maîtrisant parfaitement les exigences des concours ENCG et ISCAE. Leur accompagnement permet d'apporter des méthodes efficaces, des explications claires et un suivi personnalisé.</span>,
           ],
         },
         {
           title: "À qui s'adresse la préparation des concours ENCG & ISCAE ?",
           paragraphs: [
-            "Cette préparation s'adresse aux élèves ambitieux souhaitant intégrer les meilleures écoles de commerce publiques du Maroc et construire un parcours académique d'excellence.",
+            <span>Cette préparation s'adresse aux élèves ambitieux souhaitant intégrer les meilleures écoles de commerce publiques du Maroc et construire un parcours académique d'excellence. Elle est conçue pour les candidats qui souhaitent :</span>,
           ],
           bullets: [
             "Accéder à des formations sélectives reconnues pour leur qualité académique",

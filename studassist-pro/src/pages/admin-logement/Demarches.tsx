@@ -53,28 +53,28 @@ export default function AdminDemarches() {
         {
           title: "Un cadrage complet des démarches après l'admission",
           paragraphs: [
-            <span>Notre intervention débute une fois le <strong className="font-extrabold text-brand-darkblue">projet académique validé</strong>. À partir de ce moment, nous réalisons un <strong className="font-extrabold text-brand-darkblue">cadrage complet</strong> des démarches administratives à effectuer, en fonction du pays de destination, du statut de l'étudiant et des exigences locales.</span>,
+            <span>Notre intervention débute une fois le <strong className="font-semibold text-brand-darkblue">projet académique validé</strong>. À partir de ce moment, nous réalisons un <strong className="font-semibold text-brand-darkblue">cadrage complet</strong> des démarches administratives à effectuer, en fonction du pays de destination, du statut de l'étudiant et des exigences locales.</span>,
             <span>Nous identifions et organisons l'ensemble des étapes nécessaires à l'installation de l'étudiant à l'étranger, notamment :</span>,
-            <span>• Les démarches de <strong className="font-extrabold text-brand-darkblue">visa étudiant</strong> et <strong className="font-extrabold text-brand-darkblue">titre de séjour</strong></span>,
-            <span>• L'affiliation à la <strong className="font-extrabold text-brand-darkblue">sécurité sociale</strong> et à une mutuelle santé</span>,
-            <span>• L'ouverture d'un <strong className="font-extrabold text-brand-darkblue">compte bancaire</strong> à l'étranger</span>,
-            <span>• L'ensemble des <strong className="font-extrabold text-brand-darkblue">formalités administratives</strong> liées à l'installation</span>,
+            <span>• Les démarches de <strong className="font-semibold text-brand-darkblue">visa étudiant</strong> et <strong className="font-semibold text-brand-darkblue">titre de séjour</strong></span>,
+            <span>• L'affiliation à la <strong className="font-semibold text-brand-darkblue">sécurité sociale</strong> et à une mutuelle santé</span>,
+            <span>• L'ouverture d'un <strong className="font-semibold text-brand-darkblue">compte bancaire</strong> à l'étranger</span>,
+            <span>• L'ensemble des <strong className="font-semibold text-brand-darkblue">formalités administratives</strong> liées à l'installation</span>,
             <span>Ce cadrage permet d'avoir une vision claire, structurée et anticipée de toutes les étapes.</span>,
-            <span>Nous accompagnons les étudiants dans leurs démarches administratives pour de nombreuses destinations d'études, notamment la <strong className="font-extrabold text-brand-darkblue">France</strong>, l'<strong className="font-extrabold text-brand-darkblue">Espagne</strong>, la <strong className="font-extrabold text-brand-darkblue">Belgique</strong>, le <strong className="font-extrabold text-brand-darkblue">Royaume-Uni</strong>, le <strong className="font-extrabold text-brand-darkblue">Canada</strong>, la <strong className="font-extrabold text-brand-darkblue">Suisse</strong> et d'autres pays accueillant des étudiants internationaux. Chaque accompagnement est adapté aux exigences spécifiques du pays de destination et au profil de l'étudiant.</span>,
+            <span>Nous accompagnons les étudiants dans leurs démarches administratives pour de nombreuses destinations d'études, notamment la <strong className="font-semibold text-brand-darkblue">France</strong>, l'<strong className="font-semibold text-brand-darkblue">Espagne</strong>, la <strong className="font-semibold text-brand-darkblue">Belgique</strong>, le <strong className="font-semibold text-brand-darkblue">Royaume-Uni</strong>, le <strong className="font-semibold text-brand-darkblue">Canada</strong>, la <strong className="font-semibold text-brand-darkblue">Suisse</strong> et d'autres pays accueillant des étudiants internationaux. Chaque accompagnement est adapté aux exigences spécifiques du pays de destination et au profil de l'étudiant.</span>,
           ],
         },
         {
           title: "Un accompagnement opérationnel de A à Z",
           paragraphs: [
-            <span>Une fois le cadrage accompli, nous accompagnons concrètement les élèves et leurs familles dans la réalisation de chaque démarche en mettant en place un <strong className="font-extrabold text-brand-darkblue">plan d'action spécifique</strong> en fonction du besoin.</span>,
-            <span>Nous intervenons notamment sur : la <strong className="font-extrabold text-brand-darkblue">collecte et la vérification des documents</strong>, les <strong className="font-extrabold text-brand-darkblue">démarches en ligne</strong>, le <strong className="font-extrabold text-brand-darkblue">suivi des dossiers administratifs</strong> et la coordination avec les différentes institutions.</span>,
-            <span>Nous prenons également en charge les démarches nécessaires au Maroc, telles que : la <strong className="font-extrabold text-brand-darkblue">légalisation de documents</strong>, les <strong className="font-extrabold text-brand-darkblue">apostilles</strong> et la <strong className="font-extrabold text-brand-darkblue">traduction officielle</strong>. L'objectif est de simplifier chaque étape à l'étudiant et sa famille et d'éviter toute erreur ou retard.</span>,
+            <span>Une fois le cadrage accompli, nous accompagnons concrètement les élèves et leurs familles dans la réalisation de chaque démarche en mettant en place un <strong className="font-semibold text-brand-darkblue">plan d'action spécifique</strong> en fonction du besoin.</span>,
+            <span>Nous intervenons notamment sur : la <strong className="font-semibold text-brand-darkblue">collecte et la vérification des documents</strong>, les <strong className="font-semibold text-brand-darkblue">démarches en ligne</strong>, le <strong className="font-semibold text-brand-darkblue">suivi des dossiers administratifs</strong> et la coordination avec les différentes institutions.</span>,
+            <span>Nous prenons également en charge les démarches nécessaires au Maroc, telles que : la <strong className="font-semibold text-brand-darkblue">légalisation de documents</strong>, les <strong className="font-semibold text-brand-darkblue">apostilles</strong> et la <strong className="font-semibold text-brand-darkblue">traduction officielle</strong>. L'objectif est de simplifier chaque étape à l'étudiant et sa famille et d'éviter toute erreur ou retard.</span>,
           ],
         },
         {
           title: "Aborder son installation avec sérénité",
           paragraphs: [
-            <span>Cet accompagnement permet aux élèves et à leurs familles de se <strong className="font-extrabold text-brand-darkblue">décharger des contraintes administratives</strong>. Ils peuvent ainsi se concentrer pleinement sur leur rentrée et aborder le début de leur parcours universitaire dans les meilleures conditions.</span>,
+            <span>Cet accompagnement permet aux élèves et à leurs familles de se <strong className="font-semibold text-brand-darkblue">décharger des contraintes administratives</strong>. Ils peuvent ainsi se concentrer pleinement sur leur rentrée et aborder le début de leur parcours universitaire dans les meilleures conditions.</span>,
           ],
         },
         {

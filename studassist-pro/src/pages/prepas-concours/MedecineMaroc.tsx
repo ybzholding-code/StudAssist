@@ -67,86 +67,86 @@ export default function PrepaMedecineMaroc() {
         {
           title: "Comprendre le système de sélection des études de médecine au Maroc",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Médecine publique</span>,
-            <span>L'accès aux facultés de médecine publiques repose sur une <strong className="font-extrabold text-brand-darkblue">sélection en deux étapes</strong> :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Médecine publique</span>,
+            <span>L'accès aux facultés de médecine publiques repose sur une <strong className="font-semibold text-brand-darkblue">sélection en deux étapes</strong> :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une <strong className="font-extrabold text-brand-darkblue">présélection sur dossier</strong>, basée sur les résultats académiques (notamment les matières scientifiques) ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un <strong className="font-extrabold text-brand-darkblue">concours écrit national</strong>, généralement sous forme de QCM.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une <strong className="font-semibold text-brand-darkblue">présélection sur dossier</strong>, basée sur les résultats académiques (notamment les matières scientifiques) ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un <strong className="font-semibold text-brand-darkblue">concours écrit national</strong>, généralement sous forme de QCM.</span></li>
             </ul>,
-            <span>Seuls les candidats retenus à l'issue de la présélection sont autorisés à passer le concours. Cette présélection repose sur un <strong className="font-extrabold text-brand-darkblue">seuil d'admissibilité</strong>, fixé chaque année en fonction du niveau des candidats et du nombre de places disponibles. La sélection finale repose sur la <strong className="font-extrabold text-brand-darkblue">performance au concours</strong>, dans un contexte de forte compétitivité.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Médecine privée</span>,
+            <span>Seuls les candidats retenus à l'issue de la présélection sont autorisés à passer le concours. Cette présélection repose sur un <strong className="font-semibold text-brand-darkblue">seuil d'admissibilité</strong>, fixé chaque année en fonction du niveau des candidats et du nombre de places disponibles. La sélection finale repose sur la <strong className="font-semibold text-brand-darkblue">performance au concours</strong>, dans un contexte de forte compétitivité.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Médecine privée</span>,
             <span>Les universités privées proposent des processus d'admission incluant généralement :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>étude du dossier académique ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>tests écrits (sciences, logique, parfois anglais) ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>entretien de motivation.</span></li>
             </ul>,
-            <span>Un <strong className="font-extrabold text-brand-darkblue">niveau académique minimum est attendu</strong>, constituant un seuil implicite de sélection. Les établissements les plus sélectifs exigent des dossiers solides, notamment dans les matières scientifiques.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un enjeu déterminant pour le projet d'études</span>,
-            <span>Intégrer une faculté de médecine au Maroc nécessite un <strong className="font-extrabold text-brand-darkblue">niveau d'excellence académique</strong> et une forte capacité de travail. La <strong className="font-extrabold text-brand-darkblue">double sélection</strong> (dossier et concours) impose aux élèves d'être performants sur la durée, tout en étant capables de se démarquer le jour de l'épreuve. Elle constitue également une occasion de confirmer la cohérence du projet grâce à un <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation scolaire</Link>.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Quel profil pour réussir ?</span>,
+            <span>Un <strong className="font-semibold text-brand-darkblue">niveau académique minimum est attendu</strong>, constituant un seuil implicite de sélection. Les établissements les plus sélectifs exigent des dossiers solides, notamment dans les matières scientifiques.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un enjeu déterminant pour le projet d'études</span>,
+            <span>Intégrer une faculté de médecine au Maroc nécessite un <strong className="font-semibold text-brand-darkblue">niveau d'excellence académique</strong> et une forte capacité de travail. La <strong className="font-semibold text-brand-darkblue">double sélection</strong> (dossier et concours) impose aux élèves d'être performants sur la durée, tout en étant capables de se démarquer le jour de l'épreuve. Elle constitue également une occasion de confirmer la cohérence du projet grâce à un <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation scolaire</Link>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Quel profil pour réussir ?</span>,
             <span>Les élèves admis présentent généralement :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un <strong className="font-extrabold text-brand-darkblue">excellent niveau</strong> dans les matières scientifiques : Mathématiques, SVT, Physique-Chimie ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>de la <strong className="font-extrabold text-brand-darkblue">rigueur et de la régularité</strong> dans le travail ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une forte capacité de <strong className="font-extrabold text-brand-darkblue">concentration et d'endurance</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une <strong className="font-extrabold text-brand-darkblue">motivation claire</strong> pour les études médicales.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un <strong className="font-semibold text-brand-darkblue">excellent niveau</strong> dans les matières scientifiques : Mathématiques, SVT, Physique-Chimie ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>de la <strong className="font-semibold text-brand-darkblue">rigueur et de la régularité</strong> dans le travail ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une forte capacité de <strong className="font-semibold text-brand-darkblue">concentration et d'endurance</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une <strong className="font-semibold text-brand-darkblue">motivation claire</strong> pour les études médicales.</span></li>
             </ul>,
           ],
         },
         {
           title: "Une préparation ciblée avec une méthodologie orientée performance",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Quand commencer à se préparer ?</span>,
-            <span>La préparation à la médecine doit être <strong className="font-extrabold text-brand-darkblue">anticipée</strong>. Idéalement dès la classe de <strong className="font-extrabold text-brand-darkblue">Première</strong>, pour consolider les bases scientifiques, et en <strong className="font-extrabold text-brand-darkblue">Terminale</strong>, pour optimiser les résultats et préparer activement le concours. Commencer tôt permet d'aborder les échéances avec méthode et sérénité.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation structurée et adaptée</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation complète, adaptée aux exigences du système marocain. Les élèves sont accompagnés en <strong className="font-extrabold text-brand-darkblue">petits groupes de 8 maximum</strong>, garantissant un encadrement de qualité, un suivi précis et une progression rapide. Nous veillons à créer une <strong className="font-extrabold text-brand-darkblue">dynamique de groupe fondée sur l'entraide, le sérieux et le dépassement collectif</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Quand commencer à se préparer ?</span>,
+            <span>La préparation à la médecine doit être <strong className="font-semibold text-brand-darkblue">anticipée</strong>. Idéalement dès la classe de <strong className="font-semibold text-brand-darkblue">Première</strong>, pour consolider les bases scientifiques, et en <strong className="font-semibold text-brand-darkblue">Terminale</strong>, pour optimiser les résultats et préparer activement le concours. Commencer tôt permet d'aborder les échéances avec méthode et sérénité.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation structurée et adaptée</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation complète, adaptée aux exigences du système marocain. Les élèves sont accompagnés en <strong className="font-semibold text-brand-darkblue">petits groupes de 8 maximum</strong>, garantissant un encadrement de qualité, un suivi précis et une progression rapide. Nous veillons à créer une <strong className="font-semibold text-brand-darkblue">dynamique de groupe fondée sur l'entraide, le sérieux et le dépassement collectif</strong>.</span>,
             <span>Notre accompagnement combine :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-extrabold text-brand-darkblue">séances hebdomadaires régulières</strong> sur la durée, pour consolider les fondamentaux scientifiques et améliorer les résultats scolaires ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-extrabold text-brand-darkblue">stages intensifs pendant les vacances scolaires</strong>, pour se préparer efficacement au concours et s'entraîner en conditions réelles.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-semibold text-brand-darkblue">séances hebdomadaires régulières</strong> sur la durée, pour consolider les fondamentaux scientifiques et améliorer les résultats scolaires ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-semibold text-brand-darkblue">stages intensifs pendant les vacances scolaires</strong>, pour se préparer efficacement au concours et s'entraîner en conditions réelles.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie orientée performance</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie orientée performance</span>,
             <span>Notre préparation repose sur une approche structurée :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>révision approfondie des notions clés : Mathématiques, SVT et Physique-Chimie ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>exercices d'application ciblés ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>entraînements réguliers ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span><strong className="font-extrabold text-brand-darkblue">simulations de concours en conditions réelles</strong>.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span><strong className="font-semibold text-brand-darkblue">simulations de concours en conditions réelles</strong>.</span></li>
             </ul>,
-            <span>Cette méthode permet d'optimiser à la fois le <strong className="font-extrabold text-brand-darkblue">dossier académique</strong> et la <strong className="font-extrabold text-brand-darkblue">performance au concours</strong>.</span>,
+            <span>Cette méthode permet d'optimiser à la fois le <strong className="font-semibold text-brand-darkblue">dossier académique</strong> et la <strong className="font-semibold text-brand-darkblue">performance au concours</strong>.</span>,
           ],
         },
         {
           title: "Un accompagnement en continu par des enseignants experts des épreuves",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui se prolonge dans le temps</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus complémentaires et restons disponibles jusqu'aux échéances. Les élèves peuvent également venir s'entraîner à tout moment dans notre espace.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un encadrement par des enseignants spécialisés</span>,
-            <span>Les élèves sont accompagnés par des enseignants <strong className="font-extrabold text-brand-darkblue">spécialisés en matières scientifiques</strong>, maîtrisant parfaitement les exigences de l'examen d'entrée en médecine au Maroc.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui se prolonge dans le temps</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus complémentaires et restons disponibles jusqu'aux échéances. Les élèves peuvent également venir s'entraîner à tout moment dans notre espace.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un encadrement par des enseignants spécialisés</span>,
+            <span>Les élèves sont accompagnés par des enseignants <strong className="font-semibold text-brand-darkblue">spécialisés en matières scientifiques</strong>, maîtrisant parfaitement les exigences de l'examen d'entrée en médecine au Maroc.</span>,
           ],
         },
         {
           title: "L'approche de STUDASSIST dans la préparation des concours de médecine au Maroc",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un véritable esprit concours</span>,
-            <span>La réussite à la médecine repose autant sur les <strong className="font-extrabold text-brand-darkblue">résultats scolaires</strong> que sur la capacité à <strong className="font-extrabold text-brand-darkblue">performer le jour du concours</strong>. Nous accompagnons les élèves dans le développement de leur :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un véritable esprit concours</span>,
+            <span>La réussite à la médecine repose autant sur les <strong className="font-semibold text-brand-darkblue">résultats scolaires</strong> que sur la capacité à <strong className="font-semibold text-brand-darkblue">performer le jour du concours</strong>. Nous accompagnons les élèves dans le développement de leur :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>gestion du temps ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>gestion du stress ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>stratégie de réponse aux questions et QCM ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>capacité à prioriser et optimiser leur score.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une dynamique de groupe stimulante</span>,
-            <span>Les élèves sont accompagnés en <strong className="font-extrabold text-brand-darkblue">petits groupes de 8 maximum</strong>, afin de garantir un encadrement de qualité. Nous veillons à créer une <strong className="font-extrabold text-brand-darkblue">véritable dynamique de groupe</strong>, fondée sur l'entraide, l'échange et le dépassement collectif. Les élèves évoluent dans un environnement exigeant et bienveillant, où l'entraide et le challenge permettent à chacun de progresser durablement.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Préparer les entretiens de la médecine privée</span>,
-            <span>Pour les écoles privées, nous accompagnons également les élèves dans la structuration de leur discours et la préparation aux entretiens de motivation au travers de <strong className="font-extrabold text-brand-darkblue">simulations filmées</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une dynamique de groupe stimulante</span>,
+            <span>Les élèves sont accompagnés en <strong className="font-semibold text-brand-darkblue">petits groupes de 8 maximum</strong>, afin de garantir un encadrement de qualité. Nous veillons à créer une <strong className="font-semibold text-brand-darkblue">véritable dynamique de groupe</strong>, fondée sur l'entraide, l'échange et le dépassement collectif. Les élèves évoluent dans un environnement exigeant et bienveillant, où l'entraide et le challenge permettent à chacun de progresser durablement.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Préparer les entretiens de la médecine privée</span>,
+            <span>Pour les écoles privées, nous accompagnons également les élèves dans la structuration de leur discours et la préparation aux entretiens de motivation au travers de <strong className="font-semibold text-brand-darkblue">simulations filmées</strong>.</span>,
           ],
         },
         {
           title: "À qui s'adresse la préparation du concours de médecine au Maroc ?",
           paragraphs: [
-            <span>Cette préparation s'adresse aux élèves souhaitant intégrer les études de médecine au Maroc, dans le <strong className="font-extrabold text-brand-darkblue">secteur public ou privé</strong>. Elle est particulièrement adaptée aux élèves qui souhaitent :</span>,
+            <span>Cette préparation s'adresse aux élèves souhaitant intégrer les études de médecine au Maroc, dans le <strong className="font-semibold text-brand-darkblue">secteur public ou privé</strong>. Elle est particulièrement adaptée aux élèves qui souhaitent :</span>,
           ],
           bullets: [
             "Construire un projet d'études médicales solide et cohérent ;",

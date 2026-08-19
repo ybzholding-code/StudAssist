@@ -73,6 +73,12 @@ const QuiSommesNous = () => {
   ];
 
   const pillars = [
+    { title: "Excellence", desc: "Nous appliquons des standards élevés dans chaque accompagnement, fondés sur l'expertise, la rigueur et l'amélioration continue.", icon3d: "https://img.icons8.com/?size=100&id=FJweVEY2J0Dz&format=png&color=0695FF" },
+    { title: "Personnalisation", desc: "Chaque élève est unique. Nous concevons des parcours sur mesure, alignés avec les aspirations, le potentiel et la réalité de chacun.", icon3d: "https://img.icons8.com/?size=100&id=3685&format=png&color=0695FF" },
+    { title: "Engagement", desc: "Nous nous impliquons pleinement aux côtés des étudiants et de leurs familles, avec constance, responsabilité et disponibilité.", icon3d: "https://img.icons8.com/?size=100&id=41462&format=png&color=0695FF" },
+    { title: "Éthique & Bienveillance", desc: "Nous guidons avec intégrité, transparence et respect, en plaçant toujours l'intérêt de l'étudiant au cœur de nos recommandations.", icon3d: "https://img.icons8.com/?size=100&id=SUV5hWClGZl4&format=png&color=0695FF" },
+  ];
+  const differentiators = [
     { title: "Une approche individualisée", desc: "Chaque accompagnement est entièrement personnalisé selon le profil, les ambitions et le potentiel de l'élève.", icon3d: "https://img.icons8.com/?size=100&id=FJweVEY2J0Dz&format=png&color=0695FF" },
     { title: "Une vision internationale", desc: "Plus de 25 destinations accompagnées et une parfaite maîtrise des procédures d'admission nationales et internationales.", icon3d: "https://img.icons8.com/?size=100&id=3685&format=png&color=0695FF" },
     { title: "Un accompagnement humain", desc: "Une relation de proximité fondée sur l'écoute, la confiance et la bienveillance.", icon3d: "https://img.icons8.com/?size=100&id=41462&format=png&color=0695FF" },
@@ -466,7 +472,7 @@ const QuiSommesNous = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {pillars.map((pillar, idx) => (
+              {differentiators.map((pillar, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -534,14 +540,27 @@ const QuiSommesNous = () => {
       {/* OUR TEAM TEXT SECTION */}
       <section className="min-h-[calc(100vh-80px)] flex items-center py-10 lg:py-16 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative order-2 lg:order-1">
-              {/* Premium Image Structure */}
-              <div className="relative h-[320px] sm:h-[450px] md:h-[600px] w-full max-w-[500px] mx-auto">
+          <div className="grid gap-8 items-center lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-8">
+
+            {/* BLOC 1 — TITRE : mobile = 1er bloc affiché | desktop = haut de la colonne droite */}
+            <div className="order-1 lg:order-none lg:col-start-2 lg:row-start-1 space-y-4">
+              <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase">
+                <span className="w-8 h-px bg-brand-teal"></span>
+                <span>L'humain au coeur de notre ADN</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-[1.1] lg:leading-tight">
+                Une équipe <span className="text-brand-teal italic">d'experts</span> engagés
+              </h2>
+            </div>
+
+            {/* BLOC 2 — IMAGE : mobile = 2e bloc (entre titre et paragraphes) | desktop = colonne gauche, pleine hauteur */}
+            <div className="relative order-2 lg:order-none lg:col-start-1 lg:row-start-1 lg:row-span-2 md:mb-10 lg:mb-0">
+              {/* Premium Image Structure — CONTENU 100% IDENTIQUE, ne rien changer à l'intérieur */}
+              <div className="relative h-[420px] sm:h-[450px] md:h-[600px] w-full max-w-[500px] mx-auto">
                 {/* Elegant corner brackets */}
                 <div className="absolute -top-4 -left-4 w-12 h-12 border-t-[3px] border-l-[3px] border-brand-teal rounded-tl-2xl z-30 opacity-50" />
                 <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-[3px] border-r-[3px] border-brand-teal rounded-br-2xl z-30 opacity-50" />
-                
+
                 {/* Small pink dot accent */}
                 <div className="absolute top-[15%] -right-6 w-3 h-3 rounded-full bg-brand-red z-30 opacity-60" />
                 {/* Gold triangle — top right area */}
@@ -556,7 +575,7 @@ const QuiSommesNous = () => {
                 <div className="absolute -bottom-6 left-[30%] w-16 h-4 z-30 opacity-40">
                   <svg viewBox="0 0 60 12"><path d="M2 6 Q10 2 18 6 T34 6 T50 6 T58 6" fill="none" stroke="#1BB79D" strokeWidth="2" strokeLinecap="round" /></svg>
                 </div>
-                
+
                 {/* Circular STUDASSIST watermark — bottom left */}
                 <div className="absolute -bottom-10 -left-10 w-24 h-24 z-0 opacity-30">
                   <svg className="w-full h-full animate-[spin_20s_linear_infinite]" viewBox="0 0 120 120">
@@ -575,30 +594,30 @@ const QuiSommesNous = () => {
                     </text>
                   </svg>
                 </div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   className="absolute top-0 left-0 w-4/5 h-4/5 rounded-[3rem] overflow-hidden shadow-2xl z-10 border border-gray-100"
                 >
-                  <img 
-                    src="/studassist-equipe-accompagnement-academique.jpg" 
-                    alt="Équipe STUDASSIST - Accompagnement académique et soutien scolaire" 
+                  <img
+                    src="/studassist-equipe-accompagnement-academique.jpg"
+                    alt="Équipe STUDASSIST - Accompagnement académique et soutien scolaire"
                     className="w-full h-full object-cover object-top"
                   />
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                   className="absolute bottom-0 right-0 w-3/5 h-3/5 rounded-[3rem] overflow-hidden border-[12px] border-white shadow-2xl z-20 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8"
                 >
-                  <img 
-                    src="/studassist-equipe-conseil-orientation.jpg" 
-                    alt="Équipe STUDASSIST - Conseillers en orientation scolaire et universitaire" 
+                  <img
+                    src="/studassist-equipe-conseil-orientation.jpg"
+                    alt="Équipe STUDASSIST - Conseillers en orientation scolaire et universitaire"
                     className="w-full h-full object-cover object-top"
                   />
                 </motion.div>
@@ -609,44 +628,37 @@ const QuiSommesNous = () => {
               </div>
             </div>
 
-            <div className="space-y-8 order-1 lg:order-2">
-              <div className="inline-flex items-center space-x-2 text-brand-teal font-black text-[10px] tracking-[0.3em] uppercase">
-                <span className="w-8 h-px bg-brand-teal"></span>
-                <span>L'humain au coeur de notre ADN</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-[1.1] lg:leading-tight">
-                Une équipe <span className="text-brand-teal italic">d'experts</span> engagés
-              </h2>
-              <div className="space-y-6 text-gray-500 font-medium text-sm lg:text-base leading-relaxed">
-                <p>
-                  Chez <span className="text-brand-darkblue font-bold tracking-tight">STUDASSIST</span>, nous accordons une importance centrale à la <span className="font-bold underline italic text-brand-teal">qualité humaine et professionnelle</span> de chaque membre de notre équipe. Notre accompagnement repose sur une sélection rigoureuse des profils, une méthodologie structurée et un haut niveau d'exigence à chaque étape.
+            {/* BLOC 3 — PARAGRAPHES : mobile = 3e bloc | desktop = bas de la colonne droite */}
+            <div className="order-3 lg:order-none lg:col-start-2 lg:row-start-2 space-y-6 text-gray-500 font-medium text-sm lg:text-base leading-relaxed">
+              <p>
+                Chez <span className="text-brand-darkblue font-bold tracking-tight">STUDASSIST</span>, nous accordons une importance centrale à la <span className="font-bold underline italic text-brand-teal">qualité humaine et professionnelle</span> de chaque membre de notre équipe. Notre accompagnement repose sur une sélection rigoureuse des profils, une méthodologie structurée et un haut niveau d'exigence à chaque étape.
+              </p>
+              <div className="p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 space-y-4">
+                <p className="text-brand-darkblue font-bold tracking-widest uppercase text-[10px]">Des professeurs experts et expérimentés</p>
+                <p className="text-sm">
+                  Tous nos professeurs sont <span className="font-bold underline italic text-brand-darkblue">sélectionnés avec la plus grande exigence</span>. Ils disposent de <span className="font-bold underline italic text-brand-darkblue">plusieurs années d'expérience</span>, d'une véritable pratique de la classe et de <span className="font-bold underline italic text-brand-darkblue">certifications reconnues</span>.
                 </p>
-                <div className="p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 space-y-4">
-                  <p className="text-brand-darkblue font-bold tracking-widest uppercase text-[10px]">Des professeurs experts et expérimentés</p>
-                  <p className="text-sm">
-                    Tous nos professeurs sont <span className="font-bold underline italic text-brand-darkblue">sélectionnés avec la plus grande exigence</span>. Ils disposent de <span className="font-bold underline italic text-brand-darkblue">plusieurs années d'expérience</span>, d'une véritable pratique de la classe et de <span className="font-bold underline italic text-brand-darkblue">certifications reconnues</span>.
-                  </p>
-                  <p className="text-sm">
-                    Chez STUDASSIST, il ne s'agit pas de simples étudiants intervenants, mais de <span className="font-bold text-brand-darkblue">professionnels de l'enseignement</span>, capables de transmettre avec méthode, clarté et efficacité, quel que soit le niveau ou le système scolaire.
-                  </p>
-                </div>
-                <div className="p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 space-y-4">
-                  <p className="text-brand-darkblue font-bold tracking-widest uppercase text-[10px]">Des conseillers d'orientation formés à une méthodologie exclusive</p>
-                  <p className="text-sm">
-                    Nos conseillers d'orientation répondent à des <span className="font-bold underline italic text-brand-darkblue">critères stricts de rigueur, d'analyse et de professionnalisme</span>. Ils appliquent une <span className="font-bold text-brand-darkblue">méthodologie exclusive STUDASSIST</span>, développée en interne, qui permet de structurer les décisions d'orientation, d'aligner les choix académiques avec le potentiel réel de l'élève et d'inscrire chaque projet dans une vision cohérente et durable.
-                  </p>
-                </div>
-                <div className="p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 space-y-4">
-                  <p className="text-brand-darkblue font-bold tracking-widest uppercase text-[10px]">Une équipe administrative engagée et structurante</p>
-                  <p className="text-sm">
-                    Notre équipe administrative joue un <span className="font-bold text-brand-darkblue">rôle clé dans la qualité de notre accompagnement</span>. Présente au quotidien, elle assure la coordination, le suivi des process et le respect des standards élevés que nous nous imposons.
-                  </p>
-                  <p className="text-sm">
-                    Elle garantit la fluidité des échanges, la rigueur organisationnelle et le bon déroulement de chaque étape du parcours étudiant.
-                  </p>
-                </div>
+                <p className="text-sm">
+                  Chez STUDASSIST, il ne s'agit pas de simples étudiants intervenants, mais de <span className="font-bold text-brand-darkblue">professionnels de l'enseignement</span>, capables de transmettre avec méthode, clarté et efficacité, quel que soit le niveau ou le système scolaire.
+                </p>
+              </div>
+              <div className="p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 space-y-4">
+                <p className="text-brand-darkblue font-bold tracking-widest uppercase text-[10px]">Des conseillers d'orientation formés à une méthodologie exclusive</p>
+                <p className="text-sm">
+                  Nos conseillers d'orientation répondent à des <span className="font-bold underline italic text-brand-darkblue">critères stricts de rigueur, d'analyse et de professionnalisme</span>. Ils appliquent une <span className="font-bold text-brand-darkblue">méthodologie exclusive STUDASSIST</span>, développée en interne, qui permet de structurer les décisions d'orientation, d'aligner les choix académiques avec le potentiel réel de l'élève et d'inscrire chaque projet dans une vision cohérente et durable.
+                </p>
+              </div>
+              <div className="p-6 bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 space-y-4">
+                <p className="text-brand-darkblue font-bold tracking-widest uppercase text-[10px]">Une équipe administrative engagée et structurante</p>
+                <p className="text-sm">
+                  Notre équipe administrative joue un <span className="font-bold text-brand-darkblue">rôle clé dans la qualité de notre accompagnement</span>. Présente au quotidien, elle assure la coordination, le suivi des process et le respect des standards élevés que nous nous imposons.
+                </p>
+                <p className="text-sm">
+                  Elle garantit la fluidité des échanges, la rigueur organisationnelle et le bon déroulement de chaque étape du parcours étudiant.
+                </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>

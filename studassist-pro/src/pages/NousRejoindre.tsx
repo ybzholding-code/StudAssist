@@ -364,7 +364,7 @@ export default function NousRejoindre() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text left */}
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-2 lg:order-1 text-left">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-darkblue uppercase tracking-tighter leading-tight mb-8">
                 Des profils exigeants, <br /><span className="text-brand-red">alignés avec notre vision</span>
               </h2>
@@ -387,7 +387,7 @@ export default function NousRejoindre() {
               </div>
             </motion.div>
             {/* Image right */}
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative flex">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-1 lg:order-2 relative flex">
               <MediaFrameFloaters />
               <div className="relative w-full rounded-[3rem] overflow-hidden shadow-[0_30px_80px_rgba(17,29,74,0.15)] border-[8px] border-white z-10">
                 <img

@@ -69,76 +69,76 @@ export default function PrepaSciences() {
         {
           title: "Comprendre les exigences du concours Sciences Po (IEP)",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Dissertation de questions contemporaines</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Dissertation de questions contemporaines</span>,
             <span>Les candidats doivent traiter un sujet portant sur les grandes thématiques du programme (ex : le corps, l'alimentation, les frontières, l'environnement, le pouvoir…). Attendus :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>construire une <strong className="font-extrabold text-brand-darkblue">réflexion structurée</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>mobiliser des <strong className="font-extrabold text-brand-darkblue">références variées</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>développer une <strong className="font-extrabold text-brand-darkblue">argumentation claire et nuancée</strong>.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>construire une <strong className="font-semibold text-brand-darkblue">réflexion structurée</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>mobiliser des <strong className="font-semibold text-brand-darkblue">références variées</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>développer une <strong className="font-semibold text-brand-darkblue">argumentation claire et nuancée</strong>.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Épreuve d'histoire</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Épreuve d'histoire</span>,
             <span>Elle repose généralement sur un programme précis (ex : monde contemporain depuis 1945). Attendus :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>maîtrise des <strong className="font-extrabold text-brand-darkblue">repères chronologiques</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>compréhension des <strong className="font-extrabold text-brand-darkblue">grands enjeux géopolitiques</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>capacité d'<strong className="font-extrabold text-brand-darkblue">analyse historique</strong>.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>maîtrise des <strong className="font-semibold text-brand-darkblue">repères chronologiques</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>compréhension des <strong className="font-semibold text-brand-darkblue">grands enjeux géopolitiques</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>capacité d'<strong className="font-semibold text-brand-darkblue">analyse historique</strong>.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Épreuve de langue (anglais le plus souvent)</span>,
-            <span>Compréhension de texte, expression écrite, parfois traduction. Attendus : démontrer un niveau <strong className="font-extrabold text-brand-darkblue">solide, structuré et précis</strong>.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une bibliographie essentielle à maîtriser</span>,
-            <span>La réussite au concours repose en grande partie sur la capacité à <strong className="font-extrabold text-brand-darkblue">mobiliser des références pertinentes</strong>. Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous guidons les élèves dans la construction d'une <strong className="font-extrabold text-brand-darkblue">bibliographie stratégique</strong>, adaptée au niveau et aux objectifs. Elle inclut notamment :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Épreuve de langue (anglais le plus souvent)</span>,
+            <span>Compréhension de texte, expression écrite, parfois traduction. Attendus : démontrer un niveau <strong className="font-semibold text-brand-darkblue">solide, structuré et précis</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une bibliographie essentielle à maîtriser</span>,
+            <span>La réussite au concours repose en grande partie sur la capacité à <strong className="font-semibold text-brand-darkblue">mobiliser des références pertinentes</strong>. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous guidons les élèves dans la construction d'une <strong className="font-semibold text-brand-darkblue">bibliographie stratégique</strong>, adaptée au niveau et aux objectifs. Elle inclut notamment :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des ouvrages de référence en sciences sociales ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des essais contemporains ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des lectures d'actualité (revues, presse internationale) ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des contenus sélectionnés pour enrichir la culture générale.</span></li>
             </ul>,
-            <span>L'objectif n'est pas de lire beaucoup, mais de <strong className="font-extrabold text-brand-darkblue">lire intelligemment et d'exploiter efficacement ses connaissances</strong>.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un enjeu stratégique pour l'orientation</span>,
-            <span>Les IEP offrent de nombreuses opportunités de <strong className="font-extrabold text-brand-darkblue">mobilité internationale</strong> et ouvrent l'accès à des parcours académiques particulièrement diversifiés, dans les domaines des affaires publiques, des relations internationales, de l'économie, du droit et du journalisme. La sélectivité du concours impose une préparation exigeante et anticipée, que nous pouvons compléter par un <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link>.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Quel profil pour réussir ?</span>,
+            <span>L'objectif n'est pas de lire beaucoup, mais de <strong className="font-semibold text-brand-darkblue">lire intelligemment et d'exploiter efficacement ses connaissances</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un enjeu stratégique pour l'orientation</span>,
+            <span>Les IEP offrent de nombreuses opportunités de <strong className="font-semibold text-brand-darkblue">mobilité internationale</strong> et ouvrent l'accès à des parcours académiques particulièrement diversifiés, dans les domaines des affaires publiques, des relations internationales, de l'économie, du droit et du journalisme. La sélectivité du concours impose une préparation exigeante et anticipée, que nous pouvons compléter par un <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Quel profil pour réussir ?</span>,
             <span>Les élèves admis présentent généralement :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un <strong className="font-extrabold text-brand-darkblue">excellent niveau rédactionnel</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une forte <strong className="font-extrabold text-brand-darkblue">capacité d'analyse</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une bonne <strong className="font-extrabold text-brand-darkblue">culture générale</strong> ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un intérêt marqué pour l'<strong className="font-extrabold text-brand-darkblue">actualité</strong>.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un <strong className="font-semibold text-brand-darkblue">excellent niveau rédactionnel</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une forte <strong className="font-semibold text-brand-darkblue">capacité d'analyse</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>une bonne <strong className="font-semibold text-brand-darkblue">culture générale</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>un intérêt marqué pour l'<strong className="font-semibold text-brand-darkblue">actualité</strong>.</span></li>
             </ul>,
           ],
         },
         {
           title: "Une préparation progressive pour développer méthode, culture générale et esprit concours",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Quand commencer à se préparer ?</span>,
-            <span>La préparation au concours Sciences Po doit être <strong className="font-extrabold text-brand-darkblue">anticipée</strong>. Idéalement dès la classe de <strong className="font-extrabold text-brand-darkblue">Première</strong>, pour développer la culture générale, puis en <strong className="font-extrabold text-brand-darkblue">Terminale</strong>, pour s'entraîner intensivement aux épreuves.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation structurée et adaptée</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation exigeante et progressive. Les élèves sont accompagnés en <strong className="font-extrabold text-brand-darkblue">petits groupes de 4 maximum</strong>, permettant un suivi personnalisé et une progression rapide. Nous favorisons une <strong className="font-extrabold text-brand-darkblue">dynamique de groupe intellectuelle</strong>, basée sur le débat, l'échange et l'émulation. Notre accompagnement combine :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Quand commencer à se préparer ?</span>,
+            <span>La préparation au concours Sciences Po doit être <strong className="font-semibold text-brand-darkblue">anticipée</strong>. Idéalement dès la classe de <strong className="font-semibold text-brand-darkblue">Première</strong>, pour développer la culture générale, puis en <strong className="font-semibold text-brand-darkblue">Terminale</strong>, pour s'entraîner intensivement aux épreuves.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation structurée et adaptée</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous proposons une préparation exigeante et progressive. Les élèves sont accompagnés en <strong className="font-semibold text-brand-darkblue">petits groupes de 4 maximum</strong>, permettant un suivi personnalisé et une progression rapide. Nous favorisons une <strong className="font-semibold text-brand-darkblue">dynamique de groupe intellectuelle</strong>, basée sur le débat, l'échange et l'émulation. Notre accompagnement combine :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-extrabold text-brand-darkblue">séances hebdomadaires</strong>, pour développer les compétences analytiques et rédactionnelles sur le long terme ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-extrabold text-brand-darkblue">stages intensifs</strong>, pour s'entraîner en conditions réelles.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-semibold text-brand-darkblue">séances hebdomadaires</strong>, pour développer les compétences analytiques et rédactionnelles sur le long terme ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <strong className="font-semibold text-brand-darkblue">stages intensifs</strong>, pour s'entraîner en conditions réelles.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Le contenu de notre préparation repose sur :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Le contenu de notre préparation repose sur :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des entraînements à la <strong className="font-extrabold text-brand-darkblue">dissertation</strong> ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des entraînements à la <strong className="font-semibold text-brand-darkblue">dissertation</strong> ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>la méthodologie de structuration des idées ;</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>l'analyse de sujets d'actualité ;</span></li>
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des entraînements réguliers et <strong className="font-extrabold text-brand-darkblue">concours blancs</strong>.</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des entraînements réguliers et <strong className="font-semibold text-brand-darkblue">concours blancs</strong>.</span></li>
             </ul>,
           ],
         },
         {
           title: "Un accompagnement expert pour réussir le concours et construire son dossier",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un véritable esprit concours</span>,
-            <span>Réussir Sciences Po nécessite de <strong className="font-extrabold text-brand-darkblue">se démarquer</strong>. Nous accompagnons les élèves dans le développement de leur <strong className="font-extrabold text-brand-darkblue">capacité à argumenter</strong>, dans la structuration de leur pensée, dans la <strong className="font-extrabold text-brand-darkblue">gestion du temps</strong> et dans la prise de position.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui se prolonge dans le temps</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous assurons un suivi dans la durée. Nous restons en contact avec nos élèves et restons disponibles jusqu'aux échéances. Notre <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link> permet également de renforcer le dossier Parcoursup grâce à un travail approfondi sur le <strong className="font-extrabold text-brand-darkblue">projet de formation motivé</strong>, les activités et centres d'intérêt ainsi que la cohérence globale de la candidature. Ces éléments jouent un <strong className="font-extrabold text-brand-darkblue">rôle déterminant</strong> dans l'évaluation des candidats, au-delà des seules performances aux épreuves écrites.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un véritable esprit concours</span>,
+            <span>Réussir Sciences Po nécessite de <strong className="font-semibold text-brand-darkblue">se démarquer</strong>. Nous accompagnons les élèves dans le développement de leur <strong className="font-semibold text-brand-darkblue">capacité à argumenter</strong>, dans la structuration de leur pensée, dans la <strong className="font-semibold text-brand-darkblue">gestion du temps</strong> et dans la prise de position.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui se prolonge dans le temps</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous assurons un suivi dans la durée. Nous restons en contact avec nos élèves et restons disponibles jusqu'aux échéances. Notre <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link> permet également de renforcer le dossier Parcoursup grâce à un travail approfondi sur le <strong className="font-semibold text-brand-darkblue">projet de formation motivé</strong>, les activités et centres d'intérêt ainsi que la cohérence globale de la candidature. Ces éléments jouent un <strong className="font-semibold text-brand-darkblue">rôle déterminant</strong> dans l'évaluation des candidats, au-delà des seules performances aux épreuves écrites.</span>,
           ],
         },
         {
           title: "À qui s'adresse la préparation du concours des IEP ?",
           paragraphs: [
-            <span>Cette préparation s'adresse aux élèves de <strong className="font-extrabold text-brand-darkblue">Première et de Terminale</strong> souhaitant intégrer un Institut d'Études Politiques et développer les compétences académiques, méthodologiques et intellectuelles attendues lors du concours. Elle est particulièrement adaptée aux élèves qui souhaitent :</span>,
+            <span>Cette préparation s'adresse aux élèves de <strong className="font-semibold text-brand-darkblue">Première et de Terminale</strong> souhaitant intégrer un Institut d'Études Politiques et développer les compétences académiques, méthodologiques et intellectuelles attendues lors du concours. Elle est particulièrement adaptée aux élèves qui souhaitent :</span>,
           ],
           bullets: [
             "Construire un projet d'études ambitieux dans les sciences politiques, les relations internationales, le droit, l'économie ou le journalisme ;",

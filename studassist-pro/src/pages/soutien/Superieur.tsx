@@ -67,33 +67,33 @@ export default function SoutienSuperieur() {
         {
           title: "Une approche personnalisée et ciblée pour un accompagnement individualisé",
           paragraphs: [
-            <span>Notre soutien scolaire post-bac repose sur une <strong className="font-extrabold text-brand-darkblue">approche personnalisée et ciblée</strong>, pensée pour répondre aux besoins spécifiques de chaque étudiant.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement 100 % individuel, en visioconférence</span>,
-            <span>Toutes nos séances sont proposées en <strong className="font-extrabold text-brand-darkblue">format individuel</strong>, à distance, permettant :</span>,
+            <span>Notre soutien scolaire post-bac repose sur une <strong className="font-semibold text-brand-darkblue">approche personnalisée et ciblée</strong>, pensée pour répondre aux besoins spécifiques de chaque étudiant.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement 100 % individuel, en visioconférence</span>,
+            <span>Toutes nos séances sont proposées en <strong className="font-semibold text-brand-darkblue">format individuel</strong>, à distance, permettant :</span>,
             <span>• Une flexibilité totale d'organisation</span>,
             <span>• Un suivi personnalisé</span>,
             <span>• Un travail en profondeur sur les difficultés propres à chaque étudiant</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un professeur adapté à chaque profil</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous sélectionnons le professeur <strong className="font-extrabold text-brand-darkblue">en fonction du parcours, de la filière et des besoins précis de l'étudiant</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un professeur adapté à chaque profil</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous sélectionnons le professeur <strong className="font-semibold text-brand-darkblue">en fonction du parcours, de la filière et des besoins précis de l'étudiant</strong>.</span>,
             <span>L'objectif est de créer un binôme pédagogique efficace afin de :</span>,
             <span>• Combler les lacunes identifiées</span>,
             <span>• Clarifier les notions complexes</span>,
             <span>• Structurer les méthodes de travail</span>,
-            <span>• Accompagner l'étudiant vers une <strong className="font-extrabold text-brand-darkblue">autonomie durable</strong></span>,
+            <span>• Accompagner l'étudiant vers une <strong className="font-semibold text-brand-darkblue">autonomie durable</strong></span>,
           ],
         },
         {
           title: "Une méthodologie centrée sur la compréhension et le coaching pour la réussite de l'année",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une approche centrée sur la compréhension et la méthode</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une approche centrée sur la compréhension et la méthode</span>,
             <span>Au-delà du contenu académique, notre accompagnement vise à transmettre :</span>,
-            <span>• Des <strong className="font-extrabold text-brand-darkblue">méthodes de travail adaptées au supérieur</strong></span>,
+            <span>• Des <strong className="font-semibold text-brand-darkblue">méthodes de travail adaptées au supérieur</strong></span>,
             <span>• Une meilleure organisation personnelle</span>,
             <span>• Des techniques de révision efficaces</span>,
             <span>• Une lecture stratégique des cours et des attentes des enseignants</span>,
-            <span>Cette approche permet à l'étudiant de <strong className="font-extrabold text-brand-darkblue">reprendre le contrôle de ses études</strong> et de progresser durablement.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un soutien pensé pour la réussite de l'année</span>,
-            <span>Chaque accompagnement débute par un <strong className="font-extrabold text-brand-darkblue">diagnostic rapide</strong> afin d'identifier :</span>,
+            <span>Cette approche permet à l'étudiant de <strong className="font-semibold text-brand-darkblue">reprendre le contrôle de ses études</strong> et de progresser durablement.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un soutien pensé pour la réussite de l'année</span>,
+            <span>Chaque accompagnement débute par un <strong className="font-semibold text-brand-darkblue">diagnostic rapide</strong> afin d'identifier :</span>,
             <span>• Les matières problématiques</span>,
             <span>• Les lacunes de compréhension</span>,
             <span>• Les difficultés méthodologiques</span>,
@@ -103,10 +103,10 @@ export default function SoutienSuperieur() {
         {
           title: "Une vision globale du parcours académique",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui inclut orientation et réorientation</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui inclut orientation et réorientation</span>,
             <span>La première année d'études supérieures est aussi, pour beaucoup d'étudiants, un temps de questionnement. Certains découvrent que la filière choisie ne correspond pas pleinement à leurs attentes, à leurs capacités ou à leur projet professionnel.</span>,
             <>
-              Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire post-bac peut être complété par un accompagnement en{" "}
+              Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, le soutien scolaire post-bac peut être complété par un accompagnement en{" "}
               <Link to="/orientation" className="text-brand-darkblue font-black underline underline-offset-2">orientation</Link> ou{" "}
               <Link to="/orientation/reorientation" className="text-brand-darkblue font-black underline underline-offset-2">réorientation</Link>, afin d'aider l'étudiant à :
             </>,
@@ -114,8 +114,8 @@ export default function SoutienSuperieur() {
             <span>• Clarifier ses aspirations</span>,
             <span>• Identifier des alternatives réalistes et cohérentes</span>,
             <span>• Construire un nouveau projet académique, au Maroc ou à l'international</span>,
-            <span>Cette approche permet de transformer une difficulté académique en <strong className="font-extrabold text-brand-darkblue">opportunité de repositionnement</strong>, dans une logique structurée et rassurante.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui prépare également les prochaines étapes du parcours académique</span>,
+            <span>Cette approche permet de transformer une difficulté académique en <strong className="font-semibold text-brand-darkblue">opportunité de repositionnement</strong>, dans une logique structurée et rassurante.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui prépare également les prochaines étapes du parcours académique</span>,
             <span>Pour certains étudiants, la première année post-bac ne constitue pas seulement un défi académique. Elle marque également le début d'une réflexion sur la suite de leur parcours : spécialisation, poursuite d'études, mobilité internationale ou admission en Master.</span>,
             <span>Chez STUDASSIST, notre accompagnement peut évoluer au fil des besoins de l'étudiant afin de l'aider à préparer sereinement les prochaines étapes de son projet académique.</span>,
             <span>Selon les objectifs envisagés, nous pouvons notamment accompagner les étudiants dans :</span>,

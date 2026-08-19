@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import OrientationLevelPage from "../../components/OrientationLevelPage";
 import { waLink } from "../../lib/utils";
 
@@ -62,34 +63,52 @@ export default function PrepaConcoursSesameAcces() {
         ],
       }}
 
-      sections={[
+            sections={[
         {
           title: "Une préparation ciblée avec une méthodologie orientée performance",
           paragraphs: [
-            "Un enjeu stratégique pour l'orientation — Les résultats obtenus à ces concours jouent un rôle déterminant dans l'accès aux écoles de commerce. Ils s'inscrivent dans une évaluation globale du profil de l'élève, incluant le dossier académique et les entretiens de motivation pour lesquels nos candidats peuvent être aidés à travers notre accompagnement en orientation. Une préparation complète et rigoureuse permet non seulement de réussir les épreuves, mais aussi de renforcer la cohérence du projet d'orientation.",
-            "Une préparation intensive et ciblée — Chez STUDASSIST, nous organisons des sessions intensives, principalement pendant les vacances scolaires, afin de permettre aux élèves de se concentrer pleinement sur leur préparation. Les groupes sont limités à 8 élèves maximum, garantissant un encadrement de qualité et une progression rapide. Les plannings sont adaptés en fonction des échéances et des disponibilités de nos élèves.",
-            "Une méthodologie orientée performance — Notre préparation repose sur une approche concrète et efficace : travail sur les typologies d'épreuves, exercices d'application ciblés, entraînements progressifs et concours blancs en conditions réelles. Cette méthode permet de développer des automatismes et d'optimiser la gestion du temps.",
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un enjeu stratégique pour l'orientation</span>,
+            <span>Les résultats obtenus à ces concours jouent un rôle déterminant dans l'accès aux écoles de commerce. Ils s'inscrivent dans une évaluation globale du profil de l'élève, incluant le dossier académique et les entretiens de motivation pour lesquels nos candidats peuvent être aidés à travers notre <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">accompagnement en orientation</Link>. Une préparation complète et rigoureuse permet non seulement de réussir les épreuves, mais aussi de renforcer la cohérence du projet d'orientation.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une préparation intensive et ciblée</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous organisons des <strong className="font-semibold text-brand-darkblue">sessions intensives</strong>, principalement pendant les vacances scolaires, afin de permettre aux élèves de se concentrer pleinement sur leur préparation. Les groupes sont limités à <strong className="font-semibold text-brand-darkblue">8 élèves maximum</strong>, garantissant un encadrement de qualité et une progression rapide. Les plannings sont adaptés en fonction des échéances et des disponibilités de nos élèves.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une méthodologie orientée performance</span>,
+            <span>Notre préparation repose sur une approche concrète et efficace :</span>,
+            <ul className="space-y-2 mt-2 ml-1">
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>travail sur les typologies d'épreuves ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>exercices d'application ciblés ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>entraînements progressifs ;</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span><strong className="font-semibold text-brand-darkblue">concours blancs en conditions réelles</strong>.</span></li>
+            </ul>,
+            <span>Cette méthode permet de développer des automatismes et d'optimiser la gestion du temps.</span>,
           ],
         },
         {
           title: "L'approche de STUDASSIST dans la préparation de ces concours",
           paragraphs: [
-            "Développer un véritable esprit concours — Au-delà de la maîtrise des exercices types, nous accompagnons les élèves dans le développement d'un véritable esprit concours qui leur servira pour toute la suite de leur cursus supérieur. Réussir ces épreuves ne consiste pas uniquement à savoir répondre aux questions, mais à être capable de se démarquer dans un environnement compétitif. Nous travaillons ainsi sur des dimensions essentielles telles que la gestion du temps, la gestion du stress, les stratégies de réponse et la capacité à prioriser pour optimiser son score. L'objectif est de permettre à chaque élève de performer face aux autres candidats, et non simplement de réussir l'épreuve.",
-            "Une dynamique de groupe stimulante — Les sessions en petits groupes permettent de créer une véritable dynamique collective, dans laquelle les élèves progressent ensemble. Nous encourageons une approche collaborative, où les élèves échangent, se challengent et s'améliorent mutuellement, favorisant ainsi une progression plus rapide et durable.",
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Développer un véritable esprit concours</span>,
+            <span>Au-delà de la maîtrise des exercices types, nous accompagnons les élèves dans le développement d'un <strong className="font-semibold text-brand-darkblue">véritable esprit concours</strong> qui leur servira pour toute la suite de leur cursus supérieur. Réussir ces épreuves ne consiste pas uniquement à savoir répondre aux questions, mais à être capable de <strong className="font-semibold text-brand-darkblue">se démarquer dans un environnement compétitif</strong>. Nous travaillons ainsi sur des dimensions essentielles telles que la gestion du temps, la gestion du stress, les stratégies de réponse et la capacité à prioriser pour optimiser son score. L'objectif est de permettre à chaque élève de performer face aux autres candidats, et non simplement de réussir l'épreuve.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une dynamique de groupe stimulante</span>,
+            <span>Les sessions en petits groupes permettent de créer une <strong className="font-semibold text-brand-darkblue">véritable dynamique collective</strong>, dans laquelle les élèves progressent ensemble. Nous encourageons une approche collaborative, où les élèves échangent, se challengent et s'améliorent mutuellement, favorisant ainsi une progression plus rapide et durable.</span>,
           ],
         },
         {
           title: "Un accompagnement en continu par des enseignants experts des épreuves",
           paragraphs: [
-            "Un accompagnement qui se prolonge dans le temps — Chez STUDASSIST, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus d'entraînement complémentaires et restons disponibles pour les accompagner jusqu'aux échéances. Les élèves peuvent également revenir s'entraîner à tout moment dans notre espace, afin de continuer à progresser dans un cadre structuré et stimulant.",
-            "Un encadrement par des enseignants expérimentés — Les élèves sont accompagnés par des enseignants spécialisés, maîtrisant parfaitement les exigences des concours SESAME et ACCÈS. Leur accompagnement permet d'apporter des explications claires, des méthodes efficaces et un suivi personnalisé.",
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un accompagnement qui se prolonge dans le temps</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, la préparation ne s'arrête pas à la fin des sessions. Nous restons en contact avec nos élèves, leur fournissons des contenus d'entraînement complémentaires et restons disponibles pour les accompagner jusqu'aux échéances. Les élèves peuvent également revenir s'entraîner à tout moment dans notre espace, afin de continuer à progresser dans un cadre structuré et stimulant.</span>,
+
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un encadrement par des enseignants expérimentés</span>,
+            <span>Les élèves sont accompagnés par des enseignants spécialisés, maîtrisant parfaitement les exigences des concours SESAME et ACCÈS. Leur accompagnement permet d'apporter des explications claires, des méthodes efficaces et un suivi personnalisé.</span>,
           ],
         },
         {
           title: "À qui s'adresse la préparation des concours SESAME & ACCÈS ?",
           paragraphs: [
-            "Les concours SESAME et ACCÈS ne sont pas réservés aux élèves excellents en mathématiques ou disposant d'un parcours particulier. Ils récompensent avant tout les candidats capables de mobiliser des compétences variées : logique, analyse, rapidité, maîtrise de l'anglais et méthodologie. Une préparation adaptée permet souvent de faire une différence significative dans les résultats obtenus.",
-            "Notre préparation s'adresse aux élèves de Terminale souhaitant intégrer une école de commerce post-bac en France via les concours SESAME ou ACCÈS.",
+            <span>Les concours SESAME et ACCÈS ne sont pas réservés aux élèves excellents en mathématiques ou disposant d'un parcours particulier. Ils récompensent avant tout les candidats capables de mobiliser des compétences variées : logique, analyse, rapidité, maîtrise de l'anglais et méthodologie. Une préparation adaptée permet souvent de faire une différence significative dans les résultats obtenus.</span>,
+            <span>Notre préparation s'adresse aux élèves de Terminale souhaitant intégrer une école de commerce post-bac en France via les concours SESAME ou ACCÈS. Elle est particulièrement adaptée aux élèves qui souhaitent :</span>,
           ],
           bullets: [
             "Intégrer des écoles telles que l'ESSEC Global BBA, l'EM Lyon, l'IESEG, l'ESSCA, KEDGE, SKEMA ou NEOMA",

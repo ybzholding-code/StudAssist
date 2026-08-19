@@ -595,11 +595,11 @@ export default function Contact() {
 
               <div className="flex flex-col sm:flex-row items-stretch gap-3 shrink-0">
                 <a
-                  href="tel:0669495996"
+                  href="tel:+212669495996"
                   className="group bg-brand-teal text-white px-7 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[11px] hover:bg-brand-darkblue transition-all shadow-xl shadow-brand-teal/20 inline-flex items-center justify-center gap-3 active:scale-95"
                 >
                   <Phone size={18} />
-                  <span>0669-495996</span>
+                  <span>+212 669-495996</span>
                 </a>
                 <a
                   href={waLink("Bonjour, je souhaite avoir plus d'informations sur les services de STUDASSIST.")}

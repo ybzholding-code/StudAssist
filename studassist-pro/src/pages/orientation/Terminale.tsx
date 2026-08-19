@@ -51,10 +51,10 @@ export default function OrientationTerminale() {
         {
           title: "Un diagnostic approfondi et un profiling global permettant de construire d'un projet post-bac sur mesure",
           paragraphs: [
-            <span>Chaque accompagnement débute par un <strong className="font-extrabold text-brand-darkblue">entretien familial initial</strong>, permettant d'aligner visions et objectifs, de recueillir les attentes des parents et d'écouter les aspirations de l'élève.</span>,
-            <span>Nous poursuivons ensuite avec des <strong className="font-extrabold text-brand-darkblue">entretiens individuels de profiling</strong>, durant lesquels nous analysons le parcours académique, les méthodes de travail, les expériences extrascolaires, les centres d'intérêt, la personnalité et les ambitions du futur bachelier.</span>,
-            <span>Ce travail approfondi nous permet de construire un <strong className="font-extrabold text-brand-darkblue">profil global de l'élève</strong>, allant bien au-delà des notes et de constituer le socle de la stratégie d'orientation : il nous permet de structurer et valoriser le dossier, de mettre en avant les forces distinctives de l'élève et de bâtir une candidature attractive auprès des établissements les plus exigeants.</span>,
-            <strong className="block text-brand-darkblue font-extrabold text-sm mt-6 mb-2 uppercase tracking-tight">Construction d'un projet post-bac sur mesure</strong>,
+            <span>Chaque accompagnement débute par un <strong className="font-semibold text-brand-darkblue">entretien familial initial</strong>, permettant d'aligner visions et objectifs, de recueillir les attentes des parents et d'écouter les aspirations de l'élève.</span>,
+            <span>Nous poursuivons ensuite avec des <strong className="font-semibold text-brand-darkblue">entretiens individuels de profiling</strong>, durant lesquels nous analysons le parcours académique, les méthodes de travail, les expériences extrascolaires, les centres d'intérêt, la personnalité et les ambitions du futur bachelier.</span>,
+            <span>Ce travail approfondi nous permet de construire un <strong className="font-semibold text-brand-darkblue">profil global de l'élève</strong>, allant bien au-delà des notes et de constituer le socle de la stratégie d'orientation : il nous permet de structurer et valoriser le dossier, de mettre en avant les forces distinctives de l'élève et de bâtir une candidature attractive auprès des établissements les plus exigeants.</span>,
+            <strong className="block text-brand-darkblue font-semibold text-sm mt-6 mb-2 uppercase tracking-tight">Construction d'un projet post-bac sur mesure</strong>,
             <span>À partir du profiling, nous accompagnons l'élève dans :</span>,
           ],
           bullets: [
@@ -68,14 +68,14 @@ export default function OrientationTerminale() {
         {
           title: "Un accompagnement académique et administratif ouvert sur l'international et aligné avec les objectifs d'orientation",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Alignement du niveau réel de l'élève avec les ambitions de son projet post-bac</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Alignement du niveau réel de l'élève avec les ambitions de son projet post-bac</span>,
             <span>Lorsque nécessaire, nous intégrons directement au parcours :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>du <Link to="/soutien-scolaire" className="text-brand-darkblue font-black underline underline-offset-2">soutien scolaire ciblé</Link> pour renforcer certaines matières clés,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <Link to="/prepas-concours" className="text-brand-darkblue font-black underline underline-offset-2">préparations aux concours</Link> pour les filières sélectives,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>des <Link to="/certifications" className="text-brand-darkblue font-black underline underline-offset-2">préparations aux certifications de langues</Link>, anticipées selon les exigences des établissements visés.</span></li>
             </ul>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Accompagnement aux candidatures et aux admissions</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Accompagnement aux candidatures et aux admissions</span>,
             <span>Nous accompagnons nos élèves à chaque étape :</span>,
             <ul className="space-y-2 mt-2 ml-1">
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>constitution et optimisation des dossiers,</span></li>
@@ -85,8 +85,8 @@ export default function OrientationTerminale() {
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>préparation des entretiens d'admission via des mises en situations et des simulations filmées,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>suivi des réponses de candidatures et ajustement de la stratégie si nécessaire afin de sécuriser plusieurs options.</span></li>
             </ul>,
-            <strong className="block text-brand-darkblue font-extrabold text-sm mt-6 mb-2 uppercase tracking-tight">Une expertise internationale éprouvée</strong>,
-            <span>STUDASSIST accompagne les projets d'études à l'étranger vers <strong className="font-extrabold text-brand-darkblue">plus de 25 destinations dans le monde</strong>. Fort de <strong className="font-extrabold text-brand-darkblue">7 années d'expérience</strong>, nous maîtrisons l'ensemble des processus de candidatures, sur plateformes officielles comme hors plateformes.</span>,
+            <strong className="block text-brand-darkblue font-semibold text-sm mt-6 mb-2 uppercase tracking-tight">Une expertise internationale éprouvée</strong>,
+            <span>STUDASSIST accompagne les projets d'études à l'étranger vers <strong className="font-semibold text-brand-darkblue">plus de 25 destinations dans le monde</strong>. Fort de <strong className="font-semibold text-brand-darkblue">7 années d'expérience</strong>, nous maîtrisons l'ensemble des processus de candidatures, sur plateformes officielles comme hors plateformes.</span>,
             <>
               Notre accompagnement international inclut la définition du projet d'orientation et le choix des destinations, la gestion et le suivi des candidatures, les{" "}
               <Link to="/admin-logement" className="text-brand-darkblue font-black underline underline-offset-2">démarches administratives</Link>{" "}
@@ -98,23 +98,23 @@ export default function OrientationTerminale() {
         {
           title: "Un tiers de confiance entre l'élève et sa famille pensé afin de libérer du temps pour l'essentiel",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un tiers de confiance entre l'élève et ses parents</span>,
-            <span>L'adolescence est souvent une période sensible, où les choix d'orientation peuvent susciter incompréhensions ou tensions. STUDASSIST agit comme un <strong className="font-extrabold text-brand-darkblue">tiers de confiance</strong>, facilitant un dialogue serein entre l'élève et ses parents.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un tiers de confiance entre l'élève et ses parents</span>,
+            <span>L'adolescence est souvent une période sensible, où les choix d'orientation peuvent susciter incompréhensions ou tensions. STUDASSIST agit comme un <strong className="font-semibold text-brand-darkblue">tiers de confiance</strong>, facilitant un dialogue serein entre l'élève et ses parents.</span>,
 
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement pensé aussi pour les parents</span>,
-            <span>L'orientation post-bac est aujourd'hui un parcours complexe, marqué par une multiplicité de formations, de procédures et d'enjeux académiques. Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, notre accompagnement s'adresse également aux parents, qui bénéficient d'un cadre structuré pour être <strong className="font-extrabold text-brand-darkblue">informés, guidés et rassurés</strong> à chaque étape. Nous apportons une lecture claire des parcours possibles, des exigences des établissements et des réalités du marché des études supérieures, afin de permettre aux familles de prendre des décisions sereines, fondées sur des éléments concrets et une vision long terme.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement pensé aussi pour les parents</span>,
+            <span>L'orientation post-bac est aujourd'hui un parcours complexe, marqué par une multiplicité de formations, de procédures et d'enjeux académiques. Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, notre accompagnement s'adresse également aux parents, qui bénéficient d'un cadre structuré pour être <strong className="font-semibold text-brand-darkblue">informés, guidés et rassurés</strong> à chaque étape. Nous apportons une lecture claire des parcours possibles, des exigences des établissements et des réalités du marché des études supérieures, afin de permettre aux familles de prendre des décisions sereines, fondées sur des éléments concrets et une vision long terme.</span>,
 
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui libère du temps pour l'essentiel</span>,
-            <span>En prenant en charge l'ensemble du processus d'orientation et de candidatures, STUDASSIST représente un <strong className="font-extrabold text-brand-darkblue">gain de temps considérable</strong> pour les familles. L'élève peut ainsi se concentrer pleinement sur ses priorités académiques — <strong className="font-extrabold text-brand-darkblue">préparation du baccalauréat, concours, certifications et échéances importantes</strong> — tandis que les parents sont libérés d'une charge administrative lourde et chronophage.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement qui libère du temps pour l'essentiel</span>,
+            <span>En prenant en charge l'ensemble du processus d'orientation et de candidatures, STUDASSIST représente un <strong className="font-semibold text-brand-darkblue">gain de temps considérable</strong> pour les familles. L'élève peut ainsi se concentrer pleinement sur ses priorités académiques — <strong className="font-semibold text-brand-darkblue">préparation du baccalauréat, concours, certifications et échéances importantes</strong> — tandis que les parents sont libérés d'une charge administrative lourde et chronophage.</span>,
 
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement continu et transparent</span>,
-            <span>Tout au long du parcours, nous restons en contact constant avec l'élève et sa famille. Les documents, rendez-vous et échanges sont centralisés dans un <strong className="font-extrabold text-brand-darkblue">espace de communication dédié</strong>, garantissant transparence, réactivité et visibilité complète pour toutes les parties.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement continu et transparent</span>,
+            <span>Tout au long du parcours, nous restons en contact constant avec l'élève et sa famille. Les documents, rendez-vous et échanges sont centralisés dans un <strong className="font-semibold text-brand-darkblue">espace de communication dédié</strong>, garantissant transparence, réactivité et visibilité complète pour toutes les parties.</span>,
           ],
         },
         {
           title: "À qui s'adresse l'orientation en Terminale ?",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Aux élèves de Terminale qui :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Aux élèves de Terminale qui :</span>,
           ],
           bullets: [
             "hésitent sur leur avenir post-bac,",
@@ -124,9 +124,9 @@ export default function OrientationTerminale() {
             "souhaitent sécuriser leur parcours académique.",
           ],
           extraParagraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Aux parents qui :</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Aux parents qui :</span>,
             <ul className="space-y-2 mt-2 ml-1">
-              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>souhaitent être <strong className="font-extrabold text-brand-darkblue">encadrés, informés et rassurés</strong> face à la complexité des parcours post-bac,</span></li>
+              <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>souhaitent être <strong className="font-semibold text-brand-darkblue">encadrés, informés et rassurés</strong> face à la complexité des parcours post-bac,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>recherchent un cadre structuré pour accompagner leur enfant dans ses choix,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>veulent s'appuyer sur une expertise fiable pour prendre des décisions éclairées,</span></li>
               <li className="flex gap-2.5 items-start"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" /><span>souhaitent gagner du temps et réduire la charge mentale liée aux démarches d'orientation et de candidatures.</span></li>

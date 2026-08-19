@@ -61,14 +61,14 @@ export default function PrepasBacGrandOral() {
         {
           title: "Le Grand Oral, qu'est-ce que c'est ?",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Comprendre les attendus du Grand Oral</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Comprendre les attendus du Grand Oral</span>,
             <span>Le Grand Oral repose sur la présentation d'une question préparée par l'élève, en lien avec ses spécialités.</span>,
             <span>L'épreuve se déroule en trois temps :</span>,
             <span>• Une présentation argumentée</span>,
             <span>• Un échange avec le jury</span>,
             <>• Une discussion autour du <Link to="/orientation/terminale" className="text-brand-darkblue font-black underline underline-offset-2">projet d'orientation</Link></>,
             <span>Au-delà du contenu, le jury évalue la clarté du discours, la capacité à argumenter, la posture et la qualité de l'expression.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une épreuve au cœur de l'orientation</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Une épreuve au cœur de l'orientation</span>,
             <span>Le Grand Oral est directement lié au projet d'avenir de l'élève. Il permet de mettre en valeur ses centres d'intérêt, sa capacité de réflexion et la cohérence de son parcours.</span>,
             <span>C'est une opportunité unique de démontrer sa capacité à prendre du recul, la pertinence de son projet et sa maturité intellectuelle.</span>,
             <span>Ces compétences sont particulièrement valorisées dans les entretiens d'admission, notamment pour les écoles de commerce, les universités internationales ou les formations sélectives.</span>,
@@ -77,12 +77,12 @@ export default function PrepasBacGrandOral() {
         {
           title: "L'approche STUDASSIST dans la préparation du Grand Oral",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une compétence clé pour l'avenir et l'opportunité unique de se démarquer</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Une compétence clé pour l'avenir et l'opportunité unique de se démarquer</span>,
             <span>Au-delà du Baccalauréat, le Grand Oral développe des compétences essentielles : prise de parole en public, structuration de la pensée, et capacité à convaincre. Ces compétences seront déterminantes dans les études supérieures et la vie professionnelle.</span>,
             <span>Bien préparé, le Grand Oral devient un véritable avantage. Il permet à l'élève de sortir du cadre purement académique pour montrer sa personnalité, son engagement et sa capacité à défendre ses idées.</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous transformons cette épreuve en <strong className="font-extrabold text-brand-darkblue">levier de différenciation</strong>.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Développer l'aisance à l'oral et la capacité à convaincre</span>,
-            <span>Chez <strong className="font-extrabold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves dans le choix de leurs questions et la construction de problématiques pertinentes. Nous les aidons à structurer un discours clair et cohérent, avec une attention particulière portée à l'introduction, aux transitions et à la conclusion.</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous transformons cette épreuve en <strong className="font-semibold text-brand-darkblue">levier de différenciation</strong>.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Développer l'aisance à l'oral et la capacité à convaincre</span>,
+            <span>Chez <strong className="font-semibold text-brand-darkblue">STUDASSIST</strong>, nous accompagnons les élèves dans le choix de leurs questions et la construction de problématiques pertinentes. Nous les aidons à structurer un discours clair et cohérent, avec une attention particulière portée à l'introduction, aux transitions et à la conclusion.</span>,
             <span>Nous travaillons également l'aisance à l'oral : posture, gestion du stress et qualité d'expression. Des simulations régulières permettent de progresser rapidement et de gagner en confiance.</span>,
             <span>Enfin, les élèves sont préparés à l'échange avec le jury, afin de défendre leurs idées avec précision, s'adapter aux questions et développer une argumentation convaincante.</span>,
           ],
@@ -90,10 +90,10 @@ export default function PrepasBacGrandOral() {
         {
           title: "Une préparation adaptée pour chaque profil et encadrée par des enseignants experts",
           paragraphs: [
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un encadrement personnalisé et exigeant</span>,
-            <span>Les élèves sont accompagnés <strong className="font-extrabold text-brand-darkblue">exclusivement en format individuel</strong>, en présentiel ou à distance, afin de garantir un suivi précis et entièrement adapté à leur profil.</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-2 mb-2 uppercase tracking-tight">Un encadrement personnalisé et exigeant</span>,
+            <span>Les élèves sont accompagnés <strong className="font-semibold text-brand-darkblue">exclusivement en format individuel</strong>, en présentiel ou à distance, afin de garantir un suivi précis et entièrement adapté à leur profil.</span>,
             <span>Ce format permet un travail approfondi sur la prise de parole, des retours personnalisés à chaque étape et une progression rapide, en phase avec les exigences de l'épreuve.</span>,
-            <span className="block font-bold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement assuré par des enseignants experts</span>,
+            <span className="block font-semibold text-brand-darkblue text-[15px] mt-6 mb-2 uppercase tracking-tight">Un accompagnement assuré par des enseignants experts</span>,
             <span>Les élèves sont accompagnés par des professeurs maîtrisant parfaitement les attentes et les critères d'évaluation du Grand Oral.</span>,
             <span>Ils guident les élèves dans le choix de leurs questions, la structuration de leur présentation, la préparation des échanges avec le jury et le développement de leur aisance à l'oral.</span>,
             <span>Leur expertise permet d'apporter des conseils concrets, des retours personnalisés et un niveau d'exigence adapté aux ambitions de chaque élève.</span>,

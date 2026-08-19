@@ -134,7 +134,7 @@ export default function Certifications() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative order-2 lg:order-1 flex justify-center w-full">
+            <div className="relative order-1 lg:order-1 flex justify-center w-full">
               <div className="relative max-w-[540px] w-full">
                 <MediaFrameFloaters />
                 <div className="relative z-20 bg-[#fcfcfc] p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 transform -rotate-2">
@@ -150,7 +150,7 @@ export default function Certifications() {
               </div>
             </div>
 
-            <div className="space-y-6 order-1 lg:order-2 text-center lg:text-left">
+            <div className="space-y-6 order-2 lg:order-2 text-center lg:text-left">
               <p className="text-gray-500 text-base lg:text-lg leading-relaxed font-medium">
                 Les certifications de langues sont aujourd'hui devenues un élément incontournable de nombreux projets académiques et internationaux. Elles permettent de démontrer officiellement son niveau linguistique et constituent souvent une condition d'admission dans les universités, grandes écoles et programmes internationaux.
               </p>
