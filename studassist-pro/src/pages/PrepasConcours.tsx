@@ -67,7 +67,6 @@ const programmeGroups = [
         description: "Préparer les concours d'accès aux grandes écoles de commerce marocaines.",
         link: "/prepas-concours/encg-iscae",
       },
-      
     ],
   },
   {
