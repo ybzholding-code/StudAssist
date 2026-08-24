@@ -568,12 +568,12 @@ export default function NousRejoindre() {
                       <div className="space-y-6">
                         <div>
                           <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.domaines ? 'text-red-500' : 'text-gray-400'}`}>Domaine(s) d'expertise(s) *</label>
-                          <textarea required rows={2} value={domaines} onChange={e => { setDomaines(e.target.value); setFieldErrors(fe => ({ ...fe, domaines: '' })); }} placeholder="Indiquez vos domaines de prédilection. Ex : Orientation scolaire, admissions en Angleterre, Processus Etudes en France,...etc." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.domaines ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                          <textarea required rows={2} value={domaines} onChange={e => { setDomaines(e.target.value); setFieldErrors(fe => ({ ...fe, domaines: '' })); }} placeholder="Indiquez vos domaines de prédilection. Ex : Orientation scolaire, admissions en Angleterre, Processus Etudes en France,...etc." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 min-h-[130px] sm:min-h-0 ${fieldErrors.domaines ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`}/>
                           {fieldErrors.domaines && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.domaines}</p>}
                         </div>
                         <div>
                           <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.experienceDetail ? 'text-red-500' : 'text-gray-400'}`}>Expérience *</label>
-                          <textarea required rows={3} value={experienceDetail} onChange={e => { setExperienceDetail(e.target.value); setFieldErrors(fe => ({ ...fe, experienceDetail: '' })); }} placeholder="Décrivez brièvement votre expérience dans ce domaine et sa durée" className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.experienceDetail ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                          <textarea required rows={3} value={experienceDetail} onChange={e => { setExperienceDetail(e.target.value); setFieldErrors(fe => ({ ...fe, experienceDetail: '' })); }} placeholder="Décrivez brièvement votre expérience dans ce domaine et sa durée" className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 min-h-[110px] sm:min-h-0 ${fieldErrors.experienceDetail ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
                           {fieldErrors.experienceDetail && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.experienceDetail}</p>}
                         </div>
                       </div>
@@ -584,7 +584,7 @@ export default function NousRejoindre() {
                       <div className="space-y-6">
                         <div>
                           <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.fonctionDomaine ? 'text-red-500' : 'text-gray-400'}`}>Fonction / Domaine *</label>
-                          <textarea required rows={2} value={fonctionDomaine} onChange={e => { setFonctionDomaine(e.target.value); setFieldErrors(fe => ({ ...fe, fonctionDomaine: '' })); }} placeholder="Indiquez vos domaines de prédilection. Ex : coordination d'équipe, administratif, relation client, gestion commerciale, comptabilité, contrôle de gestion, finance, Marketing, communication ... Etc." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.fonctionDomaine ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                          <textarea required rows={2} value={fonctionDomaine} onChange={e => { setFonctionDomaine(e.target.value); setFieldErrors(fe => ({ ...fe, fonctionDomaine: '' })); }} placeholder="Indiquez vos domaines de prédilection. Ex : coordination d'équipe, administratif, relation client, gestion commerciale, comptabilité, contrôle de gestion, finance, Marketing, communication ... Etc." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 min-h-[170px] lg:min-h-0 ${fieldErrors.fonctionDomaine ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
                           {fieldErrors.fonctionDomaine && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.fonctionDomaine}</p>}
                         </div>
                         <div>
@@ -645,12 +645,12 @@ export default function NousRejoindre() {
                   <div className="space-y-6">
                     <div>
                       <label className={`text-[11px] font-bold tracking-[0.15em] uppercase mb-2 block ${fieldErrors.motivation ? 'text-red-500' : 'text-gray-400'}`}>Pourquoi souhaitez-vous rejoindre STUDASSIST ? *</label>
-                      <textarea required rows={4} value={motivation} onChange={e => { setMotivation(e.target.value); setFieldErrors(fe => ({ ...fe, motivation: '' })); }} placeholder="Expliquez brièvement votre motivation et ce que vous pouvez apporter à notre équipe." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 ${fieldErrors.motivation ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`} />
+                      <textarea required rows={4} value={motivation} onChange={e => { setMotivation(e.target.value); setFieldErrors(fe => ({ ...fe, motivation: '' })); }} placeholder="Expliquez brièvement votre motivation et ce que vous pouvez apporter à notre équipe." className={`w-full py-3 border-b-2 focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 min-h-[140px] sm:min-h-0 ${fieldErrors.motivation ? 'border-red-400' : 'border-gray-100 focus:border-brand-teal'}`}/>
                       {fieldErrors.motivation && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><span>⚠</span> {fieldErrors.motivation}</p>}
                     </div>
                     <div>
                       <label className="text-[11px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2 block">Message complémentaire (Facultatif)</label>
-                      <textarea rows={2} value={messageComplementaire} onChange={e => setMessageComplementaire(e.target.value)} placeholder="Y-a-il des informations complémentaires que vous souhaiteriez partager ?" className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300" />
+                      <textarea rows={2} value={messageComplementaire} onChange={e => setMessageComplementaire(e.target.value)} placeholder="Y-a-il des informations complémentaires que vous souhaiteriez partager ?" className="w-full py-3 border-b-2 border-gray-100 focus:border-brand-teal focus:outline-none transition bg-transparent text-[15px] font-medium resize-none placeholder:text-gray-300 min-h-[110px] sm:min-h-0"/>
                     </div>
                   </div>
                 </div>
