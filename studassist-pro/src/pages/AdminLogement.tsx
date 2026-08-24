@@ -152,17 +152,17 @@ export default function AdminLogement() {
                 Chez STUDASSIST, nous accompagnons les élèves et leurs familles à anticiper chaque étape, afin de structurer les démarches, éviter les erreurs et faciliter l'installation dans les meilleures conditions.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 pt-4">
-                <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-brand-teal mb-1 tracking-tight">+7 ans</div>
+                            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 pt-4">
+                <div className="bg-white border border-gray-100 rounded-2xl p-2 sm:p-3 lg:p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center overflow-hidden">
+                  <div className="text-[clamp(0.55rem,calc(4.4vw_-_6px),1.5rem)] font-black text-brand-teal mb-1 tracking-tight whitespace-nowrap">+7 ans</div>
                   <div className="text-[9px] lg:text-[10px] font-black text-brand-darkblue uppercase tracking-[0.18em] leading-tight">D'expertise</div>
                 </div>
-                <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-brand-teal mb-1 tracking-tight">100%</div>
+                <div className="bg-white border border-gray-100 rounded-2xl p-2 sm:p-3 lg:p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center overflow-hidden">
+                  <div className="text-[clamp(0.55rem,calc(4.4vw_-_6px),1.5rem)] font-black text-brand-teal mb-1 tracking-tight whitespace-nowrap">100%</div>
                   <div className="text-[9px] lg:text-[10px] font-black text-brand-darkblue uppercase tracking-[0.18em] leading-tight">Des démarches encadrées</div>
                 </div>
-                <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-brand-teal mb-1 tracking-tight">A à Z</div>
+                <div className="bg-white border border-gray-100 rounded-2xl p-2 sm:p-3 lg:p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center overflow-hidden">
+                  <div className="text-[clamp(0.55rem,calc(4.4vw_-_6px),1.5rem)] font-black text-brand-teal mb-1 tracking-tight whitespace-nowrap">A à Z</div>
                   <div className="text-[9px] lg:text-[10px] font-black text-brand-darkblue uppercase tracking-[0.18em] leading-tight">De l'admission à l'installation</div>
                 </div>
               </div>

@@ -137,17 +137,17 @@ export default function SoutienScolaire() {
                 Du primaire aux études supérieures, nos enseignants accompagnent les élèves dans leurs apprentissages, leur méthodologie et leur progression académique grâce à un suivi personnalisé et exigeant.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 pt-4">
-                <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-brand-teal mb-1 tracking-tight">2 à 4</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 pt-4">
+                <div className="bg-white border border-gray-100 rounded-2xl p-2 sm:p-3 lg:p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center overflow-hidden">
+                  <div className="text-[clamp(0.55rem,calc(4.4vw_-_6px),1.5rem)] font-black text-brand-teal mb-1 tracking-tight whitespace-nowrap">2 à 4</div>
                   <div className="text-[9px] lg:text-[10px] font-black text-brand-darkblue uppercase tracking-[0.18em] leading-tight">Élèves par groupe</div>
                 </div>
-                <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-brand-teal mb-1 tracking-tight">Méthodologie</div>
+                <div className="bg-white border border-gray-100 rounded-2xl p-2 sm:p-3 lg:p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center overflow-hidden">
+                  <div className="text-[clamp(0.55rem,calc(4.4vw_-_6px),1.5rem)] font-black text-brand-teal mb-1 tracking-tight whitespace-nowrap">Méthodologie</div>
                   <div className="text-[9px] lg:text-[10px] font-black text-brand-darkblue uppercase tracking-[0.18em] leading-tight">Différenciée</div>
                 </div>
-                <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center">
-                  <div className="text-2xl lg:text-3xl font-black text-brand-teal mb-1 tracking-tight">+3,7</div>
+                <div className="bg-white border border-gray-100 rounded-2xl p-2 sm:p-3 lg:p-5 shadow-[0_20px_50px_rgba(17,29,74,0.05)] text-center overflow-hidden">
+                  <div className="text-[clamp(0.55rem,calc(4.4vw_-_6px),1.5rem)] font-black text-brand-teal mb-1 tracking-tight whitespace-nowrap">+3,7</div>
                   <div className="text-[9px] lg:text-[10px] font-black text-brand-darkblue uppercase tracking-[0.18em] leading-tight">Points gagnés en moyenne</div>
                 </div>
               </div>
