@@ -24,6 +24,9 @@ interface FormPayload {
   message?: string;
   // Meta
   source?: string;
+
+  // Anti-spam
+  turnstileToken?: string;
 }
 
 function buildEmailHtml(data: FormPayload): string {
@@ -222,7 +225,43 @@ function buildEmailHtml(data: FormPayload): string {
 </body>
 </html>`;
 }
+async function verifyTurnstile(token: string, ip?: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
 
+  if (!secret) {
+    console.error("TURNSTILE_SECRET_KEY is not configured");
+    return false;
+  }
+
+  try {
+    const response = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          secret,
+          response: token,
+          remoteip: ip,
+        }),
+      }
+    );
+
+    const result = await response.json();
+
+    if (!result.success) {
+      console.error("Turnstile verification failed:", result);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error("Turnstile verification error:", error);
+    return false;
+  }
+}
 async function appendToSheet(data: any): Promise<boolean> {
   if (!APPS_SCRIPT_URL) {
     console.warn("GOOGLE_APPS_SCRIPT_URL not configured — skipping sheet append");
@@ -254,37 +293,76 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const data: FormPayload = req.body;
 
-  if (!data.nom && !data.prenom && !data.tel) {
-    return res.status(400).json({ error: "Missing required fields" });
+  // Anti-spam : Turnstile est obligatoire
+  if (!data.turnstileToken) {
+    return res.status(403).json({
+      error: "Anti-spam verification required",
+    });
   }
 
-  const fullName = `${data.prenom || ""} ${data.nom || ""}`.trim();
-  const intentLabel =
-    data.intent === "cours"
-      ? "Cours découverte"
-      : data.intent === "orientation"
-      ? "Séance d'orientation"
-      : "Nouvelle demande";
+  const clientIp =
+    (req.headers["x-forwarded-for"] as string)?.split(",")[0]?.trim() ||
+    req.socket?.remoteAddress;
+
+  const turnstileValid = await verifyTurnstile(
+    data.turnstileToken,
+    clientIp
+  );
+
+  if (!turnstileValid) {
+    return res.status(403).json({
+      error: "Anti-spam verification failed",
+    });
+  }
+
+  
+
+  const { turnstileToken, ...cleanData } = data;
+
+if (!cleanData.nom && !cleanData.prenom && !cleanData.tel) {
+  return res.status(400).json({
+    error: "Missing required fields",
+  });
+}
+
+const fullName = `${cleanData.prenom || ""} ${cleanData.nom || ""}`.trim();
+
+const intentLabel =
+  cleanData.intent === "cours"
+    ? "Cours découverte"
+    : cleanData.intent === "orientation"
+    ? "Séance d'orientation"
+    : "Nouvelle demande";
+
+  
+
+  
 
   let sheetSuccess = false;
   let emailSuccess = false;
 
-  // 1. Append to Google Sheets via Apps Script (primary — most reliable)
+  // 1. Append to Google Sheets via Apps Script
   try {
-    sheetSuccess = await appendToSheet({ ...data, _timestamp: new Date().toISOString() });
+    sheetSuccess = await appendToSheet({
+      ...cleanData,
+      _timestamp: new Date().toISOString(),
+    });
   } catch (sheetErr) {
     console.error("Google Sheets error:", sheetErr);
   }
 
+  
+
+   
   // 2. Send email notification via Resend
   // Uses verified domain if available, falls back to onboarding@resend.dev
   try {
     const emailResult = await resend.emails.send({
       from: "STUDASSIST <onboarding@resend.dev>",
       to: ["hello@studassist.ma"],
-      replyTo: data.email ? [data.email] : undefined,
+      replyTo: cleanData.email ? [cleanData.email] : undefined,
       subject: `${intentLabel} — ${fullName}`,
-      html: buildEmailHtml(data),
+      html: buildEmailHtml(cleanData),
     });
 
     if (emailResult.error) {
@@ -300,6 +378,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (sheetSuccess || emailSuccess) {
     return res.status(200).json({ success: true, sheet: sheetSuccess, email: emailSuccess });
   }
+  
 
   return res.status(500).json({ error: "Failed to process submission" });
 }

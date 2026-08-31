@@ -15,6 +15,7 @@ export interface FormData {
   disponibilites?: string[];
   message?: string;
   source?: string;
+  turnstileToken?: string;
 }
 
 export type SubmitStatus = "idle" | "loading" | "success" | "error";

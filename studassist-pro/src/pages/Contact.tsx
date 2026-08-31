@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Phone, MapPin, Clock, MessageCircle } from "@/src/components/ui/icons";
 import { Link, useSearchParams } from "react-router-dom";
@@ -20,7 +21,8 @@ export default function Contact() {
   const [intentTab, setIntentTab] = useState<"orientation" | "cours" | "rdv">("orientation");
   const roleFromParams = searchParams.get("role") as "parent" | "eleve" | null;
   const [userRole, setUserRole] = useState<"parent" | "eleve">(roleFromParams || "parent");
-  
+  const [turnstileToken, setTurnstileToken] = useState("");
+
   // States for checkbox sections
   const [matieres, setMatieres] = useState<string[]>([]);
   const [prepas, setPrepas] = useState<string[]>([]);
@@ -98,6 +100,13 @@ export default function Contact() {
       setFormErrors(errors);
       return;
     }
+    if (!turnstileToken) {
+      setFormErrors({
+        ...errors,
+        turnstile: "Veuillez effectuer la vérification anti-spam.",
+      });
+      return;
+    }
     setFormErrors({});
     await submit({
       nom, prenom, tel, email,
@@ -107,6 +116,7 @@ export default function Contact() {
       matieres, prepas, certifications, disponibilites,
       message,
       source: "Page Contact — formulaire principal",
+      turnstileToken,
     });
   };
 
@@ -422,7 +432,14 @@ export default function Contact() {
                           </div>
                         </div>
                       </div>
-
+                      <div className="pt-2">
+                        <Turnstile
+                          siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                          onSuccess={(token: string) => setTurnstileToken(token)}
+                          onExpire={() => setTurnstileToken("")}
+                          onError={() => setTurnstileToken("")}
+                        />
+                      </div>
                       <div className="pt-6">
                         <button
                           type="submit"
